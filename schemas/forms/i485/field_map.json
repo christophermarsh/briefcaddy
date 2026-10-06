@@ -1,0 +1,2833 @@
+{
+  "_status": "Built against the real blank I-485 checked in at schemas/i485_template.pdf. Covers only the fact keys this pipeline currently produces (src/extract, src/rules) -- most of the form's 790 fields have no fact source yet and are out of scope until an extractor/rule exists for them. Needs attorney/paralegal review before any real client's form is filled from it, per docs/decisions.md's data-handling discipline.",
+  "fact_to_acroform": {
+    "applicant.ssn": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line19_SSN[0]"
+      ]
+    },
+    "applicant.dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line3_DOB[0]"
+      ]
+    },
+    "applicant.citizenship": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line8_CountryofCitizenshipNationality[0]"
+      ]
+    },
+    "applicant.i94_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].P1Line12_I94[0]"
+      ]
+    },
+    "applicant.a_number": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line4_AlienNumber[0]",
+        "form1[0].#subform[1].Pt1Line4_AlienNumber[1]",
+        "form1[0].#subform[1].Pt1Line4_AlienNumber[2]",
+        "form1[0].#subform[2].Pt1Line4_AlienNumber[3]",
+        "form1[0].#subform[3].Pt1Line4_AlienNumber[4]",
+        "form1[0].#subform[4].Pt1Line4_AlienNumber[5]",
+        "form1[0].#subform[5].Pt1Line4_AlienNumber[6]",
+        "form1[0].#subform[6].Pt1Line4_AlienNumber[7]",
+        "form1[0].#subform[7].Pt1Line4_AlienNumber[8]",
+        "form1[0].#subform[8].Pt1Line4_AlienNumber[9]",
+        "form1[0].#subform[9].Pt1Line4_AlienNumber[10]",
+        "form1[0].#subform[10].Pt1Line4_AlienNumber[11]",
+        "form1[0].#subform[11].Pt1Line4_AlienNumber[12]",
+        "form1[0].#subform[12].Pt1Line4_AlienNumber[13]",
+        "form1[0].#subform[13].Pt1Line4_AlienNumber[14]",
+        "form1[0].#subform[14].Pt1Line4_AlienNumber[15]",
+        "form1[0].#subform[15].Pt1Line4_AlienNumber[16]",
+        "form1[0].#subform[16].Pt1Line4_AlienNumber[17]",
+        "form1[0].#subform[17].Pt1Line4_AlienNumber[18]",
+        "form1[0].#subform[18].Pt1Line4_AlienNumber[19]",
+        "form1[0].#subform[20].Pt1Line4_AlienNumber[20]",
+        "form1[0].#subform[21].Pt1Line4_AlienNumber[21]",
+        "form1[0].#subform[22].Pt1Line4_AlienNumber[22]",
+        "form1[0].#subform[23].Pt1Line4_AlienNumber[23]",
+        "form1[0].#subform[24].Pt1Line4_AlienNumber[24]"
+      ]
+    },
+    "applicant.birth_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line7_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.country_of_birth": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line7_CountryOfBirth[0]"
+      ]
+    },
+    "applicant.travel_document_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_PassportNum[0]"
+      ]
+    },
+    "applicant.family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line1_FamilyName[0]",
+        "form1[0].#subform[24].Pt1Line1_FamilyName[1]"
+      ]
+    },
+    "applicant.given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line1_GivenName[0]",
+        "form1[0].#subform[24].Pt1Line1_GivenName[1]"
+      ]
+    },
+    "applicant.i94_class_of_admission": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line12_Status[0]"
+      ]
+    },
+    "applicant.i360_receipt_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_Receipt[0]"
+      ]
+    },
+    "applicant.i360_priority_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_Date[0]"
+      ]
+    },
+    "applicant.eye_color": {
+      "type": "choice_by_value",
+      "options": {
+        "Blue": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[0]",
+          "/BU"
+        ],
+        "Black": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[1]",
+          "/BL"
+        ],
+        "Brown": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[2]",
+          "/BN"
+        ],
+        "Gray": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[3]",
+          "/GR"
+        ],
+        "Green": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[4]",
+          "/GN"
+        ],
+        "Hazel": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[5]",
+          "/HA"
+        ],
+        "Maroon": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[6]",
+          "/MA"
+        ],
+        "Pink": [
+          "form1[0].#subform[12].Pt7Line5_Eyecolor[7]",
+          "/PN"
+        ]
+      }
+    },
+    "applicant.height": {
+      "type": "height_feet_inches",
+      "feet_field": "form1[0].#subform[12].Pt7Line3_HeightFeet[0]",
+      "inches_field": "form1[0].#subform[12].Pt7Line3_HeightInches[0]"
+    },
+    "applicant.sex": {
+      "type": "choice_by_value",
+      "options": {
+        "F": [
+          "form1[0].#subform[1].Pt1Line6_CB_Sex[0]",
+          "/F"
+        ],
+        "M": [
+          "form1[0].#subform[1].Pt1Line6_CB_Sex[1]",
+          "/M"
+        ]
+      }
+    },
+    "applicant.part9.violated_nonimmigrant_status": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line13_YesNo[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line13_YesNo[0]",
+        "/N"
+      ]
+    },
+    "applicant.part9.unlawfully_present_since_1997": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[20].Pt9Line76_YesNo[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[20].Pt9Line76_YesNo[0]",
+        "/N"
+      ]
+    },
+    "applicant.marital_status": {
+      "type": "choice_by_value",
+      "options": {
+        "Single": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[1]",
+          "/1"
+        ],
+        "Married": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[3]",
+          "/2"
+        ],
+        "Divorced": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[0]",
+          "/3"
+        ],
+        "Widowed": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[2]",
+          "/4"
+        ],
+        "Marriage Annulled": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[4]",
+          "/5"
+        ],
+        "Legally Separated": [
+          "form1[0].#subform[9].Pt6Line1_MaritalStatus[5]",
+          "/7"
+        ]
+      }
+    },
+    "applicant.ethnicity": {
+      "type": "choice_by_value",
+      "options": {
+        "Hispanic or Latino": [
+          "form1[0].#subform[12].Pt7Line1_Ethnicity[0]",
+          "/H"
+        ],
+        "Not Hispanic or Latino": [
+          "form1[0].#subform[12].Pt7Line1_Ethnicity[1]",
+          "/N"
+        ]
+      }
+    },
+    "applicant.race": {
+      "type": "choice_by_value",
+      "options": {
+        "White": [
+          "form1[0].#subform[12].Pt7Line2_Race[1]",
+          "/WH"
+        ],
+        "Asian": [
+          "form1[0].#subform[12].Pt7Line2_Race[0]",
+          "/AS"
+        ],
+        "Black or African American": [
+          "form1[0].#subform[12].Pt7Line2_Race[2]",
+          "/BL"
+        ],
+        "American Indian or Alaska Native": [
+          "form1[0].#subform[12].Pt7Line2_Race[3]",
+          "/AI"
+        ],
+        "Native Hawaiian or Other Pacific Islander": [
+          "form1[0].#subform[12].Pt7Line2_Race[4]",
+          "/HW"
+        ]
+      }
+    },
+    "firm.g28_attached": {
+      "type": "choice_by_value",
+      "options": {
+        "Yes": [
+          "form1[0].#subform[0].CheckBox1[0]",
+          "/1"
+        ]
+      }
+    },
+    "firm.attorney_bar_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].AttorneyStateBarNumber[0]"
+      ]
+    },
+    "firm.uscis_online_account_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].USCISOnlineAcctNumber[0]"
+      ]
+    },
+    "firm.preparer_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[23].Pt12Line1_PreparerFamilyName[0]"
+      ]
+    },
+    "firm.preparer_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[23].Pt12Line1a_PreparerGivenName[0]"
+      ]
+    },
+    "firm.business_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[23].Pt12Line2_BusinessName[0]"
+      ]
+    },
+    "firm.phone": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[23].Pt12Line3_PreparerDaytimePhoneNumber1[0]",
+        "form1[0].#subform[23].Pt12Line4_PreparerMobileNumber[0]"
+      ]
+    },
+    "firm.email": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[23].Pt12Line5_PreparerEmail[0]"
+      ]
+    },
+    "applicant.mailing_same_as_physical": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[2].Pt1Line18_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[2].Pt1Line18_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.mailing_in_care_of": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentInCareOfName[0]"
+      ]
+    },
+    "applicant.mailing_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentStreetNumberName[0]"
+      ]
+    },
+    "applicant.mailing_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentCityOrTown[0]"
+      ]
+    },
+    "applicant.mailing_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentState[0]"
+      ]
+    },
+    "applicant.mailing_zip": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentZipCode[0]"
+      ]
+    },
+    "applicant.weight_lbs": {
+      "type": "digits_split",
+      "fields": [
+        "form1[0].#subform[12].Pt7Line4_Weight1[0]",
+        "form1[0].#subform[12].Pt7Line4_Weight2[0]",
+        "form1[0].#subform[12].Pt7Line4_Weight3[0]"
+      ]
+    },
+    "applicant.part9.denied_admission": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[13].Pt9Line10_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[13].Pt9Line10_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.denied_visa": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt9Line11_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt9Line11_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.worked_without_authorization": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt9Line12_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt9Line12_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.in_removal_proceedings": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line18_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line18_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.final_order_of_removal": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[13].Pt8Line19_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[13].Pt8Line19_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.prior_order_reinstated": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line20_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line20_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.voluntary_departure_not_departed": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line17_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line17_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.applied_relief_from_removal": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[13].Pt8Line23_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[13].Pt8Line23_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.j_exchange_two_year_requirement": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line24a_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line24a_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.arrested_cited_charged_detained": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line22_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line22_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.committed_crime": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt9Line23_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt9Line23_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.i94_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].P1Line12_FamilyName[0]"
+      ]
+    },
+    "applicant.i94_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].P1Line13_GivenName[0]"
+      ]
+    },
+    "applicant.i94_admit_until_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line12_Date[0]"
+      ]
+    },
+    "applicant.last_arrival_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_DateofArrival[0]"
+      ]
+    },
+    "applicant.part4.lpr_status_rescinded": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[7].Pt4Line6_YN[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[7].Pt4Line6_YN[1]",
+        "/Y"
+      ]
+    },
+    "applicant.physical_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_StreetNumberName[0]"
+      ]
+    },
+    "applicant.physical_apt": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18US_AptSteFlrNumber[0]"
+      ]
+    },
+    "applicant.physical_unit_type": {
+      "type": "choice_by_value",
+      "options": {
+        "APT": [
+          "form1[0].#subform[2].Pt1Line18US_Unit[2]",
+          "/ APT "
+        ]
+      }
+    },
+    "applicant.physical_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CityOrTown[0]"
+      ]
+    },
+    "applicant.physical_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_State[0]"
+      ]
+    },
+    "applicant.physical_zip": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_ZipCode[0]"
+      ]
+    },
+    "applicant.physical_address_since": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_Date[0]"
+      ]
+    },
+    "applicant.last_foreign_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentStreetName[0]"
+      ]
+    },
+    "applicant.last_foreign_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentCity[0]"
+      ]
+    },
+    "applicant.last_foreign_province": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentProvince[0]"
+      ]
+    },
+    "applicant.last_foreign_postal_code": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentPostalCode[0]"
+      ]
+    },
+    "applicant.last_foreign_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentCountry[0]"
+      ]
+    },
+    "applicant.last_foreign_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentDateFrom[0]"
+      ]
+    },
+    "applicant.last_foreign_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_RecentDateTo[0]"
+      ]
+    },
+    "applicant.last_arrival_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_CityTown[0]"
+      ]
+    },
+    "applicant.last_arrival_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_State[0]"
+      ]
+    },
+    "applicant.employer1_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line7_EmployerName[2]"
+      ]
+    },
+    "applicant.employer1_occupation": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line7_EmployerName[1]"
+      ]
+    },
+    "applicant.employer1_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Part4Line7_StreetName[0]"
+      ]
+    },
+    "applicant.employer1_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line7_City[0]"
+      ]
+    },
+    "applicant.employer1_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line7_State[0]"
+      ]
+    },
+    "applicant.employer1_zip": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line7_ZipCode[0]"
+      ]
+    },
+    "applicant.employer1_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line7_Country[0]"
+      ]
+    },
+    "applicant.employer1_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line7_DateFrom[0]"
+      ]
+    },
+    "applicant.employer1_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line7_DateTo[0]"
+      ]
+    },
+    "applicant.foreign_employer_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line8_EmployerName[0]"
+      ]
+    },
+    "applicant.foreign_employer_occupation": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line8_Occupation[0]"
+      ]
+    },
+    "applicant.foreign_employer_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line8_StreetName[0]"
+      ]
+    },
+    "applicant.foreign_employer_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line8_City[0]"
+      ]
+    },
+    "applicant.foreign_employer_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line8_Country[0]"
+      ]
+    },
+    "applicant.foreign_employer_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line8_DateFrom[0]"
+      ]
+    },
+    "applicant.foreign_employer_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[8].Pt4Line8_DateTo[0]"
+      ]
+    },
+    "applicant.mother_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line3_DateofBirth[0]"
+      ]
+    },
+    "applicant.mother_country_of_birth": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line5_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.father_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line8_DateofBirth[0]"
+      ]
+    },
+    "applicant.father_country_of_birth": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line10_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.times_married": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line3_TimesMarried[0]"
+      ]
+    },
+    "applicant.total_children": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt6Line1_TotalChildren[0]"
+      ]
+    },
+    "applicant.hair_color": {
+      "type": "choice_by_value",
+      "options": {
+        "Bald": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[0]",
+          "/NH"
+        ],
+        "Black": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[1]",
+          "/BL"
+        ],
+        "Blond": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[2]",
+          "/BN"
+        ],
+        "Brown": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[3]",
+          "/BR"
+        ],
+        "Gray": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[4]",
+          "/GR"
+        ],
+        "Red": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[5]",
+          "/RD"
+        ],
+        "Sandy": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[6]",
+          "/SA"
+        ],
+        "White": [
+          "form1[0].#subform[12].Pt7Line6_Haircolor[7]",
+          "/WH"
+        ]
+      }
+    },
+    "applicant.part9.pt8line1": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[12].Pt8Line1_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[12].Pt8Line1_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line25": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line25_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line25_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line26": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line26_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line26_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line27": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line27_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line27_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line28": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line28_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line28_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line30": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line30_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line30_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line31": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[14].Pt8Line31_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[14].Pt8Line31_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line32": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[14].Pt8Line32_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[14].Pt8Line32_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line33": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[14].Pt8Line33_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[14].Pt8Line33_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line34": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line34_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line34_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line35a": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[14].Pt8Line35a_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[14].Pt8Line35a_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line36": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line36_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line36_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line37": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line37_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line37_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line38": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line38_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line38_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line41": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line41_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line41_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line42c": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line42c_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line42c_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line42d": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line42d_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line42d_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43a": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line43a_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43a_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line43b": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43b_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43b_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43c": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43c_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43c_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43d": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43d_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43d_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43e": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43e_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43e_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43f": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43fYesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43fYesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43g": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43g_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line43g_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line43h": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line43h_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43h_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line43i": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line43i_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line43i_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line44": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line44_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line44_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line45": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line45_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line45_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line47": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line47_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line47_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line48": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line48_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line48_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line50": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line50_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line50_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line52": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line52_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line52_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line53d": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line53d_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line53d_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line54": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[16].Pt8Line54_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[16].Pt8Line54_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line24": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[14].Pt9Line24_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[14].Pt9Line24_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line39": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt9Line39_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt9Line39_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line67": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[20].Pt9Line67_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[20].Pt9Line67_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line68": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[20].Pt9Line68_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[20].Pt9Line68_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line69": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[20].Pt9Line69_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[20].Pt9Line69_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line70": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[20].Pt9Line70_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[20].Pt9Line70_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line71": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[20].Pt9Line71_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[20].Pt9Line71_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line72": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[20].Pt9Line72_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[20].Pt9Line72_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line73": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[20].Pt9Line73_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[20].Pt9Line73_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line74": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[20].Pt9Line74_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[20].Pt9Line74_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line75": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[20].Pt9Line75_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[20].Pt9Line75_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line78a": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line78a_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line78a_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line78b": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[21].Pt9Line78b_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[21].Pt9Line78b_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line79": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[21].Pt9Line79_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[21].Pt9Line79_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line80": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line80_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line80_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line81": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[21].Pt9Line81_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[21].Pt9Line81_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line82": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line82_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line82_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line83": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[21].Pt9Line83_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[21].Pt9Line83_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line84a": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line84a_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line84a_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line84b": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line84b_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line84b_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line84c": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line84c_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line84c_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt9line85": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[21].Pt9Line85_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[21].Pt9Line85_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.a": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[15].Pt8Line42\\.a_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[15].Pt8Line42\\.a_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.b": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line42\\.b_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line42\\.b_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.filing_as": {
+      "type": "choice_by_value",
+      "options": {
+        "Principal": [
+          "form1[0].#subform[4].Pt2Line2_CB[0]",
+          "/1fA"
+        ],
+        "Derivative": [
+          "form1[0].#subform[4].Pt2Line2_CB[1]",
+          "/1fB"
+        ]
+      }
+    },
+    "applicant.principal_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_FamilyName[0]"
+      ]
+    },
+    "applicant.principal_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_GivenName[0]"
+      ]
+    },
+    "applicant.principal_middle_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_MiddleName[0]"
+      ]
+    },
+    "applicant.principal_a_number": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[4].Pt2Line2_AlienNumber[0]"
+      ]
+    },
+    "applicant.filing_category": {
+      "type": "choice_by_value",
+      "options": {
+        "SIJS": [
+          "form1[0].#subform[5].Pt2Line3c_CB[1]",
+          "/3c0"
+        ],
+        "Afghan or Iraqi national (I-360/DS-157)": [
+          "form1[0].#subform[5].Pt2Line3c_CB[0]",
+          "/3c1"
+        ],
+        "Religious worker - minister (I-360)": [
+          "form1[0].#subform[5].Pt2Line3c_CB[9]",
+          "/3c8"
+        ],
+        "Religious worker - other (I-360)": [
+          "form1[0].#subform[5].Pt2Line3c_CB[8]",
+          "/3c9"
+        ],
+        "Asylee (INA 208)": [
+          "form1[0].#subform[6].Pt2Line3d_AsyleeRefugeeCB[0]",
+          "/3d0"
+        ],
+        "Refugee (INA 207)": [
+          "form1[0].#subform[6].Pt2Line3d_AsyleeRefugeeCB[1]",
+          "/3d1"
+        ],
+        "T nonimmigrant (I-914)": [
+          "form1[0].#subform[6].Pt2Line3e_CB[0]",
+          "/3e0"
+        ],
+        "U nonimmigrant (I-918)": [
+          "form1[0].#subform[6].Pt2Line3e_CB[1]",
+          "/3e1"
+        ],
+        "Cuban Adjustment Act": [
+          "form1[0].#subform[6].Pt2Line3f_CB[0]",
+          "/3f0"
+        ],
+        "HRIFA dependent": [
+          "form1[0].#subform[6].Pt2Line3f_CB[2]",
+          "/3f3"
+        ],
+        "Investor (I-526/I-526E)": [
+          "form1[0].#subform[5].Pt2Line3b_CB526[0]",
+          "/3b0"
+        ],
+        "Diversity Visa": [
+          "form1[0].#subform[6].Pt2Line3g_CB[0]",
+          "/3g0"
+        ],
+        "Registry (before 1/1/1972)": [
+          "form1[0].#subform[6].Pt2Line3g_CB[1]",
+          "/3g1"
+        ],
+        "Other eligibility": [
+          "form1[0].#subform[6].Pt2Line3g_CB[4]",
+          "/3g4"
+        ],
+        "Spouse of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[0]",
+          "/3a0"
+        ],
+        "Child under 21 of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[1]",
+          "/3a1"
+        ],
+        "Parent of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[2]",
+          "/3a2"
+        ],
+        "K-1/K-2 fiance(e) of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[3]",
+          "/3a3"
+        ],
+        "Widow(er) of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[4]",
+          "/3a4"
+        ],
+        "NDAA relative of deceased service member": [
+          "form1[0].#subform[4].Pt2Line3a_CB[5]",
+          "/3a5"
+        ],
+        "Unmarried son/daughter 21+ of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[6]",
+          "/3a6"
+        ],
+        "Married son/daughter of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[7]",
+          "/3a7"
+        ],
+        "Sibling of U.S. citizen": [
+          "form1[0].#subform[4].Pt2Line3a_CB[8]",
+          "/3a8"
+        ],
+        "Spouse of LPR": [
+          "form1[0].#subform[4].Pt2Line3a_CB[9]",
+          "/3a9"
+        ],
+        "Child under 21 of LPR": [
+          "form1[0].#subform[4].Pt2Line3a_CB[10]",
+          "/3a10"
+        ],
+        "Unmarried son/daughter 21+ of LPR": [
+          "form1[0].#subform[4].Pt2Line3a_CB[11]",
+          "/3a11"
+        ],
+        "VAWA self-petitioning spouse (I-360)": [
+          "form1[0].#subform[4].Pt2Line3a_CB[12]",
+          "/3a12"
+        ],
+        "VAWA self-petitioning child (I-360)": [
+          "form1[0].#subform[4].Pt2Line3a_CB[13]",
+          "/3a13"
+        ],
+        "VAWA self-petitioning parent (I-360)": [
+          "form1[0].#subform[4].Pt2Line3a_CB[14]",
+          "/3a14"
+        ]
+      }
+    },
+    "asylee.granted_on": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[6].Pt2Line3d_Asylum[0]"
+      ]
+    },
+    "asylee.refugee_admitted_on": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[6].Pt2Line3d_Refugee[0]"
+      ]
+    },
+    "applicant.affidavit_of_support_exemption": {
+      "type": "choice_by_value",
+      "options": {
+        "Not required": [
+          "form1[0].#subform[7].Pt3Line1_CB[4]",
+          "/4"
+        ],
+        "VAWA self-petitioner": [
+          "form1[0].#subform[7].Pt3Line1_CB[3]",
+          "/3"
+        ]
+      }
+    },
+    "applicant.public_charge_exemption": {
+      "type": "choice_by_value",
+      "options": {
+        "SIJS": [
+          "form1[0].#subform[17].Pt9Line56_CB[6]",
+          "/6"
+        ],
+        "Asylee": [
+          "form1[0].#subform[17].Pt9Line56_CB[3]",
+          "/3"
+        ],
+        "Cuban Adjustment Act": [
+          "form1[0].#subform[17].Pt9Line56_CB[7]",
+          "/7"
+        ],
+        "HRIFA dependent": [
+          "form1[0].#subform[17].Pt9Line56_CB[11]",
+          "/11"
+        ],
+        "VAWA": [
+          "form1[0].#subform[17].Pt9Line56_CB[5]",
+          "/5"
+        ]
+      }
+    },
+    "applicant.filing_with_eoir": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[4].Pt2Line1_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[4].Pt2Line1_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.part2.adjusting_under_245i": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[6].Pt2Line4_CB[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[6].Pt2Line4_CB[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part2.cspa_21_or_older": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[6].Pt2Line5_CB[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[6].Pt2Line5_CB[1]",
+        "/Y"
+      ]
+    },
+    "applicant.current_status_text": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line14_Status[0]"
+      ]
+    },
+    "applicant.crewman_visa_ever": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[2].Pt1Line16_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[2].Pt1Line16_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.arrived_as_crewman": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[2].Pt1Line17_YN[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[2].Pt1Line17_YN[1]",
+        "/Y"
+      ]
+    },
+    "applicant.has_a_number": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[1].Pt1Line4_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[1].Pt1Line4_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.ssa_ever_issued_card": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[3].Pt1Line19_YN[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[3].Pt1Line19_YN[1]",
+        "/Y"
+      ]
+    },
+    "applicant.ssa_issue_card": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[3].Pt1Line19_SSA_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[3].Pt1Line19_SSA_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.ssa_consent_disclosure": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[3].Pt1Line19_Consent_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[3].Pt1Line19_Consent_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.spouse_in_military": {
+      "type": "choice_by_value",
+      "options": {
+        "N/A": [
+          "form1[0].#subform[9].Pt5Line2_YNNA[2]",
+          "/A"
+        ],
+        "Yes": [
+          "form1[0].#subform[9].Pt5Line2_YNNA[1]",
+          "/Y"
+        ],
+        "No": [
+          "form1[0].#subform[9].Pt5Line2_YNNA[0]",
+          "/N"
+        ]
+      }
+    },
+    "applicant.na.other_names": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line2_FamilyName[0]",
+        "form1[0].#subform[0].Pt1Line2_GivenName[0]",
+        "form1[0].#subform[0].Pt1Line2_MiddleName[0]",
+        "form1[0].#subform[0].Pt1Line2a_FamilyName[0]",
+        "form1[0].#subform[0].Pt1Line2a_GivenName[0]",
+        "form1[0].#subform[0].Pt1Line2a_MiddleName[0]"
+      ]
+    },
+    "applicant.other_name1_family": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line2_FamilyName[0]"
+      ]
+    },
+    "applicant.other_name1_given": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line2_GivenName[0]"
+      ]
+    },
+    "applicant.other_name2_family": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line2a_FamilyName[0]"
+      ]
+    },
+    "applicant.other_name2_given": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line2a_GivenName[0]"
+      ]
+    },
+    "applicant.na.current_spouse": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line4_FamilyName[0]",
+        "form1[0].#subform[9].Pt6Line4_GivenName[0]",
+        "form1[0].#subform[9].Pt6Line4_MiddleName[0]",
+        "form1[0].#subform[9].Pt6Line7_Country[0]",
+        "form1[0].#subform[9].Part6Line8_StreetName[0]",
+        "form1[0].#subform[9].P6Line8_City[0]",
+        "form1[0].#subform[9].P6Line8_Province[0]",
+        "form1[0].#subform[9].P6Line8_Country[0]",
+        "form1[0].#subform[10].Pt6Line10_CityTownOfBirth[0]",
+        "form1[0].#subform[10].Pt6Line10_Country[0]",
+        "form1[0].#subform[10].Pt6Line10_State[0]"
+      ]
+    },
+    "applicant.na.prior_spouse": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line12_FamilyName[0]",
+        "form1[0].#subform[10].Pt6Line12_GivenName[0]",
+        "form1[0].#subform[10].Pt6Line12_MiddleName[0]",
+        "form1[0].#subform[10].Pt6Line14_Country[0]",
+        "form1[0].#subform[10].Pt6Line15_Country[0]",
+        "form1[0].#subform[10].Pt6Line10_CityTownOfBirth[1]",
+        "form1[0].#subform[10].Pt6Line10_Country[1]",
+        "form1[0].#subform[10].Pt6Line10_State[1]",
+        "form1[0].#subform[10].Pt6Line18_CityTownOfBirth[0]",
+        "form1[0].#subform[10].Pt6Line18_Country[0]",
+        "form1[0].#subform[10].Pt6Line18_State[0]"
+      ]
+    },
+    "applicant.na.children": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_FamilyName[0]",
+        "form1[0].#subform[11].Pt7Line2_GivenName[0]",
+        "form1[0].#subform[11].Pt7Line2_MiddleName[0]",
+        "form1[0].#subform[11].Pt7Line2_Country[0]",
+        "form1[0].#subform[11].Pt7Line2_Relationship[0]",
+        "form1[0].#subform[11].Pt7Line3_FamilyName[0]",
+        "form1[0].#subform[11].Pt7Line3_GivenName[0]",
+        "form1[0].#subform[11].Pt7Line3_MiddleName[0]",
+        "form1[0].#subform[11].Pt7Line3_Country[0]",
+        "form1[0].#subform[11].Pt7Line3_Relationship[0]"
+      ]
+    },
+    "applicant.na.us_financial_support": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Part4Line7_StreetName[1]"
+      ]
+    },
+    "applicant.na.foreign_financial_support": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Part4Line8_StreetName[0]"
+      ]
+    },
+    "applicant.part9.pt8line24b": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[13].Pt8Line24b_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[13].Pt8Line24b_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line24c": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[13].Pt8Line24c_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[13].Pt8Line24c_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line29": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line29_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line29_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line35b": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[14].Pt8Line35b_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[14].Pt8Line35b_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line40": {
+      "type": "yes_no",
+      "no": [
+        "form1[0].#subform[15].Pt8Line40_YesNo[0]",
+        "/N"
+      ],
+      "yes": [
+        "form1[0].#subform[15].Pt8Line40_YesNo[1]",
+        "/Y"
+      ]
+    },
+    "applicant.part9.pt8line46": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line46_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line46_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line49": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line49_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line49_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line51": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line51_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line51_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line53a": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line53a_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line53a_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line53b": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line53b_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line53b_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line53c": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line53c_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line53c_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt8line55": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[16].Pt8Line55_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[16].Pt8Line55_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part9.pt9line77": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[21].Pt9Line77_YesNo[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[21].Pt9Line77_YesNo[1]",
+        "/N"
+      ]
+    },
+    "applicant.part4.applied_immigrant_visa_abroad": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[7].Pt4Line1_YN[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[7].Pt4Line1_YN[0]",
+        "/N"
+      ]
+    },
+    "applicant.mother_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line1_FamilyName[0]"
+      ]
+    },
+    "applicant.mother_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line1_GivenName[0]"
+      ]
+    },
+    "applicant.mother_birth_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line2_FamilyName[0]"
+      ]
+    },
+    "applicant.mother_birth_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line2_GivenName[0]"
+      ]
+    },
+    "applicant.mother_birth_middle_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].Pt5Line2_MiddleName[0]"
+      ]
+    },
+    "applicant.father_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line6_FamilyName[0]"
+      ]
+    },
+    "applicant.father_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line6_GivenName[0]"
+      ]
+    },
+    "applicant.father_birth_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line7_FamilyName[0]"
+      ]
+    },
+    "applicant.father_birth_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line7_GivenName[0]"
+      ]
+    },
+    "applicant.father_birth_middle_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line7_MiddleName[0]"
+      ]
+    },
+    "applicant.spouse_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line4_FamilyName[0]"
+      ]
+    },
+    "applicant.spouse_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line4_GivenName[0]"
+      ]
+    },
+    "applicant.spouse_a_number": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line5_AlienNumber[0]"
+      ]
+    },
+    "applicant.spouse_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[9].Pt5Line8_DateofBirth[1]"
+      ]
+    },
+    "applicant.spouse_country_of_birth": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Pt6Line7_Country[0]"
+      ]
+    },
+    "applicant.spouse_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].Part6Line8_StreetName[0]"
+      ]
+    },
+    "applicant.spouse_unit_type": {
+      "type": "choice_by_value",
+      "options": {
+        "APT": [
+          "form1[0].#subform[9].P6Line8_Unit[0]",
+          "/APT"
+        ],
+        "STE": [
+          "form1[0].#subform[9].P6Line8_Unit[1]",
+          "/STE"
+        ],
+        "FLR": [
+          "form1[0].#subform[9].P6Line8_Unit[2]",
+          "/FLR"
+        ]
+      }
+    },
+    "applicant.spouse_apt": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_Number[0]"
+      ]
+    },
+    "applicant.spouse_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_City[0]"
+      ]
+    },
+    "applicant.spouse_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_State[0]"
+      ]
+    },
+    "applicant.spouse_zip": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_ZipCode[0]"
+      ]
+    },
+    "applicant.spouse_address_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_Country[0]"
+      ]
+    },
+    "applicant.marriage_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line10_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.marriage_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line10_State[0]"
+      ]
+    },
+    "applicant.marriage_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line10_Country[0]"
+      ]
+    },
+    "applicant.marriage_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[10].Pt5Line8_DateofBirth[2]"
+      ]
+    },
+    "applicant.spouse_applying_with_you": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[10].Pt6Line11_YN[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[10].Pt6Line11_YN[0]",
+        "/N"
+      ]
+    },
+    "applicant.na.spouse_foreign_address": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[9].P6Line8_Province[0]"
+      ]
+    },
+    "applicant.foreign_employer_province": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line8_Province[0]"
+      ]
+    },
+    "applicant.foreign_employer_postal_code": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[8].P4Line8_PostalCode[0]"
+      ]
+    },
+    "applicant.travel_document_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_Passport[0]"
+      ]
+    },
+    "applicant.travel_document_expiry": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_ExpDate[0]"
+      ]
+    },
+    "applicant.other_dob_used": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[0].Pt1Line3_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[0].Pt1Line3_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.other_a_number_used": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[1].Pt1Line5_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[1].Pt1Line5_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.first_time_in_us": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[2].Pt1Line13_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[2].Pt1Line13_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.previously_applied_lpr": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[7].Pt4Line5_YN[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[7].Pt4Line5_YN[0]",
+        "/N"
+      ]
+    },
+    "applicant.lived_at_address_5yrs": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[3].Pt1Line18_last5yrs_YN[0]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[3].Pt1Line18_last5yrs_YN[1]",
+        "/N"
+      ]
+    },
+    "applicant.prior_address_street": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorStreetName[0]"
+      ]
+    },
+    "applicant.prior_address_unit_type": {
+      "type": "choice_by_value",
+      "options": {
+        "APT": [
+          "form1[0].#subform[3].Pt1Line18_PriorAddress_Unit[0]",
+          "/APT"
+        ],
+        "STE": [
+          "form1[0].#subform[3].Pt1Line18_PriorAddress_Unit[1]",
+          "/STE"
+        ],
+        "FLR": [
+          "form1[0].#subform[3].Pt1Line18_PriorAddress_Unit[2]",
+          "/FLR"
+        ]
+      }
+    },
+    "applicant.prior_address_apt": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorAddress_Number[0]"
+      ]
+    },
+    "applicant.prior_address_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorCity[0]"
+      ]
+    },
+    "applicant.prior_address_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorState[0]"
+      ]
+    },
+    "applicant.prior_address_zip": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorZipCode[0]"
+      ]
+    },
+    "applicant.prior_address_province": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorProvince[0]"
+      ]
+    },
+    "applicant.prior_address_postal_code": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorPostalCode[0]"
+      ]
+    },
+    "applicant.prior_address_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorCountry[0]"
+      ]
+    },
+    "applicant.prior_address_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18_PriorDateFrom[0]"
+      ]
+    },
+    "applicant.child1_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_FamilyName[0]"
+      ]
+    },
+    "applicant.child1_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_GivenName[0]"
+      ]
+    },
+    "applicant.child1_a_number": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_AlienNumber[0]"
+      ]
+    },
+    "applicant.child1_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_DateofBirth[0]"
+      ]
+    },
+    "applicant.child1_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_Country[0]"
+      ]
+    },
+    "applicant.child1_relationship": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line2_Relationship[0]"
+      ]
+    },
+    "applicant.child1_applying_with_you": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[11].Pt7Line2_YN[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[11].Pt7Line2_YN[0]",
+        "/N"
+      ]
+    },
+    "applicant.child2_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_FamilyName[0]"
+      ]
+    },
+    "applicant.child2_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_GivenName[0]"
+      ]
+    },
+    "applicant.child2_a_number": {
+      "type": "digits_only",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_AlienNumber[0]"
+      ]
+    },
+    "applicant.child2_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_DateofBirth[0]"
+      ]
+    },
+    "applicant.child2_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_Country[0]"
+      ]
+    },
+    "applicant.child2_relationship": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[11].Pt7Line3_Relationship[0]"
+      ]
+    },
+    "applicant.child2_applying_with_you": {
+      "type": "yes_no",
+      "yes": [
+        "form1[0].#subform[11].Pt7Line3_YN[1]",
+        "/Y"
+      ],
+      "no": [
+        "form1[0].#subform[11].Pt7Line3_YN[0]",
+        "/N"
+      ]
+    },
+    "applicant.p14_block1_page": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3a_PageNumber[0]"
+      ]
+    },
+    "applicant.p14_block1_part": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3b_PartNumber[0]"
+      ]
+    },
+    "applicant.p14_block1_item": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3c_ItemNumber[0]"
+      ]
+    },
+    "applicant.p14_block1_text": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].P14_Line2_AdditionalInfo[0]"
+      ]
+    },
+    "applicant.p14_block2_page": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3a_PageNumber[1]"
+      ]
+    },
+    "applicant.p14_block2_part": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3b_PartNumber[1]"
+      ]
+    },
+    "applicant.p14_block2_item": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3c_ItemNumber[1]"
+      ]
+    },
+    "applicant.p14_block2_text": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].P14_Line3_AdditionalInfo[0]"
+      ]
+    },
+    "applicant.p14_block3_page": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3a_PageNumber[2]"
+      ]
+    },
+    "applicant.p14_block3_part": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3b_PartNumber[2]"
+      ]
+    },
+    "applicant.p14_block3_item": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3c_ItemNumber[2]"
+      ]
+    },
+    "applicant.p14_block3_text": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].P14_Line4_AdditionalInfo[0]"
+      ]
+    },
+    "applicant.p14_block4_page": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3a_PageNumber[3]"
+      ]
+    },
+    "applicant.p14_block4_part": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3b_PartNumber[3]"
+      ]
+    },
+    "applicant.p14_block4_item": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].Pt9Line3c_ItemNumber[3]"
+      ]
+    },
+    "applicant.p14_block4_text": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[24].P14_Line5_AdditionalInfo[0]"
+      ]
+    },
+    "applicant.other_dobs": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[0].Pt1Line3A_OtherDOB[0]"
+      ]
+    },
+    "applicant.other_a_numbers": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line5A_ANumber[0]"
+      ]
+    },
+    "applicant.uscis_online_account_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line9_USCISAccountNumber[0]"
+      ]
+    },
+    "applicant.visa_number": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_VisaNum[0]"
+      ]
+    },
+    "applicant.visa_issue_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line10_NonImmDate[0]"
+      ]
+    },
+    "applicant.last_arrival_manner": {
+      "type": "choice_by_value",
+      "options": {
+        "ADMITTED": [
+          "form1[0].#subform[1].Pt2Line11_CB[0]",
+          "/11A"
+        ],
+        "PAROLED": [
+          "form1[0].#subform[1].Pt2Line11_CB[1]",
+          "/11B"
+        ],
+        "WITHOUT ADMISSION OR PAROLE": [
+          "form1[0].#subform[1].Pt2Line11_CB[2]",
+          "/11C"
+        ],
+        "OTHER": [
+          "form1[0].#subform[1].Pt2Line11_CB[3]",
+          "/11D"
+        ]
+      }
+    },
+    "applicant.last_arrival_admitted_as": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line11_Admitted[0]"
+      ]
+    },
+    "applicant.last_arrival_paroled_as": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line11_Paroled[0]"
+      ]
+    },
+    "applicant.last_arrival_other": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[1].Pt1Line11_Other[0]"
+      ]
+    },
+    "applicant.mailing_apt": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[2].Pt1Line18_CurrentAptSteFlrNumber[0]"
+      ]
+    },
+    "applicant.mailing_unit_type": {
+      "type": "choice_by_value",
+      "options": {
+        "APT": [
+          "form1[0].#subform[2].Pt1Line18_CurrentUnit[0]",
+          "/ APT "
+        ]
+      }
+    },
+    "applicant.prior_address_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[3].Pt1Line18PriorDateTo[0]"
+      ]
+    },
+    "applicant.part4.visa_abroad_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line2_CityTown[0]"
+      ]
+    },
+    "applicant.part4.visa_abroad_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line2_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.part4.visa_abroad_decision": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line3_Decision[0]"
+      ]
+    },
+    "applicant.part4.visa_abroad_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[7].Pt4Line4_Date[0]"
+      ]
+    },
+    "applicant.prior_spouse_family_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line12_FamilyName[0]"
+      ]
+    },
+    "applicant.prior_spouse_given_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line12_GivenName[0]"
+      ]
+    },
+    "applicant.prior_spouse_dob": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[10].Pt5Line8_DateofBirth[3]"
+      ]
+    },
+    "applicant.prior_spouse_country_of_birth": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line14_Country[0]"
+      ]
+    },
+    "applicant.prior_spouse_citizenship": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line15_Country[0]"
+      ]
+    },
+    "applicant.prior_spouse_marriage_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line16_DateofBirth[0]"
+      ]
+    },
+    "applicant.prior_spouse_ended_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line18_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.prior_spouse_ended_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line18_State[0]"
+      ]
+    },
+    "applicant.prior_spouse_ended_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line18_Country[0]"
+      ]
+    },
+    "applicant.prior_spouse_ended_date": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line16_DateofBirth[1]"
+      ]
+    },
+    "applicant.prior_spouse_how_ended": {
+      "type": "choice_by_value",
+      "options": {
+        "SPOUSE DECEASED": [
+          "form1[0].#subform[10].Pt6Line19_MaritalStatus[0]",
+          "/3"
+        ],
+        "ANNULLED": [
+          "form1[0].#subform[10].Pt6Line19_MaritalStatus[1]",
+          "/1"
+        ],
+        "OTHER": [
+          "form1[0].#subform[10].Pt6Line19_MaritalStatus[2]",
+          "/4"
+        ],
+        "DIVORCED": [
+          "form1[0].#subform[10].Pt6Line19_MaritalStatus[3]",
+          "/2"
+        ]
+      }
+    },
+    "applicant.prior_spouse_how_ended_other": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[10].Pt6Line19_HowMarriageEndedOther[0]"
+      ]
+    },
+    "applicant.daytime_phone": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[22].Pt3Line3_DaytimePhoneNumber1[0]"
+      ]
+    },
+    "applicant.mobile_phone": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[22].Pt3Line4_MobileNumber1[0]"
+      ]
+    },
+    "applicant.email": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[22].Pt3Line5_Email[0]"
+      ]
+    },
+    "applicant.part9.org1_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line2_Organization1[0]"
+      ]
+    },
+    "applicant.part9.org1_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line3_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.part9.org1_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line3_State[0]"
+      ]
+    },
+    "applicant.part9.org1_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line3_Country[0]"
+      ]
+    },
+    "applicant.part9.org1_nature": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line4_FamilyName[0]"
+      ]
+    },
+    "applicant.part9.org1_involvement": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line4_Involvement[0]"
+      ]
+    },
+    "applicant.part9.org1_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line5_DateFrom[0]"
+      ]
+    },
+    "applicant.part9.org1_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line5_DateTo[0]"
+      ]
+    },
+    "applicant.part9.org2_name": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[12].Pt9Line6_Organization2[0]"
+      ]
+    },
+    "applicant.part9.org2_city": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line7_CityTownOfBirth[0]"
+      ]
+    },
+    "applicant.part9.org2_state": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line7_State[0]"
+      ]
+    },
+    "applicant.part9.org2_country": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line7_Country[0]"
+      ]
+    },
+    "applicant.part9.org2_nature": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line8_FamilyName[0]"
+      ]
+    },
+    "applicant.part9.org2_involvement": {
+      "type": "text",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line8_Involvement[0]"
+      ]
+    },
+    "applicant.part9.org2_date_from": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line9_DateFrom[0]"
+      ]
+    },
+    "applicant.part9.org2_date_to": {
+      "type": "date",
+      "fields": [
+        "form1[0].#subform[13].Pt9Line9_DateTo[0]"
+      ]
+    }
+  }
+}

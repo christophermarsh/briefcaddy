@@ -1,0 +1,98 @@
+{
+  "_about": "The I-360 (Special Immigrant Juvenile) petition packet (src/packet.py, src/i360.py): the step before the I-485. The firm's G-28 for the petition and the I-360 on top, then the evidence USCIS asks for: the state court order with SIJ findings (required) and proof of age (the birth certificate, required), then identity and entry documents. Built into its own files (packet_i360.pdf, packet_i360.json), so it never replaces the I-485 packet. The attorney approves titles and order.",
+  "filing": "i360",
+  "title": "I-360 petition (Special Immigrant Juvenile)",
+  "packet_pdf": "packet_i360.pdf",
+  "manifest": "packet_i360.json",
+  "choices": "packet_choices_i360.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i360.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i360",
+    "i360"
+  ],
+  "handwork": [],
+  "exhibits": [
+    {
+      "id": "court_order",
+      "title": "State court order with Special Immigrant Juvenile findings (certified copy)",
+      "types": [
+        "sij_order"
+      ],
+      "required": true
+    },
+    {
+      "id": "birth",
+      "title": "Birth certificate, with certified English translation (proof of age)",
+      "types": [
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "passport",
+      "title": "Passport identity page and any U.S. visa",
+      "types": [
+        "passport",
+        "visa"
+      ],
+      "may_be_absent": {
+        "passport": "i360_passport"
+      }
+    },
+    {
+      "id": "admission",
+      "title": "Evidence of entry: Form I-94",
+      "types": [
+        "i94"
+      ],
+      "may_be_absent": {
+        "i94": "i360_i94"
+      }
+    },
+    {
+      "id": "other_id",
+      "title": "Other identity documents: work permit",
+      "types": [
+        "work_permit"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "Other USCIS notices",
+      "types": [
+        "uscis_notice"
+      ]
+    },
+    {
+      "id": "immigration_court",
+      "title": "Immigration court documents (Notice to Appear, orders)",
+      "types": [
+        "notice_to_appear"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "i360_approval": "An approved I-360 is already in the folder: this petition has been decided. File the I-485 packet instead.",
+    "ssn_card": "Not needed for the I-360: it goes with the I-485.",
+    "drivers_license": "Not needed for the I-360: it goes with the I-485.",
+    "criminal_record": "Not filed with the I-360: the attorney decides; it goes with the I-485.",
+    "marriage_certificate": "Ask the attorney: an SIJ petitioner must be unmarried.",
+    "us_passport": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "citizenship_certificate": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "green_card": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "us_birth_certificate": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "tax_return": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "w2": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "pay_stub": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "bank_statement": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "lease": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "utility_bill": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "divorce_decree": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case)."
+  }
+}

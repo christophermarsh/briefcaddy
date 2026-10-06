@@ -1,0 +1,213 @@
+{
+  "_about": "The T visa application (src/t_visa.py): the G-28 and Form I-914, a Supplement A for each family member applied for, Form I-192 when the attorney files one, then the evidence in the order of the Form I-914 instructions (edition 01/20/25: 'Initial Evidence' and 'Evidence to Establish T Nonimmigrant Status') and 8 CFR 214.204(c): the signed personal statement, then evidence of each eligibility requirement (the victimization, physical presence, law enforcement cooperation or its age or trauma exception, extreme hardship), the family members' relationship and any danger of retaliation, and the records behind any Part 4 Yes. Supplement B is optional evidence (8 CFR 214.204(e)): it goes in the law enforcement exhibit when the agency signs one. DRAFT: the attorney approves titles and order.",
+  "filing": "i914",
+  "title": "T visa application (I-914)",
+  "packet_pdf": "packet_i914.pdf",
+  "manifest": "packet_i914.json",
+  "choices": "packet_choices_i914.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i914.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i914",
+    "i914"
+  ],
+  "generated": {
+    "i914a_1": {
+      "short": "I-914 Supplement A (1)",
+      "title": "Form I-914, Supplement A, Application for Derivative T Nonimmigrant Status: family member 1",
+      "output": "i914a_1_filled.pdf",
+      "signatures": {
+        "client": [
+          "pFLine6Signature[0]",
+          "Part 5, item 6, the principal applicant's (the client's) signature"
+        ],
+        "family member": [
+          "pFDerivateSignature[0]",
+          "Part 5, item 7, the family member's signature (required when they are in the U.S.)"
+        ],
+        "attorney": [
+          "pHLine8PrepSignature[0]",
+          "Part 7, the preparer's signature"
+        ]
+      },
+      "attorney_completes": [
+        "Part 3: other names, earlier marriages, the passport, the last entry, a consulate abroad, earlier trips and court dates, as they apply.",
+        "Part 4, when not every answer is No: each answer, the table, a Part 8 explanation, and a Form I-192 for this family member (8 CFR 214.211(c)(4))."
+      ]
+    },
+    "i914a_2": {
+      "short": "I-914 Supplement A (2)",
+      "title": "Form I-914, Supplement A, Application for Derivative T Nonimmigrant Status: family member 2",
+      "output": "i914a_2_filled.pdf",
+      "signatures": {
+        "client": [
+          "pFLine6Signature[0]",
+          "Part 5, item 6, the principal applicant's (the client's) signature"
+        ],
+        "family member": [
+          "pFDerivateSignature[0]",
+          "Part 5, item 7, the family member's signature (required when they are in the U.S.)"
+        ],
+        "attorney": [
+          "pHLine8PrepSignature[0]",
+          "Part 7, the preparer's signature"
+        ]
+      },
+      "attorney_completes": [
+        "Part 3: other names, earlier marriages, the passport, the last entry, a consulate abroad, earlier trips and court dates, as they apply.",
+        "Part 4, when not every answer is No: each answer, the table, a Part 8 explanation, and a Form I-192 for this family member (8 CFR 214.211(c)(4))."
+      ]
+    },
+    "i914a_3": {
+      "short": "I-914 Supplement A (3)",
+      "title": "Form I-914, Supplement A, Application for Derivative T Nonimmigrant Status: family member 3",
+      "output": "i914a_3_filled.pdf",
+      "signatures": {
+        "client": [
+          "pFLine6Signature[0]",
+          "Part 5, item 6, the principal applicant's (the client's) signature"
+        ],
+        "family member": [
+          "pFDerivateSignature[0]",
+          "Part 5, item 7, the family member's signature (required when they are in the U.S.)"
+        ],
+        "attorney": [
+          "pHLine8PrepSignature[0]",
+          "Part 7, the preparer's signature"
+        ]
+      },
+      "attorney_completes": [
+        "Part 3: other names, earlier marriages, the passport, the last entry, a consulate abroad, earlier trips and court dates, as they apply.",
+        "Part 4, when not every answer is No: each answer, the table, a Part 8 explanation, and a Form I-192 for this family member (8 CFR 214.211(c)(4))."
+      ]
+    },
+    "i914a_4": {
+      "short": "I-914 Supplement A (4)",
+      "title": "Form I-914, Supplement A, Application for Derivative T Nonimmigrant Status: family member 4",
+      "output": "i914a_4_filled.pdf",
+      "signatures": {
+        "client": [
+          "pFLine6Signature[0]",
+          "Part 5, item 6, the principal applicant's (the client's) signature"
+        ],
+        "family member": [
+          "pFDerivateSignature[0]",
+          "Part 5, item 7, the family member's signature (required when they are in the U.S.)"
+        ],
+        "attorney": [
+          "pHLine8PrepSignature[0]",
+          "Part 7, the preparer's signature"
+        ]
+      },
+      "attorney_completes": [
+        "Part 3: other names, earlier marriages, the passport, the last entry, a consulate abroad, earlier trips and court dates, as they apply.",
+        "Part 4, when not every answer is No: each answer, the table, a Part 8 explanation, and a Form I-192 for this family member (8 CFR 214.211(c)(4))."
+      ]
+    }
+  },
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The client's detailed personal statement in their own words, signed (8 CFR 214.204(c)(1)): the trafficking, how the presence in the U.S. relates to it, the harm feared on removal, and the cooperation with law enforcement or why an exception applies."
+    },
+    {
+      "kind": "check",
+      "text": "Part 4: explain every Yes in Part 9, including whether it relates to the trafficking (the I-914 instructions, Part 4)."
+    },
+    {
+      "kind": "check",
+      "text": "Each family member who is in the U.S. signs their own Supplement A, or USCIS rejects it (the I-914 instructions)."
+    },
+    {
+      "kind": "check",
+      "text": "No fee and no card authorization: Form G-1055 lists $0 for the I-914, its Supplements A and B, and a T applicant's I-192. USCIS sends the biometrics appointment."
+    },
+    {
+      "kind": "check",
+      "text": "Supplement B, if the agency signed one: the original, with the official's and the supervisor's ink signatures, in the law enforcement exhibit (the Supplement B instructions). It is optional: the packet doesn't wait for it."
+    },
+    {
+      "kind": "check",
+      "text": "Any document in a foreign language: a full English translation with the translator's certification (the I-914 instructions)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "statement",
+      "title": "The applicant's signed personal statement (8 CFR 214.204(c)(1))",
+      "types": [
+        "declaration"
+      ],
+      "required": true
+    },
+    {
+      "id": "victim",
+      "title": "Evidence of the trafficking: police and court records, affidavits, documents from the trafficking scheme, news reports (8 CFR 214.206(a)(3))",
+      "types": [
+        "police_report"
+      ]
+    },
+    {
+      "id": "presence",
+      "title": "Physical presence on account of the trafficking: how the client entered (I-94, passport, visa, parole) and the services and treatment since (8 CFR 214.207(c); the I-914 instructions)",
+      "types": [
+        "i94",
+        "passport",
+        "visa"
+      ]
+    },
+    {
+      "id": "law_enforcement",
+      "title": "Law enforcement: Supplement B signed by the agency (optional), Continued Presence, and other evidence of complying with reasonable requests (8 CFR 214.204(e), (i), 214.208(d))",
+      "types": []
+    },
+    {
+      "id": "age",
+      "title": "The age exception: evidence of the client's age at the time of the trafficking (8 CFR 214.208(e)(2))",
+      "types": [
+        "birth_certificate",
+        "translation_certification"
+      ]
+    },
+    {
+      "id": "trauma",
+      "title": "The trauma exception: a professional's statement, medical or psychological records (8 CFR 214.208(e)(1))",
+      "types": [
+        "medical_record"
+      ]
+    },
+    {
+      "id": "hardship",
+      "title": "Extreme hardship involving unusual and severe harm on removal, and country conditions (8 CFR 214.209(c))",
+      "types": [
+        "country_conditions"
+      ]
+    },
+    {
+      "id": "family",
+      "title": "Family members: proof of each relationship (marriage and birth certificates, earlier marriages ended) and of any danger of retaliation (8 CFR 214.211(c), (f); the I-914 instructions)",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "inadmissibility",
+      "title": "Records for any Part 4 Yes and the Form I-192's evidence: arrest and court records, immigration court papers (8 CFR 212.16)",
+      "types": [
+        "criminal_record",
+        "notice_to_appear"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "The firm files a new G-28 with this application.",
+    "ssn_card": "Not asked for with the I-914.",
+    "drivers_license": "Not asked for with the I-914.",
+    "work_permit": "Not asked for with the I-914."
+  }
+}

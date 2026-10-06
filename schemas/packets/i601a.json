@@ -1,0 +1,102 @@
+{
+  "_about": "The provisional unlawful presence waiver (Form I-601A, src/waiver.py), per uscis.gov/i-601a (updated 06/01/2026) and 8 CFR 212.7(e): the G-28 and the I-601A, then the Department of State immigrant visa fee receipt (PAID), the approved petition, the qualifying relative's status and relationship, the extreme hardship evidence, and evidence of admission or parole. The attorney approves titles and order.",
+  "filing": "i601a",
+  "title": "Provisional unlawful presence waiver (I-601A)",
+  "packet_pdf": "packet_i601a.pdf",
+  "manifest": "packet_i601a.json",
+  "choices": "packet_choices_i601a.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i601a.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i601a",
+    "i601a"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The Department of State immigrant visa fee receipt showing PAID (not 'In Process' or an invoice): USCIS's checklist names it first."
+    },
+    {
+      "kind": "attach",
+      "text": "The extreme hardship evidence and the attorney's brief: medical, financial, family and country conditions for the qualifying relative."
+    },
+    {
+      "kind": "check",
+      "text": "No I-765 or I-131 with it: USCIS rejects them (8 CFR 212.7(e)(2)(ii))."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "petition",
+      "title": "The approved immigrant visa petition (I-797) and NVC's case documents",
+      "types": [
+        "uscis_notice",
+        "i360_approval"
+      ],
+      "required": true
+    },
+    {
+      "id": "relative",
+      "title": "The qualifying relative: proof of U.S. citizenship or permanent residence, and of the relationship",
+      "types": [
+        "us_passport",
+        "citizenship_certificate",
+        "us_birth_certificate",
+        "green_card",
+        "marriage_certificate",
+        "birth_certificate"
+      ],
+      "required": true
+    },
+    {
+      "id": "hardship",
+      "title": "Extreme hardship evidence",
+      "types": [
+        "medical_record",
+        "tax_return",
+        "w2",
+        "pay_stub",
+        "bank_statement",
+        "lease",
+        "utility_bill",
+        "declaration",
+        "country_conditions"
+      ]
+    },
+    {
+      "id": "admission",
+      "title": "Evidence of admission or parole (I-94, passport)",
+      "types": [
+        "i94",
+        "passport",
+        "visa"
+      ]
+    },
+    {
+      "id": "court",
+      "title": "Immigration court documents (an administrative closure order)",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "criminal",
+      "title": "Certified police and court records",
+      "types": [
+        "criminal_record",
+        "police_report"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this application.",
+    "work_permit": "Not asked for with the I-601A.",
+    "ssn_card": "Not asked for with the I-601A.",
+    "drivers_license": "Not asked for with the I-601A."
+  }
+}

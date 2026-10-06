@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "i94_number": {
+    "pattern": "^(?:[0-9]{11}|[0-9]{9}[A-Z][0-9])$",
+    "source": "https://i94.cbp.dhs.gov/help",
+    "checked": "2026-10-04",
+    "basis": "CBP I-94/I-95 FAQ: earlier numbers contain 11 digits; the alphanumeric format has nine digits, one letter, then one digit.",
+    "message": "Check the I-94 number: expected 11 digits, or nine digits followed by a letter and a digit. Correct it from the original or leave it blank."
+  }
+}

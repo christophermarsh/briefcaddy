@@ -1,0 +1,26 @@
+{
+  "_about": "A client's new address (src/address_change.py): the filled Form AR-11 and a sheet with the EOIR-33's answers and every pending USCIS case to update. No cover letter: the AR-11 is a card mailed on its own (or replaced by the online account's tool), and the EOIR-33 is filed in the EOIR Case Portal.",
+  "filing": "address",
+  "title": "Change of address (AR-11, EOIR-33)",
+  "packet_pdf": "packet_address.pdf",
+  "manifest": "packet_address.json",
+  "choices": "packet_choices_address.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": false,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": ["address_sheet", "ar11"],
+  "generated": {
+    "address_sheet": {"short": "Address sheet", "title": "Change of address: the new address, the EOIR-33's answers, the pending USCIS cases", "output": "address_change_sheet.pdf",
+                      "signatures": {}, "attorney_completes": []}
+  },
+  "handwork": [
+    {"kind": "check", "text": "USCIS recommends the change of address tool in the client's USCIS online account (it updates every case). If it is used, record it: the paper AR-11 isn't needed."},
+    {"kind": "check", "text": "Each pending USCIS case on the sheet: change its address too (online, or by calling the USCIS Contact Center)."},
+    {"kind": "check", "text": "A court case: Form EOIR-33 in the EOIR Case Portal within 5 days of the move, served on DHS, then mark the step done on the case page."}
+  ],
+  "exhibits": [],
+  "leave_out": {}
+}

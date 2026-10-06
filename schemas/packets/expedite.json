@@ -1,0 +1,58 @@
+{
+  "_about": "An expedite request (src/expedite.py), per USCIS's 'Expedite Requests' page: no form. A one-page request sheet for the Contact Center call or the online account's secure message, then the evidence uploaded to the online account. An appeal or motion: a letter marked EXPEDITE REQUEST to the AAO.",
+  "filing": "expedite",
+  "title": "Expedite request",
+  "packet_pdf": "packet_expedite.pdf",
+  "manifest": "packet_expedite.json",
+  "choices": "packet_choices_expedite.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "expedite_sheet"
+  ],
+  "generated": {
+    "expedite_sheet": {
+      "short": "Expedite request",
+      "title": "Expedite request: the case, the criterion, why, the evidence",
+      "output": "expedite_request.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    }
+  },
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "Call the USCIS Contact Center (800-375-5283) or send the online account's secure message (reason: expedite), reading the sheet."
+    },
+    {
+      "kind": "check",
+      "text": "Upload each piece of evidence to the client's USCIS online account."
+    },
+    {
+      "kind": "check",
+      "text": "Record the date, the reference number and who you spoke to on the case page. Ask only once."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "evidence",
+      "title": "Evidence of the urgency (doctor's or hospital letter, death certificate, employer's letter, invitation, proof of the error)",
+      "types": [
+        "medical_record",
+        "declaration",
+        "uscis_notice",
+        "work_permit",
+        "pay_stub",
+        "lease",
+        "utility_bill"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal."
+  }
+}

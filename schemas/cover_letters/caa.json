@@ -1,0 +1,44 @@
+{
+  "_about": "The cover letter for a green card under the Cuban Adjustment Act or as a HRIFA dependent (src/fill/cover_letter.py): the firm's letterhead, signer and closing from schemas/cover_letter.json. The address (the family-based lockbox for CAA, the non-family lockbox for HRIFA, by the client's state), the subject (Pub. L. 89-732 section 1, or HRIFA section 902) and the fees (Form G-1055: the I-485's fee and the I-765 with a pending I-485, each its own Form G-1450) come from src/cuban_adjustment.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": ["[set by the filing's module]"],
+  "noun": "application",
+  "who": "Applicant",
+  "form_order": ["g28", "i485", "i765"],
+  "always_forms": ["i693"],
+  "forms": {
+    "g28": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i485": "Applicant’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i765": "Applicant’s I-765 - Application for Employment Authorization",
+    "i693": "Applicant’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    ["photos", "{photos} Passport Pictures of the Applicant"],
+    ["passport", "Copy of Applicant’s Passport"],
+    ["national_id", "Copy of Applicant’s National Identity Document"],
+    ["drivers_license", "Copy of Applicant’s Driver’s License"],
+    ["birth_certificate", "Copy of Applicant’s Birth Certificate and Translation"],
+    ["i94", "Copy of Applicant’s Form I-94 (Evidence of Inspection and Admission or Parole)"],
+    ["visa", "Copy of Applicant’s U.S. Visa"],
+    ["citizenship_certificate", "Copy of Applicant’s Cuban Nationality Certificate or Citizenship Letter"],
+    ["green_card", "Copy of the Principal’s Permanent Resident Card"],
+    ["uscis_notice", "Copies of USCIS Notices"],
+    ["lease", "Evidence of Physical Presence: Lease"],
+    ["utility_bill", "Evidence of Physical Presence: Bills"],
+    ["pay_stub", "Evidence of Physical Presence: Pay Stubs"],
+    ["bank_statement", "Evidence of Physical Presence: Bank Statements"],
+    ["w2", "Evidence of Physical Presence: W-2 Forms"],
+    ["tax_return", "Evidence of Physical Presence: Tax Returns"],
+    ["marriage_certificate", "Copy of Marriage Certificate"],
+    ["divorce_decree", "Copies of Documents Ending Prior Marriages"],
+    ["work_permit", "Copy of Applicant’s Employment Authorization Card"],
+    ["ssn_card", "Copy of Applicant’s Social Security Card"],
+    ["notice_to_appear", "Copies of Applicant’s Immigration Court Documents"],
+    ["criminal_record", "Certified Police and Court Records"]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {"kind": "sign", "text": "Cover letter: the attorney signs it."},
+    {"kind": "attach", "text": "Enclose each fee the cover letter states by its own Form G-1450 (a U.S. card) or Form G-1650 (a U.S. bank account), never a check."}
+  ]
+}

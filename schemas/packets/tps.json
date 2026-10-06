@@ -1,0 +1,105 @@
+{
+  "_about": "A TPS application (src/tps.py), per uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026), the I-821 Instructions checklist and each country's own page, read 10/02/2026: the G-28, the I-821 and, when the client asks for a work permit, the I-765 under (a)(12) or (c)(19) in the same package. Evidence: identity and nationality (a passport, or a birth certificate with photo ID, or a national ID), the date of entry, continuous residence in the U.S. since the country's date, and certified court dispositions for any arrest or conviction. Only while a registration period is open (schemas/tps.json). The attorney approves titles and order.",
+  "filing": "tps",
+  "title": "TPS application (I-821 with the I-765)",
+  "packet_pdf": "packet_tps.pdf",
+  "manifest": "packet_tps.json",
+  "choices": "packet_choices_tps.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_tps.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_tps",
+    "i821",
+    "i765_tps"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "Two identical color passport-style photos, taken recently, for the I-765, with the client's name and A-Number lightly in pencil on the back (Form I-765 Instructions), when a work permit is asked for."
+    },
+    {
+      "kind": "check",
+      "text": "The package is received inside the registration period (the panel names it): USCIS rejects an application outside it unless late filing is allowed (8 CFR 244.17; the TPS page)."
+    },
+    {
+      "kind": "check",
+      "text": "Each fee on its own card payment (the I-821, its biometric fee, the I-765, its Pub. L. 119-21 fee): a combined payment can get the package rejected."
+    },
+    {
+      "kind": "check",
+      "text": "Every Yes in Part 7 is explained in Part 11 with the place and date (the I-821 form), with the certified court dispositions for any arrest or conviction."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "identity",
+      "title": "Identity and nationality: the passport, or the birth certificate with photo ID, or a national ID",
+      "types": [
+        "passport",
+        "national_id",
+        "birth_certificate",
+        "drivers_license"
+      ],
+      "required": true
+    },
+    {
+      "id": "entry",
+      "title": "The date of entry into the U.S.: the I-94, or the passport page with the entry stamp",
+      "types": [
+        "i94",
+        "visa"
+      ],
+      "required": true
+    },
+    {
+      "id": "residence",
+      "title": "Continuous residence in the U.S.: employment records, rent receipts or utility bills, school or medical records",
+      "types": [
+        "lease",
+        "utility_bill",
+        "pay_stub",
+        "w2",
+        "tax_return",
+        "medical_record",
+        "school_record",
+        "bank_statement"
+      ],
+      "required": true
+    },
+    {
+      "id": "court",
+      "title": "Certified court dispositions, arrest reports and charging documents, for any arrest, charge or conviction",
+      "types": [
+        "criminal_record",
+        "court_disposition",
+        "police_report"
+      ]
+    },
+    {
+      "id": "prior",
+      "title": "TPS already granted: the approval notice and the work permit",
+      "types": [
+        "tps_approval",
+        "work_permit",
+        "uscis_notice"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this application.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "green_card": "Not asked for with a TPS application.",
+    "ssn_card": "Not asked for with a TPS application.",
+    "sij_order": "Not asked for with a TPS application.",
+    "i360_approval": "Not asked for with a TPS application.",
+    "i485_receipt": "Not asked for with a TPS application.",
+    "marriage_certificate": "Not asked for with a TPS application.",
+    "notice_to_appear": "Not asked for with a TPS application (the I-821 asks about proceedings in Part 2; the attorney attaches what applies)."
+  }
+}

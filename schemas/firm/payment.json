@@ -1,0 +1,5 @@
+{
+  "_about": "How the firm pays USCIS fees on mailed filings (src/payment.py). Since 10/28/2025 USCIS takes only a card (Form G-1450) or a U.S. bank debit (Form G-1650) for a mailed filing. A check or money order needs a signed Form G-1651 exemption (uscis.gov/g-1651). Each packet gets one pre-filled G-1450 per payment: the applicant's name and the exact amount.",
+  "card_holder": null,
+  "_card_holder": "null: the card holder's name and billing address are written by hand (the firm's or the client's card). 'client': filled with the client's (or, for an I-130, the petitioner's) name and the client's home address. The card number, expiry, CVV and signature are never filled. The attorney decides."
+}

@@ -1,0 +1,14 @@
+{
+  "_note": "The family-sponsored Visa Bulletin cut-offs (src/preference.py), set by the attorney each month: from USCIS's 'Adjustment of Status Filing Charts from the Visa Bulletin' page (which chart ('Dates for Filing' or 'Final Action Dates') USCIS accepts for family-sponsored filings this month) and the Department of State's Visa Bulletin for that month. Each cut-off is a date (YYYY-MM-DD) or 'C' (current). Leave null until checked: a preference case then shows that the setting is missing, never a guess. Chargeability: the country of birth; every other country is 'ALL CHARGEABILITY' (the attorney checks cross-chargeability).",
+  "month": null,
+  "chart": "Dates for Filing",
+  "source": null,
+  "cutoff": {
+    "F1": {"ALL CHARGEABILITY": null, "CHINA": null, "INDIA": null, "MEXICO": null, "PHILIPPINES": null},
+    "F2A": {"ALL CHARGEABILITY": null, "CHINA": null, "INDIA": null, "MEXICO": null, "PHILIPPINES": null},
+    "F2B": {"ALL CHARGEABILITY": null, "CHINA": null, "INDIA": null, "MEXICO": null, "PHILIPPINES": null},
+    "F3": {"ALL CHARGEABILITY": null, "CHINA": null, "INDIA": null, "MEXICO": null, "PHILIPPINES": null},
+    "F4": {"ALL CHARGEABILITY": null, "CHINA": null, "INDIA": null, "MEXICO": null, "PHILIPPINES": null}
+  },
+  "chargeability": {"CHINA": "CHINA", "INDIA": "INDIA", "MEXICO": "MEXICO", "PHILIPPINES": "PHILIPPINES"}
+}

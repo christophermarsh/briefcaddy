@@ -1,0 +1,28 @@
+{
+  "_source": "USCIS, 'Filing Addresses for Certain Forms Filed in Connection With a VAWA, T, or U Visa Application/Petition' (uscis.gov/Certain-VAWA-T-U-Filing-Locations), page last updated 02/05/2026, read 2026-10-02. The I-360's own page ('Direct Filing Addresses for Form I-360', updated 11/18/2025: 'Self-Petitioning Abused Spouse, Child, or Parent', whether the abuser is a U.S. citizen or a permanent resident) and the I-485's ('Direct Filing Addresses for Form I-485', updated 12/01/2025: 'VAWA self-petitioner') both send VAWA filings here, by the state where the client lives. Marshall Islands is not on the page: the attorney checks.",
+  "checked": "2026-10-02",
+  "page_updated": "02/05/2026",
+  "lockboxes": {
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 4205", "CAROL STREAM, IL 60197-4205"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 4205)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["FL"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 650745", "DALLAS, TX 75265-0745"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 650745)", "2501 S. STATE HWY. 121 BUSINESS", "SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["AL", "GA", "KY", "LA", "MS", "TN", "TX"]
+    },
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 20020", "PHOENIX, AZ 85036-0020"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 20020)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AS", "AA", "AE", "AP", "AZ", "AR", "CA", "CO", "MP", "GU", "HI", "ID", "IA", "KS", "FM", "MN", "MO", "MT", "NE", "NV", "NM", "ND",
+                 "OK", "OR", "PW", "PR", "SD", "VI", "UT", "WA", "WY"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 8075", "CHICAGO, IL 60680-8075"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 8075)", "131 S. DEARBORN ST. - 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["AK", "CT", "DC", "DE", "IL", "IN", "ME", "MD", "MA", "MI", "NH", "NJ", "NY", "NC", "OH", "PA", "RI", "SC", "VT", "VA", "WV", "WI"]
+    }
+  }
+}

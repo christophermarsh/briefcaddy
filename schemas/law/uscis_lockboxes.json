@@ -1,0 +1,26 @@
+{
+  "_source": "USCIS, 'USCIS Lockbox Filing Locations Chart for Certain Family-Based Forms' (uscis.gov/forms/all-forms/uscis-lockbox-filing-locations-chart-for-certain-family-based-forms), page last updated 10/11/2024, read 2026-10-01. Applies to family-based Forms I-130, I-131, I-360, I-485, I-765, I-824 and I-864, and, per USCIS's Direct Filing Addresses for Form I-360, to a Special Immigrant Juvenile I-360 filed alone or with an I-485. Re-check this page before relying on it: USCIS moves lockboxes.",
+  "checked": "2026-10-01",
+  "lockboxes": {
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: AOS", "P.O. BOX 805887", "CHICAGO, IL 60680"],
+      "courier": ["USCIS", "ATTN: AOS (BOX 805887)", "131 S. DEARBORN ST., 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["CA", "MP", "CT", "DC", "FL", "GU", "IL", "ME", "MA", "MN", "NH", "NJ", "OH", "PR", "RI", "SC", "VI", "VT"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: AOS", "P.O. BOX 650288", "DALLAS, TX 75265-0288"],
+      "courier": ["USCIS", "ATTN: AOS (BOX 650288)", "2501 S. STATE HWY. 121 BUSINESS, SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["TX"]
+    },
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: AOS", "P.O. BOX 4109", "CAROL STREAM, IL 60197-4109"],
+      "courier": ["USCIS", "ATTN: AOS (BOX 4109)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["DE", "GA", "IN", "IA", "KS", "MD", "MI", "MS", "MO", "NE", "NY", "NC", "ND", "PA", "SD", "VA", "WV", "WI"]
+    },
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: AOS", "P.O. BOX 20500", "PHOENIX, AZ 85036-0500"],
+      "courier": ["USCIS", "ATTN: AOS (BOX 20500)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AL", "AK", "AZ", "AR", "CO", "HI", "ID", "KY", "LA", "MT", "NV", "NM", "OK", "OR", "TN", "UT", "WA", "WY"]
+    }
+  }
+}

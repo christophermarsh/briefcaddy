@@ -1,0 +1,57 @@
+{
+  "_about": "A hearing on a denied N-400 (Form N-336, src/hearing_request.py), per uscis.gov/n-336 (updated 06/01/2026) and 8 CFR 336.2: the G-28 and the N-336, then the denial notice, the brief and new evidence. Within 30 days of receiving the denial (33 if mailed). The attorney approves titles and order.",
+  "filing": "n336",
+  "title": "Hearing on a denied N-400 (N-336)",
+  "packet_pdf": "packet_n336.pdf",
+  "manifest": "packet_n336.json",
+  "choices": "packet_choices_n336.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_n336.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_n336",
+    "n336"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The brief and any new evidence: why the denial was wrong (Part 4 holds the summary)."
+    },
+    {
+      "kind": "check",
+      "text": "Denied for the English or civics test: the client can retake the part they failed at the hearing. Prepare them."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "decision",
+      "title": "The N-400 denial notice",
+      "types": [
+        "uscis_notice"
+      ],
+      "required": true
+    },
+    {
+      "id": "new_evidence",
+      "title": "New evidence",
+      "types": [
+        "declaration",
+        "tax_return",
+        "criminal_record",
+        "police_report",
+        "green_card",
+        "passport",
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this filing.",
+    "n400": "Not sent again: USCIS has it."
+  }
+}

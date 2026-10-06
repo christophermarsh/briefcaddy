@@ -1,0 +1,10 @@
+{
+  "_about": "Copy to deployment.json for an installation (src/deployment.py). mode: 'hosted' (we run the server for the firm) or 'on_premises' (the firm runs it on its own machine). provider: who makes and supports the software, as the screens name it.",
+  "mode": "on_premises",
+  "provider": {
+    "name": "the software provider",
+    "email": "",
+    "phone": "",
+    "url": ""
+  }
+}

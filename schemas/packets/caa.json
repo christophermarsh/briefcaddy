@@ -1,0 +1,49 @@
+{
+  "_about": "A green card under the Cuban Adjustment Act (Pub. L. 89-732; 8 CFR 245.2(a)(2)(ii)) or as a HRIFA dependent (8 CFR 245.15(d)): src/cuban_adjustment.py. The G-28, the I-485 (Part 2, 3.f) and, unless the client doesn't want one, the I-765 (c)(9) in the same envelope (USCIS's CAA page: file it with the I-485 or while it is pending). The evidence in the order of the I-485 Instructions (edition 09/18/26, 'What Evidence Must You Submit', items 2-6, 10-12; the CAA and HRIFA additional instructions): identity, birth certificate, the inspection and admission or parole, the category (Cuban nativity or citizenship and one year of physical presence; for a spouse or child, the principal's proof, the relationship and living together; for a HRIFA dependent, Haitian nationality and the relationship), then court and police records. Mailed to the family-based lockbox (CAA) or the non-family lockbox (HRIFA) for the client's state (USCIS's 'Direct Filing Addresses for Form I-485', updated 12/01/2025). DRAFT: the attorney approves titles and order.",
+  "filing": "caa",
+  "title": "Green card under the Cuban Adjustment Act or HRIFA (I-485)",
+  "packet_pdf": "packet_caa.pdf",
+  "manifest": "packet_caa.json",
+  "choices": "packet_choices_caa.json",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_caa.json",
+  "index_sheet": false,
+  "forms": ["g28", "i485", "i765"],
+  "handwork": [
+    {"kind": "attach", "text": "Four identical passport photos (two for the I-485, two for the I-765); the client's name and A-Number lightly in pencil on the back."},
+    {"kind": "attach", "text": "Form I-693 (medical exam) in the civil surgeon's sealed envelope. USCIS may reject an I-485 filed without it (I-485 Instructions, item 9)."},
+    {"kind": "check", "text": "An inadmissibility ground (a crime, an earlier removal, a J-1 two-year rule): the waiver or other relief goes with the I-485 (Form I-601, I-212 or I-612). The attorney decides."}
+  ],
+  "variants": {
+    "no_ead": {
+      "_about": "The client doesn't ask for a work permit now: the I-485 alone (an I-765 (c)(9) can follow while the I-485 is pending).",
+      "forms": ["g28", "i485"],
+      "handwork": [
+        {"kind": "attach", "text": "Two identical passport photos; the client's name and A-Number lightly in pencil on the back."},
+        {"kind": "attach", "text": "Form I-693 (medical exam) in the civil surgeon's sealed envelope. USCIS may reject an I-485 filed without it (I-485 Instructions, item 9)."},
+        {"kind": "check", "text": "An inadmissibility ground (a crime, an earlier removal, a J-1 two-year rule): the waiver or other relief goes with the I-485 (Form I-601, I-212 or I-612). The attorney decides."}
+      ]
+    }
+  },
+  "exhibits": [
+    {"id": "identity", "title": "Government-issued identity document with photograph: the passport (for a Cuban principal, the Cuban passport is also proof of Cuban nativity or citizenship)", "types": ["passport", "national_id", "drivers_license"]},
+    {"id": "birth", "title": "Birth certificate, with certified English translation (a Cuban birth certificate from the civil registry in Cuba also proves Cuban nativity)", "types": ["birth_certificate", "translation_certification"], "required": true},
+    {"id": "admission", "title": "Evidence of inspection and admission or inspection and parole: Form I-94, the parole document, the admission or parole stamp and any U.S. visa", "types": ["i94", "visa"], "required": true, "may_be_absent": {"i94": "i485_admission_if_available"}},
+    {"id": "category", "title": "The category: Cuban nationality certificate or citizenship letter; for a spouse or child, the principal's I-485 notice or green card (a HRIFA dependent: the principal's HRIFA approval)", "types": ["citizenship_certificate", "green_card", "uscis_notice"]},
+    {"id": "presence", "title": "Evidence of physical presence in the U.S. for at least one year: lease, bills, pay stubs, bank statements, tax returns", "types": ["lease", "utility_bill", "pay_stub", "bank_statement", "w2", "tax_return"]},
+    {"id": "relationship", "title": "A spouse or child: the marriage certificate (and the end of any earlier marriage) and evidence of living with the principal", "types": ["marriage_certificate", "divorce_decree"]},
+    {"id": "other_id", "title": "Other identity documents: work permit, Social Security card", "types": ["work_permit", "ssn_card"]},
+    {"id": "immigration_court", "title": "Immigration court documents (the Notice to Appear, the judge's orders)", "types": ["notice_to_appear"]},
+    {"id": "criminal", "title": "Certified police and court records", "types": ["criminal_record", "police_report"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "medical_record": "Not asked for with the I-485: the medical exam goes in the civil surgeon's sealed I-693.",
+    "sij_order": "A state court SIJ order: a different basis for a green card. Ask the attorney which one this filing is.",
+    "i360_approval": "An I-360: a different basis for a green card. Ask the attorney which one this filing is.",
+    "declaration": "Not asked for with the I-485 under the Cuban Adjustment Act.",
+    "country_conditions": "Asylum evidence, not asked for with this I-485.",
+    "news_article": "Asylum evidence, not asked for with this I-485.",
+    "photograph": "Not asked for with this I-485 (the passport photos go in by hand)."
+  }
+}

@@ -1,0 +1,1701 @@
+{
+  "_status": "DRAFT: every number and every sentence below is for the attorney to approve before a client sees it (docs/maintenance.md, item journey_rules). The client wording also needs the firm's own Portuguese and Spanish review, and the Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator.",
+  "checked": "2026-10-01",
+  "deadlines": {
+    "motion_or_appeal_days": 30,
+    "motion_or_appeal_mail_days": 3,
+    "_motion_or_appeal": "A motion (Form I-290B) or an appeal is due within 30 days of a decision, 33 when the decision was mailed (8 CFR 103.3(a)(2), 103.5(a)(1), 103.8(b)). The decision letter states the deadline and the right to appeal or not: the attorney reads it.",
+    "ead_renewal_days_before": 180,
+    "_ead_renewal": "A work permit renewal may be filed up to 180 days before the card expires (USCIS, Form I-765 instructions).",
+    "receipt_expected_days": 45,
+    "_receipt_expected": "Firm choice: a filing with no receipt notice this many days after it was mailed gets checked (lockbox rejection, lost mail, payment).",
+    "naturalization_years": 5,
+    "naturalization_early_days": 90,
+    "_naturalization": "Form N-400 may be filed 90 days before the client reaches the required years as a permanent resident: 5 years, or 3 when married to and living with a U.S. citizen spouse (INA 316(a), 319(a), 334(a)).",
+    "urgent_days": 14,
+    "soon_days": 60,
+    "reminder_days": [
+      7,
+      1
+    ],
+    "rfe_mail_days_before": 7,
+    "_rfe_mail": "Firm choice: an RFE or NOID response is mailed at least this many days before its due date. USCIS must RECEIVE it by then. Inside this margin the check asks for overnight courier.",
+    "court_filing_days_before": {
+      "master": 15,
+      "individual": 15
+    },
+    "_court_filing": "Immigration Court Practice Manual, version released February 20, 2020 (data/reference/ic_practice_manual.pdf), Chapter 3.1(b): non-detained, filings are due at least 15 days before an individual calendar hearing, and at least 15 days before a master calendar hearing when asking for a ruling at or before it; responses within 10 days of the filing. Detained: as the court specifies. Chapter 3.1(c)(ii)(B): the hearing is day 0, calendar days count, and a deadline on a Saturday, Sunday or legal holiday moves to the next business day. EOIR revises the manual: the attorney confirms against the current online version.",
+    "card_renewal_months_before": 6,
+    "_card_renewal": "Form I-90 may be filed when a 10-year green card has expired or will expire within 6 months (Form I-90 Instructions, 01/20/25).",
+    "court_filing_source": "Immigration Court Practice Manual 3.1(b), version of 02/20/2020",
+    "naturalization_years_spouse": 3,
+    "n336_days": 30,
+    "_n336": "A denied N-400: request a hearing on Form N-336 within 30 days after the client receives the denial (8 CFR 336.2(a)). The timeline counts 33 from the notice date when it was mailed; the attorney checks the date it was received.",
+    "daca_renewal_earliest_days": 150,
+    "daca_renewal_by_days": 120,
+    "daca_renewal_grace_years": 1,
+    "_daca_renewal": "DACA renewals (src/daca.py), read 2026-10-02: USCIS 'strongly encourage[s]' filing 'between 120 and 150 days (4 to 5 months) before the expiration date located on your current Form I-797 DACA approval notice' (uscis.gov/DACA, updated 01/24/2025, and uscis.gov/i-821d, updated 06/01/2026); filed more than 150 days before, USCIS 'may reject your submission and return it' (I-821D Instructions 01/20/25, CAUTION). Filed within one year after the last DACA period expired (and not terminated) it is a renewal; later, an initial request (I-821D Instructions; DACA litigation FAQ Q5, Q6, Q17, Q18, updated 12/31/2024)."
+  },
+  "stages": {
+    "sij": [
+      "intake",
+      "state_court",
+      "i360_ready",
+      "i360_pending",
+      "visa_wait",
+      "i485_ready",
+      "i485_pending",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "family": [
+      "intake",
+      "family_ready",
+      "family_wait",
+      "family_pending",
+      "consular",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "naturalization": [
+      "intake",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "asylum": [
+      "intake",
+      "asylum_ready",
+      "asylum_pending",
+      "asylee",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "caa": [
+      "intake",
+      "caa_wait",
+      "caa_ready",
+      "i485_pending",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "vawa": [
+      "intake",
+      "vawa_ready",
+      "vawa_pending",
+      "vawa_approved",
+      "i485_pending",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "t_visa": [
+      "intake",
+      "t_ready",
+      "t_pending",
+      "t_status",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "u_visa": [
+      "intake",
+      "u_certification",
+      "u_ready",
+      "u_pending",
+      "u_deferred",
+      "u_approved",
+      "resident",
+      "n400_pending",
+      "oath",
+      "citizen"
+    ],
+    "daca": [
+      "intake",
+      "daca_current",
+      "daca_pending"
+    ]
+  },
+  "stage_names": {
+    "intake": "Gathering the case",
+    "state_court": "State court: the SIJ findings",
+    "i360_ready": "I-360 to prepare and file",
+    "i360_pending": "I-360 filed with USCIS",
+    "visa_wait": "I-360 approved, waiting for a visa number",
+    "i485_ready": "Green card application to prepare and file",
+    "i485_pending": "Green card application filed with USCIS",
+    "family_ready": "Family petition and green card application to prepare",
+    "family_pending": "Family petition and green card application filed with USCIS",
+    "resident": "Permanent resident",
+    "n400_pending": "Citizenship application (N-400) filed with USCIS",
+    "citizen": "U.S. citizen",
+    "asylum_ready": "Asylum application (I-589) to prepare and file",
+    "asylum_pending": "Asylum application filed with USCIS",
+    "asylee": "Granted asylum (asylee)",
+    "consular": "Immigrant visa: the National Visa Center and the consulate",
+    "oath": "Citizenship approved: the oath ceremony",
+    "family_wait": "Family petition filed: waiting for the priority date (Visa Bulletin)",
+    "caa_wait": "Cuban Adjustment Act: waiting for one year in the U.S.",
+    "caa_ready": "Green card under the Cuban Adjustment Act to prepare and file",
+    "vawa_ready": "VAWA self-petition (I-360) to prepare and file",
+    "vawa_pending": "VAWA self-petition (I-360) filed with USCIS",
+    "vawa_approved": "VAWA self-petition approved: the green card application to file",
+    "t_ready": "T visa application (I-914) to prepare and file",
+    "t_pending": "T visa application (I-914) filed with USCIS",
+    "t_status": "T nonimmigrant status granted",
+    "u_certification": "U visa: asking for the certification (Supplement B)",
+    "u_ready": "U visa: ready to file the petition (I-918)",
+    "u_pending": "U petition filed (I-918)",
+    "u_deferred": "U petition waiting: work permit and deferred action",
+    "u_approved": "U status granted (I-918 approved)",
+    "daca_current": "DACA recipient: renew every two years",
+    "daca_pending": "DACA renewal filed: waiting for USCIS"
+  },
+  "steps": {
+    "_note": "What the firm does at each stage, by who does it. Shown on the case's timeline; a step can be marked done.",
+    "intake": [
+      [
+        "paralegal",
+        "Invite the client to the portal and collect the questionnaire, identity documents and any court or USCIS papers they already have."
+      ],
+      [
+        "attorney",
+        "Screen the case: SIJ needs a client under 21 and unmarried, with a state court able to make the SIJ findings before the 21st birthday."
+      ]
+    ],
+    "state_court": [
+      [
+        "attorney",
+        "File the state-court case that asks for the SIJ findings early enough to file the I-360 before the 21st birthday (the client's state decides the court and any earlier age limit)."
+      ],
+      [
+        "paralegal",
+        "When the order arrives, add it to the folder: the system reads it and moves the case on to the I-360."
+      ]
+    ],
+    "i360_ready": [
+      [
+        "paralegal",
+        "Prepare the I-360 packet (Filing packet tab → I-360 petition (SIJ))."
+      ],
+      [
+        "attorney",
+        "Answer the I-360 questions only the attorney can answer, sign, and file before the 21st birthday."
+      ]
+    ],
+    "i360_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder as it arrives (receipt, any request for evidence, the approval)."
+      ]
+    ],
+    "visa_wait": [
+      [
+        "paralegal",
+        "Nothing to file until the priority date is current; the system compares it with each month's Visa Bulletin once the bulletin is set."
+      ],
+      [
+        "attorney",
+        "Remind the client that SIJ requires staying unmarried until the green card is approved."
+      ]
+    ],
+    "i485_ready": [
+      [
+        "paralegal",
+        "Prepare the I-485 packet (Filing packet tab → I-485 packet). The civil surgeon must sign the medical exam (Form I-693) no more than 60 days before filing."
+      ],
+      [
+        "attorney",
+        "Sign off the open attorney items and file while the priority date is current."
+      ]
+    ],
+    "i485_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder as it arrives; the system lists the appointments and anything due."
+      ],
+      [
+        "attorney",
+        "Prepare the client before any interview."
+      ]
+    ],
+    "family_ready": [
+      [
+        "paralegal",
+        "Prepare the family packet (Filing packet tab → Family (I-130 + I-485)): I-130, I-130A and I-864 with the I-485."
+      ],
+      [
+        "attorney",
+        "Confirm the sponsor's income meets this year's guidelines, or arrange a joint sponsor."
+      ]
+    ],
+    "family_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder as it arrives; the system lists the appointments and anything due."
+      ],
+      [
+        "attorney",
+        "Prepare the petitioner and the client before the interview."
+      ]
+    ],
+    "resident": [
+      [
+        "attorney",
+        "Tell the client when they can apply for citizenship (the date is on this timeline)."
+      ],
+      [
+        "paralegal",
+        "When the date is near, prepare the N-400 (Filing packet tab → Citizenship (N-400)). The Citizenship panel shows the exact date, the days abroad and what the folder must match."
+      ]
+    ],
+    "n400_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder as it arrives (receipt, biometrics, the interview)."
+      ],
+      [
+        "attorney",
+        "Prepare the client for the interview: the English and civics tests (unless exempt), and every answer on the N-400. The officer goes through it."
+      ],
+      [
+        "attorney",
+        "Remind the client: no trips of 6 months or more, and no arrests, until the oath. Good moral character and residence must last until then."
+      ]
+    ],
+    "citizen": [
+      [
+        "paralegal",
+        "Copy the Certificate of Naturalization into the file. Remind the client to apply for a U.S. passport and update their Social Security record if 12.a was No."
+      ],
+      [
+        "paralegal",
+        "If the client's certificate is lost, stolen, damaged or wrong, record why on the replacement-certificate form (Filing packet tab → More… → Replacement certificate (N-565))."
+      ]
+    ],
+    "asylum_ready": [
+      [
+        "paralegal",
+        "Prepare the I-589 packet (Filing packet tab → Asylum (I-589)). The client's account (Parts B and C) is written with the attorney; long answers go on supplement sheets automatically."
+      ],
+      [
+        "attorney",
+        "Review the claim and every Yes with its explanation; read the application to the client in their language before they sign Part D."
+      ]
+    ],
+    "asylum_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder (receipt, biometrics, the interview). Watch for the Annual Asylum Fee notice: it must be paid online within 30 days, or USCIS cannot approve the case."
+      ],
+      [
+        "attorney",
+        "Prepare the client for the asylum interview; bring an interpreter if the client needs one (USCIS no longer provides one in most cases: check the notice)."
+      ]
+    ],
+    "asylee": [
+      [
+        "attorney",
+        "Tell the client: one year after the grant they can apply for a green card (Form I-485), and they should not travel to the country they fled."
+      ]
+    ],
+    "caa_wait": [
+      [
+        "paralegal",
+        "Collect the proof of Cuban birth or citizenship (the Cuban passport, the Cuban birth certificate with its translation), the I-94 or parole paper, and proof of each month in the U.S. (lease, bills, pay stubs, school records)."
+      ],
+      [
+        "attorney",
+        "Confirm how the client was let in (admitted, or paroled under INA 212(d)(5)(A); a release on Form I-220A is for the attorney to assess) and the day the year in the U.S. began."
+      ]
+    ],
+    "caa_ready": [
+      [
+        "paralegal",
+        "Prepare the green card packet (Filing packet tab → More… → Green card under the Cuban Adjustment Act or HRIFA). The civil surgeon's sealed Form I-693 goes with it."
+      ],
+      [
+        "attorney",
+        "Answer the eligibility questions on the panel, review Part 9 and sign off before filing."
+      ]
+    ],
+    "consular": [
+      [
+        "paralegal",
+        "Record the NVC case number and each date as it happens (Filing packet tab → More… → Immigrant visa)."
+      ],
+      [
+        "paralegal",
+        "Send the client the DS-260 answer sheet to check, and collect the civil documents on the checklist."
+      ],
+      [
+        "attorney",
+        "Review the DS-260 answers (especially the security questions) before the client submits it, and the financial evidence before it goes to NVC."
+      ]
+    ],
+    "oath": [
+      [
+        "paralegal",
+        "Record the oath ceremony from the notice (Form N-445): its date, time and place, on this page."
+      ],
+      [
+        "attorney",
+        "Remind the client: answer the N-445 questions truthfully on the day (trips, arrests, since the interview), bring the green card. It is handed in."
+      ]
+    ],
+    "family_wait": [
+      [
+        "paralegal",
+        "Add every I-130 notice to the folder: its receipt notice prints the priority date. The system compares it with each month's family Visa Bulletin once the bulletin is set."
+      ],
+      [
+        "attorney",
+        "When the date is current: the I-485 if the client can adjust in the U.S., else the immigrant visa through NVC (and an I-601A waiver if unlawful presence bars them)."
+      ]
+    ],
+    "vawa_ready": [
+      [
+        "attorney",
+        "Answer the VAWA questions with the client somewhere private, choose the safe mailing address, and decide whether the I-485 goes in the same envelope (Filing packet tab → More… → VAWA self-petition (I-360))."
+      ],
+      [
+        "paralegal",
+        "Gather the client's declaration and the evidence in the I-360 Instructions' order: the abuser's status, the relationship, living together, the abuse, good moral character (police clearances), a spouse's good faith marriage."
+      ]
+    ],
+    "vawa_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder as it arrives (the receipt, a prima facie notice, any request for evidence, the approval)."
+      ],
+      [
+        "attorney",
+        "Reach the client only at the safe address and the contacts the client chose; never through the abuser."
+      ]
+    ],
+    "vawa_approved": [
+      [
+        "paralegal",
+        "Prepare the I-485 on the approved petition (Filing packet tab → More… → VAWA self-petition (I-360)); a permanent resident's spouse or child waits for a visa to be available."
+      ],
+      [
+        "attorney",
+        "With the approval, the client receives the work permit (c)(31) if Part 10, item 12 asked for it."
+      ]
+    ],
+    "t_ready": [
+      [
+        "attorney",
+        "Screen the T visa: a victim of a severe form of trafficking, present on account of it, who complied with reasonable law enforcement requests (or was under 18, or can't because of trauma), and would suffer extreme hardship on removal (8 CFR 214.202)."
+      ],
+      [
+        "paralegal",
+        "With the client and their counselor: the detailed, signed personal statement and the evidence (Filing packet tab, More filings, T visa)."
+      ],
+      [
+        "attorney",
+        "Decide whether to ask a law enforcement agency for Supplement B. It is optional: the application doesn't wait for it."
+      ]
+    ],
+    "t_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice as it arrives: the receipt, biometrics, a bona fide determination, any request for evidence, the decision."
+      ],
+      [
+        "attorney",
+        "Remind the client not to leave the U.S. while the I-914 is pending: it can cost the physical presence requirement (the I-914 instructions)."
+      ]
+    ],
+    "t_status": [
+      [
+        "attorney",
+        "T status lasts up to 4 years (8 CFR 214.203(a)). The green card (I-485 under INA 245(l)) can be filed after 3 years of continuous presence since admission as T-1, or sooner once the investigation or prosecution is complete, and must be filed before T status ends (8 CFR 214.203(c), 245.23(a))."
+      ],
+      [
+        "attorney",
+        "Travel only with advance parole granted before leaving, or T status ends (8 CFR 214.204(p))."
+      ]
+    ],
+    "u_certification": [
+      [
+        "paralegal",
+        "Find the agency that investigated or prosecuted the crime (the police report or the court record names it) and its own instructions for U visa certification requests: the address, and any form or portal of its own. Never a guessed address."
+      ],
+      [
+        "attorney",
+        "Build the request (Filing packet tab → More… → U visa: certification request), sign the letter, mail it with tracking and record the mailing."
+      ],
+      [
+        "paralegal",
+        "When the signed Supplement B comes back, keep the original and record the date the official signed it (its Part 6, item 2): the petition must reach USCIS within six months of it (8 CFR 214.14(c)(2)(i))."
+      ]
+    ],
+    "u_ready": [
+      [
+        "attorney",
+        "File the U petition (Filing packet tab → More… → U visa petition) before the Supplement B's six months run out: the original Supplement B, the client's signed personal statement and the evidence."
+      ],
+      [
+        "attorney",
+        "Answer Part 3 of the I-918 with the client. If the client is inadmissible, Form I-192 goes with the petition (no fee for a U petitioner: Form G-1055)."
+      ]
+    ],
+    "u_pending": [
+      [
+        "paralegal",
+        "Add every USCIS notice to the folder: the receipt, the biometrics appointment, a bona fide determination or a waiting-list notice (record its date in the U visa petition's questions)."
+      ],
+      [
+        "attorney",
+        "The work permit while the petition waits: USCIS recommends Form I-765 with the I-918, or now; no fee (uscis.gov/i-918, questions 8 and 10)."
+      ]
+    ],
+    "u_deferred": [
+      [
+        "paralegal",
+        "USCIS decides U petitions in the order they were filed, up to 10,000 principals each fiscal year (8 CFR 214.14(d)). Keep the client's address current with USCIS and add every notice to the folder."
+      ]
+    ],
+    "u_approved": [
+      [
+        "attorney",
+        "Tell the client: a principal in the U.S. receives the work permit automatically (8 CFR 214.14(c)(7)); a family member files Form I-765 for one (8 CFR 214.14(f)(7))."
+      ]
+    ],
+    "daca_current": [
+      [
+        "paralegal",
+        "Keep the DACA expiration date in the case (the I-797 approval notice or the work permit): the renewal is filed 150 to 120 days before it."
+      ],
+      [
+        "attorney",
+        "When the window opens, review Part 4 (arrests, charges) and any trip since the last approval, then sign off on the renewal (Filing packet tab → More… → DACA renewal)."
+      ]
+    ],
+    "daca_pending": [
+      [
+        "paralegal",
+        "Watch for the biometrics appointment notice: the client must attend, or USCIS may deny the request."
+      ],
+      [
+        "attorney",
+        "Tell the client: no travel outside the U.S. without advance parole, and DACA ends on its date if the renewal isn't approved by then."
+      ]
+    ]
+  },
+  "takeover": {
+    "_note": "For a case another office started: shown until each item is marked done (or the firm records that it filed the case itself).",
+    "items": [
+      [
+        "g28",
+        "attorney",
+        "File a new G-28 with each pending USCIS case: {pending}."
+      ],
+      [
+        "prior_file",
+        "paralegal",
+        "Ask the previous attorney or organization for the complete file: copies of everything filed and every notice received."
+      ],
+      [
+        "foia",
+        "paralegal",
+        "Request the client's USCIS file (A-file) through FOIA, online at first.uscis.gov (USCIS takes FOIA requests online): the request is built for you (Filing packet tab → More… → FOIA request for the client's USCIS file (G-639)). It shows everything ever filed under the A-Number."
+      ],
+      [
+        "case_status",
+        "paralegal",
+        "Look up each receipt number on USCIS Case Status Online and add any notice missing from the folder: {receipts}."
+      ],
+      [
+        "address",
+        "paralegal",
+        "Make sure USCIS has the client's current address: Form AR-11 within 10 days of any move, and a change of address on each pending case."
+      ],
+      [
+        "court_order",
+        "attorney",
+        "Get a certified copy of the state court's SIJ order and confirm it is still in effect.",
+        "sij"
+      ],
+      [
+        "eoir",
+        "attorney",
+        "Immigration court: check the case's status (acis.eoir.justice.gov, or 1-800-898-7180), file an EOIR-28, and request the court record.",
+        "nta"
+      ]
+    ]
+  },
+  "client": {
+    "_note": "What the client sees in the portal after signing in (never in a text or email: those only say there is news). No legal judgments, no deadlines the client can't act on.",
+    "intake": {
+      "pt": [
+        "Começando o seu caso",
+        "Estamos reunindo as suas respostas e documentos. Responda o questionário e envie o que estiver faltando."
+      ],
+      "es": [
+        "Empezando su caso",
+        "Estamos reuniendo sus respuestas y documentos. Responda el cuestionario y envíe lo que falte."
+      ],
+      "en": [
+        "Getting your case started",
+        "We are gathering your answers and documents. Please finish the questionnaire and send anything still missing."
+      ],
+      "ht": [
+        "N ap kòmanse dosye ou",
+        "N ap ranmase repons ou ak dokiman ou yo. Tanpri fini kesyonè a epi voye sa ki toujou manke."
+      ]
+    },
+    "state_court": {
+      "pt": [
+        "Tribunal de família",
+        "O primeiro passo é uma decisão do tribunal de família do estado. O escritório cuida do processo e avisa sobre qualquer audiência."
+      ],
+      "es": [
+        "Tribunal de familia",
+        "El primer paso es una decisión del tribunal de familia del estado. La oficina se encarga del proceso y le avisará de cualquier audiencia."
+      ],
+      "en": [
+        "Family court",
+        "The first step is an order from the state family court. The office handles it and will tell you about any hearing."
+      ],
+      "ht": [
+        "Tribinal fanmi",
+        "Premye etap la se yon lòd tribinal fanmi eta a. Biwo a ap okipe sa e l ap di ou si gen yon odyans."
+      ]
+    },
+    "i360_ready": {
+      "pt": [
+        "Preparando a petição I-360",
+        "Já temos a decisão do tribunal. Agora estamos preparando a sua petição (Formulário I-360) para o USCIS."
+      ],
+      "es": [
+        "Preparando la petición I-360",
+        "Ya tenemos la orden del tribunal. Ahora preparamos su petición (Formulario I-360) para USCIS."
+      ],
+      "en": [
+        "Preparing your I-360 petition",
+        "We have the court's order. We are now preparing your petition (Form I-360) for USCIS."
+      ],
+      "ht": [
+        "N ap prepare petisyon I-360 ou a",
+        "Nou gen lòd tribinal la. Kounye a n ap prepare petisyon ou a (Fòm I-360) pou USCIS."
+      ]
+    },
+    "i360_pending": {
+      "pt": [
+        "Petição I-360 enviada",
+        "A sua petição está com o USCIS. A análise costuma levar meses. Guarde toda carta do USCIS e mande uma foto para o escritório."
+      ],
+      "es": [
+        "Petición I-360 enviada",
+        "Su petición está con USCIS. La revisión suele tardar meses. Guarde toda carta de USCIS y envíe una foto a la oficina."
+      ],
+      "en": [
+        "I-360 petition filed",
+        "Your petition is with USCIS. Review usually takes months. Keep every letter from USCIS and send the office a photo of it."
+      ],
+      "ht": [
+        "Petisyon I-360 la depoze",
+        "Petisyon ou a nan men USCIS. Anjeneral egzamen an pran plizyè mwa. Kenbe chak lèt USCIS voye ba ou epi voye yon foto li bay biwo a."
+      ]
+    },
+    "visa_wait": {
+      "pt": [
+        "I-360 aprovada: aguardando a vez",
+        "A sua petição foi aprovada. Agora é preciso esperar a sua data de prioridade ficar disponível no boletim de vistos. O escritório acompanha todo mês."
+      ],
+      "es": [
+        "I-360 aprobada: esperando su turno",
+        "Su petición fue aprobada. Ahora hay que esperar a que su fecha de prioridad esté disponible en el boletín de visas. La oficina lo revisa cada mes."
+      ],
+      "en": [
+        "I-360 approved: waiting for your turn",
+        "Your petition was approved. Now your priority date has to become available in the Visa Bulletin. The office checks it every month."
+      ],
+      "ht": [
+        "I-360 apwouve: n ap tann tou pa ou",
+        "Yo te apwouve petisyon ou a. Kounye a, fòk dat priyorite ou vin disponib nan Bilten Viza a (Visa Bulletin). Biwo a tcheke sa chak mwa."
+      ]
+    },
+    "i485_ready": {
+      "pt": [
+        "Preparando o pedido de green card",
+        "Estamos preparando o seu pedido de residência permanente (Formulário I-485). Pode ser preciso fazer o exame médico com um médico autorizado pelo USCIS."
+      ],
+      "es": [
+        "Preparando la solicitud de green card",
+        "Preparamos su solicitud de residencia permanente (Formulario I-485). Puede ser necesario el examen médico con un médico autorizado por USCIS."
+      ],
+      "en": [
+        "Preparing your green card application",
+        "We are preparing your application for permanent residence (Form I-485). You may need a medical exam with a USCIS-approved doctor."
+      ],
+      "ht": [
+        "N ap prepare demann green card ou a",
+        "N ap prepare demann rezidans pèmanan ou a (Fòm I-485). Ou ka bezwen fè yon egzamen medikal ak yon doktè USCIS apwouve."
+      ]
+    },
+    "i485_pending": {
+      "pt": [
+        "Pedido de green card enviado",
+        "O seu pedido está com o USCIS. Você vai receber cartas para a coleta de digitais e, às vezes, para uma entrevista. Não falte: avise o escritório assim que receber."
+      ],
+      "es": [
+        "Solicitud de green card enviada",
+        "Su solicitud está con USCIS. Recibirá cartas para la toma de huellas y, a veces, para una entrevista. No falte: avise a la oficina en cuanto las reciba."
+      ],
+      "en": [
+        "Green card application filed",
+        "Your application is with USCIS. You will get letters for fingerprints and sometimes for an interview. Don't miss them: tell the office as soon as one arrives."
+      ],
+      "ht": [
+        "Demann green card la depoze",
+        "Demann ou an nan men USCIS. Ou pral resevwa lèt pou anprent dwèt ou e pafwa pou yon entèvyou. Pa manke yo: di biwo a depi ou resevwa youn."
+      ]
+    },
+    "family_ready": {
+      "pt": [
+        "Preparando o pedido da família",
+        "Estamos preparando a petição do seu familiar e o seu pedido de green card."
+      ],
+      "es": [
+        "Preparando la petición familiar",
+        "Preparamos la petición de su familiar y su solicitud de green card."
+      ],
+      "en": [
+        "Preparing your family petition",
+        "We are preparing your relative's petition and your green card application."
+      ],
+      "ht": [
+        "N ap prepare petisyon fanmi ou a",
+        "N ap prepare petisyon fanmi ou a ak demann green card ou a."
+      ]
+    },
+    "family_pending": {
+      "pt": [
+        "Pedido da família enviado",
+        "Os pedidos estão com o USCIS. Você vai receber cartas para a coleta de digitais e para uma entrevista. Avise o escritório assim que receber."
+      ],
+      "es": [
+        "Petición familiar enviada",
+        "Las solicitudes están con USCIS. Recibirá cartas para la toma de huellas y para una entrevista. Avise a la oficina en cuanto las reciba."
+      ],
+      "en": [
+        "Family petition filed",
+        "The applications are with USCIS. You will get letters for fingerprints and an interview. Tell the office as soon as one arrives."
+      ],
+      "ht": [
+        "Petisyon fanmi an depoze",
+        "Demann yo nan men USCIS. Ou pral resevwa lèt pou anprent dwèt ak pou yon entèvyou. Di biwo a depi ou resevwa youn."
+      ]
+    },
+    "resident": {
+      "pt": [
+        "Residente permanente",
+        "Parabéns! Você é residente permanente. Mantenha o seu endereço atualizado com o USCIS e fale com o escritório antes de viajar para fora do país por muito tempo."
+      ],
+      "es": [
+        "Residente permanente",
+        "¡Felicidades! Usted es residente permanente. Mantenga su dirección al día con USCIS y hable con la oficina antes de viajar fuera del país por mucho tiempo."
+      ],
+      "en": [
+        "Permanent resident",
+        "Congratulations! You are a permanent resident. Keep your address up to date with USCIS, and talk to the office before any long trip abroad."
+      ],
+      "ht": [
+        "Rezidan pèmanan",
+        "Konpliman! Ou se rezidan pèmanan. Kenbe adrès ou ajou ak USCIS, epi pale ak biwo a anvan nenpòt vwayaj ki long deyò peyi a."
+      ]
+    },
+    "n400_pending": {
+      "pt": [
+        "Pedido de cidadania enviado",
+        "O seu pedido de cidadania (Formulário N-400) está com o USCIS. Você vai receber cartas para a coleta de digitais e para a entrevista, com a prova de inglês e de cívica. Não viaje por longos períodos e avise o escritório sobre qualquer carta."
+      ],
+      "es": [
+        "Solicitud de ciudadanía enviada",
+        "Su solicitud de ciudadanía (Formulario N-400) está con USCIS. Recibirá cartas para la toma de huellas y para la entrevista, con el examen de inglés y de educación cívica. No viaje por períodos largos y avise a la oficina de cualquier carta."
+      ],
+      "en": [
+        "Citizenship application filed",
+        "Your citizenship application (Form N-400) is with USCIS. You will get letters for fingerprints and for the interview, with the English and civics tests. Avoid long trips abroad, and tell the office about every letter."
+      ],
+      "ht": [
+        "Demann sitwayènte a depoze",
+        "Demann sitwayènte ou a (Fòm N-400) nan men USCIS. Ou pral resevwa lèt pou anprent dwèt ak pou entèvyou a, ak egzamen angle ak sivik la. Evite vwayaj ki long deyò peyi a, epi di biwo a sou chak lèt."
+      ]
+    },
+    "citizen": {
+      "pt": [
+        "Cidadão dos Estados Unidos",
+        "Parabéns! Você é cidadão americano. O próximo passo é tirar o passaporte americano."
+      ],
+      "es": [
+        "Ciudadano de los Estados Unidos",
+        "¡Felicidades! Usted es ciudadano estadounidense. El siguiente paso es sacar el pasaporte estadounidense."
+      ],
+      "en": [
+        "U.S. citizen",
+        "Congratulations! You are a U.S. citizen. The next step is your U.S. passport."
+      ],
+      "ht": [
+        "Sitwayen ameriken",
+        "Konpliman! Ou se sitwayen ameriken. Pwochen etap la se paspò ameriken ou."
+      ]
+    },
+    "asylum_ready": {
+      "pt": [
+        "Preparando o pedido de asilo",
+        "Estamos preparando o seu pedido de asilo (Formulário I-589) com você. O prazo é importante: o pedido precisa chegar ao USCIS dentro de 1 ano da sua última entrada nos EUA."
+      ],
+      "es": [
+        "Preparando la solicitud de asilo",
+        "Estamos preparando su solicitud de asilo (Formulario I-589) con usted. El plazo es importante: la solicitud debe llegar a USCIS dentro de 1 año de su última entrada a EE. UU."
+      ],
+      "en": [
+        "Preparing your asylum application",
+        "We are preparing your asylum application (Form I-589) with you. The deadline matters: it must reach USCIS within 1 year of your last entry into the U.S."
+      ],
+      "ht": [
+        "N ap prepare demann azil ou a",
+        "N ap prepare demann azil ou a (Fòm I-589) avè ou. Dat limit la enpòtan: li dwe rive nan men USCIS nan 1 an apre dènye fwa ou te antre Etazini."
+      ]
+    },
+    "asylum_pending": {
+      "pt": [
+        "Pedido de asilo enviado",
+        "O seu pedido está com o USCIS. Você vai receber cartas para a coleta de digitais e para a entrevista. Avise o escritório assim que receber qualquer carta, inclusive sobre a taxa anual."
+      ],
+      "es": [
+        "Solicitud de asilo enviada",
+        "Su solicitud está con USCIS. Recibirá cartas para la toma de huellas y para la entrevista. Avise a la oficina en cuanto reciba cualquier carta, incluso sobre la tarifa anual."
+      ],
+      "en": [
+        "Asylum application filed",
+        "Your application is with USCIS. You will get letters for fingerprints and for the interview. Tell the office as soon as any letter arrives, including one about the annual fee."
+      ],
+      "ht": [
+        "Demann azil la depoze",
+        "Demann ou an nan men USCIS. Ou pral resevwa lèt pou anprent dwèt ak pou entèvyou a. Di biwo a depi nenpòt lèt rive, menm youn sou frè chak ane a."
+      ]
+    },
+    "asylee": {
+      "pt": [
+        "Asilo concedido",
+        "Parabéns! Você recebeu asilo. Depois de 1 ano você poderá pedir o green card. Fale com o escritório antes de qualquer viagem para fora dos EUA."
+      ],
+      "es": [
+        "Asilo concedido",
+        "¡Felicidades! Recibió asilo. Después de 1 año podrá pedir la green card. Hable con la oficina antes de cualquier viaje fuera de EE. UU."
+      ],
+      "en": [
+        "Asylum granted",
+        "Congratulations! You were granted asylum. After 1 year you can apply for a green card. Talk to the office before any trip outside the U.S."
+      ],
+      "ht": [
+        "Yo ba ou azil",
+        "Konpliman! Yo ba ou azil. Apre 1 an, ou ka mande yon green card. Pale ak biwo a anvan nenpòt vwayaj deyò Etazini."
+      ]
+    },
+    "caa_wait": {
+      "_note": "DRAFT: the attorney approves; the Portuguese, Spanish and Haitian Creole need the certified translator.",
+      "pt": [
+        "Aguardando 1 ano nos EUA",
+        "Pela Lei de Ajuste Cubano, você pode pedir o green card depois de 1 ano nos EUA. Guarde comprovantes de cada mês aqui (contrato de aluguel, contas, holerites) e fale com o escritório antes de qualquer viagem."
+      ],
+      "es": [
+        "Esperando 1 año en EE. UU.",
+        "Por la Ley de Ajuste Cubano, puede pedir la green card después de 1 año en EE. UU. Guarde comprobantes de cada mes aquí (contrato de alquiler, cuentas, talones de pago) y hable con la oficina antes de cualquier viaje."
+      ],
+      "en": [
+        "Waiting for 1 year in the U.S.",
+        "Under the Cuban Adjustment Act, you can apply for a green card after 1 year in the U.S. Keep proof of each month here (lease, bills, pay stubs) and talk to the office before any trip."
+      ],
+      "ht": [
+        "N ap tann 1 an Etazini",
+        "Dapre Lwa Ajisteman Kiben an (Cuban Adjustment Act), ou ka mande yon green card apre 1 an Etazini. Kenbe prèv pou chak mwa ou isit la (kontra lwaye, bòdwo, fich peman) epi pale ak biwo a anvan nenpòt vwayaj."
+      ]
+    },
+    "caa_ready": {
+      "_note": "DRAFT: the attorney approves; the Portuguese, Spanish and Haitian Creole need the certified translator.",
+      "pt": [
+        "Preparando o pedido de green card",
+        "Estamos preparando o seu pedido de residência permanente (Formulário I-485). Você vai precisar do exame médico com um médico autorizado pelo USCIS."
+      ],
+      "es": [
+        "Preparando la solicitud de green card",
+        "Preparamos su solicitud de residencia permanente (Formulario I-485). Necesitará el examen médico con un médico autorizado por USCIS."
+      ],
+      "en": [
+        "Preparing your green card application",
+        "We are preparing your application for permanent residence (Form I-485). You will need a medical exam with a USCIS-approved doctor."
+      ],
+      "ht": [
+        "N ap prepare demann green card ou a",
+        "N ap prepare demann rezidans pèmanan ou a (Fòm I-485). W ap bezwen fè yon egzamen medikal ak yon doktè USCIS apwouve."
+      ]
+    },
+    "consular": {
+      "pt": [
+        "Visto de imigrante: NVC e consulado",
+        "O pedido foi aprovado e agora segue no Centro Nacional de Vistos (NVC) e depois no consulado. O escritório vai pedir os seus documentos e avisar a data da entrevista."
+      ],
+      "es": [
+        "Visa de inmigrante: NVC y consulado",
+        "La petición fue aprobada y ahora sigue en el Centro Nacional de Visas (NVC) y después en el consulado. La oficina le pedirá sus documentos y le avisará la fecha de la entrevista."
+      ],
+      "en": [
+        "Immigrant visa: NVC and the consulate",
+        "The petition was approved and now goes to the National Visa Center (NVC), then to the consulate. The office will ask for your documents and tell you the interview date."
+      ],
+      "ht": [
+        "Viza imigran: NVC ak konsila a",
+        "Yo te apwouve petisyon an e kounye a li ale nan Sant Nasyonal Viza (NVC), apre sa nan konsila a. Biwo a ap mande ou dokiman ou yo e l ap di ou dat entèvyou a."
+      ]
+    },
+    "oath": {
+      "pt": [
+        "Cidadania aprovada: a cerimônia de juramento",
+        "O USCIS aprovou a sua cidadania. Você se torna cidadão na cerimônia de juramento: leve a carta da cerimônia (Formulário N-445) e o seu green card. O escritório vai avisar a data."
+      ],
+      "es": [
+        "Ciudadanía aprobada: la ceremonia de juramento",
+        "USCIS aprobó su ciudadanía. Usted se hace ciudadano en la ceremonia de juramento: lleve la carta de la ceremonia (Formulario N-445) y su green card. La oficina le avisará la fecha."
+      ],
+      "en": [
+        "Citizenship approved: the oath ceremony",
+        "USCIS approved your citizenship. You become a citizen at the oath ceremony: bring the ceremony letter (Form N-445) and your green card. The office will tell you the date."
+      ],
+      "ht": [
+        "Sitwayènte apwouve: seremoni sèman an",
+        "USCIS apwouve sitwayènte ou. Ou vin sitwayen nan seremoni sèman an: pote lèt seremoni an (Fòm N-445) ak green card ou. Biwo a ap di ou dat la."
+      ]
+    },
+    "family_wait": {
+      "pt": [
+        "Petição familiar enviada: aguardando a vez",
+        "A petição do seu familiar está com o USCIS. Agora é preciso esperar a sua data de prioridade ficar disponível no boletim de vistos. O escritório acompanha todo mês."
+      ],
+      "es": [
+        "Petición familiar enviada: esperando su turno",
+        "La petición de su familiar está con USCIS. Ahora hay que esperar a que su fecha de prioridad esté disponible en el boletín de visas. La oficina lo revisa cada mes."
+      ],
+      "en": [
+        "Family petition filed: waiting for your turn",
+        "Your relative's petition is with USCIS. Now your priority date has to become available in the Visa Bulletin. The office checks it every month."
+      ],
+      "ht": [
+        "Petisyon fanmi an depoze: n ap tann tou pa ou",
+        "Petisyon fanmi ou a nan men USCIS. Kounye a, fòk dat priyorite ou vin disponib nan Bilten Viza a (Visa Bulletin). Biwo a tcheke sa chak mwa."
+      ]
+    },
+    "vawa_ready": {
+      "pt": [
+        "Preparando a sua petição",
+        "Estamos preparando a sua petição para o USCIS. Fale com o escritório só pelos contatos que você escolheu."
+      ],
+      "es": [
+        "Preparando su petición",
+        "Estamos preparando su petición para USCIS. Hable con la oficina solo por los contactos que usted eligió."
+      ],
+      "en": [
+        "Preparing your petition",
+        "We are preparing your petition for USCIS. Talk to the office only through the contacts you chose."
+      ],
+      "ht": [
+        "N ap prepare petisyon ou",
+        "N ap prepare petisyon ou pou USCIS. Pale ak biwo a sèlman atravè kontak ou te chwazi yo."
+      ]
+    },
+    "vawa_pending": {
+      "pt": [
+        "Petição enviada",
+        "A sua petição está com o USCIS. As cartas vão para o endereço seguro que você escolheu. Mande ao escritório uma foto de cada carta."
+      ],
+      "es": [
+        "Petición enviada",
+        "Su petición está con USCIS. Las cartas van a la dirección segura que usted eligió. Envíe a la oficina una foto de cada carta."
+      ],
+      "en": [
+        "Petition filed",
+        "Your petition is with USCIS. Letters go to the safe address you chose. Send the office a photo of each one."
+      ],
+      "ht": [
+        "Petisyon an depoze",
+        "Petisyon ou an nan men USCIS. Lèt yo ale nan adrès sekirite ou te chwazi a. Voye yon foto chak lèt bay biwo a."
+      ]
+    },
+    "vawa_approved": {
+      "pt": [
+        "Petição aprovada",
+        "O USCIS aprovou a sua petição. Agora preparamos o seu pedido de green card."
+      ],
+      "es": [
+        "Petición aprobada",
+        "USCIS aprobó su petición. Ahora preparamos su solicitud de green card."
+      ],
+      "en": [
+        "Petition approved",
+        "USCIS approved your petition. We are now preparing your green card application."
+      ],
+      "ht": [
+        "Petisyon an apwouve",
+        "USCIS apwouve petisyon ou an. Kounye a n ap prepare demann kat vèt ou a."
+      ]
+    },
+    "_vawa": "DRAFT: the VAWA wording never names the abuse, VAWA or the abuser: someone else may see the client's screen. The attorney and a certified translator approve it.",
+    "t_ready": {
+      "pt": [
+        "Preparando o seu pedido",
+        "Estamos preparando o seu pedido de visto T (Formulário I-914) com a sua declaração e os documentos. Tudo o que você conta ao escritório é confidencial."
+      ],
+      "es": [
+        "Preparando su solicitud",
+        "Estamos preparando su solicitud de visa T (Formulario I-914) con su declaración y los documentos. Todo lo que usted le cuenta a la oficina es confidencial."
+      ],
+      "en": [
+        "Preparing your application",
+        "We are preparing your T visa application (Form I-914) with your statement and documents. Everything you tell the office is confidential."
+      ],
+      "ht": [
+        "N ap prepare demann ou",
+        "N ap prepare demann viza T ou a (Fòm I-914) ak deklarasyon ou ak dokiman ou yo. Tout sa ou di biwo a rete konfidansyèl."
+      ]
+    },
+    "t_pending": {
+      "pt": [
+        "Pedido enviado ao USCIS",
+        "O seu pedido foi enviado ao USCIS. Não saia dos Estados Unidos sem falar antes com o escritório."
+      ],
+      "es": [
+        "Solicitud enviada a USCIS",
+        "Su solicitud fue enviada a USCIS. No salga de los Estados Unidos sin hablar antes con la oficina."
+      ],
+      "en": [
+        "Application sent to USCIS",
+        "Your application was sent to USCIS. Please do not leave the United States without talking to the office first."
+      ],
+      "ht": [
+        "Demann lan voye bay USCIS",
+        "Demann ou an te voye bay USCIS. Tanpri pa kite Etazini san ou pa pale ak biwo a anvan."
+      ]
+    },
+    "t_status": {
+      "pt": [
+        "Status T aprovado",
+        "O USCIS aprovou o seu status T. O escritório vai avisar quando for a hora de pedir o green card."
+      ],
+      "es": [
+        "Estatus T aprobado",
+        "USCIS aprobó su estatus T. La oficina le avisará cuando sea el momento de pedir la green card."
+      ],
+      "en": [
+        "T status approved",
+        "USCIS approved your T status. The office will tell you when it is time to apply for your green card."
+      ],
+      "ht": [
+        "Estati T apwouve",
+        "USCIS apwouve estati T ou a. Biwo a ap di ou lè li lè pou mande kat vèt ou a."
+      ]
+    },
+    "u_certification": {
+      "pt": [
+        "Pedido da certificação da polícia",
+        "O escritório está pedindo à polícia, à promotoria ou ao tribunal que assine um formulário de certificação (Suplemento B). Isso pode levar semanas ou meses. Avise o escritório se a polícia ou o tribunal entrar em contato com você, e continue ajudando no caso quando pedirem."
+      ],
+      "es": [
+        "Solicitud de la certificación de la policía",
+        "La oficina está pidiendo a la policía, a la fiscalía o al tribunal que firme un formulario de certificación (Suplemento B). Esto puede tardar semanas o meses. Avise a la oficina si la policía o el tribunal se comunica con usted, y siga ayudando en el caso cuando se lo pidan."
+      ],
+      "en": [
+        "Asking for the police certification",
+        "The office is asking the police, the prosecutor or the court to sign a certification form (Supplement B). This can take weeks or months. Tell the office if the police or the court contacts you, and keep helping with the case when they ask."
+      ],
+      "ht": [
+        "N ap mande sètifikasyon lapolis la",
+        "Biwo a ap mande lapolis, pwokirè a oswa tribinal la pou siyen yon fòm sètifikasyon (Supplement B). Sa ka pran kèk semèn oswa kèk mwa. Di biwo a si lapolis oswa tribinal la kontakte ou, epi kontinye ede nan ka a lè yo mande ou."
+      ]
+    },
+    "u_ready": {
+      "pt": [
+        "Pronto para enviar o pedido do visto U",
+        "A certificação assinada chegou. O escritório está preparando o seu pedido (formulário I-918) para enviar ao USCIS em breve: ele precisa ser enviado dentro de seis meses da assinatura."
+      ],
+      "es": [
+        "Listo para presentar la petición de visa U",
+        "La certificación firmada llegó. La oficina está preparando su petición (formulario I-918) para enviarla a USCIS pronto: debe enviarse dentro de los seis meses de la firma."
+      ],
+      "en": [
+        "Ready to file the U visa petition",
+        "The signed certification arrived. The office is preparing your petition (Form I-918) to send to USCIS soon: it must be sent within six months of the signature."
+      ],
+      "ht": [
+        "Pare pou depoze petisyon viza U a",
+        "Sètifikasyon siyen an rive. Biwo a ap prepare petisyon ou an (Fòm I-918) pou voye bay USCIS byento: li dwe voye nan sis mwa apre siyati a."
+      ]
+    },
+    "u_pending": {
+      "pt": [
+        "Pedido do visto U enviado",
+        "O seu pedido está com o USCIS. Você vai receber uma carta para a coleta de digitais. Pode demorar bastante. Avise o escritório assim que receber qualquer carta."
+      ],
+      "es": [
+        "Petición de visa U presentada",
+        "Su petición está con USCIS. Recibirá una carta para la toma de huellas. Puede tardar mucho. Avise a la oficina en cuanto reciba cualquier carta."
+      ],
+      "en": [
+        "U visa petition filed",
+        "Your petition is with USCIS. You will get a letter for fingerprints. It can take a long time. Tell the office as soon as any letter arrives."
+      ],
+      "ht": [
+        "Petisyon viza U a depoze",
+        "Petisyon ou an nan men USCIS. W ap resevwa yon lèt pou anprent dwèt. Sa ka pran anpil tan. Di biwo a kou nenpòt lèt rive."
+      ]
+    },
+    "u_deferred": {
+      "pt": [
+        "Aguardando, com permissão para trabalhar",
+        "O USCIS decidiu que você pode ficar nos Estados Unidos e trabalhar enquanto o seu pedido espera a vez. O escritório ajuda com a permissão de trabalho. Mantenha o seu endereço atualizado com o escritório."
+      ],
+      "es": [
+        "En espera, con permiso para trabajar",
+        "USCIS decidió que usted puede quedarse en los Estados Unidos y trabajar mientras su petición espera su turno. La oficina le ayuda con el permiso de trabajo. Mantenga su dirección al día con la oficina."
+      ],
+      "en": [
+        "Waiting, allowed to work",
+        "USCIS decided you can stay in the United States and work while your petition waits its turn. The office will help with the work permit. Keep your address up to date with the office."
+      ],
+      "ht": [
+        "N ap tann, ou gen dwa travay",
+        "USCIS deside ou ka rete Etazini epi travay pandan petisyon ou an ap tann tou pa li. Biwo a ap ede ou ak pèmi travay la. Kenbe adrès ou ajou ak biwo a."
+      ]
+    },
+    "u_approved": {
+      "pt": [
+        "Visto U aprovado",
+        "O USCIS aprovou o seu status U. O escritório vai conversar com você sobre a permissão de trabalho, viagens e os próximos passos."
+      ],
+      "es": [
+        "Visa U aprobada",
+        "USCIS aprobó su estatus U. La oficina hablará con usted sobre el permiso de trabajo, los viajes y los próximos pasos."
+      ],
+      "en": [
+        "U visa approved",
+        "USCIS approved your U status. The office will talk with you about the work permit, travel and the next steps."
+      ],
+      "ht": [
+        "Viza U apwouve",
+        "USCIS apwouve estati U ou a. Biwo a ap pale avèk ou sou pèmi travay la, vwayaj ak pwochen etap yo."
+      ]
+    },
+    "daca_current": {
+      "_note": "DRAFT: the attorney approves; the Portuguese and Spanish need the certified translator.",
+      "pt": [
+        "Você tem DACA",
+        "O DACA e a sua autorização de trabalho valem até a data no seu aviso de aprovação. Vamos pedir a renovação de 4 a 5 meses antes. Não viaje para fora dos EUA sem falar com o escritório."
+      ],
+      "es": [
+        "Usted tiene DACA",
+        "DACA y su permiso de trabajo valen hasta la fecha de su aviso de aprobación. Pediremos la renovación de 4 a 5 meses antes. No viaje fuera de EE. UU. sin hablar con la oficina."
+      ],
+      "en": [
+        "You have DACA",
+        "Your DACA and work permit last until the date on your approval notice. We will ask to renew them 4 to 5 months before. Do not travel outside the U.S. without talking to the office."
+      ],
+      "ht": [
+        "Ou gen DACA",
+        "DACA ou ak pèmi travay ou dire jiska dat ki sou avi apwobasyon ou a. N ap mande pou renouvle yo 4 a 5 mwa anvan. Pa vwayaje deyò Etazini san ou pa pale ak biwo a."
+      ]
+    },
+    "daca_pending": {
+      "_note": "DRAFT: the attorney approves; the Portuguese and Spanish need the certified translator.",
+      "pt": [
+        "Renovação do DACA enviada",
+        "Enviamos o pedido de renovação do seu DACA. O USCIS vai mandar uma carta com a data para tirar as digitais: vá ao agendamento. Não viaje para fora dos EUA."
+      ],
+      "es": [
+        "Renovación de DACA enviada",
+        "Enviamos la solicitud de renovación de su DACA. USCIS enviará una carta con la cita para las huellas: asista a la cita. No viaje fuera de EE. UU."
+      ],
+      "en": [
+        "DACA renewal sent",
+        "We sent your DACA renewal request. USCIS will mail you a letter with a fingerprint appointment: please go to it. Do not travel outside the U.S."
+      ],
+      "ht": [
+        "Demann renouvèlman DACA voye",
+        "Nou voye demann renouvèlman DACA ou a. USCIS ap voye yon lèt pa lapòs ak yon randevou pou anprent dwèt: tanpri ale ladan l. Pa vwayaje deyò Etazini."
+      ]
+    }
+  },
+  "client_appointments": {
+    "biometrics": {
+      "pt": [
+        "Coleta de digitais (biometria)",
+        "Leve a carta do USCIS e um documento com foto."
+      ],
+      "es": [
+        "Toma de huellas (biometría)",
+        "Lleve la carta de USCIS y una identificación con foto."
+      ],
+      "en": [
+        "Fingerprint appointment (biometrics)",
+        "Bring the USCIS letter and a photo ID."
+      ],
+      "ht": [
+        "Randevou pou anprent dwèt (byometri)",
+        "Pote lèt USCIS la ak yon kat idantite ki gen foto."
+      ]
+    },
+    "interview": {
+      "pt": [
+        "Entrevista no USCIS",
+        "Leve a carta do USCIS, o passaporte e os documentos originais. O escritório vai preparar você antes."
+      ],
+      "es": [
+        "Entrevista en USCIS",
+        "Lleve la carta de USCIS, el pasaporte y los documentos originales. La oficina lo preparará antes."
+      ],
+      "en": [
+        "USCIS interview",
+        "Bring the USCIS letter, your green card or passport, and your original documents. The office will prepare you beforehand."
+      ],
+      "ht": [
+        "Entèvyou nan USCIS",
+        "Pote lèt USCIS la, green card ou oswa paspò ou, ak dokiman orijinal ou yo. Biwo a ap prepare ou anvan."
+      ]
+    },
+    "hearing": {
+      "pt": [
+        "Audiência no tribunal de imigração",
+        "Leve a notificação da audiência e um documento com foto. Chegue cedo: faltar à audiência pode resultar em ordem de deportação. Fale com o escritório antes da data."
+      ],
+      "es": [
+        "Audiencia en la corte de inmigración",
+        "Lleve la notificación de la audiencia y una identificación con foto. Llegue temprano: faltar a la audiencia puede resultar en una orden de deportación. Hable con la oficina antes de la fecha."
+      ],
+      "en": [
+        "Immigration court hearing",
+        "Bring the hearing notice and a photo ID. Arrive early: missing a hearing can lead to a removal order. Talk to the office before the date."
+      ],
+      "ht": [
+        "Odyans nan tribinal imigrasyon",
+        "Pote avi odyans lan ak yon kat idantite ki gen foto. Rive bonè: si ou manke yon odyans, sa ka fè yo bay yon lòd depòtasyon. Pale ak biwo a anvan dat la."
+      ]
+    },
+    "consulate": {
+      "pt": [
+        "Entrevista no consulado",
+        "Leve o passaporte, a carta da entrevista, os documentos originais e o exame médico. O escritório vai preparar você antes."
+      ],
+      "es": [
+        "Entrevista en el consulado",
+        "Lleve el pasaporte, la carta de la entrevista, los documentos originales y el examen médico. La oficina lo preparará antes."
+      ],
+      "en": [
+        "Consulate interview",
+        "Bring your passport, the interview letter, your original documents and the medical exam. The office will prepare you beforehand."
+      ],
+      "ht": [
+        "Entèvyou nan konsila a",
+        "Pote paspò ou, lèt entèvyou a, dokiman orijinal ou yo ak egzamen medikal la. Biwo a ap prepare ou anvan."
+      ]
+    },
+    "oath": {
+      "pt": [
+        "Cerimônia de juramento de cidadania",
+        "Leve a carta da cerimônia (N-445), respondida, e o seu green card. Chegue cedo."
+      ],
+      "es": [
+        "Ceremonia de juramento de ciudadanía",
+        "Lleve la carta de la ceremonia (N-445), contestada, y su green card. Llegue temprano."
+      ],
+      "en": [
+        "Citizenship oath ceremony",
+        "Bring the ceremony letter (N-445), answered, and your green card. Arrive early."
+      ],
+      "ht": [
+        "Seremoni sèman sitwayènte",
+        "Pote lèt seremoni an (N-445), ak repons yo ranpli, ak green card ou. Rive bonè."
+      ]
+    }
+  },
+  "appointment_pages": {
+    "_note": "DRAFT: the one-page 'what to bring, where, when' the portal shows for an appointment (src/journey.py client_view, 'prepare'). The attorney approves every sentence; the Portuguese and Spanish need the certified translator; the Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator. Nothing here states a USCIS rule: it is the firm's standard text (the same advice as client_appointments, in a list). The date, time and place come from the notice or the hearing the office recorded; the portal always tells the client to check the place against the letter.",
+    "labels": {
+      "open": {
+        "pt": "O que levar e onde",
+        "es": "Qué llevar y dónde",
+        "en": "What to bring and where",
+        "ht": "Kisa pou pote ak ki kote"
+      },
+      "when": {
+        "pt": "Quando",
+        "es": "Cuándo",
+        "en": "When",
+        "ht": "Ki lè"
+      },
+      "where": {
+        "pt": "Onde",
+        "es": "Dónde",
+        "en": "Where",
+        "ht": "Ki kote"
+      },
+      "bring": {
+        "pt": "O que levar",
+        "es": "Qué llevar",
+        "en": "What to bring",
+        "ht": "Kisa pou pote"
+      },
+      "time_unknown": {
+        "pt": "A hora está na sua carta.",
+        "es": "La hora está en su carta.",
+        "en": "The time is on your letter.",
+        "ht": "Lè a ekri sou lèt ou a."
+      },
+      "check_place": {
+        "pt": "Confira este endereço na sua carta.",
+        "es": "Revise esta dirección en su carta.",
+        "en": "Check this address on your letter.",
+        "ht": "Verifye adrès sa a sou lèt ou a."
+      },
+      "place_in_letter": {
+        "pt": "O endereço está na sua carta. Confira lá.",
+        "es": "La dirección está en su carta. Revísela allí.",
+        "en": "The address is on your letter. Check it there.",
+        "ht": "Adrès la ekri sou lèt ou a. Verifye l la."
+      },
+      "check_court": {
+        "pt": "Confira o tribunal e a sala na notificação da audiência.",
+        "es": "Revise la corte y la sala en la notificación de la audiencia.",
+        "en": "Check the court and the room on your hearing notice.",
+        "ht": "Verifye tribinal la ak sal la sou avi odyans lan."
+      },
+      "cannot_go": {
+        "pt": "Se você não puder ir nesta data, avise o escritório o quanto antes.",
+        "es": "Si no puede ir en esta fecha, avise a la oficina lo antes posible.",
+        "en": "If you cannot go on this date, tell the office as soon as you can.",
+        "ht": "Si ou pa ka ale nan dat sa a, di biwo a pi vit ke ou kapab."
+      },
+      "print": {
+        "pt": "Imprimir esta página",
+        "es": "Imprimir esta página",
+        "en": "Print this page",
+        "ht": "Enprime paj sa a"
+      }
+    },
+    "biometrics": {
+      "pt": [
+        "A carta do USCIS com a data e a hora.",
+        "Um documento com foto: passaporte, carteira de motorista ou ID do estado.",
+        "Qualquer outra coisa que a carta pedir.",
+        "Chegue com alguns minutos de antecedência."
+      ],
+      "es": [
+        "La carta de USCIS con la fecha y la hora.",
+        "Una identificación con foto: pasaporte, licencia de conducir o ID del estado.",
+        "Cualquier otra cosa que pida la carta.",
+        "Llegue con unos minutos de anticipación."
+      ],
+      "en": [
+        "The USCIS letter with the date and time.",
+        "A photo ID: your passport, driver's license or state ID.",
+        "Anything else the letter asks you to bring.",
+        "Arrive a few minutes early."
+      ],
+      "ht": [
+        "Lèt USCIS la ak dat la ak lè a.",
+        "Yon kat idantite ki gen foto: paspò ou, lisans kondui oswa kat idantite eta a.",
+        "Nenpòt lòt bagay lèt la mande ou pote.",
+        "Rive kèk minit bonè."
+      ]
+    },
+    "interview": {
+      "pt": [
+        "A carta da entrevista do USCIS.",
+        "Seu green card ou passaporte (um documento com foto).",
+        "Seus documentos originais: aqueles dos quais o escritório enviou cópias.",
+        "Qualquer outra coisa que a carta pedir.",
+        "O escritório vai preparar você antes da entrevista."
+      ],
+      "es": [
+        "La carta de la entrevista de USCIS.",
+        "Su green card o pasaporte (una identificación con foto).",
+        "Sus documentos originales: aquellos de los que la oficina envió copias.",
+        "Cualquier otra cosa que pida la carta.",
+        "La oficina lo preparará antes de la entrevista."
+      ],
+      "en": [
+        "The USCIS interview letter.",
+        "Your green card or passport (a photo ID).",
+        "Your original documents: the ones the office sent copies of.",
+        "Anything else the letter asks you to bring.",
+        "The office will prepare you before the interview."
+      ],
+      "ht": [
+        "Lèt entèvyou USCIS la.",
+        "Green card ou oswa paspò ou (yon kat idantite ki gen foto).",
+        "Dokiman orijinal ou yo: sa biwo a te voye kopi yo.",
+        "Nenpòt lòt bagay lèt la mande ou pote.",
+        "Biwo a ap prepare ou anvan entèvyou a."
+      ]
+    },
+    "hearing": {
+      "pt": [
+        "A notificação da audiência.",
+        "Um documento com foto.",
+        "Qualquer outra coisa que a notificação pedir.",
+        "Chegue cedo: faltar à audiência pode resultar em ordem de deportação.",
+        "Fale com o escritório antes da data."
+      ],
+      "es": [
+        "La notificación de la audiencia.",
+        "Una identificación con foto.",
+        "Cualquier otra cosa que pida la notificación.",
+        "Llegue temprano: faltar a la audiencia puede resultar en una orden de deportación.",
+        "Hable con la oficina antes de la fecha."
+      ],
+      "en": [
+        "The hearing notice.",
+        "A photo ID.",
+        "Anything else the notice asks you to bring.",
+        "Arrive early: missing a hearing can lead to a removal order.",
+        "Talk to the office before the date."
+      ],
+      "ht": [
+        "Avi odyans lan.",
+        "Yon kat idantite ki gen foto.",
+        "Nenpòt lòt bagay avi a mande ou pote.",
+        "Rive bonè: si ou manke yon odyans, sa ka fè yo bay yon lòd depòtasyon.",
+        "Pale ak biwo a anvan dat la."
+      ]
+    }
+  },
+  "client_events": {
+    "_note": "What happened, for the client: the firm's mailings and USCIS's letters, in plain words. A denial or a request for evidence never explains itself here. The office talks to the client. {form} is the form number, {date} the date.",
+    "_form_word": {
+      "_note": "DRAFT, for the attorney and a certified translator: how the client's page names a form in a mailing ('Form I-601 and Form I-212'). The Haitian Creole is a machine draft.",
+      "pt": "Formulário",
+      "es": "Formulario",
+      "en": "Form",
+      "ht": "Fòm"
+    },
+    "_and": {
+      "pt": "e",
+      "es": "y",
+      "en": "and",
+      "ht": "ak"
+    },
+    "mailed": {
+      "pt": "Enviamos o seu pedido ({form}) ao USCIS em {date}.",
+      "es": "Enviamos su solicitud ({form}) a USCIS el {date}.",
+      "en": "We mailed your application ({form}) to USCIS on {date}.",
+      "ht": "Nou te voye demann ou an ({form}) bay USCIS pa lapòs le {date}."
+    },
+    "receipt": {
+      "pt": "O USCIS confirmou que recebeu o seu {form} em {date}.",
+      "es": "USCIS confirmó que recibió su {form} el {date}.",
+      "en": "USCIS confirmed it received your {form} on {date}.",
+      "ht": "USCIS konfime li te resevwa {form} ou a le {date}."
+    },
+    "approval": {
+      "pt": "O USCIS aprovou o seu {form} em {date}.",
+      "es": "USCIS aprobó su {form} el {date}.",
+      "en": "USCIS approved your {form} on {date}.",
+      "ht": "USCIS apwouve {form} ou a le {date}."
+    },
+    "rfe": {
+      "pt": "O USCIS pediu mais informações sobre o seu {form} ({date}). O escritório já está cuidando disso.",
+      "es": "USCIS pidió más información sobre su {form} ({date}). La oficina ya se está encargando.",
+      "en": "USCIS asked for more information about your {form} ({date}). The office is already working on it.",
+      "ht": "USCIS mande plis enfòmasyon sou {form} ou a ({date}). Biwo a deja ap travay sou sa."
+    },
+    "decision": {
+      "pt": "Chegou uma decisão do USCIS sobre o seu {form} ({date}). O escritório vai falar com você.",
+      "es": "Llegó una decisión de USCIS sobre su {form} ({date}). La oficina hablará con usted.",
+      "en": "A USCIS decision about your {form} arrived ({date}). The office will talk with you about it.",
+      "ht": "Yon desizyon USCIS sou {form} ou a rive ({date}). Biwo a ap pale avè ou sou sa."
+    },
+    "transfer": {
+      "pt": "O USCIS transferiu o seu {form} para outro escritório ({date}). Isso é normal.",
+      "es": "USCIS transfirió su {form} a otra oficina ({date}). Es normal.",
+      "en": "USCIS moved your {form} to another office ({date}). This is normal.",
+      "ht": "USCIS voye {form} ou a nan yon lòt biwo ({date}). Sa nòmal."
+    },
+    "mailed_rfe": {
+      "pt": "Enviamos ao USCIS as informações que ele pediu sobre o seu {form} em {date}.",
+      "es": "Enviamos a USCIS la información que pidió sobre su {form} el {date}.",
+      "en": "We sent USCIS the information it asked for about your {form} on {date}.",
+      "ht": "Nou te voye bay USCIS enfòmasyon li te mande sou {form} ou a le {date}."
+    },
+    "filed_court": {
+      "pt": "Registramos o advogado do escritório no seu caso no tribunal de imigração em {date}.",
+      "es": "Registramos al abogado de la oficina en su caso en la corte de inmigración el {date}.",
+      "en": "We registered the office's attorney on your immigration court case on {date}.",
+      "ht": "Nou te anrejistre avoka biwo a nan dosye ou nan tribinal imigrasyon an le {date}."
+    },
+    "filed_visa": {
+      "pt": "Enviamos o seu pedido de visto de imigrante ({form}) em {date}.",
+      "es": "Enviamos su solicitud de visa de inmigrante ({form}) el {date}.",
+      "en": "We submitted your immigrant visa application ({form}) on {date}.",
+      "ht": "Nou te soumèt demann viza imigran ou a ({form}) le {date}."
+    },
+    "filed_court_application": {
+      "pt": "Apresentamos o seu pedido ({form}) ao tribunal de imigração em {date}.",
+      "es": "Presentamos su solicitud ({form}) ante la corte de inmigración el {date}.",
+      "en": "We filed your application ({form}) with the immigration court on {date}.",
+      "ht": "Nou depoze demann ou an ({form}) nan tribinal imigrasyon an nan dat {date}."
+    },
+    "filed_bia": {
+      "_note": "DRAFT (10/03/2026): the attorney approves; the Portuguese, Spanish and Haitian Creole are machine drafts awaiting the certified translator (docs/attorney_review.md).",
+      "pt": "Apresentamos o seu recurso ({form}) ao Conselho de Recursos de Imigração (BIA) em {date}.",
+      "es": "Presentamos su apelación ({form}) ante la Junta de Apelaciones de Inmigración (BIA) el {date}.",
+      "en": "We filed your appeal ({form}) with the Board of Immigration Appeals on {date}.",
+      "ht": "Nou depoze apèl ou an ({form}) devan Komisyon Apèl Imigrasyon an (BIA) nan dat {date}."
+    },
+    "mailed_u_cert": {
+      "pt": "Enviamos o pedido da certificação à autoridade em {date}.",
+      "es": "Enviamos la solicitud de la certificación a la autoridad el {date}.",
+      "en": "We sent the request for the certification to the agency on {date}.",
+      "ht": "Nou voye demann sètifikasyon an bay ajans lan nan dat {date}."
+    }
+  },
+  "client_labels": {
+    "pt": "O que aconteceu",
+    "es": "Lo que pasó",
+    "en": "What happened",
+    "ht": "Sa ki te pase"
+  },
+  "court_decisions": {
+    "bia_appeal_days": 10,
+    "bia_appeal_days_asylum": 30,
+    "reconsider_days": 30,
+    "reopen_days": 90,
+    "in_absentia_reopen_days": 180,
+    "_source": "8 CFR 1003.38(b)-(d) and 1003.23(b) (eCFR, current as of 09/30/2026; data/reference/8cfr1003.38.xml, 8cfr1003.23.xml). Appeal to the BIA (Form EOIR-26): within 10 calendar days of the judge's decision. 30 when the judge adjudicated an asylum application and did not deny it under INA 208(a)(2)(A), (B) or (C); counted from the oral decision or the mailing or electronic notification of a written one; a weekend or legal holiday moves it to the next business day; FILED WHEN THE BOARD RECEIVES IT, with the fee or Form EOIR-26A. Motions before the court: reconsider within 30 days and reopen within 90 days of the FINAL order; an in absentia removal order: reopen within 180 days for exceptional circumstances, or at any time for lack of notice or custody (only that motion stays removal). BIA Practice Manual 2.1: no mailbox rule; ECAS e-filing is mandatory for attorneys in eligible cases. EOIR notice: since 02/23/2026 EOIR fees are paid only through the EOIR Payment Portal (no checks or money orders); before asking EOIR for a discretionary stay with a motion to reopen or reconsider, request one from DHS (Matter of Herrera-Nunez, 29 I&N Dec. 691 (BIA 2026)). NOTE: the EOIR-26 instructions (Rev. Mar. 2026) still say 30 days for every appeal; the regulation as read (eCFR 09/30/2026) says 10 (30 for asylum): the earlier date is used and the attorney confirms. EOIR fees: schemas/fees.json eoir (EOIR fee page, 10/01/2026)."
+  },
+  "court_outcomes": [
+    "Next hearing set",
+    "Decision: relief granted",
+    "Decision: removal ordered or relief denied",
+    "Removal ordered in absentia",
+    "Case terminated or dismissed",
+    "Other"
+  ],
+  "next_filings": {
+    "_note": "The filing each stage leads to, first one first: [filing, label, now]. now = false when it is only if needed (travel) or later (a green card a year after asylum): the case page still shows it, but a filed case doesn't go back to the work list for it. Extra items (the I-751, the I-90, the EOIR-28, citizenship) are added by src/journey.py from the case's own dates.",
+    "i360_ready": [
+      [
+        "i360",
+        "File the I-360 petition (Special Immigrant Juvenile)",
+        true
+      ]
+    ],
+    "visa_wait": [
+      [
+        "i485",
+        "Prepare the I-485 packet now: it is filed when the priority date is current",
+        true
+      ]
+    ],
+    "i485_ready": [
+      [
+        "i485",
+        "File the I-485 packet (green card)",
+        true
+      ]
+    ],
+    "i485_pending": [
+      [
+        "i131",
+        "Only if the client must travel while the I-485 is pending: advance parole (I-131)",
+        false
+      ]
+    ],
+    "family_ready": [
+      [
+        "family",
+        "File the family packet (I-130 + I-485)",
+        true
+      ]
+    ],
+    "consular": [
+      [
+        "visa",
+        "Immigrant visa: NVC tracking, the DS-260 answer sheet and the document checklist",
+        true
+      ],
+      [
+        "i601a",
+        "Only if the client is in the U.S. and unlawful presence would bar them: the provisional waiver (I-601A), after the visa fee is paid, before the interview",
+        false
+      ]
+    ],
+    "asylum_ready": [
+      [
+        "i589",
+        "File the asylum application (I-589)",
+        true
+      ]
+    ],
+    "asylum_pending": [
+      [
+        "i131",
+        "Only if the client must travel: advance parole (I-131), never to the country they fled",
+        false
+      ]
+    ],
+    "asylee": [
+      [
+        "asylee",
+        "Green card as an asylee (I-485), from one year after asylum was granted",
+        false
+      ],
+      [
+        "i131",
+        "Travel: refugee travel document (I-131)",
+        false
+      ],
+      [
+        "i730",
+        "Spouse or children (I-730), within 2 years of the grant",
+        false
+      ]
+    ],
+    "family_wait": [
+      [
+        "family",
+        "Green card application (I-485) on the filed I-130, when the priority date is current",
+        false
+      ]
+    ],
+    "caa_wait": [
+      [
+        "caa",
+        "Green card under the Cuban Adjustment Act (I-485), after one year in the U.S.",
+        false
+      ]
+    ],
+    "caa_ready": [
+      [
+        "caa",
+        "Green card under the Cuban Adjustment Act (I-485)",
+        true
+      ]
+    ],
+    "vawa_ready": [
+      [
+        "vawa",
+        "File the VAWA self-petition (I-360), with the I-485 when it can go in the same envelope",
+        true
+      ]
+    ],
+    "vawa_pending": [
+      [
+        "vawa",
+        "Only if not filed with the petition: the I-485 while the I-360 is pending, when a visa is available (an abusive U.S. citizen: always)",
+        false
+      ]
+    ],
+    "vawa_approved": [
+      [
+        "vawa",
+        "File the green card application (I-485) on the approved VAWA self-petition",
+        true
+      ]
+    ],
+    "t_ready": [
+      [
+        "i914",
+        "File the T visa application (I-914)",
+        true
+      ],
+      [
+        "i914b",
+        "Only if the attorney wants one: ask the law enforcement agency for Supplement B (optional evidence)",
+        false
+      ]
+    ],
+    "t_pending": [
+      [
+        "i914b",
+        "Only if the attorney wants one: ask the law enforcement agency for Supplement B; it can be sent to USCIS later",
+        false
+      ]
+    ],
+    "t_status": [
+      [
+        "i131",
+        "Only if the client must travel: advance parole (I-131) before leaving, or T status ends (8 CFR 214.204(p))",
+        false
+      ]
+    ],
+    "u_certification": [
+      [
+        "u_cert",
+        "Ask the certifying agency to sign the certification (Supplement B)",
+        true
+      ]
+    ],
+    "u_ready": [
+      [
+        "u_visa",
+        "File the U petition (I-918) with the original signed Supplement B, before its six months run out",
+        true
+      ]
+    ],
+    "daca_current": [
+      [
+        "daca",
+        "DACA renewal (I-821D + I-765), 150 to 120 days before DACA expires",
+        false
+      ]
+    ]
+  },
+  "state_court": {
+    "_about": "The state-court step for an SIJ case depends on the client's state (the I-485's physical address). DRAFT: the attorney approves each state's wording and deadline. A state not listed gets the stage's general steps only.",
+    "FL": {
+      "order_before_age": 18,
+      "_source": "Fla. Stat. 39.01(12) (2026): a 'child' is 'any unmarried person under the age of 18 years who has not been emancipated'. O.I.C.L. v. Department of Children and Families, No. SC15-1570 (Fla. Sept. 22, 2016): a private dependency petition filed about 2.5 months before the 18th birthday was dismissed as moot because the youth, now an adult, 'cannot be adjudicated a dependent child under Florida law'. Fla. Stat. 39.5075(4)-(6): the order includes the child's expressed wishes; once dependency is adjudicated the court may keep jurisdiction for the federal petition, never after the 22nd birthday. Read 10/02/2026 at leg.state.fl.us, flsenate.gov and flcourts.gov.",
+      "deadline": "Florida: the dependency order with the SIJ findings before the 18th birthday (a Florida court can't adjudicate dependency after it)",
+      "too_late": "The client lives in Florida and is 18 or older with no SIJ order in the folder. A Florida court can no longer adjudicate dependency (Fla. Stat. 39.01(12); O.I.C.L., Fla. 2016). The attorney decides whether any route remains.",
+      "steps": [
+        [
+          "attorney",
+          "File a petition for dependency in the circuit court (Fla. Stat. chapter 39) asking for the SIJ findings, early enough for the order before the 18th birthday. The order needs the findings USCIS requires (8 CFR 204.11): the court's jurisdiction over the child; reunification with one or both parents isn't viable because of abuse, neglect, abandonment or a similar basis under state law; and it isn't in the child's best interest to return to the country of nationality. Florida also asks for the child's expressed wishes (Fla. Stat. 39.5075(4))."
+        ],
+        [
+          "attorney",
+          "If the I-360 and the green card application are still pending at 18, ask the court to keep jurisdiction for them (Fla. Stat. 39.5075(6): never after the 22nd birthday)."
+        ],
+        [
+          "paralegal",
+          "When the order arrives, add it to the folder: the system reads it and moves the case on to the I-360."
+        ]
+      ]
+    },
+    "MA": {
+      "steps": [
+        [
+          "attorney",
+          "File the state-court case that asks for the SIJ findings (in Massachusetts, the CJP 35 complaint and the CJP 37 judgment) early enough to file the I-360 before the 21st birthday."
+        ],
+        [
+          "paralegal",
+          "When the judgment arrives, add it to the folder: the system reads it and moves the case on to the I-360."
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "_about": "The asylum (I-589) cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter; the subject, enclosures and fee note are the application's. Mailed to the lockbox for the client's state on USCIS's I-589 chart (schemas/uscis_lockboxes_i589.json). Fees per Form G-1055 (10/01/26) and uscis.gov/i-589: no filing fee; the Pub. L. 119-21 asylum application fee ($100) by separate payment. None for Ms. L. Settlement Class members. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": "by_state",
+  "lockbox_chart": "uscis_lockboxes_i589.json",
+  "noun": "application",
+  "re_lines": [
+    "Application: I-589 Application for Asylum and for Withholding of Removal"
+  ],
+  "who": "Applicant",
+  "intro": "Please be advised that this law office has been retained to represent {name} with respect to {pron} immigration matters. {case_paragraph} In support of {pron} {noun}, we have provided the following documents:",
+  "form_order": [
+    "i589",
+    "g28_i589"
+  ],
+  "always_forms": [],
+  "forms": {
+    "i589": "Applicant’s I-589 - Application for Asylum and for Withholding of Removal (original, signed), with supplement sheets",
+    "g28_i589": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative"
+  },
+  "documents": [
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "national_id",
+      "Copy of Applicant’s National Identity Document"
+    ],
+    [
+      "birth_certificate",
+      "Copy of Applicant’s Birth Certificate and Translation"
+    ],
+    [
+      "i94",
+      "Copy of Applicant’s Form I-94"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of the Marriage Certificate (spouse included in the application)"
+    ],
+    [
+      "declaration",
+      "Declarations in Support of the Application"
+    ],
+    [
+      "police_report",
+      "Police Reports"
+    ],
+    [
+      "medical_record",
+      "Medical and Psychological Records"
+    ],
+    [
+      "news_article",
+      "News Articles"
+    ],
+    [
+      "country_conditions",
+      "Country Conditions Documentation"
+    ],
+    [
+      "notice_to_appear",
+      "Copies of Applicant’s Immigration Court Documents"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ],
+    [
+      "fee_calculator_printout",
+      "Payment of the Public Law 119-21 asylum application fee ({i589_pl}), separate from any filing fee"
+    ]
+  ],
+  "fees": "There is no filing fee for Form I-589. As required by Public Law 119-21, the asylum application fee of {i589_pl} for the principal applicant is enclosed as a separate payment ({schedule}).",
+  "fees_when": [
+    {
+      "fact": "ms_l",
+      "eq": "Yes",
+      "fees": "The applicant is a Ms. L. Settlement Class member: under the court order in Ms. L. v. ICE, 18-cv-00428 (S.D. Cal.), no Public Law 119-21 asylum fee is due, and none is enclosed.",
+      "no_payment": true
+    }
+  ],
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "sign",
+      "text": "I-589: the client signs and dates Part D (after the application was read to them in their language) and each supplement sheet; the attorney signs Part E. Parts F and G stay blank."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the Pub. L. 119-21 asylum fee as its own payment (unless a Ms. L. class member, then write \"Ms. L Settlement Class Member\" at the top of page 1)."
+    },
+    {
+      "kind": "attach",
+      "text": "Mail it with tracking, well before the 1-year deadline: the filing date is the day USCIS receives it."
+    }
+  ]
+}

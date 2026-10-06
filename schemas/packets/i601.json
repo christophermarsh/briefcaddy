@@ -1,0 +1,131 @@
+{
+  "_about": "The waiver of grounds of inadmissibility (Form I-601, src/inadmissibility_waiver.py), per uscis.gov/i-601 (updated 06/01/2026, read 2026-10-02) and the I-601 instructions (edition 01/20/25, 'What Evidence Must You Submit?', pages 17-18): the G-28 and the I-601, then the evidence of each ground and why the waiver is warranted, the qualifying relative's relationship and status, the extreme hardship evidence, certified court records for every arrest or conviction, and the immigration court and visa records. With a Form I-212 in the same envelope (Part 1, 19), 'with_i212' adds it and its evidence (the I-212 instructions, pages 13-15). The attorney approves titles and order.",
+  "filing": "i601",
+  "title": "Waiver of inadmissibility (I-601)",
+  "packet_pdf": "packet_i601.pdf",
+  "manifest": "packet_i601.json",
+  "choices": "packet_choices_i601.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i601.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i601",
+    "i601"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The consular officer's refusal letter (an immigrant, K or V visa), or the I-485 receipt notice (an adjustment): it shows where the client stands."
+    },
+    {
+      "kind": "attach",
+      "text": "The attorney's brief and the client's declaration: every ground listed in Part 4 and every event, why the waiver is warranted, and the extreme hardship to the qualifying relative where the ground needs it."
+    },
+    {
+      "kind": "check",
+      "text": "Certified court dispositions for every arrest or conviction, from every country: an uncertified copy is not enough (the I-601 instructions, page 9)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "relationship",
+      "title": "The qualifying relative: proof of U.S. citizenship or permanent residence, and of the relationship",
+      "types": [
+        "us_passport",
+        "citizenship_certificate",
+        "us_birth_certificate",
+        "green_card",
+        "marriage_certificate",
+        "birth_certificate"
+      ],
+      "roles": [
+        "relationship"
+      ]
+    },
+    {
+      "id": "hardship",
+      "title": "Extreme hardship evidence: health, finances, education, family ties, country conditions",
+      "types": [
+        "declaration",
+        "medical_record",
+        "tax_return",
+        "w2",
+        "pay_stub",
+        "bank_statement",
+        "lease",
+        "utility_bill",
+        "school_record",
+        "country_conditions",
+        "news_article"
+      ],
+      "roles": [
+        "hardship"
+      ]
+    },
+    {
+      "id": "criminal",
+      "title": "Certified court dispositions and police records",
+      "types": [
+        "criminal_record",
+        "court_disposition",
+        "police_report",
+        "police_clearance"
+      ]
+    },
+    {
+      "id": "notices",
+      "title": "The approved petition and the other USCIS notices, and the visa case's letters",
+      "types": [
+        "uscis_notice",
+        "i130_approval",
+        "i360_approval",
+        "i485_receipt",
+        "nvc_letter",
+        "consular_appointment"
+      ]
+    },
+    {
+      "id": "court",
+      "title": "Immigration court and removal records",
+      "types": [
+        "notice_to_appear",
+        "eoir_hearing_notice"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "The client's passport and entry records",
+      "types": [
+        "passport",
+        "visa",
+        "i94"
+      ]
+    }
+  ],
+  "with_i212": {
+    "_about": "Added when Form I-212 goes in the same envelope (src/inadmissibility_waiver.py case_schema): the I-212 instructions, 'What Evidence Must You Submit?' (pages 13-15).",
+    "exhibits": [
+      {
+        "id": "absence",
+        "title": "For INA 212(a)(9)(C): evidence of 10 years outside the U.S. since the last departure (passport stamps, residence, work, bills)",
+        "types": []
+      }
+    ],
+    "handwork": [
+      {
+        "kind": "attach",
+        "text": "Form I-212: copies of every document from each exclusion, deportation or removal proceeding, including the final order (the I-212 instructions, page 13)."
+      }
+    ]
+  },
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this application.",
+    "work_permit": "Not asked for with the I-601.",
+    "ssn_card": "Not asked for with the I-601.",
+    "drivers_license": "Not asked for with the I-601."
+  }
+}

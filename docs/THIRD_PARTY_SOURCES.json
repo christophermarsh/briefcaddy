@@ -1,0 +1,14 @@
+{
+  "source_portions": [
+    {
+      "path": "src/review/qr.py",
+      "origin": "Project Nayuki QR Code generator library (Python)",
+      "source_url": "https://www.nayuki.io/page/qr-code-generator-library",
+      "license": "MIT",
+      "copyright": "Project Nayuki",
+      "notice_location": "src/review/qr.py module header, retained unchanged",
+      "sha256": "99c4c73ab326ee5b20adf5e6afd1e4e38923caeb1115c9298126bf57399b9cd7"
+    }
+  ],
+  "binary_packaging": "disabled; installer entry points withheld"
+}

@@ -1,0 +1,42 @@
+{
+  "_about": "A work permit filed on its own (Form I-765, src/work_permit.py), per the I-765 Instructions and uscis.gov/i-765: the G-28 and the I-765, two passport photos, a copy of the I-94 or passport, the evidence of the category (the I-485 or I-589 receipt, the asylum approval, the deferred action notice), the current card for a renewal, and court dispositions for a (c)(8) applicant ever arrested. The attorney approves titles and order.",
+  "filing": "ead",
+  "title": "I-765 (work permit)",
+  "packet_pdf": "packet_ead.pdf",
+  "manifest": "packet_ead.json",
+  "choices": "packet_choices_ead.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_ead.json",
+  "index_sheet": false,
+  "forms": ["g28_ead", "ead"],
+  "handwork": [
+    {"kind": "attach", "text": "Two identical color passport-style photos, taken in the last 30 days; the client's name and A-Number lightly in pencil on the back."},
+    {"kind": "check", "text": "A first (c)(8) asylum work permit, or a (c)(8) renewal: the Pub. L. 119-21 fee is its own payment (its own Form G-1450 or G-1650), separate from any filing fee."}
+  ],
+  "exhibits": [
+    {"id": "basis", "title": "The category: the I-485 or I-589 receipt notice, the asylum approval, or the deferred action notice", "types": ["uscis_notice", "i485_receipt", "i360_approval"], "required": true},
+    {"id": "current_card", "title": "The current work permit (front and back): a renewal or replacement", "types": ["work_permit"]},
+    {"id": "identity", "title": "Form I-94, the passport identity page, or another government photo ID", "types": ["i94", "passport", "drivers_license", "national_id"], "required": true},
+    {"id": "court", "title": "Certified court dispositions for every arrest or conviction ((c)(8))", "types": ["criminal_record"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "birth_certificate": "Not asked for with the I-765.",
+    "ssn_card": "Not asked for with the I-765.",
+    "sij_order": "Not asked for with the I-765 (the deferred action notice shows the category).",
+    "bank_statement": "Not asked for with the I-765.",
+    "lease": "Not asked for with the I-765.",
+    "utility_bill": "Not asked for with the I-765.",
+    "tax_return": "Not asked for with the I-765.",
+    "w2": "Not asked for with the I-765.",
+    "pay_stub": "Not asked for with the I-765.",
+    "marriage_certificate": "Not asked for with the I-765.",
+    "visa": "Not asked for with the I-765."
+  }
+}

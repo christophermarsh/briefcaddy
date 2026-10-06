@@ -1,0 +1,64 @@
+{
+  "_about": "The I-730 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from schemas/cover_letter.json. The address (USCIS, Attn: I-730, P.O. Box 20018, Phoenix: uscis.gov/i-730, updated 09/09/2026), the subject, the forms (a G-28 and an I-730 for each relative) and the fee (none: Form G-1055 10/01/26) come from src/i730.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "petitions",
+  "re_lines": [
+    "Petition: I-730 Refugee/Asylee Relative Petition"
+  ],
+  "who": "Petitioner",
+  "form_order": [],
+  "always_forms": [],
+  "forms": {},
+  "documents": [
+    [
+      "uscis_notice",
+      "Copy of the Approval of Petitioner’s Asylum Application, and Other USCIS Notices"
+    ],
+    [
+      "i590_approval",
+      "Copy of Petitioner’s Approved Form I-590, Registration for Classification as Refugee"
+    ],
+    [
+      "i94",
+      "Copy of Petitioner’s Form I-94 Showing Asylee or Refugee Status"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of the Immigration Judge’s Order Granting Asylum"
+    ],
+    [
+      "work_permit",
+      "Copy of Petitioner’s Employment Authorization Card"
+    ],
+    [
+      "photos",
+      "A Passport-Style Photograph of Each Beneficiary"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of the Marriage Certificate and Translation"
+    ],
+    [
+      "divorce_decree",
+      "Copies of Documents Ending Prior Marriages"
+    ],
+    [
+      "birth_certificate",
+      "Copies of Birth Certificates and Translations"
+    ],
+    [
+      "passport",
+      "Copies of Passports"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    }
+  ]
+}

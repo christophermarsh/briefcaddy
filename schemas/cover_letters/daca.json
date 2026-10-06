@@ -1,0 +1,29 @@
+{
+  "_about": "The DACA renewal cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the DACA lockbox for the client's state: USCIS 'Direct Filing Addresses for Form I-821D', updated 09/24/2024), the subject and the fees ($85 for the I-821D, $520 for the I-765 (c)(33): Form G-1055 10/01/26) come from src/daca.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": ["[set by the filing's module]"],
+  "noun": "request",
+  "re_lines": ["Request: I-821D Consideration of Deferred Action for Childhood Arrivals"],
+  "who": "Requestor",
+  "form_order": ["g28_daca", "i821d", "i765_daca", "i765ws"],
+  "always_forms": [],
+  "forms": {
+    "g28_daca": "Requestor’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i821d": "Requestor’s I-821D - Consideration of Deferred Action for Childhood Arrivals (Renewal)",
+    "i765_daca": "Requestor’s I-765 - Application for Employment Authorization, Category (c)(33)",
+    "i765ws": "Requestor’s I-765WS - Form I-765 Worksheet"
+  },
+  "documents": [
+    ["work_permit", "Copy of Requestor’s Current Employment Authorization Document (front and back)"],
+    ["uscis_notice", "Copy of Requestor’s Current DACA Approval Notice (Form I-797)"],
+    ["notice_to_appear", "Documents Regarding Removal Proceedings"],
+    ["criminal_record", "Certified Arrest Records and Court Dispositions"],
+    ["police_report", "Arrest Records"],
+    ["photos", "Two Passport-Style Photographs"]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {"kind": "sign", "text": "Cover letter: the attorney signs it."},
+    {"kind": "attach", "text": "Enclose the two fees the cover letter states, each by its own Form G-1450 (a U.S. card) or Form G-1650 (a U.S. bank account), never a check: one for the I-821D, one for the I-765.", "unless": "no_payment"}
+  ]
+}

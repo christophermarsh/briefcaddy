@@ -1,0 +1,1123 @@
+{
+ "_status": "The humanitarian parole questions the client answers in the portal, for a request for someone outside the U.S. (Form I-131, Part 1, item 7) with its Form I-134 (the financial supporter): src/portal/bank.py load_bank('parole'). Each answer fills the parole.* fact the review app's Humanitarian parole panel shows; the client is usually the supporter and the person's relative, and the office asks about any further person. DRAFT: every wording needs a certified translator and attorney approval before clients see it. The Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator.",
+ "version": 1,
+ "reuse_sections": [],
+ "reuse_documents": [
+  "passport",
+  "birth_certificate",
+  "drivers_license",
+  "drivers_license_back"
+ ],
+ "sections": [
+  {
+   "id": "parole_request",
+   "title": {
+    "pt": "O pedido",
+    "es": "La solicitud",
+    "en": "The request",
+    "ht": "Demann lan"
+   },
+   "questions": [
+    {
+     "id": "for_whom",
+     "type": "choice",
+     "fact": "parole.for_whom",
+     "label": {
+      "pt": "Para quem é o pedido de parole (permissão humanitária para entrar nos EUA)?",
+      "es": "¿Para quién es la solicitud de parole (permiso humanitario para entrar a los EE. UU.)?",
+      "en": "Who is the request for? (parole is permission to enter the U.S. for an urgent humanitarian reason)",
+      "ht": "Pou ki moun demann parole la ye? (parole se pèmisyon pou antre Etazini pou yon rezon imanitè ijan)"
+     },
+     "options": [
+      {
+       "value": "The client, for someone else who is outside the U.S.",
+       "label": {
+        "pt": "Para outra pessoa que está fora dos EUA",
+        "es": "Para otra persona que está fuera de los EE. UU.",
+        "en": "For someone else who is outside the U.S.",
+        "ht": "Pou yon lòt moun ki deyò Etazini"
+       }
+      },
+      {
+       "value": "The client, for themself (the client is outside the U.S.)",
+       "label": {
+        "pt": "Para mim (eu estou fora dos EUA)",
+        "es": "Para mí (yo estoy fuera de los EE. UU.)",
+        "en": "For myself (I am outside the U.S.)",
+        "ht": "Pou mwen menm (mwen deyò Etazini)"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "Part 1, Item 7"
+    },
+    {
+     "id": "count",
+     "type": "choice",
+     "fact": "parole.count",
+     "label": {
+      "pt": "Quantas pessoas? (o escritório pergunta os dados de cada uma)",
+      "es": "¿Cuántas personas? (la oficina le preguntará los datos de cada una)",
+      "en": "How many people? (the office will ask for each person's details)",
+      "ht": "Konbyen moun? (biwo a pral mande enfòmasyon chak moun)"
+     },
+     "options": [
+      {
+       "value": "1",
+       "label": {
+        "pt": "1",
+        "es": "1",
+        "en": "1",
+        "ht": "1"
+       }
+      },
+      {
+       "value": "2",
+       "label": {
+        "pt": "2",
+        "es": "2",
+        "en": "2",
+        "ht": "2"
+       }
+      },
+      {
+       "value": "3",
+       "label": {
+        "pt": "3",
+        "es": "3",
+        "en": "3",
+        "ht": "3"
+       }
+      },
+      {
+       "value": "4",
+       "label": {
+        "pt": "4",
+        "es": "4",
+        "en": "4",
+        "ht": "4"
+       }
+      }
+     ],
+     "required": true,
+     "show_if": {
+      "q": "for_whom",
+      "eq": "The client, for someone else who is outside the U.S."
+     }
+    },
+    {
+     "id": "reason",
+     "type": "textarea",
+     "fact": "parole.reason",
+     "label": {
+      "pt": "Por que a pessoa precisa entrar nos EUA agora? Conte o motivo humanitário urgente (por exemplo, um tratamento médico ou uma pessoa da família muito doente).",
+      "es": "¿Por qué necesita la persona entrar a los EE. UU. ahora? Cuente el motivo humanitario urgente (por ejemplo, un tratamiento médico o un familiar muy enfermo).",
+      "en": "Why does the person need to come to the U.S. now? Tell us the urgent humanitarian reason (for example, medical treatment, or a family member who is very ill).",
+      "ht": "Poukisa moun nan bezwen vini Etazini kounye a? Di nou rezon imanitè ijan an (pa egzanp, yon tretman medikal, oswa yon manm fanmi ki malad anpil)."
+     },
+     "required": true,
+     "parole": "Part 8, Item 1"
+    },
+    {
+     "id": "stay",
+     "type": "text",
+     "fact": "parole.stay",
+     "label": {
+      "pt": "Por quanto tempo a pessoa pretende ficar nos EUA?",
+      "es": "¿Por cuánto tiempo piensa quedarse la persona en los EE. UU.?",
+      "en": "How long does the person expect to stay in the U.S.?",
+      "ht": "Konbyen tan moun nan espere rete Etazini?"
+     },
+     "required": true,
+     "parole": "Part 8, Item 2"
+    },
+    {
+     "id": "arrival_date",
+     "type": "date",
+     "fact": "parole.arrival_date",
+     "label": {
+      "pt": "Em que data a pessoa pretende chegar aos EUA?",
+      "es": "¿En qué fecha piensa llegar la persona a los EE. UU.?",
+      "en": "On what date does the person intend to arrive in the U.S.?",
+      "ht": "Ki dat moun nan gen entansyon rive Etazini?"
+     },
+     "required": false,
+     "parole": "Part 8, Item 3.a"
+    },
+    {
+     "id": "visa_why",
+     "type": "textarea",
+     "fact": "parole.visa_why",
+     "label": {
+      "pt": "Por que a pessoa não consegue um visto americano? Diga quando e onde tentou, ou por que não tentou.",
+      "es": "¿Por qué no puede la persona obtener una visa estadounidense? Diga cuándo y dónde lo intentó, o por qué no lo intentó.",
+      "en": "Why can't the person get a U.S. visa? Tell us when and where they tried, or why they did not try.",
+      "ht": "Poukisa moun nan pa ka jwenn yon viza ameriken? Di nou kilè ak ki kote li eseye, oswa poukisa li pa eseye."
+     },
+     "required": true,
+     "parole": "the I-131 Instructions' statement"
+    }
+   ]
+  },
+  {
+   "id": "parole_person",
+   "title": {
+    "pt": "A pessoa que precisa vir (se for você, responda sobre você)",
+    "es": "La persona que necesita venir (si es usted, responda sobre usted)",
+    "en": "The person who needs to come (if it is you, answer about yourself)",
+    "ht": "Moun ki bezwen vini an (si se ou menm, reponn sou ou)"
+   },
+   "questions": [
+    {
+     "id": "b_relationship",
+     "type": "text",
+     "fact": "parole.b1_relationship",
+     "label": {
+      "pt": "Quem é essa pessoa para você? (irmã, pai, amigo...)",
+      "es": "¿Quién es esta persona para usted? (hermana, padre, amigo...)",
+      "en": "Who is this person to you? (sister, father, friend...)",
+      "ht": "Ki moun sa a ye pou ou? (sè, papa, zanmi...)"
+     },
+     "required": true
+    },
+    {
+     "id": "b_family_name",
+     "type": "text",
+     "fact": "parole.b1_family_name",
+     "label": {
+      "pt": "Sobrenome da pessoa",
+      "es": "Apellido de la persona",
+      "en": "The person's last name",
+      "ht": "Siyati moun nan"
+     },
+     "required": true,
+     "parole": "Part 2, Item 16"
+    },
+    {
+     "id": "b_given_name",
+     "type": "text",
+     "fact": "parole.b1_given_name",
+     "label": {
+      "pt": "Primeiro nome e nomes do meio da pessoa",
+      "es": "Primer nombre y segundo nombre de la persona",
+      "en": "The person's first and middle name(s)",
+      "ht": "Premye non ak dezyèm non moun nan"
+     },
+     "required": true
+    },
+    {
+     "id": "b_dob",
+     "type": "date",
+     "fact": "parole.b1_dob",
+     "label": {
+      "pt": "Data de nascimento da pessoa",
+      "es": "Fecha de nacimiento de la persona",
+      "en": "The person's date of birth",
+      "ht": "Dat nesans moun nan"
+     },
+     "required": true,
+     "parole": "Part 2, Item 18"
+    },
+    {
+     "id": "b_sex",
+     "type": "choice",
+     "fact": "parole.b1_sex",
+     "label": {
+      "pt": "Sexo da pessoa",
+      "es": "Sexo de la persona",
+      "en": "The person's sex",
+      "ht": "Sèks moun nan"
+     },
+     "options": [
+      {
+       "value": "F",
+       "label": {
+        "pt": "Feminino",
+        "es": "Femenino",
+        "en": "Female",
+        "ht": "Fi"
+       }
+      },
+      {
+       "value": "M",
+       "label": {
+        "pt": "Masculino",
+        "es": "Masculino",
+        "en": "Male",
+        "ht": "Gason"
+       }
+      }
+     ],
+     "required": true
+    },
+    {
+     "id": "b_marital",
+     "type": "choice",
+     "fact": "parole.b1_marital_status",
+     "label": {
+      "pt": "Estado civil da pessoa",
+      "es": "Estado civil de la persona",
+      "en": "The person's marital status",
+      "ht": "Eta sivil moun nan"
+     },
+     "options": [
+      {
+       "value": "Single",
+       "label": {
+        "pt": "Solteiro(a), nunca casei",
+        "es": "Soltero(a), nunca casado(a)",
+        "en": "Single, never married",
+        "ht": "Selibatè, mwen pa janm marye"
+       }
+      },
+      {
+       "value": "Married",
+       "label": {
+        "pt": "Casado(a)",
+        "es": "Casado(a)",
+        "en": "Married",
+        "ht": "Marye"
+       }
+      },
+      {
+       "value": "Divorced",
+       "label": {
+        "pt": "Divorciado(a)",
+        "es": "Divorciado(a)",
+        "en": "Divorced",
+        "ht": "Divòse"
+       }
+      },
+      {
+       "value": "Widowed",
+       "label": {
+        "pt": "Viúvo(a)",
+        "es": "Viudo(a)",
+        "en": "Widowed",
+        "ht": "Vèf / vèv (mari oswa madanm mwen mouri)"
+       }
+      },
+      {
+       "value": "Marriage Annulled",
+       "label": {
+        "pt": "Meu casamento foi anulado (cancelado por um juiz)",
+        "es": "Mi matrimonio fue anulado (cancelado por un juez)",
+        "en": "My marriage was annulled (cancelled by a court)",
+        "ht": "Maryaj mwen te anile (yon tribinal te anile l)"
+       }
+      },
+      {
+       "value": "Legally Separated",
+       "label": {
+        "pt": "Separado(a) por decisão de um juiz (separação legal)",
+        "es": "Separado(a) por decisión de un juez (separación legal)",
+        "en": "Separated by a court order (legally separated)",
+        "ht": "Separe pa lòd yon tribinal (separasyon legal)"
+       }
+      }
+     ],
+     "required": true
+    },
+    {
+     "id": "b_birth_city",
+     "type": "text",
+     "fact": "parole.b1_city_of_birth",
+     "label": {
+      "pt": "Cidade onde a pessoa nasceu",
+      "es": "Ciudad donde nació la persona",
+      "en": "City or town where the person was born",
+      "ht": "Vil kote moun nan fèt"
+     },
+     "required": true
+    },
+    {
+     "id": "b_birth_country",
+     "type": "country",
+     "fact": "parole.b1_country_of_birth",
+     "label": {
+      "pt": "País onde a pessoa nasceu",
+      "es": "País donde nació la persona",
+      "en": "Country where the person was born",
+      "ht": "Peyi kote moun nan fèt"
+     },
+     "required": true,
+     "parole": "Part 2, Item 19"
+    },
+    {
+     "id": "b_citizenship",
+     "type": "country",
+     "fact": "parole.b1_citizenship",
+     "label": {
+      "pt": "País de que a pessoa é cidadã",
+      "es": "País del que la persona es ciudadana",
+      "en": "Country the person is a citizen of",
+      "ht": "Peyi moun nan se sitwayen li"
+     },
+     "required": true,
+     "parole": "Part 2, Item 20"
+    },
+    {
+     "id": "b_street",
+     "type": "text",
+     "fact": "parole.b1_street",
+     "label": {
+      "pt": "Onde a pessoa mora agora: rua e número",
+      "es": "Dónde vive la persona ahora: calle y número",
+      "en": "Where the person lives now: street and number",
+      "ht": "Kote moun nan rete kounye a: ri ak nimewo"
+     },
+     "required": true,
+     "parole": "Part 2, Item 24"
+    },
+    {
+     "id": "b_city",
+     "type": "text",
+     "fact": "parole.b1_city",
+     "label": {
+      "pt": "Onde a pessoa mora agora: cidade",
+      "es": "Dónde vive la persona ahora: ciudad",
+      "en": "Where the person lives now: city or town",
+      "ht": "Kote moun nan rete kounye a: vil"
+     },
+     "required": true
+    },
+    {
+     "id": "b_country",
+     "type": "country",
+     "fact": "parole.b1_country",
+     "label": {
+      "pt": "Onde a pessoa mora agora: país",
+      "es": "Dónde vive la persona ahora: país",
+      "en": "Where the person lives now: country",
+      "ht": "Kote moun nan rete kounye a: peyi"
+     },
+     "required": true
+    },
+    {
+     "id": "b_phone",
+     "type": "text",
+     "fact": "parole.b1_phone",
+     "label": {
+      "pt": "Telefone da pessoa, se tiver",
+      "es": "Teléfono de la persona, si tiene",
+      "en": "The person's phone, if any",
+      "ht": "Telefòn moun nan, si li genyen"
+     },
+     "required": false
+    },
+    {
+     "id": "b_email",
+     "type": "email",
+     "fact": "parole.b1_email",
+     "label": {
+      "pt": "Email da pessoa, se tiver",
+      "es": "Correo electrónico de la persona, si tiene",
+      "en": "The person's email, if any",
+      "ht": "Imèl moun nan, si li genyen"
+     },
+     "required": false
+    },
+    {
+     "id": "b_in_proceedings",
+     "type": "yes_no",
+     "fact": "parole.b1_in_proceedings",
+     "label": {
+      "pt": "A pessoa já esteve em algum processo de imigração para deportação ou remoção (exclusão, deportação, remoção)?",
+      "es": "¿La persona ha estado alguna vez en un proceso de inmigración de exclusión, deportación o remoción?",
+      "en": "Has the person ever been in immigration proceedings for exclusion, deportation or removal?",
+      "ht": "Èske moun nan te janm nan yon pwosè imigrasyon pou ekskli, depòte oswa retire li?"
+     },
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "Part 4, Item 1"
+    }
+   ]
+  },
+  {
+   "id": "parole_supporter",
+   "title": {
+    "pt": "Quem vai sustentar a pessoa (declaração de apoio financeiro, Formulário I-134)",
+    "es": "Quién va a apoyar a la persona (declaración de apoyo financiero, Formulario I-134)",
+    "en": "Who will support the person (the declaration of financial support, Form I-134)",
+    "ht": "Ki moun ki pral sipòte moun nan (deklarasyon sipò finansye, Fòm I-134)"
+   },
+   "questions": [
+    {
+     "id": "s_family_name",
+     "type": "text",
+     "fact": "parole.sponsor_family_name",
+     "label": {
+      "pt": "Sobrenome de quem vai sustentar (o apoiador)",
+      "es": "Apellido de quien va a apoyar (el patrocinador)",
+      "en": "Last name of the person who will support them (the supporter)",
+      "ht": "Siyati moun ki pral sipòte a (sipòtè a)"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 1"
+    },
+    {
+     "id": "s_given_name",
+     "type": "text",
+     "fact": "parole.sponsor_given_name",
+     "label": {
+      "pt": "Primeiro nome e nomes do meio do apoiador",
+      "es": "Primer nombre y segundo nombre del patrocinador",
+      "en": "The supporter's first and middle name(s)",
+      "ht": "Premye non ak dezyèm non sipòtè a"
+     },
+     "required": true
+    },
+    {
+     "id": "s_dob",
+     "type": "date",
+     "fact": "parole.sponsor_dob",
+     "label": {
+      "pt": "Data de nascimento do apoiador",
+      "es": "Fecha de nacimiento del patrocinador",
+      "en": "The supporter's date of birth",
+      "ht": "Dat nesans sipòtè a"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 6"
+    },
+    {
+     "id": "s_birth_city",
+     "type": "text",
+     "fact": "parole.sponsor_birth_city",
+     "label": {
+      "pt": "Cidade onde o apoiador nasceu",
+      "es": "Ciudad donde nació el patrocinador",
+      "en": "City or town where the supporter was born",
+      "ht": "Vil kote sipòtè a fèt"
+     },
+     "required": true
+    },
+    {
+     "id": "s_birth_country",
+     "type": "country",
+     "fact": "parole.sponsor_birth_country",
+     "label": {
+      "pt": "País onde o apoiador nasceu",
+      "es": "País donde nació el patrocinador",
+      "en": "Country where the supporter was born",
+      "ht": "Peyi kote sipòtè a fèt"
+     },
+     "required": true
+    },
+    {
+     "id": "s_status",
+     "type": "choice",
+     "fact": "parole.sponsor_status",
+     "label": {
+      "pt": "Qual é a situação imigratória do apoiador hoje?",
+      "es": "¿Cuál es la situación migratoria del patrocinador hoy?",
+      "en": "What is the supporter's immigration status today?",
+      "ht": "Ki eta imigrasyon sipòtè a kounye a?"
+     },
+     "options": [
+      {
+       "value": "U.S. citizen",
+       "label": {
+        "pt": "Cidadão americano",
+        "es": "Ciudadano estadounidense",
+        "en": "U.S. citizen",
+        "ht": "Sitwayen ameriken"
+       }
+      },
+      {
+       "value": "Lawful permanent resident",
+       "label": {
+        "pt": "Residente permanente (green card)",
+        "es": "Residente permanente (green card)",
+        "en": "Lawful permanent resident (green card)",
+        "ht": "Rezidan pèmanan (green card)"
+       }
+      },
+      {
+       "value": "U.S. national",
+       "label": {
+        "pt": "Nacional dos EUA (não cidadão)",
+        "es": "Nacional de los EE. UU. (no ciudadano)",
+        "en": "U.S. national (not a citizen)",
+        "ht": "Nasyonal ameriken (pa sitwayen)"
+       }
+      },
+      {
+       "value": "Nonimmigrant",
+       "label": {
+        "pt": "Visto temporário (não imigrante)",
+        "es": "Visa temporal (no inmigrante)",
+        "en": "Temporary visa (nonimmigrant)",
+        "ht": "Viza tanporè (nonimigran)"
+       }
+      },
+      {
+       "value": "Asylee",
+       "label": {
+        "pt": "Asilado(a)",
+        "es": "Asilado(a)",
+        "en": "Asylee",
+        "ht": "Azilè"
+       }
+      },
+      {
+       "value": "Refugee",
+       "label": {
+        "pt": "Refugiado(a)",
+        "es": "Refugiado(a)",
+        "en": "Refugee",
+        "ht": "Refijye"
+       }
+      },
+      {
+       "value": "Parolee",
+       "label": {
+        "pt": "Parolee (entrou com parole)",
+        "es": "Parolee (entró con parole)",
+        "en": "Parolee (paroled into the U.S.)",
+        "ht": "Paroli (te antre ak parole)"
+       }
+      },
+      {
+       "value": "TPS holder",
+       "label": {
+        "pt": "Beneficiário(a) de TPS",
+        "es": "Beneficiario(a) de TPS",
+        "en": "TPS holder",
+        "ht": "Moun ki gen TPS"
+       }
+      },
+      {
+       "value": "Beneficiary of deferred action (including DACA) or Deferred Enforced Departure",
+       "label": {
+        "pt": "Ação diferida (inclui DACA)",
+        "es": "Acción diferida (incluye DACA)",
+        "en": "Deferred action (including DACA)",
+        "ht": "Aksyon pwolonje (ki gen ladan DACA)"
+       }
+      },
+      {
+       "value": "Other",
+       "label": {
+        "pt": "Outro",
+        "es": "Otro",
+        "en": "Other",
+        "ht": "Lòt"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "I-134, Part 2, Item 10"
+    },
+    {
+     "id": "s_relationship",
+     "type": "text",
+     "fact": "parole.sponsor_relationship",
+     "label": {
+      "pt": "Quem é o apoiador para a pessoa? (irmão, filha, amigo...)",
+      "es": "¿Quién es el patrocinador para la persona? (hermano, hija, amigo...)",
+      "en": "Who is the supporter to the person? (brother, daughter, friend...)",
+      "ht": "Ki moun sipòtè a ye pou moun nan? (frè, pitit fi, zanmi...)"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 11"
+    },
+    {
+     "id": "s_address",
+     "type": "us_address",
+     "facts": {
+      "street": "parole.sponsor_mailing_street",
+      "apt": "parole.sponsor_mailing_apt",
+      "city": "parole.sponsor_mailing_city",
+      "state": "parole.sponsor_mailing_state",
+      "zip": "parole.sponsor_mailing_zip"
+     },
+     "label": {
+      "pt": "Endereço do apoiador nos EUA (onde recebe correspondência)",
+      "es": "Dirección del patrocinador en los EE. UU. (donde recibe correspondencia)",
+      "en": "The supporter's address in the U.S. (where they get their mail)",
+      "ht": "Adrès sipòtè a Etazini (kote li resevwa lèt)"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 3"
+    },
+    {
+     "id": "s_same_address",
+     "type": "yes_no",
+     "fact": "parole.sponsor_mailing_same",
+     "label": {
+      "pt": "O apoiador mora nesse mesmo endereço?",
+      "es": "¿El patrocinador vive en esa misma dirección?",
+      "en": "Does the supporter live at that same address?",
+      "ht": "Èske sipòtè a rete nan menm adrès sa a?"
+     },
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "I-134, Part 2, Item 4"
+    },
+    {
+     "id": "s_phone",
+     "type": "phone",
+     "fact": "parole.sponsor_phone",
+     "label": {
+      "pt": "Telefone do apoiador",
+      "es": "Teléfono del patrocinador",
+      "en": "The supporter's phone",
+      "ht": "Telefòn sipòtè a"
+     },
+     "required": true,
+     "parole": "I-134, Part 5, Item 3"
+    },
+    {
+     "id": "s_email",
+     "type": "email",
+     "fact": "parole.sponsor_email",
+     "label": {
+      "pt": "Email do apoiador",
+      "es": "Correo electrónico del patrocinador",
+      "en": "The supporter's email",
+      "ht": "Imèl sipòtè a"
+     },
+     "required": false
+    },
+    {
+     "id": "s_employment",
+     "type": "choice",
+     "fact": "parole.sponsor_employment",
+     "label": {
+      "pt": "Situação de trabalho do apoiador",
+      "es": "Situación laboral del patrocinador",
+      "en": "The supporter's work situation",
+      "ht": "Sitiyasyon travay sipòtè a"
+     },
+     "options": [
+      {
+       "value": "Employed",
+       "label": {
+        "pt": "Empregado(a)",
+        "es": "Empleado(a)",
+        "en": "Employed",
+        "ht": "Anplwaye"
+       }
+      },
+      {
+       "value": "Self-employed",
+       "label": {
+        "pt": "Autônomo(a)",
+        "es": "Trabajador(a) independiente",
+        "en": "Self-employed",
+        "ht": "Travay pou tèt ou"
+       }
+      },
+      {
+       "value": "Unemployed or not employed",
+       "label": {
+        "pt": "Desempregado(a) ou não trabalha",
+        "es": "Desempleado(a) o no trabaja",
+        "en": "Unemployed or not working",
+        "ht": "Pa gen travay"
+       }
+      },
+      {
+       "value": "Retired",
+       "label": {
+        "pt": "Aposentado(a)",
+        "es": "Jubilado(a)",
+        "en": "Retired",
+        "ht": "Retrete"
+       }
+      },
+      {
+       "value": "Other",
+       "label": {
+        "pt": "Outro",
+        "es": "Otro",
+        "en": "Other",
+        "ht": "Lòt"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "I-134, Part 2, Item 12"
+    },
+    {
+     "id": "s_job",
+     "type": "text",
+     "fact": "parole.sponsor_job",
+     "label": {
+      "pt": "Qual é o trabalho do apoiador?",
+      "es": "¿Cuál es el trabajo del patrocinador?",
+      "en": "What is the supporter's job?",
+      "ht": "Ki travay sipòtè a fè?"
+     },
+     "required": true,
+     "show_if": {
+      "q": "s_employment",
+      "eq": "Employed"
+     }
+    },
+    {
+     "id": "s_employer",
+     "type": "text",
+     "fact": "parole.sponsor_employer",
+     "label": {
+      "pt": "Nome da empresa onde o apoiador trabalha",
+      "es": "Nombre de la empresa donde trabaja el patrocinador",
+      "en": "Name of the employer",
+      "ht": "Non konpayi kote sipòtè a travay"
+     },
+     "required": true,
+     "show_if": {
+      "q": "s_employment",
+      "eq": "Employed"
+     }
+    },
+    {
+     "id": "s_income",
+     "type": "text",
+     "fact": "parole.sponsor_income",
+     "label": {
+      "pt": "Renda anual atual do apoiador, em dólares (só números)",
+      "es": "Ingreso anual actual del patrocinador, en dólares (solo números)",
+      "en": "The supporter's current yearly income, in dollars (numbers only)",
+      "ht": "Revni anyèl kounye a sipòtè a, an dola (chif sèlman)"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 16"
+    },
+    {
+     "id": "s_dependents",
+     "type": "number",
+     "fact": "parole.sponsor_dependents",
+     "label": {
+      "pt": "Quantas outras pessoas o apoiador sustenta (contando ele mesmo, sem contar essa pessoa)?",
+      "es": "¿A cuántas otras personas mantiene el patrocinador (contándose a sí mismo, sin contar a esta persona)?",
+      "en": "How many other people does the supporter support (counting themself, not counting this person)?",
+      "ht": "Konbyen lòt moun sipòtè a sipòte (li menm enkli, san konte moun sa a)?"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 14"
+    },
+    {
+     "id": "s_other_i134",
+     "type": "number",
+     "fact": "parole.sponsor_other_i134s",
+     "label": {
+      "pt": "Quantas outras declarações de apoio (I-134, I-864...) o apoiador já fez que ainda não terminaram?",
+      "es": "¿Cuántas otras declaraciones de apoyo (I-134, I-864...) ha hecho el patrocinador que aún no han terminado?",
+      "en": "How many other support declarations (I-134, I-864...) has the supporter made that have not ended?",
+      "ht": "Konbyen lòt deklarasyon sipò (I-134, I-864...) sipòtè a fè ki poko fini?"
+     },
+     "required": true,
+     "parole": "I-134, Part 2, Item 13"
+    },
+    {
+     "id": "s_asset1_type",
+     "type": "choice",
+     "fact": "parole.sponsor_asset1_type",
+     "label": {
+      "pt": "Dinheiro ou bens do apoiador (1): tipo",
+      "es": "Dinero o bienes del patrocinador (1): tipo",
+      "en": "The supporter's money or assets (1): the kind",
+      "ht": "Lajan oswa byen sipòtè a (1): kalite a"
+     },
+     "options": [
+      {
+       "value": "Checking - Bank Account",
+       "label": {
+        "pt": "Conta corrente",
+        "es": "Cuenta corriente",
+        "en": "Checking account",
+        "ht": "Kont chèk"
+       }
+      },
+      {
+       "value": "Savings - Bank Account",
+       "label": {
+        "pt": "Conta poupança",
+        "es": "Cuenta de ahorros",
+        "en": "Savings account",
+        "ht": "Kont epay"
+       }
+      },
+      {
+       "value": "Annuities",
+       "label": {
+        "pt": "Anuidades",
+        "es": "Anualidades",
+        "en": "Annuities",
+        "ht": "Anwite"
+       }
+      },
+      {
+       "value": "Stocks, Bonds, Certificates of Deposit",
+       "label": {
+        "pt": "Ações, títulos, certificados de depósito",
+        "es": "Acciones, bonos, certificados de depósito",
+        "en": "Stocks, bonds, certificates of deposit",
+        "ht": "Aksyon, obligasyon, sètifika depo"
+       }
+      },
+      {
+       "value": "Retirement or Educational Account",
+       "label": {
+        "pt": "Conta de aposentadoria ou educação",
+        "es": "Cuenta de jubilación o educación",
+        "en": "Retirement or education account",
+        "ht": "Kont retrèt oswa edikasyon"
+       }
+      },
+      {
+       "value": "Real Estate Holdings",
+       "label": {
+        "pt": "Imóveis",
+        "es": "Bienes raíces",
+        "en": "Real estate",
+        "ht": "Byen imobilye"
+       }
+      },
+      {
+       "value": "Personal Property (net value)",
+       "label": {
+        "pt": "Bens pessoais (valor líquido)",
+        "es": "Bienes personales (valor neto)",
+        "en": "Personal property (net value)",
+        "ht": "Byen pèsonèl (valè nèt)"
+       }
+      }
+     ],
+     "required": false,
+     "parole": "I-134, Part 2, Item 17"
+    },
+    {
+     "id": "s_asset1_amount",
+     "type": "text",
+     "fact": "parole.sponsor_asset1_amount",
+     "label": {
+      "pt": "Valor em dólares (1)",
+      "es": "Valor en dólares (1)",
+      "en": "Value in dollars (1)",
+      "ht": "Valè an dola (1)"
+     },
+     "required": false,
+     "show_if": {
+      "q": "s_asset1_type",
+      "filled": true
+     }
+    },
+    {
+     "id": "s_asset2_type",
+     "type": "choice",
+     "fact": "parole.sponsor_asset2_type",
+     "label": {
+      "pt": "Dinheiro ou bens do apoiador (2): tipo",
+      "es": "Dinero o bienes del patrocinador (2): tipo",
+      "en": "The supporter's money or assets (2): the kind",
+      "ht": "Lajan oswa byen sipòtè a (2): kalite a"
+     },
+     "options": [
+      {
+       "value": "Checking - Bank Account",
+       "label": {
+        "pt": "Conta corrente",
+        "es": "Cuenta corriente",
+        "en": "Checking account",
+        "ht": "Kont chèk"
+       }
+      },
+      {
+       "value": "Savings - Bank Account",
+       "label": {
+        "pt": "Conta poupança",
+        "es": "Cuenta de ahorros",
+        "en": "Savings account",
+        "ht": "Kont epay"
+       }
+      },
+      {
+       "value": "Annuities",
+       "label": {
+        "pt": "Anuidades",
+        "es": "Anualidades",
+        "en": "Annuities",
+        "ht": "Anwite"
+       }
+      },
+      {
+       "value": "Stocks, Bonds, Certificates of Deposit",
+       "label": {
+        "pt": "Ações, títulos, certificados de depósito",
+        "es": "Acciones, bonos, certificados de depósito",
+        "en": "Stocks, bonds, certificates of deposit",
+        "ht": "Aksyon, obligasyon, sètifika depo"
+       }
+      },
+      {
+       "value": "Retirement or Educational Account",
+       "label": {
+        "pt": "Conta de aposentadoria ou educação",
+        "es": "Cuenta de jubilación o educación",
+        "en": "Retirement or education account",
+        "ht": "Kont retrèt oswa edikasyon"
+       }
+      },
+      {
+       "value": "Real Estate Holdings",
+       "label": {
+        "pt": "Imóveis",
+        "es": "Bienes raíces",
+        "en": "Real estate",
+        "ht": "Byen imobilye"
+       }
+      },
+      {
+       "value": "Personal Property (net value)",
+       "label": {
+        "pt": "Bens pessoais (valor líquido)",
+        "es": "Bienes personales (valor neto)",
+        "en": "Personal property (net value)",
+        "ht": "Byen pèsonèl (valè nèt)"
+       }
+      }
+     ],
+     "required": false,
+     "show_if": {
+      "q": "s_asset1_type",
+      "filled": true
+     }
+    },
+    {
+     "id": "s_asset2_amount",
+     "type": "text",
+     "fact": "parole.sponsor_asset2_amount",
+     "label": {
+      "pt": "Valor em dólares (2)",
+      "es": "Valor en dólares (2)",
+      "en": "Value in dollars (2)",
+      "ht": "Valè an dola (2)"
+     },
+     "required": false,
+     "show_if": {
+      "q": "s_asset2_type",
+      "filled": true
+     }
+    },
+    {
+     "id": "s_contributions",
+     "type": "yes_no",
+     "fact": "parole.sponsor_contributions",
+     "label": {
+      "pt": "O apoiador também vai ajudar com as necessidades básicas da pessoa (moradia, escola, trabalho)?",
+      "es": "¿El patrocinador también ayudará con las necesidades básicas de la persona (vivienda, escuela, trabajo)?",
+      "en": "Will the supporter also help with the person's basic needs (housing, school, work)?",
+      "ht": "Èske sipòtè a ap ede tou ak bezwen debaz moun nan (kay, lekòl, travay)?"
+     },
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "required": true,
+     "parole": "I-134, Part 2, Item 18"
+    },
+    {
+     "id": "s_contributions_text",
+     "type": "textarea",
+     "fact": "parole.sponsor_contributions_text",
+     "label": {
+      "pt": "Descreva a ajuda e o endereço onde a pessoa vai morar",
+      "es": "Describa la ayuda y la dirección donde vivirá la persona",
+      "en": "Describe the help, and the address where the person will live",
+      "ht": "Dekri èd la ak adrès kote moun nan pral rete"
+     },
+     "required": true,
+     "show_if": {
+      "q": "s_contributions",
+      "eq": "Yes"
+     }
+    }
+   ]
+  }
+ ],
+ "documents": []
+}

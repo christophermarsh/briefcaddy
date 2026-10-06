@@ -1,0 +1,5 @@
+id,name,phone,email,language,email_ok,sms_ok,whatsapp_ok
+pilot-01,Ana Teste,+1 555 010 0101,ana.teste@example.com,pt,yes,yes,no
+pilot-02,Bruno Ejemplo,+1 555 010 0102,bruno.ejemplo@example.com,es,yes,no,yes
+pilot-03,Carla Sample,+1 555 010 0103,,en,no,yes,no
+pilot-04,Rose Egzanp Jean,+1 555 010 0104,rose.egzanp@example.com,ht,yes,yes,no

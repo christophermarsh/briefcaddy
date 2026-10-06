@@ -1,0 +1,52 @@
+{
+  "_about": "The family-based (concurrent I-130 + I-485) cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from schemas/cover_letter.json; the subject, enclosures and fees are this filing's. The fee amounts come from schemas/family_settings.json (the current USCIS fee schedule, set by the attorney). [Fee] until set, and the packet stays DRAFT. The mailing address follows the client's state (schemas/uscis_lockboxes.json: the family-based chart). The attorney approves this file.",
+  "base": "cover_letter.json",
+  "mail_to": "by_state",
+  "noun": "petition and application",
+  "re_lines": ["Concurrent Filing: I-130 Petition for Alien Relative (with I-130A)", "I-485 Application to Register Permanent Residence or Adjust Status",
+               "I-864 Affidavit of Support; I-765 Application for Employment Authorization"],
+  "who": "Beneficiary",
+  "also_name": "petitioner",
+  "form_order": ["g28_i130", "i130", "i130a", "g28", "i485", "i864", "i765"],
+  "always_forms": ["i693"],
+  "forms": {
+    "g28_i130": "Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i130": "Petitioner’s I-130 - Petition for Alien Relative",
+    "i130a": "Beneficiary’s I-130A - Supplemental Information for Spouse Beneficiary",
+    "g28": "Beneficiary’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i485": "Beneficiary’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i864": "Petitioner’s I-864 - Affidavit of Support Under Section 213A of the INA",
+    "i765": "Beneficiary’s I-765 - Application for Employment Authorization",
+    "i693": "Beneficiary’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    ["us_passport", "Copy of Petitioner’s U.S. Passport"],
+    ["citizenship_certificate", "Copy of Petitioner’s Certificate of Naturalization / Citizenship"],
+    ["us_birth_certificate", "Copy of Petitioner’s U.S. Birth Certificate"],
+    ["green_card", "Copy of Petitioner’s Permanent Resident Card"],
+    ["marriage_certificate", "Copy of Marriage Certificate"],
+    ["divorce_decree", "Copies of Divorce Decrees Ending Prior Marriages"],
+    ["lease", "Evidence of Bona Fide Marriage: Joint Lease"],
+    ["bank_statement", "Evidence of Bona Fide Marriage: Joint Bank Statements"],
+    ["utility_bill", "Evidence of Bona Fide Marriage: Bills at the Shared Address"],
+    ["photos", "{photos} Passport Pictures (two of the Petitioner, two of the Beneficiary)"],
+    ["birth_certificate", "Copy of Beneficiary’s Birth Certificate and Translation"],
+    ["passport", "Copy of Beneficiary’s Passport"],
+    ["visa", "Copy of Beneficiary’s U.S. Visa"],
+    ["i94", "Copy of Beneficiary’s Most Recent I-94"],
+    ["tax_return", "Petitioner’s Federal Income Tax Returns / IRS Transcripts"],
+    ["w2", "Petitioner’s W-2 Forms"],
+    ["pay_stub", "Petitioner’s Recent Pay Stubs"],
+    ["work_permit", "Copy of Beneficiary’s Employment Authorization Card"],
+    ["ssn_card", "Copy of Beneficiary’s Social Security Card"],
+    ["uscis_notice", "Copies of Other USCIS Notices"],
+    ["notice_to_appear", "Copy of Beneficiary’s Immigration Court Documents"],
+    ["criminal_record", "Certified Police and Court Records"]
+  ],
+  "fees": "Enclosed are the filing fees, each paid by its own Form G-1450: Form I-130, {i130}; Form I-485, {i485}; Form I-765, {i765}. A total of {total}. Forms I-130A and I-864 have no filing fee.",
+  "checklist": [
+    {"kind": "sign", "text": "Cover letter: the attorney signs it."},
+    {"kind": "attach", "text": "Enclose the filing fees by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amounts the letter states."},
+    {"kind": "attach", "text": "Passport photos: two of the petitioner and two of the beneficiary, names in pencil on the back."}
+  ]
+}

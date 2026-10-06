@@ -1,0 +1,87 @@
+{
+  "_about": "The replacement naturalization or citizenship document (N-565, src/n565.py), per uscis.gov/n-565 (updated 06/01/2026) and the N-565 Instructions (02/27/25), read 10/02/2026: the G-28 and the N-565, then the Initial Evidence the Instructions list: a copy of a U.S. government photo ID; for a lost, stolen or destroyed certificate a copy of it (if available) and a police report and/or a sworn statement; for a mutilated one the document itself; for a name change the marriage certificate, decree or court order; for a wrong sex the birth certificate; for a new date of birth the court order or the government document. The original certificate goes in the envelope when the reason needs it (the packet shows a copy). The attorney approves titles and order.",
+  "filing": "n565",
+  "title": "Replacement certificate (N-565)",
+  "packet_pdf": "packet_n565.pdf",
+  "manifest": "packet_n565.json",
+  "choices": "packet_choices_n565.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_n565.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_n565",
+    "n565"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The ORIGINAL certificate or declaration when the reason is a mutilated document, a USCIS error, a name change, a new date of birth or the sex at birth: it goes in the envelope, a copy stays in the file (N-565 Instructions, Initial Evidence)."
+    },
+    {
+      "kind": "check",
+      "text": "A client who lives outside the U.S.: two identical color passport-style photos, name and A-Number lightly in pencil on the back. A client in the U.S. sends none."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "identity",
+      "title": "A copy of the client's U.S. government-issued photo ID (passport, driver's license or state ID)",
+      "types": [
+        "us_passport",
+        "passport",
+        "drivers_license",
+        "national_id"
+      ],
+      "required": true
+    },
+    {
+      "id": "certificate",
+      "title": "The certificate or declaration: a copy of the lost one (if available), or the mutilated or incorrect one",
+      "types": [
+        "citizenship_certificate"
+      ]
+    },
+    {
+      "id": "statement",
+      "title": "A lost, stolen or destroyed certificate: the police report and/or the client's sworn statement",
+      "types": [
+        "police_report",
+        "declaration"
+      ]
+    },
+    {
+      "id": "change",
+      "title": "The evidence of a change: the marriage certificate, divorce or annulment decree, court order, or the birth certificate",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree",
+        "court_disposition",
+        "birth_certificate",
+        "us_birth_certificate"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this application.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "green_card": "Not asked for with the N-565.",
+    "ssn_card": "Not asked for with the N-565.",
+    "work_permit": "Not asked for with the N-565.",
+    "i94": "Not asked for with the N-565.",
+    "visa": "Not asked for with the N-565.",
+    "sij_order": "Not asked for with the N-565.",
+    "i360_approval": "Not asked for with the N-565.",
+    "bank_statement": "Not asked for with the N-565.",
+    "lease": "Not asked for with the N-565.",
+    "utility_bill": "Not asked for with the N-565.",
+    "tax_return": "Not asked for with the N-565.",
+    "w2": "Not asked for with the N-565.",
+    "pay_stub": "Not asked for with the N-565.",
+    "notice_to_appear": "Not asked for with the N-565."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_about": "The asylee or refugee I-485 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from schemas/cover_letter.json. The address (the non-family lockbox for the client's state), the subject (INA 209(a) or (b)) and the fee (Form G-1055: an asylee pays the I-485 fee, a refugee nothing) come from src/asylee.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": ["[set by the filing's module]"],
+  "noun": "application",
+  "who": "Applicant",
+  "form_order": ["g28", "i485"],
+  "always_forms": ["i693"],
+  "forms": {
+    "g28": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i485": "Applicant’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i693": "Applicant’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    ["uscis_notice", "Copy of the Approval of Applicant’s Asylum Application, and Other USCIS Notices"],
+    ["i590_approval", "Copy of Applicant’s Approved Form I-590, Registration for Classification as Refugee"],
+    ["i730_approval", "Copy of the Approved Form I-730, Refugee/Asylee Relative Petition"],
+    ["i94", "Copy of Applicant’s Form I-94"],
+    ["photos", "{photos} Passport Pictures of the Applicant"],
+    ["passport", "Copy of Applicant’s Passport"],
+    ["visa", "Copy of Applicant’s U.S. Visa"],
+    ["birth_certificate", "Copy of Applicant’s Birth Certificate and Translation"],
+    ["work_permit", "Copy of Applicant’s Employment Authorization Card"],
+    ["ssn_card", "Copy of Applicant’s Social Security Card"],
+    ["drivers_license", "Copy of Applicant’s Driver’s License"],
+    ["notice_to_appear", "Copies of Applicant’s Immigration Court Documents, including the Order Granting Asylum"],
+    ["criminal_record", "Certified Police and Court Records"]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {"kind": "sign", "text": "Cover letter: the attorney signs it."},
+    {"kind": "attach", "text": "Enclose the I-485 fee the cover letter states by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check.", "unless": "no_payment"}
+  ]
+}

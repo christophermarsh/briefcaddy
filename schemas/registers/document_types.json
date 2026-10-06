@@ -1,0 +1,1186 @@
+{
+  "_about": "Every kind of document the firm holds (docs/design_plan.md Part 1 item 2): its name on screen, the exhibit roles it can fill, whether it has an expiry, whether it is confidential (8 U.S.C. 1367: VAWA, T and U; 8 CFR 208.6: asylum), who says whose it is ('document': the reader names the person; 'reviewer': a person sets it), and whether it is read beyond its type. 'recognized' says how the classifier knows it: 'text' (src/classify/patterns.py, which reads the names from here and keeps its own patterns), 'explicit_header' (title plus table), 'form_footer' and 'notice_case_type' (src/classify/classifier.py), 'browser_header', 'fallback', or 'not_yet' (named in the packets; a paralegal places it until a real sample confirms a reader). src/documents.py builds each case's documents.json from it. tests/test_documents.py keeps it and the classifier in step. 'language' is the language every document of the type is printed in (English for a U.S. government document); 'language_by': 'country' says the language follows the issuing country (schemas/country_languages.json) when the document's own words don't say; 'has_dates': false marks a kind of document that carries no date (a Social Security card). 'role_uses' says what each role means and where a packet uses it. 'short_name' is the name staff screens show in a column when 'name' is longer than 40 characters (the long name stays on hover, in the review bundle and in the classifier, which never reads 'short_name'; tests/test_document_names.py).",
+  "roles": [
+    "identity",
+    "nationality",
+    "status",
+    "entry",
+    "relationship",
+    "presence",
+    "good_faith",
+    "hardship",
+    "court_record",
+    "notice",
+    "medical",
+    "translation",
+    "correspondence",
+    "photo",
+    "other"
+  ],
+  "role_uses": {
+    "identity": "Who the person is (a photo identity document or a civil record of the name and birth). Packets place these documents by their type.",
+    "nationality": "The person's nationality or citizenship (a passport, a national identity card, a U.S. passport or naturalization certificate). No exhibit is placed by this role alone: the packet places these documents by their type (the passport, identity, petitioner's status and relative exhibits).",
+    "status": "An immigration status the document grants or records (a green card, a refugee approval). No exhibit is placed by this role alone: the packet places these documents by their type.",
+    "entry": "An entry to the U.S. (an I-94, an admission stamp, a U.S. visa, an advance parole document used to return). An exhibit named 'entry' takes a document tagged with it.",
+    "relationship": "A family relationship (a birth, marriage or divorce record; an approved relative petition). An exhibit named 'relationship' takes a document tagged with it.",
+    "presence": "Living in the U.S. over time (leases, bills, pay, school). An exhibit named 'presence' takes a document tagged with it, and an exhibit that lists 'presence' under its roles takes these documents by their type.",
+    "good_faith": "A real marriage (joint leases, accounts, tax returns, photos together). The exhibit named 'good_faith' takes a document tagged with it.",
+    "hardship": "Hardship to the client or a relative. The exhibit named 'hardship' takes a document tagged with it.",
+    "court_record": "A court or police record. Packets place these documents by their type.",
+    "notice": "A government notice (USCIS, the court, the consulate). Packets place these documents by their type.",
+    "medical": "A medical record or exam. Packets place these documents by their type.",
+    "translation": "A translation or the translator's certificate: it goes beside the document it translates.",
+    "correspondence": "Letters and forms about the representation. Never an exhibit by this role.",
+    "photo": "A photograph. A person says what it shows with another role.",
+    "other": "Anything else. A person chooses its exhibit."
+  },
+  "people": [
+    "applicant",
+    "spouse",
+    "child_1",
+    "child_2",
+    "child_3",
+    "child_4",
+    "child_5",
+    "child_6",
+    "petitioner",
+    "parent",
+    "unknown"
+  ],
+  "qualities": [
+    "readable",
+    "blurry",
+    "cut_off",
+    "partial",
+    "check",
+    "unknown"
+  ],
+  "types": [
+    {
+      "id": "passport",
+      "name": "Passport",
+      "roles": [
+        "identity",
+        "nationality"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language_by": "country",
+      "_note": "The person: the name in the machine-readable zone (extract/passport.py mrz_name); the expiry date from the same zone, the issue date from the label beside it. It proves identity and nationality; it shows an entry to the U.S. only when an admission stamp or a U.S. visa is found in it (src/documents.py found_roles)."
+    },
+    {
+      "id": "visa",
+      "name": "U.S. visa",
+      "roles": [
+        "entry",
+        "identity"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "i94",
+      "name": "I-94 arrival record",
+      "roles": [
+        "entry"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "travel_history",
+      "name": "Travel history",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": false,
+      "recognized": "explicit_header",
+      "language": "en",
+      "_note": "Travel History Results arrival/departure table. Classification establishes neither ownership nor immigration status; it is distinct from the latest I-94 admission record."
+    },
+    {
+      "id": "birth_certificate",
+      "name": "Birth certificate",
+      "roles": [
+        "identity",
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language_by": "country",
+      "_note": "The person: the name registered; a child's certificate names the client as a parent."
+    },
+    {
+      "id": "drivers_license",
+      "name": "Driver's license",
+      "roles": [
+        "identity",
+        "presence"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "ssn_card",
+      "name": "Social Security card",
+      "roles": [
+        "identity"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "has_dates": false
+    },
+    {
+      "id": "work_permit",
+      "name": "Work permit (EAD card)",
+      "roles": [
+        "identity"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "uscis_notice",
+      "name": "USCIS notice (Form I-797)",
+      "roles": [
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "intake_questionnaire",
+      "name": "The client's questionnaire",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "g28",
+      "name": "Form G-28 (the attorney's appearance)",
+      "roles": [
+        "correspondence"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "i765",
+      "name": "Form I-765, completed (an earlier filing)",
+      "short_name": "Form I-765 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "i485",
+      "name": "Form I-485, completed (an earlier filing)",
+      "short_name": "Form I-485 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "translation_certification",
+      "name": "Translator's certificate",
+      "roles": [
+        "translation"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "marriage_certificate",
+      "name": "Marriage certificate",
+      "roles": [
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language_by": "country",
+      "_note": "The person: the client when one of the two names is the client's."
+    },
+    {
+      "id": "divorce_decree",
+      "name": "Divorce decree",
+      "roles": [
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "name_change_order",
+      "name": "Court order changing a name",
+      "roles": [
+        "identity"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language_by": "country",
+      "_note": "Its new name, on its date, is a name event (src/name_events.py). UNVERIFIED reader: no real order seen yet."
+    },
+    {
+      "id": "notice_to_appear",
+      "name": "Notice to Appear (Form I-862)",
+      "roles": [
+        "court_record",
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "i213",
+      "name": "Record of Deportable/Inadmissible Alien",
+      "roles": [
+        "court_record",
+        "notice",
+        "entry"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "_note": "DHS Form I-213 (also what a CBP encounter record is printed on). Read for the arrival it states (extract/dhs_record.py)."
+    },
+    {
+      "id": "sij_order",
+      "name": "State court order with the SIJ findings",
+      "roles": [
+        "court_record"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "criminal_record",
+      "name": "Criminal court record",
+      "roles": [
+        "court_record"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "us_passport",
+      "name": "U.S. passport",
+      "roles": [
+        "identity",
+        "nationality"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "_note": "The petitioner's (extract/petitioner_docs.py: facts go to petitioner.*, never applicant.*)."
+    },
+    {
+      "id": "citizenship_certificate",
+      "name": "Certificate of naturalization or citizenship",
+      "short_name": "Citizenship certificate",
+      "roles": [
+        "identity",
+        "nationality"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "_note": "The petitioner's (extract/petitioner_docs.py)."
+    },
+    {
+      "id": "green_card",
+      "name": "Green card (permanent resident card)",
+      "roles": [
+        "identity",
+        "status"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "_note": "The petitioner's (extract/petitioner_docs.py)."
+    },
+    {
+      "id": "us_birth_certificate",
+      "name": "U.S. birth certificate",
+      "roles": [
+        "identity",
+        "nationality",
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en",
+      "_note": "The petitioner's (extract/petitioner_docs.py)."
+    },
+    {
+      "id": "tax_return",
+      "name": "Tax return or IRS transcript",
+      "roles": [
+        "good_faith",
+        "presence",
+        "hardship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "w2",
+      "name": "W-2 wage statement",
+      "roles": [
+        "presence",
+        "good_faith"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "pay_stub",
+      "name": "Pay stub",
+      "roles": [
+        "presence"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "bank_statement",
+      "name": "Bank statement",
+      "roles": [
+        "good_faith",
+        "presence",
+        "hardship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "lease",
+      "name": "Lease or rental agreement",
+      "roles": [
+        "presence",
+        "good_faith"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "utility_bill",
+      "name": "Utility bill",
+      "roles": [
+        "presence",
+        "good_faith"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text"
+    },
+    {
+      "id": "i693_envelope",
+      "name": "Medical exam (Form I-693), sealed envelope",
+      "short_name": "Medical exam (I-693), sealed",
+      "roles": [
+        "medical"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": false,
+      "recognized": "text",
+      "_note": "Recognized by the label the civil surgeon prints on the front, 'DO NOT OPEN. FOR USCIS USE ONLY.' (Form I-693 Instructions, edition 01/20/25, 'What Should I Do After the Medical Examination...', step 3; read 10/02/2026). Never opened and never read beyond the label: USCIS will not accept a Form I-693 whose envelope was opened or altered (same instructions). Its text is not kept."
+    },
+    {
+      "id": "i360_petition",
+      "name": "Form I-360, completed (an earlier filing)",
+      "short_name": "Form I-360 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i130",
+      "name": "Form I-130, completed (an earlier filing)",
+      "short_name": "Form I-130 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i131",
+      "name": "Form I-131, completed (an earlier filing)",
+      "short_name": "Form I-131 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i912",
+      "name": "Form I-912, completed (an earlier filing)",
+      "short_name": "Form I-912 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i864",
+      "name": "Form I-864, completed (an earlier filing)",
+      "short_name": "Form I-864 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i601",
+      "name": "Form I-601, completed (an earlier filing)",
+      "short_name": "Form I-601 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i212",
+      "name": "Form I-212, completed (an earlier filing)",
+      "short_name": "Form I-212 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i290b",
+      "name": "Form I-290B, completed (an earlier filing)",
+      "short_name": "Form I-290B (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i539",
+      "name": "Form I-539, completed (an earlier filing)",
+      "short_name": "Form I-539 (earlier filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en"
+    },
+    {
+      "id": "i589",
+      "name": "Form I-589, completed (an earlier asylum application)",
+      "short_name": "Form I-589 (earlier asylum filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "208.6",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 CFR 208.6 (information contained in or pertaining to an asylum application)."
+    },
+    {
+      "id": "i914",
+      "name": "Form I-914, completed (an earlier T visa application)",
+      "short_name": "Form I-914 (earlier T visa filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T visa applicant)."
+    },
+    {
+      "id": "i918",
+      "name": "Form I-918, completed (an earlier U visa petition)",
+      "short_name": "Form I-918 (earlier U visa filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a U visa petitioner)."
+    },
+    {
+      "id": "i730",
+      "name": "Form I-730, completed (an earlier relative petition)",
+      "short_name": "Form I-730 (earlier relative filing)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "208.6",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 CFR 208.6(b) (a record that indicates the client applied for, and was granted, asylum or refugee admission)."
+    },
+    {
+      "id": "i914a",
+      "name": "Form I-914 Supplement A, completed (a family member)",
+      "short_name": "Form I-914 Supp. A (family member)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i914b",
+      "name": "Form I-914 Supplement B (the law enforcement declaration)",
+      "short_name": "Form I-914 Supp. B (law enforcement)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i918a",
+      "name": "Form I-918 Supplement A, completed (a family member)",
+      "short_name": "Form I-918 Supp. A (family member)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i918b",
+      "name": "Form I-918 Supplement B (the law enforcement certification)",
+      "short_name": "Form I-918 Supp. B (certification)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i929",
+      "name": "Form I-929, completed (a U visa holder's relative)",
+      "short_name": "Form I-929 (U visa holder's relative)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i192",
+      "name": "Form I-192, completed (advance permission to enter)",
+      "short_name": "Form I-192 (advance permission)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": "1367",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "Filed with a T or U visa application in this practice: confidential: 8 U.S.C. 1367(a)(2) (a T or U visa applicant, or the relative of one)."
+    },
+    {
+      "id": "i693",
+      "name": "Form I-693 (medical exam), out of its sealed envelope",
+      "short_name": "Form I-693 (medical exam, opened)",
+      "roles": [
+        "medical"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "form_footer",
+      "language": "en",
+      "_note": "An opened medical exam: USCIS will not accept it (Form I-693 Instructions, 01/20/25); the client needs a new sealed one."
+    },
+    {
+      "id": "i360_approval",
+      "name": "I-360 approval notice",
+      "roles": [
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "document",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en"
+    },
+    {
+      "id": "i765_approval",
+      "name": "Work permit approval notice (I-765)",
+      "roles": [
+        "notice"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en"
+    },
+    {
+      "id": "i130_approval",
+      "name": "I-130 approval notice",
+      "roles": [
+        "notice",
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en"
+    },
+    {
+      "id": "i485_receipt",
+      "name": "I-485 receipt notice",
+      "roles": [
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en"
+    },
+    {
+      "id": "i526_approval",
+      "name": "I-526 approval notice",
+      "roles": [
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en"
+    },
+    {
+      "id": "i590_approval",
+      "name": "Refugee approval (I-590)",
+      "roles": [
+        "notice",
+        "status"
+      ],
+      "expires": false,
+      "confidential": "208.6",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en",
+      "_note": "Confidential: 8 CFR 208.6(a) (an application for refugee admission)."
+    },
+    {
+      "id": "i730_approval",
+      "name": "I-730 approval notice",
+      "roles": [
+        "notice",
+        "relationship"
+      ],
+      "expires": false,
+      "confidential": "208.6",
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "notice_case_type",
+      "language": "en",
+      "_note": "Confidential: 8 CFR 208.6(b) (a record that indicates the client was granted asylum or refugee admission)."
+    },
+    {
+      "id": "web_printout",
+      "name": "Web page printout (the firm's research)",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": false,
+      "recognized": "browser_header",
+      "_note": "A browser's print header; set aside, never extracted (batch.process_documents)."
+    },
+    {
+      "id": "unclassified",
+      "name": "Not recognized yet",
+      "roles": [
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "fallback"
+    },
+    {
+      "id": "national_id",
+      "name": "National identity card",
+      "roles": [
+        "identity",
+        "nationality"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language_by": "country"
+    },
+    {
+      "id": "declaration",
+      "name": "Declaration or affidavit",
+      "roles": [
+        "hardship",
+        "good_faith",
+        "relationship",
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "country_conditions",
+      "name": "Country conditions report",
+      "roles": [
+        "hardship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "news_article",
+      "name": "News article",
+      "roles": [
+        "hardship",
+        "other"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "medical_record",
+      "name": "Medical record",
+      "roles": [
+        "medical",
+        "hardship"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "photograph",
+      "name": "Photo or screenshot (needs a person)",
+      "roles": [
+        "photo"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "_note": "An image says nothing about whose it is: a reviewer sets the person and what it shows (a role tag)."
+    },
+    {
+      "id": "police_report",
+      "name": "Police report",
+      "roles": [
+        "court_record"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "school_record",
+      "name": "School record",
+      "roles": [
+        "presence"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "n648",
+      "name": "Form N-648 (medical certification for a disability exception)",
+      "short_name": "Form N-648 (disability exception)",
+      "roles": [
+        "medical"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "passport_photo",
+      "name": "Passport-style photos",
+      "roles": [
+        "photo"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "certified_translation",
+      "name": "Certified English translation",
+      "roles": [
+        "translation"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "police_clearance",
+      "name": "Police clearance certificate",
+      "roles": [
+        "court_record"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "court_disposition",
+      "name": "Court disposition (certified)",
+      "roles": [
+        "court_record"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet"
+    },
+    {
+      "id": "advance_parole",
+      "name": "Advance parole document (Form I-512L)",
+      "roles": [
+        "entry",
+        "identity"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "tps_approval",
+      "name": "TPS approval notice (I-821)",
+      "roles": [
+        "notice"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "daca_approval",
+      "name": "DACA approval notice (I-821D)",
+      "roles": [
+        "notice"
+      ],
+      "expires": true,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "nvc_letter",
+      "name": "National Visa Center letter",
+      "roles": [
+        "correspondence",
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "consular_appointment",
+      "name": "Consular interview appointment letter",
+      "roles": [
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "not_yet",
+      "language": "en"
+    },
+    {
+      "id": "eoir_hearing_notice",
+      "name": "Immigration court hearing notice",
+      "roles": [
+        "court_record",
+        "notice"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": true,
+      "recognized": "text",
+      "language": "en"
+    },
+    {
+      "id": "attorney_correspondence",
+      "name": "Attorney correspondence",
+      "roles": [
+        "correspondence"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": false,
+      "recognized": "not_yet",
+      "_note": "Privileged: classified, never read beyond its type; its text is not kept."
+    },
+    {
+      "id": "engagement_letter",
+      "name": "The firm's engagement letter",
+      "roles": [
+        "correspondence"
+      ],
+      "expires": false,
+      "confidential": null,
+      "person_from": "reviewer",
+      "read_beyond_type": false,
+      "recognized": "not_yet",
+      "_note": "Classified, never read beyond its type; its text is not kept."
+    }
+  ]
+}

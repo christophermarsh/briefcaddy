@@ -1,0 +1,98 @@
+{
+  "_about": "Field/register description; private development provenance omitted.",
+  "separator_sheets": true,
+  "cover_letter": true,
+  "index_sheet": false,
+  "forms": [
+    "g28",
+    "i485",
+    "i765"
+  ],
+  "exhibits": [
+    {
+      "id": "i360",
+      "title": "Approval notice (Form I-797) for the Form I-360, Special Immigrant Juvenile",
+      "types": [
+        "i360_approval"
+      ],
+      "required": true
+    },
+    {
+      "id": "passport",
+      "title": "Passport identity page and any U.S. visa",
+      "types": [
+        "passport",
+        "visa"
+      ],
+      "may_be_absent": {
+        "passport": "i485_identity",
+        "visa": "i485_visa_box"
+      }
+    },
+    {
+      "id": "other_id",
+      "title": "Other identity documents: work permit, Social Security card, driver's license",
+      "types": [
+        "work_permit",
+        "ssn_card",
+        "drivers_license"
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Birth certificate, with certified English translation",
+      "types": [
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "admission",
+      "title": "Evidence of entry: Form I-94 and admission stamp",
+      "types": [
+        "i94"
+      ],
+      "may_be_absent": {
+        "i94": "i485_admission_exempt"
+      }
+    },
+    {
+      "id": "uscis_notices",
+      "title": "Other USCIS notices",
+      "types": [
+        "uscis_notice"
+      ]
+    },
+    {
+      "id": "immigration_court",
+      "title": "Immigration court documents (Notice to Appear, orders)",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "criminal",
+      "title": "Certified police and court records",
+      "types": [
+        "criminal_record"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "marriage_certificate": "Ask the attorney: an SIJ applicant must be unmarried when filing.",
+    "sij_order": "The state court's SIJ order went with the I-360 petition; the I-485 rests on the I-360 approval. Move it into an exhibit if the attorney wants it included.",
+    "us_passport": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "citizenship_certificate": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "green_card": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "us_birth_certificate": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "tax_return": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "w2": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "pay_stub": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "bank_statement": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "lease": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "utility_bill": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case).",
+    "divorce_decree": "A relative's or financial document, not part of an SIJ filing (it belongs to a family-based case)."
+  }
+}

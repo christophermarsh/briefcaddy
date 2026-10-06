@@ -1,0 +1,438 @@
+{
+  "_about": "Which of our filings (src/packet.py FILINGS) an attorney can file online by PDF upload in the attorney's USCIS online account, and under which limits; src/online_filing.py reads it. Copied from USCIS 'Forms Available to File Online' (Last Reviewed/Updated 07/24/2026, read 2026-10-02) and the pages it points to, each rule with its source sentence. USCIS's other online route, the step-by-step guided form, isn't used: this system prepares PDFs, and in the guided route the client reviews and signs in their own USCIS online account. 'online': true (by PDF upload, unless a rule below says otherwise for this case), false (paper only), null (not a USCIS filing). A rule makes the case paper: variant (the filing's variant for this case), fact + is (the answer is one of these), fact + not_in (the answer isn't one of these), fact + prefix_not (the receipt number doesn't begin so), fee_waiver (an I-912 inside), fee_zero (with fact + is: the filing fee is $0). 'fees': the paper fee names (schemas/fees.json) whose online amount applies when it is filed online. Re-check with the page (schemas/maintenance.json: online_filing).",
+  "source": "https://www.uscis.gov/file-online/forms-available-to-file-online",
+  "page_updated": "07/24/2026",
+  "read_on": "2026-10-02",
+  "accept_within_days": 30,
+  "_accept_within_days": "'It might take up to 30 days for USCIS to accept your client's form.' (Online Filing for Attorneys and Accredited Representatives, File a Form Using PDF Upload, Step 8, 08/19/2026): after that, a filing with no receipt number is followed up.",
+  "attorney_rules": [
+    {
+      "text": "Upload Form G-28 with the client's form.",
+      "_source": "'Attorneys or representatives using this option must also upload Form G-28, Notice of Entry of Appearance as Attorney or Accredited Representative.' (Forms Available to File Online, Upload Completed PDF Online)"
+    },
+    {
+      "text": "The client's handwritten (wet-ink) signature must be on the uploaded PDF: a client filed for by an attorney can't sign digitally.",
+      "_source": "'Attorneys and representatives must make sure the benefit requestor's valid wet-ink signature appears on the PDF before submitting the form through PDF upload.' (Forms Available to File Online); 'When you are filing for a client, your client will not be able to digitally sign the form.' (Online Filing for Attorneys and Accredited Representatives, File a Form Using PDF Upload)"
+    },
+    {
+      "text": "Nothing can be changed after Submit.",
+      "_source": "'After you submit the form, you cannot make any changes.' (Online Filing for Attorneys and Accredited Representatives, File a Form Using PDF Upload)"
+    },
+    {
+      "text": "The confirmation has no receipt number; USCIS may take up to 30 days to accept the form, then shows the receipt number on the case card.",
+      "_source": "'Note that the confirmation will not include a receipt or receipt number.' 'It might take up to 30 days for USCIS to accept your client's form.' 'If we accept your client's form, you will see the receipt number at the top of the case card.' (Online Filing for Attorneys and Accredited Representatives, Step 8, Last Reviewed/Updated 08/19/2026)"
+    },
+    {
+      "text": "The fee is paid in the account, through Pay.gov.",
+      "_source": "'If your client did not request a fee waiver or the fee was not paid elsewhere, you will be taken to Pay.gov to make the required payment.' (Online Filing for Attorneys and Accredited Representatives, Step 8)"
+    },
+    {
+      "text": "A fee waiver (Form I-912) is uploaded when the account asks for it, with all of its evidence.",
+      "_source": "'If you are requesting a fee waiver for your client, answer questions about the applicant's ability to pay the filing fee, then upload the Form I-912 or statement when prompted.' 'If you do not upload all the evidence required for your client's fee waiver, we will reject the form.' (Online Filing for Attorneys and Accredited Representatives, Step 5)"
+    }
+  ],
+  "upload": {
+    "max_bytes": 12000000,
+    "types": [
+      "PDF",
+      "JPG",
+      "JPEG"
+    ],
+    "pages": [
+      "https://www.uscis.gov/file-online/online-filing-for-attorneys-and-accredited-representatives",
+      "https://www.uscis.gov/file-online/tips-for-filing-forms-online"
+    ],
+    "_source": "'Files must not be larger than 12MB.' 'Files generally must be PDFs, JPGs, or JPEGs. For some forms, we also accept files in TIF or TIFF format.' 'Do not encrypt or password-protect your files.' 'If your client's documents are in a foreign language, upload the original document, an English translation, and the translator's certification for each foreign language document.' 'If we require passport-style photos, you must either scan them or take a picture with your phone.' (Online Filing for Attorneys and Accredited Representatives, File a Form Using PDF Upload, Step 7; Last Reviewed/Updated 08/19/2026; the same on Tips for Filing Forms Online, 03/23/2026; read 2026-10-02)",
+    "_note": "USCIS writes '12MB' without saying 12,000,000 or 12 x 1,048,576 bytes: the smaller, 12,000,000, is used. USCIS publishes no limit on the number of files or their total size, so none is enforced."
+  },
+  "upload_guide": {
+    "_about": "What USCIS itself says to upload, per form, for the PDF-upload route (src/online_filing.py guide()). Read 2026-10-02. USCIS publishes no per-form upload screens or screenshots: its online-filing pages give the same eight steps for every form ('File a Form Using PDF Upload', Online Filing for Attorneys and Accredited Representatives, Last Reviewed/Updated 08/19/2026; the same steps on Tips for Filing Forms Online, 03/23/2026), and 'Forms Available to File Online' (07/24/2026) lists, form by form, what can be uploaded together and under which limits. Each form's own page adds a 'Checklist of Required Initial Evidence (for informational purposes only)' for I-485, I-765, N-400, I-751 and I-130; USCIS's I-131 page has none. Every line below is USCIS's own sentence (or a list it publishes, copied), with the page and its date; the few lines that begin 'On USCIS's list' say in our words what that list shows. Nothing here is a rule of ours. Re-read with the register item online_filing. Each line says which page it is from. A checklist's date is its own page's (I-485 checklist 07/08/2025, I-765 checklist 05/15/2025), or the form page's where the checklist is part of that page (I-130, N-400, I-751). Lines beginning 'On USCIS's list' are our summary of what that list shows.",
+    "steps_page": "https://www.uscis.gov/file-online/online-filing-for-attorneys-and-accredited-representatives",
+    "steps_updated": "08/19/2026",
+    "read_on": "2026-10-02",
+    "steps": [
+      "Step 1: Select “File a Form Online.”",
+      "Step 2: Select the form you want to file.",
+      "Step 3: Select “Upload a Filled-Out PDF Form.”",
+      "Step 4: Follow the prompts, reading them carefully.",
+      "Step 5: Request a Fee Waiver (if applicable).",
+      "Step 6: Upload a PDF of the Completed Form.",
+      "Step 7: Upload Evidence",
+      "Step 8: Submit the PDF upload and payment (if required)."
+    ],
+    "_steps_source": "Online Filing for Attorneys and Accredited Representatives, 'File a Form Using PDF Upload', Steps 1 to 8 (headings copied), Last Reviewed/Updated 08/19/2026, read 2026-10-02.",
+    "forms": {
+      "family": [
+        {
+          "form": "I-485 (filed with its I-130)",
+          "page": "https://www.uscis.gov/i-485",
+          "page_updated": "09/18/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "You can now submit the following forms with Form I-485 when you file online using PDF upload: Form G-28 Notice of Entry of Appearance as Attorney or Accredited Representative (if you have an attorney or accredited representative or if you are filing as an attorney or accredited representative); Form I-130, Petition for Alien Relative; Form I-131, Application for Travel Documents, Parole Documents, and Arrival/Departure Records; Form I-140, Immigrant Petition for Alien Workers; Form I-485 Supplement A, Adjustment of Status Under Section 245(i); Form I-485 Supplement J, Confirmation of Valid Job Offer or Request for Job Portability Under INA Section 204(j); Form I-693, Report of Immigration Medical Examination and Vaccination Record; Form I-765, Application for Employment Authorization; Form I-864, Affidavit of Support Under Section 213A of the INA. (Forms Available to File Online, Upload Completed PDF Online, Form I-485, Last Reviewed/Updated 07/24/2026) The list is USCIS's, items separated by semicolons.",
+            "If you file Form I-485 online and need to submit Form I-693 or a partial Form I-693 (such as the Vaccination Record), you must open the sealed envelope from the civil surgeon and upload the completed and signed Form I-693 with your application package. You must keep the original Form I-693 and the envelope from the civil surgeon until we make a final decision on your Form I-485. We may review the original Form I-693 and envelope during an interview or ask you to submit the original Form I-693 and envelope as evidence to support your Form I-485. (Forms Available to File Online, Upload Completed PDF Online, Form I-485, Last Reviewed/Updated 07/24/2026)"
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence for Form I-485 (for informational purposes only)",
+            "url": "https://www.uscis.gov/forms/filing-guidance/checklist-of-required-initial-evidence-for-form-i-485-for-informational-purposes-only",
+            "says": "'Please do not submit this checklist with your Form I-485.' 'Do not send original documents unless specifically requested in the form instructions or applicable regulations.' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language to English.'",
+            "updated": "07/08/2025"
+          },
+          "notes_page": "https://www.uscis.gov/file-online/forms-available-to-file-online",
+          "notes_page_updated": "07/24/2026"
+        },
+        {
+          "form": "I-130",
+          "page": "https://www.uscis.gov/i-130",
+          "page_updated": "07/24/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "On USCIS's list: Form I-130 can be uploaded as a PDF, with no limit stated (Forms Available to File Online, 07/24/2026)."
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence (on the Form I-130 page)",
+            "url": "https://www.uscis.gov/i-130",
+            "says": "'Please do not submit this checklist with your Form I-130 (and Form I-130A, if required).' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language into English.'",
+            "updated": "07/24/2026"
+          }
+        },
+        {
+          "form": "I-765 (with the I-485)",
+          "page": "https://www.uscis.gov/i-765",
+          "page_updated": "09/30/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "On USCIS's list: Form I-765 can be submitted with Form I-485 when you file online using PDF upload (Forms Available to File Online, 07/24/2026)."
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence for Form I-765 (for informational purposes only)",
+            "url": "https://www.uscis.gov/forms/filing-guidance/checklist-of-required-initial-evidence-for-form-i-765-for-informational-purposes-only",
+            "says": "'Please do not submit this checklist with your Form I-765.' 'Do not send original documents unless specifically requested in the form instructions or applicable regulations.' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language to English.'",
+            "updated": "05/15/2025"
+          }
+        }
+      ],
+      "n400": [
+        {
+          "form": "N-400",
+          "page": "https://www.uscis.gov/n-400",
+          "page_updated": "06/16/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "If you are requesting a reduced fee or filing a fee waiver, you cannot file Form N-400 online. You must file a paper Form N-400 along with the appropriate waiver request."
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence (on the Form N-400 page)",
+            "url": "https://www.uscis.gov/n-400",
+            "says": "'Please do not submit this checklist with your Form N-400.' 'Do not send original documents unless specifically requested in the form instructions or applicable regulations.' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that the translator is competent to translate from the foreign language into English.'",
+            "updated": "06/16/2026"
+          }
+        }
+      ],
+      "i131": [
+        {
+          "form": "I-131 (advance parole on a pending I-485)",
+          "page": "https://www.uscis.gov/i-131",
+          "page_updated": "08/14/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "Advance parole documents for aliens who are inside the United States ... Part 1, Boxes: 5.A (pending Form I-485) *Form I-485 Receipt number must begin with IOE (Forms Available to File Online, 07/24/2026).",
+            "You cannot change or amend the selected application type after you file online (Forms Available to File Online, 07/24/2026).",
+            "If you are filing Form I-485 online using PDF upload, you can file Form I-131 concurrently with your Form I-485 application package (uscis.gov/i-131, 08/14/2026)."
+          ],
+          "checklist": null
+        }
+      ],
+      "i751": [
+        {
+          "form": "I-751",
+          "page": "https://www.uscis.gov/i-751",
+          "page_updated": "06/16/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "On USCIS's list: Form I-751 can be uploaded as a PDF, with no limit stated, and Form I-912 can be filed with it (Forms Available to File Online, 07/24/2026)."
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence (on the Form I-751 page)",
+            "url": "https://www.uscis.gov/i-751",
+            "says": "'Please do not submit this checklist with your Form I-751.' 'Do not send original documents unless specifically requested in the form instructions or applicable regulations.' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language into English.'",
+            "updated": "06/16/2026"
+          }
+        }
+      ],
+      "ead": [
+        {
+          "form": "I-765",
+          "page": "https://www.uscis.gov/i-765",
+          "page_updated": "09/30/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "You can file online for these categories: (a)(12) – Temporary Protected Status granted; (c)(8) – Application for employment authorization based on pending Form I-589, Application for Asylum or for Withholding of Removal, and applicants for pending asylum under the ABC Settlement Agreement; (c)(9) - Certain family-based and employment-based applicants pending adjustment of status under Section 245 of the Immigration and Nationality Act; (c)(11) – Paroled for urgent humanitarian or significant public benefit purposes; or (c)(19) – Certain pending TPS applicants whom USCIS has determined are prima facie eligible for TPS and who may then receive an EAD as a “temporary treatment benefit” under 8 C.F.R. 244.10(a). (Forms Available to File Online, 07/24/2026)",
+            "If you are filing Form I-765 for a (c)(9) Pending Adjustment of Status category that is fee exempted, do not submit your application through the PDF filing option at this time (Forms Available to File Online, 07/24/2026)."
+          ],
+          "checklist": {
+            "title": "Checklist of Required Initial Evidence for Form I-765 (for informational purposes only)",
+            "url": "https://www.uscis.gov/forms/filing-guidance/checklist-of-required-initial-evidence-for-form-i-765-for-informational-purposes-only",
+            "says": "'Please do not submit this checklist with your Form I-765.' 'Do not send original documents unless specifically requested in the form instructions or applicable regulations.' 'If you submit any documents (copies or original documents, if requested) in a foreign language, you must include a full English translation along with a certification from the translator verifying that the translation is complete and accurate, and that they are competent to translate from the foreign language to English.'",
+            "updated": "05/15/2025"
+          }
+        }
+      ],
+      "parole": [
+        {
+          "form": "I-131 (initial parole for someone outside the U.S., Part 1, Box 7)",
+          "page": "https://www.uscis.gov/i-131",
+          "page_updated": "08/14/2026",
+          "read_on": "2026-10-02",
+          "upload_notes": [
+            "On USCIS's list: Form I-131, Part 1, Box 7 (initial parole documents for aliens currently outside the United States who are not applying under a specific parole program or process, for themselves or for someone else) can be filed online (Forms Available to File Online, 07/24/2026).",
+            "The Form I-131 may be filed online for an Initial parole document for aliens who are currently outside the United States but are not applying under a specific parole program or process. ... (Part 1. Box 7. on Form I-131). Do not file online if you are requesting a fee waiver. (Humanitarian or Significant Public Benefit Parole for Aliens Outside the United States, Last Reviewed/Updated 12/15/2025)",
+            "If you try to file Form I-131 online for a different reason (for example, to request an advance parole document) it may delay your case, we may reject your Form I-131, or we may deny your Form I-131 and we will not refund your Form I-131 filing fee. (the same page, 12/15/2025)",
+            "USCIS's pages say nothing about where the Form I-134 goes in the account: the humanitarian parole page lists it among what to send with the request, and the Form I-134 page (06/03/2026) says to file a separate I-134 for each beneficiary."
+          ],
+          "checklist": null
+        }
+      ]
+    },
+    "_forms_source": "Forms Available to File Online (https://www.uscis.gov/file-online/forms-available-to-file-online, 07/24/2026) and each form's own page (dates above), read 2026-10-02. The checklists are USCIS's, for information only; they are linked, not copied. USCIS's I-131 page has no such checklist (read 2026-10-02)."
+  },
+  "filings": {
+    "i485": {
+      "online": false,
+      "why": "USCIS takes an attorney's I-485 online only when it is filed together with its I-130 or I-140. An I-485 on an approved I-360 (Special Immigrant Juvenile) is filed by mail.",
+      "_source": "'Representatives can file Form I-485 concurrently with an underlying Form I-140 or Form I-130.' 'All other Form I-485 applications must be filed by mail.' (Forms Available to File Online, Upload Completed PDF Online, Form I-485)"
+    },
+    "asylee": {
+      "online": false,
+      "why": "USCIS takes an attorney's I-485 online only when it is filed together with its I-130 or I-140. An asylee's or refugee's I-485 is filed by mail.",
+      "_source": "'Representatives can file Form I-485 concurrently with an underlying Form I-140 or Form I-130.' 'All other Form I-485 applications must be filed by mail.' (Forms Available to File Online, Form I-485)"
+    },
+    "family": {
+      "online": true,
+      "file_as": {
+        "petition_only": "I-130",
+        "default": "I-485"
+      },
+      "rules": [
+        {
+          "variant": "i485_only",
+          "why": "The I-485 on an I-130 already filed: USCIS takes an attorney's I-485 online only when it is filed together with its I-130, so this one is filed by mail."
+        }
+      ],
+      "notes": [
+        "File it as Form I-485 and upload the I-130, I-864, I-765 and G-28 with it (USCIS lists them as forms that go with an I-485 filed by PDF upload).",
+        "USCIS's online list names the I-130 but not Form I-130A (the spouse's information): the attorney confirms where the account asks for it.",
+        "Form I-693 (the medical exam): online, the sealed envelope is opened and the signed I-693 is scanned and uploaded with the I-485. Keep the original and the envelope until USCIS decides the case."
+      ],
+      "fees": [
+        "i130",
+        "i485",
+        "i485_under_14_with_parent",
+        "i765_with_pending_i485_paid",
+        "i765"
+      ],
+      "_source": "'Representatives can file Form I-485 concurrently with an underlying Form I-140 or Form I-130.' 'You can now submit the following forms with Form I-485 when you file online using PDF upload: Form G-28 ... Form I-130 ... Form I-693 ... Form I-765 ... Form I-864' 'All other Form I-485 applications must be filed by mail.' Form I-130 is on the PDF upload list with no limit. 'If you file Form I-485 online, you must open the sealed envelope from the civil surgeon and upload the completed Form I-693 with your application package. You must keep the original Form I-693 and the envelope from the civil surgeon until we make a final decision on your Form I-485.' (Forms Available to File Online, 07/24/2026; uscis.gov/i-485, 09/18/2026)"
+    },
+    "i360": {
+      "online": false,
+      "why": "Form I-360 isn't on USCIS's list of forms that can be filed online: it is filed by mail.",
+      "_source": "Form I-360 is not listed on Forms Available to File Online (07/24/2026)."
+    },
+    "n400": {
+      "online": true,
+      "file_as": {
+        "default": "N-400"
+      },
+      "rules": [
+        {
+          "fact": "n400.fee_reduction",
+          "is": [
+            "Yes"
+          ],
+          "why": "A reduced fee is requested: USCIS takes the N-400 on paper only."
+        },
+        {
+          "fee_waiver": true,
+          "why": "A fee waiver (Form I-912) is requested: USCIS takes the N-400 on paper only."
+        }
+      ],
+      "fees": [
+        "n400"
+      ],
+      "_source": "'If you are requesting a reduced fee or filing a fee waiver, you cannot file Form N-400 online. You must file a paper Form N-400 along with the appropriate waiver request.' (Forms Available to File Online, Upload Completed PDF Online, Form N-400; the same on uscis.gov/n-400, 06/16/2026)"
+    },
+    "i589": {
+      "online": false,
+      "why": "USCIS takes the I-589 online only in its own step-by-step online form, not as a PDF upload, so this packet is filed on paper.",
+      "_source": "Form I-589 is listed under 'Fill Out Form Online' only, not under 'Upload Completed PDF Online' (Forms Available to File Online, 07/24/2026)."
+    },
+    "i90": {
+      "online": false,
+      "why": "USCIS takes the I-90 online only in its own step-by-step online form, not as a PDF upload, so this packet is filed on paper.",
+      "_source": "Form I-90 is listed under 'Fill Out Form Online' only (Forms Available to File Online, 07/24/2026)."
+    },
+    "n600": {
+      "online": false,
+      "why": "USCIS takes the N-600 online only in its own step-by-step online form, not as a PDF upload, so this packet is filed on paper.",
+      "_source": "Form N-600 is listed under 'Fill Out Form Online' only (Forms Available to File Online, 07/24/2026)."
+    },
+    "n336": {
+      "online": false,
+      "why": "USCIS takes the N-336 online only in its own step-by-step online form, not as a PDF upload, so this packet is filed on paper.",
+      "_source": "Form N-336 is listed under 'Fill Out Form Online' only (Forms Available to File Online, 07/24/2026)."
+    },
+    "address": {
+      "online": false,
+      "why": "A change of address isn't a PDF upload: it is made in the USCIS online account's change-of-address tool, or on the paper AR-11.",
+      "_source": "Form AR-11 is listed under 'Fill Out Form Online' only (Forms Available to File Online, 07/24/2026)."
+    },
+    "i131": {
+      "online": true,
+      "file_as": {
+        "default": "I-131"
+      },
+      "rules": [
+        {
+          "fact": "i131.type",
+          "not_in": [
+            "Advance parole (pending I-485)"
+          ],
+          "why": "Of the travel documents this system prepares, only advance parole for a pending I-485 (Part 1, 5.A) can be uploaded. A reentry permit, a refugee travel document and advance parole for a pending I-589 (5.B) are filed by mail."
+        },
+        {
+          "fact": "i131.i485_receipt",
+          "prefix_not": "IOE",
+          "why": "Advance parole for a pending I-485 is filed online only when the I-485's receipt number begins with IOE."
+        }
+      ],
+      "fees": [
+        "i131_advance_parole"
+      ],
+      "_source": "uscis.gov/i-131 (08/14/2026), 'Who Can File Form I-131 Online': Reentry permits (Part 1, Box 1): No; Refugee travel documents (Part 1, Box 2 or 3): No; '5.A (pending Form I-485) Form I-485 receipt number must begin with IOE to file online under 5.A. All other receipt numbers are ineligible for online filing'; 5.B (Pending Form I-589): No. The same categories on Forms Available to File Online (07/24/2026). 'You cannot change or amend the selected application type after you file online.'"
+    },
+    "i751": {
+      "online": true,
+      "file_as": {
+        "default": "I-751"
+      },
+      "rules": [],
+      "fees": [
+        "i751"
+      ],
+      "_source": "Form I-751 is on the 'Upload Completed PDF Online' list with no limit, and Form I-912 can be filed with it (Forms Available to File Online, 07/24/2026)."
+    },
+    "ead": {
+      "online": true,
+      "file_as": {
+        "default": "I-765"
+      },
+      "rules": [
+        {
+          "fact": "ead.category",
+          "not_in": [
+            "(c)(8) Pending asylum application (I-589)",
+            "(c)(9) Pending green card application (I-485)"
+          ],
+          "why": "USCIS takes the I-765 by PDF upload only in some categories: of the ones this system prepares, (c)(8) and (c)(9). An (a)(5) or (c)(14) work permit is filed by mail."
+        },
+        {
+          "fact": "ead.category",
+          "is": [
+            "(c)(9) Pending green card application (I-485)"
+          ],
+          "fee_zero": true,
+          "why": "A (c)(9) work permit with no fee: USCIS says not to use PDF upload (it charges the fee there and doesn't refund it). Mail it to keep the fee exemption."
+        }
+      ],
+      "fees": [
+        "i765",
+        "i765_with_pending_i485_paid",
+        "i765_c8_renewal"
+      ],
+      "_source": "Form I-765, 'You can file online for these categories: (a)(12) ... (c)(8) ... (c)(9) ... (c)(11) ... or (c)(19)'. 'Note: If you are filing Form I-765 for a (c)(9) Pending Adjustment of Status category that is fee exempted, do not submit your application through the PDF filing option at this time. ... If you are fee-exempt and proceed with paying the fee and submitting your application through the PDF filing option, we will not issue you a refund. If you are filing under a fee-exempt category, you should mail a paper Form I-765' (Forms Available to File Online, Upload Completed PDF Online, 07/24/2026)"
+    },
+    "i290b": {
+      "online": false,
+      "why": "Form I-290B isn't on USCIS's list of forms that can be filed online: it is filed by mail.",
+      "_source": "Form I-290B is not listed on Forms Available to File Online (07/24/2026)."
+    },
+    "i601a": {
+      "online": false,
+      "why": "Form I-601A isn't on USCIS's list of forms that can be filed online: it is filed by mail.",
+      "_source": "Form I-601A is not listed on Forms Available to File Online (07/24/2026)."
+    },
+    "i601": {
+      "online": false,
+      "why": "Form I-601 isn't on USCIS's list of forms that can be filed online: it is filed by mail.",
+      "_source": "Form I-601 is not listed on Forms Available to File Online (07/24/2026, read 2026-10-02)."
+    },
+    "i212": {
+      "online": false,
+      "why": "Form I-212 isn't on USCIS's list of forms that can be filed online: it is filed by mail.",
+      "_source": "Form I-212 is not listed on Forms Available to File Online (07/24/2026, read 2026-10-02)."
+    },
+    "eoir28": {
+      "online": null,
+      "why": "Filed with the immigration court (EOIR), not USCIS."
+    },
+    "bia": {
+      "online": null,
+      "why": "Filed with the Board of Immigration Appeals (EOIR), not USCIS."
+    },
+    "court_bond": {
+      "online": null,
+      "why": "Filed with the immigration court (EOIR), not USCIS."
+    },
+    "court_motion": {
+      "online": null,
+      "why": "Filed with the immigration court (EOIR), not USCIS."
+    },
+    "visa": {
+      "online": null,
+      "why": "Filed with the National Visa Center online (CEAC), not USCIS."
+    },
+    "i912": {
+      "online": null,
+      "why": "Goes inside the application whose fee it waives."
+    },
+    "expedite": {
+      "online": null,
+      "why": "A request made by phone or from the online account, not a filing."
+    },
+    "parole": {
+      "online": true,
+      "file_as": {
+        "default": "I-131"
+      },
+      "rules": [
+        {
+          "fee_waiver": true,
+          "why": "A request with a fee waiver isn't filed online: 'Do not file online if you are requesting a fee waiver' (the humanitarian parole page)."
+        }
+      ],
+      "notes": [
+        "File it as Form I-131, Part 1, Box 7 (initial parole for someone outside the U.S., not under a specific program or process): that box can be filed by PDF upload. The I-134 and the evidence belong to the same request (the humanitarian parole page); it does not say where the account takes the I-134, so follow the account's own steps."
+      ],
+      "fees": [
+        "i131_parole"
+      ],
+      "_source": "uscis.gov/i-131 (08/14/2026), 'Who Can File Form I-131 Online': 'Initial parole documents for aliens who are currently outside the United States but are not applying under a specific parole program or process. This includes individuals applying for themselves or for someone else, Part 1, Box 7 on Form I-131: Yes'; the same on Forms Available to File Online (07/24/2026). Humanitarian parole page (12/15/2025): the request is filed 'online if they are eligible and not requesting a fee waiver'."
+    },
+    "n565": {
+      "online": false,
+      "why": "USCIS takes Form N-565 online only through its step-by-step online form (the client's own account), not by PDF upload: this packet is the paper filing.",
+      "_source": "Form N-565 is on Forms Available to File Online's 'Fill Out Form Online' list and not on its 'Upload Completed PDF Online' list (07/24/2026)."
+    },
+    "g639": {
+      "online": false,
+      "how": "online_only",
+      "why": "USCIS takes FOIA requests only through its FOIA portal, first.uscis.gov, where the request is typed in: it isn't a PDF upload to the firm's USCIS online account. The packet's pages hold the answers.",
+      "_source": "'Effective January 22, 2026, all Freedom of Information Act (FOIA)/Privacy requests for USCIS records should be submitted online ... first.uscis.gov' (USCIS's FOIA page, last updated 01/27/2026); Form G-639 is listed under 'Fill Out Form Online' with the link to first.uscis.gov (Forms Available to File Online, 07/24/2026)."
+    },
+    "tps": {
+      "online": false,
+      "why": "USCIS takes Form I-821 online only through its step-by-step online form, not by PDF upload: this packet is the paper filing.",
+      "_source": "Form I-821 is on Forms Available to File Online's 'Fill Out Form Online' list and not on its 'Upload Completed PDF Online' list (07/24/2026)."
+    }
+  }
+}

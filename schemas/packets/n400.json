@@ -1,0 +1,45 @@
+{
+  "_about": "The N-400 (naturalization) packet (src/packet.py, src/naturalization.py): the firm's G-28 and the N-400 on top, then the evidence the N-400 Instructions (edition 01/20/25) ask for, by basis. The green card, and for a spouse-based filing the marriage certificate and proof of the spouse's citizenship; any criminal, court or immigration-court records (Part 9); Form N-648 for a disability exception; tax returns for a fee reduction. Built into its own files (packet_n400.pdf, packet_n400.json). The attorney approves titles and order.",
+  "filing": "n400",
+  "title": "N-400 application (naturalization)",
+  "packet_pdf": "packet_n400.pdf",
+  "manifest": "packet_n400.json",
+  "choices": "packet_choices_n400.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_n400.json",
+  "index_sheet": false,
+  "forms": ["g28_n400", "n400"],
+  "handwork": [
+    {"kind": "check", "text": "Photos: none for a client living in the United States (USCIS takes them at the biometrics appointment); two passport-style photos only for a client applying from outside the U.S. (N-400 Instructions)."}
+  ],
+  "exhibits": [
+    {"id": "green_card", "title": "Permanent Resident Card (front and back)", "types": ["green_card"]},
+    {"id": "marriage", "title": "Marriage certificate, and any divorce decrees ending prior marriages (spouse-based filing)", "types": ["marriage_certificate", "divorce_decree"]},
+    {"id": "spouse_citizenship", "title": "Proof the spouse has been a U.S. citizen for 3 years (U.S. birth certificate, passport, or certificate)",
+     "types": ["us_passport", "us_birth_certificate", "citizenship_certificate"]},
+    {"id": "court", "title": "Court records and dispositions for every arrest, citation or charge (Part 9, item 15)", "types": ["criminal_record"]},
+    {"id": "immigration_court", "title": "Immigration court records (Notice to Appear and the court's final order)", "types": ["notice_to_appear"]},
+    {"id": "taxes", "title": "Federal tax returns (fee reduction, or taxes owed)", "types": ["tax_return", "w2", "pay_stub"]},
+    {"id": "uscis_notices", "title": "USCIS notices", "types": ["uscis_notice", "i360_approval", "i485_receipt"]},
+    {"id": "identity", "title": "Passport identity page", "types": ["passport"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "birth_certificate": "Not asked for with the N-400.",
+    "translation_certification": "Goes with the document it translates.",
+    "i94": "Not asked for with the N-400 (the green card shows the admission).",
+    "visa": "Not asked for with the N-400.",
+    "ssn_card": "Not asked for with the N-400.",
+    "drivers_license": "Not asked for with the N-400.",
+    "work_permit": "A resident's old work permit isn't needed.",
+    "sij_order": "Part of the green-card case, not needed again for the N-400.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "bank_statement": "Not asked for with the N-400.",
+    "lease": "Not asked for with the N-400 (unless the attorney uses it to show residence after a long trip).",
+    "utility_bill": "Not asked for with the N-400 (unless the attorney uses it to show residence after a long trip)."
+  }
+}

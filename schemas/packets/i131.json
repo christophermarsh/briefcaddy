@@ -1,0 +1,83 @@
+{
+  "_about": "The travel document (I-131) packet (src/packet.py, src/travel.py), per the I-131 Instructions (01/20/25): the G-28 and the I-131, a copy of a government photo ID, and the document it is based on. The I-485 or I-589 receipt notice (advance parole), the asylum approval or I-94 (refugee travel document), the green card (reentry permit). Two passport photos for advance parole, or a refugee travel document filed from abroad. The attorney approves titles and order.",
+  "filing": "i131",
+  "title": "I-131 application (travel document)",
+  "packet_pdf": "packet_i131.pdf",
+  "manifest": "packet_i131.json",
+  "choices": "packet_choices_i131.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i131.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i131",
+    "i131"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "Advance parole (or a refugee travel document filed from outside the U.S.): two identical color passport-style photos, name and A-Number lightly in pencil on the back. A reentry permit or a refugee travel document filed from the U.S.: none (biometrics appointment)."
+    },
+    {
+      "kind": "check",
+      "text": "Tell the client: no travel until the document is approved and in hand (and, for a reentry permit or refugee travel document, until biometrics are done)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "identity",
+      "title": "Government-issued photo identification (passport, driver's license, green card or work permit)",
+      "types": [
+        "passport",
+        "drivers_license",
+        "national_id",
+        "work_permit"
+      ],
+      "required": true
+    },
+    {
+      "id": "basis",
+      "title": "The basis: the I-485 or I-589 receipt notice, the asylum approval, or the green card",
+      "types": [
+        "i485_receipt",
+        "uscis_notice",
+        "green_card"
+      ],
+      "required": true
+    },
+    {
+      "id": "entry",
+      "title": "Form I-94",
+      "types": [
+        "i94"
+      ]
+    },
+    {
+      "id": "trip",
+      "title": "Evidence for the trip (e.g. a letter explaining an urgent or humanitarian reason)",
+      "types": []
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "ssn_card": "Not asked for with this application.",
+    "w2": "Not asked for with this application.",
+    "pay_stub": "Not asked for with this application.",
+    "birth_certificate": "Not asked for with the I-131.",
+    "visa": "Not asked for with the I-131.",
+    "sij_order": "Part of the green-card case, not needed for the I-131.",
+    "i360_approval": "Not needed for the I-131.",
+    "bank_statement": "Not asked for with the I-131.",
+    "lease": "Not asked for with the I-131.",
+    "utility_bill": "Not asked for with the I-131.",
+    "tax_return": "Not asked for with the I-131.",
+    "marriage_certificate": "Not asked for with the I-131.",
+    "notice_to_appear": "Not asked for with the I-131 (the attorney reviews travel by a client in proceedings).",
+    "us_passport": "Not asked for with the I-131."
+  }
+}

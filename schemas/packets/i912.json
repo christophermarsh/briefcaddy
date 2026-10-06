@@ -1,0 +1,55 @@
+{
+  "_about": "A fee waiver request (Form I-912, src/fee_waiver.py), per uscis.gov/i-912 (updated 06/05/2026): filed INSIDE the application it waives, never alone. This packet is the I-912 on its own to review and sign; building the application's packet adds it there automatically.",
+  "filing": "i912",
+  "title": "Fee waiver request (I-912)",
+  "packet_pdf": "packet_i912.pdf",
+  "manifest": "packet_i912.json",
+  "choices": "packet_choices_i912.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "i912"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "Don't mail this alone: build the application's packet (the I-912 is added there) and mail that."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "benefit",
+      "title": "Means-tested benefit: the agency's letter or notice (name, agency, benefit, currently received)",
+      "types": [
+        "uscis_notice",
+        "declaration"
+      ]
+    },
+    {
+      "id": "income",
+      "title": "Income: federal tax transcripts or returns, W-2s, pay stubs",
+      "types": [
+        "tax_return",
+        "w2",
+        "pay_stub"
+      ]
+    },
+    {
+      "id": "hardship",
+      "title": "Financial hardship: bills, medical records, bank statements, eviction or job-loss evidence",
+      "types": [
+        "medical_record",
+        "bank_statement",
+        "utility_bill",
+        "lease"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal."
+  }
+}

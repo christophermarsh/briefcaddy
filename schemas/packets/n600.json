@@ -1,0 +1,91 @@
+{
+  "_about": "The certificate of citizenship (N-600) packet (src/packet.py, src/certificate.py), per the N-600 Instructions (01/20/25): the G-28 and the N-600, the client's birth certificate (with translation), proof the parent is a U.S. citizen, the green card (INA 320), the parents' marriage certificate and any divorce decrees, and proof of the citizen parent's legal custody. No photos for a child living in the U.S. (uscis.gov/n-600). The attorney approves titles and order.",
+  "filing": "n600",
+  "title": "N-600 application (certificate of citizenship)",
+  "packet_pdf": "packet_n600.pdf",
+  "manifest": "packet_n600.json",
+  "choices": "packet_choices_n600.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_n600.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_n600",
+    "n600"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "No photos for a client living in the U.S. (USCIS takes them at the biometrics appointment); two passport-style photos only for a client living abroad."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "birth",
+      "title": "The client's birth certificate (with certified English translation)",
+      "types": [
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "parent_citizenship",
+      "title": "Proof the parent is a U.S. citizen (U.S. birth certificate, passport, naturalization or citizenship certificate)",
+      "types": [
+        "us_passport",
+        "citizenship_certificate",
+        "us_birth_certificate"
+      ],
+      "required": true
+    },
+    {
+      "id": "green_card",
+      "title": "The client's Permanent Resident Card (front and back)",
+      "types": [
+        "green_card"
+      ]
+    },
+    {
+      "id": "parents_marriage",
+      "title": "The parents' marriage certificate, and any divorce decrees",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "custody",
+      "title": "Custody: proof the client lived in the citizen parent's legal and physical custody (custody order, school or lease records)",
+      "types": []
+    },
+    {
+      "id": "uscis_notices",
+      "title": "USCIS notices",
+      "types": [
+        "uscis_notice",
+        "i485_receipt"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "ssn_card": "Not asked for with this application.",
+    "w2": "Not asked for with this application.",
+    "pay_stub": "Not asked for with this application.",
+    "i94": "Not asked for with the N-600.",
+    "visa": "Not asked for with the N-600.",
+    "work_permit": "Not asked for with the N-600.",
+    "sij_order": "Part of the green-card case, the attorney decides whether it bears on custody.",
+    "i360_approval": "Not needed for the N-600.",
+    "bank_statement": "Not asked for with the N-600.",
+    "tax_return": "Not asked for with the N-600.",
+    "passport": "Not asked for with the N-600.",
+    "drivers_license": "Not asked for with the N-600."
+  }
+}

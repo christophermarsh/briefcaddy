@@ -1,0 +1,18 @@
+{
+  "_source": "USCIS, 'Direct Filing Address for Form I-751, Petition to Remove Conditions on Residence' (uscis.gov/i-751-direct-filing-addresses), page last updated 09/24/2024, read 2026-10-01. By the state where the client lives. 'No State' (living abroad, e.g. with a spouse in government service) files at Phoenix: the attorney confirms.",
+  "checked": "2026-10-01",
+  "page_updated": "09/24/2024",
+  "lockboxes": {
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: I-751", "P.O. BOX 4072", "CAROL STREAM, IL 60197-4072"],
+      "courier": ["USCIS", "ATTN: I-751 (BOX 4072)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["CT", "FL", "GA", "GU", "IL", "IN", "ME", "MD", "MA", "MI", "NH", "NJ", "NY", "OH", "PA", "RI", "SC", "VT", "WI"]
+    },
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: I-751", "P.O. BOX 21200", "PHOENIX, AZ 85036-1200"],
+      "courier": ["USCIS", "ATTN: I-751 (BOX 21200)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AL", "AK", "AS", "AZ", "AR", "AE", "AP", "AA", "CA", "CO", "MP", "DE", "DC", "HI", "ID", "IA", "KS", "KY", "LA", "MH", "FM", "MN", "MS",
+                 "MO", "MT", "NE", "NV", "NM", "NC", "ND", "OK", "OR", "PW", "PR", "SD", "TN", "TX", "VI", "UT", "VA", "WA", "WV", "WY"]
+    }
+  }
+}

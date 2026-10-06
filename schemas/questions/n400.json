@@ -1,0 +1,1695 @@
+{
+ "_status": "The citizenship (N-400) questions the client answers in the portal, added to the reused sections of schemas/question_bank.json (about you, addresses, work, marriage, children, description) -- src/portal/bank.py load_bank('n400'). Each answer fills the same n400.* fact the review app's Citizenship panel shows. Part 9 is asked as checklists: 'none of these' answers No for every item in it; a ticked item stays blank and the attorney sees what was ticked; 'not sure' leaves them blank for the attorney. DRAFT: every wording needs a certified translator and attorney approval before clients see it. The Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator.",
+ "version": 1,
+ "reuse_sections": [
+  "about",
+  "addresses",
+  "work",
+  "marriage",
+  "children",
+  "biographic"
+ ],
+ "reuse_documents": [
+  "passport",
+  "marriage_certificate",
+  "divorce_decree",
+  "drivers_license",
+  "drivers_license_back"
+ ],
+ "sections": [
+  {
+   "id": "n400_residence",
+   "title": {
+    "pt": "Green card e viagens",
+    "es": "Green card y viajes",
+    "en": "Green card and trips",
+    "ht": "Green card ak vwayaj"
+   },
+   "questions": [
+    {
+     "id": "lpr_date",
+     "type": "date",
+     "fact": "n400.lpr_date",
+     "required": true,
+     "n400": "Part 2, Item 7",
+     "label": {
+      "pt": "Desde quando você é residente permanente? (a data 'Resident Since' no seu green card)",
+      "es": "¿Desde cuándo es residente permanente? (la fecha 'Resident Since' en su green card)",
+      "en": "When did you become a permanent resident? (the 'Resident Since' date on your green card)",
+      "ht": "Depi ki lè ou se rezidan pèmanan? (dat 'Resident Since' ki sou green card ou a)"
+     }
+    },
+    {
+     "id": "trips_any",
+     "type": "yes_no",
+     "label": {
+      "pt": "Nos últimos 5 anos, você saiu dos Estados Unidos por mais de 24 horas?",
+      "es": "En los últimos 5 años, ¿salió de los Estados Unidos por más de 24 horas?",
+      "en": "In the last 5 years, did you leave the United States for more than 24 hours?",
+      "ht": "Nan 5 dènye ane yo, èske ou te kite Etazini pou plis pase 24 èdtan?"
+     },
+     "fact": "questionnaire.n400_trips_any",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 8"
+    },
+    {
+     "id": "trips",
+     "type": "repeat",
+     "required": true,
+     "show_if": {
+      "q": "trips_any",
+      "eq": "Yes"
+     },
+     "min": 1,
+     "max": 30,
+     "n400": "Part 8",
+     "fact_pattern": "questionnaire.trip{n}_{part}",
+     "label": {
+      "pt": "Cada viagem (comece pela mais recente)",
+      "es": "Cada viaje (empiece por el más reciente)",
+      "en": "Each trip (start with the most recent)",
+      "ht": "Chak vwayaj (kòmanse ak sa ki pi resan an)"
+     },
+     "fields": [
+      {
+       "id": "left",
+       "type": "date",
+       "required": true,
+       "label": {
+        "pt": "Data em que saiu",
+        "es": "Fecha en que salió",
+        "en": "Date you left",
+        "ht": "Dat ou te pati"
+       }
+      },
+      {
+       "id": "returned",
+       "type": "date",
+       "required": true,
+       "label": {
+        "pt": "Data em que voltou",
+        "es": "Fecha en que regresó",
+        "en": "Date you came back",
+        "ht": "Dat ou te tounen"
+       }
+      },
+      {
+       "id": "countries",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "Países visitados",
+        "es": "Países visitados",
+        "en": "Countries you visited",
+        "ht": "Peyi ou te vizite"
+       }
+      }
+     ]
+    },
+    {
+     "id": "parent_citizen",
+     "type": "yes_no",
+     "label": {
+      "pt": "Sua mãe ou seu pai (inclusive adotivos) já era cidadão americano antes de você fazer 18 anos?",
+      "es": "¿Su madre o su padre (incluso adoptivos) ya era ciudadano estadounidense antes de que usted cumpliera 18 años?",
+      "en": "Was your mother or father (including adoptive) a U.S. citizen before you turned 18?",
+      "ht": "Èske manman ou oswa papa ou (menm paran adoptif) te sitwayen ameriken anvan ou te gen 18 an?"
+     },
+     "fact": "n400.parent_citizen_before_18",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "help": {
+      "pt": "Se sim, você talvez já seja cidadão. O escritório vai verificar.",
+      "es": "Si es así, quizás ya sea ciudadano. La oficina lo verificará.",
+      "en": "If yes, you may already be a citizen. The office will check.",
+      "ht": "Si wi, ou ka deja sitwayen. Biwo a ap verifye."
+     },
+     "n400": "Part 2, Item 10"
+    },
+    {
+     "id": "disability",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você tem alguma deficiência física, de desenvolvimento ou mental que impede você de fazer a prova de inglês e de cívica?",
+      "es": "¿Tiene alguna discapacidad física, del desarrollo o mental que le impida hacer el examen de inglés y de educación cívica?",
+      "en": "Do you have a physical, developmental or mental disability that keeps you from taking the English and civics tests?",
+      "ht": "Èske ou gen yon andikap fizik, mantal oswa nan devlopman ki anpeche ou pase egzamen angle ak sivik la?"
+     },
+     "fact": "n400.disability_exception",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "help": {
+      "pt": "Se sim, um médico precisa preencher o Formulário N-648.",
+      "es": "Si es así, un médico debe llenar el Formulario N-648.",
+      "en": "If yes, a doctor must fill out Form N-648.",
+      "ht": "Si wi, yon doktè dwe ranpli Fòm N-648."
+     },
+     "n400": "Part 2, Item 11"
+    },
+    {
+     "id": "name_change",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você quer mudar legalmente o seu nome quando se tornar cidadão?",
+      "es": "¿Quiere cambiar legalmente su nombre al hacerse ciudadano?",
+      "en": "Do you want to legally change your name when you become a citizen?",
+      "ht": "Èske ou vle chanje non ou legalman lè ou vin sitwayen?"
+     },
+     "fact": "n400.name_change",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 2, Item 3"
+    },
+    {
+     "id": "new_name",
+     "type": "group",
+     "required": true,
+     "show_if": {
+      "q": "name_change",
+      "eq": "Yes"
+     },
+     "n400": "Part 2, Item 3",
+     "label": {
+      "pt": "O novo nome",
+      "es": "El nuevo nombre",
+      "en": "The new name",
+      "ht": "Nouvo non an"
+     },
+     "facts": {
+      "given": "n400.new_given_name",
+      "middle": "n400.new_middle_name",
+      "family": "n400.new_family_name"
+     },
+     "fields": [
+      {
+       "id": "given",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "Primeiro nome",
+        "es": "Primer nombre",
+        "en": "First name",
+        "ht": "Premye non"
+       }
+      },
+      {
+       "id": "middle",
+       "type": "text",
+       "required": false,
+       "label": {
+        "pt": "Nome do meio",
+        "es": "Segundo nombre",
+        "en": "Middle name",
+        "ht": "Dezyèm non"
+       }
+      },
+      {
+       "id": "family",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "Sobrenome",
+        "es": "Apellido",
+        "en": "Last name",
+        "ht": "Siyati (non fanmi)"
+       }
+      }
+     ]
+    },
+    {
+     "id": "ssa_card",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você quer que a Previdência Social (SSA) atualize o seu registro e mande um novo cartão quando você se tornar cidadão?",
+      "es": "¿Quiere que el Seguro Social (SSA) actualice su registro y le envíe una tarjeta nueva cuando se haga ciudadano?",
+      "en": "Do you want Social Security (SSA) to update your record and send you a new card when you become a citizen?",
+      "ht": "Èske ou vle Sosyal Sekirite (SSA) mete dosye ou ajou epi voye yon nouvo kat ba ou lè ou vin sitwayen?"
+     },
+     "fact": "n400.ssa_card",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "help": {
+      "pt": "Se sim, o USCIS compartilha as suas informações com a SSA para isso.",
+      "es": "Si es así, USCIS comparte su información con la SSA para eso.",
+      "en": "If yes, USCIS shares your information with the SSA for this.",
+      "ht": "Si wi, USCIS ap pataje enfòmasyon ou ak SSA pou sa."
+     },
+     "n400": "Part 2, Item 12.a"
+    }
+   ]
+  },
+  {
+   "id": "n400_character",
+   "title": {
+    "pt": "Perguntas sobre você (Parte 9)",
+    "es": "Preguntas sobre usted (Parte 9)",
+    "en": "Questions about you (Part 9)",
+    "ht": "Kesyon sou ou (Pati 9)"
+   },
+   "questions": [
+    {
+     "id": "n9_citizen",
+     "type": "checklist",
+     "label": {
+      "pt": "Alguma destas já aconteceu?",
+      "es": "¿Alguna de estas ha pasado?",
+      "en": "Has any of these ever happened?",
+      "ht": "Èske youn nan bagay sa yo te janm rive?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "claimed",
+       "label": {
+        "pt": "Eu disse que era cidadão americano (por escrito ou de outro jeito), por exemplo num formulário de emprego",
+        "es": "Dije que era ciudadano estadounidense (por escrito o de otra forma), por ejemplo en una solicitud de empleo",
+        "en": "I said I was a U.S. citizen (in writing or any other way), for example on a job form",
+        "ht": "Mwen te di mwen se sitwayen ameriken (alekri oswa nenpòt lòt fason), pa egzanp sou yon fòm travay"
+       },
+       "items": "1",
+       "facts": [
+        "n400.p9_1"
+       ]
+      },
+      {
+       "value": "voted",
+       "label": {
+        "pt": "Eu me registrei para votar ou votei numa eleição nos EUA (federal, estadual ou local)",
+        "es": "Me registré para votar o voté en una elección en EE. UU. (federal, estatal o local)",
+        "en": "I registered to vote or voted in a U.S. election (federal, state or local)",
+        "ht": "Mwen te enskri pou vote oswa mwen te vote nan yon eleksyon Etazini (federal, eta oswa lokal)"
+       },
+       "items": "2",
+       "facts": [
+        "n400.p9_2"
+       ]
+      },
+      {
+       "value": "taxes",
+       "label": {
+        "pt": "Hoje eu devo impostos atrasados (federais, estaduais ou locais)",
+        "es": "Hoy debo impuestos atrasados (federales, estatales o locales)",
+        "en": "I owe overdue taxes now (federal, state or local)",
+        "ht": "Mwen dwe taks ki an reta kounye a (federal, eta oswa lokal)"
+       },
+       "items": "3",
+       "facts": [
+        "n400.p9_3"
+       ]
+      },
+      {
+       "value": "nonresident",
+       "label": {
+        "pt": "Depois de virar residente, me declarei 'não residente' no imposto de renda, ou não declarei por isso",
+        "es": "Después de hacerme residente, me declaré 'no residente' en los impuestos, o no los declaré por eso",
+        "en": "Since becoming a resident, I called myself a 'nonresident' on a tax return, or didn't file because of it",
+        "ht": "Depi mwen vin rezidan, mwen te di mwen se 'nonresident' (pa rezidan) sou yon deklarasyon taks, oswa mwen pa t fè deklarasyon akoz sa"
+       },
+       "items": "4",
+       "facts": [
+        "n400.p9_4"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 1-4",
+     "help": {
+      "pt": "Votar numa eleição local aberta a não cidadãos, onde isso é permitido, não conta.",
+      "es": "Votar en una elección local abierta a no ciudadanos, donde está permitido, no cuenta.",
+      "en": "Voting in a local election open to non-citizens, where that is allowed, doesn't count.",
+      "ht": "Vote nan yon eleksyon lokal ki ouvè pou moun ki pa sitwayen, kote lalwa pèmèt sa, pa konte."
+     }
+    },
+    {
+     "id": "n9_groups",
+     "type": "checklist",
+     "label": {
+      "pt": "Você já fez parte, ajudou ou apoiou algum destes, em qualquer país?",
+      "es": "¿Alguna vez formó parte, ayudó o apoyó alguno de estos, en cualquier país?",
+      "en": "Have you ever been part of, helped or supported any of these, in any country?",
+      "ht": "Èske ou te janm fè pati, ede oswa sipòte youn nan sa yo, nan nenpòt peyi?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "communist",
+       "label": {
+        "pt": "Um partido comunista ou totalitário",
+        "es": "Un partido comunista o totalitario",
+        "en": "A Communist or totalitarian party",
+        "ht": "Yon pati kominis oswa totalitè (diktati)"
+       },
+       "items": "5a",
+       "facts": [
+        "n400.p9_5a"
+       ]
+      },
+      {
+       "value": "overthrow",
+       "label": {
+        "pt": "Um grupo que defende derrubar o governo, matar autoridades ou sabotagem",
+        "es": "Un grupo que defiende derrocar al gobierno, matar a funcionarios o el sabotaje",
+        "en": "A group that supports overthrowing a government, killing officials or sabotage",
+        "ht": "Yon gwoup ki sipòte ranvèse yon gouvènman, touye otorite oswa sabotaj"
+       },
+       "items": "5b",
+       "facts": [
+        "n400.p9_5b"
+       ]
+      },
+      {
+       "value": "violent_group",
+       "label": {
+        "pt": "Um grupo que usou armas ou explosivos, sequestrou, assassinou ou sequestrou aviões ou veículos (ou planejou isso)",
+        "es": "Un grupo que usó armas o explosivos, secuestró, asesinó o secuestró aviones o vehículos (o lo planeó)",
+        "en": "A group that used weapons or explosives, kidnapped, killed, or hijacked planes or vehicles (or planned to)",
+        "ht": "Yon gwoup ki te sèvi ak zam oswa eksplozif, ki te kidnape, touye moun, oswa detounen avyon oswa machin (oswa ki te planifye sa)"
+       },
+       "items": "6a, 6b, 6c",
+       "facts": [
+        "n400.p9_6a",
+        "n400.p9_6b",
+        "n400.p9_6c"
+       ]
+      },
+      {
+       "value": "military",
+       "label": {
+        "pt": "Uma unidade militar ou de polícia (inclusive serviço militar obrigatório)",
+        "es": "Una unidad militar o de policía (incluso el servicio militar obligatorio)",
+        "en": "A military or police unit (including required military service)",
+        "ht": "Yon inite militè oswa polis (menm sèvis militè obligatwa)"
+       },
+       "items": "8a",
+       "facts": [
+        "n400.p9_8a"
+       ]
+      },
+      {
+       "value": "armed_group",
+       "label": {
+        "pt": "Um grupo armado: paramilitar, autodefesa, milícia, rebeldes ou guerrilha",
+        "es": "Un grupo armado: paramilitar, autodefensa, milicia, rebeldes o guerrilla",
+        "en": "An armed group: paramilitary, self-defense, vigilante, rebel or guerrilla group",
+        "ht": "Yon gwoup ame: gwoup paramilitè, oto-defans, brigad, rebèl oswa geriya"
+       },
+       "items": "8b",
+       "facts": [
+        "n400.p9_8b"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 5-8"
+    },
+    {
+     "id": "n9_harm",
+     "type": "checklist",
+     "label": {
+      "pt": "Você já participou, ajudou ou mandou fazer algum destes?",
+      "es": "¿Alguna vez participó, ayudó o mandó hacer alguno de estos?",
+      "en": "Have you ever taken part in, helped with or ordered any of these?",
+      "ht": "Èske ou te janm patisipe nan, ede nan oswa bay lòd pou youn nan bagay sa yo?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "torture",
+       "label": {
+        "pt": "Tortura ou genocídio",
+        "es": "Tortura o genocidio",
+        "en": "Torture or genocide",
+        "ht": "Tòti oswa jenosid"
+       },
+       "items": "7a, 7b",
+       "facts": [
+        "n400.p9_7a",
+        "n400.p9_7b"
+       ]
+      },
+      {
+       "value": "kill",
+       "label": {
+        "pt": "Matar ou ferir gravemente alguém (ou tentar)",
+        "es": "Matar o herir gravemente a alguien (o intentarlo)",
+        "en": "Killing or badly injuring someone (or trying to)",
+        "ht": "Touye oswa blese yon moun grav (oswa eseye fè sa)"
+       },
+       "items": "7c, 7d",
+       "facts": [
+        "n400.p9_7c",
+        "n400.p9_7d"
+       ]
+      },
+      {
+       "value": "sexual",
+       "label": {
+        "pt": "Contato sexual com alguém sem o consentimento da pessoa",
+        "es": "Contacto sexual con alguien sin su consentimiento",
+        "en": "Sexual contact with someone without their consent",
+        "ht": "Kontak seksyèl ak yon moun san li pa t dakò"
+       },
+       "items": "7e",
+       "facts": [
+        "n400.p9_7e"
+       ]
+      },
+      {
+       "value": "persecution",
+       "label": {
+        "pt": "Impedir alguém de praticar a sua religião, ou fazer mal a alguém por raça, religião, origem, grupo social ou opinião política",
+        "es": "Impedir que alguien practique su religión, o hacer daño a alguien por raza, religión, origen, grupo social u opinión política",
+        "en": "Stopping someone from practicing their religion, or harming someone because of race, religion, origin, social group or political opinion",
+        "ht": "Anpeche yon moun pratike relijyon li, oswa fè yon moun mal akoz ras li, relijyon li, orijin li, gwoup sosyal li oswa opinyon politik li"
+       },
+       "items": "7f, 7g",
+       "facts": [
+        "n400.p9_7f",
+        "n400.p9_7g"
+       ]
+      },
+      {
+       "value": "detention",
+       "label": {
+        "pt": "Trabalhar ou servir onde pessoas eram presas (prisão, cadeia, campo de detenção)",
+        "es": "Trabajar o servir donde se detenía a personas (prisión, cárcel, campo de detención)",
+        "en": "Working or serving where people were held (prison, jail, detention camp)",
+        "ht": "Travay oswa sèvi kote yo te kenbe moun fèmen (prizon, kacho, kan detansyon)"
+       },
+       "items": "9",
+       "facts": [
+        "n400.p9_9"
+       ]
+      },
+      {
+       "value": "weapon_group",
+       "label": {
+        "pt": "Fazer parte de um grupo que usou armas contra pessoas, ou ameaçou usar",
+        "es": "Formar parte de un grupo que usó armas contra personas, o amenazó con usarlas",
+        "en": "Being part of a group that used weapons against people, or threatened to",
+        "ht": "Fè pati yon gwoup ki te sèvi ak zam kont moun, oswa ki te menase fè sa"
+       },
+       "items": "10a",
+       "facts": [
+        "n400.p9_10a"
+       ]
+      },
+      {
+       "value": "weapons",
+       "label": {
+        "pt": "Vender ou transportar armas para serem usadas contra pessoas, ou receber treinamento militar ou com armas",
+        "es": "Vender o transportar armas para usarse contra personas, o recibir entrenamiento militar o con armas",
+        "en": "Selling or moving weapons to be used against people, or getting military or weapons training",
+        "ht": "Vann oswa deplase zam pou yo sèvi kont moun, oswa resevwa fòmasyon militè oswa sou zam"
+       },
+       "items": "11, 12",
+       "facts": [
+        "n400.p9_11",
+        "n400.p9_12"
+       ]
+      },
+      {
+       "value": "children",
+       "label": {
+        "pt": "Recrutar ou usar menores de 15 anos num grupo armado ou em combate",
+        "es": "Reclutar o usar a menores de 15 años en un grupo armado o en combate",
+        "en": "Recruiting or using anyone under 15 in an armed group or in fighting",
+        "ht": "Rekrite oswa sèvi ak nenpòt moun ki poko gen 15 an nan yon gwoup ame oswa nan batay"
+       },
+       "items": "13, 14",
+       "facts": [
+        "n400.p9_13",
+        "n400.p9_14"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 7, 9-14"
+    },
+    {
+     "id": "n9_police",
+     "type": "checklist",
+     "label": {
+      "pt": "Polícia e justiça: alguma destas já aconteceu com você, em qualquer país?",
+      "es": "Policía y justicia: ¿alguna de estas le ha pasado, en cualquier país?",
+      "en": "Police and courts: has any of these ever happened to you, in any country?",
+      "ht": "Polis ak tribinal: èske youn nan bagay sa yo te janm rive ou, nan nenpòt peyi?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "arrested",
+       "label": {
+        "pt": "Fui preso(a), detido(a), multado(a) ou acusado(a) de algum crime ou infração, mesmo que depois tenha sido arquivado, apagado ou perdoado (inclusive dirigir alcoolizado)",
+        "es": "Fui arrestado(a), detenido(a), multado(a) o acusado(a) de algún delito o infracción, aunque después se haya archivado, borrado o perdonado (incluso manejar en estado de ebriedad)",
+        "en": "I was arrested, detained, cited or charged with a crime or offense, even if it was later dropped, erased or forgiven (including driving under the influence)",
+        "ht": "Yo te arete m, kenbe m, ban m yon tikè oswa akize m pou yon krim oswa yon enfraksyon, menm si apre yo te lage ka a, efase l oswa padonnen l (menm kondui sou bwason)"
+       },
+       "items": "15b",
+       "facts": [
+        "n400.p9_15b"
+       ]
+      },
+      {
+       "value": "not_arrested",
+       "label": {
+        "pt": "Cometi algum crime ou infração pelo qual não fui preso(a)",
+        "es": "Cometí algún delito o infracción por el que no me arrestaron",
+        "en": "I committed a crime or offense I was not arrested for",
+        "ht": "Mwen te fè yon krim oswa yon enfraksyon yo pa t arete m pou li"
+       },
+       "items": "15a",
+       "facts": [
+        "n400.p9_15a"
+       ]
+      }
+     ],
+     "n400": "Part 9, Item 15",
+     "help": {
+      "pt": "Conte tudo, mesmo o que for antigo ou pequeno. O escritório precisa saber para proteger o seu caso.",
+      "es": "Cuéntelo todo, aunque sea antiguo o pequeño. La oficina necesita saberlo para proteger su caso.",
+      "en": "Tell us everything, even if it is old or small. The office needs to know to protect your case.",
+      "ht": "Di nou tout bagay, menm si li fin vye oswa li piti. Biwo a bezwen konnen pou pwoteje dosye ou."
+     }
+    },
+    {
+     "id": "n9_crimes",
+     "type": "repeat",
+     "required": true,
+     "show_if": {
+      "q": "n9_police",
+      "picked": true
+     },
+     "min": 1,
+     "max": 10,
+     "n400": "Part 9, Item 15",
+     "fact_pattern": "questionnaire.crime{n}_{part}",
+     "label": {
+      "pt": "Cada vez (uma por linha)",
+      "es": "Cada vez (una por línea)",
+      "en": "Each time (one per line)",
+      "ht": "Chak fwa (youn pa liy)"
+     },
+     "fields": [
+      {
+       "id": "what",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "O que aconteceu",
+        "es": "Qué pasó",
+        "en": "What happened",
+        "ht": "Sa ki te pase"
+       }
+      },
+      {
+       "id": "date",
+       "type": "date",
+       "required": true,
+       "label": {
+        "pt": "Quando",
+        "es": "Cuándo",
+        "en": "When",
+        "ht": "Ki lè"
+       }
+      },
+      {
+       "id": "place",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "Onde (cidade, estado, país)",
+        "es": "Dónde (ciudad, estado, país)",
+        "en": "Where (city, state, country)",
+        "ht": "Ki kote (vil, eta, peyi)"
+       }
+      },
+      {
+       "id": "outcome",
+       "type": "text",
+       "required": true,
+       "label": {
+        "pt": "Como terminou (arquivado, multa, condenado...)",
+        "es": "Cómo terminó (archivado, multa, condenado...)",
+        "en": "How it ended (dropped, fine, convicted...)",
+        "ht": "Kijan li te fini (yo lage ka a, amann, kondane...)"
+       }
+      }
+     ]
+    },
+    {
+     "id": "n9_conduct",
+     "type": "checklist",
+     "label": {
+      "pt": "Alguma destas já aconteceu?",
+      "es": "¿Alguna de estas ha pasado?",
+      "en": "Has any of these ever happened?",
+      "ht": "Èske youn nan bagay sa yo te janm rive?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "prostitution",
+       "label": {
+        "pt": "Prostituição, ou ganhar dinheiro com ela",
+        "es": "Prostitución, o ganar dinero con ella",
+        "en": "Prostitution, or making money from it",
+        "ht": "Pwostitisyon, oswa fè lajan ladan l"
+       },
+       "items": "17a",
+       "facts": [
+        "n400.p9_17a"
+       ]
+      },
+      {
+       "value": "drugs",
+       "label": {
+        "pt": "Produzir, vender ou transportar drogas ilegais",
+        "es": "Producir, vender o transportar drogas ilegales",
+        "en": "Making, selling or moving illegal drugs",
+        "ht": "Fabrike, vann oswa deplase dwòg ilegal"
+       },
+       "items": "17b",
+       "facts": [
+        "n400.p9_17b"
+       ]
+      },
+      {
+       "value": "bigamy",
+       "label": {
+        "pt": "Ser casado(a) com duas pessoas ao mesmo tempo",
+        "es": "Estar casado(a) con dos personas al mismo tiempo",
+        "en": "Being married to two people at the same time",
+        "ht": "Marye ak de moun an menm tan"
+       },
+       "items": "17c",
+       "facts": [
+        "n400.p9_17c"
+       ]
+      },
+      {
+       "value": "fake_marriage",
+       "label": {
+        "pt": "Casar para conseguir um benefício de imigração",
+        "es": "Casarse para obtener un beneficio migratorio",
+        "en": "Marrying to get an immigration benefit",
+        "ht": "Marye pou jwenn yon benefis imigrasyon"
+       },
+       "items": "17d",
+       "facts": [
+        "n400.p9_17d"
+       ]
+      },
+      {
+       "value": "smuggling",
+       "label": {
+        "pt": "Ajudar alguém a entrar nos EUA ilegalmente",
+        "es": "Ayudar a alguien a entrar a EE. UU. ilegalmente",
+        "en": "Helping someone enter the U.S. illegally",
+        "ht": "Ede yon moun antre Etazini ilegalman"
+       },
+       "items": "17e",
+       "facts": [
+        "n400.p9_17e"
+       ]
+      },
+      {
+       "value": "gambling",
+       "label": {
+        "pt": "Jogo ilegal, ou ganhar dinheiro com ele",
+        "es": "Juego ilegal, o ganar dinero con él",
+        "en": "Illegal gambling, or income from it",
+        "ht": "Jwèt aza ilegal, oswa lajan ki soti ladan l"
+       },
+       "items": "17f",
+       "facts": [
+        "n400.p9_17f"
+       ]
+      },
+      {
+       "value": "support",
+       "label": {
+        "pt": "Deixar de pagar pensão alimentícia de filhos ou de ex-cônjuge determinada pela justiça",
+        "es": "Dejar de pagar la manutención de hijos o del excónyuge ordenada por un juez",
+        "en": "Not paying court-ordered child support or alimony",
+        "ht": "Pa peye pansyon pou pitit oswa pou ansyen mari/madanm ke tribinal te bay lòd pou peye"
+       },
+       "items": "17g",
+       "facts": [
+        "n400.p9_17g"
+       ]
+      },
+      {
+       "value": "benefits",
+       "label": {
+        "pt": "Mentir para receber um benefício público",
+        "es": "Mentir para recibir un beneficio público",
+        "en": "Lying to get a public benefit",
+        "ht": "Bay manti pou jwenn yon benefis piblik"
+       },
+       "items": "17h",
+       "facts": [
+        "n400.p9_17h"
+       ]
+      },
+      {
+       "value": "false_info",
+       "label": {
+        "pt": "Dar informação falsa ou documento falso ao governo dos EUA, ou mentir para entrar no país ou conseguir um benefício de imigração",
+        "es": "Dar información o documentos falsos al gobierno de EE. UU., o mentir para entrar al país o conseguir un beneficio migratorio",
+        "en": "Giving the U.S. government false information or documents, or lying to enter the U.S. or get an immigration benefit",
+        "ht": "Bay gouvènman Etazini fo enfòmasyon oswa fo dokiman, oswa bay manti pou antre Etazini oswa pou jwenn yon benefis imigrasyon"
+       },
+       "items": "18, 19",
+       "facts": [
+        "n400.p9_18",
+        "n400.p9_19"
+       ]
+      },
+      {
+       "value": "title",
+       "label": {
+        "pt": "Ter um título de nobreza em outro país",
+        "es": "Tener un título nobiliario en otro país",
+        "en": "Having a title of nobility in another country",
+        "ht": "Gen yon tit noblès nan yon lòt peyi"
+       },
+       "items": "30a",
+       "facts": [
+        "n400.p9_30a"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 17-19, 30"
+    },
+    {
+     "id": "n9_immigration",
+     "type": "checklist",
+     "label": {
+      "pt": "Imigração: alguma destas já aconteceu?",
+      "es": "Inmigración: ¿alguna de estas ha pasado?",
+      "en": "Immigration: has any of these ever happened?",
+      "ht": "Imigrasyon: èske youn nan bagay sa yo te janm rive?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "proceedings",
+       "label": {
+        "pt": "Fui colocado(a) num processo de deportação (recebi um 'Notice to Appear' ou fui a um juiz de imigração)",
+        "es": "Me pusieron en un proceso de deportación (recibí un 'Notice to Appear' o fui ante un juez de inmigración)",
+        "en": "I was put in removal (deportation) proceedings (I got a 'Notice to Appear' or went before an immigration judge)",
+        "ht": "Yo te mete m nan yon pwosedi depòtasyon (mwen te resevwa yon 'Notice to Appear' oswa mwen te pase devan yon jij imigrasyon)"
+       },
+       "items": "20",
+       "facts": [
+        "n400.p9_20"
+       ]
+      },
+      {
+       "value": "removed",
+       "label": {
+        "pt": "Fui deportado(a) ou removido(a) dos EUA",
+        "es": "Fui deportado(a) o expulsado(a) de EE. UU.",
+        "en": "I was deported or removed from the U.S.",
+        "ht": "Yo te depòte m oswa voye m soti Etazini"
+       },
+       "items": "21",
+       "facts": [
+        "n400.p9_21"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 20-21"
+    },
+    {
+     "id": "n9_military",
+     "type": "checklist",
+     "label": {
+      "pt": "Forças Armadas dos EUA: alguma destas é verdade?",
+      "es": "Fuerzas Armadas de EE. UU.: ¿alguna de estas es cierta?",
+      "en": "U.S. armed forces: is any of these true?",
+      "ht": "Lame Etazini: èske youn nan bagay sa yo vre?"
+     },
+     "required": true,
+     "options": [
+      {
+       "value": "served",
+       "label": {
+        "pt": "Servi nas Forças Armadas dos EUA",
+        "es": "Serví en las Fuerzas Armadas de EE. UU.",
+        "en": "I served in the U.S. armed forces",
+        "ht": "Mwen te sèvi nan lame Etazini"
+       },
+       "items": "25",
+       "facts": [
+        "n400.p9_25"
+       ]
+      },
+      {
+       "value": "avoided",
+       "label": {
+        "pt": "Saí dos EUA para não ser convocado(a), ou pedi dispensa do serviço militar",
+        "es": "Salí de EE. UU. para no ser reclutado(a), o pedí exención del servicio militar",
+        "en": "I left the U.S. to avoid the draft, or asked to be exempted from military service",
+        "ht": "Mwen te kite Etazini pou m pa t rele nan lame (draft), oswa mwen te mande pou yo egzante m nan sèvis militè"
+       },
+       "items": "23, 24",
+       "facts": [
+        "n400.p9_23",
+        "n400.p9_24"
+       ]
+      }
+     ],
+     "n400": "Part 9, Items 23-25"
+    },
+    {
+     "id": "male_18_26",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você é homem e morou nos EUA em algum momento entre os 18 e os 26 anos? (Não conta se foi só com visto de não imigrante válido)",
+      "es": "¿Es hombre y vivió en EE. UU. en algún momento entre los 18 y los 26 años? (No cuenta si fue solo con visa de no inmigrante válida)",
+      "en": "Are you a man who lived in the U.S. at any time between ages 18 and 26? (Doesn't count if only on a valid nonimmigrant visa)",
+      "ht": "Èske ou se yon gason ki te viv Etazini nenpòt ki lè ant 18 ak 26 an? (Sa pa konte si se te sèlman ak yon viza ki pa imigran ki te valab)"
+     },
+     "fact": "n400.p9_22a",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 9, Item 22.a"
+    },
+    {
+     "id": "selective_service",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você se registrou no Serviço Seletivo (Selective Service)?",
+      "es": "¿Se registró en el Servicio Selectivo (Selective Service)?",
+      "en": "Did you register with the Selective Service?",
+      "ht": "Èske ou te enskri nan Selective Service (Sèvis Seleksyon)?"
+     },
+     "fact": "n400.p9_22b",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "male_18_26",
+      "eq": "Yes"
+     },
+     "help": {
+      "pt": "Você pode confirmar em sss.gov com o seu número do Social Security.",
+      "es": "Puede confirmarlo en sss.gov con su número de Seguro Social.",
+      "en": "You can check at sss.gov with your Social Security number.",
+      "ht": "Ou ka verifye sou sss.gov ak nimewo Sosyal Sekirite ou."
+     },
+     "n400": "Part 9, Item 22.b"
+    },
+    {
+     "id": "selective_service_number",
+     "type": "text",
+     "required": false,
+     "fact": "n400.p9_22c_number",
+     "show_if": {
+      "q": "selective_service",
+      "eq": "Yes"
+     },
+     "n400": "Part 9, Item 22.c",
+     "label": {
+      "pt": "Número do Serviço Seletivo (se souber)",
+      "es": "Número del Servicio Selectivo (si lo sabe)",
+      "en": "Selective Service number (if you know it)",
+      "ht": "Nimewo Selective Service (si ou konnen l)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "n400_oath",
+   "title": {
+    "pt": "O juramento",
+    "es": "El juramento",
+    "en": "The oath",
+    "ht": "Sèman an"
+   },
+   "questions": [
+    {
+     "id": "oath_31",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você apoia a Constituição e a forma de governo dos Estados Unidos?",
+      "es": "¿Apoya la Constitución y la forma de gobierno de los Estados Unidos?",
+      "en": "Do you support the Constitution and form of government of the United States?",
+      "ht": "Èske ou sipòte Konstitisyon an ak fòm gouvènman Etazini?"
+     },
+     "fact": "n400.p9_31",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 9, Item 31"
+    },
+    {
+     "id": "oath_32",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você entende o Juramento de Lealdade completo aos Estados Unidos?",
+      "es": "¿Entiende el Juramento de Lealtad completo a los Estados Unidos?",
+      "en": "Do you understand the full Oath of Allegiance to the United States?",
+      "ht": "Èske ou konprann tout Sèman Fidelite a (Oath of Allegiance) bay Etazini?"
+     },
+     "fact": "n400.p9_32",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "help": {
+      "pt": "O escritório pode explicar o juramento na sua língua.",
+      "es": "La oficina puede explicarle el juramento en su idioma.",
+      "en": "The office can explain the oath in your language.",
+      "ht": "Biwo a ka eksplike sèman an nan lang ou."
+     },
+     "n400": "Part 9, Item 32"
+    },
+    {
+     "id": "oath_33",
+     "type": "yes_no",
+     "label": {
+      "pt": "Uma deficiência física, de desenvolvimento ou mental impede você de fazer o juramento?",
+      "es": "¿Una discapacidad física, del desarrollo o mental le impide hacer el juramento?",
+      "en": "Does a physical, developmental or mental disability keep you from taking the oath?",
+      "ht": "Èske yon andikap fizik, mantal oswa nan devlopman anpeche ou fè sèman an?"
+     },
+     "fact": "n400.p9_33",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 9, Item 33"
+    },
+    {
+     "id": "oath_34",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você está disposto(a) a fazer o Juramento de Lealdade completo?",
+      "es": "¿Está dispuesto(a) a hacer el Juramento de Lealtad completo?",
+      "en": "Are you willing to take the full Oath of Allegiance?",
+      "ht": "Èske ou dakò fè tout Sèman Fidelite a?"
+     },
+     "fact": "n400.p9_34",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "oath_33",
+      "in": [
+       "No",
+       "Unsure"
+      ]
+     },
+     "n400": "Part 9, Item 34"
+    },
+    {
+     "id": "oath_35",
+     "type": "yes_no",
+     "label": {
+      "pt": "Se a lei exigir, você está disposto(a) a pegar em armas pelos Estados Unidos?",
+      "es": "Si la ley lo exige, ¿está dispuesto(a) a portar armas por los Estados Unidos?",
+      "en": "If the law requires it, are you willing to bear arms on behalf of the United States?",
+      "ht": "Si lalwa mande sa, èske ou dakò pote zam pou Etazini?"
+     },
+     "fact": "n400.p9_35",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "oath_33",
+      "in": [
+       "No",
+       "Unsure"
+      ]
+     },
+     "n400": "Part 9, Item 35"
+    },
+    {
+     "id": "oath_36",
+     "type": "yes_no",
+     "label": {
+      "pt": "Se a lei exigir, você está disposto(a) a prestar serviços que não sejam de combate nas Forças Armadas?",
+      "es": "Si la ley lo exige, ¿está dispuesto(a) a prestar servicios que no sean de combate en las Fuerzas Armadas?",
+      "en": "If the law requires it, are you willing to do non-combat service in the U.S. armed forces?",
+      "ht": "Si lalwa mande sa, èske ou dakò fè yon sèvis ki pa batay nan lame Etazini?"
+     },
+     "fact": "n400.p9_36",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "oath_33",
+      "in": [
+       "No",
+       "Unsure"
+      ]
+     },
+     "n400": "Part 9, Item 36"
+    },
+    {
+     "id": "oath_37",
+     "type": "yes_no",
+     "label": {
+      "pt": "Se a lei exigir, você está disposto(a) a fazer trabalho de importância nacional sob direção civil?",
+      "es": "Si la ley lo exige, ¿está dispuesto(a) a hacer trabajo de importancia nacional bajo dirección civil?",
+      "en": "If the law requires it, are you willing to do work of national importance under civilian direction?",
+      "ht": "Si lalwa mande sa, èske ou dakò fè yon travay ki enpòtan pou peyi a, anba direksyon sivil (pa militè)?"
+     },
+     "fact": "n400.p9_37",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "oath_33",
+      "in": [
+       "No",
+       "Unsure"
+      ]
+     },
+     "n400": "Part 9, Item 37"
+    }
+   ]
+  },
+  {
+   "id": "n400_fee",
+   "title": {
+    "pt": "A taxa",
+    "es": "La tarifa",
+    "en": "The fee",
+    "ht": "Frè a"
+   },
+   "questions": [
+    {
+     "id": "want_fee_reduction",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você quer que o escritório veja se você pode pagar a taxa reduzida? (renda da casa baixa)",
+      "es": "¿Quiere que la oficina vea si puede pagar la tarifa reducida? (ingresos bajos del hogar)",
+      "en": "Would you like the office to check whether you qualify for the reduced fee? (low household income)",
+      "ht": "Èske ou ta renmen biwo a gade si ou kalifye pou frè redwi a? (lajan ki antre lakay ou piti)"
+     },
+     "fact": "questionnaire.n400_want_fee_reduction",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "n400": "Part 10"
+    },
+    {
+     "id": "household_size",
+     "type": "number",
+     "required": true,
+     "fact": "n400.household_size",
+     "show_if": {
+      "q": "want_fee_reduction",
+      "eq": "Yes"
+     },
+     "n400": "Part 10, Item 3",
+     "label": {
+      "pt": "Quantas pessoas moram na sua casa (contando você)?",
+      "es": "¿Cuántas personas viven en su hogar (contándolo a usted)?",
+      "en": "How many people live in your household (counting you)?",
+      "ht": "Konbyen moun ki rete lakay ou (avè ou ladan)?"
+     }
+    },
+    {
+     "id": "household_income",
+     "type": "number",
+     "required": true,
+     "fact": "n400.household_income",
+     "show_if": {
+      "q": "want_fee_reduction",
+      "eq": "Yes"
+     },
+     "n400": "Part 10, Item 2",
+     "label": {
+      "pt": "Renda total da casa por ano, em dólares",
+      "es": "Ingreso total del hogar por año, en dólares",
+      "en": "Total household income per year, in dollars",
+      "ht": "Tout lajan ki antre lakay ou pa ane, an dola"
+     }
+    },
+    {
+     "id": "household_earners",
+     "type": "number",
+     "required": true,
+     "fact": "n400.household_earners",
+     "show_if": {
+      "q": "want_fee_reduction",
+      "eq": "Yes"
+     },
+     "n400": "Part 10, Item 4",
+     "label": {
+      "pt": "Quantas pessoas da casa têm renda (contando você)?",
+      "es": "¿Cuántas personas del hogar tienen ingresos (contándolo a usted)?",
+      "en": "How many people in the household earn income (counting you)?",
+      "ht": "Konbyen moun lakay ou ki touche lajan (avè ou ladan)?"
+     }
+    },
+    {
+     "id": "head_of_household",
+     "type": "yes_no",
+     "label": {
+      "pt": "Você é o chefe da casa?",
+      "es": "¿Es usted el jefe del hogar?",
+      "en": "Are you the head of the household?",
+      "ht": "Èske se ou ki chèf kay la?"
+     },
+     "fact": "n400.head_of_household",
+     "required": true,
+     "options": [
+      {
+       "value": "Yes",
+       "label": {
+        "pt": "Sim",
+        "es": "Sí",
+        "en": "Yes",
+        "ht": "Wi"
+       }
+      },
+      {
+       "value": "No",
+       "label": {
+        "pt": "Não",
+        "es": "No",
+        "en": "No",
+        "ht": "Non"
+       }
+      },
+      {
+       "value": "Unsure",
+       "label": {
+        "pt": "Não tenho certeza",
+        "es": "No estoy seguro(a)",
+        "en": "I'm not sure",
+        "ht": "Mwen pa sèten"
+       }
+      }
+     ],
+     "show_if": {
+      "q": "want_fee_reduction",
+      "eq": "Yes"
+     },
+     "n400": "Part 10, Item 5.a"
+    }
+   ]
+  }
+ ],
+ "documents": [
+  {
+   "id": "green_card",
+   "doc_types": [
+    "green_card"
+   ],
+   "required_if": "always",
+   "label": {
+    "pt": "Green card (frente e verso)",
+    "es": "Green card (frente y reverso)",
+    "en": "Green card (front and back)",
+    "ht": "Green card (devan ak dèyè)"
+   },
+   "why": {
+    "pt": "Mostra desde quando você é residente.",
+    "es": "Muestra desde cuándo es residente.",
+    "en": "Shows since when you are a resident.",
+    "ht": "Li montre depi ki lè ou se rezidan."
+   }
+  },
+  {
+   "id": "court_disposition",
+   "doc_types": [
+    "criminal_record"
+   ],
+   "required_if": {
+    "q": "n9_police",
+    "picked": true
+   },
+   "per": "n9_crimes",
+   "label": {
+    "pt": "Documento do tribunal de cada caso (como terminou)",
+    "es": "Documento del tribunal de cada caso (cómo terminó)",
+    "en": "Court record for each case (how it ended)",
+    "ht": "Dosye tribinal pou chak ka (kijan li te fini)"
+   },
+   "why": {
+    "pt": "O USCIS pede o resultado de cada caso, mesmo arquivado.",
+    "es": "USCIS pide el resultado de cada caso, aunque se haya archivado.",
+    "en": "USCIS asks for the result of every case, even if dropped.",
+    "ht": "USCIS mande rezilta chak ka, menm si yo te lage l."
+   }
+  },
+  {
+   "id": "immigration_court",
+   "doc_types": [
+    "notice_to_appear"
+   ],
+   "required_if": {
+    "q": "n9_immigration",
+    "picked": true
+   },
+   "label": {
+    "pt": "Documentos do tribunal de imigração",
+    "es": "Documentos del tribunal de inmigración",
+    "en": "Immigration court papers",
+    "ht": "Papye tribinal imigrasyon"
+   },
+   "why": {
+    "pt": "Mostram como o processo terminou.",
+    "es": "Muestran cómo terminó el proceso.",
+    "en": "They show how the case ended.",
+    "ht": "Yo montre kijan ka a te fini."
+   }
+  },
+  {
+   "id": "tax_return",
+   "doc_types": [
+    "tax_return"
+   ],
+   "required_if": {
+    "q": "want_fee_reduction",
+    "eq": "Yes"
+   },
+   "label": {
+    "pt": "Declaração de imposto de renda federal mais recente (de cada pessoa da casa)",
+    "es": "Declaración de impuestos federal más reciente (de cada persona del hogar)",
+    "en": "Most recent federal tax return (for each person in the household)",
+    "ht": "Dènye deklarasyon taks federal ou (pou chak moun lakay ou)"
+   },
+   "why": {
+    "pt": "Para pedir a taxa reduzida.",
+    "es": "Para pedir la tarifa reducida.",
+    "en": "To ask for the reduced fee.",
+    "ht": "Pou mande frè redwi a."
+   }
+  }
+ ]
+}

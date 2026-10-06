@@ -1,0 +1,640 @@
+{
+  "_status": "DRAFT: every sentence below is for the attorney to approve before a client sees it (docs/attorney_review.md, \"The client's case, in their words\"). The preparation sheets are made from USCIS's own pages, each read on the date its source gives; they state what those pages say and add no rule of the firm's, except the lines marked as the firm's standard advice there. The Portuguese and Spanish need the firm's own review, and the Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator.",
+  "labels": {
+    "status_title": {
+      "pt": "O que o USCIS diz sobre o seu caso",
+      "es": "Lo que dice USCIS sobre su caso",
+      "en": "What USCIS says about your case",
+      "ht": "Sa USCIS di sou dosye ou"
+    },
+    "status_said_on": {
+      "pt": "O USCIS disse em {date}",
+      "es": "USCIS dijo el {date}",
+      "en": "USCIS said on {date}",
+      "ht": "USCIS te di nan dat sa a: {date}"
+    },
+    "status_in_english": {
+      "pt": "Isto é o que o USCIS diz, em inglês",
+      "es": "Esto es lo que dice USCIS, en inglés",
+      "en": "This is what USCIS says, in English",
+      "ht": "Sa a se sa USCIS di, an angle"
+    },
+    "estimate": {
+      "pt": "Estimativa publicada pelo USCIS em {date}: {months} meses para a maioria dos casos em {office}",
+      "es": "Estimación publicada por USCIS el {date}: {months} meses para la mayoría de los casos en {office}",
+      "en": "USCIS's published estimate on {date}: {months} months for most cases at {office}",
+      "ht": "Estimasyon USCIS pibliye nan dat {date}: {months} mwa pou pifò dosye nan {office}"
+    },
+    "sheet_open": {
+      "pt": "Folha de preparação",
+      "es": "Hoja de preparación",
+      "en": "Preparation sheet",
+      "ht": "Fèy preparasyon"
+    },
+    "sheet_download": {
+      "pt": "Baixar em PDF",
+      "es": "Descargar en PDF",
+      "en": "Download as PDF",
+      "ht": "Telechaje an PDF"
+    },
+    "sheet_day": {
+      "pt": "Como vai ser o dia",
+      "es": "Cómo será el día",
+      "en": "What the day looks like",
+      "ht": "Kijan jou a ap pase"
+    },
+    "sheet_from_letter": {
+      "pt": "A sua carta lista estas coisas. É exatamente o que ela diz, em inglês:",
+      "es": "Su carta enumera estas cosas. Esto es exactamente lo que dice, en inglés:",
+      "en": "Your letter lists these things. This is exactly what it says, in English:",
+      "ht": "Lèt ou a mansyone bagay sa yo. Men egzakteman sa l di, an angle:"
+    },
+    "sheet_letter_first": {
+      "pt": "A sua carta vem em primeiro lugar. Se ela pedir algo que não está nesta folha, leve também.",
+      "es": "Su carta es lo primero. Si pide algo que no está en esta hoja, llévelo también.",
+      "en": "Your letter comes first. If it asks for something that is not on this sheet, bring that too.",
+      "ht": "Lèt ou a vini anvan. Si li mande yon bagay ki pa sou fèy sa a, pote l tou."
+    },
+    "sheet_source": {
+      "pt": "Feita com as páginas do próprio USCIS (lidas em {date}) e com os conselhos do próprio escritório.",
+      "es": "Hecha con las páginas del propio USCIS (leídas el {date}) y con los consejos de la propia oficina.",
+      "en": "Made from USCIS's own web pages (read on {date}) and the office's own advice.",
+      "ht": "Fèt ak paj USCIS yo menm (nou li yo nan dat {date}) ak pwòp konsèy biwo a."
+    },
+    "sheet_notice_lists": {
+      "pt": "Leve o que a sua carta pedir.",
+      "es": "Lleve lo que pida su carta.",
+      "en": "Bring what your notice lists.",
+      "ht": "Pote sa lèt ou a mande."
+    },
+    "sheet_phone": {
+      "pt": "Dúvidas? Ligue para o escritório: {phone}",
+      "es": "¿Preguntas? Llame a la oficina: {phone}",
+      "en": "Questions? Call the office: {phone}",
+      "ht": "Kesyon? Rele biwo a: {phone}"
+    },
+    "sheet_machine": {
+      "pt": "Crioulo haitiano: tradução automática, pode ter erros.",
+      "es": "Criollo haitiano: traducción automática, puede tener errores.",
+      "en": "Haitian Creole: machine translation, it may have mistakes.",
+      "ht": "Kreyòl ayisyen: tradiksyon otomatik, li ka gen erè."
+    },
+    "sheet_title_biometrics": {
+      "pt": "Coleta de digitais",
+      "es": "Toma de huellas",
+      "en": "Fingerprint appointment",
+      "ht": "Randevou pou anprent dwèt"
+    },
+    "sheet_title_interview": {
+      "pt": "Entrevista",
+      "es": "Entrevista",
+      "en": "Interview",
+      "ht": "Entèvyou"
+    },
+    "feedback_prompt": {
+      "pt": "Como foi este passo?",
+      "es": "¿Cómo fue este paso?",
+      "en": "How was this step?",
+      "ht": "Kijan etap sa a te ye?"
+    },
+    "feedback_good": {
+      "pt": "Bom",
+      "es": "Bien",
+      "en": "Good",
+      "ht": "Byen"
+    },
+    "feedback_ok": {
+      "pt": "Mais ou menos",
+      "es": "Más o menos",
+      "en": "Okay",
+      "ht": "Konsa konsa"
+    },
+    "feedback_bad": {
+      "pt": "Ruim",
+      "es": "Mal",
+      "en": "Not good",
+      "ht": "Pa byen"
+    },
+    "feedback_note": {
+      "pt": "Quer dizer algo ao escritório? (opcional)",
+      "es": "¿Quiere decirle algo a la oficina? (opcional)",
+      "en": "Anything you want to tell the office? (optional)",
+      "ht": "Èske ou vle di biwo a yon bagay? (opsyonèl)"
+    },
+    "feedback_send": {
+      "pt": "Enviar",
+      "es": "Enviar",
+      "en": "Send",
+      "ht": "Voye"
+    },
+    "feedback_thanks": {
+      "pt": "Obrigado. O escritório vai ler isto.",
+      "es": "Gracias. La oficina lo leerá.",
+      "en": "Thank you. The office will read this.",
+      "ht": "Mèsi. Biwo a ap li sa."
+    },
+    "feedback_private": {
+      "pt": "Só o escritório vê isto. A sua resposta não muda o seu caso.",
+      "es": "Solo la oficina lo ve. Su respuesta no cambia su caso.",
+      "en": "Only the office sees this. Your answer does not change your case.",
+      "ht": "Se biwo a sèlman ki wè sa. Repons ou a pa chanje dosye ou."
+    },
+    "milestone_agreement": {
+      "pt": "A assinatura do seu contrato",
+      "es": "La firma de su acuerdo",
+      "en": "Signing your agreement",
+      "ht": "Siyati akò ou a"
+    },
+    "milestone_documents": {
+      "pt": "O envio dos seus documentos",
+      "es": "El envío de sus documentos",
+      "en": "Sending your documents",
+      "ht": "Voye dokiman ou yo"
+    },
+    "milestone_mailed": {
+      "pt": "O envio do seu pedido",
+      "es": "El envío de su solicitud",
+      "en": "Mailing your application",
+      "ht": "Voye demann ou an"
+    },
+    "milestone_biometrics": {
+      "pt": "A sua coleta de digitais",
+      "es": "Su toma de huellas",
+      "en": "Your fingerprint appointment",
+      "ht": "Randevou anprent dwèt ou"
+    },
+    "milestone_interview": {
+      "pt": "A sua entrevista",
+      "es": "Su entrevista",
+      "en": "Your interview",
+      "ht": "Entèvyou ou"
+    },
+    "milestone_decision": {
+      "pt": "A decisão",
+      "es": "La decisión",
+      "en": "The decision",
+      "ht": "Desizyon an"
+    },
+    "answer_kept": {
+      "pt": "O escritório recebeu a sua resposta",
+      "es": "La oficina tiene su respuesta",
+      "en": "The office has your answer",
+      "ht": "Biwo a resevwa repons ou a"
+    },
+    "office_has": {
+      "pt": "O escritório já tem o que precisa",
+      "es": "La oficina ya tiene lo que necesita",
+      "en": "The office has what it needs",
+      "ht": "Biwo a gen sa li bezwen an"
+    }
+  },
+  "sources": {
+    "bio": {
+      "title": "Preparing for Your Biometric Services Appointment",
+      "url": "https://www.uscis.gov/forms/filing-guidance/preparing-for-your-biometric-services-appointment",
+      "read_on": "2026-10-03",
+      "page_updated": "2026-04-30",
+      "used_for": "what to bring (the notice and a photo ID), what the appointment is, an attorney need not come, translation help, weapons"
+    },
+    "aos": {
+      "title": "Adjustment of Status",
+      "url": "https://www.uscis.gov/green-card/green-card-processes-and-procedures/adjustment-of-status",
+      "read_on": "2026-10-03",
+      "page_updated": "2026-07-24",
+      "used_for": "the I-485 interview: questions under oath or affirmation; originals of everything submitted, passports, travel documents and Form I-94, expired or not; the family member who filed the petition"
+    },
+    "n400": {
+      "title": "Naturalization: What to expect",
+      "url": "https://my.uscis.gov/citizenship/what_to_expect",
+      "read_on": "2026-10-03",
+      "page_updated": null,
+      "used_for": "the N-400 biometrics list (Form I-551, the notice, a second photo ID) and the interview list (the notice, Form I-551, a state ID, passports and travel documents; Form M-477)"
+    },
+    "n400test": {
+      "title": "The Naturalization Interview and Test",
+      "url": "https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test",
+      "read_on": "2026-10-03",
+      "page_updated": "2025-10-31",
+      "used_for": "the interview: questions about the application and background; the English test (reading, writing, speaking) and the civics test unless exempt"
+    },
+    "asylum": {
+      "title": "Preparing for Your Affirmative Asylum Interview",
+      "url": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum/preparing-for-your-affirmative-asylum-interview",
+      "read_on": "2026-10-03",
+      "page_updated": "2026-09-08",
+      "used_for": "what to bring, the interpreter rules, the right to bring an attorney, what the interview is, no decision at the interview, at least an hour"
+    },
+    "sij": {
+      "title": "Special Immigrant Juveniles",
+      "url": "https://www.uscis.gov/working-in-US/eb4/SIJ",
+      "read_on": "2026-10-03",
+      "page_updated": "2026-04-16",
+      "used_for": "an interview with an immigration services officer only if needed to decide the case; biometrics when the I-485 is filed too"
+    }
+  },
+  "forms": {
+    "i485": "I-485",
+    "n400": "N-400",
+    "i589": "I-589",
+    "family": "I-130 / I-485",
+    "sij": "I-360",
+    "other": null
+  },
+  "notice_forms": {
+    "I-485": "i485",
+    "N-400": "n400",
+    "I-589": "i589",
+    "I-130": "family",
+    "I-360": "sij"
+  },
+  "firm_lines": [
+    "b_early",
+    "i_bring_id",
+    "i_day_prepared",
+    "i_day_attorney",
+    "i_bring_sij_more"
+  ],
+  "lines": {
+    "b_day1": {
+      "pt": "Você vai a um Centro de Apoio a Requerentes do USCIS (ASC). A carta tem o endereço, a data e a hora.",
+      "es": "Usted va a un Centro de Apoyo a Solicitantes de USCIS (ASC). La carta tiene la dirección, la fecha y la hora.",
+      "en": "You go to a USCIS Application Support Center. Your letter has the address, the date and the time.",
+      "ht": "Ou ale nan yon Sant Sipò pou Demandè USCIS (ASC). Lèt la gen adrès la, dat la ak lè a."
+    },
+    "b_day2": {
+      "pt": "O USCIS coleta as suas digitais e tira a sua foto. Para certos formulários, você também dá uma assinatura digital em uma máquina. Ao dar a assinatura digital, você também atesta, sob pena de perjúrio, que as informações do seu pedido, petição ou requerimento (ou de um enviado em seu nome), e todos os documentos apresentados em apoio, estavam completos, verdadeiros e corretos na data do envio.",
+      "es": "USCIS toma sus huellas y su foto. Para ciertos formularios, usted también da una firma digital en una máquina. Al dar su firma digital, usted también declara, bajo pena de perjurio, que la información de su solicitud, petición o pedido (o de uno presentado en su nombre), y todos los documentos presentados en su apoyo, estaban completos, eran verdaderos y correctos en el momento de presentarlos.",
+      "en": "USCIS takes your fingerprints and your photo. For certain forms you also give a digital signature on a machine. When you provide your digital signature, you also attest, under penalty of perjury, that the information in your application, petition or request (or one submitted on your behalf), and all documents filed in support of it, were complete, true and correct at the time of filing.",
+      "ht": "USCIS pran anprent dwèt ou ak foto ou. Pou kèk fòm, ou bay tou yon siyati dijital sou yon machin. Lè ou bay siyati dijital ou, ou deklare tou, anba penn parjiri, ke enfòmasyon ki nan demann ou, petisyon ou oswa rekèt ou (oswa youn yo depoze pou ou), ak tout dokiman yo depoze pou sipòte l, te konplè, vre e kòrèk lè yo te depoze yo."
+    },
+    "b_day3": {
+      "pt": "Você não precisa que o seu advogado vá com você.",
+      "es": "No necesita que su abogado vaya con usted.",
+      "en": "You do not need your attorney to come with you.",
+      "ht": "Ou pa bezwen avoka ou ale avè ou."
+    },
+    "b_day4": {
+      "pt": "Se você não entende inglês falado, leve alguém que possa traduzir para você.",
+      "es": "Si no entiende inglés hablado, lleve a alguien que pueda traducir para usted.",
+      "en": "If you do not understand spoken English, bring someone who can translate for you.",
+      "ht": "Si ou pa konprann angle lè yo pale l, mennen yon moun ki ka tradui pou ou."
+    },
+    "b_day5": {
+      "pt": "Armas de qualquer tipo, como facas ou spray de pimenta, não são permitidas nos prédios do USCIS. Deixe em casa.",
+      "es": "No se permiten armas de ningún tipo, como cuchillos o aerosol de pimienta, en los edificios de USCIS. Déjelas en casa.",
+      "en": "Weapons of any kind, such as knives or pepper spray, are not allowed in USCIS buildings. Leave them at home.",
+      "ht": "Yo pa pèmèt okenn kalite zam, tankou kouto oswa espre pwav, nan bilding USCIS yo. Kite yo lakay ou."
+    },
+    "b_bring_notice": {
+      "pt": "A carta de compromisso do USCIS (Formulário I-797C). Se você recebeu mais de uma carta de digitais, leve todas.",
+      "es": "La carta de la cita de USCIS (Formulario I-797C). Si recibió más de una carta para la toma de huellas, lleve todas.",
+      "en": "The appointment notice from USCIS (Form I-797C). If you got more than one fingerprint notice, bring all of them.",
+      "ht": "Lèt randevou USCIS la (Fòm I-797C). Si ou resevwa plis pase yon lèt pou anprent dwèt, pote yo tout."
+    },
+    "b_bring_id": {
+      "pt": "Um documento com foto válido, como o green card, o passaporte ou a carteira de motorista.",
+      "es": "Una identificación con foto vigente, como su green card, su pasaporte o su licencia de conducir.",
+      "en": "A valid photo ID, such as your green card, your passport or your driver's license.",
+      "ht": "Yon kat idantite ki gen foto ki toujou valab, tankou green card ou, paspò ou oswa lisans kondui ou."
+    },
+    "b_bring_n400_notice": {
+      "pt": "A carta de compromisso do USCIS.",
+      "es": "La carta de la cita de USCIS.",
+      "en": "The appointment notice from USCIS.",
+      "ht": "Lèt randevou USCIS la."
+    },
+    "b_bring_n400_card": {
+      "pt": "O seu green card (Formulário I-551).",
+      "es": "Su green card (Formulario I-551).",
+      "en": "Your green card (Form I-551).",
+      "ht": "Green card ou (Fòm I-551)."
+    },
+    "b_bring_n400_id": {
+      "pt": "Um segundo documento com foto: carteira de motorista, passaporte ou ID do estado.",
+      "es": "Una segunda identificación con foto: licencia de conducir, pasaporte o ID del estado.",
+      "en": "A second photo ID: a driver's license, a passport or a state ID.",
+      "ht": "Yon dezyèm kat idantite ki gen foto: lisans kondui, paspò oswa kat idantite eta a."
+    },
+    "b_bring_more": {
+      "pt": "Qualquer outra coisa que a carta pedir.",
+      "es": "Cualquier otra cosa que pida la carta.",
+      "en": "Anything else your letter asks you to bring.",
+      "ht": "Nenpòt lòt bagay lèt la mande ou pote."
+    },
+    "b_early": {
+      "pt": "Chegue com alguns minutos de antecedência.",
+      "es": "Llegue con unos minutos de anticipación.",
+      "en": "Arrive a few minutes early.",
+      "ht": "Rive kèk minit bonè."
+    },
+    "i_day_where": {
+      "pt": "Você vai a um escritório do USCIS. A carta tem o endereço, a data e a hora.",
+      "es": "Usted va a una oficina de USCIS. La carta tiene la dirección, la fecha y la hora.",
+      "en": "You go to a USCIS office. Your letter has the address, the date and the time.",
+      "ht": "Ou ale nan yon biwo USCIS. Lèt la gen adrès la, dat la ak lè a."
+    },
+    "i_day_questions": {
+      "pt": "Um oficial faz perguntas sobre o seu pedido, e você responde sob juramento (uma promessa de dizer a verdade).",
+      "es": "Un oficial le hace preguntas sobre su solicitud, y usted contesta bajo juramento (una promesa de decir la verdad).",
+      "en": "An officer asks you questions about your application, and you answer under oath (a promise to tell the truth).",
+      "ht": "Yon ofisye poze ou kesyon sou demann ou an, epi ou reponn anba sèman (yon pwomès pou di laverite)."
+    },
+    "i_day_prepared": {
+      "pt": "O escritório vai preparar você antes da entrevista.",
+      "es": "La oficina lo preparará antes de la entrevista.",
+      "en": "The office will prepare you before the interview.",
+      "ht": "Biwo a ap prepare ou anvan entèvyou a."
+    },
+    "i_day_sij": {
+      "pt": "Nestes casos, o USCIS só marca entrevista quando precisa dela para decidir o caso. Um oficial faz perguntas sobre o seu caso.",
+      "es": "En estos casos, USCIS solo hace una entrevista cuando la necesita para decidir el caso. Un oficial le hace preguntas sobre su caso.",
+      "en": "In these cases USCIS holds an interview only when it needs one to decide the case. An officer asks you questions about your case.",
+      "ht": "Nan dosye sa yo, USCIS fè yon entèvyou sèlman lè li bezwen l pou li deside sou dosye a. Yon ofisye poze ou kesyon sou dosye ou a."
+    },
+    "i_day_n400": {
+      "pt": "Um oficial faz perguntas sobre o seu pedido e sobre a sua vida. A não ser que você tenha isenção, você também faz uma prova de inglês (leitura, escrita e conversa) e uma prova de educação cívica.",
+      "es": "Un oficial le hace preguntas sobre su solicitud y sobre sus antecedentes. A menos que esté exento, también hace un examen de inglés (lectura, escritura y conversación) y un examen de educación cívica.",
+      "en": "An officer asks you questions about your application and your background. Unless you are exempt, you also take an English test (reading, writing and speaking) and a civics test.",
+      "ht": "Yon ofisye poze ou kesyon sou demann ou an ak sou pasé ou. Sof si ou egzante, ou pase tou yon egzamen angle (lekti, ekriti ak konvèsasyon) ak yon egzamen sivik."
+    },
+    "i_day_asylum1": {
+      "pt": "Um oficial de asilo pergunta sobre o seu pedido e os motivos pelos quais você está pedindo. Primeiro, pedem que você prometa dizer a verdade.",
+      "es": "Un oficial de asilo le pregunta sobre su solicitud y los motivos por los que la presenta. Primero le piden que prometa decir la verdad.",
+      "en": "An asylum officer asks you about your application and the reasons you are applying. You are asked to promise to tell the truth first.",
+      "ht": "Yon ofisye azil poze ou kesyon sou demann ou an ak rezon ki fè ou mande l. Yo mande ou pwomèt pou di laverite anvan."
+    },
+    "i_day_asylum2": {
+      "pt": "A entrevista costuma durar pelo menos uma hora. A decisão não é dada na entrevista.",
+      "es": "La entrevista suele durar al menos una hora. La decisión no se toma en la entrevista.",
+      "en": "The interview usually lasts at least an hour. A decision is not made at the interview.",
+      "ht": "Entèvyou a anjeneral dire omwen inèdtan. Yo pa bay desizyon an pandan entèvyou a."
+    },
+    "i_day_asylum3": {
+      "pt": "Se você não fala bem inglês, você leva um intérprete: o USCIS não fornece, exceto se você for surdo ou tiver dificuldade para ouvir. O intérprete precisa falar inglês fluentemente e também uma língua que você fale fluentemente, e precisa ter pelo menos 18 anos. Estas pessoas não podem ser o seu intérprete: o seu advogado ou representante, uma testemunha que fale em seu favor, e um representante ou funcionário do governo do seu país. Se você não levar um intérprete competente e não falar inglês, o USCIS cancela e remarca a sua entrevista.",
+      "es": "Si no habla bien inglés, usted lleva un intérprete: USCIS no proporciona uno, excepto si usted es sordo o tiene dificultad para oír. El intérprete debe hablar inglés con fluidez y un idioma que usted hable con fluidez, y debe tener al menos 18 años. Estas personas no pueden ser su intérprete: su abogado o representante, un testigo que declare a su favor, y un representante o empleado del gobierno de su país. Si no lleva un intérprete competente y no puede hablar inglés, USCIS cancela y reprograma su entrevista.",
+      "en": "If you do not speak English well, you bring an interpreter: USCIS does not provide one, except if you are deaf or hard of hearing. The interpreter must be fluent in English and in a language you speak fluently, and must be at least 18 years old. These people cannot be your interpreter: your attorney or representative, a witness testifying on your behalf, and a representative or employee of the government of your country. If you do not bring a competent interpreter and you cannot speak English, USCIS will cancel and reschedule your interview.",
+      "ht": "Si ou pa pale angle byen, ou mennen yon entèprèt: USCIS pa bay youn, sof si ou soud oswa si ou gen difikilte pou tande. Entèprèt la dwe pale angle byen epi pale byen yon lang ou menm ou pale byen, epi li dwe gen omwen 18 an. Moun sa yo pa ka entèprèt ou: avoka ou oswa reprezantan ou, yon temwen k ap pale nan avantaj ou, ak yon reprezantan oswa anplwaye gouvènman peyi ou. Si ou pa mennen yon entèprèt konpetan epi ou pa ka pale angle, USCIS ap anile epi fikse yon lòt dat pou entèvyou ou."
+    },
+    "i_day_attorney": {
+      "pt": "Você tem o direito de levar o seu advogado. O escritório avisa se vai com você.",
+      "es": "Usted tiene derecho a llevar a su abogado. La oficina le avisará si lo acompañará.",
+      "en": "You have the right to bring your attorney. The office will tell you if it will come with you.",
+      "ht": "Ou gen dwa mennen avoka ou. Biwo a ap fè ou konnen si l ap ale avè ou."
+    },
+    "i_bring_letter": {
+      "pt": "A carta da entrevista do USCIS.",
+      "es": "La carta de la entrevista de USCIS.",
+      "en": "The interview letter from USCIS.",
+      "ht": "Lèt entèvyou USCIS la."
+    },
+    "i_bring_id": {
+      "pt": "Um documento com foto.",
+      "es": "Una identificación con foto.",
+      "en": "A photo ID.",
+      "ht": "Yon kat idantite ki gen foto."
+    },
+    "i_bring_travel": {
+      "pt": "O seu passaporte e outros documentos de viagem, e o seu Formulário I-94, mesmo que estejam vencidos.",
+      "es": "Su pasaporte y otros documentos de viaje, y su Formulario I-94, aunque estén vencidos.",
+      "en": "Your passport and any other travel documents, and your Form I-94, even if they have expired.",
+      "ht": "Paspò ou ak lòt dokiman vwayaj ou yo, ak Fòm I-94 ou, menm si yo ekspire."
+    },
+    "i_bring_originals": {
+      "pt": "O original de cada documento do qual o escritório enviou cópia com o seu pedido.",
+      "es": "El original de cada documento del que la oficina envió copia con su solicitud.",
+      "en": "The original of every document the office sent copies of with your application.",
+      "ht": "Orijinal chak dokiman biwo a te voye kopi avèk demann ou an."
+    },
+    "i_bring_family": {
+      "pt": "Você (e o familiar que fez a petição de imigrante para você, se for o caso) precisa levar os originais de toda a documentação enviada com o pedido do Formulário I-485.",
+      "es": "Usted (y el familiar que presentó la petición de inmigrante por usted, si corresponde) debe llevar los originales de toda la documentación presentada con la solicitud del Formulario I-485.",
+      "en": "You (and the family member who filed the immigrant petition for you, if applicable) must bring the originals of all documentation submitted with the Form I-485 application.",
+      "ht": "Ou menm (ak fanmi ki depoze petisyon imigran an pou ou, si sa aplike) dwe pote orijinal tout dokiman yo te depoze avèk demann Fòm I-485 la."
+    },
+    "i_bring_more": {
+      "pt": "Qualquer outra coisa que a carta pedir.",
+      "es": "Cualquier otra cosa que pida la carta.",
+      "en": "Anything else the letter asks you to bring.",
+      "ht": "Nenpòt lòt bagay lèt la mande ou pote."
+    },
+    "i_bring_n400_letter": {
+      "pt": "A carta da entrevista do USCIS.",
+      "es": "La carta de la entrevista de USCIS.",
+      "en": "The interview letter from USCIS.",
+      "ht": "Lèt entèvyou USCIS la."
+    },
+    "i_bring_n400_card": {
+      "pt": "O seu green card (Formulário I-551).",
+      "es": "Su green card (Formulario I-551).",
+      "en": "Your green card (Form I-551).",
+      "ht": "Green card ou (Fòm I-551)."
+    },
+    "i_bring_n400_id": {
+      "pt": "Um documento emitido pelo seu estado, como a carteira de motorista.",
+      "es": "Una identificación emitida por su estado, como la licencia de conducir.",
+      "en": "An ID issued by your state, such as a driver's license.",
+      "ht": "Yon kat idantite eta ou bay, tankou lisans kondui."
+    },
+    "i_bring_n400_travel": {
+      "pt": "Todos os seus passaportes e documentos de viagem, válidos e vencidos, que mostrem as suas viagens para fora dos EUA desde que você virou residente permanente.",
+      "es": "Todos sus pasaportes y documentos de viaje, vigentes y vencidos, que muestren sus viajes fuera de EE. UU. desde que se hizo residente permanente.",
+      "en": "All your passports and travel documents, valid and expired, that show your trips outside the U.S. since you became a permanent resident.",
+      "ht": "Tout paspò ou ak dokiman vwayaj ou, ki valab ak ki ekspire, ki montre vwayaj ou deyò Etazini depi ou vin rezidan pèmanan."
+    },
+    "i_bring_n400_list": {
+      "pt": "Outros papéis que a lista do USCIS (Formulário M-477) indica para a sua situação. O escritório vai revisar a lista com você.",
+      "es": "Otros papeles que la lista de USCIS (Formulario M-477) indica para su situación. La oficina la revisará con usted.",
+      "en": "Other papers that USCIS's checklist (Form M-477) lists for your situation. The office will go over it with you.",
+      "ht": "Lòt papye lis USCIS la (Fòm M-477) endike pou sitiyasyon ou. Biwo a ap revize lis la avè ou."
+    },
+    "i_bring_asy_id": {
+      "pt": "Os seus passaportes, outros documentos de viagem ou de identidade, e o Formulário I-94, se você recebeu um quando chegou.",
+      "es": "Sus pasaportes, otros documentos de viaje o de identidad, y el Formulario I-94 si recibió uno cuando llegó.",
+      "en": "Your passports, any other travel or identity documents, and your Form I-94 if you got one when you arrived.",
+      "ht": "Paspò ou yo, nenpòt lòt dokiman vwayaj oswa idantite, ak Fòm I-94 la si ou te resevwa youn lè ou te rive."
+    },
+    "i_bring_asy_orig": {
+      "pt": "Os originais das certidões de nascimento, de casamento ou outros documentos que você enviou com o pedido de asilo.",
+      "es": "Los originales de las actas de nacimiento, de matrimonio u otros documentos que envió con su solicitud de asilo.",
+      "en": "The originals of any birth certificates, marriage certificates or other documents you sent with your asylum application.",
+      "ht": "Orijinal batistè, ak maryaj oswa lòt dokiman ou te voye avèk demann azil ou an."
+    },
+    "i_bring_asy_copy": {
+      "pt": "Uma cópia do seu pedido de asilo e de tudo o que você enviou, caso falte algo no escritório de asilo.",
+      "es": "Una copia de su solicitud de asilo y de todo lo demás que envió, por si a la oficina de asilo le falta algo.",
+      "en": "A copy of your asylum application and of everything else you sent, in case the asylum office is missing something.",
+      "ht": "Yon kopi demann azil ou an ak tout lòt bagay ou te voye, si biwo azil la gen yon bagay ki manke."
+    },
+    "i_bring_asy_family": {
+      "pt": "O seu cônjuge e os seus filhos menores de 21 anos, se você os incluiu no pedido. Eles levam os próprios documentos de identidade e de viagem.",
+      "es": "Su cónyuge y sus hijos menores de 21 años, si los incluyó en su solicitud. Ellos llevan sus propios documentos de identidad y de viaje.",
+      "en": "Your spouse and your children under 21, if you included them in your application. They bring their own identity and travel documents.",
+      "ht": "Mari oswa madanm ou ak pitit ou ki poko gen 21 an, si ou mete yo nan demann lan. Yo pote pwòp dokiman idantite ak vwayaj yo."
+    },
+    "i_bring_asy_translation": {
+      "pt": "Uma tradução certificada para o inglês de cada documento que não esteja em inglês.",
+      "es": "Una traducción certificada al inglés de cada documento que no esté en inglés.",
+      "en": "A certified English translation of every document that is not in English.",
+      "ht": "Yon tradiksyon sètifye an angle pou chak dokiman ki pa an angle."
+    },
+    "i_bring_asy_interpreter": {
+      "pt": "O seu intérprete, se você não fala bem inglês.",
+      "es": "Su intérprete, si no habla bien inglés.",
+      "en": "Your interpreter, if you do not speak English well.",
+      "ht": "Entèprèt ou, si ou pa pale angle byen."
+    },
+    "i_bring_sij_more": {
+      "pt": "Qualquer outra coisa que a carta pedir. A página do USCIS sobre estes casos não traz uma lista para a entrevista, então a lista é a carta.",
+      "es": "Cualquier otra cosa que pida la carta. La página de USCIS sobre estos casos no da una lista para la entrevista, así que la lista es la carta.",
+      "en": "Anything else the letter asks you to bring. USCIS's page for these cases gives no list for an interview, so the letter is the list.",
+      "ht": "Nenpòt lòt bagay lèt la mande ou pote. Paj USCIS sou kalite dosye sa yo pa bay lis pou entèvyou, kidonk lèt la se lis la."
+    }
+  },
+  "sheets": {
+    "biometrics": {
+      "default": {
+        "day": [
+          "b_day1",
+          "b_day2",
+          "b_day3",
+          "b_day4",
+          "b_day5"
+        ],
+        "bring": [
+          "b_bring_notice",
+          "b_bring_id",
+          "b_bring_more",
+          "b_early"
+        ],
+        "sources": [
+          "bio"
+        ]
+      },
+      "n400": {
+        "day": [
+          "b_day1",
+          "b_day2",
+          "b_day3",
+          "b_day4",
+          "b_day5"
+        ],
+        "bring": [
+          "b_bring_n400_notice",
+          "b_bring_n400_card",
+          "b_bring_n400_id",
+          "b_bring_more",
+          "b_early"
+        ],
+        "sources": [
+          "bio",
+          "n400"
+        ]
+      }
+    },
+    "interview": {
+      "i485": {
+        "day": [
+          "i_day_where",
+          "i_day_questions",
+          "i_day_prepared"
+        ],
+        "bring": [
+          "i_bring_letter",
+          "i_bring_id",
+          "i_bring_travel",
+          "i_bring_originals",
+          "i_bring_more"
+        ],
+        "sources": [
+          "aos"
+        ]
+      },
+      "family": {
+        "day": [
+          "i_day_where",
+          "i_day_questions",
+          "i_day_prepared"
+        ],
+        "bring": [
+          "i_bring_letter",
+          "i_bring_id",
+          "i_bring_travel",
+          "i_bring_originals",
+          "i_bring_family",
+          "i_bring_more"
+        ],
+        "sources": [
+          "aos"
+        ]
+      },
+      "n400": {
+        "day": [
+          "i_day_where",
+          "i_day_n400",
+          "i_day_prepared"
+        ],
+        "bring": [
+          "i_bring_n400_letter",
+          "i_bring_n400_card",
+          "i_bring_n400_id",
+          "i_bring_n400_travel",
+          "i_bring_n400_list",
+          "i_bring_more"
+        ],
+        "sources": [
+          "n400",
+          "n400test"
+        ]
+      },
+      "i589": {
+        "day": [
+          "i_day_where",
+          "i_day_asylum1",
+          "i_day_asylum2",
+          "i_day_asylum3",
+          "i_day_attorney"
+        ],
+        "bring": [
+          "i_bring_letter",
+          "i_bring_asy_id",
+          "i_bring_asy_orig",
+          "i_bring_asy_copy",
+          "i_bring_asy_family",
+          "i_bring_asy_translation",
+          "i_bring_asy_interpreter",
+          "i_bring_more"
+        ],
+        "sources": [
+          "asylum"
+        ]
+      },
+      "sij": {
+        "day": [
+          "i_day_where",
+          "i_day_sij",
+          "i_day_prepared"
+        ],
+        "bring": [
+          "i_bring_letter",
+          "i_bring_id",
+          "i_bring_sij_more"
+        ],
+        "sources": [
+          "sij"
+        ]
+      },
+      "other": {
+        "day": [
+          "i_day_where",
+          "i_day_prepared"
+        ],
+        "bring": [
+          "i_bring_letter",
+          "i_bring_id",
+          "i_bring_more"
+        ],
+        "sources": []
+      }
+    }
+  }
+}

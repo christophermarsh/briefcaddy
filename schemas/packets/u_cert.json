@@ -1,0 +1,47 @@
+{
+  "_about": "The request to the certifying agency for the U visa certification (src/u_certification.py): the office's letter and Form I-918 Supplement B (01/20/25) with Part 1, the victim, filled (Supplement B Instructions: Parts 2-6 are the certifying official's). Nothing goes to USCIS, and none of the client's documents go with it. The attorney approves the letter.",
+  "filing": "u_cert",
+  "title": "U visa: certification request (Supplement B)",
+  "packet_pdf": "packet_u_cert.pdf",
+  "manifest": "packet_u_cert.json",
+  "choices": "packet_choices_u_cert.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": false,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "u_cert_letter",
+    "i918b"
+  ],
+  "generated": {
+    "u_cert_letter": {
+      "short": "Request letter",
+      "title": "Letter to the certifying agency asking for the certification",
+      "output": "u_cert_letter.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    }
+  },
+  "handwork": [
+    {
+      "kind": "sign",
+      "text": "The letter: the attorney signs it."
+    },
+    {
+      "kind": "check",
+      "text": "The agency's address and its own procedure for certification requests (a unit, a form or a portal of its own): confirmed from the agency, never guessed."
+    },
+    {
+      "kind": "check",
+      "text": "Mail it with tracking and record the mailing: the case then shows the certification as requested."
+    },
+    {
+      "kind": "check",
+      "text": "When it comes back: the ORIGINAL with the official's ink signature (USCIS takes no photocopy of the signature page). Record the date it was signed: the petition must reach USCIS within six months of it."
+    }
+  ],
+  "exhibits": [],
+  "leave_out": {}
+}

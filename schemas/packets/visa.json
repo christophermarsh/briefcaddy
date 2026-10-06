@@ -1,0 +1,47 @@
+{
+  "_about": "An immigrant visa through the National Visa Center and a consulate (src/visa.py). The DS-260 and the documents are online only, so this 'packet' is what the firm works from: the DS-260 answer sheet and the document checklist (22 CFR 42.65, Form I-864), then the client's documents in the order NVC asks for them. Ready to scan and upload. Nothing is mailed to USCIS. The attorney approves titles and order.",
+  "filing": "visa",
+  "title": "Immigrant visa (NVC and the consulate)",
+  "packet_pdf": "packet_visa.pdf",
+  "manifest": "packet_visa.json",
+  "choices": "packet_choices_visa.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": ["visa_sheet"],
+  "generated": {
+    "visa_sheet": {"short": "Answer sheet", "title": "DS-260 answer sheet and NVC document checklist", "output": "visa_answer_sheet.pdf",
+                   "signatures": {}, "attorney_completes": ["The DS-260's security and background questions: answered by the client with the attorney, never from the case."]}
+  },
+  "handwork": [
+    {"kind": "check", "text": "Submit the DS-260 and upload the documents in the Consular Electronic Application Center (ceac.state.gov), not by mail."},
+    {"kind": "check", "text": "Pay the NVC invoice (the amounts are in the client's CEAC account), and record each date on the client's page."},
+    {"kind": "check", "text": "Before the interview: the medical exam with the consulate's panel physician, and the originals of every document uploaded."}
+  ],
+  "exhibits": [
+    {"id": "passport", "title": "Passport biographic page", "types": ["passport"], "required": true},
+    {"id": "birth", "title": "Birth certificate (with certified translation)", "types": ["birth_certificate", "translation_certification"], "required": true},
+    {"id": "police", "title": "Police certificates (22 CFR 42.65(c)(1))", "types": []},
+    {"id": "court", "title": "Court and prison records", "types": ["criminal_record"]},
+    {"id": "relationship", "title": "Marriage certificate, and divorce or death certificates ending earlier marriages", "types": ["marriage_certificate", "divorce_decree"]},
+    {"id": "financial", "title": "Affidavit of Support evidence: the petitioner's tax returns, W-2s, pay stubs, proof of U.S. domicile", "types": ["tax_return", "w2", "pay_stub", "bank_statement"]},
+    {"id": "uscis", "title": "The I-130 approval and other USCIS notices", "types": ["uscis_notice"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "i360_approval": "Not part of a family-based visa case.",
+    "sij_order": "Not part of a family-based visa case.",
+    "i485": "A completed USCIS form from an earlier filing, not uploaded to NVC.",
+    "i765": "A completed USCIS form from an earlier filing, not uploaded to NVC.",
+    "g28": "A USCIS form, not uploaded with the civil documents. The attorney confirms how the firm is recorded as the client's representative at NVC.",
+    "i94": "Not asked for by NVC.",
+    "ssn_card": "Not asked for by NVC.",
+    "drivers_license": "Not asked for by NVC.",
+    "work_permit": "Not asked for by NVC.",
+    "lease": "Not asked for by NVC.",
+    "utility_bill": "Not asked for by NVC."
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "_about": "Cancellation of removal in immigration court (src/cancellation.py): the EOIR-42B for a client who isn't a permanent resident; the variant eoir42a (Form EOIR-42A) for one who is. Both are filed with the immigration court and served on ICE (OPLA), never mailed to USCIS (8 CFR 1240.20). Order: the G-28 that goes to USCIS (DHS's 'Instructions for Submitting Certain Applications in Immigration Court...', revised June 8, 2026, part B: with the two payment confirmations and a copy of the instructions), then the application, then the evidence the form's instructions (Rev. Feb. 2025, 3) ask for: the documents DHS issued, the qualifying relatives' status and relationship, the hardship, the 10 years, good moral character, taxes, criminal records. No cover letter: the court filing goes through ECAS or as the court directs. The attorney approves titles and order.",
+  "filing": "cancellation",
+  "title": "Cancellation of removal (EOIR-42B)",
+  "packet_pdf": "packet_cancellation.pdf",
+  "manifest": "packet_cancellation.json",
+  "choices": "packet_choices_cancellation.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "g28_cancel",
+    "eoir42b"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "Pay the EOIR-42B fee in the EOIR Payment Portal BEFORE filing, and print its confirmation page: one copy goes with the application, one to USCIS.",
+      "links": [
+        [
+          "EOIR Payment Portal",
+          "https://epay.eoir.justice.gov/index"
+        ]
+      ]
+    },
+    {
+      "kind": "attach",
+      "text": "Pay the DHS biometrics fee ($30 a person) on pay.gov and print its confirmation page.",
+      "links": [
+        [
+          "pay.gov: USCIS biometric services fee",
+          "https://www.pay.gov/public/form/start/1106659481"
+        ]
+      ]
+    },
+    {
+      "kind": "attach",
+      "text": "To USCIS, the lockbox for the client's state (the panel names it): the two payment confirmations, a copy of the signed G-28 and a copy of DHS's instructions. Nothing else goes to USCIS.",
+      "links": [
+        [
+          "DHS's instructions for applications in immigration court",
+          "https://www.uscis.gov/sites/default/files/document/legal-docs/DEFA-pre-order-instructions.pdf"
+        ]
+      ]
+    },
+    {
+      "kind": "attach",
+      "text": "Two identical color passport-style photos taken within 30 days, the client's name and A-Number in pencil on the back (the EOIR-42B instructions, 6): one with the court filing, one with ICE's copy."
+    },
+    {
+      "kind": "check",
+      "text": "File the application and its evidence with the immigration court (e-file in ECAS in an eligible case) and serve a complete copy on ICE (OPLA), unless ICE takes part in ECAS; complete Part 10."
+    },
+    {
+      "kind": "check",
+      "text": "When USCIS's receipt and the biometrics appointment arrive: file the receipt with the court, and make sure the client goes to the appointment. None within 3 months, or the merits hearing within 6 months: call 800-375-5283."
+    },
+    {
+      "kind": "check",
+      "text": "Part 9 is signed only before the judge, at the hearing: leave it blank."
+    },
+    {
+      "kind": "check",
+      "text": "Every foreign-language document has a full English translation and the translator's certificate (the instructions, 5)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "court",
+      "title": "The Notice to Appear and the court's notices",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "dhs_documents",
+      "title": "Documents DHS issued to the client: I-94, visa, work permit, USCIS notices; the passport",
+      "types": [
+        "i94",
+        "visa",
+        "work_permit",
+        "uscis_notice",
+        "i360_approval",
+        "passport"
+      ]
+    },
+    {
+      "id": "relatives",
+      "title": "The qualifying relatives: their U.S. citizenship or permanent residence, and the relationship (birth and marriage certificates, divorce decrees)",
+      "types": [
+        "us_passport",
+        "us_birth_certificate",
+        "citizenship_certificate",
+        "green_card",
+        "birth_certificate",
+        "marriage_certificate",
+        "divorce_decree",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "hardship",
+      "title": "Exceptional and extremely unusual hardship to the qualifying relatives: medical and school records, financial records, country conditions, declarations",
+      "types": [
+        "medical_record",
+        "school_record",
+        "declaration",
+        "country_conditions",
+        "bank_statement"
+      ],
+      "required": true
+    },
+    {
+      "id": "presence",
+      "title": "Ten years of continuous physical presence: leases, bills, pay stubs, school, church and employment records, year by year",
+      "types": [
+        "lease",
+        "utility_bill",
+        "pay_stub"
+      ]
+    },
+    {
+      "id": "taxes",
+      "title": "Tax returns and W-2s (the years in item 42)",
+      "types": [
+        "tax_return",
+        "w2"
+      ]
+    },
+    {
+      "id": "character",
+      "title": "Good moral character: police clearances from each place the client lived, letters from employers and people who know the client",
+      "types": []
+    },
+    {
+      "id": "criminal",
+      "title": "Certified court dispositions and police records for every arrest (item 54)",
+      "types": [
+        "criminal_record",
+        "police_report"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "The firm prepares a new G-28 for the USCIS package.",
+    "ssn_card": "Not asked for with the application.",
+    "drivers_license": "Not asked for with the application.",
+    "sij_order": "Not evidence for cancellation of removal: the attorney decides whether it belongs.",
+    "national_id": "Not asked for with the application."
+  },
+  "variants": {
+    "eoir42a": {
+      "_about": "A permanent resident (cancel.form: EOIR-42A, INA 240A(a)). The EOIR-42A's instructions (Rev. Feb. 2025, 3) ask for the documents DHS issued, every criminal record, and what the judge asks for; no hardship test, so the hardship and relatives exhibits are optional equities. No photographs in its instructions.",
+      "title": "Cancellation of removal for a permanent resident (EOIR-42A)",
+      "forms": [
+        "g28_cancel",
+        "eoir42a"
+      ],
+      "handwork": [
+        {
+          "kind": "attach",
+          "text": "Pay the EOIR-42A fee in the EOIR Payment Portal BEFORE filing, and print its confirmation page: one copy goes with the application, one to USCIS.",
+          "links": [
+            [
+              "EOIR Payment Portal",
+              "https://epay.eoir.justice.gov/index"
+            ]
+          ]
+        },
+        {
+          "kind": "attach",
+          "text": "Pay the DHS biometrics fee ($30 a person) on pay.gov and print its confirmation page.",
+          "links": [
+            [
+              "pay.gov: USCIS biometric services fee",
+              "https://www.pay.gov/public/form/start/1106659481"
+            ]
+          ]
+        },
+        {
+          "kind": "attach",
+          "text": "To USCIS, the lockbox for the client's state (the panel names it): the two payment confirmations, a copy of the signed G-28 and a copy of DHS's instructions. Nothing else goes to USCIS.",
+          "links": [
+            [
+              "DHS's instructions for applications in immigration court",
+              "https://www.uscis.gov/sites/default/files/document/legal-docs/DEFA-pre-order-instructions.pdf"
+            ]
+          ]
+        },
+        {
+          "kind": "check",
+          "text": "File the application and its evidence with the immigration court (e-file in ECAS in an eligible case) and serve a complete copy on ICE (OPLA), unless ICE takes part in ECAS; complete Part 10."
+        },
+        {
+          "kind": "check",
+          "text": "When USCIS's receipt and the biometrics appointment arrive: file the receipt with the court, and make sure the client goes to the appointment. None within 3 months, or the merits hearing within 6 months: call 800-375-5283."
+        },
+        {
+          "kind": "check",
+          "text": "Part 9 is signed only before the judge, at the hearing: leave it blank."
+        },
+        {
+          "kind": "check",
+          "text": "Every foreign-language document has a full English translation and the translator's certificate (the instructions, 5)."
+        }
+      ],
+      "exhibits": [
+        {
+          "id": "court",
+          "title": "The Notice to Appear and the court's notices",
+          "types": [
+            "notice_to_appear"
+          ]
+        },
+        {
+          "id": "dhs_documents",
+          "title": "Documents DHS issued to the client: the green card, the approval or immigrant visa, I-94, USCIS notices; the passport",
+          "types": [
+            "green_card",
+            "i94",
+            "visa",
+            "uscis_notice",
+            "i360_approval",
+            "passport"
+          ],
+          "required": true
+        },
+        {
+          "id": "residence",
+          "title": "Seven years of continuous residence after admission: leases, bills, pay stubs, school and employment records",
+          "types": [
+            "lease",
+            "utility_bill",
+            "pay_stub"
+          ]
+        },
+        {
+          "id": "criminal",
+          "title": "Certified court dispositions and police records for every arrest (item 49)",
+          "types": [
+            "criminal_record",
+            "police_report"
+          ]
+        },
+        {
+          "id": "taxes",
+          "title": "Tax returns and W-2s (the years in item 41)",
+          "types": [
+            "tax_return",
+            "w2"
+          ]
+        },
+        {
+          "id": "equities",
+          "title": "Family ties and equities: relatives' status and relationship, hardship, declarations",
+          "types": [
+            "us_passport",
+            "us_birth_certificate",
+            "citizenship_certificate",
+            "birth_certificate",
+            "marriage_certificate",
+            "divorce_decree",
+            "medical_record",
+            "school_record",
+            "declaration",
+            "country_conditions",
+            "bank_statement",
+            "translation_certification"
+          ]
+        }
+      ]
+    }
+  }
+}

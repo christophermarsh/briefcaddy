@@ -1,0 +1,179 @@
+{
+  "_about": "The family-based packet (src/family.py, src/packet.py): the relative's I-130 petition filed together with the client's I-485 (concurrent filing). Spouse of a U.S. citizen first. Each person's G-28 on top of their forms; then the evidence USCIS asks for, petitioner first: proof of their citizenship or permanent residence, the relationship (the marriage certificate, earlier marriages ended), the marriage's bona fides, then the client's identity, entry and the sponsor's financial evidence. Built into its own files (packet_family.pdf). The attorney approves titles and order.",
+  "filing": "family",
+  "title": "Family-based (I-130 + I-485)",
+  "packet_pdf": "packet_family.pdf",
+  "manifest": "packet_family.json",
+  "choices": "packet_choices_family.json",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_family.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i130",
+    "i130",
+    "i130a",
+    "g28",
+    "i485",
+    "i864",
+    "i765"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "Passport photos for the beneficiary's I-485 (two) and I-765 (two): on top of the I-130 photos the letter lists; name and A-Number lightly in pencil on the back."
+    },
+    {
+      "kind": "attach",
+      "text": "Form I-693 (medical exam), in the civil surgeon's sealed envelope. USCIS rejects an I-485 filed without it."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "petitioner_status",
+      "title": "Petitioner's proof of U.S. citizenship or permanent residence",
+      "types": [
+        "us_passport",
+        "citizenship_certificate",
+        "us_birth_certificate",
+        "green_card"
+      ],
+      "required": true
+    },
+    {
+      "id": "marriage",
+      "title": "Marriage certificate, with certified English translation",
+      "types": [
+        "marriage_certificate"
+      ],
+      "required": true
+    },
+    {
+      "id": "prior_marriages",
+      "title": "Proof that every earlier marriage ended (divorce decrees, death certificates)",
+      "types": [
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "bona_fides",
+      "title": "Evidence of a bona fide marriage: joint lease, bank statements, bills",
+      "types": [
+        "lease",
+        "bank_statement",
+        "utility_bill"
+      ]
+    },
+    {
+      "id": "birth",
+      "title": "Beneficiary's birth certificate, with certified English translation",
+      "types": [
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "passport",
+      "title": "Beneficiary's passport identity page and U.S. visa",
+      "types": [
+        "passport",
+        "visa"
+      ]
+    },
+    {
+      "id": "admission",
+      "title": "Evidence of lawful entry: Form I-94 and admission stamp",
+      "types": [
+        "i94"
+      ]
+    },
+    {
+      "id": "sponsor",
+      "title": "Affidavit of support evidence: the sponsor's tax returns or transcripts, W-2s, recent pay stubs",
+      "types": [
+        "tax_return",
+        "w2",
+        "pay_stub"
+      ],
+      "required": true
+    },
+    {
+      "id": "other_id",
+      "title": "Beneficiary's other identity documents: work permit, Social Security card, driver's license",
+      "types": [
+        "work_permit",
+        "ssn_card",
+        "drivers_license"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "Other USCIS notices",
+      "types": [
+        "uscis_notice",
+        "i360_approval"
+      ]
+    },
+    {
+      "id": "immigration_court",
+      "title": "Immigration court documents (Notice to Appear, orders)",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "criminal",
+      "title": "Certified police and court records",
+      "types": [
+        "criminal_record"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "sij_order": "A state court SIJ order: not part of a family-based filing. Ask the attorney."
+  },
+  "variants": {
+    "petition_only": {
+      "_about": "A preference case (F1-F4) whose priority date isn't current (src/preference.py): the I-130 is filed alone now (the day USCIS receives it becomes the priority date) and the I-485 follows when the Visa Bulletin makes the date current.",
+      "title": "Family petition alone (I-130): the green card application waits for the priority date",
+      "cover_letter": "cover_letter_family_i130.json",
+      "forms": [
+        "g28_i130",
+        "i130",
+        "i130a"
+      ],
+      "handwork": [
+        {
+          "kind": "attach",
+          "text": "Passport photos: two of the petitioner and two of the beneficiary (a spouse petition), names in pencil on the back."
+        }
+      ]
+    },
+    "i485_only": {
+      "_about": "The I-130 is already with USCIS (a receipt or approval in the case): the I-485 is filed on its own, with a copy of the I-130 receipt or approval notice, once the priority date is current (an immediate relative: any time).",
+      "title": "Green card application on the filed I-130 (I-485)",
+      "cover_letter": "cover_letter_family_i485.json",
+      "forms": [
+        "g28",
+        "i485",
+        "i864",
+        "i765"
+      ],
+      "handwork": [
+        {
+          "kind": "attach",
+          "text": "Passport photos for the I-485 (two) and I-765 (two); name and A-Number lightly in pencil on the back."
+        },
+        {
+          "kind": "attach",
+          "text": "Form I-693 (medical exam), in the civil surgeon's sealed envelope. USCIS rejects an I-485 filed without it."
+        },
+        {
+          "kind": "attach",
+          "text": "A copy of the I-130 receipt or approval notice (the basis of the I-485)."
+        }
+      ]
+    }
+  }
+}

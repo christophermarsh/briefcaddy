@@ -1,0 +1,230 @@
+# Printed text of the firm's Portuguese intake questionnaire (current template), Tesseract lines of the
+# bare template rendered WITHOUT any client's answers. page<TAB>line. Used to check every anchor.
+0	GEORGES | COTE LAW
+0	— A LITIGATION FIRM —
+0	Questionario para Ajuste de Status
+0	1485 — SIJS
+0	Portugués
+0	Por favor coloque suas iniciais no final de cada pagina e assine na ultima.
+0	Informacées sobre vocé
+0	Nome Completo:
+0	Vocé ja usou outro nome (ex: nome de solteiro, casado, falso nome na travessia)?
+0	Outros nomes ja usados:
+0	Alien Number:
+0	Telefone:
+0	E-mail:
+0	Data de Nascimento: de de
+0	Outras datas de nascimento ja usadas:
+0	Status (Solteiro, Casado, Divorciado):
+0	Cidade e Pais de Nascimento:
+0	Sexo: ( )Feminino ( __ )Masculino
+0	Pais de Nascimento:
+0	Vocé tem cidadania de mais de um pais? ( ) Sim ( ) Nao
+0	Endereco Fisico:
+0	Enderego para recebimento de Correspondéncias:
+0	Vocé ja solicitou Work Permit e Social alguma vez na vida (ainda que seja por processo de asilo)? Foi Aprovado?
+0	Numero do Social Security:
+1	GEORGES | COTE LAW
+1	— A LITIGATION FIRM —
+1	Histérico de Imigracao Recente
+1	Passaporte usado na Ultima entrada (foi inspecionado na entrada):
+1	Visto usado na ultima entrada:
+1	Qual tipo de visto vocé usou?
+1	Veio pela fronteira? ( )Sim (_ )Nao
+1	Data da ultima entrada nos Estados Unidos:
+1	Local da ultima entrada nos Estados Unidos:
+1	Voce ja aplicou para algum tipo de visto de imigrante para obter status de residente numa embaixada dos Estados
+1	Unidos ou consulado?
+1	Histérico de Enderecos dos ultimos 5 Anos (dentro e fora dos EUA)
+1	Ex: 123 Central St, Apt. 0, Boston, MA, Zip Code: 0000 / De: 04/01/2020 Ate: Presente
+1	e = Atual: De: / / ate agora
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	e De: / / ate / /
+1	Ultimo Endereco fora dos EUA:
+2	GEORGES | COTE LAW
+2	— A LITIGATION FIRM —
+2	Historico de trabalho:
+2	Historico de trabalho ou estudo:
+2	Liste o histdrico de trabalho dos ultimos 5 anos (independente de ser Brasil ou EUA).
+2	Ex: Dunkin Donuts, 10 Central St, Boston, MA, 02100, Cashier, De: 05/01/2020, Ate: 01/15/2021
+2	Se voce nao trabalhou, escreva sua fonte de suporte durante este tempo.
+2	Trabalho/estudo atual:
+2	Nome da empresa:
+2	Cargo:
+2	De: / ate agora
+2	Enderego:
+2	Trabalhos/escolas anteriores: (listar do mais recente ao mais antigo):
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+2	Seu ultimo trabalho/estudo fora dos Estados Unidos:
+2	Nome da empresa:
+2	Cargo:
+2	Enderego: De: / ate / /
+3	GEORGES | COTE LAW
+3	— A LITIGATION FIRM —
+3	Informacao sobre seus pais
+3	MAE:
+3	Nome Completo:
+3	Nome de Solteira:
+3	de Sexo:(_) Feminino ( ___) Masculino
+3	Data de Nascimento: de
+3	Cidade de Nascimento:
+3	Pais de Nascimento:
+3	Cidade que mora atualmente:
+3	Pais que mora atualmente:
+3	( ) Falecido(a)
+3	PAI:
+3	Nome Completo:
+3	Nome de Solteira:
+3	de Sexo:(_) Feminino ( ___) Masculino
+3	Data de Nascimento: de
+3	Cidade de Nascimento:
+3	Pais de Nascimento:
+3	Cidade que mora atualmente:
+3	Pais que mora atualmente:
+3	( ) Falecido(a)
+3	Informacoes de Conjuges
+3	Quantas vezes vocé foi casado (incluindo casamento atual)?
+3	Estado civil atual:
+3	(_ ) Solteiro, nunca casado
+3	) Casado
+3	DT
+3	) Divorciado
+3	) Vitivo(a)
+3	) Casamento Anulado
+3	) Legalmente separado
+3	Data do casamento atual:
+3	de
+3	Cidade e Pais do casamento:
+3	Se vocé ja foi casado ou é casado, fornega certidées de casamento ou decretos de divorcio absoluto de todos os
+3	casamentos, atuais e anteriores. Caso seja ou ja tenha sido casado, informagées adicionais serao necessdrias, como o
+3	nome completo do ex-c6njuge, Alien Number (se aplicavel), data de nascimento, data do casamento, data do divorcio e
+3	local do divorcio.
+4	GEORGES | COTE LAW
+4	— A LITIGATION FIRM —
+4	Informacées sobre seus filhos:
+4	Quantos filhos vocé tem? (Independente de morar nos EUA)
+4	Nome Completo: A#
+4	Data de Nascimento: de de Pais de Nascimento:
+4	Nome Completo: A#
+4	Data de Nascimento: de de Pais de Nascimento:
+4	Nome Completo: A#
+4	Data de Nascimento: de de Pais de Nascimento:
+4	Nome Completo: A#
+4	Data de Nascimento: de de Pais de Nascimento:
+4	Informacées biograficas
+4	Etnia:(___) Hispanico ou Latino( _) Nao Hispanico ou Latino
+4	Raga:
+4	(__ ) Branco
+4	(__ ) Asiatico
+4	(__) Preto ou Americano Africano
+4	(_ )Indigena Americano ou Nativo do Alaska
+4	(__) Nativo do Hawaii ou Alguma outra ilha do Pacifico
+4	Altura:
+4	Peso:
+4	Cor dos Olhos: (Preto, Cinza, Bordo, Azul, Verde, Rosa, Marrom, Avela, Desconhecido/Outro
+4	Cor do Cabelo: (Sem cabelos, Marrom, Cor de Areia, Preto, Cinza, Branco, Loiro, Vermelho,
+4	Desconhecido ou Outro)
+5	GEORGES | COTE LAW
+5	— A LITIGATION FIRM —
+5	Elegibilidade Geral e Inadmissibilidade
+5	Alguma vez ja te foi negada a admissao nos Estados Unidos (por exemplo, deportado do Aeroporto, ou de outra
+5	forma)? ( )Sim (_ )N§&o
+5	Vocé teve um visto negado para os Estados Unidos (informe detalhes)?
+5	( )Sim ( ) Nao
+5	Vocé ja trabalhou nos Estados Unidos sem autorizagao? (Responda corretamente, vocé nao pode mentir ou
+5	omitir) ( )Sim (_ )Nao
+5	Vocé ja violou os termos ou condigées do seu status de nao imigrante? (Ex: trabalhar sem permissdo, passar da
+5	permanéncia, etc) O que vocé fez? ( )Sim ( ) Nao
+5	Vocé ja esteve em procedimentos de exclusdo, deportagao ou remogio?
+5	( )Sim ( ) Nao
+5	Vocé ja teve alguma ordem final de exclusao, deportagao ou remogao?
+5	( )Sim ( ) Nao
+5	Vocé ja teve alguma ordem de exclusao, deportagao ou remogao restabelecida?
+5	( )Sim ( ) Nao
+5	Vocé ja recebeu status de residente permanente (Green Card) que foi mais tarde rescindido?
+5	( )Sim (_ ) Nao
+5	ALGUMA VEZ lhe foi concedida a saida voluntaria (deportagao voluntaria) por um oficial de imigragado ou um
+5	Juiz de imigragao, mas nao saiu dentro do prazo estipulado?
+5	( )Sim (_ )N&o
+5	. Vocé ja aplicou para algum tipo de liberag&o ou proteg&o contra remogao, exclusao ou deportagao? (Ex: asilo,
+5	withholding of removal, etc) ( )Sim (_ )N&o
+5	. Vocé ja foi um J Nao Imigrante Visitante de Intercémbio que tem o requerimento de residéncia estrangeira de 2
+5	—
+5	an
+5	anos? ( )Sim (_ )N&o
+5	Alguém ja aplicou algum tipo de Visto ou Green Card pra vocé? Explique.
+5	12.
+5	a. ( )Sim ( ) Nao
+6	GEORGES | COTE LAW
+6	— A LITIGATION FIRM —
+6	. Vocé ja aplicou para algum tipo de processo imigratorio fora SIJS? Qual?
+6	a ( )Sim_ (sd) Nid
+6	. Vocé possui um I-94 ou recebeuum PAROLE? ( )Sim (_ ) Nao
+6	. Vocé ja recebeu algum beneficio ptblico sujeito 4 comprovagao de renda/necessidade financeira? Exemplo:
+6	Medicaid, MassHealth, SNAP/food stamps (auxilo alimentacao); TANF (ssisténcia temporaria para familias
+6	necessitadas, (SSI) — beneficio de Renda de Seguranga Suplementar. Outros programas de assisténcia publica
+6	estaduais ou locais cuja elegibilidade seja baseada na renda ou nos recursos financeiros.
+6	a. ( )Sim ( ) Nao
+6	Histérico Criminal — Dentro e fora dos Estados Unidos
+6	Vocé ja foi preso, citado, acusado ou detido por alguma autoridade, ainda que seja de imigracao?
+6	( )Sim ( ) Nao
+6	Vocé ja cometeu algum crime (ainda que vocé nao tenha sido preso, citado, processado, acusado ou detido por
+6	2)
+6	isso?
+6	( ) Sim ( ) Nao
+6	Informe a lista de crimes, data e local que foi processado:
+6	Vocé sera questionado sobre outros aspectos relacionados a crimes e elegibilidade. Por favor, fornega uma copia da
+6	decisGo de arquivamento de qualquer caso criminal que vocé tenha tido, incluindo dirigir sem carteira.
+6	Entradas nos Estados Unidos:
+6	Liste todas suas entradas nos Estados Unidos (legais e ilegais), com data aproximada de entrada, local que entrou, tempo
+6	que ficou no pais, se comprou seu proprio ticket ou foi deportado.
+7	KKK
+7	GEORGES | COTE LAW
+7	— A LITIGATION FIRM —
+7	Solicitacéo de Isencfio de Taxa
+7	1. Estime o valor mensal médio recebido de cada uma das seguintes fontes. Ajuste qualquer valor recebido
+7	semanalmente, quinzenalmente, trimestralmente, semestralmente ou anualmente para refletir a média mensal.
+7	Utilize valores brutos, ou seja, valores anteriores a quaisquer dedugées de impostos e outros descontos em folha
+7	de pagamento (estaduais ou federais).
+7	Fonte de Renda: Média mensal:
+7	e Emprego, incluindo trabalho por conta propria $:
+7	e Renda proveniente de bens imoveis (como receitas de aluguel) $:
+7	e Juros de conta(s) corrente(s) e/ou poupanga $:
+7	e Todas as demais rendas, incluindo, mas nao se limitando a estas e outras fontes: pensao alimenticia (para o
+7	cénjuge), pensao alimenticia (para filhos), juros, dividendos, previdéncia social, anuidades, seguro-desemprego,
+7	assisténcia publica, etc. $:
+7	2. Estime suas despesas mensais médias. Ajuste quaisquer pagamentos feitos semanalmente, quinzenalmente,
+7	trimestralmente, semestralmente ou anualmente para refletir 0 valor mensal.
+7	Fontes de Despesas: Média mensal:
+7	e Pagamentos de aluguel ou de financiamento imobiliario (inclua o aluguel do terreno para casa moével)
+7	$:
+7	e Servigos ptblicos (eletricidade, combustivel para aquecimento, agua, esgoto, telefone, internet, etc.)
+7	$:
+7	e Pagamentos parcelados ou débitos pendentes (cartao(des) de crédito, cartéo(des) de loja, financiamento de
+7	veiculo, empréstimo(s) pessoal(is), etc., mas excluindo aluguel ou prestagdes de financiamento imobiliario)
+7	$:
+7	e Despesas de subsisténcia (alimentacdo, vestuario, transporte, cuidados com os filhos, mensalidades escolares,
+7	etc.)
+7	$:
+7	e Todas as demais despesas, incluindo, mas nao se limitando a estas e outras fontes: pensao alimenticia (para
+7	cénjuge e filhos), seguros, despesas médicas e de satide, quaisquer impostos estaduais ou federais, honorarios
+7	advocaticios, etc.

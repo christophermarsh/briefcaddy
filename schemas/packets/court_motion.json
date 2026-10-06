@@ -1,0 +1,150 @@
+{
+  "_about": "A motion to reopen or to reconsider before the immigration judge, or to reopen an in absentia order (src/court_motion.py; 8 CFR 1003.23(b), eCFR current as of 10/01/2026). The court has no form: the office's motion (src/court_pleading.py), DRAFT for the attorney. Order, after the Practice Manual (3.3(c)(i)(D), (E); 5.2; Appendix F, G, Q; version of 02/20/2020): the EOIR-28 (8 CFR 1003.23(b)(1)(ii): a represented party files one with the motion), the cover page, the fee waiver request when asked (Form EOIR-26A; otherwise the EOIR Payment Portal receipt goes there), the motion, the judge's decision, the application for relief, the evidence, then the proposed order and the proof of service at the bottom. Filed in ECAS, or on paper in duplicate with the court. No cover letter: it goes to the court, never to USCIS. The attorney approves titles and order.",
+  "filing": "court_motion",
+  "title": "Motion to reopen or reconsider (immigration court)",
+  "packet_pdf": "packet_court_motion.pdf",
+  "manifest": "packet_court_motion.json",
+  "choices": "packet_choices_court_motion.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "eoir28",
+    "ijmotion_cover",
+    "eoir26a",
+    "ijmotion_motion",
+    "ijmotion_order",
+    "ijmotion_service"
+  ],
+  "after_exhibits": [
+    "ijmotion_order",
+    "ijmotion_service"
+  ],
+  "generated": {
+    "ijmotion_cover": {
+      "short": "Cover page",
+      "title": "Cover page",
+      "output": "ijmotion_cover.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    },
+    "ijmotion_motion": {
+      "short": "Motion",
+      "title": "The motion",
+      "output": "ijmotion_motion.pdf",
+      "signatures": {},
+      "attorney_completes": [
+        "The motion: the attorney reads every sentence, writes the argument, and signs it (8 CFR 1003.23(b)(1)(i): signed by the attorney of record)."
+      ]
+    },
+    "ijmotion_order": {
+      "short": "Proposed order",
+      "title": "Proposed order for the judge's signature",
+      "output": "ijmotion_order.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    },
+    "ijmotion_service": {
+      "short": "Proof of service",
+      "title": "Proof of service on ICE (OPLA)",
+      "output": "ijmotion_service.pdf",
+      "signatures": {},
+      "attorney_completes": [
+        "On paper: the date served, the means (hand delivery, mail, courier) and the server's signature, when it is served."
+      ]
+    }
+  },
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "Pay the motion fee in the EOIR Payment Portal BEFORE filing (unless the panel says there is no fee, or Form EOIR-26A is in the packet) and put its receipt right behind the cover page.",
+      "links": [
+        [
+          "EOIR Payment Portal",
+          "https://epay.eoir.justice.gov/index"
+        ]
+      ]
+    },
+    {
+      "kind": "check",
+      "text": "In ECAS: upload it in the ECAS Case Portal (PDF, 25 MB or less per document, at least 300 DPI); EOIR serves ICE. On paper: file the original and a second copy with the court (in duplicate) and serve a copy on ICE (OPLA) for the place the case was completed, then sign the proof of service.",
+      "links": [
+        [
+          "ECAS for attorneys",
+          "https://www.justice.gov/eoir/ecas-attorneys-and-accredited-representatives"
+        ]
+      ]
+    },
+    {
+      "kind": "attach",
+      "text": "A copy of the judge's decision (Practice Manual 5.2(d), 2020 version), the application for relief with all its supporting documents when the motion is based on one (8 CFR 1003.23(b)(3)), and the affidavits and evidence. An earlier filed form found in the folder is never put in: the new application goes in by hand."
+    },
+    {
+      "kind": "attach",
+      "text": "Form EOIR-33/IC, the client's address, before the proposed order: the Practice Manual (5.7(b), 2020 version) recommends it even when the address hasn't changed."
+    },
+    {
+      "kind": "check",
+      "text": "Every foreign-language document has a full English translation and the translator's certificate (8 CFR 1003.23(b)(1)(i), 1003.33)."
+    },
+    {
+      "kind": "check",
+      "text": "Number the pages of the whole filing at the bottom (Practice Manual 3.3(c)(iii), 2020 version)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "decision",
+      "title": "The immigration judge's decision, and the court's notices",
+      "types": [
+        "notice_to_appear",
+        "eoir_hearing_notice"
+      ]
+    },
+    {
+      "id": "relief",
+      "title": "The application for relief and its supporting documents",
+      "types": [
+        "uscis_notice",
+        "i485_receipt",
+        "i130_approval",
+        "i360_approval"
+      ]
+    },
+    {
+      "id": "evidence",
+      "title": "Affidavits and evidence of the new facts or of why the client did not appear",
+      "types": [
+        "declaration",
+        "medical_record",
+        "country_conditions",
+        "news_article",
+        "police_report",
+        "court_disposition",
+        "criminal_record",
+        "marriage_certificate",
+        "us_birth_certificate",
+        "us_passport",
+        "citizenship_certificate",
+        "green_card"
+      ]
+    },
+    {
+      "id": "translations",
+      "title": "Certified English translations",
+      "types": [
+        "certified_translation",
+        "translation_certification"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "Not for the court: the EOIR-28 is the attorney's appearance there.",
+    "engagement_letter": "The firm's engagement letter: internal.",
+    "attorney_correspondence": "The firm's correspondence: internal."
+  }
+}

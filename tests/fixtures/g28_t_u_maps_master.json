@@ -1,0 +1,426 @@
+{
+ "g28_i914": {
+  "map": {
+   "firm.uscis_online_account_number": {
+    "type": "text",
+    "fields": [
+     "Pt1Line1_USCISOnlineAcctNumber[0]"
+    ]
+   },
+   "firm.preparer_family_name": {
+    "type": "text",
+    "fields": [
+     "Pt1Line2a_FamilyName[0]"
+    ]
+   },
+   "firm.preparer_given_name": {
+    "type": "text",
+    "fields": [
+     "Pt1Line2b_GivenName[0]"
+    ]
+   },
+   "firm.street": {
+    "type": "text",
+    "fields": [
+     "Line3a_StreetNumber[0]"
+    ]
+   },
+   "firm.city": {
+    "type": "text",
+    "fields": [
+     "Line3c_CityOrTown[0]"
+    ]
+   },
+   "firm.state": {
+    "type": "text",
+    "fields": [
+     "Line3d_State[0]"
+    ]
+   },
+   "firm.zip": {
+    "type": "text",
+    "fields": [
+     "Line3e_ZipCode[0]"
+    ]
+   },
+   "firm.phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line4_DaytimeTelephoneNumber[0]"
+    ]
+   },
+   "firm.email": {
+    "type": "text",
+    "fields": [
+     "Line7_MobileTelephoneNumber[0]"
+    ]
+   },
+   "firm.licensing_authority": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1a_LicensingAuthority[0]"
+    ]
+   },
+   "firm.attorney_bar_number": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1b_BarNumber[0]"
+    ]
+   },
+   "companion.g28_is_attorney": {
+    "type": "choice_by_value",
+    "options": {
+     "Yes": [
+      "CheckBox1[0]",
+      "/Y"
+     ]
+    }
+   },
+   "firm.business_name": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1d_NameofFirmOrOrganization[0]"
+    ]
+   },
+   "companion.g28_uscis": {
+    "type": "choice_by_value",
+    "options": {
+     "Yes": [
+      "Line1a_USCIS[0]",
+      "/Y"
+     ]
+    }
+   },
+   "companion.g28_appearance": {
+    "type": "choice_by_value",
+    "options": {
+     "Applicant": [
+      "Line4_Checkbox[1]",
+      "/A"
+     ]
+    }
+   },
+   "applicant.family_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5a_FamilyName[0]",
+     "Pt3Line5a_FamilyName[1]"
+    ]
+   },
+   "applicant.given_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5b_GivenName[0]",
+     "Pt3Line5b_GivenName[1]"
+    ]
+   },
+   "applicant.middle_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5c_MiddleName[0]",
+     "Pt3Line5c_MiddleName[1]"
+    ]
+   },
+   "applicant.a_number": {
+    "type": "digits_only",
+    "fields": [
+     "Pt3Line9_ANumber[0]"
+    ]
+   },
+   "applicant.daytime_phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line9_DaytimeTelephoneNumber[0]"
+    ]
+   },
+   "applicant.mobile_phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line10_MobileTelephoneNumber[0]"
+    ]
+   },
+   "applicant.email": {
+    "type": "text",
+    "fields": [
+     "Line11_EMail[0]"
+    ]
+   },
+   "applicant.physical_street": {
+    "type": "text",
+    "fields": [
+     "Line12a_StreetNumberName[0]"
+    ]
+   },
+   "applicant.physical_unit_type": {
+    "type": "choice_by_value",
+    "options": {
+     "APT": [
+      "Line12b_Unit[2]",
+      "/ APT "
+     ],
+     "STE": [
+      "Line12b_Unit[0]",
+      "/ STE "
+     ],
+     "FLR": [
+      "Line12b_Unit[1]",
+      "/ FLR "
+     ]
+    }
+   },
+   "applicant.physical_apt": {
+    "type": "text",
+    "fields": [
+     "Line12b_AptSteFlrNumber[0]"
+    ]
+   },
+   "applicant.physical_city": {
+    "type": "text",
+    "fields": [
+     "Line12c_CityOrTown[0]"
+    ]
+   },
+   "applicant.physical_state": {
+    "type": "text",
+    "fields": [
+     "Line12d_State[0]"
+    ]
+   },
+   "applicant.physical_zip": {
+    "type": "text",
+    "fields": [
+     "Line12e_ZipCode[0]"
+    ]
+   },
+   "tvisa.g28_forms": {
+    "type": "text",
+    "fields": [
+     "Line1b_ListFormNumber[0]"
+    ]
+   }
+  },
+  "optional": [
+   "applicant.middle_name",
+   "applicant.physical_apt",
+   "applicant.physical_unit_type",
+   "applicant.mobile_phone",
+   "applicant.email",
+   "applicant.mailing_in_care_of",
+   "applicant.birth_state",
+   "firm.uscis_online_account_number",
+   "firm.licensing_authority"
+  ]
+ },
+ "g28_i918": {
+  "map": {
+   "firm.uscis_online_account_number": {
+    "type": "text",
+    "fields": [
+     "Pt1Line1_USCISOnlineAcctNumber[0]"
+    ]
+   },
+   "firm.preparer_family_name": {
+    "type": "text",
+    "fields": [
+     "Pt1Line2a_FamilyName[0]"
+    ]
+   },
+   "firm.preparer_given_name": {
+    "type": "text",
+    "fields": [
+     "Pt1Line2b_GivenName[0]"
+    ]
+   },
+   "firm.street": {
+    "type": "text",
+    "fields": [
+     "Line3a_StreetNumber[0]"
+    ]
+   },
+   "firm.city": {
+    "type": "text",
+    "fields": [
+     "Line3c_CityOrTown[0]"
+    ]
+   },
+   "firm.state": {
+    "type": "text",
+    "fields": [
+     "Line3d_State[0]"
+    ]
+   },
+   "firm.zip": {
+    "type": "text",
+    "fields": [
+     "Line3e_ZipCode[0]"
+    ]
+   },
+   "firm.phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line4_DaytimeTelephoneNumber[0]"
+    ]
+   },
+   "firm.email": {
+    "type": "text",
+    "fields": [
+     "Line7_MobileTelephoneNumber[0]"
+    ]
+   },
+   "firm.licensing_authority": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1a_LicensingAuthority[0]"
+    ]
+   },
+   "firm.attorney_bar_number": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1b_BarNumber[0]"
+    ]
+   },
+   "companion.g28_is_attorney": {
+    "type": "choice_by_value",
+    "options": {
+     "Yes": [
+      "CheckBox1[0]",
+      "/Y"
+     ]
+    }
+   },
+   "firm.business_name": {
+    "type": "text",
+    "fields": [
+     "Pt2Line1d_NameofFirmOrOrganization[0]"
+    ]
+   },
+   "companion.g28_uscis": {
+    "type": "choice_by_value",
+    "options": {
+     "Yes": [
+      "Line1a_USCIS[0]",
+      "/Y"
+     ]
+    }
+   },
+   "applicant.family_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5a_FamilyName[0]",
+     "Pt3Line5a_FamilyName[1]"
+    ]
+   },
+   "applicant.given_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5b_GivenName[0]",
+     "Pt3Line5b_GivenName[1]"
+    ]
+   },
+   "applicant.middle_name": {
+    "type": "text",
+    "fields": [
+     "Pt3Line5c_MiddleName[0]",
+     "Pt3Line5c_MiddleName[1]"
+    ]
+   },
+   "applicant.a_number": {
+    "type": "digits_only",
+    "fields": [
+     "Pt3Line9_ANumber[0]"
+    ]
+   },
+   "applicant.daytime_phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line9_DaytimeTelephoneNumber[0]"
+    ]
+   },
+   "applicant.mobile_phone": {
+    "type": "digits_only",
+    "fields": [
+     "Line10_MobileTelephoneNumber[0]"
+    ]
+   },
+   "applicant.email": {
+    "type": "text",
+    "fields": [
+     "Line11_EMail[0]"
+    ]
+   },
+   "applicant.physical_street": {
+    "type": "text",
+    "fields": [
+     "Line12a_StreetNumberName[0]"
+    ]
+   },
+   "applicant.physical_unit_type": {
+    "type": "choice_by_value",
+    "options": {
+     "APT": [
+      "Line12b_Unit[2]",
+      "/ APT "
+     ],
+     "STE": [
+      "Line12b_Unit[0]",
+      "/ STE "
+     ],
+     "FLR": [
+      "Line12b_Unit[1]",
+      "/ FLR "
+     ]
+    }
+   },
+   "applicant.physical_apt": {
+    "type": "text",
+    "fields": [
+     "Line12b_AptSteFlrNumber[0]"
+    ]
+   },
+   "applicant.physical_city": {
+    "type": "text",
+    "fields": [
+     "Line12c_CityOrTown[0]"
+    ]
+   },
+   "applicant.physical_state": {
+    "type": "text",
+    "fields": [
+     "Line12d_State[0]"
+    ]
+   },
+   "applicant.physical_zip": {
+    "type": "text",
+    "fields": [
+     "Line12e_ZipCode[0]"
+    ]
+   },
+   "uvisa.g28_forms": {
+    "type": "text",
+    "fields": [
+     "Line1b_ListFormNumber[0]"
+    ]
+   },
+   "companion.g28_appearance_i360": {
+    "type": "choice_by_value",
+    "options": {
+     "Petitioner": [
+      "Line4_Checkbox[3]",
+      "/P"
+     ]
+    }
+   }
+  },
+  "optional": [
+   "applicant.middle_name",
+   "applicant.physical_apt",
+   "applicant.physical_unit_type",
+   "applicant.mobile_phone",
+   "applicant.email",
+   "applicant.mailing_in_care_of",
+   "applicant.birth_state",
+   "firm.uscis_online_account_number",
+   "firm.licensing_authority"
+  ]
+ }
+}

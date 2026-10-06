@@ -1,0 +1,121 @@
+{
+  "_about": "The TPS cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the lockbox on the country's own TPS page, by state), the subject and the fees (Form G-1055 10/01/26) come from src/tps.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: I-821 Application for Temporary Protected Status"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_tps",
+    "i821",
+    "i765_tps"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_tps": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i821": "Applicant’s I-821 - Application for Temporary Protected Status",
+    "i765_tps": "Applicant’s I-765 - Application for Employment Authorization, Category (a)(12) or (c)(19)"
+  },
+  "documents": [
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "national_id",
+      "Copy of Applicant’s National ID"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "drivers_license",
+      "Copy of Applicant’s Photo ID"
+    ],
+    [
+      "i94",
+      "Copy of Applicant’s Form I-94"
+    ],
+    [
+      "visa",
+      "Copy of Applicant’s Visa"
+    ],
+    [
+      "lease",
+      "Proof of Continuous Residence: Lease or Rent Receipts"
+    ],
+    [
+      "utility_bill",
+      "Proof of Continuous Residence: Utility Bills"
+    ],
+    [
+      "pay_stub",
+      "Proof of Continuous Residence: Pay Stubs"
+    ],
+    [
+      "w2",
+      "Proof of Continuous Residence: Forms W-2"
+    ],
+    [
+      "tax_return",
+      "Proof of Continuous Residence: Tax Returns"
+    ],
+    [
+      "medical_record",
+      "Proof of Continuous Residence: Medical Records"
+    ],
+    [
+      "school_record",
+      "Proof of Continuous Residence: School Records"
+    ],
+    [
+      "bank_statement",
+      "Proof of Continuous Residence: Bank Statements"
+    ],
+    [
+      "criminal_record",
+      "Certified Court Dispositions"
+    ],
+    [
+      "court_disposition",
+      "Certified Court Dispositions"
+    ],
+    [
+      "police_report",
+      "Arrest Records"
+    ],
+    [
+      "tps_approval",
+      "Copy of Applicant’s TPS Approval Notice"
+    ],
+    [
+      "work_permit",
+      "Copy of Applicant’s Current Employment Authorization Document (front and back)"
+    ],
+    [
+      "uscis_notice",
+      "Copy of Applicant’s USCIS Notices"
+    ],
+    [
+      "photos",
+      "Two Passport-Style Photographs"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose each fee the cover letter states by its own Form G-1450 (a U.S. card) or Form G-1650 (a U.S. bank account), never a check: the I-821, its biometric services fee, the I-765, its Pub. L. 119-21 fee.",
+      "unless": "no_payment"
+    }
+  ]
+}

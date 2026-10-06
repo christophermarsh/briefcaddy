@@ -1,0 +1,898 @@
+{
+  "_about": "Part 14 explanations for the answers the form says to explain (src/part14_explain.py). 'forms.i485.editions.<edition>.lines' are the form's and its instructions' own lines that say an answer needs an explanation in Part 14, word for word, each with its page; 'items' are the answers each line covers, by the fact key the product's field map fills (the item number printed on the page is read from the edition's own template, never typed here: src/fill/where.py); 'not_filled' are answers the lines cover that the product's field map does not fill, so the product cannot see their answer. 'wordings' are the firm's DRAFT wordings, one sentence pattern per answer and fact pattern, in the client's voice and the office's (src/part14_voice.py): every {slot} is filled from a fact of the case with its source shown, a slot with no settled fact stays a visible blank in square brackets for a person to fill, and nothing else is ever written. 'cite' names the rule whose statute text a citation would come from: no rule holds a statute's text yet, so no wording cites the law and the card says the attorney adds the citation. Every wording is listed in docs/attorney_review.md (Part 14 explanations) and the attorney approves each explanation per case. schemas/maintenance.json (part14_wordings) says who reviews them and when.",
+  "forms": {
+    "i485": {
+      "name": "Form I-485",
+      "editions": {
+        "09/18/26": {
+          "form": {
+            "name": "Form I-485, edition 09/18/26 (the form's own page, as the product fills it)",
+            "template": "schemas/i485_template.pdf"
+          },
+          "instructions": {
+            "name": "Form I-485 Instructions, edition 09/18/26",
+            "url": "https://www.uscis.gov/sites/default/files/document/forms/i-485instr.pdf",
+            "page_url": "https://www.uscis.gov/i-485",
+            "read": "2026-10-04",
+            "read_note": "Read by the product on 10/04/2026 from the instructions PDF linked on uscis.gov/i-485 (its pages say 'Form I-485 Instructions 09/18/26')."
+          },
+          "lines": {
+            "form_p13": {
+              "in": "form",
+              "page": 13,
+              "says": "Choose the answer that you think is correct in Part 9. If you answer \"Yes\" to any questions (or if you answer \"No,\" but are unsure of your answer), provide an explanation of the events and circumstances in the space provided in Part 14. Additional Information."
+            },
+            "form_p14_22_41": {
+              "in": "form",
+              "page": 14,
+              "says": "If you answer \"Yes\" to Item Numbers 22. - 41., use the space provided in Part 14. Additional Information to provide an explanation for each offense, if applicable, that includes a description of the criminal offense; where the criminal offense occurred; when the criminal offense occurred; whether you were arrested, cited, charged, or detained for the criminal offense you committed; and the outcome or disposition of that criminal offense (for example, convicted, placement in a diversion program, no charges filed, charges dismissed, jail, prison, detention, probation, or community service). Your explanation must include the duration of any sentence to confinement (even if suspended)."
+            },
+            "form_p16_42_45": {
+              "in": "form",
+              "page": 16,
+              "says": "NOTE: If you answered \"Yes\" to any part of Item Numbers 42.a. - 45., explain what you did, including the dates and location of the circumstances, or what you intend to do in the space provided in Part 14. Additional Information."
+            },
+            "form_p17_46": {
+              "in": "form",
+              "page": 17,
+              "says": "NOTE: If you answered \"Yes\" to any part of Item Number 46., explain what your parent or spouse did, including the dates and location of the circumstances in Part 14. Additional Information."
+            },
+            "form_p17_47_55": {
+              "in": "form",
+              "page": 17,
+              "says": "NOTE: If you answered \"Yes\" to any part of Item Numbers 47. - 55., explain what occurred, including the dates and location of the circumstances, in the space provided in Part 14. Additional Information."
+            },
+            "form_p17_50_51": {
+              "in": "form",
+              "page": 17,
+              "says": "If you answered \"Yes\" to Item Number 50. or 51., include the name of the country, the name of the military unit or armed group, your rank or position, and your dates of involvement in your explanation in Part 14. Additional Information."
+            },
+            "form_p19_57_64": {
+              "in": "form",
+              "page": 19,
+              "says": "If you need extra space to complete this section, use the space provided in Part 14. Additional Information."
+            },
+            "form_p20_65": {
+              "in": "form",
+              "page": 20,
+              "says": "NOTE: If your answer to Item Number 65. is “Yes,” attach a written statement explaining why you failed or refused to attend or remain in attendance at the removal proceeding, including any explanation of a reasonable cause for that failure or refusal."
+            },
+            "form_p20_74": {
+              "in": "form",
+              "page": 20,
+              "says": "NOTE: If you answered “Yes” to Item Number 74., give the dates of unlawful presence in the space provided in Part 14. Additional Information."
+            },
+            "instr_p5": {
+              "in": "instructions",
+              "page": 5,
+              "says": "If you need extra space to complete any item within this application, use the space provided in Part 14. Additional Information or attach a separate sheet of paper. Type or print your name and Alien Registration Number (A-Number) (if any) at the top of each sheet; indicate the Page Number, Part Number, and Item Number to which your answer refers; and sign and date each sheet."
+            },
+            "instr_p7_63": {
+              "in": "instructions",
+              "page": 7,
+              "says": "If you answer “Yes” to Part 9., Item Number 63., complete the table in Part 9., Item Number 64., showing the benefit received, the dates of receipt, and value of receipt including the dollar amount (if applicable), as well as a detailed explanation of why you received the benefit(s) (e.g. job loss, long-term illness, insufficient income)."
+            },
+            "instr_p21_sij": {
+              "in": "instructions",
+              "page": 21,
+              "says": "NOTE: USCIS considers anyone granted special immigrant juvenile classification to have been paroled into the United States for the purpose of special immigrant juvenile based adjustment, regardless of how you actually arrived in the United States."
+            }
+          },
+          "items": [
+            {
+              "key": "applicant.part9.pt8line1",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.denied_admission",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.denied_visa",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.worked_without_authorization",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.violated_nonimmigrant_status",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.in_removal_proceedings",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.final_order_of_removal",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.prior_order_reinstated",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.voluntary_departure_not_departed",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.applied_relief_from_removal",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.j_exchange_two_year_requirement",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line24b",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line24c",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.arrested_cited_charged_detained",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.committed_crime",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line24",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line25",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line26",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line27",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line28",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line29",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line30",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line31",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line32",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line33",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line34",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line35a",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line35b",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line36",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line37",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line38",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line39",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line40",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line41",
+              "lines": [
+                "form_p13",
+                "form_p14_22_41"
+              ]
+            },
+            {
+              "key": "applicant.part9.a",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.b",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line42c",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line42d",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43a",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43b",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43c",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43d",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43e",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43f",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43g",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43h",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line43i",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line44",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line45",
+              "lines": [
+                "form_p13",
+                "form_p16_42_45"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line46",
+              "lines": [
+                "form_p13",
+                "form_p17_46"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line47",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line48",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line49",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line50",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55",
+                "form_p17_50_51"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line51",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55",
+                "form_p17_50_51"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line52",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line53a",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line53b",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line53c",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line53d",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line54",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt8line55",
+              "lines": [
+                "form_p13",
+                "form_p17_47_55"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line67",
+              "lines": [
+                "form_p13",
+                "form_p20_65"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line68",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line69",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line70",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line71",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line72",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line73",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line74",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line75",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.unlawfully_present_since_1997",
+              "lines": [
+                "form_p13",
+                "form_p20_74"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line77",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line78a",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line78b",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line79",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line80",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line81",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line82",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line83",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line84a",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line84b",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line84c",
+              "lines": [
+                "form_p13"
+              ]
+            },
+            {
+              "key": "applicant.part9.pt9line85",
+              "lines": [
+                "form_p13"
+              ]
+            }
+          ],
+          "not_filled": [
+            {
+              "page": 19,
+              "question": "63. Have you ever received any means-tested public benefit?",
+              "lines": [
+                "form_p13",
+                "form_p19_57_64",
+                "instr_p7_63"
+              ],
+              "why": "The product's field map fills no box for items 56 to 64 except the exemption in item 56 (a Special Immigrant Juvenile is exempt and skips 57 to 64), so it cannot see an answer to item 63. A person answers it on the form; its explanation (the table in item 64 and, where it does not fit, Part 14) is written by hand."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "work": {
+    "_note": "For the explanation of a Yes to working without authorization: which lines of the client's job history are work in the United States. A line counts when its country is one of 'us_names', or it gives no country and its state is a U.S. state; a line whose employer or occupation is one of 'not_work' (as the client wrote it, in capitals) is not work. What is left is compared with the work permits in the case and shown on the card line by line; a person checks it and uses it, or types the periods.",
+    "us_names": [
+      "UNITED STATES",
+      "UNITED STATES OF AMERICA",
+      "USA",
+      "US",
+      "U.S.",
+      "U.S.A.",
+      "ESTADOS UNIDOS",
+      "EUA",
+      "EEUU",
+      "EE.UU."
+    ],
+    "not_work": [
+      "UNEMPLOYED",
+      "STUDENT",
+      "NONE",
+      "N/A",
+      "NOT APPLICABLE",
+      "RETIRED",
+      "DESEMPREGADO",
+      "DESEMPREGADA",
+      "ESTUDANTE",
+      "APOSENTADO",
+      "APOSENTADA",
+      "DESEMPLEADO",
+      "DESEMPLEADA",
+      "ESTUDIANTE",
+      "JUBILADO",
+      "JUBILADA"
+    ]
+  },
+  "sentences": {
+    "sij_basis": {
+      "when": "i360_approved",
+      "text": {
+        "client": "I am applying to adjust status{cite} based on my approved Special Immigrant Juvenile petition (Form I-360, receipt number {i360_receipt}), approved on {i360_approved}.",
+        "office": "The applicant is applying to adjust status{cite} based on an approved Special Immigrant Juvenile petition (Form I-360, receipt number {i360_receipt}), approved on {i360_approved}."
+      },
+      "cite": {
+        "rule": "SIJ-BASIS",
+        "needed": "the section of the law under which a Special Immigrant Juvenile adjusts status"
+      }
+    }
+  },
+  "wordings": [
+    {
+      "id": "worked_without_authorization",
+      "item": "applicant.part9.worked_without_authorization",
+      "when": "always",
+      "text": {
+        "client": "Yes, I worked in the United States without employment authorization during these periods: {periods}.",
+        "office": "The applicant worked in the United States without employment authorization during these periods: {periods}."
+      }
+    },
+    {
+      "id": "proceedings_ordered_in_absentia",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "only_in_absentia",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge ordered me removed in absentia.",
+        "office": "The applicant was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge ordered the applicant removed in absentia."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "proceedings_decided",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "only_ordered_or_denied",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge {judge_decided}.",
+        "office": "The applicant was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge {judge_decided}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "proceedings_relief_granted",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "only_relief_granted",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge granted {relief_granted}.",
+        "office": "The applicant was placed in removal proceedings before the immigration court. On {decision_date}, the immigration judge granted {relief_granted}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "proceedings_ended",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "only_terminated",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court. On {ended_date}, the immigration judge {how_ended} the proceedings.",
+        "office": "The applicant was placed in removal proceedings before the immigration court. On {ended_date}, the immigration judge {how_ended} the proceedings."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "proceedings_pending",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "pending",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court, and those proceedings are pending.",
+        "office": "The applicant was placed in removal proceedings before the immigration court, and those proceedings are pending."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "proceedings_history",
+      "item": "applicant.part9.in_removal_proceedings",
+      "when": "always",
+      "text": {
+        "client": "Yes, I was placed in removal proceedings before the immigration court. {court_history}.",
+        "office": "The applicant was placed in removal proceedings before the immigration court. {court_history}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "final_order_in_absentia",
+      "item": "applicant.part9.final_order_of_removal",
+      "when": "only_in_absentia",
+      "text": {
+        "client": "Yes, the immigration judge ordered me removed in absentia on {decision_date}.",
+        "office": "The immigration judge ordered the applicant removed in absentia on {decision_date}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "final_order_decided",
+      "item": "applicant.part9.final_order_of_removal",
+      "when": "only_ordered_or_denied",
+      "text": {
+        "client": "Yes, on {decision_date}, the immigration judge {judge_decided}.",
+        "office": "On {decision_date}, the immigration judge {judge_decided}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "final_order_history",
+      "item": "applicant.part9.final_order_of_removal",
+      "when": "always",
+      "text": {
+        "client": "Yes, {court_history}.",
+        "office": "{court_history}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "applied_relief_sij",
+      "item": "applicant.part9.applied_relief_from_removal",
+      "when": "i360_approved",
+      "text": {
+        "client": "Yes, I applied for classification as a Special Immigrant Juvenile (Form I-360, receipt number {i360_receipt}), and the petition was approved on {i360_approved}.",
+        "office": "The applicant applied for classification as a Special Immigrant Juvenile (Form I-360, receipt number {i360_receipt}), and the petition was approved on {i360_approved}."
+      }
+    },
+    {
+      "id": "entry_and_other_arrests",
+      "item": "applicant.part9.arrested_cited_charged_detained",
+      "when": "entered_without_inspection_nta",
+      "text": {
+        "client": "Yes, on or about {arrival_date}, I entered the United States at or near {arrival_city}, {arrival_state}, and {entry_detention}. {other_arrests}.",
+        "office": "On or about {arrival_date}, the applicant entered the United States at or near {arrival_city}, {arrival_state}, and {entry_detention}. {other_arrests}."
+      }
+    },
+    {
+      "id": "entered_without_inspection",
+      "item": "applicant.part9.pt9line75",
+      "when": "always",
+      "text": {
+        "client": "Yes, I entered the United States without being inspected and admitted or paroled, at or near {arrival_city}, {arrival_state} on or about {arrival_date}.",
+        "office": "The applicant entered the United States without being inspected and admitted or paroled, at or near {arrival_city}, {arrival_state} on or about {arrival_date}."
+      },
+      "then": [
+        "sij_basis"
+      ]
+    },
+    {
+      "id": "unlawful_presence_since_entry",
+      "item": "applicant.part9.unlawfully_present_since_1997",
+      "when": "entered_without_inspection",
+      "text": {
+        "client": "Yes, I have been in the United States without being admitted or paroled since I entered on or about {arrival_date}.",
+        "office": "The applicant has been in the United States without being admitted or paroled since entering on or about {arrival_date}."
+      }
+    },
+    {
+      "id": "unlawful_presence_after_stay",
+      "item": "applicant.part9.unlawfully_present_since_1997",
+      "when": "admit_until",
+      "text": {
+        "client": "Yes, I remained in the United States after my authorized stay ended on {admit_until}.",
+        "office": "The applicant remained in the United States after the authorized stay ended on {admit_until}."
+      }
+    }
+  ],
+  "slots": {
+    "periods": "the periods worked in the United States outside the work permit's dates",
+    "decision_date": "the date of the judge's decision",
+    "judge_decided": "what the judge decided: ordered removal, or denied relief (say which)",
+    "relief_granted": "the relief the judge granted",
+    "how_ended": "terminated or dismissed (say which)",
+    "ended_date": "the date the proceedings were terminated or dismissed",
+    "court_history": "what the immigration court decided, and when, as its orders say",
+    "i360_receipt": "the I-360's receipt number",
+    "i360_approved": "the date the I-360 was approved",
+    "arrival_city": "the city of the last arrival",
+    "arrival_state": "the state of the last arrival",
+    "arrival_date": "the date of the last arrival",
+    "admit_until": "the date the authorized stay ended",
+    "entry_detention": "what happened then, as the client tells it (for example, detained by U.S. immigration officials, for how long, and released)",
+    "other_arrests": "any other arrest, citation, charge or detention, with where, when and its outcome, or that there was none"
+  },
+  "when": {
+    "always": "Any case that answers Yes.",
+    "only_in_absentia": "The case page records one result from the immigration judge: a removal order in absentia.",
+    "only_ordered_or_denied": "The case page records one result from the immigration judge: removal ordered or relief denied.",
+    "only_relief_granted": "The case page records one result from the immigration judge: relief granted.",
+    "only_terminated": "The case page records one result from the immigration judge: the case terminated or dismissed.",
+    "pending": "The case page records no result that decided or ended the case, and the client is still in proceedings (a Notice to Appear or a hearing).",
+    "i360_approved": "An approval notice for the client's Form I-360 is in the folder.",
+    "entered_without_inspection_nta": "The last arrival was without admission or parole, and a Notice to Appear is in the folder.",
+    "entered_without_inspection": "The last arrival was without admission or parole.",
+    "admit_until": "The I-94 gives the date the authorized stay ended."
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "_status": "The EOIR-26A (Fee Waiver Request) from the client's own answers (src/eoir26a.py). EVERY client-facing wording here is a DRAFT for the attorney and a certified translator (docs/attorney_review.md lists each one); the Haitian Creole is a MACHINE DRAFT. The English of the declaration is the form's own sentence, word for word. No amount is written here: the figures are the client's, and the arithmetic is the product's.",
+  "form": {
+    "id": "eoir26a",
+    "name": "Form EOIR-26A (Fee Waiver Request)",
+    "edition": "Rev. Aug. 2022",
+    "source": "https://www.justice.gov/eoir/eoir-forms",
+    "read": "2026-10-03",
+    "read_note": "EOIR's forms page, 'Updated October 1, 2026', read 10/03/2026: the entry 'EOIR 26A' says '(Revised Aug. 2022)'."
+  },
+  "lines": [
+    {"id": "fw_income_work", "fact": "eoir26a.income_employment", "field": "IncomeEmployment", "group": "income", "form_row": "Employment, including self-employment"},
+    {"id": "fw_income_property", "fact": "eoir26a.income_property", "field": "IncomeProperty", "group": "income", "form_row": "Income from real property (such as rental income)"},
+    {"id": "fw_income_interest", "fact": "eoir26a.income_interest", "field": "IncomeInterest", "group": "income", "form_row": "Interest from checking and/or saving account(s)"},
+    {"id": "fw_income_other", "fact": "eoir26a.income_other", "field": "IncomeOther", "group": "income", "form_row": "All other income, including but not limited to these and other sources: alimony, child support, interest, dividends, social security, annuities, unemployment, public assistance, etc."},
+    {"id": "fw_exp_rent", "fact": "eoir26a.expense_rent", "field": "ExpenseRent", "group": "expense", "form_row": "Rent or home-mortgage payment(s) (include lot rented for mobile home)"},
+    {"id": "fw_exp_utilities", "fact": "eoir26a.expense_utilities", "field": "ExpenseUtil", "group": "expense", "form_row": "Utilities (electricity, heating fuel, water, sewer, telephone, internet, etc.)"},
+    {"id": "fw_exp_debts", "fact": "eoir26a.expense_installment", "field": "ExpenseInstall", "group": "expense", "form_row": "Installment payments or outstanding debits (credit card(s), store credit card(s), vehicle payment, personal loan(s), etc., but not including rent or home-mortgage payments)"},
+    {"id": "fw_exp_living", "fact": "eoir26a.expense_living", "field": "ExpenseLiving", "group": "expense", "form_row": "Living expenses (food, clothing, transportation, child care, tuition, etc.)"},
+    {"id": "fw_exp_other", "fact": "eoir26a.expense_other", "field": "ExpenseOther", "group": "expense", "form_row": "All other expenses, including but not limited to these and other sources: alimony, child support, insurance, medical, health, any state or federal taxes, attorney fees, etc."}
+  ],
+  "form_lines": [
+    {"where": "Page 1, the heading of the affidavit", "text": "AFFIDAVIT IN SUPPORT OF FEE WAIVER REQUEST."},
+    {"where": "Page 1, under the heading", "text": "(This affidavit is to be signed by the respondent, not the respondent’s attorney or representative of record.)"},
+    {"where": "Page 1, the declaration the client signs", "text": "I declare under penalty of perjury, pursuant to 28 U.S.C. § 1746, that I am the person above and that I am unable to pay the filing fee. I believe that my application/motion/appeal is valid and not frivolous, and I declare that the following information is true and correct to the best of my knowledge."},
+    {"where": "Page 1, the first paragraph", "text": "Answer all items in English. (Type or Print)"},
+    {"where": "Page 1, the paragraph before item 1", "text": "You must answer all questions on the form even if the answer is “$0.00”."},
+    {"where": "Page 1, item 1", "text": "Adjust any amount that was received weekly, biweekly, quarterly, semiannually, or annually to show the average monthly rate. Use gross amounts, that is, amounts before any deductions for taxes and other state/federal payroll withholdings."},
+    {"where": "Page 2, item 2", "text": "Adjust any payments that are made weekly, biweekly, quarterly, semiannually, or annually to show the monthly rate."},
+    {"where": "Page 2, item 4", "text": "Include your name and “A” number on all pages of any additional document(s) or additional pages."},
+    {"where": "Page 2, the attorney's box", "text": "(If an attorney or representative is submitting this form, the attorney or representative must complete, sign, and date below. )"},
+    {"where": "Page 2, the attorney's attestation", "text": "I hereby attest that I have reviewed the details provided herein and I am satisfied that this fee waiver request is made in good faith."}
+  ],
+  "declaration": {
+    "en": "I declare under penalty of perjury, pursuant to 28 U.S.C. § 1746, that I am the person above and that I am unable to pay the filing fee. I believe that my application/motion/appeal is valid and not frivolous, and I declare that the following information is true and correct to the best of my knowledge.",
+    "pt": "Declaro, sob pena de perjúrio, de acordo com 28 U.S.C. § 1746, que sou a pessoa indicada acima e que não consigo pagar a taxa do pedido. Acredito que o meu pedido, a minha petição ou o meu recurso é válido e não é infundado, e declaro que as informações a seguir são verdadeiras e corretas, até onde sei.",
+    "es": "Declaro, bajo pena de perjurio, conforme a 28 U.S.C. § 1746, que soy la persona indicada arriba y que no puedo pagar la tarifa de presentación. Creo que mi solicitud, moción o apelación es válida y no es frívola, y declaro que la información siguiente es verdadera y correcta, según mi leal saber y entender.",
+    "ht": "Mwen deklare, sou pèn pèjiri, daprè 28 U.S.C. § 1746, ke mwen se moun ki endike anwo a e ke mwen pa ka peye frè depo a. Mwen kwè demann mwen an, mosyon mwen an oswa apèl mwen an valab e li pa san fondman, e mwen deklare enfòmasyon ki vini yo vre e kòrèk, daprè sa mwen konnen."
+  },
+  "hardship": {
+    "_note": "Item 4's sentence. DRAFT wordings the attorney approves per case; a slot is filled only from the client's own figures (the product's arithmetic). Which one is suggested follows the sign of the difference between income and expenses. No model writes or changes a sentence.",
+    "max_characters": 600,
+    "wordings": [
+      {
+        "id": "expenses_exceed",
+        "when": "difference_below_zero",
+        "text": {
+          "en": "My average monthly expenses ({expense_total}) are more than my average monthly income ({income_total}). I have nothing left each month to pay the filing fee.",
+          "pt": "Minhas despesas médias por mês ({expense_total}) são maiores que a minha renda média por mês ({income_total}). Não sobra nada por mês para pagar a taxa do pedido.",
+          "es": "Mis gastos mensuales promedio ({expense_total}) son mayores que mis ingresos mensuales promedio ({income_total}). No me queda nada cada mes para pagar la tarifa de presentación.",
+          "ht": "Depans mwen chak mwa an mwayèn ({expense_total}) pi plis pase lajan mwen touche chak mwa an mwayèn ({income_total}). Pa rete anyen chak mwa pou m peye frè depo a."
+        }
+      },
+      {
+        "id": "nothing_left",
+        "when": "difference_zero",
+        "text": {
+          "en": "All of my average monthly income ({income_total}) goes to my average monthly expenses ({expense_total}). I have nothing left each month to pay the filing fee.",
+          "pt": "Toda a minha renda média por mês ({income_total}) vai para as minhas despesas médias por mês ({expense_total}). Não sobra nada por mês para pagar a taxa do pedido.",
+          "es": "Todos mis ingresos mensuales promedio ({income_total}) se van en mis gastos mensuales promedio ({expense_total}). No me queda nada cada mes para pagar la tarifa de presentación.",
+          "ht": "Tout lajan mwen touche chak mwa an mwayèn ({income_total}) ale nan depans mwen chak mwa an mwayèn ({expense_total}). Pa rete anyen chak mwa pou m peye frè depo a."
+        }
+      },
+      {
+        "id": "little_left",
+        "when": "difference_above_zero",
+        "text": {
+          "en": "After my average monthly expenses ({expense_total}) are paid from my average monthly income ({income_total}), {difference} is left each month. That is not enough to pay the filing fee.",
+          "pt": "Depois de pagar as minhas despesas médias por mês ({expense_total}) com a minha renda média por mês ({income_total}), sobram {difference} por mês. Isso não é o bastante para pagar a taxa do pedido.",
+          "es": "Después de pagar mis gastos mensuales promedio ({expense_total}) con mis ingresos mensuales promedio ({income_total}), me quedan {difference} cada mes. Eso no alcanza para pagar la tarifa de presentación.",
+          "ht": "Apre m fin peye depans mwen chak mwa an mwayèn ({expense_total}) ak lajan mwen touche chak mwa an mwayèn ({income_total}), rete {difference} chak mwa. Sa pa ase pou m peye frè depo a."
+        }
+      }
+    ]
+  },
+  "section": {
+    "id": "money",
+    "title": {"pt": "Seu dinheiro por mês", "es": "Su dinero por mes", "en": "Your monthly money", "ht": "Lajan ou chak mwa"},
+    "intro": {
+      "pt": "O tribunal pergunta sobre o seu dinheiro em um mês comum. Responda todas as linhas. Se uma linha não serve para você, digite 0: o próprio formulário diz para responder todas as linhas, mesmo quando o valor é $0.00. Use os valores antes de tirar os impostos. Se você recebe ou paga por semana ou por ano, primeiro transforme em valor por mês (veja o exemplo abaixo).",
+      "es": "El tribunal pregunta por su dinero en un mes común. Responda todas las líneas. Si una línea no le corresponde, escriba 0: el propio formulario dice que se responda todas las líneas, aunque la cantidad sea $0.00. Use las cantidades antes de quitar los impuestos. Si recibe o paga por semana o por año, primero conviértalo a una cantidad por mes (vea el ejemplo abajo).",
+      "en": "The court asks about your money in a usual month. Answer every line. If a line does not apply to you, type 0: the form itself says to answer every line even when the amount is $0.00. Use the amounts before taxes are taken out. If you are paid or you pay by the week or by the year, first turn it into an amount for one month (see the example below).",
+      "ht": "Tribinal la mande sou lajan ou nan yon mwa òdinè. Reponn tout liy yo. Si yon liy pa konsène w, ekri 0: fòm nan menm di pou reponn tout liy yo, menm lè montan an se $0.00. Sèvi ak montan yo anvan yo retire taks. Si ou touche oswa ou peye pa semèn oswa pa ane, premye mete l an montan pou yon mwa (gade egzanp ki anba a)."
+    },
+    "example": {
+      "pt": "Como transformar em valor por mês. Pago toda semana: multiplique por 52 e divida por 12 (exemplo: $200 por semana são 200 × 52 = 10.400 por ano, e 10.400 ÷ 12 = 866,67 por mês). Pago a cada duas semanas: multiplique por 26 e divida por 12 (exemplo: $400 a cada duas semanas são 400 × 26 = 10.400 por ano, ou 866,67 por mês). Pago duas vezes por mês: multiplique por 2. Pago a cada três meses: divida por 3. Pago duas vezes por ano: divida por 6. Pago uma vez por ano: divida por 12 (exemplo: $1.200 por ano são $100 por mês).",
+      "es": "Cómo convertirlo a una cantidad por mes. Pagado cada semana: multiplique por 52 y divida entre 12 (ejemplo: $200 por semana son 200 × 52 = 10,400 al año, y 10,400 ÷ 12 = 866.67 al mes). Pagado cada dos semanas: multiplique por 26 y divida entre 12 (ejemplo: $400 cada dos semanas son 400 × 26 = 10,400 al año, o 866.67 al mes). Pagado dos veces al mes: multiplique por 2. Pagado cada tres meses: divida entre 3. Pagado dos veces al año: divida entre 6. Pagado una vez al año: divida entre 12 (ejemplo: $1,200 al año son $100 al mes).",
+      "en": "How to turn an amount into one for a month. Paid every week: multiply by 52, then divide by 12 (example: $200 a week is 200 × 52 = 10,400 a year, and 10,400 ÷ 12 = 866.67 a month). Paid every two weeks: multiply by 26, then divide by 12 (example: $400 every two weeks is 400 × 26 = 10,400 a year, or 866.67 a month). Paid twice a month: multiply by 2. Paid every three months: divide by 3. Paid twice a year: divide by 6. Paid once a year: divide by 12 (example: $1,200 a year is $100 a month).",
+      "ht": "Kijan pou chanje yon montan an montan pou yon mwa. Peye chak semèn: miltipliye pa 52, apre sa divize pa 12 (egzanp: $200 chak semèn se 200 × 52 = 10,400 pa ane, e 10,400 ÷ 12 = 866.67 pa mwa). Peye chak de semèn: miltipliye pa 26, apre sa divize pa 12 (egzanp: $400 chak de semèn se 400 × 26 = 10,400 pa ane, oswa 866.67 pa mwa). Peye de fwa pa mwa: miltipliye pa 2. Peye chak twa mwa: divize pa 3. Peye de fwa pa ane: divize pa 6. Peye yon fwa pa ane: divize pa 12 (egzanp: $1,200 pa ane se $100 pa mwa)."
+    },
+    "why": {
+      "pt": "O seu advogado vai pedir ao juiz para dispensar a taxa do tribunal. Para isso, o juiz quer saber quanto dinheiro entra e quanto sai todo mês. Você vai ler tudo e assinar antes de o escritório usar.",
+      "es": "Su abogado le pedirá al juez que le exima de la tarifa del tribunal. Para eso, el juez quiere saber cuánto dinero entra y cuánto sale cada mes. Usted leerá todo y firmará antes de que la oficina lo use.",
+      "en": "Your attorney will ask the judge to waive the court's fee. For that, the judge wants to know how much money comes in and goes out each month. You will read everything and sign before the office uses it.",
+      "ht": "Avoka w la pral mande jij la pou li pa fè w peye frè tribinal la. Pou sa, jij la vle konnen konbyen lajan ki antre ak konbyen ki soti chak mwa. W ap li tout bagay epi siyen anvan biwo a sèvi ak li."
+    },
+    "intro_appeal": {
+      "pt": "O Conselho pergunta sobre o seu dinheiro em um mês comum. Responda todas as linhas. Se uma linha não serve para você, digite 0: o próprio formulário diz para responder todas as linhas, mesmo quando o valor é $0.00. Use os valores antes de tirar os impostos. Se você recebe ou paga por semana ou por ano, primeiro transforme em valor por mês (veja o exemplo abaixo).",
+      "es": "La Junta pregunta por su dinero en un mes común. Responda todas las líneas. Si una línea no le corresponde, escriba 0: el propio formulario dice que se responda todas las líneas, aunque la cantidad sea $0.00. Use las cantidades antes de quitar los impuestos. Si recibe o paga por semana o por año, primero conviértalo a una cantidad por mes (vea el ejemplo abajo).",
+      "en": "The Board asks about your money in a usual month. Answer every line. If a line does not apply to you, type 0: the form itself says to answer every line even when the amount is $0.00. Use the amounts before taxes are taken out. If you are paid or you pay by the week or by the year, first turn it into an amount for one month (see the example below).",
+      "ht": "Komisyon an mande sou lajan ou nan yon mwa òdinè. Reponn tout liy yo. Si yon liy pa konsène w, ekri 0: fòm nan menm di pou reponn tout liy yo, menm lè montan an se $0.00. Sèvi ak montan yo anvan yo retire taks. Si ou touche oswa ou peye pa semèn oswa pa ane, premye mete l an montan pou yon mwa (gade egzanp ki anba a)."
+    },
+    "why_appeal": {
+      "pt": "O seu advogado vai pedir ao Conselho de Apelações de Imigração (BIA) para dispensar a taxa do Conselho. Para isso, o Conselho quer saber quanto dinheiro entra e quanto sai todo mês. Você vai ler tudo e assinar antes de o escritório usar.",
+      "es": "Su abogado le pedirá a la Junta de Apelaciones de Inmigración (BIA) que le exima de la tarifa de la Junta. Para eso, la Junta quiere saber cuánto dinero entra y cuánto sale cada mes. Usted leerá todo y firmará antes de que la oficina lo use.",
+      "en": "Your attorney will ask the Board of Immigration Appeals to waive the Board's fee. For that, the Board wants to know how much money comes in and goes out each month. You will read everything and sign before the office uses it.",
+      "ht": "Avoka w la pral mande Komisyon Apèl Imigrasyon an (BIA) pou li pa fè w peye frè Komisyon an. Pou sa, Komisyon an vle konnen konbyen lajan ki antre ak konbyen ki soti chak mwa. W ap li tout bagay epi siyen anvan biwo a sèvi ak li."
+    },
+    "minutes": 10,
+    "icon": "file",
+    "questions": [
+      {
+        "id": "fw_income_work", "type": "money", "required": true, "fact": "eoir26a.income_employment",
+        "label": {"pt": "Pagamento de trabalho ou do seu próprio negócio, por mês", "es": "Pago por trabajo o por su propio negocio, por mes", "en": "Pay from a job or your own business, each month", "ht": "Lajan travay oswa biznis pa w, chak mwa"},
+        "help": {
+          "pt": "Dinheiro de trabalhar para alguém ou do seu próprio negócio (com gorjetas, hora extra e trabalhos pagos em dinheiro), antes de tirar os impostos. Use o valor de um mês comum. Se não tem, digite 0.",
+          "es": "Dinero por trabajar para alguien o por su propio negocio (con propinas, horas extra y trabajos pagados en efectivo), antes de quitar los impuestos. Use la cantidad de un mes común. Si no tiene, escriba 0.",
+          "en": "Money from working for someone, or from your own business (with tips, overtime and jobs paid in cash), before taxes are taken out. Use the amount for a usual month. If you have none, type 0.",
+          "ht": "Lajan nan travay pou yon moun, oswa nan biznis pa w (ak ti kòb, ovètan ak travay yo peye an lajan kach), anvan yo retire taks. Sèvi ak montan yon mwa òdinè. Si ou pa gen, ekri 0."
+        },
+        "tip": {
+          "pt": "Se o seu pagamento muda de mês para mês, adicione os últimos três meses e divida por 3.",
+          "es": "Si su pago cambia de un mes a otro, sume los últimos tres meses y divida entre 3.",
+          "en": "If your pay changes from month to month, add up the last three months and divide by 3.",
+          "ht": "Si lajan w touche chanje de yon mwa a yon lòt, adisyone twa dènye mwa yo epi divize pa 3."
+        }
+      },
+      {
+        "id": "fw_income_property", "type": "money", "required": true, "fact": "eoir26a.income_property",
+        "label": {"pt": "Aluguel que você recebe de imóveis seus, por mês", "es": "Alquiler que recibe de propiedades suyas, por mes", "en": "Rent you receive from property you own, each month", "ht": "Lwaye ou resevwa nan pwopriyete ou posede, chak mwa"},
+        "help": {
+          "pt": "Por exemplo, o aluguel que um inquilino paga a você. Se você não tem imóvel que dá dinheiro, digite 0.",
+          "es": "Por ejemplo, el alquiler que un inquilino le paga a usted. Si no tiene propiedades que le den dinero, escriba 0.",
+          "en": "For example, rent that a tenant pays you. If you own no property that earns money, type 0.",
+          "ht": "Pa egzanp, lwaye yon lokatè peye w. Si ou pa posede okenn pwopriyete ki bay lajan, ekri 0."
+        },
+        "tip": {
+          "pt": "Quase todo mundo digita 0 aqui. Isso é normal.",
+          "es": "Casi todos escriben 0 aquí. Es normal.",
+          "en": "Most people type 0 here. That is normal.",
+          "ht": "Prèske tout moun ekri 0 isit la. Sa nòmal."
+        }
+      },
+      {
+        "id": "fw_income_interest", "type": "money", "required": true, "fact": "eoir26a.income_interest",
+        "label": {"pt": "Juros das suas contas no banco, por mês", "es": "Intereses de sus cuentas del banco, por mes", "en": "Interest from your bank accounts, each month", "ht": "Enterè kont labank ou yo, chak mwa"},
+        "help": {
+          "pt": "O juro que a sua conta corrente ou de poupança paga a você. Costuma ser muito pouco. Se não tem, digite 0.",
+          "es": "El interés que le pagan su cuenta corriente o de ahorros. Suele ser muy poco. Si no tiene, escriba 0.",
+          "en": "The interest your checking or savings accounts pay you. It is usually very little. If none, type 0.",
+          "ht": "Enterè kont chèk oswa kont epay ou peye w. Souvan se tou piti. Si pa gen, ekri 0."
+        },
+        "tip": {
+          "pt": "O extrato do banco mostra o juro do mês.",
+          "es": "El estado de cuenta del banco muestra el interés del mes.",
+          "en": "Your bank statement shows the interest for the month.",
+          "ht": "Relve labank ou montre enterè mwa a."
+        }
+      },
+      {
+        "id": "fw_income_other", "type": "money", "required": true, "fact": "eoir26a.income_other",
+        "label": {"pt": "Todo outro dinheiro que você recebe, por mês", "es": "Todo otro dinero que recibe, por mes", "en": "All other money you receive, each month", "ht": "Tout lòt lajan ou resevwa, chak mwa"},
+        "help": {
+          "pt": "Pensão para filhos, pensão do ex-cônjuge, Social Security, seguro-desemprego, ajuda do governo, dinheiro que a família ou amigos dão com regularidade, dividendos, anuidades e qualquer outro dinheiro. Adicione tudo. Se não tem, digite 0.",
+          "es": "Manutención de hijos, pensión del excónyuge, Seguro Social, desempleo, ayuda del gobierno, dinero que familia o amigos le dan con regularidad, dividendos, anualidades y cualquier otro dinero. Sume todo. Si no tiene, escriba 0.",
+          "en": "Child support, alimony, Social Security, unemployment, government help, money that family or friends give you regularly, dividends, annuities and any other money. Add it all up. If none, type 0.",
+          "ht": "Sipò pou timoun, pansyon ansyen mari oswa ansyen madanm, Sekirite Sosyal, chomaj, èd gouvènman, lajan fanmi oswa zanmi ba w regilyèman, dividann, anwite ak nenpòt lòt lajan. Adisyone tout. Si pa gen, ekri 0."
+        },
+        "tip": {
+          "pt": "Se não tem certeza se algo conta, escreva para o escritório: o advogado decide.",
+          "es": "Si no sabe si algo cuenta, escríbale a la oficina: el abogado decide.",
+          "en": "If you are not sure whether something counts, write to the office: the attorney decides.",
+          "ht": "Si ou pa sèten si yon bagay konte, ekri biwo a: avoka a deside."
+        }
+      },
+      {
+        "id": "fw_exp_rent", "type": "money", "required": true, "fact": "eoir26a.expense_rent",
+        "label": {"pt": "Aluguel ou prestação da casa, por mês", "es": "Alquiler o hipoteca de la vivienda, por mes", "en": "Rent or mortgage, each month", "ht": "Lwaye oswa ipotèk kay la, chak mwa"},
+        "help": {
+          "pt": "O que você paga por mês pelo lugar onde mora (aluguel, financiamento da casa ou o terreno de uma casa móvel). Se não paga nada, digite 0.",
+          "es": "Lo que paga por mes por el lugar donde vive (alquiler, hipoteca o el terreno de una casa móvil). Si no paga nada, escriba 0.",
+          "en": "What you pay each month for the place you live (rent, mortgage, or the lot for a mobile home). If you pay nothing, type 0.",
+          "ht": "Sa ou peye chak mwa pou kote ou rete a (lwaye, ipotèk, oswa tè yon kay mobil). Si ou pa peye anyen, ekri 0."
+        },
+        "tip": {
+          "pt": "Se você divide o aluguel com outras pessoas, escreva só a sua parte.",
+          "es": "Si comparte el alquiler con otras personas, escriba solo su parte.",
+          "en": "If you share the rent with other people, write only your part.",
+          "ht": "Si ou pataje lwaye a ak lòt moun, ekri sèlman pòsyon pa w."
+        }
+      },
+      {
+        "id": "fw_exp_utilities", "type": "money", "required": true, "fact": "eoir26a.expense_utilities",
+        "label": {"pt": "Contas da casa (luz, gás, água, telefone), por mês", "es": "Servicios de la casa (luz, gas, agua, teléfono), por mes", "en": "Utilities, each month", "ht": "Faktè kay la (limyè, gaz, dlo, telefòn), chak mwa"},
+        "help": {
+          "pt": "Luz, combustível de aquecimento, água, esgoto, telefone e internet, tudo somado. Se não paga nada, digite 0.",
+          "es": "Electricidad, combustible para calefacción, agua, alcantarillado, teléfono e internet, todo sumado. Si no paga nada, escriba 0.",
+          "en": "Electricity, heating fuel, water, sewer, telephone and internet, added together. If you pay nothing, type 0.",
+          "ht": "Elektrisite, gaz chofaj, dlo, egou, telefòn ak entènèt, tout adisyone. Si ou pa peye anyen, ekri 0."
+        },
+        "tip": {
+          "pt": "Contas que mudam com a estação: adicione um ano e divida por 12.",
+          "es": "Cuentas que cambian con la estación: sume un año y divida entre 12.",
+          "en": "Bills that change with the season: add up a year and divide by 12.",
+          "ht": "Faktè ki chanje ak sezon an: adisyone yon ane epi divize pa 12."
+        }
+      },
+      {
+        "id": "fw_exp_debts", "type": "money", "required": true, "fact": "eoir26a.expense_installment",
+        "label": {"pt": "Pagamentos de dívidas, por mês", "es": "Pagos de deudas, por mes", "en": "Payments on debts, each month", "ht": "Peman dèt yo, chak mwa"},
+        "help": {
+          "pt": "Cartões de crédito, cartões de loja, prestação do carro, empréstimos pessoais. Não conte aqui o aluguel nem a prestação da casa. Se não paga nada, digite 0.",
+          "es": "Tarjetas de crédito, tarjetas de tiendas, pago del carro, préstamos personales. No cuente aquí el alquiler ni la hipoteca. Si no paga nada, escriba 0.",
+          "en": "Credit cards, store cards, car payment, personal loans. Do not count your rent or mortgage here. If you pay nothing, type 0.",
+          "ht": "Kat kredi, kat magazen, peman machin, prè pèsonèl. Pa konte lwaye oswa ipotèk la isit la. Si ou pa peye anyen, ekri 0."
+        },
+        "tip": {
+          "pt": "Conte só o que você paga por mês, não o total da dívida.",
+          "es": "Cuente solo lo que paga por mes, no el total de la deuda.",
+          "en": "Count only what you pay each month, not the whole debt.",
+          "ht": "Konte sèlman sa ou peye chak mwa, pa tout dèt la."
+        }
+      },
+      {
+        "id": "fw_exp_living", "type": "money", "required": true, "fact": "eoir26a.expense_living",
+        "label": {"pt": "Custos de vida, por mês", "es": "Costos de vida, por mes", "en": "Living costs, each month", "ht": "Depans lavi chak jou, chak mwa"},
+        "help": {
+          "pt": "Comida, roupa, transporte, cuidado dos filhos, custos de escola e coisas parecidas, tudo somado. Se não gasta nada, digite 0.",
+          "es": "Comida, ropa, transporte, cuidado de los niños, gastos escolares y cosas parecidas, todo sumado. Si no gasta nada, escriba 0.",
+          "en": "Food, clothing, transportation, child care, school costs and the like, added together. If you spend nothing, type 0.",
+          "ht": "Manje, rad, transpò, gadri timoun, depans lekòl ak bagay ki sanble, tout adisyone. Si ou pa depanse anyen, ekri 0."
+        },
+        "tip": {
+          "pt": "Pense no que você gasta em uma semana comum e use o exemplo acima para passar para um mês.",
+          "es": "Piense en lo que gasta en una semana común y use el ejemplo de arriba para pasarlo a un mes.",
+          "en": "Think of what you spend in a usual week and use the example above to turn it into a month.",
+          "ht": "Panse sou sa ou depanse nan yon semèn òdinè epi sèvi ak egzanp ki anwo a pou chanje l an yon mwa."
+        }
+      },
+      {
+        "id": "fw_exp_other", "type": "money", "required": true, "fact": "eoir26a.expense_other",
+        "label": {"pt": "Todas as outras despesas, por mês", "es": "Todos los otros gastos, por mes", "en": "All other expenses, each month", "ht": "Tout lòt depans, chak mwa"},
+        "help": {
+          "pt": "Seguro, despesas médicas e de saúde, impostos, pensão que você paga, honorários de advogado e qualquer outra despesa. Adicione tudo. Se não tem, digite 0.",
+          "es": "Seguro, gastos médicos y de salud, impuestos, manutención que usted paga, honorarios de abogado y cualquier otro gasto. Sume todo. Si no tiene, escriba 0.",
+          "en": "Insurance, medical and health costs, taxes, support you pay, attorney fees and any other expense. Add it all up. If none, type 0.",
+          "ht": "Asirans, depans medikal ak sante, taks, sipò ou peye, onorè avoka ak nenpòt lòt depans. Adisyone tout. Si pa gen, ekri 0."
+        },
+        "tip": {
+          "pt": "Se um gasto não cabe nas linhas de cima, ele vem para cá.",
+          "es": "Si un gasto no cabe en las líneas de arriba, va aquí.",
+          "en": "If an expense does not fit the lines above, it goes here.",
+          "ht": "Si yon depans pa kadre nan liy ki anwo yo, li ale isit la."
+        }
+      }
+    ]
+  }
+}

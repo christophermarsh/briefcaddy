@@ -1,0 +1,77 @@
+{
+  "_about": "The green card renewal or replacement (I-90) packet (src/packet.py, src/card_renewal.py), per the I-90 Instructions (01/20/25): the G-28 and the I-90, then a copy of the current card (front and back) (or, if it was lost or never received, a government photo ID) and proof of any name change. No photos: USCIS takes them at the biometrics appointment. A conditional resident whose 2-year card is ending files the I-751 instead. The attorney approves titles and order.",
+  "filing": "i90",
+  "title": "I-90 application (green card renewal or replacement)",
+  "packet_pdf": "packet_i90.pdf",
+  "manifest": "packet_i90.json",
+  "choices": "packet_choices_i90.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i90.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i90",
+    "i90"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "No photos with the I-90: USCIS takes them at the biometrics appointment."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "green_card",
+      "title": "Copy of the current Permanent Resident Card (front and back)",
+      "types": [
+        "green_card"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Government-issued photo identification (passport, driver's license)",
+      "types": [
+        "passport",
+        "drivers_license",
+        "national_id"
+      ]
+    },
+    {
+      "id": "name_change",
+      "title": "Proof of the legal name change (marriage certificate, divorce decree or court order)",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "USCIS notices",
+      "types": [
+        "uscis_notice",
+        "i485_receipt"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "ssn_card": "Not asked for with this application.",
+    "w2": "Not asked for with this application.",
+    "pay_stub": "Not asked for with this application.",
+    "birth_certificate": "Not asked for with the I-90.",
+    "i94": "Not asked for with the I-90.",
+    "visa": "Not asked for with the I-90.",
+    "work_permit": "A resident's old work permit isn't needed.",
+    "sij_order": "Part of the green-card case, not needed for the I-90.",
+    "i360_approval": "Part of the green-card case, not needed for the I-90.",
+    "bank_statement": "Not asked for with the I-90.",
+    "lease": "Not asked for with the I-90.",
+    "utility_bill": "Not asked for with the I-90.",
+    "tax_return": "Not asked for with the I-90."
+  }
+}

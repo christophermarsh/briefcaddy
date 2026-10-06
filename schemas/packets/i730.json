@@ -1,0 +1,72 @@
+{
+  "_about": "Form I-730, Refugee/Asylee Relative Petition (src/i730.py): for each spouse or unmarried child under 21, a G-28 and an I-730 (8 CFR 208.21(c)-(d), 207.7(d): a separate petition for each); then the evidence the I-730 page and Instructions ask for (uscis.gov/i-730, updated 09/09/2026): proof of the client's asylee or refugee status, a photo of each relative, the relationship (marriage certificate and earlier marriages ended, each child's birth certificate, adoption or stepchild records), a relative in the U.S.: their I-94. Mailed to USCIS, Attn: I-730, P.O. Box 20018, Phoenix. No fee (Form G-1055 10/01/26). DRAFT: the attorney approves titles and order.",
+  "filing": "i730",
+  "title": "Relative petition for a spouse or child (I-730)",
+  "packet_pdf": "packet_i730.pdf",
+  "manifest": "packet_i730.json",
+  "choices": "packet_choices_i730.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i730.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i730_1",
+    "i730_1"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "A passport-style photograph (or a recent clear photo) of each relative: USCIS may send a request for evidence without it (uscis.gov/i-730)."
+    },
+    {
+      "kind": "attach",
+      "text": "The proof of each relationship: the marriage certificate and the end of any earlier marriage; each child's birth certificate naming the client (and, for a father, the marriage certificate or legitimation); a stepchild's or adopted child's records; certified English translations (I-730 Instructions)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "status",
+      "title": "Proof of the petitioner's asylee or refugee status: the asylum approval or the immigration judge's order, the I-94, the work permit",
+      "types": [
+        "uscis_notice",
+        "i590_approval",
+        "i94",
+        "notice_to_appear",
+        "work_permit"
+      ],
+      "required": true
+    },
+    {
+      "id": "relationship",
+      "title": "Proof of the relationship: marriage certificate, documents ending earlier marriages, birth certificates, with certified English translations",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree",
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "required": true
+    },
+    {
+      "id": "identity",
+      "title": "Identity documents: passports",
+      "types": [
+        "passport",
+        "visa"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "declaration": "The asylum declaration was part of the I-589, not asked for with the I-730.",
+    "country_conditions": "Asylum evidence, not asked for with the I-730.",
+    "news_article": "Asylum evidence, not asked for with the I-730.",
+    "medical_record": "Not asked for with the I-730.",
+    "photograph": "Asylum evidence, not asked for with the I-730.",
+    "ssn_card": "Not asked for with the I-730.",
+    "drivers_license": "Not asked for with the I-730.",
+    "sij_order": "A state court SIJ order: not part of an I-730. Ask the attorney.",
+    "i360_approval": "An I-360: not part of an I-730. Ask the attorney."
+  }
+}

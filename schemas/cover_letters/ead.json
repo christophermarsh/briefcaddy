@@ -1,0 +1,28 @@
+{
+  "_about": "The I-765 (work permit) cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The subject (the category), the address (uscis.gov/i-765-addresses, updated 03/03/2026) and the fee (Form G-1055 10/01/26, Appendix C) come from src/work_permit.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": ["[set by the filing's module]"],
+  "noun": "application",
+  "re_lines": ["Application: I-765 Application for Employment Authorization"],
+  "who": "Applicant",
+  "form_order": ["g28_ead", "ead"],
+  "always_forms": [],
+  "forms": {
+    "g28_ead": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "ead": "Applicant’s I-765 - Application for Employment Authorization"
+  },
+  "documents": [
+    ["uscis_notice", "Copies of USCIS Notices (the basis of the category)"],
+    ["i485_receipt", "Copy of the Form I-485 Receipt Notice"],
+    ["work_permit", "Copy of Applicant’s Current Employment Authorization Document (front and back)"],
+    ["i94", "Copy of Applicant’s Form I-94"],
+    ["passport", "Copy of Applicant’s Passport"],
+    ["criminal_record", "Certified Court Dispositions"],
+    ["photos", "Two Passport-Style Photographs"]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {"kind": "sign", "text": "Cover letter: the attorney signs it."},
+    {"kind": "attach", "text": "Enclose the fee or fees the cover letter states by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: a Pub. L. 119-21 fee as its own payment.", "unless": "no_payment"}
+  ]
+}

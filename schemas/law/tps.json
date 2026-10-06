@@ -1,0 +1,717 @@
+{
+  "_about": "The countries the firm's TPS filing (src/tps.py) knows, copied from USCIS's Temporary Protected Status page and each country's own page (read 10/02/2026). A TPS application may be filed ONLY in the registration or re-registration period the country's Federal Register notice sets (8 CFR 244.17(a)-(b), 244.2(f); the I-821 page: 'All TPS applicants should wait to file ... until publication of the Federal Register notice for their respective TPS country'): so the filing is offered only while a period in 'periods' is open today, and never from a fixed number of days. When USCIS opens one (a new designation or re-designation, or an extension with a re-registration period), copy the notice's dates into the country's 'periods' (kind, from, to, the Federal Register citation and its URL), its 'through', and any new filing address, from the country's page: nothing else needs to change (schemas/maintenance.json: tps_status). 'status': designated | terminated. 'lockboxes': each lockbox's USPS and courier lines and the states it takes ('*' is every state).",
+  "source": "https://www.uscis.gov/humanitarian/temporary-protected-status",
+  "page_updated": "09/09/2026",
+  "read_on": "2026-10-02",
+  "rule": "8 CFR 244.17(a)-(b): 'Applicants for re-registration must apply during the period provided by USCIS'; 'If an alien fails to register without good cause, USCIS will withdraw Temporary Protected Status' (eCFR, current as of 10/01/2026). USCIS's TPS page: 'you must re-register during each re-registration period to maintain TPS benefits'; late re-registration needs good cause and a letter; a late initial application needs one of the page's late-initial conditions.",
+  "countries": {
+    "El Salvador": {
+      "status": "designated",
+      "aliases": [
+        "EL SALVADOR",
+        "SALVADORAN",
+        "SALVADOREAN"
+      ],
+      "page": "https://www.uscis.gov/humanitarian/temporary-protected-status/temporary-protected-status-designated-country-el-salvador",
+      "page_updated": "09/03/2026",
+      "page_updated_iso": "2026-09-03",
+      "read_on": "2026-10-03",
+      "through": "2026-09-09",
+      "note": "USCIS's El Salvador page (last reviewed 09/03/2026, read 10/03/2026) says 'An announcement on El Salvador's TPS will be made at the appropriate time. Until such announcement is made, Salvadoran individuals present in the U.S. under TPS retain protection including work authorization.' and gives TPS continued through 09/09/2026, with no later date and no period, so none is recorded. 8 U.S.C. 1254a(b)(3)(C) (read 10/03/2026) extends a designation by six months when the Attorney General makes no determination: the 09/09/2026 date is therefore not shown as the end.",
+      "designation_date": "2001-03-09",
+      "continuous_residence_since": "2001-02-13",
+      "continuous_presence_since": "2001-03-09",
+      "periods": [
+        {
+          "kind": "re-registration",
+          "from": "2025-01-17",
+          "to": "2025-03-18",
+          "source": "90 FR 5953 (Jan. 17, 2025)",
+          "url": "https://www.federalregister.gov/documents/2025/01/17/2025-00626/extension-of-the-designation-of-el-salvador-for-temporary-protected-status"
+        }
+      ],
+      "lockboxes": {
+        "Dallas": {
+          "name": "USCIS Dallas Lockbox",
+          "usps": [
+            "USCIS",
+            "Attn: TPS El Salvador",
+            "P.O. Box 660864",
+            "Dallas, TX 75266-0864"
+          ],
+          "courier": [
+            "USCIS",
+            "Attn: TPS El Salvador (Box 660864)",
+            "2501 S. State Highway, 121 Business",
+            "Suite 400",
+            "Lewisville, TX 75067-8003"
+          ],
+          "states": [
+            "TX"
+          ]
+        },
+        "Chicago": {
+          "name": "USCIS Chicago Lockbox",
+          "usps": [
+            "USCIS",
+            "Attn: TPS El Salvador",
+            "P.O. Box 8635",
+            "Chicago, IL 60680-8635"
+          ],
+          "courier": [
+            "USCIS",
+            "Attn: TPS El Salvador (Box 8635)",
+            "131 S. Dearborn – 3rd Floor",
+            "Chicago, IL 60603-5517"
+          ],
+          "states": [
+            "AS",
+            "AZ",
+            "CA",
+            "CT",
+            "DC",
+            "DE",
+            "GA",
+            "GU",
+            "IL",
+            "IN",
+            "KY",
+            "MA",
+            "ME",
+            "MI",
+            "MP",
+            "NC",
+            "NH",
+            "NJ",
+            "NV",
+            "OH",
+            "OR",
+            "PA",
+            "PR",
+            "RI",
+            "SC",
+            "VA",
+            "VI",
+            "VT",
+            "WA",
+            "WV"
+          ]
+        },
+        "Elgin": {
+          "name": "USCIS Elgin Lockbox",
+          "usps": [
+            "USCIS",
+            "Attn: TPS El Salvador",
+            "P.O. Box 4091",
+            "Carol Stream, IL 60197-4091"
+          ],
+          "courier": [
+            "USCIS",
+            "Attn: TPS El Salvador (Box 4091)",
+            "2500 Westfield Drive",
+            "Elgin, IL 60124-7836"
+          ],
+          "states": [
+            "AK",
+            "AL",
+            "AR",
+            "CO",
+            "FL",
+            "HI",
+            "IA",
+            "ID",
+            "KS",
+            "LA",
+            "MD",
+            "MN",
+            "MO",
+            "MS",
+            "MT",
+            "ND",
+            "NE",
+            "NM",
+            "NY",
+            "OK",
+            "SD",
+            "TN",
+            "UT",
+            "WI",
+            "WY"
+          ]
+        }
+      }
+    },
+    "Lebanon": {
+      "status": "designated",
+      "aliases": [
+        "LEBANON",
+        "LEBANESE"
+      ],
+      "page": "https://www.uscis.gov/humanitarian/temporary-protected-status/temporary-protected-status-designated-country-lebanon",
+      "page_updated": "05/29/2026",
+      "through": "2026-11-27",
+      "note": "USCIS's Lebanon page (05/29/2026): the designation is automatically extended for 6 months, through 11/27/2026 (91 FR 32069); 'there is no requirement for current TPS beneficiaries to re-register'. Someone who wants TPS for the first time files the initial application.",
+      "designation_date": "2024-11-27",
+      "continuous_residence_since": "2024-10-16",
+      "continuous_presence_since": "2024-11-27",
+      "periods": [
+        {
+          "kind": "initial",
+          "from": "2024-11-27",
+          "to": "2026-05-27",
+          "source": "89 FR 93641 (Nov. 27, 2024), registration period",
+          "url": "https://www.federalregister.gov/documents/2024/11/27/2024-27788/designation-of-lebanon-for-temporary-protected-status"
+        }
+      ],
+      "lockboxes": {
+        "Chicago": {
+          "name": "USCIS Chicago Lockbox",
+          "usps": [
+            "USCIS",
+            "Attn: TPS Lebanon",
+            "P.O. Box 6943",
+            "Chicago, IL 60680-6943"
+          ],
+          "courier": [
+            "USCIS",
+            "Attn: TPS Lebanon (Box 6943)",
+            "131 S. Dearborn St. 3rd Floor",
+            "Chicago, IL 60603-5517"
+          ],
+          "states": [
+            "*"
+          ]
+        }
+      }
+    },
+    "Sudan": {
+      "status": "designated",
+      "aliases": [
+        "SUDAN",
+        "SUDANESE"
+      ],
+      "page": "https://www.uscis.gov/humanitarian/temporary-protected-status/temporary-protected-status-designated-country-sudan",
+      "page_updated": "09/03/2026",
+      "through": "2026-10-19",
+      "note": "USCIS's Sudan page (09/03/2026): TPS continues through 10/19/2026 under the extension announced in 90 FR 5944 (Jan. 17, 2025).",
+      "designation_date": "2022-04-19",
+      "continuous_residence_since": "2023-08-16",
+      "continuous_presence_since": "2023-10-20",
+      "periods": [
+        {
+          "kind": "re-registration",
+          "from": "2025-01-17",
+          "to": "2025-03-18",
+          "source": "90 FR 5944 (Jan. 17, 2025)",
+          "url": "https://www.federalregister.gov/documents/2025/01/17/2025-00770/extension-of-the-designation-of-sudan-for-temporary-protected-status"
+        }
+      ],
+      "lockboxes": {
+        "Chicago": {
+          "name": "USCIS Chicago Lockbox",
+          "usps": [
+            "USCIS",
+            "Attn: TPS Sudan",
+            "P.O. Box 6943",
+            "Chicago, IL 60680-6943"
+          ],
+          "courier": [
+            "USCIS",
+            "Attn: TPS Sudan (Box 6943)",
+            "131 S. Dearborn St. 3rd Floor",
+            "Chicago, IL 60603-5517"
+          ],
+          "states": [
+            "*"
+          ]
+        }
+      }
+    },
+    "Ukraine": {
+      "status": "designated",
+      "aliases": [
+        "UKRAINE",
+        "UKRAINIAN"
+      ],
+      "page": "https://www.uscis.gov/humanitarian/temporary-protected-status/TPS-Ukraine",
+      "page_updated": "09/03/2026",
+      "through": "2026-10-19",
+      "note": "USCIS's Ukraine page (09/03/2026): TPS designated through 10/19/2026 (90 FR 5936).",
+      "designation_date": "2022-04-19",
+      "continuous_residence_since": "2023-08-16",
+      "continuous_presence_since": "2023-10-20",
+      "periods": [
+        {
+          "kind": "re-registration",
+          "from": "2025-01-17",
+          "to": "2025-03-18",
+          "source": "90 FR 5936 (Jan. 17, 2025)",
+          "url": "https://www.federalregister.gov/documents/2025/01/17/2025-00771/extension-of-the-designation-of-ukraine-for-temporary-protected-status"
+        },
+        {
+          "kind": "initial",
+          "from": "2023-08-21",
+          "to": "2025-04-19",
+          "source": "88 FR 56872 (Aug. 21, 2023), initial registration period",
+          "url": "https://www.federalregister.gov/public-inspection/2023-17875/extension-and-redesignation-of-ukraine-for-temporary-protected-status"
+        }
+      ],
+      "lockboxes": {
+        "Chicago": {
+          "name": "USCIS Chicago Lockbox",
+          "usps": [
+            "U.S. Citizenship and Immigration Services",
+            "Attn: TPS Ukraine",
+            "P.O. Box 4464",
+            "Chicago, IL 60680-4464"
+          ],
+          "courier": [
+            "U.S. Citizenship and Immigration Services",
+            "Attn: TPS Ukraine (Box 4464)",
+            "131 S. Dearborn St., 3rd Floor",
+            "Chicago, IL 60603-5517"
+          ],
+          "states": [
+            "AK",
+            "AL",
+            "AR",
+            "AS",
+            "AZ",
+            "CO",
+            "CT",
+            "DC",
+            "DE",
+            "FL",
+            "GA",
+            "GU",
+            "HI",
+            "IA",
+            "ID",
+            "IL",
+            "IN",
+            "KS",
+            "KY",
+            "LA",
+            "MA",
+            "MD",
+            "ME",
+            "NY",
+            "OH"
+          ]
+        },
+        "Phoenix": {
+          "name": "USCIS Phoenix Lockbox",
+          "usps": [
+            "U.S. Citizenship and Immigration Services",
+            "Attn: TPS Ukraine",
+            "P.O. Box 24047",
+            "Phoenix, AZ 85074-4047"
+          ],
+          "courier": [
+            "U.S. Citizenship and Immigration Services",
+            "Attn: TPS Ukraine (Box 24047)",
+            "2108 E. Elliot Rd.",
+            "Tempe, AZ 85284-1806"
+          ],
+          "states": [
+            "CA",
+            "MI",
+            "MN",
+            "MO",
+            "MP",
+            "MS",
+            "MT",
+            "NC",
+            "ND",
+            "NE",
+            "NH",
+            "NJ",
+            "NM",
+            "NV",
+            "OK",
+            "OR",
+            "PA",
+            "PR",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VA",
+            "VI",
+            "VT",
+            "WA",
+            "WI",
+            "WV",
+            "WY"
+          ]
+        }
+      }
+    },
+    "Venezuela": {
+      "status": "terminated",
+      "aliases": [
+        "VENEZUELA",
+        "VENEZUELAN"
+      ],
+      "page": "https://www.uscis.gov/humanitarian/temporary-protected-status/temporary-protected-status-designated-country-venezuela",
+      "page_updated": "10/23/2025",
+      "note": "USCIS's TPS page (09/09/2026): the 2023 Venezuela designation was terminated (the Supreme Court let the termination take effect on 10/03/2025); the 2021 designation's termination took effect 11/07/2025 (90 FR 43225, Sept. 8, 2025). Documents that say 10/02/2026 stay valid until that date.",
+      "periods": [],
+      "lockboxes": {}
+    }
+  },
+  "terminated": {
+    "_about": "Designations USCIS's TPS page (09/09/2026) lists as terminated, for the sentence the packet's panel shows. Not offered: nothing to file.",
+    "Ethiopia": {
+      "effective": "2026-08-18",
+      "source": "90 FR 58028 (Dec. 15, 2025)"
+    },
+    "Somalia": {
+      "effective": "2026-08-14",
+      "source": "91 FR 1547 (Jan. 14, 2026)"
+    },
+    "South Sudan": {
+      "effective": "2026-08-07",
+      "source": "90 FR 50484 (Nov. 6, 2025)"
+    },
+    "Burma (Myanmar)": {
+      "effective": "2026-08-07",
+      "source": "90 FR 53378 (Nov. 25, 2025)"
+    },
+    "Yemen": {
+      "effective": "2026-07-20",
+      "source": "91 FR 10402 (March 3, 2026)"
+    },
+    "Syria": {
+      "effective": "2026-07-27",
+      "source": "90 FR 45398 (Sept. 22, 2025)"
+    },
+    "Haiti": {
+      "effective": "2026-07-27",
+      "source": "90 FR 54733 (Nov. 28, 2025)"
+    },
+    "Honduras": {
+      "effective": "2025-09-08",
+      "source": "90 FR 30089 (July 8, 2025); litigation: National TPS Alliance v. Noem (9th Cir. stay, Feb. 9, 2026)"
+    },
+    "Nepal": {
+      "effective": "2025-08-05",
+      "source": "90 FR 24151 (June 6, 2025); litigation: National TPS Alliance v. Noem (9th Cir. stay, Feb. 9, 2026)"
+    },
+    "Nicaragua": {
+      "effective": "2025-09-08",
+      "source": "90 FR 30086 (July 8, 2025); litigation: National TPS Alliance v. Noem (9th Cir. stay, Feb. 9, 2026)"
+    },
+    "Afghanistan": {
+      "effective": null,
+      "source": "listed under 'Countries Previously Designated for TPS'"
+    },
+    "Cameroon": {
+      "effective": null,
+      "source": "listed under 'Countries Previously Designated for TPS'"
+    },
+    "Guinea": {
+      "effective": null,
+      "source": "listed under 'Countries Previously Designated for TPS'"
+    },
+    "Liberia": {
+      "effective": null,
+      "source": "listed under 'Countries Previously Designated for TPS'"
+    },
+    "Sierra Leone": {
+      "effective": null,
+      "source": "listed under 'Countries Previously Designated for TPS'"
+    }
+  },
+  "part7": {
+    "_about": "Part 7 of the I-821 (edition 01/20/25), its Yes/No items in the form's own words (the question each box carries as its tooltip); each answer is the fact tps.q<item>.",
+    "items": [
+      {
+        "item": "8a",
+        "label": "Ever convicted of: Any felony committed in the United States?"
+      },
+      {
+        "item": "8b",
+        "label": "Ever convicted of: Any misdemeanor committed in the United States?"
+      },
+      {
+        "item": "8c",
+        "label": "Ever convicted of: Any particularly serious crime committed in the United States?"
+      },
+      {
+        "item": "9a",
+        "label": "Have you EVER ordered, incited, assisted, or otherwise participated in the persecution of any person on account of race, religion, nationality, membership in a particular social group, or political opinion?"
+      },
+      {
+        "item": "9b",
+        "label": "Have you EVER committed serious nonpolitical crimes outside of the United States prior to your arrival in the United States?"
+      },
+      {
+        "item": "9c",
+        "label": "Have you EVER or are you NOW engaged in activities that could be reasonable grounds for concluding that you are a danger to the security of the United States?"
+      },
+      {
+        "item": "10a",
+        "label": "Ever convicted of, or done the acts that make up: A crime (other than a purely political offense)?"
+      },
+      {
+        "item": "10b",
+        "label": "Ever convicted of, or done the acts that make up: A violation of any law relating to a controlled substance as defined in section 102 of the Controlled Substances Act?"
+      },
+      {
+        "item": "10c",
+        "label": "Ever convicted of, or done the acts that make up: A conspiracy to violate any law relating to a controlled substance as defined in section 102 of the Controlled Substances Act?"
+      },
+      {
+        "item": "11",
+        "label": "Have you EVER been convicted of two or more criminal offenses (other than purely political offenses) for which you received sentences to confinement that, when combined, total five years or more?"
+      },
+      {
+        "item": "12a",
+        "label": "Have you EVER trafficked in or are you NOW trafficking in any controlled substance?"
+      },
+      {
+        "item": "12b",
+        "label": "Are you NOW or have you EVER knowingly assisted, abetted, conspired, or colluded with others in the unlawful trafficking of any controlled substance?"
+      },
+      {
+        "item": "12c",
+        "label": "Are you the spouse or child of an alien who unlawfully trafficked in any controlled substance?"
+      },
+      {
+        "item": "12d",
+        "label": "Are you the spouse or child of an alien who assisted, abetted, conspired, or colluded with others in the unlawful trafficking of any controlled substance?"
+      },
+      {
+        "item": "12e",
+        "label": "Within the previous five years, have you EVER obtained any financial or other benefit from the unlawful activity of your spouse (including former spouses) or parents, and you knew, or reasonably should have known, that the financial or other benefit was the product of such illicit activity?"
+      },
+      {
+        "item": "13a",
+        "label": "Ever engaged in, or plan to engage in: Any activity to violate any law of the United States relating to espionage or sabotage?"
+      },
+      {
+        "item": "13b",
+        "label": "Ever engaged in, or plan to engage in: Any activity to violate or evade any law prohibiting the export from the United States of goods, technology, or sensitive information?"
+      },
+      {
+        "item": "13c",
+        "label": "Ever engaged in, or plan to engage in: Any other unlawful activity in the United States?"
+      },
+      {
+        "item": "13d",
+        "label": "Ever engaged in, or plan to engage in: Any activity in which a purpose is to oppose, control, or overthrow the Government of the United States by force, violence, or other unlawful means, including but not limited to participating in such activities, giving support to others involved in such activities, or being a member or representative of a terrorist organization?"
+      },
+      {
+        "item": "14a",
+        "label": "Have you EVER or are you NOW engaged in terrorist activities?"
+      },
+      {
+        "item": "14b",
+        "label": "Have you EVER or are you NOW engaged in or plan to engage in activities in the United States that would have potentially serious adverse foreign policy consequences for the United States?"
+      },
+      {
+        "item": "14c",
+        "label": "Have you EVER been or are you NOW a member of the Communist or other totalitarian party, except when membership was involuntary?"
+      },
+      {
+        "item": "14d",
+        "label": "Have you EVER participated in Nazi persecution or genocide?"
+      },
+      {
+        "item": "15a",
+        "label": "Ever, in the U.S. or any other country, been: Arrested, for breaking or violating any law or ordinance, excluding minor traffic violations?"
+      },
+      {
+        "item": "15b",
+        "label": "Ever, in the U.S. or any other country, been: Cited, charged, or indicted, for breaking or violating any law or ordinance, excluding minor traffic violations?"
+      },
+      {
+        "item": "15c",
+        "label": "Ever, in the U.S. or any other country, been: Been convicted, fined, imprisoned, placed on probation, received a suspended sentence or deferral of adjudication for breaking or violating any law or ordinance, excluding minor traffic violations?"
+      },
+      {
+        "item": "16",
+        "label": "Have you EVER been the beneficiary of a pardon, amnesty, rehabilitation decree, other act of clemency, or similar action?"
+      },
+      {
+        "item": "17",
+        "label": "Have you EVER committed a serious criminal offense in the United States and asserted immunity from prosecution?"
+      },
+      {
+        "item": "18a",
+        "label": "Have you EVER, within the past 10 years, or are you NOW engaged in prostitution or procurement of prostitution?"
+      },
+      {
+        "item": "18b",
+        "label": "Have you EVER, within the past 10 years (either directly or indirectly) procured or attempted to procure or import prostitutes or persons for the purpose of prostitution?"
+      },
+      {
+        "item": "18c",
+        "label": "Have you EVER, within the past 10 years, received, in whole or in part, the proceeds of prostitution?"
+      },
+      {
+        "item": "19",
+        "label": "Have you EVER been or do you intend to be involved in any other commercial vice?"
+      },
+      {
+        "item": "20a",
+        "label": "Have you EVER been ordered removed, and been deported from the United States?"
+      },
+      {
+        "item": "20b",
+        "label": "Have you EVER voluntarily departed the United States under an order of removal?"
+      },
+      {
+        "item": "20c",
+        "label": "If 20.a or 20.b is Yes: have you re-entered the United States unlawfully at any time after you were deported or you voluntarily departed?"
+      },
+      {
+        "item": "20d",
+        "label": "If you answered \"Yes\" to Item Number 20.c. above, has DHS reinstated your prior order of removal?"
+      },
+      {
+        "item": "20e",
+        "label": "Have you EVER failed to attend or remain in attendance at any immigration proceedings to determine your admissibility or deportability?"
+      },
+      {
+        "item": "21",
+        "label": "Have you EVER, by fraud or willfully misrepresenting a material fact, sought to obtain a visa or other documentation, admission to the United States, or any other immigration benefit?"
+      },
+      {
+        "item": "22",
+        "label": "Have you EVER assisted any other person to enter the United States in violation of the law?"
+      },
+      {
+        "item": "23a",
+        "label": "Do you NOW have a communicable disease of public health significance?"
+      },
+      {
+        "item": "23b",
+        "label": "Do you NOW have or have you EVER had a physical or mental disorder and behavior (or a history of behavior that is likely to recur) associated with the disorder which has posed or may pose a threat to the property, safety, or welfare of yourself or others?"
+      },
+      {
+        "item": "23c",
+        "label": "Are you NOW or have you EVER been a drug abuser or drug addict?"
+      },
+      {
+        "item": "24",
+        "label": "Have you EVER entered the United States as a stowaway?"
+      },
+      {
+        "item": "25",
+        "label": "Did the former Immigration and Naturalization Service (I N S) EVER impose, or has DHS EVER imposed, civil monetary penalties on you for producing or using false documentation to obtain an immigration benefit?"
+      },
+      {
+        "item": "26",
+        "label": "Are you NOW subject to a final order for violation of section 274C (producing and/or using false documentation to unlawfully satisfy a requirement of the Immigration and Nationality Act)?"
+      },
+      {
+        "item": "27",
+        "label": "Do you NOW practice polygamy?"
+      },
+      {
+        "item": "28",
+        "label": "Are you NOW the guardian of, and are you accompanying, another individual who has been found to be inadmissible and who has been certified by a medical examiner to be helpless due to sickness, physical or mental disability, or infancy?"
+      },
+      {
+        "item": "29",
+        "label": "Have you EVER detained, retained, or withheld the custody of a child having a lawful claim to U.S. citizenship, outside the United States, from a U.S. citizen granted custody?"
+      },
+      {
+        "item": "30a",
+        "label": "Ever ordered, incited, called for, committed, assisted, helped with, or otherwise taken part in: Acts involving torture or genocide?"
+      },
+      {
+        "item": "30b",
+        "label": "Ever ordered, incited, called for, committed, assisted, helped with, or otherwise taken part in: Killing any person?"
+      },
+      {
+        "item": "30c",
+        "label": "Ever ordered, incited, called for, committed, assisted, helped with, or otherwise taken part in: Intentionally and severely injuring any person?"
+      },
+      {
+        "item": "30d",
+        "label": "Ever ordered, incited, called for, committed, assisted, helped with, or otherwise taken part in: Engaging in any kind of sexual contact or relations with any person who was being forced or threatened?"
+      },
+      {
+        "item": "30e",
+        "label": "Ever ordered, incited, called for, committed, assisted, helped with, or otherwise taken part in: Limiting or denying any person's ability to exercise religious beliefs?"
+      },
+      {
+        "item": "31a",
+        "label": "Served in, been a member of, assisted in, or participated in any military unit, paramilitary unit, police unit, self-defense unit, vigilante unit, rebel group, guerrilla group, militia, or insurgent organization?"
+      },
+      {
+        "item": "31b",
+        "label": "Served or worked in any prison, jail, prison camp, detention facility, labor camp, or any other situation that involved detaining persons?"
+      },
+      {
+        "item": "32",
+        "label": "Have you EVER been a member of, assisted in, or participated in any group, unit, or organization of any kind in which you or other persons used any type of weapon against any person or threatened to do so?"
+      },
+      {
+        "item": "33",
+        "label": "Have you EVER assisted with or participated in selling or providing weapons to any person who to your knowledge used them against another person, or in transporting weapons to any person who to your knowledge used them against another person?"
+      },
+      {
+        "item": "34",
+        "label": "Have you EVER received any type of military, paramilitary, or weapons training?"
+      },
+      {
+        "item": "35",
+        "label": "Have you EVER unlawfully voted in a United States Federal, state, or local election?"
+      },
+      {
+        "item": "36",
+        "label": "Have you EVER claimed to be a U. S. citizen (in writing or in any other way)?"
+      },
+      {
+        "item": "37a",
+        "label": "Have you EVER recruited, enlisted, conscripted, or used any person under 15 years of age to serve in or help an armed force or group?"
+      },
+      {
+        "item": "37b",
+        "label": "Have you EVER used any person under 15 years of age to take part in hostilities or to help or provide services to people in combat?"
+      },
+      {
+        "item": "38a",
+        "label": "Have you EVER committed or conspired to commit human trafficking offenses, as defined in the section 103 of the Victims of Trafficking and Violence Protection Act of 2000, in the United States or outside the United States?"
+      },
+      {
+        "item": "38b",
+        "label": "Have you EVER knowingly aided, abetted, assisted, conspired, or colluded with a human trafficker?"
+      },
+      {
+        "item": "38c",
+        "label": "Are you NOW the spouse or child of an alien who committed or conspired to commit human trafficking offenses?"
+      },
+      {
+        "item": "38d",
+        "label": "Are you NOW the spouse or child of, or are you yourself, an alien who knowingly aided, abetted, assisted, conspired, or colluded with a human trafficker?"
+      },
+      {
+        "item": "38e",
+        "label": "Within the previous five years, have you EVER obtained any financial or other benefit from the human trafficking activity of your spouse (including former spouses) or parents, and you knew, or reasonably should have known, that the financial or other benefit that you received resulted from such human trafficking?"
+      },
+      {
+        "item": "39a",
+        "label": "Are you NOW or have you EVER engaged in money laundering as described in section 1956 or 1957 of Title 18, United States Code?"
+      },
+      {
+        "item": "39b",
+        "label": "Are you NOW or have you EVER been a knowing aider, abettor, assister, conspirator, or colluder with others in money laundering?"
+      },
+      {
+        "item": "40",
+        "label": "Have you EVER been responsible for or directly carried out particularly severe violations of religious freedom, as defined in section 3 of the International Religious Freedom Act of 1998 (22 U.S.C. section 6402) while serving as a foreign government official?"
+      },
+      {
+        "item": "41",
+        "label": "Has an immigration judge or the Board of Immigration Appeals EVER determined that you filed a frivolous asylum application in the past?"
+      }
+    ]
+  }
+}

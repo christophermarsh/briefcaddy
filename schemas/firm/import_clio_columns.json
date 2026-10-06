@@ -1,0 +1,64 @@
+{
+  "_status": "Which column of the firm's Clio export holds what, for tools/import_clio.py. EVERY column name below is an assumption: Clio's own help pages for exporting matters and contacts refused the request (HTTP 403) on 10/03/2026, so no column list was read, and the one third-party page that mentions Clio's exports lists none. The names come from Clio's API objects (what a matter or a contact is called there), which is not proof of a spreadsheet's headings. Each field lists the names to look for, in order; a heading matches when it is the same name ignoring capitals, spaces, underscores and hyphens. The firm edits this file after opening its own export: put the real heading first. Each section's _basis says, field by field, where a name comes from. The importer's report says which headings it found and which it did not. TO CONFIRM WITH THE FIRM'S EXPORT.",
+  "_sources": [
+    {"url": "https://help.clio.com/hc/en-150/articles/55326718151195-Filter-and-Export-Matters-in-Clio-Manage", "read": "2026-10-03", "says": "Refused the request (HTTP 403): not read. A search result's summary says matters export from the Matters page as CSV, with all columns or only the visible ones, and that the export covers every matter the filters match."},
+    {"url": "https://help.clio.com/hc/en-150/articles/9290532034843-Filter-and-Export-Contacts", "read": "2026-10-03", "says": "Refused the request (HTTP 403): not read. A search result's summary says contacts export from the Contacts page as CSV or PDF."},
+    {"url": "https://supportcenter.mycase.com/en/articles/9370344-how-to-export-data-from-clio", "read": "2026-10-03", "says": "Third party (a competitor's help page). Clio exports matters, contacts, calendar, tasks, notes, unbilled time and expenses, outstanding balances and trust balances, mostly as \"Excel Ready CSV\"; remove every filter first. Lists no columns and says nothing of documents."},
+    {"url": "https://docs.developers.clio.com/openapi.json", "read": "2026-10-03", "says": "API (JSON, not a spreadsheet): matter id, display_number, description, status (open, pending, closed), practice_area, responsible_attorney, client; contact id, name, first_name, last_name, primary_email_address, primary_phone_number, custom field values."}
+  ],
+  "contacts": {
+    "_note": "One row per person. All names below: to confirm with the firm's export.",
+    "_basis": {
+      "id": "guess: Clio's API has a contact id; no page read says a spreadsheet carries it",
+      "first_name": "Clio API (https://docs.developers.clio.com/openapi.json): the contact's first_name; the spreadsheet's heading is not documented",
+      "middle_name": "guess: no page read names a middle name column",
+      "last_name": "Clio API (https://docs.developers.clio.com/openapi.json): the contact's last_name; the spreadsheet's heading is not documented",
+      "full_name": "Clio API (https://docs.developers.clio.com/openapi.json): the contact's name; the spreadsheet's heading is not documented",
+      "email": "Clio API (https://docs.developers.clio.com/openapi.json): primary_email_address; the other spellings are guesses",
+      "phone": "Clio API (https://docs.developers.clio.com/openapi.json): primary_phone_number; the other spellings are guesses",
+      "language": "guess: Clio has no language field of its own; a firm may keep one as a custom field",
+      "email_ok": "guess: no page read names a consent column or field",
+      "sms_ok": "guess: no page read names a consent column or field",
+      "whatsapp_ok": "guess: no page read names a consent column or field",
+      "office": "guess: no page read names an office column or field"
+    },
+    "id": ["id", "contact id", "contact_id"],
+    "first_name": ["first_name", "first name"],
+    "middle_name": ["middle_name", "middle name"],
+    "last_name": ["last_name", "last name"],
+    "full_name": ["name", "full name", "contact", "client"],
+    "email": ["primary_email_address", "primary email address", "primary email", "email", "email address"],
+    "phone": ["primary_phone_number", "primary phone number", "primary phone", "mobile", "mobile phone", "phone"],
+    "language": ["language", "preferred language", "primary language"],
+    "email_ok": ["email ok", "email consent", "ok to email"],
+    "sms_ok": ["sms ok", "text ok", "text consent", "sms consent", "ok to text"],
+    "whatsapp_ok": ["whatsapp ok", "whatsapp consent", "ok to whatsapp"],
+    "office": ["office", "branch"]
+  },
+  "matters": {
+    "_note": "One row per matter. A matter's id is its Clio id when the export has one, else its matter number: a case made from a number is not the case a later connection to Clio makes from the Clio id, so prefer an export that has the id. All names below: to confirm with the firm's export.",
+    "_basis": {
+      "id": "Clio API (https://docs.developers.clio.com/openapi.json): the matter's id, then display_number; the spreadsheet's heading is not documented",
+      "number": "Clio API (https://docs.developers.clio.com/openapi.json): display_number; the spreadsheet's heading is not documented",
+      "title": "Clio API (https://docs.developers.clio.com/openapi.json): the matter's description; the spreadsheet's heading is not documented",
+      "client_id": "guess: the spreadsheet may not carry the client contact's id",
+      "client_name": "Clio API (https://docs.developers.clio.com/openapi.json): the matter's client; the spreadsheet's heading is not documented",
+      "type": "Clio API (https://docs.developers.clio.com/openapi.json): the matter's practice_area (its name is what says a VAWA, T, U or asylum matter); the spreadsheet's heading is not documented",
+      "status": "Clio API (https://docs.developers.clio.com/openapi.json): the matter's status (open, pending, closed); the spreadsheet's heading is not documented",
+      "archived": "Clio API (https://docs.developers.clio.com/openapi.json): a matter whose status is closed is taken as archived (archived_yes below holds closed); the spreadsheet's heading is not documented",
+      "office": "guess: no page read names an office column or field"
+    },
+    "id": ["id", "matter id", "matter_id", "display_number", "display number", "matter number", "number"],
+    "number": ["display_number", "display number", "matter number", "number"],
+    "title": ["description", "matter description", "matter name", "matter", "name"],
+    "client_id": ["client id", "client_id", "contact id"],
+    "client_name": ["client", "client name", "contact"],
+    "type": ["practice_area", "practice area", "matter type", "type"],
+    "status": ["status", "matter status"],
+    "archived": ["status", "matter status"],
+    "office": ["office", "branch"]
+  },
+  "yes": ["1", "y", "yes", "true", "sim", "si", "sí", "x", "ok"],
+  "archived_yes": ["closed"],
+  "no": ["0", "n", "no", "false", "nao", "não"]
+}

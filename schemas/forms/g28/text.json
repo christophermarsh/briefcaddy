@@ -1,0 +1,55 @@
+{
+  "_source": "The words are copied, not paraphrased. The form's own words: Form G-28 (edition 09/17/18), the page of Part 3 that holds item 13 (the note above 'Mailing Address of Client') and the page of Part 4 that holds items 1.a to 1.c, read from schemas/g28_template.pdf on 10/03/2026. The instruction lines: the instructions on uscis.gov, read on 10/03/2026: https://www.uscis.gov/sites/default/files/document/forms/g-28instr.pdf (Form G-28 Instructions 09/17/18, page 4 of 5), https://www.uscis.gov/sites/default/files/document/forms/i-485instr.pdf (Form I-485 Instructions 09/18/26, page 6 of 41), https://www.uscis.gov/sites/default/files/document/forms/i-765instr.pdf (Form I-765 Instructions 08/21/25, page 18 of 25). Each instruction paragraph is held whole, as USCIS prints it (three line-break spacings in the PDF text, 'V AWA', 'W e' and 'V iolence', are closed up). Nothing here says a choice complies with anything or which cases a paragraph covers: the attorney decides. When a new edition of a form or its instructions is published, read these lines again (schemas/maintenance.json, g28_safe_address_lines).",
+  "mailing_note": "NOTE: Provide the client's mailing address. Do not provide the business mailing address of the attorney or accredited representative unless it serves as the safe mailing address on the application or petition being filed with this Form G-28.",
+  "mailing_item": "Part 3, items 13.a to 13.e: Mailing Address of Client",
+  "part4_heading": "Part 4. Client's Consent to Representation and Signature. Options Regarding Receipt of USCIS Notices and Documents",
+  "part4_intro": "USCIS will send notices to both a represented party (the client) and his, her, or its attorney or accredited representative either through mail or electronic delivery. USCIS will send all secure identity documents and Travel Documents to the client's U.S. mailing address. If you want to have notices and/or secure identity documents sent to your attorney or accredited representative of record rather than to you, please select all applicable items below. You may change these elections through written notice to USCIS.",
+  "part4": {
+    "1a": {
+      "item": "Part 4, item 1.a",
+      "words": "I request that USCIS send original notices on an application or petition to the business address of my attorney or accredited representative as listed in this form.",
+      "short": "Original notices go to the attorney"
+    },
+    "1b": {
+      "item": "Part 4, item 1.b",
+      "words": "I request that USCIS send any secure identity document (Permanent Resident Card, Employment Authorization Document, or Travel Document) that I receive to the U.S. business address of my attorney or accredited representative (or to a designated military or diplomatic address in a foreign country (if permitted)).",
+      "note": "NOTE: If your notice contains Form I-94, Arrival-Departure Record, USCIS will send the notice to the U.S. business address of your attorney or accredited representative. If you would rather have your Form I-94 sent directly to you, select Item Number 1.c.",
+      "short": "Secure identity documents go to the attorney"
+    },
+    "1c": {
+      "item": "Part 4, item 1.c",
+      "words": "I request that USCIS send my notice containing Form I-94 to me at my U.S. mailing address.",
+      "short": "The notice with the I-94 goes to the client"
+    }
+  },
+  "instructions": {
+    "g28": {
+      "title": "Form G-28, Part 3, items 13.a to 13.h",
+      "document": "Form G-28 Instructions, edition 09/17/18, page 4 of 5",
+      "url": "https://www.uscis.gov/sites/default/files/document/forms/g-28instr.pdf",
+      "read": "2026-10-03",
+      "line": "Item Numbers 13.a. - 13.h. Mailing Address of Client. Provide the mailing address of the client. Do not provide the business mailing address of the attorney or accredited representative unless it serves as the safe mailing address on the application or petition being filed with this Form G-28."
+    },
+    "g28_part4": {
+      "title": "Form G-28, Part 4, items 1.a to 1.c",
+      "document": "Form G-28 Instructions, edition 09/17/18, page 4 of 5",
+      "url": "https://www.uscis.gov/sites/default/files/document/forms/g-28instr.pdf",
+      "read": "2026-10-03",
+      "line": "Item Numbers 1.a. - 1.c. Options Regarding Receipt of USCIS Notices and Documents. The client must select Item Numbers 1.a. - 1.c. if he or she wants USCIS to send original notices and/or secure identity documents to the attorney or accredited representative of record. When Item Numbers 1.a. and 1.b. are selected, original notices and secure identity documents will be sent to the attorney or accredited representative of record and copies will be sent to the client. If the client wants to receive notices containing Form I-94, Arrival-Departure Record, rather than having USCIS send these notices to the attorney or accredited representative of record, Item Number 1.c. must be selected."
+    },
+    "i485": {
+      "title": "Form I-485, Part 1, item 18: the mailing address",
+      "document": "Form I-485 Instructions, edition 09/18/26, page 6 of 41, 'Current Mailing Address (Safe or Alternate Address, if applicable)'",
+      "url": "https://www.uscis.gov/sites/default/files/document/forms/i-485instr.pdf",
+      "read": "2026-10-03",
+      "line": "7. Current Mailing Address (Safe or Alternate Address, if applicable). You must provide a valid mailing address in the United States in Part 1. Information About You, Item Number 18. You may list a valid U.S. residence, APO, or commercial address. You may also list a U.S. Post Office address (P.O. Box) if that is how you receive your mail. If your mail is sent to someone other than yourself, please include an “In Care Of Name” as part of your mailing address. If your U.S. mailing address is in a U.S. territory and it contains an urbanization name, list the urbanization name in the “In Care Of Name” space provided. NOTE: If you have a pending or approved petition or application for Violence Against Women Act (VAWA) benefits, as a human trafficking victim (T nonimmigrant), or as a victim of qualifying criminal activity (U nonimmigrant), and you do not feel safe receiving mail about this application at your physical address, provide a safe mailing address in this field. If you are filing as a special immigrant juvenile (SIJ), you may designate an alternate mailing address in this field. The safe or alternate address may be a P.O. Box or the address of a friend, your attorney or accredited representative, a community-based organization that is helping you, or any other address where you can safely and timely receive mail."
+    },
+    "i765": {
+      "title": "Form I-765, Part 2, items 5.a to 5.f: the mailing address",
+      "document": "Form I-765 Instructions, edition 08/21/25, page 18 of 25, 'Your U.S. Mailing Address'",
+      "url": "https://www.uscis.gov/sites/default/files/document/forms/i-765instr.pdf",
+      "read": "2026-10-03",
+      "line": "Item Numbers 5.a. - 5.f. Your U.S. Mailing Address. You must provide a valid mailing address in the United States. You may list a valid U.S. residence, APO, or commercial address. You may also list a U.S. Post Office address (PO Box) if that is how you receive your mail. If your mail is sent to someone other than yourself, please include an “In Care Of Name” as part of your mailing address. If your U.S. mailing address is in a U.S. territory and it contains an urbanization name, list the urbanization name in the “In Care Of Name” space provided. We will send your EAD to this address. Do not use your attorney’s or other legal representative’s address unless you want your EAD sent to their address. NOTE: If you have a pending or approved petition or application based on the Violence Against Women Act (VAWA), as a human trafficking victim (T nonimmigrant), or as a victim of a qualifying crime (U nonimmigrant) and you do not feel safe receiving mail about this application at your home address, provide a safe mailing address. The safe mailing address may be a post office box; the address of a friend, your attorney, or a community-based organization that is helping you; or any other address where you can safely and promptly receive mail. If you have an attorney or accredited representative, you may also direct USCIS to send your correspondence and EAD to your attorney’s business address by selecting the applicable items on Form G-28, Notice of Entry of Appearance as Attorney or Accredited Representative, Part 4. If your safe mailing address is not the same as the address where you currently reside, provide your U.S. physical address in Item Numbers 7.a. 7.e."
+    }
+  }
+}

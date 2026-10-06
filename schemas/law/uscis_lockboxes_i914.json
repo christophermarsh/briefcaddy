@@ -1,0 +1,100 @@
+{
+  "_source": "USCIS, 'I-914, Application for T Nonimmigrant Status' page (uscis.gov/i-914), 'Where to File', page last reviewed/updated 06/05/2026, read 2026-10-02. The same two lockboxes take a Form I-192 mailed together with the I-914 or I-914A (uscis.gov/i-192, updated 07/15/2026). Couriers (FedEx, UPS, DHL) use the street addresses in 'courier'. 'Outside the United States' goes to Phoenix (the attorney sets it by hand). The Marshall Islands isn't on the page.",
+  "checked": "2026-10-02",
+  "page_updated": "06/05/2026",
+  "lockboxes": {
+    "Elgin": {
+      "usps": [
+        "USCIS",
+        "ATTN: I-914",
+        "P.O. BOX 4221",
+        "CAROL STREAM, IL 60197-4221"
+      ],
+      "courier": [
+        "USCIS",
+        "ATTN: I-914 (BOX 4221)",
+        "2500 WESTFIELD DRIVE",
+        "ELGIN, IL 60124-7836"
+      ],
+      "states": [
+        "AK",
+        "CT",
+        "DE",
+        "DC",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MO",
+        "MT",
+        "NH",
+        "NJ",
+        "NY",
+        "ND",
+        "OH",
+        "PA",
+        "PR",
+        "RI",
+        "SD",
+        "UT",
+        "VT",
+        "WA",
+        "WI",
+        "WY"
+      ]
+    },
+    "Phoenix": {
+      "usps": [
+        "USCIS",
+        "ATTN: I-914",
+        "P.O. BOX 20200",
+        "PHOENIX, AZ 85036-0200"
+      ],
+      "courier": [
+        "USCIS",
+        "ATTN: I-914 (BOX 20200)",
+        "2108 E. ELLIOT RD.",
+        "TEMPE, AZ 85284-1806"
+      ],
+      "states": [
+        "AL",
+        "AS",
+        "AR",
+        "AZ",
+        "AA",
+        "AE",
+        "AP",
+        "CA",
+        "CO",
+        "FL",
+        "GA",
+        "GU",
+        "HI",
+        "KY",
+        "LA",
+        "FM",
+        "MS",
+        "NE",
+        "NV",
+        "NM",
+        "NC",
+        "MP",
+        "OK",
+        "OR",
+        "PW",
+        "SC",
+        "TN",
+        "TX",
+        "VI",
+        "VA",
+        "WV"
+      ]
+    }
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "_status": "DRAFT: the first-contact questionnaire for a person who is not yet a client (src/prospects.py), asked in the client portal through the same sign-in link as a client's. Every wording is for the attorney to approve and a certified translator to check before a prospect sees it (docs/attorney_review.md). The Haitian Creole is a MACHINE DRAFT not yet seen by a translator. Questions that also exist in schemas/question_bank.json keep their ids, so an answer carries to the client's questionnaire when the prospect becomes a client; no answer here is turned into a fact of a case.",
+  "version": 1,
+  "reuse_sections": [],
+  "sections": [
+    {
+      "id": "fc_you",
+      "title": {
+        "pt": "Sobre você",
+        "es": "Información sobre usted",
+        "en": "About you",
+        "ht": "Enfòmasyon sou ou"
+      },
+      "questions": [
+        {
+          "id": "given_name",
+          "type": "text",
+          "label": {
+            "pt": "Primeiro nome e nomes do meio",
+            "es": "Primer nombre y segundo nombre",
+            "en": "First and middle name(s)",
+            "ht": "Premye non ak dezyèm non"
+          },
+          "help": {
+            "pt": "Exatamente como no passaporte. Ex.: ANA CLARA",
+            "es": "Exactamente como en el pasaporte. Ej.: MARÍA JOSÉ",
+            "en": "Exactly as on your passport. E.g. ANA CLARA",
+            "ht": "Egzakteman jan li ekri nan paspò ou. Egz.: ANA CLARA"
+          },
+          "required": true
+        },
+        {
+          "id": "family_name",
+          "type": "text",
+          "label": {
+            "pt": "Sobrenome(s): todos os seus sobrenomes",
+            "es": "Apellido(s): todos sus apellidos",
+            "en": "Last name(s): all your surnames",
+            "ht": "Siyati (non fanmi): tout siyati ou yo"
+          },
+          "help": {
+            "pt": "Todos os sobrenomes. Ex.: SILVA SANTOS",
+            "es": "Todos los apellidos. Ej.: GARCÍA LÓPEZ",
+            "en": "All surnames. E.g. SILVA SANTOS",
+            "ht": "Tout siyati yo. Egz.: SILVA SANTOS"
+          },
+          "required": true
+        },
+        {
+          "id": "dob",
+          "type": "date",
+          "label": {
+            "pt": "Data de nascimento",
+            "es": "Fecha de nacimiento",
+            "en": "Date of birth",
+            "ht": "Dat nesans"
+          },
+          "required": false
+        },
+        {
+          "id": "phone",
+          "type": "phone",
+          "label": {
+            "pt": "Telefone celular",
+            "es": "Teléfono celular",
+            "en": "Mobile phone",
+            "ht": "Telefòn selilè"
+          },
+          "help": {
+            "pt": "Usaremos para avisos sobre o seu caso.",
+            "es": "Lo usaremos para avisos sobre su caso.",
+            "en": "We use it for updates about your case.",
+            "ht": "Nou sèvi ak li pou ba ou nouvèl sou dosye ou."
+          },
+          "required": false
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": {
+            "pt": "E-mail",
+            "es": "Correo electrónico",
+            "en": "Email",
+            "ht": "Imèl"
+          },
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fc_from",
+      "title": {
+        "pt": "De onde você é",
+        "es": "De dónde es usted",
+        "en": "Where you are from",
+        "ht": "Kote ou soti"
+      },
+      "questions": [
+        {
+          "id": "birth_country",
+          "type": "country",
+          "label": {
+            "pt": "País de nascimento",
+            "es": "País de nacimiento",
+            "en": "Country of birth",
+            "ht": "Peyi kote ou fèt"
+          },
+          "required": false
+        },
+        {
+          "id": "citizenship",
+          "type": "country",
+          "label": {
+            "pt": "De que país você é cidadão(ã)? (o país do seu passaporte)",
+            "es": "¿De qué país es ciudadano(a)? (el país de su pasaporte)",
+            "en": "Which country are you a citizen of? (the country of your passport)",
+            "ht": "Ki peyi ou se sitwayen? (peyi paspò ou a)"
+          },
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "fc_here",
+      "title": {
+        "pt": "Sua vinda para os Estados Unidos",
+        "es": "Su llegada a los Estados Unidos",
+        "en": "Coming to the United States",
+        "ht": "Vini ou nan Etazini"
+      },
+      "questions": [
+        {
+          "id": "fc_in_us",
+          "type": "yes_no",
+          "label": {
+            "pt": "Você está nos Estados Unidos agora?",
+            "es": "¿Está en los Estados Unidos ahora?",
+            "en": "Are you in the United States now?",
+            "ht": "Èske ou nan Etazini kounye a?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "last_entry_date",
+          "type": "date",
+          "label": {
+            "pt": "Quando você entrou nos EUA pela última vez?",
+            "es": "¿Cuándo entró a EE. UU. por última vez?",
+            "en": "When did you last come into the U.S.?",
+            "ht": "Ki dènye fwa ou te antre Etazini?"
+          },
+          "required": false,
+          "show_if": {
+            "q": "fc_in_us",
+            "in": [
+              "Yes",
+              "Unsure"
+            ]
+          },
+          "help": {
+            "pt": "A última vez que você entrou. Se não lembrar a data exata, dê o mês e o ano, ou o que lembrar.",
+            "es": "La última vez que entró. Si no recuerda la fecha exacta, dé el mes y el año, o lo que recuerde.",
+            "en": "The last time you came in. If you do not remember the exact date, give the month and year, or what you remember.",
+            "ht": "Dènye fwa ou antre a. Si ou pa sonje dat egzak la, bay mwa ak ane a, oswa sa ou sonje."
+          }
+        },
+        {
+          "id": "entry_how",
+          "type": "choice",
+          "label": {
+            "pt": "Como você entrou da última vez?",
+            "es": "¿Cómo entró la última vez?",
+            "en": "How did you come in the last time?",
+            "ht": "Kijan ou te antre dènye fwa a?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "inspected",
+              "label": {
+                "pt": "Por um aeroporto ou posto de fronteira, onde um oficial conferiu meu passaporte (com visto ou ESTA)",
+                "es": "Por un aeropuerto o puesto fronterizo, donde un oficial revisó mi pasaporte (con visa o ESTA)",
+                "en": "Through an airport or border station, where an officer checked my passport (with a visa or ESTA)",
+                "ht": "Nan yon ayewopò oswa yon pòs fwontyè, kote yon ofisye te tcheke paspò mwen (avèk yon viza oswa ESTA)"
+              }
+            },
+            {
+              "value": "border",
+              "label": {
+                "pt": "Atravessei a fronteira sem passar por um posto oficial (mesmo que a patrulha tenha me parado depois)",
+                "es": "Crucé la frontera sin pasar por un puesto oficial (aunque la patrulla me haya detenido después)",
+                "en": "I crossed the border without going through an official checkpoint (even if Border Patrol stopped me afterwards)",
+                "ht": "Mwen te travèse fwontyè a san mwen pa pase nan yon pòs ofisyèl (menm si Patwouy Fwontyè a te kenbe m apre)"
+              }
+            },
+            {
+              "value": "parole",
+              "label": {
+                "pt": "Um oficial me deixou entrar com “parole”: por exemplo, com agendamento no CBP One ou um papel de parole humanitário",
+                "es": "Un oficial me dejó entrar con “parole”: por ejemplo, con cita en CBP One o un papel de parole humanitario",
+                "en": "An officer let me in on “parole”: for example, with a CBP One appointment or a humanitarian parole paper",
+                "ht": "Yon ofisye te kite m antre ak “parole”: pa egzanp, avèk yon randevou CBP One oswa yon papye parole imanitè"
+              }
+            },
+            {
+              "value": "other",
+              "label": {
+                "pt": "Outra forma / não tenho certeza",
+                "es": "Otra forma / no estoy seguro(a)",
+                "en": "Some other way / I'm not sure",
+                "ht": "Yon lòt fason / mwen pa sèten"
+              }
+            },
+            {
+              "value": "prefer_not",
+              "label": {
+                "pt": "Prefiro não dizer",
+                "es": "Prefiero no decir",
+                "en": "I'd rather not say",
+                "ht": "Mwen prefere pa di"
+              }
+            }
+          ],
+          "show_if": {
+            "q": "fc_in_us",
+            "in": [
+              "Yes",
+              "Unsure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fc_family",
+      "title": {
+        "pt": "Sua família",
+        "es": "Su familia",
+        "en": "Your family",
+        "ht": "Fanmi ou"
+      },
+      "questions": [
+        {
+          "id": "marital_status",
+          "type": "choice",
+          "label": {
+            "pt": "Qual é o seu estado civil hoje?",
+            "es": "¿Cuál es su estado civil hoy?",
+            "en": "What is your marital status today?",
+            "ht": "Ki sitiyasyon matrimonyal ou jodi a?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Single",
+              "label": {
+                "pt": "Solteiro(a), nunca casei",
+                "es": "Soltero(a), nunca casado(a)",
+                "en": "Single, never married",
+                "ht": "Selibatè, mwen pa janm marye"
+              }
+            },
+            {
+              "value": "Married",
+              "label": {
+                "pt": "Casado(a)",
+                "es": "Casado(a)",
+                "en": "Married",
+                "ht": "Marye"
+              }
+            },
+            {
+              "value": "Divorced",
+              "label": {
+                "pt": "Divorciado(a)",
+                "es": "Divorciado(a)",
+                "en": "Divorced",
+                "ht": "Divòse"
+              }
+            },
+            {
+              "value": "Widowed",
+              "label": {
+                "pt": "Viúvo(a)",
+                "es": "Viudo(a)",
+                "en": "Widowed",
+                "ht": "Vèf / vèv (mari oswa madanm mwen mouri)"
+              }
+            },
+            {
+              "value": "Marriage Annulled",
+              "label": {
+                "pt": "Meu casamento foi anulado (cancelado por um juiz)",
+                "es": "Mi matrimonio fue anulado (cancelado por un juez)",
+                "en": "My marriage was annulled (cancelled by a court)",
+                "ht": "Maryaj mwen te anile (yon tribinal te anile l)"
+              }
+            },
+            {
+              "value": "Legally Separated",
+              "label": {
+                "pt": "Separado(a) por decisão de um juiz (separação legal)",
+                "es": "Separado(a) por decisión de un juez (separación legal)",
+                "en": "Separated by a court order (legally separated)",
+                "ht": "Separe pa lòd yon tribinal (separasyon legal)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fc_family_us",
+          "type": "yes_no",
+          "label": {
+            "pt": "Você tem pai, mãe, marido ou esposa, filho(a) ou irmão(ã) morando nos Estados Unidos?",
+            "es": "¿Tiene padre, madre, esposo(a), hijo(a) o hermano(a) que vive en los Estados Unidos?",
+            "en": "Do you have a parent, husband or wife, child, brother or sister who lives in the United States?",
+            "ht": "Èske ou gen yon papa, manman, mari oswa madanm, pitit, frè oswa sè ki rete nan Etazini?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fc_family_us_who",
+          "type": "textarea",
+          "label": {
+            "pt": "Quem são? Se você souber, diga também a situação de imigração de cada um (cidadão, green card, outra).",
+            "es": "¿Quiénes son? Si lo sabe, diga también la situación migratoria de cada uno (ciudadano, green card, otra).",
+            "en": "Who are they? If you know, say each person's immigration status too (citizen, green card, other).",
+            "ht": "Kiyès yo ye? Si ou konnen, di tou sitiyasyon imigrasyon chak moun (sitwayen, green card, lòt)."
+          },
+          "required": false,
+          "show_if": {
+            "q": "fc_family_us",
+            "eq": "Yes"
+          },
+          "help": {
+            "pt": "É opcional. Pode escrever “Prefiro não dizer”.",
+            "es": "Es opcional. Puede escribir “Prefiero no decir”.",
+            "en": "This is optional. You can write “I'd rather not say”.",
+            "ht": "Sa a opsyonèl. Ou ka ekri “Mwen prefere pa di”."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fc_court",
+      "title": {
+        "pt": "Tribunal, polícia e imigração",
+        "es": "Tribunal, policía e inmigración",
+        "en": "Court, police and immigration",
+        "ht": "Tribinal, polis ak imigrasyon"
+      },
+      "questions": [
+        {
+          "id": "in_proceedings",
+          "type": "yes_no",
+          "label": {
+            "pt": "Você já teve um caso na corte de imigração (por exemplo, recebeu um “Notice to Appear” ou teve audiência com um juiz de imigração)?",
+            "es": "¿Ha tenido un caso en la corte de inmigración (por ejemplo, recibió un “Notice to Appear” o tuvo audiencia con un juez de inmigración)?",
+            "en": "Have you ever had a case in immigration court (for example, you got a “Notice to Appear” or had a hearing with an immigration judge)?",
+            "ht": "Èske ou te janm gen yon dosye nan tribinal imigrasyon (pa egzanp, ou te resevwa yon “Notice to Appear” oswa ou te gen yon odyans devan yon jij imigrasyon)?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arrested",
+          "type": "yes_no",
+          "label": {
+            "pt": "Você já foi preso(a), acusado(a), detido(a) pela polícia ou pela imigração, ou recebeu uma multa que te obrigou a ir ao tribunal: em qualquer país?",
+            "es": "¿Alguna vez fue arrestado(a), acusado(a), detenido(a) por la policía o inmigración, o recibió una multa que le obligó a ir al tribunal: en cualquier país?",
+            "en": "Have you ever been arrested, charged, held by police or immigration, or given a ticket that made you go to court: in any country?",
+            "ht": "Èske yo te janm arete ou, akize ou, polis oswa imigrasyon te kenbe ou, oswa yo te ba ou yon tikè ki te fè ou al nan tribinal: nan nenpòt peyi?"
+          },
+          "help": {
+            "pt": "Inclusive por dirigir sem carteira. Isto não decide o seu caso; o advogado vai analisar.",
+            "es": "Incluso por manejar sin licencia. Esto no decide su caso; el abogado lo revisará.",
+            "en": "Including for driving without a license. This does not decide your case; the attorney will review it.",
+            "ht": "Menm pou kondui san lisans. Sa pa deside dosye ou; avoka a ap egzamine l."
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fc_family_court",
+          "type": "yes_no",
+          "label": {
+            "pt": "Algum juiz já decidiu quem cuida de você (por exemplo, num tribunal de família ou de menores)?",
+            "es": "¿Algún juez ha decidido alguna vez quién se hace cargo de usted (por ejemplo, en un tribunal de familia o de menores)?",
+            "en": "Has a judge ever made a decision about who takes care of you (for example in a family or juvenile court)?",
+            "ht": "Èske yon jij te janm deside ki moun ki pran swen ou (pa egzanp nan yon tribinal fanmi oswa tribinal pou timoun)?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ]
+        },
+        {
+          "id": "fc_papers",
+          "type": "yes_no",
+          "label": {
+            "pt": "Você tem alguma carta ou papel da imigração ou de um tribunal com uma data marcada?",
+            "es": "¿Tiene alguna carta o papel de inmigración o de un tribunal con una fecha?",
+            "en": "Do you have a letter or paper from immigration or a court with a date on it?",
+            "ht": "Èske ou gen yon lèt oswa yon papye nan men imigrasyon oswa yon tribinal ki gen yon dat sou li?"
+          },
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "pt": "Sim",
+                "es": "Sí",
+                "en": "Yes",
+                "ht": "Wi"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "pt": "Não",
+                "es": "No",
+                "en": "No",
+                "ht": "Non"
+              }
+            },
+            {
+              "value": "Unsure",
+              "label": {
+                "pt": "Não tenho certeza",
+                "es": "No estoy seguro(a)",
+                "en": "I'm not sure",
+                "ht": "Mwen pa sèten"
+              }
+            }
+          ],
+          "help": {
+            "pt": "Se tiver, tire uma foto e leve na conversa com o escritório. A data pode ser importante.",
+            "es": "Si tiene, tome una foto y llévela a la conversación con la oficina. La fecha puede ser importante.",
+            "en": "If you do, take a photo and bring it to your talk with the office. The date can matter.",
+            "ht": "Si ou genyen, pran yon foto epi pote l nan konvèsasyon ou ak biwo a. Dat la ka enpòtan."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fc_ask",
+      "title": {
+        "pt": "O que você quer perguntar",
+        "es": "Lo que quiere preguntar",
+        "en": "What you want to ask",
+        "ht": "Sa ou vle mande"
+      },
+      "questions": [
+        {
+          "id": "fc_asking",
+          "type": "textarea",
+          "label": {
+            "pt": "Sobre o que você gostaria de perguntar ao escritório? Escreva com suas palavras.",
+            "es": "¿Sobre qué le gustaría preguntar a la oficina? Escriba con sus palabras.",
+            "en": "What would you like to ask the office about? Write it in your own words.",
+            "ht": "Sou ki sa ou ta renmen mande biwo a? Ekri l ak pwòp mo ou."
+          },
+          "required": true,
+          "help": {
+            "pt": "Pode ser curto. Não precisa de detalhes agora: o escritório vai conversar com você.",
+            "es": "Puede ser breve. No necesita dar detalles ahora: la oficina hablará con usted.",
+            "en": "It can be short. You do not need to give details now: the office will talk with you.",
+            "ht": "Li ka kout. Ou pa bezwen bay detay kounye a: biwo a pral pale avè ou."
+          }
+        }
+      ]
+    }
+  ],
+  "documents": []
+}

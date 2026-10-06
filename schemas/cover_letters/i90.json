@@ -1,0 +1,63 @@
+{
+  "_about": "The I-90 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the Phoenix lockbox, whatever the state; uscis.gov/i-90 'Where to File', updated 06/16/2026) and the fee ($465 on paper, $0 for a DHS error or a 14-year-old whose card expires after 16; Form G-1055 10/01/26) come from src/card_renewal.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: I-90 Application to Replace Permanent Resident Card"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_i90",
+    "i90"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i90": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i90": "Applicant’s I-90 - Application to Replace Permanent Resident Card"
+  },
+  "documents": [
+    [
+      "green_card",
+      "Copy of Applicant’s Permanent Resident Card (front and back)"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "drivers_license",
+      "Copy of Applicant’s Driver’s License"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of Applicant’s Marriage Certificate (name change)"
+    ],
+    [
+      "divorce_decree",
+      "Copy of Applicant’s Divorce Decree (name change)"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "check",
+      "text": "I-90: a client under 14. A parent or legal guardian signs for them."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the filing fee by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amount in the cover letter. Not when the letter says no fee is due.",
+      "unless": "no_payment"
+    }
+  ]
+}

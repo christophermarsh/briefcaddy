@@ -1,0 +1,73 @@
+{
+  "_about": "The immigration courts for the firm's two states (Massachusetts and Florida), as EOIR's own court pages give them: the street address a paper filing goes to, the window filing hours and the phone. Read 2026-10-02 from EOIR's 'Find an Immigration Court and Access Internet-Based Hearings' (updated October 2, 2026), which lists Boston and Chelmsford for Massachusetts and Miami, Miami Krome (Detained) and Orlando for Florida, and each court's page (each 'Updated October 1, 2026'). A court not listed here (a detained client held in another state) is typed by the attorney with where its address was read: never guessed. Every page says the court 'does not accept faxes or other electronic submissions unless the transmission has been specifically requested'; attorneys e-file in ECAS in cases eligible for it. src/court_pleading.py reads this file; schemas/maintenance.json (immigration_court_addresses) re-checks it.",
+  "directory": "https://www.justice.gov/eoir/find-immigration-court-and-access-internet-based-hearings",
+  "read_on": "2026-10-02",
+  "courts": {
+    "Boston Immigration Court": {
+      "state": "MA",
+      "city": "Boston, Massachusetts",
+      "address": [
+        "JFK Federal Building",
+        "15 New Sudbury Street, Room 320",
+        "Boston, MA 02203"
+      ],
+      "window_filing_hours": "8 a.m. - 4 p.m. (Monday-Thursday); 8 a.m. - 3:30 p.m. (Friday)",
+      "phone": "617-565-3080",
+      "page": "https://www.justice.gov/eoir/boston-immigration-court",
+      "page_updated": "October 1, 2026",
+      "_note": "The public entrance is 125 Cambridge Street, Boston MA 02114 (the court's page)."
+    },
+    "Chelmsford Immigration Court": {
+      "state": "MA",
+      "city": "Chelmsford, Massachusetts",
+      "address": [
+        "150 Apollo Drive, Suite 100",
+        "Chelmsford, MA 01824"
+      ],
+      "window_filing_hours": "8 a.m. - 4 p.m.",
+      "phone": "978-497-9000",
+      "page": "https://www.justice.gov/eoir/chelmsford-immigration-court",
+      "page_updated": "October 1, 2026"
+    },
+    "Miami Immigration Court": {
+      "state": "FL",
+      "city": "Miami, Florida",
+      "address": [
+        "One Riverview Square",
+        "333 S. Miami Avenue, Suite 700",
+        "Miami, FL 33130"
+      ],
+      "window_filing_hours": "8 a.m. - 4 p.m.",
+      "phone": "305-789-4221",
+      "page": "https://www.justice.gov/eoir/miami-immigration-court",
+      "page_updated": "October 1, 2026"
+    },
+    "Miami Krome (Detained) Immigration Court": {
+      "state": "FL",
+      "city": "Miami, Florida",
+      "detained": true,
+      "address": [
+        "Krome North Processing Center",
+        "18201 SW 12th Street",
+        "Miami, FL 33194"
+      ],
+      "window_filing_hours": "8 a.m. - 4 p.m.",
+      "phone": "786-422-8700",
+      "page": "https://www.justice.gov/eoir/miami-krome-immigration-court",
+      "page_updated": "October 1, 2026",
+      "_note": "The court's page also lists the Broward Transitional Center Hearing Location, 3900 N Powerline Road, Pompano Beach, FL 33073 (window filing 8 a.m. - 4 p.m.): a hearing location of this court."
+    },
+    "Orlando Immigration Court": {
+      "state": "FL",
+      "city": "Orlando, Florida",
+      "address": [
+        "500 N. Orange Ave, Suite 1100",
+        "Orlando, FL 32801"
+      ],
+      "window_filing_hours": "8 a.m. - 4 p.m.",
+      "phone": "407-244-8900",
+      "page": "https://www.justice.gov/eoir/orlando-immigration-court",
+      "page_updated": "October 1, 2026"
+    }
+  }
+}

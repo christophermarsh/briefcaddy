@@ -1,0 +1,67 @@
+{
+  "scope": "Export-only focused checks, not production or comprehensive acceptance",
+  "checks": [
+    {
+      "check": "Python syntax without bytecode output",
+      "files": 764,
+      "failures": []
+    },
+    {
+      "check": "JSON parse",
+      "files": 153,
+      "failures": []
+    },
+    {
+      "check": "Existing isolated intent/profile/original-byte cases",
+      "test_names": [
+        "test_digest_freezes_unicode_json_and_ordered_exact_inputs",
+        "test_fictional_profile_is_disabled_and_consumes_local_endpoint_only_when_used",
+        "test_actual_original_bytes_reuse_and_immutable_conflict"
+      ],
+      "exit_code": 0,
+      "summary": "3 passed in 0.16s",
+      "runtime": "Existing Python 3.12 core environment; no install",
+      "postgres_started": false
+    },
+    {
+      "check": "Existing fictional quick portal fixture, no listener",
+      "exit_code": 1,
+      "stdout_saved": false,
+      "credential_output_saved": false,
+      "scratch_is_outside_source": true,
+      "demo_files_created": 19,
+      "failure_reason": "Legacy demo CLI calls PortalStore.new_link_token, rejected by canonical dispatch/consent guard. No bypass performed."
+    },
+    {
+      "check": "No product/runtime/history artifacts in candidate",
+      "git_directory": false,
+      "data_directory": false,
+      "pycache_directories": 0,
+      "pdf_files": 0,
+      "svg_files": 0,
+      "database_files": 0,
+      "root_audit_dbg": [
+        false,
+        false
+      ]
+    },
+    {
+      "check": "Direct existing showcase API; process=False; no credential issuance/listener",
+      "exit_code": 0,
+      "fixture_files": 13,
+      "stdout_saved": false
+    }
+  ],
+  "not_run": [
+    "broad/backend/browser suites",
+    "PostgreSQL restart/journey",
+    "network listeners",
+    "cloud/provider delivery",
+    "installers/model downloads",
+    "native ACL",
+    "deployed PDFs",
+    "real phones",
+    "accuracy/language/legal gates"
+  ],
+  "privacy_review": "V1 manifest rejected despite these limited checks. See PRIVACY_REPAIR_CHECKS.json; independent v2 clearance pending."
+}

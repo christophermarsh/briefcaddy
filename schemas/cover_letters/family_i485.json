@@ -1,0 +1,133 @@
+{
+  "_about": "The family cover letter for an I-485 filed on an I-130 already with USCIS: the firm's letterhead, signer and closing from schemas/cover_letter.json; the fees from schemas/fees.json. The attorney approves this file.",
+  "base": "cover_letter.json",
+  "mail_to": "by_state",
+  "noun": "application",
+  "re_lines": [
+    "Application: I-485 Application to Register Permanent Residence or Adjust Status",
+    "Based on the Form I-130 Petition for Alien Relative already filed",
+    "I-864 Affidavit of Support; I-765 Application for Employment Authorization"
+  ],
+  "who": "Beneficiary",
+  "also_name": "petitioner",
+  "form_order": [
+    "g28",
+    "i485",
+    "i864",
+    "i765"
+  ],
+  "always_forms": [
+    "i693"
+  ],
+  "forms": {
+    "g28_i130": "Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i130": "Petitioner’s I-130 - Petition for Alien Relative",
+    "i130a": "Beneficiary’s I-130A - Supplemental Information for Spouse Beneficiary",
+    "g28": "Beneficiary’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i485": "Beneficiary’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i864": "Petitioner’s I-864 - Affidavit of Support Under Section 213A of the INA",
+    "i765": "Beneficiary’s I-765 - Application for Employment Authorization",
+    "i693": "Beneficiary’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    [
+      "us_passport",
+      "Copy of Petitioner’s U.S. Passport"
+    ],
+    [
+      "citizenship_certificate",
+      "Copy of Petitioner’s Certificate of Naturalization / Citizenship"
+    ],
+    [
+      "us_birth_certificate",
+      "Copy of Petitioner’s U.S. Birth Certificate"
+    ],
+    [
+      "green_card",
+      "Copy of Petitioner’s Permanent Resident Card"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of Marriage Certificate"
+    ],
+    [
+      "divorce_decree",
+      "Copies of Divorce Decrees Ending Prior Marriages"
+    ],
+    [
+      "lease",
+      "Evidence of Bona Fide Marriage: Joint Lease"
+    ],
+    [
+      "bank_statement",
+      "Evidence of Bona Fide Marriage: Joint Bank Statements"
+    ],
+    [
+      "utility_bill",
+      "Evidence of Bona Fide Marriage: Bills at the Shared Address"
+    ],
+    [
+      "photos",
+      "{photos} Passport Pictures (two of the Petitioner, two of the Beneficiary)"
+    ],
+    [
+      "birth_certificate",
+      "Copy of Beneficiary’s Birth Certificate and Translation"
+    ],
+    [
+      "passport",
+      "Copy of Beneficiary’s Passport"
+    ],
+    [
+      "visa",
+      "Copy of Beneficiary’s U.S. Visa"
+    ],
+    [
+      "i94",
+      "Copy of Beneficiary’s Most Recent I-94"
+    ],
+    [
+      "tax_return",
+      "Petitioner’s Federal Income Tax Returns / IRS Transcripts"
+    ],
+    [
+      "w2",
+      "Petitioner’s W-2 Forms"
+    ],
+    [
+      "pay_stub",
+      "Petitioner’s Recent Pay Stubs"
+    ],
+    [
+      "work_permit",
+      "Copy of Beneficiary’s Employment Authorization Card"
+    ],
+    [
+      "ssn_card",
+      "Copy of Beneficiary’s Social Security Card"
+    ],
+    [
+      "uscis_notice",
+      "Copies of Other USCIS Notices"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of Beneficiary’s Immigration Court Documents"
+    ],
+    [
+      "criminal_record",
+      "Certified Police and Court Records"
+    ]
+  ],
+  "fees": "Enclosed are the filing fees, each paid by its own Form G-1450: Form I-485, {i485}; Form I-765, {i765}. Form I-864 has no filing fee.",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the I-485 and I-765 fees by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amounts the letter states."
+    }
+  ]
+}

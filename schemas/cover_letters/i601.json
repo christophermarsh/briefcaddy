@@ -1,0 +1,97 @@
+{
+  "_about": "The I-601 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (uscis.gov/i-601-addresses, updated 10/23/2025; with an I-212 in the same envelope, the I-212 page's row, updated 11/07/2025), the subject and the fees ($1,050 for the I-601, $1,175 for the I-212, and the $0 categories: Form G-1055 10/01/26) come from src/inadmissibility_waiver.py. The Form I-212 lines show only when it is in the packet. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: I-601 Application for Waiver of Grounds of Inadmissibility"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_i601",
+    "i601",
+    "i212"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i601": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i601": "Applicant’s I-601 - Application for Waiver of Grounds of Inadmissibility",
+    "i212": "Applicant’s I-212 - Application for Permission to Reapply for Admission into the United States After Deportation or Removal"
+  },
+  "documents": [
+    [
+      "us_passport",
+      "Proof of the Qualifying Relative’s U.S. Citizenship"
+    ],
+    [
+      "citizenship_certificate",
+      "Qualifying Relative’s Certificate of Citizenship or Naturalization"
+    ],
+    [
+      "us_birth_certificate",
+      "Qualifying Relative’s U.S. Birth Certificate"
+    ],
+    [
+      "green_card",
+      "Qualifying Relative’s Permanent Resident Card"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate and Translation"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "declaration",
+      "Declarations"
+    ],
+    [
+      "medical_record",
+      "Medical Records"
+    ],
+    [
+      "tax_return",
+      "Tax Returns"
+    ],
+    [
+      "country_conditions",
+      "Country Conditions Evidence"
+    ],
+    [
+      "criminal_record",
+      "Criminal Court Records"
+    ],
+    [
+      "court_disposition",
+      "Certified Court Dispositions"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ],
+    [
+      "notice_to_appear",
+      "Immigration Court Records"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose each fee the cover letter states by its own Form G-1450 (a U.S. card) or Form G-1650 (a U.S. bank account), never a check.",
+      "unless": "no_payment"
+    }
+  ]
+}

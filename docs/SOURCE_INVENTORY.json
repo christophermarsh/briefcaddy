@@ -1,0 +1,5562 @@
+{
+  "scope": "Retained executable source, not acceptance coverage",
+  "modules": [
+    {
+      "path": "src/absence.py",
+      "top_level": [
+        "_load",
+        "vocab",
+        "papers",
+        "reasons",
+        "name",
+        "plain",
+        "title",
+        "line_text",
+        "reason_words",
+        "_counts",
+        "in_folder",
+        "_view",
+        "marks",
+        "without_arrived",
+        "absent_types",
+        "boxes",
+        "_box_index",
+        "box_keys",
+        "box_value",
+        "holds_value",
+        "marked_value",
+        "mark",
+        "undo",
+        "lift_arrived",
+        "lifted_marks",
+        "_maps",
+        "form_keys",
+        "asked",
+        "exhibits_of",
+        "need",
+        "judge",
+        "checklist",
+        "_client_words",
+        "_reads",
+        "listing",
+        "_i485_catalog",
+        "_tooltips",
+        "_tooltip_place",
+        "_tooltip_label",
+        "_companion_boxes",
+        "_place",
+        "box_label",
+        "paper_of",
+        "blank_boxes",
+        "_companion_boxes_safe",
+        "_words_for",
+        "_forms"
+      ]
+    },
+    {
+      "path": "src/accuracy.py",
+      "top_level": [
+        "_source_names",
+        "data_root",
+        "reference_dir",
+        "history_path",
+        "latest_path",
+        "filing_of",
+        "form_title",
+        "_strings",
+        "facts_by_box",
+        "asked_keys",
+        "Reference",
+        "Skipped",
+        "prepare",
+        "find_references",
+        "_source",
+        "provenance",
+        "unfilled_cause",
+        "run_one",
+        "marks_path",
+        "read_marks",
+        "add_mark",
+        "mark_of",
+        "pct_value",
+        "pct_of",
+        "pct",
+        "share",
+        "figures",
+        "ref_words",
+        "_table",
+        "_section",
+        "render_report",
+        "render_public",
+        "public_problems",
+        "compare_all",
+        "firm_references",
+        "run",
+        "_reading",
+        "history_record",
+        "audit_counts",
+        "_audits",
+        "audit_line",
+        "audit_rises",
+        "append_history",
+        "read_history",
+        "nights",
+        "_p",
+        "history_line",
+        "drops",
+        "chosen_set",
+        "nightly",
+        "latest",
+        "shown",
+        "screen",
+        "_plain",
+        "mark"
+      ]
+    },
+    {
+      "path": "src/accuracy_samples.py",
+      "top_level": [
+        "_seed",
+        "_clone",
+        "_graphs",
+        "_add_fact",
+        "_drop_facts",
+        "_add_doc",
+        "_not_sij",
+        "_refill_i485",
+        "cases",
+        "_states",
+        "_edit",
+        "_office_saved",
+        "build",
+        "_build"
+      ]
+    },
+    {
+      "path": "src/address_change.py",
+      "top_level": [
+        "_in_court",
+        "from_record",
+        "_before",
+        "confirmed",
+        "derive",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/apply_for.py",
+      "top_level": [
+        "catalog",
+        "question_ids",
+        "_read",
+        "_write",
+        "view",
+        "history",
+        "answer",
+        "carry"
+      ]
+    },
+    {
+      "path": "src/approvals.py",
+      "top_level": [
+        "register",
+        "kinds",
+        "action",
+        "_sentence",
+        "_short",
+        "CaseContext",
+        "case_items",
+        "FirmContext",
+        "firm_items",
+        "_ask",
+        "_open",
+        "row_of",
+        "queue",
+        "summary",
+        "line",
+        "_cards",
+        "_part14",
+        "_eoir26a",
+        "_restricted",
+        "_practices",
+        "_wordings",
+        "_audit",
+        "_path"
+      ]
+    },
+    {
+      "path": "src/arrival.py",
+      "top_level": [
+        "_value",
+        "_decided",
+        "_typed",
+        "_us",
+        "_norm",
+        "papers",
+        "_ports",
+        "port_states",
+        "state_words",
+        "_as_printed",
+        "reading",
+        "_copy",
+        "_take",
+        "settle_date",
+        "_placed",
+        "_hold_for_reading",
+        "settle",
+        "findings",
+        "_days",
+        "card_keys",
+        "pages"
+      ]
+    },
+    {
+      "path": "src/assemble.py",
+      "top_level": [
+        "_us_codes",
+        "_value",
+        "_src",
+        "_put",
+        "_needs_check",
+        "_birth_cert_parents",
+        "_marriage_parents_of_applicant",
+        "_family_hints",
+        "_record_name",
+        "assemble_parents",
+        "applicant_party",
+        "applicant_marriages",
+        "_names_each_document_gives",
+        "_residence_tie_break",
+        "assemble_marriage",
+        "_fill_from_client",
+        "assemble_entry_passport",
+        "mark_earlier_i485",
+        "_us_date",
+        "_entries",
+        "_address_line",
+        "assemble_history",
+        "_p14_spot",
+        "_chronological",
+        "_street_line",
+        "_place_line",
+        "_employer_line",
+        "_address_lines",
+        "_dates_line",
+        "_p14_text",
+        "_other_a_numbers",
+        "_prior_spouses",
+        "assemble_answers",
+        "assemble",
+        "settle_names",
+        "completeness_findings",
+        "known_cities",
+        "_swap",
+        "_foreign_address_findings",
+        "consistency_findings"
+      ]
+    },
+    {
+      "path": "src/asylee.py",
+      "top_level": [
+        "_status",
+        "court_grant",
+        "grant",
+        "eligible_on",
+        "case_facts",
+        "derive",
+        "fee",
+        "mail_to",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/asylum.py",
+      "top_level": [
+        "spot",
+        "settings",
+        "_value",
+        "_d",
+        "us",
+        "_plus_years",
+        "last_arrival",
+        "one_year",
+        "where_to_file",
+        "explanation_capacity",
+        "_capacity",
+        "derive",
+        "_supplements",
+        "supplement_blocks",
+        "attach_supplements",
+        "_graph",
+        "_has_doc",
+        "status",
+        "problems",
+        "_label",
+        "answer"
+      ]
+    },
+    {
+      "path": "src/audit_fill.py",
+      "top_level": [
+        "path",
+        "_tokens",
+        "noun_of",
+        "_blank",
+        "kind_of",
+        "change_words",
+        "Boxes",
+        "_row",
+        "_ident",
+        "rows_from_result",
+        "save_rows",
+        "group_id",
+        "groups",
+        "line_of",
+        "alerts",
+        "form_name",
+        "for_reader",
+        "for_case",
+        "read",
+        "write",
+        "partial_path",
+        "_write_private",
+        "_empty",
+        "counts",
+        "is_save",
+        "_has_saves",
+        "_fill",
+        "corrected_pair",
+        "_field_map",
+        "audit_forms",
+        "reader_examples",
+        "mine_saves",
+        "_stamped",
+        "run",
+        "nightly",
+        "_unprotected"
+      ]
+    },
+    {
+      "path": "src/backups.py",
+      "top_level": [
+        "BackupError",
+        "inside",
+        "Item",
+        "_role",
+        "_walk",
+        "sources",
+        "plan",
+        "_is_sqlite",
+        "_snapshot",
+        "_case_roots",
+        "_fernet",
+        "encrypt_file",
+        "decrypt_file",
+        "_passphrase_ok",
+        "_sha",
+        "make_backup",
+        "archives",
+        "prune",
+        "_open",
+        "_safe",
+        "_check_json",
+        "_check_sqlite",
+        "extract",
+        "_vault_opens",
+        "check_restore",
+        "restore_into",
+        "DrillStopped",
+        "latest",
+        "drill_passphrase",
+        "_changed",
+        "_title",
+        "_field_diffs",
+        "_table_counts",
+        "_jsonl_rows",
+        "_iso",
+        "drill",
+        "_drill",
+        "_record",
+        "read_log",
+        "_mdy",
+        "_days",
+        "status",
+        "_minutes",
+        "drill_status"
+      ]
+    },
+    {
+      "path": "src/batch.py",
+      "top_level": [
+        "ClientResult",
+        "FilingResult",
+        "load_firm_profile",
+        "process_documents",
+        "split_pages",
+        "unique_page_of",
+        "page_of",
+        "_read_beyond_type",
+        "derive",
+        "_present",
+        "eligibility_alerts",
+        "_uscis_cases",
+        "_notice_alerts",
+        "cross_check",
+        "_us_date",
+        "key_digits",
+        "process_client_folder",
+        "record_documents",
+        "shadow_document_types",
+        "field_to_fact",
+        "part14_blocks",
+        "part14_spot_flags",
+        "_part14_continuation",
+        "finalize_client",
+        "run_batch"
+      ]
+    },
+    {
+      "path": "src/bia.py",
+      "top_level": [
+        "from_record",
+        "from_case",
+        "forms_for",
+        "derive",
+        "due",
+        "fee",
+        "notes",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/bond.py",
+      "top_level": [
+        "from_record",
+        "_years",
+        "derive",
+        "released_due",
+        "detained",
+        "fee",
+        "notes",
+        "problems",
+        "_money",
+        "render"
+      ]
+    },
+    {
+      "path": "src/calendar_feed.py",
+      "top_level": [
+        "_hash",
+        "Feeds",
+        "parse_time",
+        "court_address",
+        "_short",
+        "mine",
+        "build",
+        "_escape",
+        "fold",
+        "_utc",
+        "Stamps",
+        "ics",
+        "Cache",
+        "is_open"
+      ]
+    },
+    {
+      "path": "src/cancellation.py",
+      "top_level": [
+        "is_42a",
+        "_is_42b",
+        "resident_since",
+        "from_record",
+        "_name",
+        "_room",
+        "other_names",
+        "_line",
+        "_state_zip",
+        "relatives",
+        "derive",
+        "stop_date",
+        "_years",
+        "_age",
+        "deadline",
+        "fee",
+        "biometrics_fee",
+        "where",
+        "notes",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/card_renewal.py",
+      "top_level": [
+        "derive",
+        "fee",
+        "notes",
+        "letter",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/case_assignment.py",
+      "top_level": [
+        "Unavailable",
+        "Conflict",
+        "_canonical",
+        "_digest",
+        "_email",
+        "_safe",
+        "_json",
+        "_person",
+        "_request",
+        "_validate",
+        "summary",
+        "Assignments"
+      ]
+    },
+    {
+      "path": "src/case_notes.py",
+      "top_level": [
+        "_read",
+        "_write",
+        "_who",
+        "_ledger",
+        "notes",
+        "add_note",
+        "add_task",
+        "assign_task",
+        "finish_task",
+        "_task",
+        "tasks",
+        "task_row",
+        "unprocessed_rows",
+        "carry"
+      ]
+    },
+    {
+      "path": "src/case_questions.py",
+      "top_level": [
+        "is_on",
+        "practice",
+        "why_not",
+        "_fold",
+        "_stem",
+        "_words",
+        "_stems",
+        "_month",
+        "_iso",
+        "find_dates",
+        "dates_in",
+        "us",
+        "_hide",
+        "_client_words",
+        "_catalog",
+        "fact_label",
+        "_a_name",
+        "_source_words",
+        "Record",
+        "_passage",
+        "_fact_passages",
+        "_joined",
+        "_paired",
+        "_document_passages",
+        "_decision_passages",
+        "_journey_passages",
+        "passages",
+        "_terms",
+        "retrieve",
+        "_staff_words",
+        "vetoed",
+        "record_lookup",
+        "legal_question",
+        "_existence",
+        "render",
+        "_cited",
+        "_lines",
+        "choose",
+        "prompt",
+        "ask_model",
+        "answer_from",
+        "_log",
+        "_need",
+        "_count",
+        "_outcome_words",
+        "question_language",
+        "english_words",
+        "ask",
+        "summary",
+        "entries",
+        "view",
+        "panel",
+        "latin1",
+        "summary_pdf"
+      ]
+    },
+    {
+      "path": "src/case_status.py",
+      "top_level": [
+        "CaseStatusError",
+        "Stop",
+        "_deployment_block",
+        "config",
+        "Transport",
+        "_message",
+        "Client",
+        "kind",
+        "_iso_from_desc",
+        "_iso_from_stamp",
+        "_plain",
+        "record_of",
+        "_read",
+        "_write",
+        "records",
+        "save",
+        "_us",
+        "for_journey",
+        "_quota_day",
+        "queue",
+        "nightly",
+        "summary",
+        "state_text",
+        "finding"
+      ]
+    },
+    {
+      "path": "src/certificate.py",
+      "top_level": [
+        "_parent",
+        "derive",
+        "citizen_since",
+        "fee",
+        "address",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/classify/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/classify/barcode.py",
+      "top_level": [
+        "decode_pdf417",
+        "parse_aamva"
+      ]
+    },
+    {
+      "path": "src/classify/classifier.py",
+      "top_level": [
+        "Classification",
+        "classify_text",
+        "_subclassify_notice",
+        "page_cache",
+        "cached_pdf_pages",
+        "extract_pages",
+        "_extract_pdf_pages",
+        "split_documents",
+        "extract_text",
+        "_try_translate",
+        "_page_images",
+        "readability",
+        "_ocr_page_images",
+        "_barcode_page_images",
+        "classify_document",
+        "acroform_field_values"
+      ]
+    },
+    {
+      "path": "src/classify/ocr.py",
+      "top_level": [
+        "find_tesseract",
+        "_windows_to_wsl_path",
+        "_to_windows_path",
+        "_content_row_bands",
+        "_upscale",
+        "_enhance",
+        "_pictures",
+        "_confidence",
+        "_best",
+        "_preprocess",
+        "ocr_image",
+        "_filiation_pixel_block",
+        "OcrWord",
+        "ocr_words",
+        "parse_tsv"
+      ]
+    },
+    {
+      "path": "src/classify/patterns.py",
+      "top_level": [
+        "_load_taxonomy",
+        "name",
+        "short_name"
+      ]
+    },
+    {
+      "path": "src/classify/standardize.py",
+      "top_level": [
+        "RenamePlan",
+        "_assign_names",
+        "plan_standard_names",
+        "apply_standard_names",
+        "standardize_folder"
+      ]
+    },
+    {
+      "path": "src/classify/translate.py",
+      "top_level": [
+        "warm_up",
+        "translate_text",
+        "installed_language_codes",
+        "_installed_language_codes_by_import"
+      ]
+    },
+    {
+      "path": "src/client_case.py",
+      "top_level": [
+        "_load",
+        "data",
+        "say",
+        "label",
+        "_d",
+        "day_words",
+        "clock_words",
+        "keys_ready",
+        "status_records",
+        "status_view",
+        "estimates",
+        "next_step",
+        "notice_id",
+        "apply_reads",
+        "reads",
+        "upcoming",
+        "office_phone",
+        "sheet_key",
+        "sheet",
+        "sheet_pdf",
+        "milestones",
+        "feedback_prompt",
+        "clean_feedback",
+        "read_feedback",
+        "sync_feedback",
+        "sync_all_feedback",
+        "step_name",
+        "stale_answers",
+        "answers_waiting"
+      ]
+    },
+    {
+      "path": "src/client_file.py",
+      "top_level": [
+        "internal",
+        "allowed",
+        "directory_safe",
+        "serialized",
+        "safe",
+        "capture",
+        "_read",
+        "_source_scope",
+        "cover",
+        "gather",
+        "_notes",
+        "_inventory",
+        "inventory",
+        "reviewed_entries",
+        "inspect",
+        "inspect_bytes"
+      ]
+    },
+    {
+      "path": "src/client_file_policy.py",
+      "top_level": [
+        "digest",
+        "profile",
+        "_text",
+        "Conflict",
+        "_date",
+        "facts",
+        "_json_bytes",
+        "_json",
+        "identity",
+        "read",
+        "_validate_approval",
+        "snapshot",
+        "_case_evidence",
+        "_current",
+        "applicability_holds",
+        "retention_holds",
+        "_minimum",
+        "view",
+        "_mutation",
+        "_expected",
+        "_approval",
+        "save_facts",
+        "approve",
+        "require_handover",
+        "approve_retention",
+        "approve_destruction",
+        "require_destruction",
+        "save_recipient",
+        "approve_inventory",
+        "_portal",
+        "handover_binding",
+        "display"
+      ]
+    },
+    {
+      "path": "src/client_language_readiness.py",
+      "top_level": [
+        "_notice",
+        "bundle",
+        "_bundle",
+        "practice_id",
+        "practice_entries",
+        "stamp",
+        "review_attorney",
+        "review_translation",
+        "readiness"
+      ]
+    },
+    {
+      "path": "src/client_reminders.py",
+      "top_level": [
+        "read",
+        "_save",
+        "kind_of",
+        "channel_results",
+        "status_of",
+        "fields",
+        "nightly",
+        "summary",
+        "client_day"
+      ]
+    },
+    {
+      "path": "src/clock.py",
+      "top_level": [
+        "cached_zone",
+        "zones",
+        "valid",
+        "zone_name",
+        "zone",
+        "now",
+        "utcnow",
+        "today",
+        "stamp",
+        "parse",
+        "key",
+        "local",
+        "local_date",
+        "day",
+        "us_date"
+      ]
+    },
+    {
+      "path": "src/closures.py",
+      "top_level": [
+        "_load",
+        "data",
+        "parse_lines",
+        "firm_added",
+        "by_day",
+        "notes",
+        "sources",
+        "follows"
+      ]
+    },
+    {
+      "path": "src/compare.py",
+      "top_level": [
+        "short_name",
+        "FieldComparison",
+        "normalize",
+        "_value",
+        "read_fields",
+        "compare",
+        "summarize",
+        "main"
+      ]
+    },
+    {
+      "path": "src/conditions.py",
+      "top_level": [
+        "window",
+        "joint",
+        "waivers",
+        "derive",
+        "address",
+        "fee",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/conflicts.py",
+      "top_level": [
+        "ConflictProblem",
+        "log_path",
+        "_append",
+        "rows",
+        "_find",
+        "_read",
+        "_write",
+        "_date",
+        "clean",
+        "_subjects",
+        "_index",
+        "search",
+        "_spellings",
+        "hidden_for",
+        "present",
+        "_us",
+        "_check",
+        "_decision",
+        "_log_decision",
+        "for_new_client",
+        "_write_case",
+        "record_new",
+        "_reindex",
+        "hold_new",
+        "decide",
+        "search_again",
+        "note",
+        "record_of",
+        "held",
+        "orphan",
+        "abandoned",
+        "sweep",
+        "_abandon",
+        "hold_words",
+        "state",
+        "waiting",
+        "_line",
+        "_named_line",
+        "_when",
+        "_select",
+        "listing",
+        "csv",
+        "counts"
+      ]
+    },
+    {
+      "path": "src/connectors/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/connectors/base.py",
+      "top_level": [
+        "RemoteClient",
+        "RemoteDoc",
+        "DocumentSource",
+        "ResultSink"
+      ]
+    },
+    {
+      "path": "src/connectors/check.py",
+      "top_level": [
+        "main"
+      ]
+    },
+    {
+      "path": "src/connectors/clio.py",
+      "top_level": [
+        "ClioError",
+        "NotReady",
+        "Stop",
+        "_words",
+        "_log",
+        "base_url",
+        "folder",
+        "_read",
+        "_write",
+        "settings",
+        "state",
+        "Busy",
+        "FileLock",
+        "step_lock",
+        "_short_lock",
+        "shared_pace",
+        "_update_state",
+        "_error",
+        "Vault",
+        "credentials",
+        "redirect_uri",
+        "save_settings",
+        "Pace",
+        "authorize_url",
+        "_token_answer",
+        "connect",
+        "disconnect",
+        "Clio",
+        "_why",
+        "held_back",
+        "case_view",
+        "_packets",
+        "_title",
+        "mailing_pdf",
+        "_summary",
+        "ready",
+        "_mark_ours",
+        "sync_in",
+        "_link",
+        "_conflict_search",
+        "sync_out",
+        "_case_out",
+        "_end_out",
+        "_task_text",
+        "_tasks_out",
+        "run",
+        "check",
+        "_nothing",
+        "nightly",
+        "allow",
+        "view",
+        "_default_redirect",
+        "state_text",
+        "others"
+      ]
+    },
+    {
+      "path": "src/connectors/clio_hooks.py",
+      "top_level": [
+        "_path",
+        "load",
+        "_update",
+        "waiting",
+        "snapshot",
+        "clear",
+        "_seen_path",
+        "_seen_loaded",
+        "seen_has",
+        "seen_add",
+        "prune_seen",
+        "_secrets",
+        "_candidates",
+        "_change_vault",
+        "_forget_id",
+        "signed",
+        "_first_id",
+        "receive",
+        "_handshake",
+        "_record",
+        "_ledger",
+        "public_url",
+        "_unconfirmed",
+        "_says",
+        "state_of",
+        "view",
+        "needs",
+        "_client",
+        "_expires",
+        "subscribe",
+        "check",
+        "confirm_candidates",
+        "end_window",
+        "renew",
+        "state_say",
+        "stop",
+        "forget",
+        "read_waiting",
+        "read_now"
+      ]
+    },
+    {
+      "path": "src/connectors/clio_sent.py",
+      "top_level": [
+        "read",
+        "_write",
+        "summary",
+        "_same",
+        "_words",
+        "record",
+        "say_failed",
+        "_day",
+        "_plural",
+        "sent_line",
+        "case_view"
+      ]
+    },
+    {
+      "path": "src/connectors/drive_intake.py",
+      "top_level": [
+        "IntakeError",
+        "ProcessingFailed",
+        "digest",
+        "retained_sources",
+        "durable_record",
+        "FirmScope",
+        "_SelectedSource",
+        "SelectedIntake",
+        "_purge_job_staging",
+        "purge_receipts",
+        "process_local",
+        "installed",
+        "worker_handler"
+      ]
+    },
+    {
+      "path": "src/connectors/drive_settings.py",
+      "top_level": [
+        "Conflict",
+        "paths",
+        "provider",
+        "bindings",
+        "_payload",
+        "validate",
+        "read_record",
+        "read",
+        "Settings",
+        "purge_settings"
+      ]
+    },
+    {
+      "path": "src/connectors/filevine.py",
+      "top_level": [
+        "FilevineError",
+        "_first",
+        "Filevine",
+        "verify_webhook"
+      ]
+    },
+    {
+      "path": "src/connectors/gdrive.py",
+      "top_level": [
+        "DriveError",
+        "_b64",
+        "service_account_jwt",
+        "GoogleDrive"
+      ]
+    },
+    {
+      "path": "src/connectors/local.py",
+      "top_level": [
+        "LocalFolderSource",
+        "NoSink",
+        "FolderSink"
+      ]
+    },
+    {
+      "path": "src/connectors/msgraph.py",
+      "top_level": [
+        "GraphError",
+        "Microsoft365"
+      ]
+    },
+    {
+      "path": "src/connectors/signin.py",
+      "top_level": [
+        "SignInError",
+        "_unb64",
+        "OIDCSignIn",
+        "GoogleSignIn",
+        "MicrosoftSignIn",
+        "config",
+        "provider_for",
+        "_not_ready",
+        "providers",
+        "staff_session"
+      ]
+    },
+    {
+      "path": "src/connectors/sync.py",
+      "top_level": [
+        "_slug",
+        "local_id",
+        "_filename",
+        "_kind",
+        "_plain",
+        "mirror",
+        "_mirror"
+      ]
+    },
+    {
+      "path": "src/correction_provenance.py",
+      "top_level": [
+        "observation",
+        "_time",
+        "retain"
+      ]
+    },
+    {
+      "path": "src/court.py",
+      "top_level": [
+        "nta_hearing",
+        "derive",
+        "address_note",
+        "notes",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/court_motion.py",
+      "top_level": [
+        "days",
+        "joint_reopen",
+        "kind",
+        "_absentia",
+        "_reopen",
+        "_reconsider",
+        "_decisions",
+        "from_record",
+        "from_case",
+        "derive",
+        "deadline",
+        "fee",
+        "joint",
+        "forms_for",
+        "title",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/court_pleading.py",
+      "top_level": [
+        "courts",
+        "court_names",
+        "court_section",
+        "match",
+        "from_hearings",
+        "court_of",
+        "ecas",
+        "court_problems",
+        "how_filed",
+        "upload_problems",
+        "_a",
+        "respondent",
+        "attorney_lines",
+        "Paper",
+        "esc",
+        "court_heading",
+        "caption",
+        "detained",
+        "cover",
+        "signature",
+        "proposed_order",
+        "proof_of_service"
+      ]
+    },
+    {
+      "path": "src/critical_review.py",
+      "top_level": [
+        "inventory",
+        "critical",
+        "origins",
+        "keys",
+        "_dependencies",
+        "context",
+        "_selected",
+        "confirmation",
+        "valid",
+        "filter_decisions",
+        "mark_graph",
+        "confirmed_keys",
+        "flags",
+        "problems",
+        "pending_notices"
+      ]
+    },
+    {
+      "path": "src/cuban_adjustment.py",
+      "top_level": [
+        "_category",
+        "_caa",
+        "_derivative",
+        "_under_14",
+        "_upper",
+        "cuban",
+        "_status",
+        "on_track",
+        "present_since",
+        "eligible_on",
+        "_entry",
+        "case_facts",
+        "derive",
+        "fee",
+        "payments",
+        "mail_to",
+        "notes",
+        "problems",
+        "_hrifa_problems",
+        "packet_variant",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/daca.py",
+      "top_level": [
+        "_moved",
+        "_left",
+        "_in_proceedings",
+        "_arrested",
+        "_rules",
+        "_c33",
+        "recipient",
+        "expires",
+        "window",
+        "renewal_pending",
+        "window_text",
+        "derive",
+        "fees",
+        "payments",
+        "address",
+        "_number",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/day_plan.py",
+      "top_level": [
+        "filing_for",
+        "items_of",
+        "summary",
+        "group_of",
+        "can_reach",
+        "line",
+        "_next_deadlines",
+        "listing",
+        "night_line"
+      ]
+    },
+    {
+      "path": "src/deadlines_set.py",
+      "top_level": [
+        "_read",
+        "_write",
+        "load",
+        "mtime",
+        "_person",
+        "_who",
+        "add",
+        "assign",
+        "done",
+        "open_deadlines",
+        "finished",
+        "apply_assignments",
+        "owner_for"
+      ]
+    },
+    {
+      "path": "src/deployment.py",
+      "top_level": [
+        "load",
+        "hosted",
+        "provider",
+        "support",
+        "responsible",
+        "about",
+        "support_start"
+      ]
+    },
+    {
+      "path": "src/document_instances.py",
+      "top_level": [
+        "digest",
+        "source_hash",
+        "_source_hash",
+        "identity",
+        "_start",
+        "_continued",
+        "_anchor",
+        "_anchors",
+        "analyze",
+        "segments",
+        "context",
+        "prepare",
+        "_saved",
+        "stage",
+        "_original_aliases",
+        "fail_case",
+        "views",
+        "_views",
+        "problems",
+        "held_aliases",
+        "without_sources",
+        "independent_absence",
+        "invalidate",
+        "boundary_snapshot",
+        "resolve"
+      ]
+    },
+    {
+      "path": "src/documents.py",
+      "top_level": [
+        "_now",
+        "types",
+        "roles",
+        "type_info",
+        "name",
+        "short_name",
+        "valid_person",
+        "case_confidentiality",
+        "with_case_confidentiality",
+        "_words",
+        "_tokens",
+        "_split_full",
+        "_same_person",
+        "_case_people",
+        "_case_value",
+        "_value",
+        "_named",
+        "_person",
+        "language",
+        "_fold",
+        "countries",
+        "country_of",
+        "_country_in_text",
+        "document_language",
+        "_iso",
+        "_a_date",
+        "_date_after",
+        "_labelled_date",
+        "read_dates",
+        "dates",
+        "found_roles",
+        "identifiers",
+        "quality",
+        "_otsu",
+        "_picture",
+        "_page_pictures",
+        "_words_in",
+        "_ocr_confidence",
+        "measure_quality",
+        "graded",
+        "source_of",
+        "_file_hash",
+        "_page_count",
+        "_pages",
+        "build",
+        "merge",
+        "_with_roles",
+        "_case_graph",
+        "_filled",
+        "_numbers",
+        "one_person",
+        "infer_people",
+        "read",
+        "save",
+        "save_run",
+        "_text_layer",
+        "_fields_by_doc",
+        "_refresh",
+        "load",
+        "by_doc",
+        "duplicates",
+        "_change",
+        "set_person",
+        "person_words",
+        "set_aside_documents",
+        "set_aside_for_other_people",
+        "person_changed",
+        "set_quality",
+        "translation_question",
+        "set_language",
+        "set_translated",
+        "set_dates",
+        "tag",
+        "untag",
+        "_classified",
+        "documents_for",
+        "_plain",
+        "person_note",
+        "relatives_note"
+      ]
+    },
+    {
+      "path": "src/drafting.py",
+      "top_level": [
+        "_now",
+        "_by",
+        "_need_who",
+        "_sha",
+        "_check_filing",
+        "_read",
+        "_state",
+        "_save",
+        "pdf_path",
+        "questions",
+        "_fold",
+        "_detect",
+        "language",
+        "_decisions",
+        "_graph",
+        "_answer",
+        "_tokens",
+        "smoothing_allowed",
+        "diff",
+        "ModelCutOff",
+        "_timed_out",
+        "local_model",
+        "smooth_with_model",
+        "smoothing_on",
+        "_person",
+        "_live",
+        "declaration",
+        "make_english",
+        "_paragraph",
+        "_record_english",
+        "edit",
+        "revert",
+        "accept_suggestion",
+        "decline_suggestion",
+        "confirm_language",
+        "include",
+        "smooth",
+        "practice",
+        "mark_final",
+        "_take_back",
+        "take_back",
+        "client_signed",
+        "_final",
+        "_signed",
+        "current_pdf",
+        "card",
+        "_sheet",
+        "_draft_mark",
+        "render",
+        "exhibit_entries",
+        "exhibit_for",
+        "problems",
+        "checklist",
+        "bundle_rows",
+        "_fact_source",
+        "_fact_doc",
+        "cover_paragraph",
+        "_join"
+      ]
+    },
+    {
+      "path": "src/editions.py",
+      "top_level": [
+        "mdy",
+        "_date_of",
+        "form_name",
+        "_text_of",
+        "_sentences",
+        "page_edition",
+        "_form_id",
+        "_about_us",
+        "read_alerts",
+        "read_page",
+        "carry",
+        "verdict",
+        "grace_words",
+        "finding",
+        "updating"
+      ]
+    },
+    {
+      "path": "src/engagement.py",
+      "top_level": [
+        "firm_path",
+        "shipped",
+        "_firm",
+        "stamp",
+        "_office_ids",
+        "document",
+        "documents",
+        "_paragraphs",
+        "_english_hash",
+        "wording_hash",
+        "_brackets",
+        "_same_words",
+        "_check_words",
+        "save_document",
+        "wording",
+        "practice_entry",
+        "practice",
+        "approved",
+        "read",
+        "_save",
+        "state",
+        "end_info",
+        "conflict_declined",
+        "_need",
+        "_attorney",
+        "_typed",
+        "_day",
+        "_us",
+        "_local",
+        "_portal_root",
+        "_profile",
+        "client_name",
+        "language",
+        "_office",
+        "filing_choices",
+        "office_words",
+        "_filing_words",
+        "known_deadlines",
+        "packet_fees",
+        "_fill",
+        "_compose",
+        "_values",
+        "_letter",
+        "_approved_wording",
+        "_context",
+        "_find",
+        "_open_only",
+        "_agreement_context",
+        "preview_agreement",
+        "make_agreement",
+        "agreement",
+        "send",
+        "_tell_client",
+        "_portal_letter",
+        "sync",
+        "paper",
+        "_portal_signed_on_paper",
+        "countersign",
+        "_years",
+        "_plus_years",
+        "retention",
+        "_retention_proposal",
+        "end",
+        "_portal_signed",
+        "_portal_end",
+        "reopen",
+        "exports_folder",
+        "export_file",
+        "approve_file",
+        "file_returned",
+        "file_path",
+        "approve_consent",
+        "_destroyed_path",
+        "destroyed",
+        "due",
+        "mark_destroyed",
+        "_mark_destroyed",
+        "pdf_path",
+        "_draft_mark",
+        "_time",
+        "signature_words",
+        "render",
+        "letter_pdf",
+        "_letter_row",
+        "_wording_matches",
+        "view"
+      ]
+    },
+    {
+      "path": "src/enotice.py",
+      "top_level": [
+        "wanted",
+        "_contact",
+        "render"
+      ]
+    },
+    {
+      "path": "src/eoir26a.py",
+      "top_level": [
+        "shipped",
+        "lines",
+        "short_label",
+        "by_fact",
+        "parse_money",
+        "fmt",
+        "usd",
+        "totals_of",
+        "amounts_from_graph",
+        "_value",
+        "totals",
+        "usd_for",
+        "words",
+        "_portal",
+        "_client_file",
+        "portal_answers",
+        "answered_on",
+        "figures_into",
+        "case_graph",
+        "asked_by",
+        "names",
+        "legal_name",
+        "signs_as_client",
+        "from_case",
+        "_signed_day",
+        "sentence_text",
+        "snapshot",
+        "covers_now",
+        "read",
+        "_save",
+        "_private",
+        "_need",
+        "_attorney",
+        "_portal_store",
+        "_request",
+        "_next_id",
+        "send",
+        "set_figures",
+        "suggestion",
+        "_sentence_check",
+        "edit_sentence",
+        "approve_sentence",
+        "sentence_stale",
+        "undo_sentence",
+        "_client_texts",
+        "open_signing",
+        "reopen",
+        "sync",
+        "paper",
+        "attorney_name",
+        "attest",
+        "problems",
+        "hold_notes",
+        "finish",
+        "_place_drawing",
+        "_time",
+        "_day",
+        "how_signed",
+        "audit_pages",
+        "_source",
+        "view",
+        "pdf_path",
+        "questions",
+        "_help",
+        "client_view",
+        "check_drawing",
+        "view_by_client",
+        "sign_in_portal",
+        "_signing_amounts"
+      ]
+    },
+    {
+      "path": "src/evaluation_artifacts.py",
+      "top_level": [
+        "_targets",
+        "remove_case"
+      ]
+    },
+    {
+      "path": "src/evaluation_candidates.py",
+      "top_level": [
+        "_safe",
+        "_read",
+        "binding",
+        "_active_accounts",
+        "_authorization",
+        "export_candidates"
+      ]
+    },
+    {
+      "path": "src/events.py",
+      "top_level": [
+        "set_actor",
+        "clear_actor",
+        "actor",
+        "acting",
+        "mask",
+        "words",
+        "plain",
+        "item_words",
+        "list_words",
+        "base_path",
+        "month_file",
+        "files",
+        "row_hash",
+        "tombstone",
+        "redactions_path",
+        "redaction_digest",
+        "lock_path",
+        "_lines_from_end",
+        "_head",
+        "record",
+        "rows",
+        "_complete",
+        "Tail"
+      ]
+    },
+    {
+      "path": "src/expedite.py",
+      "top_level": [
+        "derive",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/expiry.py",
+      "top_level": [
+        "_rules",
+        "rules",
+        "person_name",
+        "_us",
+        "_plus_years",
+        "_months_before",
+        "_type_name",
+        "_type_short",
+        "_filing_name",
+        "_in_packet",
+        "_case",
+        "_needed",
+        "watched",
+        "_kind_of",
+        "_ends",
+        "_compose",
+        "deadlines"
+      ]
+    },
+    {
+      "path": "src/export_reader.py",
+      "top_level": [
+        "esc",
+        "href",
+        "_json",
+        "_mdy",
+        "schema_version",
+        "fact_label",
+        "_name_and_kind",
+        "_restriction",
+        "glossary",
+        "_case_section",
+        "_lines",
+        "ledger_pages",
+        "build"
+      ]
+    },
+    {
+      "path": "src/extract/__init__.py",
+      "top_level": [
+        "extract_fields"
+      ]
+    },
+    {
+      "path": "src/extract/arrival.py",
+      "top_level": [
+        "parse_date",
+        "Place",
+        "split_place",
+        "city_and_token",
+        "Arrival",
+        "read_arrival"
+      ]
+    },
+    {
+      "path": "src/extract/base.py",
+      "top_level": [
+        "ExtractedField",
+        "find_after_label",
+        "find_value_after_label",
+        "find_date_after_label",
+        "normalize_date",
+        "cm_to_feet_inches",
+        "kg_to_lbs",
+        "find_sex"
+      ]
+    },
+    {
+      "path": "src/extract/birth_certificate.py",
+      "top_level": [
+        "_lines",
+        "_clean_person",
+        "_birthplace_of",
+        "_filiation_entries",
+        "_merge_versions",
+        "_labeled_parents",
+        "_grandparents",
+        "_birth_city",
+        "_naturalidade",
+        "_registrant_name",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/criminal_record.py",
+      "top_level": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/dhs_record.py",
+      "top_level": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/drivers_license.py",
+      "top_level": [
+        "_normalize_height",
+        "_extract_from_aamva_barcode",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/eoir_notice.py",
+      "top_level": [
+        "CourtMail",
+        "_date",
+        "_time",
+        "a_number",
+        "_place",
+        "parse"
+      ]
+    },
+    {
+      "path": "src/extract/geo.py",
+      "top_level": [
+        "_index",
+        "_data",
+        "code",
+        "countries",
+        "country_name_of",
+        "region_word",
+        "region",
+        "is_region",
+        "regions_for_place",
+        "likely_region",
+        "_plural",
+        "postal",
+        "postal_format",
+        "normalize_postal",
+        "postal_ok",
+        "postal_search",
+        "region_from_postal",
+        "split_place",
+        "which_country"
+      ]
+    },
+    {
+      "path": "src/extract/i360_approval.py",
+      "top_level": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/i94.py",
+      "top_level": [
+        "number_issue",
+        "_date_field",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/marriage_certificate.py",
+      "top_level": [
+        "_columns",
+        "_full_name_readable",
+        "_names_after",
+        "_hFicticioA",
+        "_block_values",
+        "_parent",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/name_change_order.py",
+      "top_level": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/names.py",
+      "top_level": [
+        "fold_name",
+        "looks_like_name",
+        "surname_tokens",
+        "NameSplit",
+        "split_name",
+        "same_person_name",
+        "shares_given_name"
+      ]
+    },
+    {
+      "path": "src/extract/notice_to_appear.py",
+      "top_level": [
+        "_close",
+        "read_address",
+        "_lines_after",
+        "allegations",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/passport.py",
+      "top_level": [
+        "extract",
+        "mrz_check_digit",
+        "_repair",
+        "mrz_name",
+        "read_mrz"
+      ]
+    },
+    {
+      "path": "src/extract/petitioner_docs.py",
+      "top_level": [
+        "_rekey",
+        "us_passport",
+        "citizenship_certificate",
+        "green_card",
+        "us_birth_certificate",
+        "tax_return"
+      ]
+    },
+    {
+      "path": "src/extract/places.py",
+      "top_level": [
+        "br_state_from_cep",
+        "br_states_for_city",
+        "country_name",
+        "is_us_country",
+        "br_city_uf",
+        "city_country",
+        "is_br_state"
+      ]
+    },
+    {
+      "path": "src/extract/sij_order.py",
+      "top_level": [
+        "_sentence",
+        "form_block",
+        "_from_cjp37_fields",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/ssn_card.py",
+      "top_level": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/uscis_notice.py",
+      "top_level": [
+        "Notice",
+        "_date_below",
+        "parse",
+        "bring_list",
+        "appointment_place",
+        "person_a_number",
+        "client_name",
+        "person_names",
+        "addressed_to",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/extract/visa.py",
+      "top_level": [
+        "extract",
+        "_find_dob"
+      ]
+    },
+    {
+      "path": "src/extract/work_permit.py",
+      "top_level": [
+        "check_digit",
+        "_yymmdd",
+        "extract"
+      ]
+    },
+    {
+      "path": "src/factgraph/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/factgraph/graph.py",
+      "top_level": [
+        "_now",
+        "Source",
+        "Resolution",
+        "Fact",
+        "FactGraph"
+      ]
+    },
+    {
+      "path": "src/family.py",
+      "top_level": [
+        "_member",
+        "household_members",
+        "contracts",
+        "_value",
+        "derive",
+        "_full",
+        "_amount",
+        "household_income",
+        "_household",
+        "_age",
+        "_supplement_a",
+        "settings",
+        "fees",
+        "minimum_income",
+        "income_check",
+        "_below_minimum",
+        "ez_fit",
+        "supa_fee",
+        "_money",
+        "notes",
+        "_supa_problems",
+        "case_schema",
+        "person_graph",
+        "letter",
+        "_graph",
+        "_has_doc",
+        "petitioner_documents",
+        "status",
+        "problems",
+        "use_person",
+        "answer"
+      ]
+    },
+    {
+      "path": "src/fee_waiver.py",
+      "top_level": [
+        "filing_of",
+        "applies",
+        "_dollars",
+        "threshold",
+        "from_case",
+        "monthly",
+        "derive",
+        "fee",
+        "notes",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/fees.py",
+      "top_level": [
+        "load",
+        "upcoming"
+      ]
+    },
+    {
+      "path": "src/filing_questions.py",
+      "top_level": [
+        "module",
+        "value",
+        "iso",
+        "us",
+        "plus_years",
+        "putter",
+        "money",
+        "state_of",
+        "lockbox",
+        "addresses",
+        "latest_notice",
+        "pending",
+        "sij",
+        "has_doc",
+        "in_exhibit",
+        "questions",
+        "hidden_sections",
+        "graph_for",
+        "derive",
+        "status",
+        "client_questions",
+        "ask_in_portal",
+        "problems",
+        "_checked",
+        "answer"
+      ]
+    },
+    {
+      "path": "src/fill/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/fill/companion.py",
+      "top_level": [
+        "load_profile",
+        "_borrow_map",
+        "_qualify",
+        "field_map_for",
+        "_with_constants",
+        "fill_companions",
+        "_additional_pages",
+        "_drop_defaults",
+        "_dropdown_options",
+        "_match_dropdowns",
+        "_has"
+      ]
+    },
+    {
+      "path": "src/fill/continuation.py",
+      "top_level": [
+        "Block",
+        "_pdf_string",
+        "plain",
+        "Box",
+        "Entry",
+        "AdditionalPage",
+        "_inherited",
+        "_reader",
+        "_box",
+        "_kind",
+        "_stamp",
+        "_printed_labels",
+        "_label_of",
+        "_find_page",
+        "_read_page",
+        "find_page",
+        "_font_dict",
+        "_spacing",
+        "_font_info",
+        "_read_font_info",
+        "char_width",
+        "text_width",
+        "box_lines",
+        "wrap",
+        "Placement",
+        "Layout",
+        "place_blocks",
+        "_a_digits",
+        "_name_values",
+        "own_page_values",
+        "_appearance",
+        "_widget",
+        "_draw_text_box",
+        "_copy_page",
+        "finish_part14",
+        "registry",
+        "attach_sheet_allowed",
+        "_Page",
+        "_sheet_header",
+        "plain_sheet_pdf"
+      ]
+    },
+    {
+      "path": "src/fill/cover_letter.py",
+      "top_level": [
+        "load_config",
+        "mail_to",
+        "case_facts",
+        "full_name",
+        "a_number",
+        "long_date",
+        "priority",
+        "gaps",
+        "fees_for",
+        "fee_text",
+        "_us",
+        "enclosures",
+        "_letter_doc",
+        "_signature_block",
+        "intro",
+        "render",
+        "render_response"
+      ]
+    },
+    {
+      "path": "src/fill/field_map.py",
+      "top_level": [
+        "MappingResult",
+        "load_field_map",
+        "_resolve",
+        "map_facts_to_fields"
+      ]
+    },
+    {
+      "path": "src/fill/fill_pdf.py",
+      "top_level": [
+        "FieldLengthExceeded",
+        "field_max_lengths",
+        "fill_pdf"
+      ]
+    },
+    {
+      "path": "src/fill/template_cache.py",
+      "top_level": [
+        "_collect_max_lengths",
+        "_Template",
+        "_entry",
+        "writer",
+        "max_lengths",
+        "fields",
+        "clear"
+      ]
+    },
+    {
+      "path": "src/fill/where.py",
+      "top_level": [
+        "NotFound",
+        "EditionMismatch",
+        "_reader",
+        "template_edition",
+        "_stamp",
+        "_index",
+        "_read_index",
+        "label_near",
+        "part_at",
+        "_first_field",
+        "_lookup",
+        "_item_candidates",
+        "_printed_on",
+        "where_is_in",
+        "_i485_map",
+        "_read_map",
+        "where_is",
+        "edition_of"
+      ]
+    },
+    {
+      "path": "src/find.py",
+      "top_level": [
+        "FindDamaged",
+        "ModelUnavailable",
+        "Embedder",
+        "_unit",
+        "_fold",
+        "words",
+        "HashingEmbedder",
+        "OllamaEmbedder",
+        "embedder",
+        "Masker",
+        "_strings",
+        "masker_for",
+        "masker_inputs",
+        "passages",
+        "_read",
+        "_first_page",
+        "_destroyed",
+        "_opened",
+        "_documents",
+        "case_rows",
+        "wording_rows",
+        "default_path",
+        "_corrupt",
+        "reset",
+        "_owner_only",
+        "connect",
+        "_bump",
+        "_signature",
+        "_wordings_signature",
+        "_store",
+        "_delete",
+        "rebuild",
+        "_case_dirs",
+        "_destroyed_cases",
+        "rebuild_changed",
+        "rebuild_all",
+        "forget",
+        "_age",
+        "follower",
+        "keep_up",
+        "_matrix",
+        "why",
+        "_article",
+        "search",
+        "questions_path",
+        "log_question",
+        "asked",
+        "is_on"
+      ]
+    },
+    {
+      "path": "src/firmsecrets.py",
+      "top_level": [
+        "Secret",
+        "_env",
+        "data_folder",
+        "vault_folder",
+        "_file",
+        "_vault",
+        "vault_cipher",
+        "_read_file",
+        "_locate",
+        "get",
+        "get_all",
+        "where",
+        "in_environment",
+        "totp_key_path",
+        "is_set",
+        "configured",
+        "put",
+        "passphrase_file",
+        "put_passphrase",
+        "log_path",
+        "read_log",
+        "_write_log",
+        "record",
+        "set_cadence",
+        "_day",
+        "status",
+        "overdue",
+        "morning_line",
+        "migrate_deployment"
+      ]
+    },
+    {
+      "path": "src/g28.py",
+      "top_level": [
+        "_register",
+        "register",
+        "mail_note",
+        "part4_words",
+        "instruction",
+        "policy",
+        "practice_text",
+        "practice_entry",
+        "stamp",
+        "practice",
+        "approved",
+        "effective",
+        "_read",
+        "_write",
+        "_office",
+        "current",
+        "_graph",
+        "carried",
+        "snapshot",
+        "_what_moved",
+        "state",
+        "governed",
+        "_governed_ids",
+        "problems",
+        "envelope",
+        "_v",
+        "_unit",
+        "office_address",
+        "client_addresses",
+        "lines",
+        "options",
+        "facts",
+        "built_with",
+        "stale_since",
+        "stale_notes",
+        "apply",
+        "fallback",
+        "other_forms",
+        "carries",
+        "apply_mailing",
+        "card",
+        "_no_office",
+        "_what",
+        "_who",
+        "_push",
+        "_refuse",
+        "confirm",
+        "change",
+        "undo",
+        "bundle_rows"
+      ]
+    },
+    {
+      "path": "src/g639.py",
+      "top_level": [
+        "_specific",
+        "_doc_questions",
+        "more_to_come",
+        "derive",
+        "fee",
+        "notes",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/getting_started.py",
+      "top_level": [
+        "_path",
+        "_seen",
+        "first_visit",
+        "mark_seen",
+        "_mdy",
+        "_saved",
+        "_case_count",
+        "build"
+      ]
+    },
+    {
+      "path": "src/hearing_request.py",
+      "top_level": [
+        "derive",
+        "due",
+        "fee",
+        "mail_to",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/holders.py",
+      "top_level": [
+        "Line",
+        "held",
+        "holder_of",
+        "label",
+        "producer",
+        "of_who",
+        "of_first",
+        "counts"
+      ]
+    },
+    {
+      "path": "src/i360.py",
+      "top_level": [
+        "_graph",
+        "_value",
+        "turns_21",
+        "age_check",
+        "_has_doc",
+        "status",
+        "problems",
+        "answer"
+      ]
+    },
+    {
+      "path": "src/i730.py",
+      "top_level": [
+        "_relative",
+        "relatives",
+        "start",
+        "last_day",
+        "derive",
+        "case_schema",
+        "person_graph",
+        "_age",
+        "fee",
+        "notes",
+        "problems",
+        "letter",
+        "document_notes"
+      ]
+    },
+    {
+      "path": "src/inadmissibility_waiver.py",
+      "top_level": [
+        "client_questions",
+        "_relative",
+        "_receipt",
+        "derive",
+        "_situation_where",
+        "where",
+        "t_case",
+        "u_case",
+        "vawa_case",
+        "confidential",
+        "exempt",
+        "fee",
+        "payments",
+        "notes",
+        "problems",
+        "letter",
+        "case_schema"
+      ]
+    },
+    {
+      "path": "src/inbox.py",
+      "top_level": [
+        "InboxBusy",
+        "default_path",
+        "_now",
+        "_read",
+        "_write",
+        "_log",
+        "_setup",
+        "_Lock",
+        "_pdf_bytes",
+        "_pages_of",
+        "_subset",
+        "_mail_key",
+        "_same_mail",
+        "parts",
+        "read",
+        "describe",
+        "_name_words",
+        "name_matches",
+        "Directory",
+        "match",
+        "_match",
+        "_safe",
+        "_unique",
+        "_portal_upload",
+        "reprocess",
+        "reprocess_documents",
+        "_reprocess_documents",
+        "_hearing",
+        "route",
+        "_route",
+        "_keep_overnight_honest",
+        "_client_name",
+        "_queue",
+        "_wait",
+        "_retry",
+        "process_inbox",
+        "report_line",
+        "_take",
+        "place",
+        "not_ours",
+        "waiting_file",
+        "view",
+        "counts"
+      ]
+    },
+    {
+      "path": "src/index.py",
+      "top_level": [
+        "IndexDamaged",
+        "default_path",
+        "_corrupt",
+        "reset",
+        "connect",
+        "_read",
+        "scrub",
+        "norm_a_number",
+        "norm_code",
+        "_first_page",
+        "_fact",
+        "_name_and_state",
+        "_office",
+        "_filings",
+        "_office_stamp",
+        "_signature",
+        "_case_confidentiality",
+        "_insert",
+        "_rebuild_case",
+        "rebuild",
+        "_case_dirs",
+        "rebuild_changed",
+        "_refresh",
+        "rebuild_all",
+        "refresh",
+        "_age",
+        "keep_up",
+        "_taxonomy_mtime",
+        "_taxonomy_names",
+        "type_name",
+        "type_short",
+        "_taxonomy_shorts",
+        "_fts_query",
+        "_identifier",
+        "_where",
+        "_iso",
+        "search",
+        "_ranked",
+        "_search",
+        "facets",
+        "saved_searches"
+      ]
+    },
+    {
+      "path": "src/jobs.py",
+      "top_level": [
+        "Again",
+        "CaseBusy",
+        "folder_for",
+        "_setup",
+        "_write",
+        "_read",
+        "case_lock",
+        "alive",
+        "_durable_write",
+        "_published",
+        "submit",
+        "submit_once",
+        "_due",
+        "_active",
+        "_queries",
+        "JobConfigurationConflict",
+        "_FilesystemJobBinding",
+        "filesystem_job_binding",
+        "_require_execution_binding",
+        "get",
+        "jobs",
+        "view",
+        "counts",
+        "pending",
+        "gpu_lock",
+        "Context",
+        "WorkerStopped",
+        "installation_gate",
+        "_current_cached_job",
+        "_finish",
+        "_died",
+        "sweep",
+        "_next",
+        "_repair_portal",
+        "_sweep_cached",
+        "_protected_intake",
+        "run_job",
+        "_read_upload_without_writer_gate",
+        "_run_current_job",
+        "_drive_unavailable",
+        "_current_drive",
+        "_sweep_drive",
+        "_run_job",
+        "_run_locked_job",
+        "_nothing",
+        "_plain",
+        "tidy",
+        "warm",
+        "work",
+        "sweep_dead",
+        "_pid_alive",
+        "_pid_alive_windows",
+        "ensure_worker",
+        "_portal_upload",
+        "_staff_upload",
+        "_inbox_read",
+        "_inbox_place",
+        "_clio",
+        "_clio_failed",
+        "_purge",
+        "_restore_drill",
+        "_portal_process",
+        "_drive_intake",
+        "main"
+      ]
+    },
+    {
+      "path": "src/journey.py",
+      "top_level": [
+        "_settings",
+        "settings",
+        "_d",
+        "us",
+        "_value",
+        "notices",
+        "_docs",
+        "_status",
+        "_firm_words",
+        "representation",
+        "_latest_packet",
+        "_plus_years_d",
+        "_federal_holidays",
+        "_next_business_day",
+        "_after_decision",
+        "_court_offers",
+        "in_court",
+        "i485_court_problem",
+        "_latest",
+        "_petitioner",
+        "track_of",
+        "_citizenship_stage",
+        "_asylum_stage",
+        "_vawa_stage",
+        "_t_visa_stage",
+        "_naturalization_stage",
+        "_caa_stage",
+        "_u_requested",
+        "_u_stage",
+        "_daca_stage",
+        "_visa",
+        "_sij_stage",
+        "_family_stage",
+        "_level",
+        "_birthday",
+        "_deadline",
+        "_answered",
+        "_waiver_offers",
+        "journey",
+        "_names",
+        "summary",
+        "_hearing_result",
+        "_named",
+        "_step_words",
+        "mark",
+        "_person",
+        "family_id",
+        "_family_safe",
+        "_family_folder",
+        "_family_save",
+        "_family_open",
+        "_family_instance",
+        "_family_plan",
+        "_family_apply",
+        "_family_finish",
+        "family_mark",
+        "family_recovery_view",
+        "family_recover",
+        "linked",
+        "client_view",
+        "_prepare",
+        "_say",
+        "_event_key",
+        "client_shows",
+        "_client_events",
+        "_forms_of",
+        "_form_names",
+        "_local",
+        "_news_key",
+        "push_to_portal",
+        "push_client"
+      ]
+    },
+    {
+      "path": "src/keepup.py",
+      "top_level": [
+        "walk_every",
+        "Follower"
+      ]
+    },
+    {
+      "path": "src/law_app/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/adapters/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/adapters/identity/local_accounts.py",
+      "top_level": [
+        "LocalAccountsIdentity"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/adapters/persistence/filesystem/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/adapters/persistence/filesystem/case_access.py",
+      "top_level": [
+        "CanonicalCaseAccess"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/filesystem/portal.py",
+      "top_level": [
+        "_safe",
+        "_atomic"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/postgres/fictional_admissions.py",
+      "top_level": [
+        "PostgresFictionalAdmissions"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/postgres/original_revisions.py",
+      "top_level": [
+        "PostgresOriginalRevisions"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/postgres/outbox_delivery.py",
+      "top_level": [
+        "DeliveryClaim",
+        "PostgresOutboxDelivery",
+        "deliver_fictional_once"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/postgres/portal_intents.py",
+      "top_level": [
+        "PostgresPortalIntents",
+        "lock_portal_inputs"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/persistence/postgres/synthetic_work.py",
+      "top_level": [
+        "PostgresSyntheticWork"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/queue/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/adapters/queue/filesystem.py",
+      "top_level": [
+        "read_record",
+        "active_files",
+        "FilesystemJobQueries",
+        "FilesystemJobPublication"
+      ]
+    },
+    {
+      "path": "src/law_app/adapters/storage/filesystem/originals.py",
+      "top_level": [
+        "FilesystemOriginals"
+      ]
+    },
+    {
+      "path": "src/law_app/application/communications/consent.py",
+      "top_level": [
+        "ConsentWorkflow"
+      ]
+    },
+    {
+      "path": "src/law_app/application/intake/fictional_service.py",
+      "top_level": [
+        "FictionalActor",
+        "FictionalIntakeService"
+      ]
+    },
+    {
+      "path": "src/law_app/bootstrap/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/bootstrap/composition.py",
+      "top_level": [
+        "build_staff_app"
+      ]
+    },
+    {
+      "path": "src/law_app/bootstrap/config.py",
+      "top_level": [
+        "load_deployment",
+        "staff_arguments"
+      ]
+    },
+    {
+      "path": "src/law_app/bootstrap/fictional_postgres.py",
+      "top_level": [
+        "FictionalPostgresProfile",
+        "_fictional_connection",
+        "build_fictional_portal_intents",
+        "build_fictional_synthetic_work",
+        "FictionalOriginalJourney",
+        "build_fictional_original_journey",
+        "build_fictional_outbox_delivery"
+      ]
+    },
+    {
+      "path": "src/law_app/bootstrap/fictional_runtime.py",
+      "top_level": [
+        "FictionalRuntime",
+        "compose_fictional_runtime"
+      ]
+    },
+    {
+      "path": "src/law_app/bootstrap/paths.py",
+      "top_level": [
+        "deployment_path",
+        "staff_paths"
+      ]
+    },
+    {
+      "path": "src/law_app/catalog/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/audit_records.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/case_records.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/firm_records.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/flags.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/portal_records.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/catalog/registry.py",
+      "top_level": [
+        "not_backed_up",
+        "by_id",
+        "patterns",
+        "describe",
+        "record_of",
+        "_fits",
+        "coverage"
+      ]
+    },
+    {
+      "path": "src/law_app/domain/cases/access_policy.py",
+      "top_level": [
+        "CaseAccessPolicy"
+      ]
+    },
+    {
+      "path": "src/law_app/interfaces/fictional_cli.py",
+      "top_level": [
+        "command",
+        "main"
+      ]
+    },
+    {
+      "path": "src/law_app/interfaces/worker/fictional.py",
+      "top_level": [
+        "command"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/law_app/ports/fictional_admissions.py",
+      "top_level": [
+        "AdmissionConflict",
+        "AdmissionRejected",
+        "AdmissionCapacity",
+        "AdmissionPersistenceFailure",
+        "AdmissionRequest",
+        "AdmissionReservation",
+        "AdmissionStatus",
+        "AdmissionAbandonment",
+        "canonical_admission"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/identity.py",
+      "top_level": [
+        "StaffIdentity"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/job_queries.py",
+      "top_level": [
+        "JobQueries"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/originals.py",
+      "top_level": [
+        "OriginalConflict",
+        "OriginalUnavailable",
+        "OriginalRevision",
+        "original_key",
+        "original_locator",
+        "validate_revision",
+        "Originals"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/portal_intents.py",
+      "top_level": [
+        "FirmEnrollment",
+        "RevisionReference",
+        "PortalIntentRequest",
+        "PortalIntentReceipt",
+        "IntentConflict",
+        "IntentUnavailable",
+        "IntentPersistenceFailure",
+        "PortalIntents",
+        "_json_value",
+        "canonical_request"
+      ]
+    },
+    {
+      "path": "src/law_app/ports/synthetic_work.py",
+      "top_level": [
+        "WorkClaim",
+        "CompletionReceipt",
+        "ClaimRejected",
+        "WorkPersistenceFailure",
+        "SyntheticWork",
+        "duration",
+        "validate_claim",
+        "canonical_metadata",
+        "run_synthetic_once"
+      ]
+    },
+    {
+      "path": "src/learning/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/learning/decision.py",
+      "top_level": [
+        "DecisionModelError",
+        "decide",
+        "document_type"
+      ]
+    },
+    {
+      "path": "src/learning/labels.py",
+      "top_level": [
+        "_db",
+        "_write",
+        "record_packet_move",
+        "record_confirmed",
+        "current"
+      ]
+    },
+    {
+      "path": "src/learning/report.py",
+      "top_level": [
+        "thresholds",
+        "document_type_report",
+        "_empty_report",
+        "suggest_threshold",
+        "main"
+      ]
+    },
+    {
+      "path": "src/learning/shadow.py",
+      "top_level": [
+        "settings",
+        "wording_version",
+        "_document_type_models",
+        "observe_document_types",
+        "backfill"
+      ]
+    },
+    {
+      "path": "src/learning/store.py",
+      "top_level": [
+        "connect",
+        "record_run"
+      ]
+    },
+    {
+      "path": "src/learning/synthetic.py",
+      "top_level": [
+        "Faker",
+        "_pick",
+        "_some",
+        "_mrz",
+        "_person",
+        "passport",
+        "visa",
+        "i94",
+        "_i797_frame",
+        "i360_approval",
+        "uscis_notice",
+        "birth_certificate",
+        "translation_certification",
+        "marriage_certificate",
+        "ssn_card",
+        "drivers_license",
+        "work_permit",
+        "notice_to_appear",
+        "criminal_record",
+        "intake_questionnaire",
+        "other",
+        "sij_order",
+        "_cjp37",
+        "_cjp35",
+        "_us_person",
+        "us_passport",
+        "citizenship_certificate",
+        "green_card",
+        "us_birth_certificate",
+        "tax_return",
+        "w2",
+        "pay_stub",
+        "bank_statement",
+        "lease",
+        "utility_bill",
+        "divorce_decree",
+        "_junk_line",
+        "_damage_line",
+        "strip_accents",
+        "damage",
+        "vocabulary",
+        "readable",
+        "generate"
+      ]
+    },
+    {
+      "path": "src/learning/synthetic_countries.py",
+      "top_level": [
+        "_places",
+        "Person",
+        "birth_record",
+        "birth_translation",
+        "marriage_record",
+        "passport_page",
+        "national_id"
+      ]
+    },
+    {
+      "path": "src/learning/textcat.py",
+      "top_level": [
+        "prepare",
+        "specimens",
+        "specimen_copies",
+        "build",
+        "fit",
+        "train",
+        "load",
+        "document_type"
+      ]
+    },
+    {
+      "path": "src/ledger_seal.py",
+      "top_level": [
+        "anchors_path",
+        "check_path",
+        "_mdy",
+        "_when",
+        "read_anchors",
+        "_row",
+        "_problem",
+        "words",
+        "verify",
+        "read_redactions",
+        "_intact_line",
+        "_anchor_problem",
+        "new_anchors",
+        "write_anchors",
+        "seal_text",
+        "_keep",
+        "nightly",
+        "kept",
+        "settings_line"
+      ]
+    },
+    {
+      "path": "src/maintenance.py",
+      "top_level": [
+        "registry",
+        "_read",
+        "_local_finding",
+        "_review_date",
+        "_observation_time",
+        "_manual_review",
+        "live_evidence",
+        "public_finding",
+        "recorded_live",
+        "status",
+        "_firm_log",
+        "_get",
+        "pdf_edition",
+        "live_checks",
+        "mark"
+      ]
+    },
+    {
+      "path": "src/motion.py",
+      "top_level": [
+        "_form",
+        "denial",
+        "derive",
+        "due",
+        "fee",
+        "mail_to",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/n565.py",
+      "top_level": [
+        "_special",
+        "_reason",
+        "more_to_come",
+        "derive",
+        "fee",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/name_events.py",
+      "top_level": [
+        "_value",
+        "_from_doc",
+        "name_key",
+        "same_name",
+        "page_of",
+        "_event",
+        "_by_doc",
+        "_notices",
+        "_notice_words",
+        "events",
+        "_person",
+        "_order",
+        "_marriage_read",
+        "_marriage_events",
+        "_known_given",
+        "_typed_other_names",
+        "distinct",
+        "_split",
+        "_reviewed",
+        "_us",
+        "_label",
+        "marriage_evidence",
+        "_also_seen",
+        "_doc_words",
+        "settle",
+        "_decided_over",
+        "_decided_on",
+        "_question",
+        "_client_said_question",
+        "_certificate_event",
+        "_client_wrote",
+        "_part14",
+        "_put",
+        "_write_current",
+        "_write_other",
+        "payload",
+        "flags",
+        "view",
+        "_question_view"
+      ]
+    },
+    {
+      "path": "src/name_match.py",
+      "top_level": [
+        "fold",
+        "words",
+        "sound",
+        "variants",
+        "_distance",
+        "_gender_pair",
+        "_single",
+        "same_word",
+        "Name",
+        "NameMatch",
+        "_joined",
+        "compare",
+        "_shuffled",
+        "best",
+        "parse_date",
+        "dates_agree",
+        "a_number",
+        "passport",
+        "Person",
+        "Score",
+        "_allowing",
+        "score"
+      ]
+    },
+    {
+      "path": "src/naturalization.py",
+      "top_level": [
+        "lead",
+        "settings",
+        "_value",
+        "_d",
+        "_us_to_date",
+        "_plus_years",
+        "_plus_months",
+        "us",
+        "parse_trips",
+        "_days_outside",
+        "eligibility",
+        "fee_reduction_limit",
+        "_follow",
+        "derive",
+        "_graph",
+        "_has_doc",
+        "who_answers",
+        "spouse_based",
+        "status",
+        "problems",
+        "answer"
+      ]
+    },
+    {
+      "path": "src/offices.py",
+      "top_level": [
+        "offices",
+        "_offices",
+        "by_id",
+        "chosen",
+        "for_case",
+        "_imported",
+        "choose",
+        "_state_of",
+        "apply",
+        "_phone",
+        "letter",
+        "problems"
+      ]
+    },
+    {
+      "path": "src/online_filing.py",
+      "top_level": [
+        "rules",
+        "_read",
+        "_value",
+        "_today",
+        "_graph",
+        "_fee",
+        "_question",
+        "eligibility",
+        "chosen",
+        "mode",
+        "_title",
+        "choose",
+        "online_fees",
+        "_fees_for",
+        "money",
+        "bundle_paths",
+        "guide",
+        "status",
+        "_name",
+        "_pdf_bytes",
+        "split_by_size",
+        "_sign_line",
+        "_steps",
+        "_handwork",
+        "_checklist_pdf",
+        "build_bundle"
+      ]
+    },
+    {
+      "path": "src/oslock.py",
+      "top_level": [
+        "LockBusy",
+        "try_lock",
+        "unlock",
+        "open_lock_file",
+        "held_by_someone",
+        "locked"
+      ]
+    },
+    {
+      "path": "src/overnight.py",
+      "top_level": [
+        "default_workers",
+        "_now",
+        "_read",
+        "_write",
+        "source_signature",
+        "pipeline_version",
+        "choose",
+        "_init",
+        "_run_one",
+        "Lock",
+        "_until",
+        "run",
+        "_run",
+        "clio_step",
+        "journeys",
+        "secrets_night",
+        "ledger_night",
+        "approvals_night",
+        "day_plan_night",
+        "posture_night",
+        "restore_drill_night",
+        "notice_inbox",
+        "purges_due",
+        "search_index",
+        "find_index",
+        "query_layer",
+        "staff_reminders_night",
+        "client_reminders_night",
+        "feedback_night",
+        "accuracy_night",
+        "audit_night",
+        "reading_night",
+        "_reasons",
+        "_hours",
+        "_clock",
+        "_closed",
+        "_shown",
+        "_report",
+        "sign_in_alerts",
+        "progress",
+        "main"
+      ]
+    },
+    {
+      "path": "src/packet.py",
+      "top_level": [
+        "forms_in",
+        "instance",
+        "form_output",
+        "_person_module",
+        "_read",
+        "load_schema",
+        "filing_title",
+        "load_filing",
+        "_enotice_check",
+        "_client_state",
+        "_letter_config",
+        "_letter",
+        "_pages_of",
+        "_order_key",
+        "variant_of",
+        "for_case",
+        "plan",
+        "_blank_boxes",
+        "form_layout",
+        "_today",
+        "_letter_checklist",
+        "_checklist",
+        "_wrap",
+        "_watermark",
+        "_us_date",
+        "_who",
+        "_index_pages",
+        "_separator",
+        "_source_pages",
+        "_case_graph",
+        "_payments",
+        "_fill_companions",
+        "_own_fields",
+        "build",
+        "_mailing",
+        "choose",
+        "main"
+      ]
+    },
+    {
+      "path": "src/parole.py",
+      "top_level": [
+        "_us",
+        "_who",
+        "people",
+        "_person",
+        "more_to_come",
+        "_put_person",
+        "_track_exemption",
+        "derive",
+        "_total",
+        "case_schema",
+        "person_graph",
+        "fee",
+        "payments",
+        "address",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/part14_explain.py",
+      "top_level": [
+        "shipped",
+        "edition",
+        "held",
+        "_line_words",
+        "lines_of",
+        "spot",
+        "question",
+        "_stamps",
+        "listed",
+        "firm_wordings",
+        "citation",
+        "_fact",
+        "_value",
+        "_settled",
+        "_iso",
+        "us",
+        "_doc_words",
+        "_source",
+        "_court",
+        "_result_words",
+        "_i360",
+        "_work",
+        "_pattern",
+        "_arrival_card",
+        "_only",
+        "_holds",
+        "_slot",
+        "_fill",
+        "suggestion",
+        "read",
+        "_save",
+        "_need",
+        "_slug",
+        "text_id",
+        "approval_id",
+        "_item",
+        "_live",
+        "_person",
+        "answered_yes",
+        "entries",
+        "_smoothing_note",
+        "problems_of",
+        "problems",
+        "_not_held",
+        "_entry",
+        "_take_back",
+        "edit",
+        "revert",
+        "approve",
+        "pick",
+        "keep_preview",
+        "rank",
+        "undo",
+        "after_undo",
+        "smooth",
+        "accept_smoothing",
+        "decline_smoothing",
+        "view",
+        "into_graph",
+        "bundle_rows"
+      ]
+    },
+    {
+      "path": "src/part14_voice.py",
+      "top_level": [
+        "choices",
+        "stamp",
+        "practice_entry",
+        "practice",
+        "voice"
+      ]
+    },
+    {
+      "path": "src/path.py",
+      "top_level": [
+        "_settings",
+        "filing_names",
+        "vocabulary",
+        "_known",
+        "read",
+        "_write",
+        "approved",
+        "validate",
+        "change_words",
+        "_us",
+        "_base",
+        "_row",
+        "propose",
+        "approve",
+        "refuse",
+        "undo",
+        "_packet",
+        "_questions",
+        "_en",
+        "derive",
+        "_say",
+        "view",
+        "place"
+      ]
+    },
+    {
+      "path": "src/payment.py",
+      "top_level": [
+        "settings",
+        "_value",
+        "payments",
+        "_payer_facts",
+        "render",
+        "checklist"
+      ]
+    },
+    {
+      "path": "src/people.py",
+      "top_level": [
+        "kind_of",
+        "_doc_words",
+        "_text",
+        "_as_written",
+        "_named",
+        "_Person",
+        "_read",
+        "_typed",
+        "rows",
+        "as_person",
+        "_merge"
+      ]
+    },
+    {
+      "path": "src/portal/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/portal/admin.py",
+      "top_level": [
+        "_store",
+        "_base_url",
+        "import_clients",
+        "send",
+        "last_activity",
+        "status_line",
+        "main"
+      ]
+    },
+    {
+      "path": "src/portal/app.py",
+      "top_level": [
+        "page_csp",
+        "security_headers",
+        "_in_language",
+        "sent_to_office",
+        "create_app"
+      ]
+    },
+    {
+      "path": "src/portal/bank.py",
+      "top_level": [
+        "_read_json",
+        "_load",
+        "load_bank",
+        "bank_for",
+        "load_help",
+        "languages",
+        "language_names",
+        "language_code",
+        "all_questions",
+        "holds",
+        "visible",
+        "_fold",
+        "clean",
+        "answer_checks",
+        "missing_required",
+        "_upper",
+        "_country",
+        "_fact_value",
+        "_as_typed",
+        "_checklist_facts",
+        "answers_to_facts",
+        "required_documents",
+        "localized",
+        "localized_scan_guide",
+        "office_words",
+        "localized_faq"
+      ]
+    },
+    {
+      "path": "src/portal/capture_derivatives.py",
+      "top_level": [
+        "_dimensions",
+        "prepare",
+        "bind",
+        "original_attachment",
+        "digest",
+        "_target",
+        "persist",
+        "verify"
+      ]
+    },
+    {
+      "path": "src/portal/communication_consent.py",
+      "top_level": [
+        "Scope",
+        "gate",
+        "data_gate",
+        "data_mutation",
+        "_read",
+        "staff",
+        "_closed_case",
+        "_open",
+        "_evidence_path",
+        "evidence",
+        "retain_evidence",
+        "destination",
+        "_record",
+        "_save",
+        "_audit",
+        "grant",
+        "_unique",
+        "_base_eligible",
+        "_eligible",
+        "eligibility",
+        "revoke",
+        "_revoke",
+        "dispatch",
+        "verification_dispatch",
+        "_dispatch",
+        "credential_valid",
+        "closed_projection",
+        "prepare_profile_change",
+        "finish_profile_change",
+        "_manual_binding",
+        "manual_bootstrap",
+        "manual_valid",
+        "_client_principal",
+        "client_context",
+        "client_grant",
+        "client_revoke"
+      ]
+    },
+    {
+      "path": "src/portal/communication_lifecycle.py",
+      "top_level": [
+        "_members",
+        "_cleanup_temps",
+        "purge_members"
+      ]
+    },
+    {
+      "path": "src/portal/contact_access.py",
+      "top_level": [
+        "InventoryError",
+        "normalize_email",
+        "normalize_phone",
+        "contact_input",
+        "rate_identity",
+        "enrollment_contacts",
+        "ContactIdentity",
+        "_profiles",
+        "_raw_inventory",
+        "_inventory",
+        "_inventory_read",
+        "inventory",
+        "_matches",
+        "_binding",
+        "contact_eligibility",
+        "lookup_contact",
+        "utility_lookup"
+      ]
+    },
+    {
+      "path": "src/portal/contact_control.py",
+      "top_level": [
+        "enrollment",
+        "_accepted",
+        "_publish",
+        "_valid",
+        "status",
+        "session_valid",
+        "staff_view"
+      ]
+    },
+    {
+      "path": "src/portal/contact_transitions.py",
+      "top_level": [
+        "_hash",
+        "normalize_profile",
+        "initial_fields",
+        "_contact_fields",
+        "_Paths",
+        "_composition",
+        "_record",
+        "_save",
+        "_plan",
+        "_lifecycle",
+        "require_complete_enrollments",
+        "prepare_enrollment",
+        "current_revision",
+        "_current_revision",
+        "_deny",
+        "_denials",
+        "prepare_transition",
+        "finish_transition",
+        "recovery_view",
+        "recover_transition",
+        "recover_enrollment",
+        "enrollment_recovery_view",
+        "preflight_purge"
+      ]
+    },
+    {
+      "path": "src/portal/demo.py",
+      "top_level": [
+        "_check_digit",
+        "_mrz",
+        "document_pdf",
+        "answers",
+        "reset",
+        "seed",
+        "blurry_photo",
+        "_demo_draft",
+        "next_month_weekday",
+        "showcase",
+        "main"
+      ]
+    },
+    {
+      "path": "src/portal/display_profile.py",
+      "top_level": [
+        "current"
+      ]
+    },
+    {
+      "path": "src/portal/engine.py",
+      "top_level": [
+        "document_records",
+        "quality_retakes",
+        "retake_tasks",
+        "stamp_retakes",
+        "sync_retakes",
+        "sync_confirmations",
+        "photo_status",
+        "new_photos",
+        "_doc_name",
+        "staff_name",
+        "_say",
+        "_texts",
+        "_shown",
+        "_upload_texts",
+        "_read_upload",
+        "arrived",
+        "_save_uploads",
+        "read_new_uploads",
+        "_read_new_uploads",
+        "decided_facts",
+        "_skip_record",
+        "skip_decided",
+        "settle_decided",
+        "office_has_task",
+        "sync_absences",
+        "unreadable_retake",
+        "client_tasks",
+        "process_client",
+        "_process_client",
+        "_apply_track",
+        "run_worker"
+      ]
+    },
+    {
+      "path": "src/portal/messages.py",
+      "top_level": [
+        "translate_for_client",
+        "reply",
+        "notify",
+        "thread_for_client",
+        "waiting"
+      ]
+    },
+    {
+      "path": "src/portal/notify.py",
+      "top_level": [
+        "firm_name",
+        "render",
+        "delivery",
+        "cases_folder",
+        "prospects_folder",
+        "Notifier"
+      ]
+    },
+    {
+      "path": "src/portal/opt_out.py",
+      "top_level": [
+        "folder",
+        "_lock",
+        "_digest",
+        "phone_hash",
+        "_index",
+        "_receipt",
+        "_validate_receipt",
+        "pending_for",
+        "outbound_ready",
+        "verify",
+        "ingest",
+        "_stores",
+        "_inventory",
+        "process",
+        "_retire",
+        "_dequeue",
+        "pump"
+      ]
+    },
+    {
+      "path": "src/portal/promotion.py",
+      "top_level": [
+        "_profile",
+        "_identity",
+        "_member",
+        "_temps",
+        "_record",
+        "_plan",
+        "_save",
+        "_resolve",
+        "_raw_records",
+        "_raw_records_read",
+        "_completed",
+        "eligible_inventory",
+        "assert_ready",
+        "guard_mutation",
+        "preflight_purge",
+        "_current_members",
+        "associated_prospects",
+        "_effects",
+        "_authority",
+        "_confidentiality",
+        "_reservation",
+        "allocation_guard",
+        "reserved_enrollment",
+        "_case_reservation",
+        "_ensure_new_target",
+        "create_target",
+        "promote",
+        "recover",
+        "recovery_view",
+        "_finish"
+      ]
+    },
+    {
+      "path": "src/portal/questionnaire_pdf.py",
+      "top_level": [
+        "text",
+        "answer_fields",
+        "answer_lines",
+        "render"
+      ]
+    },
+    {
+      "path": "src/portal/questions.py",
+      "top_level": [
+        "machine_translate",
+        "translate_to_english",
+        "_options",
+        "draft",
+        "request_fields",
+        "_yes_no",
+        "for_client",
+        "clean_reply",
+        "reply_words",
+        "asked_line",
+        "_answer_key",
+        "office_answers"
+      ]
+    },
+    {
+      "path": "src/portal/queue_bridge.py",
+      "top_level": [
+        "_digest",
+        "_queue_path",
+        "_lock",
+        "_generation",
+        "generation",
+        "enqueue",
+        "_ack",
+        "acknowledge",
+        "_paths",
+        "_identity",
+        "_read",
+        "_ack_receipt",
+        "_attempt",
+        "bridge",
+        "current_job",
+        "_open_case",
+        "_snapshot",
+        "_bind_job",
+        "repair_completed",
+        "process"
+      ]
+    },
+    {
+      "path": "src/portal/request_readiness.py",
+      "top_level": [
+        "scope_for",
+        "_content",
+        "_digest",
+        "_fixed_bank",
+        "check",
+        "_mode",
+        "review_request",
+        "notification_hold"
+      ]
+    },
+    {
+      "path": "src/portal/staff_access.py",
+      "top_level": [
+        "_questionnaire_binding",
+        "_recipient_matches",
+        "permission_view",
+        "record_permission",
+        "issue",
+        "valid"
+      ]
+    },
+    {
+      "path": "src/portal/store.py",
+      "top_level": [
+        "file_kind",
+        "image_to_pdf",
+        "heic_photo",
+        "check_pdf",
+        "_now",
+        "_hash",
+        "PortalStore"
+      ]
+    },
+    {
+      "path": "src/portal/upload_recovery.py",
+      "top_level": [
+        "key",
+        "_path",
+        "_fingerprint",
+        "_target",
+        "_observed",
+        "_audit",
+        "_repair",
+        "accept",
+        "outcome"
+      ]
+    },
+    {
+      "path": "src/posture.py",
+      "top_level": [
+        "Out",
+        "NotAllowed",
+        "_powershell",
+        "argv_for",
+        "shown",
+        "_run",
+        "system_name",
+        "Context",
+        "_found",
+        "_unknown",
+        "_failed",
+        "_wsl_drive",
+        "_distro_drive",
+        "_data_drive",
+        "check_disk",
+        "_kv",
+        "_desktop",
+        "check_screen",
+        "_where",
+        "check_backup",
+        "_days_since",
+        "check_updates",
+        "check_firewall",
+        "_installed",
+        "_systemd",
+        "_ufw",
+        "_firewalld",
+        "_nftables",
+        "run_all",
+        "path_for",
+        "keep",
+        "read",
+        "enabled",
+        "refresh",
+        "line",
+        "view",
+        "report_lines"
+      ]
+    },
+    {
+      "path": "src/preference.py",
+      "top_level": [
+        "settings",
+        "child_category",
+        "visa_class",
+        "priority_date",
+        "status",
+        "petition_on_file",
+        "packet_variant"
+      ]
+    },
+    {
+      "path": "src/prefile.py",
+      "top_level": [
+        "_us",
+        "_read",
+        "_check",
+        "_form_check_id",
+        "live_results",
+        "check",
+        "_edition_check",
+        "_unchecked_edition",
+        "edition_holds",
+        "_online_checks",
+        "_identity",
+        "_deadlines",
+        "package_forms",
+        "record_filing",
+        "add_receipt",
+        "validate_mailing",
+        "_filing_name",
+        "append_record",
+        "undo_filing",
+        "filings"
+      ]
+    },
+    {
+      "path": "src/process_clients.py",
+      "top_level": [
+        "load_context",
+        "_index",
+        "_query",
+        "process_one",
+        "main"
+      ]
+    },
+    {
+      "path": "src/prospects.py",
+      "top_level": [
+        "ProspectStore",
+        "store",
+        "store_root",
+        "folder",
+        "dir_of",
+        "ids",
+        "read",
+        "_write",
+        "_ledger",
+        "_save",
+        "_need",
+        "_text",
+        "new_id",
+        "create",
+        "_create",
+        "stage",
+        "portal_state",
+        "ensure_portal",
+        "sync",
+        "_answers_file",
+        "answers_of",
+        "ensure_open",
+        "_notifier",
+        "send_questions",
+        "show_link",
+        "save_answers",
+        "mark_waiting",
+        "decline",
+        "became_client",
+        "_carry_into_client",
+        "_row",
+        "listing",
+        "csv_text",
+        "_safe",
+        "_us",
+        "view",
+        "_shown",
+        "prefill",
+        "first_call",
+        "work_rows",
+        "waiting_rows"
+      ]
+    },
+    {
+      "path": "src/pt_br.py",
+      "top_level": [
+        "_case_like",
+        "_sentence_start",
+        "brazilian",
+        "european_words_in"
+      ]
+    },
+    {
+      "path": "src/purge.py",
+      "top_level": [
+        "PurgeError",
+        "_read",
+        "_write",
+        "_home",
+        "_attorney",
+        "_need",
+        "_us",
+        "_day",
+        "_rules_file",
+        "wait_days",
+        "_office_years",
+        "_state",
+        "rule_for",
+        "rules",
+        "confirm_rule",
+        "set_wait",
+        "birth_date",
+        "_plus_years",
+        "retention_clock",
+        "_case_rec",
+        "record_contact",
+        "originals_list",
+        "review_originals",
+        "steps_done",
+        "_purges",
+        "_save_purges",
+        "entry",
+        "waiting",
+        "_kind",
+        "_masked",
+        "_policy_case",
+        "ask",
+        "_ask",
+        "confirm",
+        "_confirm",
+        "cancel",
+        "ready",
+        "due_now",
+        "_fold",
+        "Identity",
+        "_portal_profile",
+        "identity",
+        "_jsonl_filter",
+        "_json_edit",
+        "_rmtree",
+        "_vacuum",
+        "_documents_root",
+        "_inside",
+        "_portal_staging",
+        "empty_stores",
+        "_empty_stores",
+        "glob_escape",
+        "_pop_keys",
+        "_pop_top",
+        "_list_without",
+        "_auth_without",
+        "_wording_without",
+        "_audit_without",
+        "_accuracy_without",
+        "_clio_without",
+        "_touched_without",
+        "copies_left",
+        "run",
+        "_run",
+        "run_due",
+        "case_of",
+        "submit",
+        "_submit",
+        "purged",
+        "originals_kept",
+        "_ended",
+        "_current_authority",
+        "current_ready",
+        "destruction_status"
+      ]
+    },
+    {
+      "path": "src/query.py",
+      "top_level": [
+        "QueryDamaged",
+        "default_path",
+        "_corrupt",
+        "_reset",
+        "connect",
+        "open_read",
+        "_read",
+        "_signature",
+        "_journey",
+        "_office",
+        "_stamp",
+        "_delete",
+        "_insert",
+        "_people",
+        "_documents",
+        "_kind_words",
+        "_has_records",
+        "rebuild",
+        "rebuild_changed",
+        "_refresh",
+        "rebuild_all",
+        "_read_events",
+        "_rebuild_some",
+        "_age",
+        "_follower",
+        "refresh",
+        "fresh",
+        "facets",
+        "document_counts",
+        "reviewers"
+      ]
+    },
+    {
+      "path": "src/questionnaire/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/questionnaire/checkboxes.py",
+      "top_level": [
+        "LabelHit",
+        "OptionInk",
+        "ChoiceReading",
+        "typical_word_height",
+        "box_region",
+        "ink_fraction",
+        "judge_single_choice",
+        "judge_multi_choice"
+      ]
+    },
+    {
+      "path": "src/questionnaire/handwriting.py",
+      "top_level": [
+        "tidy_foreign_parts",
+        "_tidy_elsewhere",
+        "fix_street_type",
+        "usps_street",
+        "split_street",
+        "us_state_code",
+        "FieldReading",
+        "_lines",
+        "locate",
+        "_center",
+        "locate_span",
+        "_locate",
+        "answer_ink",
+        "_drop_repeated_history_lines",
+        "ambiguous_dates",
+        "_valid",
+        "parse_date",
+        "check_us_zip",
+        "_norm_text",
+        "normalize",
+        "_alnum",
+        "reads_agree",
+        "_prefer",
+        "_prompt",
+        "_schema",
+        "_amend_prompt",
+        "amendments",
+        "second_look",
+        "read_field",
+        "judge_reads",
+        "to_english",
+        "_typed_in",
+        "check_against_typed",
+        "typed_foreign_place",
+        "read_typed_foreign",
+        "read_typed",
+        "date_order",
+        "read_text_fields",
+        "ollama_model_call"
+      ]
+    },
+    {
+      "path": "src/questionnaire/languages.py",
+      "top_level": [
+        "fold",
+        "detect_language",
+        "translate_occupation"
+      ]
+    },
+    {
+      "path": "src/questionnaire/pages.py",
+      "top_level": [
+        "TypedAnnotation",
+        "typed_annotations",
+        "_scan_image",
+        "page_images"
+      ]
+    },
+    {
+      "path": "src/questionnaire/reader.py",
+      "top_level": [
+        "QuestionAnswer",
+        "QuestionnaireReading",
+        "load_questionnaire_map",
+        "_Stream",
+        "_typed_marks_in",
+        "judge_typed",
+        "read_questionnaire",
+        "_cross_check_with_vision",
+        "load_questionnaire_maps",
+        "read_questionnaire_pdf"
+      ]
+    },
+    {
+      "path": "src/questionnaire/template.py",
+      "top_level": [
+        "is_blank_template"
+      ]
+    },
+    {
+      "path": "src/questionnaire/verify.py",
+      "top_level": [
+        "prompt",
+        "vision_marks"
+      ]
+    },
+    {
+      "path": "src/read_scope.py",
+      "top_level": [
+        "scope",
+        "scoped",
+        "once",
+        "contacts",
+        "contact_once"
+      ]
+    },
+    {
+      "path": "src/reader_examples.py",
+      "top_level": [
+        "root",
+        "case_folder",
+        "_private_dir",
+        "_write",
+        "_read",
+        "is_read",
+        "_comparable",
+        "_crops",
+        "_example_id",
+        "_record",
+        "from_decision",
+        "withdraw",
+        "from_reference",
+        "files_of",
+        "remove_case",
+        "unprotected",
+        "every",
+        "reader_name",
+        "field_words",
+        "rate",
+        "figures",
+        "morning_worst",
+        "_field_line",
+        "nightly",
+        "render"
+      ]
+    },
+    {
+      "path": "src/reader_manifest.py",
+      "top_level": [
+        "_hash",
+        "current",
+        "_current",
+        "fingerprint"
+      ]
+    },
+    {
+      "path": "src/reapply.py",
+      "top_level": [
+        "pair",
+        "_relative",
+        "derive",
+        "where",
+        "exempt",
+        "fee",
+        "payments",
+        "_years_after",
+        "notes",
+        "problems",
+        "letter",
+        "_case_line",
+        "confidential",
+        "client_questions",
+        "case_schema"
+      ]
+    },
+    {
+      "path": "src/rebuild.py",
+      "top_level": [
+        "_read",
+        "_write",
+        "_filing",
+        "box_values",
+        "packet_boxes",
+        "built_version",
+        "_vkey",
+        "added_since",
+        "_names",
+        "keep_previous",
+        "previous_kept",
+        "drop_previous",
+        "put_back",
+        "facts_of",
+        "reason",
+        "_box_facts",
+        "changes",
+        "problems",
+        "notes",
+        "card",
+        "refresh_derivation",
+        "_who",
+        "start",
+        "confirm",
+        "decline"
+      ]
+    },
+    {
+      "path": "src/records.py",
+      "top_level": []
+    },
+    {
+      "path": "src/restricted.py",
+      "top_level": [
+        "protected_form",
+        "law_words",
+        "kind_law",
+        "_read",
+        "_write",
+        "_signature",
+        "law",
+        "record",
+        "is_restricted",
+        "_named",
+        "visible_to",
+        "sees_confidential",
+        "scope",
+        "messages_allowed",
+        "_track",
+        "state",
+        "_attorney",
+        "_change",
+        "mark",
+        "name_person",
+        "protect_new",
+        "carry_over",
+        "set_messages"
+      ]
+    },
+    {
+      "path": "src/review/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/review/answers_page.py",
+      "top_level": [
+        "_en",
+        "_date",
+        "_scalar",
+        "answer_text",
+        "facts_of",
+        "progress",
+        "office_questions",
+        "render"
+      ]
+    },
+    {
+      "path": "src/review/auth.py",
+      "top_level": [
+        "second_factor",
+        "lock_length",
+        "_locked_text",
+        "_now",
+        "_support_open",
+        "_session_end",
+        "_hash_token",
+        "_scrypt",
+        "session_idle",
+        "Accounts",
+        "needs_attorney"
+      ]
+    },
+    {
+      "path": "src/review/bundle.py",
+      "top_level": [
+        "crop",
+        "_crop_region",
+        "crop_whole_lines",
+        "found_crop",
+        "_fold_text",
+        "_renderings",
+        "_needles",
+        "_bands",
+        "_pattern",
+        "_Sheet",
+        "_wrap",
+        "_watermark",
+        "_s",
+        "_jpeg",
+        "_Doc",
+        "_read",
+        "_us_date",
+        "_packet",
+        "_packet_title",
+        "paths",
+        "_form_map",
+        "_template_of",
+        "_p14_line",
+        "_part14_landings",
+        "_catalog",
+        "_strings",
+        "_filled",
+        "_decision_index",
+        "_portal_question",
+        "_Scans",
+        "_positions",
+        "_sources",
+        "_plain_name",
+        "_used_note",
+        "rows",
+        "_shown",
+        "_trim",
+        "_label_for",
+        "_item_label",
+        "_source_lines",
+        "_draw_rows",
+        "_draw_rules",
+        "_draw_g28",
+        "_draw_declaration",
+        "_draw_explanations",
+        "build",
+        "info",
+        "accuracy_pdf"
+      ]
+    },
+    {
+      "path": "src/review/case_lists.py",
+      "top_level": [
+        "_accounts",
+        "_visible",
+        "_id",
+        "_assignment",
+        "page"
+      ]
+    },
+    {
+      "path": "src/review/evidence.py",
+      "top_level": [
+        "Unavailable",
+        "safe",
+        "_json",
+        "_basename",
+        "_number",
+        "Snapshot",
+        "snapshot",
+        "validate_region",
+        "_request_reader",
+        "_missing",
+        "document_sources",
+        "annotate",
+        "revalidate_locations",
+        "render_source_page_bounded",
+        "render_source_image",
+        "render_source_page",
+        "quote_line_region"
+      ]
+    },
+    {
+      "path": "src/review/expiring.py",
+      "top_level": [
+        "reviewer_of_record",
+        "restricted",
+        "expiring"
+      ]
+    },
+    {
+      "path": "src/review/filing_impact.py",
+      "top_level": [
+        "output_impact",
+        "birthplace_comparison"
+      ]
+    },
+    {
+      "path": "src/review/front_desk.py",
+      "top_level": [
+        "questionnaires",
+        "form_options",
+        "_slug",
+        "new_client_id",
+        "add_client",
+        "_add_client",
+        "invite",
+        "show_link",
+        "questionnaire_name",
+        "change_warning",
+        "set_questionnaire",
+        "_scan_name",
+        "stage_upload",
+        "_prepare_scan",
+        "accept_staff_upload",
+        "staff_upload_outcome",
+        "read_staff_upload",
+        "staff_upload",
+        "_credit"
+      ]
+    },
+    {
+      "path": "src/review/health.py",
+      "top_level": [
+        "_read",
+        "_mtime",
+        "summary"
+      ]
+    },
+    {
+      "path": "src/review/learning.py",
+      "top_level": [
+        "_norm",
+        "_source",
+        "outcomes",
+        "_tally",
+        "learning",
+        "accuracy",
+        "main"
+      ]
+    },
+    {
+      "path": "src/review/oversight.py",
+      "top_level": [
+        "us_when",
+        "_span",
+        "RowIndex",
+        "_day_of",
+        "pages",
+        "csv_file",
+        "_view_fields",
+        "Views",
+        "_fallback",
+        "_access_fields",
+        "StaffLog",
+        "_event_fields",
+        "Events"
+      ]
+    },
+    {
+      "path": "src/review/overview.py",
+      "top_level": [
+        "_signature",
+        "_iso",
+        "review_row",
+        "journey_row",
+        "name_and_kind",
+        "stage_of",
+        "_answered",
+        "_new_photos",
+        "case_row",
+        "add_portal",
+        "fill_name",
+        "settle",
+        "overview",
+        "my_work",
+        "history_once_missed",
+        "deadlines",
+        "mark_filed"
+      ]
+    },
+    {
+      "path": "src/review/qr.py",
+      "top_level": [
+        "_raw_modules",
+        "_data_codewords",
+        "_gf_mul",
+        "_rs_divisor",
+        "_rs_remainder",
+        "_codewords",
+        "_alignment_positions",
+        "_mask_bit",
+        "_Grid",
+        "matrix",
+        "svg"
+      ]
+    },
+    {
+      "path": "src/review/reports.py",
+      "top_level": [
+        "_local",
+        "_us",
+        "_name",
+        "_filing_title",
+        "_filed",
+        "_built",
+        "_group",
+        "_clients",
+        "_table",
+        "_documents",
+        "_overnight",
+        "build",
+        "_build",
+        "_audit",
+        "_wordings",
+        "_client_tables",
+        "_cell",
+        "to_csv"
+      ]
+    },
+    {
+      "path": "src/review/roster.py",
+      "top_level": [
+        "default_catalog",
+        "_broken",
+        "_build_chunk",
+        "warm",
+        "saved",
+        "_plain_id",
+        "Roster"
+      ]
+    },
+    {
+      "path": "src/review/server.py",
+      "top_level": [
+        "csp",
+        "_plain_case",
+        "httpx_errors",
+        "_plain_name",
+        "ReviewApp",
+        "make_handler",
+        "local_setup_allowed",
+        "serve",
+        "main"
+      ]
+    },
+    {
+      "path": "src/review/staff_upload_recovery.py",
+      "top_level": [
+        "key",
+        "_read",
+        "_actor_reader",
+        "_scope",
+        "_authority",
+        "_folder",
+        "_validate",
+        "_proof",
+        "_observation",
+        "accept",
+        "outcome",
+        "validate_for_read",
+        "purge_job_staging"
+      ]
+    },
+    {
+      "path": "src/review/state.py",
+      "top_level": [
+        "save_bundle",
+        "_write",
+        "_read",
+        "load_decisions",
+        "load_decision_log",
+        "_history",
+        "prepare_decision",
+        "record_prepared_decision",
+        "record_decision",
+        "_reader_examples",
+        "undo_decision",
+        "_check_value",
+        "apply_decisions",
+        "_open_reading_flags",
+        "_acknowledge",
+        "_max_lengths",
+        "reviewed_graph",
+        "_explained",
+        "_portal_for",
+        "_i485_field_map",
+        "office_answered",
+        "_office",
+        "_asylee",
+        "_cuban",
+        "_family",
+        "_derivation_cached",
+        "_derivation",
+        "current_flags",
+        "refill",
+        "item_id",
+        "tidy_tooltip",
+        "Catalog",
+        "concise",
+        "display_name",
+        "case_summary",
+        "short_label",
+        "i485_ref",
+        "ref_by_name",
+        "_source_reader",
+        "_fact_view",
+        "_evidence_index",
+        "_ev_view",
+        "source_prerequisites",
+        "build_items",
+        "pending_items",
+        "_done_title",
+        "_tab",
+        "_field_rank",
+        "build_cards",
+        "_evidence_keys",
+        "_new_item",
+        "_name_item",
+        "_alert_docs",
+        "question_text",
+        "_context",
+        "_client_answers",
+        "_form_keys",
+        "_foreign_fixes",
+        "_foreign_help_elsewhere",
+        "_suggest_from_documents",
+        "_suggest_names",
+        "_answered_by_documents",
+        "source_name",
+        "_humanize",
+        "rule_name",
+        "us_date",
+        "source_text",
+        "is_private_number",
+        "mask_number",
+        "approval_text",
+        "rule_info",
+        "plain_message",
+        "_apply_amendments",
+        "_suggest_from_reads",
+        "_group"
+      ]
+    },
+    {
+      "path": "src/review/totp.py",
+      "top_level": [
+        "hotp",
+        "step",
+        "code_at",
+        "new_secret",
+        "b32",
+        "grouped",
+        "uri",
+        "match",
+        "clean",
+        "is_app_code",
+        "recovery_codes",
+        "recovery_hash",
+        "recovery_match"
+      ]
+    },
+    {
+      "path": "src/review/users.py",
+      "top_level": [
+        "main"
+      ]
+    },
+    {
+      "path": "src/review_automation.py",
+      "top_level": [
+        "_fold",
+        "_digest",
+        "_identifier",
+        "_names",
+        "boundary_proposal",
+        "subject_proposal",
+        "evaluate"
+      ]
+    },
+    {
+      "path": "src/rfe.py",
+      "top_level": [
+        "_read",
+        "_dir",
+        "key_of",
+        "_graph",
+        "requests",
+        "_request",
+        "_documents",
+        "state",
+        "save",
+        "mail_by",
+        "plan",
+        "build",
+        "_long",
+        "_title",
+        "check",
+        "journey_us",
+        "record"
+      ]
+    },
+    {
+      "path": "src/rules/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/rules/approval.py",
+      "top_level": [
+        "path",
+        "_policies",
+        "_rule_hash",
+        "_policy_hash",
+        "catalog",
+        "_catalog",
+        "_load",
+        "_read_cached",
+        "history",
+        "status",
+        "statuses",
+        "approve",
+        "record_review"
+      ]
+    },
+    {
+      "path": "src/rules/definitions.py",
+      "top_level": [
+        "_overstay_01",
+        "_name_01",
+        "_citizenship_01",
+        "_nta_01",
+        "_crim_01",
+        "_arrival_01"
+      ]
+    },
+    {
+      "path": "src/rules/engine.py",
+      "top_level": [
+        "Rule",
+        "_resolved_tier12",
+        "_present",
+        "topological_order",
+        "run_rules"
+      ]
+    },
+    {
+      "path": "src/rules/firm_policies.py",
+      "top_level": [
+        "path",
+        "stamp",
+        "_read",
+        "edits",
+        "latest",
+        "policy_hash",
+        "_merged",
+        "apply",
+        "shipped",
+        "effective",
+        "enabled",
+        "note",
+        "_check_text",
+        "check_answer",
+        "edit",
+        "_save",
+        "revert",
+        "_shown",
+        "changes",
+        "listing"
+      ]
+    },
+    {
+      "path": "src/rules/policy.py",
+      "top_level": [
+        "load_policy_profile",
+        "_resolved",
+        "_age",
+        "conditions_hold",
+        "run_policies"
+      ]
+    },
+    {
+      "path": "src/schema_path.py",
+      "top_level": [
+        "path",
+        "rel",
+        "folder",
+        "glob",
+        "_name_of",
+        "all_files",
+        "names",
+        "schemas_in",
+        "named"
+      ]
+    },
+    {
+      "path": "src/secretbox.py",
+      "top_level": [
+        "key_file",
+        "keys",
+        "cipher",
+        "write_key_file"
+      ]
+    },
+    {
+      "path": "src/settings.py",
+      "top_level": [
+        "_json",
+        "load",
+        "values",
+        "mtime",
+        "firm_name",
+        "firm_mark",
+        "overlay",
+        "_get",
+        "_months",
+        "_zone_options",
+        "_retention_field",
+        "_voice_field",
+        "_unit_fields",
+        "_g28_fields",
+        "details_saved",
+        "identity_withheld",
+        "shipped",
+        "offices_saved",
+        "add_office",
+        "remove_office",
+        "translators",
+        "add_translator",
+        "remove_translator",
+        "specs",
+        "_check",
+        "save"
+      ]
+    },
+    {
+      "path": "src/signing_evidence.py",
+      "top_level": [
+        "canonical",
+        "digest",
+        "paths",
+        "retain",
+        "_complete_anchors",
+        "verify",
+        "certificate"
+      ]
+    },
+    {
+      "path": "src/source_association.py",
+      "top_level": [
+        "_read",
+        "hold",
+        "assert_ready",
+        "_scope",
+        "_authority",
+        "_hash",
+        "_snapshot",
+        "_validate",
+        "_origins",
+        "verify",
+        "_publish",
+        "associate",
+        "engine_sources",
+        "purge_pending"
+      ]
+    },
+    {
+      "path": "src/staff_reminders.py",
+      "top_level": [
+        "_path",
+        "_load",
+        "_save",
+        "wants",
+        "set_consent",
+        "target_day",
+        "_line",
+        "nightly",
+        "prospects_folder",
+        "_client_name"
+      ]
+    },
+    {
+      "path": "src/subject_attribution.py",
+      "top_level": [
+        "digest",
+        "role_for",
+        "required_slots",
+        "reader_version",
+        "_reader_version",
+        "provenance",
+        "original_source",
+        "edge_versions",
+        "ensure_catalog",
+        "_read",
+        "_raw",
+        "_people",
+        "_person_version",
+        "_parent_suggestions",
+        "_valid_assignment",
+        "views",
+        "_state",
+        "problems",
+        "pending_notices",
+        "filter_graph",
+        "affected_keys",
+        "_actor",
+        "add_person",
+        "rename_person",
+        "_invalidate_field_reviews",
+        "assign",
+        "owner_changed"
+      ]
+    },
+    {
+      "path": "src/support.py",
+      "top_level": [
+        "Shown",
+        "is_support",
+        "plain",
+        "View",
+        "view",
+        "_read",
+        "note",
+        "health",
+        "_mtime",
+        "cases",
+        "case_shape"
+      ]
+    },
+    {
+      "path": "src/t_visa.py",
+      "top_level": [
+        "count",
+        "_member_section",
+        "_age",
+        "filed_on",
+        "address",
+        "seeking",
+        "part4_yes",
+        "derive",
+        "member_facts",
+        "members",
+        "case_forms",
+        "render",
+        "fee",
+        "notes",
+        "problems",
+        "member_problems",
+        "letter",
+        "document_notes"
+      ]
+    },
+    {
+      "path": "src/t_visa_declaration.py",
+      "top_level": [
+        "derive",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/tps.py",
+      "top_level": [
+        "data",
+        "_item",
+        "_type",
+        "_part7",
+        "more_to_come",
+        "country_of",
+        "terminated",
+        "periods",
+        "window",
+        "closed",
+        "offered",
+        "recipient",
+        "_holds_tps",
+        "derive",
+        "forms_for",
+        "fees",
+        "payments",
+        "address",
+        "_past",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/translation.py",
+      "top_level": [
+        "_now",
+        "_words",
+        "person_words",
+        "needs",
+        "foreign_language",
+        "translators",
+        "engine",
+        "_read",
+        "_write",
+        "state_of",
+        "_save_state",
+        "pdf_path",
+        "_by",
+        "_take_back",
+        "_signed",
+        "_need_who",
+        "_record",
+        "_foreign_record",
+        "_fold",
+        "_keep",
+        "_masked",
+        "_translate_line",
+        "machine",
+        "make",
+        "set_text",
+        "set_translator",
+        "sign",
+        "reopen",
+        "person_changed",
+        "_sheet",
+        "_draft_mark",
+        "_fields",
+        "_name_found",
+        "_person_line",
+        "_business",
+        "render",
+        "documents_name",
+        "_certificate",
+        "_own_translation",
+        "eligible",
+        "entry",
+        "foreign_files",
+        "status",
+        "signed_entries",
+        "checklist",
+        "_shown",
+        "summary",
+        "_stamp",
+        "summaries"
+      ]
+    },
+    {
+      "path": "src/travel.py",
+      "top_level": [
+        "_ap",
+        "_rtd",
+        "_type",
+        "derive",
+        "fee",
+        "address",
+        "notes",
+        "problems",
+        "letter",
+        "photos"
+      ]
+    },
+    {
+      "path": "src/u_certification.py",
+      "top_level": [
+        "from_record",
+        "derive",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/u_visa.py",
+      "top_level": [
+        "_member",
+        "_members",
+        "_plus_months",
+        "supb_last_day",
+        "_age",
+        "_filed",
+        "mail_to",
+        "derive",
+        "forms_for",
+        "fee",
+        "notes",
+        "_member_problems",
+        "problems",
+        "letter",
+        "document_notes"
+      ]
+    },
+    {
+      "path": "src/validate/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/validate/report.py",
+      "top_level": [
+        "group_flags",
+        "render_report"
+      ]
+    },
+    {
+      "path": "src/validate/validate.py",
+      "top_level": [
+        "Flag",
+        "_traceable",
+        "validate_graph"
+      ]
+    },
+    {
+      "path": "src/vawa.py",
+      "top_level": [
+        "_is",
+        "filed_already",
+        "concurrent",
+        "variant",
+        "_petition",
+        "age",
+        "_the_day_before",
+        "deadline",
+        "safe_address",
+        "_norm",
+        "same_as_shared",
+        "derive",
+        "fee",
+        "mail_to",
+        "notes",
+        "problems",
+        "_eligibility",
+        "letter",
+        "i485_graph",
+        "render",
+        "document_notes"
+      ]
+    },
+    {
+      "path": "src/version.py",
+      "top_level": [
+        "releases"
+      ]
+    },
+    {
+      "path": "src/visa.py",
+      "top_level": [
+        "derive",
+        "checklist",
+        "notes",
+        "problems",
+        "render"
+      ]
+    },
+    {
+      "path": "src/vision/__init__.py",
+      "top_level": []
+    },
+    {
+      "path": "src/vision/ollama.py",
+      "top_level": [
+        "VisionModelError",
+        "_image_b64",
+        "_post_http",
+        "_post_via_windows_curl",
+        "_is_wsl",
+        "generate"
+      ]
+    },
+    {
+      "path": "src/waiver.py",
+      "top_level": [
+        "derive",
+        "fee",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    },
+    {
+      "path": "src/wordings.py",
+      "top_level": [
+        "root",
+        "case_root",
+        "item_folder",
+        "_path",
+        "_stamp",
+        "every",
+        "get",
+        "_write",
+        "_ledger",
+        "_need",
+        "_wording_id",
+        "slot_words",
+        "_free_type",
+        "tokens_of",
+        "spoken",
+        "slots_of",
+        "_stop_words",
+        "_date_variants",
+        "identity",
+        "_loose",
+        "_Text",
+        "_runs",
+        "_leftovers",
+        "abstract",
+        "_numbered",
+        "_typed",
+        "leaks",
+        "case_tokens",
+        "pattern_of",
+        "conflicts",
+        "pattern_words",
+        "reading_as",
+        "_may",
+        "live",
+        "cases_of",
+        "count",
+        "hidden",
+        "offerable",
+        "approval_of",
+        "origin_visible",
+        "_us",
+        "wrote_words",
+        "refill",
+        "offers",
+        "practice_entry",
+        "rank_on",
+        "ask_model",
+        "prompt",
+        "choose",
+        "rank",
+        "_origin_facts",
+        "preview",
+        "_templates",
+        "learn",
+        "_learn",
+        "_use",
+        "_edited",
+        "withdraw",
+        "_item_words",
+        "row",
+        "library",
+        "report_rows",
+        "_attorney",
+        "_reid",
+        "_save_moved",
+        "_change",
+        "approve_candidates",
+        "_edition",
+        "retire",
+        "discard",
+        "edit_candidate",
+        "place",
+        "export_all"
+      ]
+    },
+    {
+      "path": "src/work_permit.py",
+      "top_level": [
+        "_cat",
+        "derive",
+        "fee",
+        "address",
+        "c8_opens",
+        "notes",
+        "problems",
+        "letter"
+      ]
+    }
+  ]
+}

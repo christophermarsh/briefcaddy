@@ -1,0 +1,1939 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1f4a85">
+<title>%%FIRM%%</title>
+<style nonce="%%NONCE%%">
+:root {
+  --bg: #f5f3ee; --card: #ffffff; --ink: #1c2433; --muted: #5f6878; --faint: #8a93a3; --line: #e3e0d8; --line-strong: #cfcbc1;
+  --brand: #1f4a85; --brand-ink: #ffffff; --brand-soft: #e9f0fa; --brand-mid: #c9d9ef;
+  --ok: #2b7a4b; --ok-soft: #e6f4ec; --warn: #95600b; --warn-soft: #fdf3e1; --bad: #b42d24; --bad-soft: #fbeaea;
+  --radius: 16px; --shadow: 0 1px 2px rgba(28,36,51,.05), 0 4px 16px rgba(28,36,51,.06);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 17px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+svg.i { width: 1.2em; height: 1.2em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: -0.22em; }
+:focus-visible { outline: 3px solid #7aa7e6; outline-offset: 2px; border-radius: 8px; }
+[hidden] { display: none !important; }
+
+/* top bar */
+.top { position: sticky; top: 0; z-index: 50;  /* above the sheets (40): Leave works under an open sheet */ background: var(--brand); color: var(--brand-ink); }
+.top .in { max-width: 1120px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+.brand { font-weight: 700; letter-spacing: .2px; white-space: nowrap; display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.mark { width: 32px; height: 32px; border-radius: 9px; background: rgba(255,255,255,.16); display: grid; place-items: center; font-size: 13px; letter-spacing: -.3px; }
+.saved { font-size: 14px; opacity: 0; transition: opacity .3s; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+.saved.on { opacity: .95; }
+.top select { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; padding: 6px 8px; font-size: 15px; }
+.top select option { color: var(--ink); }
+.iconbtn { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; border-radius: 10px; padding: 6px 10px; display: inline-flex; align-items: center; gap: 6px; font-size: 15px; }
+.progress { height: 5px; background: rgba(255,255,255,.18); }
+.progress > div { height: 100%; background: #8fd3a8; transition: width .4s ease; }
+/* "Leave this page": small and neutral, top right on every screen; the short word on a phone */
+.leave { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; border-radius: 10px; padding: 6px 10px; font-size: 14px; white-space: nowrap; min-height: 44px; min-width: 44px; }
+.leave .short { display: none; }
+@media (max-width: 480px) { .brand .full { display: none; } .iconbtn span { display: none; } .leave .full { display: none; } .leave .short { display: inline; } .top .in { gap: 8px; padding: 10px 12px; } .top select { max-width: 104px; font-size: 14px; padding: 6px 4px; } }
+
+/* layout */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 20px 16px 120px; display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .wrap.with-nav { grid-template-columns: 280px minmax(0, 1fr); } }
+.content { min-width: 0; max-width: 700px; width: 100%; }
+.wrap:not(.with-nav) .content { margin: 0 auto; }
+
+/* step list */
+.nav { display: none; }
+@media (min-width: 900px) { .wrap.with-nav .nav { display: block; position: sticky; top: 84px; align-self: start; } }
+.nav h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--faint); margin: 4px 12px 8px; }
+.steplist { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.steplist button { width: 100%; display: flex; align-items: center; gap: 12px; padding: 9px 12px; border: 0; background: transparent; border-radius: 12px; text-align: left; color: var(--ink); }
+.steplist button:hover { background: rgba(31,74,133,.06); }
+.steplist button.on { background: var(--card); box-shadow: var(--shadow); font-weight: 600; }
+.steplist .dot { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); flex: none; }
+.steplist .done .dot { background: var(--ok-soft); color: var(--ok); }
+.steplist .meta { display: block; font-size: 13px; color: var(--faint); font-weight: 400; }
+
+/* mobile step header + sheets */
+.mhead { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+@media (min-width: 900px) { .mhead { display: none; } }
+.mhead .txt { flex: 1; min-width: 0; }
+.mhead .k { font-size: 13px; color: var(--muted); }
+.mhead .t { font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pill { border: 1px solid var(--line-strong); background: var(--card); border-radius: 999px; padding: 7px 12px; font-size: 15px; display: inline-flex; gap: 6px; align-items: center; }
+.sheet { position: fixed; inset: 0; z-index: 40; background: rgba(20,26,38,.42); display: flex; align-items: flex-end; justify-content: center; }
+@media (min-width: 700px) { .sheet { align-items: center; } }
+.sheet .panel { background: var(--bg); width: 100%; max-width: 560px; max-height: 88vh; overflow: auto; border-radius: 20px 20px 0 0; padding: 18px 16px 28px; }
+@media (min-width: 700px) { .sheet .panel { border-radius: 20px; } }
+.sheet .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.sheet h2 { margin: 0; font-size: 20px; }
+
+/* cards & text */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 18px; margin: 0 0 16px; box-shadow: var(--shadow); }
+@media (min-width: 600px) { .card { padding: 28px 30px; } }
+h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; letter-spacing: -.2px; }
+h2 { font-size: 19px; margin: 0 0 10px; }
+.lead { color: var(--muted); margin: 0 0 4px; }
+.shead { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+.badge { width: 48px; height: 48px; border-radius: 14px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; flex: none; font-size: 22px; }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); background: #f1efe9; border-radius: 999px; padding: 2px 10px; margin-top: 4px; }
+.why { display: flex; gap: 10px; background: var(--brand-soft); color: #23446f; border-radius: 12px; padding: 12px 14px; font-size: 15px; margin: 0 0 24px; }
+
+/* fields */
+.field { margin: 0 0 26px; }
+.field:last-child { margin-bottom: 4px; }
+.label { display: block; font-weight: 600; margin-bottom: 6px; }
+.opt { font-weight: 400; color: var(--faint); font-size: 14px; }
+.hint { color: var(--muted); font-size: 15px; margin: -2px 0 8px; }
+details.tip { margin: 8px 0 0; font-size: 15px; }
+details.tip summary { list-style: none; color: var(--brand); cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 500; }
+details.tip summary::-webkit-details-marker { display: none; }
+details.tip p { margin: 8px 0 0; background: #fbf8ef; border: 1px solid #efe6cc; border-radius: 10px; padding: 10px 12px; color: #4b4532; }
+input[type=text], input[type=date], input[type=email], input[type=tel], input[type=number], select.in, textarea {
+  width: 100%; min-width: 0; padding: 13px 14px; border: 1.5px solid var(--line-strong); border-radius: 12px; background: #fff; transition: border-color .15s, box-shadow .15s; }
+input[type=date] { min-height: 52px; }
+input:focus, select.in:focus, textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(31,74,133,.12); }
+textarea { min-height: 100px; resize: vertical; }
+.bad-input { border-color: var(--bad) !important; }
+.err { color: var(--bad); font-size: 14px; margin-top: 6px; display: flex; gap: 6px; align-items: center; }
+.count { text-align: right; margin-top: 4px; } .count.over { color: var(--bad); font-weight: 600; }
+.choices { display: grid; gap: 10px; }
+.choices.two, .choices.three { grid-template-columns: 1fr 1fr; }
+.choices.three > :last-child { grid-column: 1 / -1; }
+@media (min-width: 640px) { .choices.three { grid-template-columns: 1fr 1fr 1.3fr; } .choices.three > :last-child { grid-column: auto; } }
+.choice.unsure { border-style: dashed; }
+.choice.box .ring { border-radius: 6px; }
+.checklist { display: grid; gap: 8px; }
+.checklist .sep { font-size: 13px; color: var(--faint); margin: 6px 0 0; }
+.checklist .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 420px) { .checklist .two { grid-template-columns: 1fr; } }
+.seg { display: inline-flex; background: #f1efe9; border-radius: 10px; padding: 3px; margin-bottom: 10px; }
+.seg button { border: 0; background: transparent; padding: 6px 14px; border-radius: 8px; font-size: 15px; color: var(--muted); }
+.seg button.on { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 3px rgba(28,36,51,.12); }
+.suffix { position: relative; max-width: 220px; }
+.suffix input { padding-right: 52px; }
+.suffix span { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--faint); pointer-events: none; }
+.conv { margin-top: 8px; font-size: 15px; color: var(--ok); display: flex; gap: 6px; align-items: center; }
+.guide { margin: -12px 0 18px; }
+.guide .steps2 p { margin: 8px 0 0; }
+.choice { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 12px; border: 1.5px solid var(--line-strong); background: #fff; text-align: left; transition: border-color .15s, background .15s; min-width: 0; }
+.choice:hover { border-color: #9fb6d6; }
+.choice .ring { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line-strong); flex: none; display: grid; place-items: center; color: #fff; font-size: 13px; }
+.choice.on { border-color: var(--brand); background: var(--brand-soft); font-weight: 600; }
+.choice.on .ring { background: var(--brand); border-color: var(--brand); }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.grid2 > .wide { grid-column: 1 / -1; }
+@media (max-width: 420px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.sub { font-size: 14px; color: var(--muted); margin: 0 0 5px; font-weight: 500; }
+.entry { border: 1.5px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 12px; background: #fcfbf8; }
+.entry .top2 { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 600; }
+.entry .field { margin-bottom: 14px; }
+.add { width: 100%; border: 1.5px dashed #9fb6d6; background: transparent; color: var(--brand); border-radius: 12px; padding: 12px; font-weight: 600; display: flex; justify-content: center; gap: 6px; align-items: center; }
+.link { background: none; border: 0; color: var(--brand); padding: 4px; display: inline-flex; gap: 4px; align-items: center; font-size: 15px; }
+.link.danger { color: var(--bad); }
+
+/* buttons & bottom bar */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 14px 22px; border-radius: 12px; border: 0; background: var(--brand); color: var(--brand-ink); text-decoration: none; transition: filter .15s, transform .05s; }
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(1px); }
+.btn.ghost { background: #fff; color: var(--brand); border: 1.5px solid var(--brand-mid); }
+.btn.soft { background: var(--brand-soft); color: var(--brand); }
+.btn.big { width: 100%; padding: 16px 22px; font-size: 18px; }
+.btn:disabled { opacity: .45; cursor: not-allowed; filter: none; }
+.actions { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; background: rgba(245,243,238,.94); backdrop-filter: blur(8px); border-top: 1px solid var(--line); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); }
+.actions .in { max-width: 1120px; margin: 0 auto; }
+.actions .row { max-width: 700px; margin: 0 auto; display: flex; gap: 10px; }
+@media (min-width: 900px) { .actions .in { padding: 0 16px 0 320px; } .actions .row { margin: 0; } .actions .row .btn:not(.ghost) { flex: 0 1 260px; margin-left: auto; } }
+.actions .btn { flex: 1; }
+.actions .btn.ghost { flex: 0 0 auto; }
+
+/* tasks, notices */
+.alert { border-radius: var(--radius); padding: 18px 20px; margin-bottom: 16px; background: var(--warn-soft); border: 1px solid #f0dcb4; }
+.alert h2 { display: flex; align-items: center; gap: 8px; color: var(--warn); font-size: 17px; margin: 0; }
+.alert p { margin: 10px 0 8px; }
+.alert .opts { display: grid; gap: 8px; margin: 10px 0 6px; }
+.alert .opts .btn { background: #fff; color: var(--ink); border: 1.5px solid #e5cf9f; justify-content: flex-start; }
+.alert .item + .item { border-top: 1px solid #f0dcb4; margin-top: 10px; }
+.asked-line { margin: 16px 0; padding: 14px 16px; }
+.asked-line p { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 17px; }
+.todo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 10px 0; border-top: 1px solid #f0dcb4; }
+.todo-row > span { flex: 1 1 200px; min-width: 0; overflow-wrap: anywhere; }
+.note.sent { display: flex; gap: 8px; align-items: flex-start; background: var(--ok-soft); color: #1f5a37; }
+.note.sent .sub { margin: 2px 0 0; color: inherit; }
+.note.safety { margin: 0 0 18px; }
+.note.safety .link { display: inline; padding: 0 4px; text-decoration: underline; }
+.note { background: var(--brand-soft); color: #23446f; border-radius: 12px; padding: 12px 14px; font-size: 15px; margin: 0 0 14px; }
+
+/* welcome */
+.hero h1 { font-size: 28px; }
+.points { list-style: none; margin: 20px 0 22px; padding: 0; display: grid; gap: 16px; }
+.points li { display: flex; gap: 14px; align-items: flex-start; }
+.points .badge { width: 40px; height: 40px; border-radius: 12px; font-size: 18px; }
+.points b { display: block; }
+.points span { color: var(--muted); font-size: 15px; }
+.ready { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 24px; }
+.ready span { background: #f1efe9; border-radius: 999px; padding: 5px 12px; font-size: 14px; }
+
+/* documents */
+.doc { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-top: 1px solid var(--line); }
+.doc .badge { width: 44px; height: 44px; border-radius: 12px; font-size: 20px; }
+.doc { grid-template-columns: 76px minmax(0, 1fr); }
+.thumb { width: 76px; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: #fff; overflow: hidden; position: relative; align-self: start; }
+.thumb img { display: block; width: 100%; height: auto; }
+.thumb span { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(28,36,51,.66); color: #fff; font-size: 11px; padding: 2px 0; text-align: center; }
+.example img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+.example p { color: var(--muted); font-size: 15px; }
+.mark-hl { display: inline-block; width: 14px; height: 14px; border: 3px solid #f2b705; background: rgba(242,183,5,.16); border-radius: 4px; vertical-align: -2px; }
+.doc .name { font-weight: 600; }
+.doc .why2 { color: var(--muted); font-size: 15px; margin: 2px 0 8px; }
+.status { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 3px 10px; }
+.status.ok { background: var(--ok-soft); color: var(--ok); }
+.status.need { background: var(--warn-soft); color: var(--warn); }
+.status.bad { background: var(--bad-soft); color: var(--bad); }
+.status.opt { background: #f1efe9; color: var(--muted); }
+.upl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.upl label { position: relative; overflow: hidden; border-radius: 12px; }
+.upl input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.upl label:focus-within { outline: 3px solid var(--accent, #245bc1); outline-offset: 3px; }
+.upl .btn { padding: 10px 14px; font-size: 15px; }
+.files { margin: 8px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--muted); overflow-wrap: anywhere; }
+
+/* review */
+.rrow { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.rrow:first-of-type { border-top: 0; }
+.rrow .t { flex: 1; min-width: 0; }
+.rrow .ok { color: var(--ok); } .rrow .miss { color: var(--faint); }
+.attest { background: #fbf8ef; border: 1px solid #efe6cc; border-radius: 12px; padding: 14px 16px; font-size: 15px; margin: 0 0 16px; }
+.check { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 14px; cursor: pointer; }
+.check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--brand); }
+
+/* done */
+/* the agreement and the closed case (src/engagement.py): the letter in the client's language with the English beside it */
+.sheet .panel.wide { max-width: 980px; }
+.letter2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 760px) { .letter2.two { grid-template-columns: 1fr 1fr; } }
+.letter2 .copy { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 15px; }
+.letter2 .copy h3 { margin: 0 0 8px; font-size: 16px; }
+.letter2 .copy .lang { color: var(--muted); font-size: 13px; margin: 0 0 6px; }
+.letter2 .copy p { margin: 0 0 10px; }
+/* "Your monthly money" and its signing (src/eoir26a.py) */
+.moneyin { display: flex; align-items: center; gap: 8px; max-width: 240px; }
+.moneyin span { color: var(--muted); font-weight: 600; }
+.capture-view { position: relative; background: #111; border-radius: 12px; overflow: hidden; }
+.capture-view video, .capture-view img { display: block; width: 100%; max-height: 48vh; object-fit: contain; }
+.capture-guide { position: absolute; inset: 10% 12%; pointer-events: none; border: 2px dashed #fff; box-shadow: 0 0 0 999px rgba(0,0,0,.16); }
+.capture-guide span { position: absolute; width: 24px; height: 24px; border: 4px solid #ffe078; }
+.capture-guide span:nth-child(1) { top: -3px; left: -3px; border-right: 0; border-bottom: 0; }
+.capture-guide span:nth-child(2) { top: -3px; right: -3px; border-left: 0; border-bottom: 0; }
+.capture-guide span:nth-child(3) { bottom: -3px; left: -3px; border-right: 0; border-top: 0; }
+.capture-guide span:nth-child(4) { bottom: -3px; right: -3px; border-left: 0; border-top: 0; }
+.capture-controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.capture-outline { position:absolute; inset:0; width:100%; height:100%; touch-action:none; }
+.capture-outline polygon { fill: none; stroke:#72ffba; stroke-width:4; vector-effect:non-scaling-stroke; }
+.capture-outline circle { fill:#ffe078; stroke:#222; stroke-width:2; cursor:move; }
+.capture-corners { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0; }
+.capture-corners label { display:block; }
+.capture-corners input { width:96px; min-height:44px; }
+.capture-warning { border-left:4px solid #a96400; padding:8px; }
+.money-controls .link { margin: 6px 12px 0 0; }
+canvas.pad { width: 100%; aspect-ratio: 4 / 1; background: #fff; border: 1px solid var(--line-strong); border-radius: 10px; touch-action: none; display: block; margin: 6px 0; }
+#money-sign .copy { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 14px; font-size: 15px; margin: 6px 0 10px; }
+.agree-line { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; }
+.done-mark { width: 76px; height: 76px; border-radius: 50%; background: var(--ok-soft); color: var(--ok); display: grid; place-items: center; margin: 4px auto 14px; font-size: 38px; }
+.center { text-align: center; }
+/* the case's path (src/journey.py) */
+.case h2 { margin: 0 0 4px; }
+.case .now { color: var(--muted); margin: 6px 0 14px; }
+.path { list-style: none; padding: 0; margin: 0 0 6px; display: grid; gap: 8px; }
+.path li { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 15px; }
+.path .dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line); flex: none; }
+.path li.done .dot { background: var(--brand); border-color: var(--brand); }
+.path li.now { color: var(--ink); font-weight: 700; }
+.path li.now .dot { border-color: var(--brand); box-shadow: 0 0 0 4px var(--brand-soft); }
+.path.collapsed li:not(.now) { display: none; }  /* on a phone the ladder shows the current step; "Show all" opens it, so the appointment is on the first screen */
+.pathtoggle { display: none; margin: 0 0 6px; }
+@media (max-width: 700px) { .pathtoggle { display: inline-flex; } }
+@media (min-width: 701px) { .path.collapsed li:not(.now) { display: flex; } }
+.happened { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 4px; }
+.nextstep { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin: 14px 0 0; }
+.nextstep h3 { margin: 0 0 6px; font-size: 16px; }
+.nextstep p { margin: 0; }
+.uscis-says { border-left: 4px solid var(--brand-mid); background: var(--card); border-radius: 0 12px 12px 0; padding: 10px 14px; margin: 10px 0; }
+.uscis-says .line { font-weight: 700; margin: 0; overflow-wrap: anywhere; }
+.uscis-says .desc { margin: 6px 0 0; overflow-wrap: anywhere; }
+.estimate { margin: 10px 0 0; }
+.faces { display: flex; gap: 10px; margin: 10px 0; }
+.faces button { flex: 1; min-height: 64px; display: grid; place-items: center; gap: 2px; background: var(--card); border: 2px solid var(--line); border-radius: 14px; padding: 8px 4px; font-size: 15px; cursor: pointer; color: var(--ink); }
+.faces button svg { width: 30px; height: 30px; }
+.faces button[aria-pressed="true"] { border-color: var(--brand); background: var(--brand-soft); }
+.feedback textarea { min-height: 70px; margin-bottom: 8px; }
+.appt { background: var(--brand-soft); border-radius: 12px; padding: 12px 14px; margin-top: 12px; }
+.appt b { display: block; }
+.appt .btn { margin-top: 10px; padding: 10px 14px; font-size: 15px; }
+.nextappt { background: var(--brand-soft); border-radius: var(--radius); padding: 12px 16px; margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; justify-content: space-between; }
+.nextappt b { display: block; }
+.nextappt .btn { padding: 10px 14px; font-size: 15px; }
+.badge-n { background: #fff; color: var(--brand); border-radius: 999px; min-width: 20px; height: 20px; padding: 0 6px; font-size: 13px; font-weight: 700; display: inline-grid; place-items: center; }
+.thread { display: grid; gap: 10px; margin: 6px 0 14px; max-height: 42vh; overflow: auto; }
+.bubble { border-radius: 14px; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); max-width: 92%; }
+.bubble.client { background: var(--brand-soft); border-color: var(--brand-mid); justify-self: end; }
+.bubble.office { justify-self: start; }
+.bubble .txt { white-space: pre-wrap; overflow-wrap: anywhere; }
+.bubble .sub { margin: 4px 0 0; }
+.bubble .sub:first-child { margin: 0 0 4px; }
+.bubble .orig { white-space: pre-wrap; overflow-wrap: anywhere; }
+.msgbox textarea { min-height: 90px; margin-bottom: 10px; }
+.prep .row { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.prep .row > b { display: block; color: var(--brand); font-size: 14px; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 4px; }
+.prep ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.prep .when { font-size: 20px; font-weight: 700; }
+.timeline { list-style: none; padding: 0; margin: 14px 0 0; text-align: left; display: grid; gap: 14px; }
+.timeline li { display: flex; gap: 12px; }
+.timeline .n { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; font-weight: 700; font-size: 14px; flex: none; }
+
+/* faq */
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px; }
+.faq summary { padding: 14px 16px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--brand); font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq p { margin: 0; padding: 0 16px 14px; color: var(--muted); }
+.signin { max-width: 460px; margin: 6vh auto 0; }
+/* the appointment page prints alone: nothing else on the screen goes to paper */
+@media print {
+  body { background: #fff; font-size: 14pt; }
+  .top, .wrap, .actions, .noprint, .sheetlink, .sheet .head .link { display: none !important; }
+  .sheet { position: static; display: block; background: none; }
+  .sheet .panel { max-height: none; max-width: none; overflow: visible; padding: 0; background: #fff; border-radius: 0; }
+  .prep .row { break-inside: avoid; }
+}
+.foot { text-align: center; color: var(--faint); font-size: 14px; margin-top: 18px; display: flex; gap: 6px; justify-content: center; align-items: center; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <div class="brand"><span class="mark">%%MARK%%</span><span class="full">%%FIRM%%</span></div>
+    <span class="saved" id="saved" aria-live="polite"></span>
+    <button class="iconbtn" id="msgbtn" type="button" hidden></button>
+    <button class="iconbtn" id="helpbtn" type="button" hidden></button>
+    <select id="lang" aria-label="Language / Idioma / Lang"></select>
+    <button class="leave" id="leave" type="button"><span class="full"></span><span class="short"></span></button>
+  </div>
+  <div class="progress" aria-hidden="true"><div id="bar" style="width:0"></div></div>
+</header>
+<div class="wrap" id="wrap"><nav class="nav" id="nav" aria-label="Steps"></nav><main class="content" id="main"></main></div>
+<div class="actions" id="actions" hidden><div class="in" id="actions-in"></div></div>
+<div id="layer"></div>
+<script nonce="%%NONCE%%">
+"use strict";
+/* %%CAPTURE_VISION%% */
+// asked_in_english and errors.too_long (10/2026, every language): a DRAFT for the attorney and the firm's certified translator (docs/attorney_review.md).
+const UI = {
+  pt: {
+    signin_title: "Seu questionário", signin_text: "Digite o celular ou e-mail que você deu ao escritório. Vamos enviar um link seguro para você entrar — sem senha.",
+    phone_channel: "Canal do telefone", phone_help: "Use o canal que você permitiu e confirmou com o escritório. Telefones locais ou compartilhados não dão acesso.", contact: "Celular ou e-mail", send: "Enviar link", sent: "Pedido recebido. Se o envio automático estiver disponível para este contato, você receberá um link. Se não chegar, peça um novo link do questionário ao escritório.",
+    link_busy: "Muitos pedidos desta rede agora. Tente de novo daqui a uma hora, ou peça ao escritório para enviar o link.",
+    expired: "Esse link expirou ou já foi usado. Peça um novo link do questionário ao escritório.", next: "Continuar", back: "Voltar", add: "Adicionar", remove: "Remover",
+    documents: "Documentos", review: "Revisar e enviar", todo: "Precisamos da sua ajuda com isto", upload: "Escolher arquivo", photo: "Tirar foto", uploading: "Enviando…",
+    needed: "Falta enviar", received: "Recebido", checked: "Recebido e conferido", retake: "Envie outra foto", optional: "opcional", translation: "Se não estiver em inglês, vamos precisar de uma tradução — o escritório explica como.",
+    missing_n: (n) => `${n} ${n === 1 ? "resposta faltando" : "respostas faltando"}`, all_answered: "Tudo respondido",
+    attest: "Declaro que as informações que dei são verdadeiras e completas, até onde sei. Entendo que elas serão usadas no meu pedido de green card, que eu vou assinar sob pena de perjúrio.",
+    questionnaire_pdf: "Baixar meu questionário (PDF)",
+    typename: "Digite seu nome completo", agree: "Li e concordo", submit: "Enviar ao escritório", submitted_title: "Pronto! Recebemos tudo.",
+    submitted_text: "Obrigado. Você não precisa fazer mais nada agora.", saved: "Salvo",
+    hello: (n) => `Olá, ${n}!`, entry: "Item", ft: "pés", in: "pol.", state: "Estado", zip: "Código ZIP", street: "Rua e número", apt: "Apto (se tiver)", city: "Cidade",
+    step_of: (a, b) => `Etapa ${a} de ${b}`, steps: "Etapas", minutes: (m) => `cerca de ${m} min`, answered: (a, b) => `${a} de ${b} respondidas`,
+    not_sure: "Ficou com dúvida?", help: "Ajuda", faq: "Perguntas frequentes", faq_more: "Ainda com dúvida? Fale com o escritório pelo telefone de sempre.",
+    welcome_lead: "Este questionário ajuda o escritório a preparar o seu pedido de green card. Vamos com calma, uma parte de cada vez.",
+    // a person who is not yet a client (src/prospects.py): a DRAFT for the attorney and the firm's certified translator, like every client sentence
+    welcome_lead_first_contact: "Estas perguntas ajudam o escritório a conhecer a sua situação antes de conversar com você. Responder não faz de você cliente do escritório, e você pode parar quando quiser.",
+    attest_first_contact: "Declaro que as informações que dei são verdadeiras, até onde sei. Entendo que o escritório vai ler as respostas para conversar comigo e que enviá-las não faz de mim cliente do escritório.",
+    w_time_first_contact: "Cerca de 5 a 10 minutos", ready_first_contact: ["Passaporte ou outro documento com foto", "Cartas da imigração ou de um tribunal, se tiver"],
+    submitted_title_first_contact: "Pronto! Recebemos suas respostas.", submitted_text_first_contact: "Obrigado. O escritório vai entrar em contato com você.",
+    next1_first_contact: "O escritório lê as suas respostas.", next2_first_contact: "Alguém liga ou escreve para você para conversar.", next3_first_contact: "Se o escritório puder ajudar, vocês combinam os próximos passos juntos.",
+    welcome_lead_n400: "Este questionário ajuda o escritório a preparar o seu pedido de cidadania americana. Vamos com calma, uma parte de cada vez.",
+    attest_n400: "Declaro que as informações que dei são verdadeiras e completas, até onde sei. Entendo que elas serão usadas no meu pedido de cidadania, que eu vou assinar sob pena de perjúrio.",
+    w_time: "Cerca de 30 a 40 minutos", w_time2: "Você pode parar quando quiser.", w_save: "Tudo é salvo sozinho", w_save2: "Volte neste navegador para continuar ou peça um novo link ao escritório.",
+    w_safe: "Privado e seguro", w_safe2: "Só você e o escritório veem suas respostas.", w_help: "Ajuda em cada pergunta", w_help2: "Toque em “Ficou com dúvida?” quando precisar.",
+    have_ready: "Vai ajudar ter por perto:", ready: ["Passaporte", "Certidão de nascimento", "Autorização de trabalho", "Cartão do Social Security", "Papéis da imigração"], start: "Começar", resume: "Continuar de onde parei",
+    photo_tip: "Dica: coloque o documento inteiro sobre uma mesa — os 4 cantos aparecendo, boa luz, sem reflexo.",
+    docs_lead: "Envie uma foto ou PDF de cada documento. Conferimos automaticamente e avisamos se precisar de outra foto.",
+    review_lead: "Confira se está tudo certo antes de enviar. Você ainda pode voltar e mudar qualquer resposta.",
+    docs_missing: (n) => `${n} ${n === 1 ? "documento faltando" : "documentos faltando"}`, docs_ok: "Documentos enviados", go: "Abrir",
+    cant_submit: "Falta pouco! Complete as respostas marcadas acima para poder enviar.", docs_later: "Documentos que faltam podem ser enviados depois, por aqui mesmo.",
+    your_case: "O seu caso", appointments: "Seus compromissos",
+    next_title: "O que acontece agora", next1: "O escritório revisa suas respostas e documentos.", next2: "Se faltar algo, avisamos por mensagem com um link seguro.", next3: "O seu advogado prepara o pedido e combina a assinatura com você.",
+    office_asked: "O escritório pediu", asked_n: (n) => `O escritório pediu ${n} ${n === 1 ? "coisa" : "coisas"} a você`, asked_go: "Ver agora", asked_in_english: "Esta pergunta está em inglês porque ainda não foi traduzida. Responda como puder: o escritório vai entrar em contato com você.", send_reply: "Enviar resposta", send_doc: "Enviar o documento", unsure_title: (n) => `Você marcou “Não tenho certeza” em ${n} ${n === 1 ? "pergunta" : "perguntas"} — tudo bem.`, unsure_text: "Não precisa ligar: o escritório vai conversar com você sobre estas antes de preparar o pedido.", see_example: "Ver exemplo", example_caption: "Exemplo — o seu vai ser parecido. A parte marcada é o que precisamos ver bem.", tick_all: "Marque todas que se aplicam. Se nenhuma se aplica:", none_of_these: "Nenhuma destas", not_sure_btn: "Não tenho certeza", if_have: "Se você tiver", where_find: "Onde encontro isto?", for_form: "No formulário",
+    still_todo: "Ainda dá para enviar os documentos que faltam:", close: "Fechar", choose: "Escolher…",
+    errors: { invalid_date: "Essa data não parece certa.", too_long: "Sua resposta está longa demais: até 2.000 caracteres.", invalid_choice: "Escolha uma das opções.", invalid_number: "Digite só números.", invalid_email: "Confira o e-mail.",
+      invalid_phone: "Confira o telefone (com o código de área).", invalid_a_number: "O A# tem 8 ou 9 números.", invalid_ssn: "O Social Security tem 9 números.",
+      invalid_height: "Confira a altura.", invalid_weight: "Confira o peso.", invalid_zip: "O ZIP code tem 5 números.", dates_backwards: "A data final está antes da data inicial.", invalid: "Confira esta resposta.", network: "Sem conexão — tente de novo." } },
+  es: {
+    signin_title: "Su cuestionario", signin_text: "Escriba el celular o correo que dio a la oficina. Le enviaremos un enlace seguro para entrar — sin contraseña.",
+    phone_channel: "Canal del teléfono", phone_help: "Use el canal que permitió y verificó con la oficina. Los teléfonos locales o compartidos no dan acceso.", contact: "Celular o correo", send: "Enviar enlace", sent: "Solicitud recibida. Si el envío automático está disponible para este contacto, recibirá un enlace. Si no llega, pida a la oficina un nuevo enlace del cuestionario.",
+    link_busy: "Demasiadas solicitudes desde esta red ahora. Intente de nuevo en una hora, o pida a la oficina que le envíe el enlace.",
+    expired: "Ese enlace venció o ya se usó. Pida a la oficina un nuevo enlace del cuestionario.", next: "Continuar", back: "Atrás", add: "Agregar", remove: "Quitar",
+    documents: "Documentos", review: "Revisar y enviar", todo: "Necesitamos su ayuda con esto", upload: "Elegir archivo", photo: "Tomar foto", uploading: "Enviando…",
+    needed: "Falta enviar", received: "Recibido", checked: "Recibido y verificado", retake: "Envíe otra foto", optional: "opcional", translation: "Si no está en inglés, necesitaremos una traducción — la oficina le explica cómo.",
+    missing_n: (n) => `${n} ${n === 1 ? "respuesta pendiente" : "respuestas pendientes"}`, all_answered: "Todo respondido",
+    attest: "Declaro que la información que di es verdadera y completa, según mi conocimiento. Entiendo que se usará en mi solicitud de green card, que firmaré bajo pena de perjurio.",
+    questionnaire_pdf: "Descargar mi cuestionario (PDF)",
+    typename: "Escriba su nombre completo", agree: "Leí y acepto", submit: "Enviar a la oficina", submitted_title: "¡Listo! Recibimos todo.",
+    submitted_text: "Gracias. No necesita hacer nada más por ahora.", saved: "Guardado",
+    hello: (n) => `¡Hola, ${n}!`, entry: "Elemento", ft: "pies", in: "pulg.", state: "Estado", zip: "Código ZIP", street: "Calle y número", apt: "Apto (si tiene)", city: "Ciudad",
+    step_of: (a, b) => `Paso ${a} de ${b}`, steps: "Pasos", minutes: (m) => `unos ${m} min`, answered: (a, b) => `${a} de ${b} respondidas`,
+    not_sure: "¿Tiene dudas?", help: "Ayuda", faq: "Preguntas frecuentes", faq_more: "¿Aún tiene dudas? Comuníquese con la oficina por el teléfono de siempre.",
+    welcome_lead: "Este cuestionario ayuda a la oficina a preparar su solicitud de green card. Vamos con calma, una parte a la vez.",
+    welcome_lead_first_contact: "Estas preguntas ayudan a la oficina a conocer su situación antes de hablar con usted. Responder no lo convierte en cliente de la oficina, y puede parar cuando quiera.",
+    attest_first_contact: "Declaro que la información que di es verdadera, según mi conocimiento. Entiendo que la oficina leerá las respuestas para hablar conmigo y que enviarlas no me convierte en cliente de la oficina.",
+    w_time_first_contact: "Unos 5 a 10 minutos", ready_first_contact: ["Pasaporte u otro documento con foto", "Cartas de inmigración o de un tribunal, si tiene"],
+    submitted_title_first_contact: "¡Listo! Recibimos sus respuestas.", submitted_text_first_contact: "Gracias. La oficina se comunicará con usted.",
+    next1_first_contact: "La oficina lee sus respuestas.", next2_first_contact: "Alguien le llama o le escribe para hablar.", next3_first_contact: "Si la oficina puede ayudarle, acuerdan juntos los próximos pasos.",
+    welcome_lead_n400: "Este cuestionario ayuda a la oficina a preparar su solicitud de ciudadanía estadounidense. Vamos con calma, una parte a la vez.",
+    attest_n400: "Declaro que la información que di es verdadera y completa, según mi conocimiento. Entiendo que se usará en mi solicitud de ciudadanía, que firmaré bajo pena de perjurio.",
+    w_time: "Unos 30 a 40 minutos", w_time2: "Puede parar cuando quiera.", w_save: "Todo se guarda solo", w_save2: "Vuelva en este navegador para continuar o pida un nuevo enlace a la oficina.",
+    w_safe: "Privado y seguro", w_safe2: "Solo usted y la oficina ven sus respuestas.", w_help: "Ayuda en cada pregunta", w_help2: "Toque “¿Tiene dudas?” cuando lo necesite.",
+    have_ready: "Le ayudará tener a mano:", ready: ["Pasaporte", "Acta de nacimiento", "Permiso de trabajo", "Tarjeta de Seguro Social", "Papeles de inmigración"], start: "Empezar", resume: "Seguir donde lo dejé",
+    photo_tip: "Consejo: ponga el documento completo sobre una mesa — las 4 esquinas visibles, buena luz, sin reflejo.",
+    docs_lead: "Envíe una foto o PDF de cada documento. Lo revisamos automáticamente y le avisamos si hace falta otra foto.",
+    review_lead: "Revise que todo esté bien antes de enviar. Todavía puede volver y cambiar cualquier respuesta.",
+    docs_missing: (n) => `${n} ${n === 1 ? "documento pendiente" : "documentos pendientes"}`, docs_ok: "Documentos enviados", go: "Abrir",
+    cant_submit: "¡Falta poco! Complete las respuestas marcadas arriba para poder enviar.", docs_later: "Los documentos que faltan se pueden enviar después, por aquí mismo.",
+    your_case: "Su caso", appointments: "Sus citas",
+    next_title: "Qué pasa ahora", next1: "La oficina revisa sus respuestas y documentos.", next2: "Si falta algo, le avisamos por mensaje con un enlace seguro.", next3: "Su abogado prepara la solicitud y coordina la firma con usted.",
+    office_asked: "La oficina pidió", asked_n: (n) => `La oficina le pidió ${n} ${n === 1 ? "cosa" : "cosas"}`, asked_go: "Ver ahora", asked_in_english: "Esta pregunta está en inglés porque todavía no se ha traducido. Responda como pueda: la oficina se comunicará con usted.", send_reply: "Enviar respuesta", send_doc: "Enviar el documento", unsure_title: (n) => `Marcó “No estoy seguro(a)” en ${n} ${n === 1 ? "pregunta" : "preguntas"} — está bien.`, unsure_text: "No hace falta llamar: la oficina hablará con usted sobre estas antes de preparar la solicitud.", see_example: "Ver ejemplo", example_caption: "Ejemplo — el suyo se verá parecido. La parte marcada es lo que necesitamos ver bien.", tick_all: "Marque todas las que apliquen. Si ninguna aplica:", none_of_these: "Ninguna de estas", not_sure_btn: "No estoy seguro(a)", if_have: "Si lo tiene", where_find: "¿Dónde lo encuentro?", for_form: "En el formulario",
+    still_todo: "Todavía puede enviar los documentos que faltan:", close: "Cerrar", choose: "Elegir…",
+    errors: { invalid_date: "Esa fecha no parece correcta.", too_long: "Su respuesta es demasiado larga: hasta 2.000 caracteres.", invalid_choice: "Elija una de las opciones.", invalid_number: "Escriba solo números.", invalid_email: "Revise el correo.",
+      invalid_phone: "Revise el teléfono (con código de área).", invalid_a_number: "El A# tiene 8 o 9 números.", invalid_ssn: "El Seguro Social tiene 9 números.",
+      invalid_height: "Revise la estatura.", invalid_weight: "Revise el peso.", invalid_zip: "El ZIP tiene 5 números.", dates_backwards: "La fecha final es anterior a la inicial.", invalid: "Revise esta respuesta.", network: "Sin conexión — intente de nuevo." } },
+  en: {
+    signin_title: "Your questionnaire", signin_text: "Enter the mobile number or email you gave the office. We'll send you a secure link to sign in — no password needed.",
+    phone_channel: "Phone channel", phone_help: "Use the channel you permitted and verified with the office. Shared/local phones cannot sign in.", contact: "Mobile or email", send: "Send me a link", sent: "Request received. If automatic delivery is available for this contact, you will receive a link. If nothing arrives, ask the office for a new questionnaire link.",
+    link_busy: "Too many requests from this network right now. Please try again in an hour, or ask the office to send the link.",
+    expired: "That link expired or was already used. Ask the office for a new questionnaire link.", next: "Continue", back: "Back", add: "Add", remove: "Remove",
+    documents: "Documents", review: "Review and send", todo: "We need your help with this", upload: "Choose file", photo: "Take photo", uploading: "Uploading…",
+    needed: "Still needed", received: "Received", checked: "Received and checked", retake: "Please send another photo", optional: "optional", translation: "If it isn't in English, we'll need a translation — the office will explain how.",
+    missing_n: (n) => `${n} ${n === 1 ? "answer missing" : "answers missing"}`, all_answered: "All answered",
+    attest: "I declare that the information I gave is true and complete to the best of my knowledge. I understand it will be used in my green card application, which I will sign under penalty of perjury.",
+    questionnaire_pdf: "Download my questionnaire (PDF)",
+    typename: "Type your full name", agree: "I have read and agree", submit: "Send to the office", submitted_title: "All done! We received everything.",
+    submitted_text: "Thank you. You don't need to do anything else right now.", saved: "Saved",
+    hello: (n) => `Hello, ${n}!`, entry: "Entry", ft: "ft", in: "in", state: "State", zip: "ZIP code", street: "Street and number", apt: "Apt (if any)", city: "City",
+    step_of: (a, b) => `Step ${a} of ${b}`, steps: "Steps", minutes: (m) => `about ${m} min`, answered: (a, b) => `${a} of ${b} answered`,
+    not_sure: "Not sure?", help: "Help", faq: "Common questions", faq_more: "Still have a question? Call the office at the usual number.",
+    welcome_lead: "This questionnaire helps the office prepare your green card application. We'll take it one part at a time.",
+    welcome_lead_first_contact: "These questions help the office understand your situation before it talks with you. Answering does not make you a client of the office, and you can stop whenever you like.",
+    attest_first_contact: "I declare that the information I gave is true, to the best of my knowledge. I understand the office will read my answers to talk with me, and that sending them does not make me a client of the office.",
+    w_time_first_contact: "About 5 to 10 minutes", ready_first_contact: ["Passport or another photo ID", "Letters from immigration or a court, if you have them"],
+    submitted_title_first_contact: "All done! We received your answers.", submitted_text_first_contact: "Thank you. The office will be in touch.",
+    next1_first_contact: "The office reads your answers.", next2_first_contact: "Someone calls or writes to you to talk.", next3_first_contact: "If the office can help, you agree on the next steps together.",
+    welcome_lead_n400: "This questionnaire helps the office prepare your U.S. citizenship application. We'll take it one part at a time.",
+    attest_n400: "I declare that the information I gave is true and complete to the best of my knowledge. I understand it will be used in my citizenship application, which I will sign under penalty of perjury.",
+    w_time: "About 30 to 40 minutes", w_time2: "You can stop whenever you like.", w_save: "Everything saves automatically", w_save2: "Return in this browser to continue, or ask the office for a new link.",
+    w_safe: "Private and secure", w_safe2: "Only you and the office see your answers.", w_help: "Help on every question", w_help2: "Tap “Not sure?” whenever you need it.",
+    have_ready: "It helps to have nearby:", ready: ["Passport", "Birth certificate", "Work permit", "Social Security card", "Immigration papers"], start: "Let's start", resume: "Continue where I left off",
+    photo_tip: "Tip: lay the whole document on a table — all 4 corners visible, good light, no glare.",
+    docs_lead: "Send a photo or PDF of each document. We check them automatically and let you know if we need another photo.",
+    review_lead: "Check that everything looks right before sending. You can still go back and change any answer.",
+    docs_missing: (n) => `${n} ${n === 1 ? "document missing" : "documents missing"}`, docs_ok: "Documents sent", go: "Open",
+    cant_submit: "Almost there! Finish the answers marked above to send.", docs_later: "Missing documents can be sent later, right here.",
+    your_case: "Your case", appointments: "Your appointments",
+    next_title: "What happens next", next1: "The office reviews your answers and documents.", next2: "If anything is missing, we'll send you a message with a secure link.", next3: "Your attorney prepares the application and schedules the signing with you.",
+    office_asked: "The office asked", asked_n: (n) => `The office asked you ${n} ${n === 1 ? "thing" : "things"}`, asked_go: "See now", asked_in_english: "This question is in English because it hasn't been translated yet. Answer as best you can: the office will follow up with you.", send_reply: "Send answer", send_doc: "Send the document", unsure_title: (n) => `You marked “I'm not sure” on ${n} ${n === 1 ? "question" : "questions"} — that's fine.`, unsure_text: "No need to call: the office will go over these with you before preparing your application.", see_example: "See example", example_caption: "Example — yours will look similar. The marked part is what we need to see clearly.", tick_all: "Tick all that apply. If none do:", none_of_these: "None of these", not_sure_btn: "I'm not sure", if_have: "If you have it", where_find: "Where do I find this?", for_form: "On the form",
+    still_todo: "You can still send missing documents:", close: "Close", choose: "Choose…",
+    errors: { invalid_date: "That date doesn't look right.", too_long: "Your answer is too long: up to 2,000 characters.", invalid_choice: "Choose one of the options.", invalid_number: "Numbers only, please.", invalid_email: "Please check the email.",
+      invalid_phone: "Please check the phone number (with area code).", invalid_a_number: "The A-Number has 8 or 9 digits.", invalid_ssn: "A Social Security number has 9 digits.",
+      invalid_height: "Please check the height.", invalid_weight: "Please check the weight.", invalid_zip: "A ZIP code has 5 digits.", dates_backwards: "The end date is before the start date.", invalid: "Please check this answer.", network: "No connection — please try again." } },
+  // Haitian Creole: a MACHINE DRAFT awaiting the firm's certified translator (schemas/questions/intake.json translation_status).
+  ht: {
+    lang_name: "Kreyòl ayisyen",
+    signin_title: "Kesyonè ou", signin_text: "Ekri nimewo selilè oswa imèl ou te bay biwo a. N ap voye yon lyen ki an sekirite pou ou antre — ou pa bezwen modpas.",
+    phone_channel: "Kanal telefòn", phone_help: "Sèvi ak kanal ou pèmèt epi verifye ak biwo a. Nimewo lokal oswa pataje pa ka bay aksè.", contact: "Selilè oswa imèl", send: "Voye lyen an ban mwen", sent: "Fini! Si kontak sa a anrejistre lakay nou, lyen an ap rive nan yon ti moman. Ou ka fèmen paj sa a.",
+    link_busy: "Twòp demann soti nan rezo sa a kounye a. Tanpri eseye ankò nan inèdtan, oswa mande biwo a voye lyen an ban ou.",
+    expired: "Lyen sa a ekspire oswa yo te deja sèvi ak li. Mande yon lòt anba a — sa pran yon segond.", next: "Kontinye", back: "Retounen", add: "Ajoute", remove: "Retire",
+    documents: "Dokiman", review: "Revize epi voye", todo: "Nou bezwen èd ou pou sa a", upload: "Chwazi fichye", photo: "Pran foto", uploading: "N ap voye…",
+    needed: "Toujou manke", received: "Resevwa", checked: "Resevwa e verifye", retake: "Tanpri voye yon lòt foto", optional: "pa obligatwa", translation: "Si li pa an angle, n ap bezwen yon tradiksyon — biwo a ap eksplike ou kijan.",
+    missing_n: (n) => `${n} repons ki manke`, all_answered: "Tout reponn",
+    attest: "Mwen deklare ke enfòmasyon mwen bay yo vre e konplè, dapre sa mwen konnen. Mwen konprann y ap sèvi ak yo nan demann green card mwen, ke m ap siyen sou pèn fo sèman.",
+    questionnaire_pdf: "Telechaje kesyonè mwen an (PDF)",
+    typename: "Ekri non konplè ou", agree: "Mwen li e mwen dakò", submit: "Voye bay biwo a", submitted_title: "Fini! Nou resevwa tout bagay.",
+    submitted_text: "Mèsi. Ou pa bezwen fè anyen ankò kounye a.", saved: "Anrejistre",
+    hello: (n) => `Bonjou, ${n}!`, entry: "Liy", ft: "pye", in: "pous", state: "Eta", zip: "Kòd ZIP", street: "Ri ak nimewo", apt: "Apatman (si genyen)", city: "Vil",
+    step_of: (a, b) => `Etap ${a} sou ${b}`, steps: "Etap yo", minutes: (m) => `apeprè ${m} min`, answered: (a, b) => `${a} sou ${b} reponn`,
+    not_sure: "Ou pa sèten?", help: "Èd", faq: "Kesyon moun poze souvan", faq_more: "Ou toujou gen yon kesyon? Rele biwo a nan nimewo ou konnen an.",
+    welcome_lead: "Kesyonè sa a ede biwo a prepare demann green card ou. N ap fè l dousman, yon pati apre lòt.",
+    welcome_lead_first_contact: "Kesyon sa yo ede biwo a konprann sitiyasyon ou anvan l pale avè ou. Si ou reponn, sa pa fè ou kliyan biwo a, epi ou ka kanpe nenpòt lè ou vle.",
+    attest_first_contact: "Mwen deklare ke enfòmasyon mwen bay yo vre, dapre sa mwen konnen. Mwen konprann biwo a pral li repons mwen yo pou l pale avè m, epi si m voye yo sa pa fè m kliyan biwo a.",
+    w_time_first_contact: "Apeprè 5 a 10 minit", ready_first_contact: ["Paspò oswa yon lòt papye ak foto", "Lèt nan men imigrasyon oswa yon tribinal, si ou genyen"],
+    submitted_title_first_contact: "Fini! Nou resevwa repons ou yo.", submitted_text_first_contact: "Mèsi. Biwo a ap kontakte ou.",
+    next1_first_contact: "Biwo a ap li repons ou yo.", next2_first_contact: "Yon moun ap rele w oswa ekri w pou pale.", next3_first_contact: "Si biwo a ka ede w, nou dakò sou pwochen etap yo ansanm.",
+    welcome_lead_n400: "Kesyonè sa a ede biwo a prepare demann sitwayènte ameriken ou. N ap fè l dousman, yon pati apre lòt.",
+    attest_n400: "Mwen deklare ke enfòmasyon mwen bay yo vre e konplè, dapre sa mwen konnen. Mwen konprann y ap sèvi ak yo nan demann sitwayènte mwen, ke m ap siyen sou pèn fo sèman.",
+    w_time: "Apeprè 30 a 40 minit", w_time2: "Ou ka kanpe nenpòt lè ou vle.", w_save: "Tout bagay anrejistre poukont yo", w_save2: "Tounen ak menm lyen an oswa mande yon lòt.",
+    w_safe: "Prive e an sekirite", w_safe2: "Se sèlman ou menm ak biwo a ki wè repons ou yo.", w_help: "Èd sou chak kesyon", w_help2: "Peze “Ou pa sèten?” chak fwa ou bezwen l.",
+    have_ready: "Li bon pou ou genyen bò kote ou:", ready: ["Paspò", "Ak nesans (batistè)", "Pèmi travay", "Kat Sosyal Sekirite", "Papye imigrasyon"], start: "Ann kòmanse", resume: "Kontinye kote m te rete a",
+    photo_tip: "Konsèy: mete tout dokiman an sou yon tab — 4 kwen yo parèt, bon limyè, san reflè.",
+    docs_lead: "Voye yon foto oswa yon PDF pou chak dokiman. Nou tcheke yo otomatikman epi n ap di ou si nou bezwen yon lòt foto.",
+    review_lead: "Tcheke si tout bagay kòrèk anvan ou voye. Ou ka toujou tounen pou chanje nenpòt repons.",
+    docs_missing: (n) => `${n} dokiman ki manke`, docs_ok: "Dokiman yo voye", go: "Louvri",
+    cant_submit: "Ou prèske fini! Fini repons ki make anlè a pou ou ka voye.", docs_later: "Ou ka voye dokiman ki manke yo pita, isit la menm.",
+    your_case: "Dosye ou", appointments: "Randevou ou yo",
+    next_title: "Sa k ap pase kounye a", next1: "Biwo a ap revize repons ou ak dokiman ou yo.", next2: "Si yon bagay manke, n ap voye yon mesaj ba ou ak yon lyen ki an sekirite.", next3: "Avoka ou ap prepare demann lan epi l ap fikse yon lè avè ou pou siyen.",
+    office_asked: "Biwo a mande", asked_n: (n) => `Biwo a mande w ${n} bagay`, asked_go: "Gade kounye a", asked_in_english: "Kesyon sa a an angle paske poko gen moun ki tradui l. Reponn jan ou kapab: biwo a ap kontakte ou.", send_reply: "Voye repons lan", send_doc: "Voye dokiman an", unsure_title: (n) => `Ou make “Mwen pa sèten” sou ${n} kesyon — pa gen pwoblèm.`, unsure_text: "Ou pa bezwen rele: biwo a ap pale avè ou sou yo anvan li prepare demann ou an.", see_example: "Gade yon egzanp", example_caption: "Egzanp — pa w la ap sanble ak sa a. Pati ki make a se sa nou bezwen wè byen.", tick_all: "Make tout sa ki konsène ou. Si okenn pa konsène ou:", none_of_these: "Okenn nan sa yo", not_sure_btn: "Mwen pa sèten", if_have: "Si ou genyen l", where_find: "Ki kote m ap jwenn sa?", for_form: "Pou fòm nan",
+    still_todo: "Ou ka toujou voye dokiman ki manke yo:", close: "Fèmen", choose: "Chwazi…",
+    // dates in words: the browser has no Haitian Creole calendar of its own
+    months: ["janvye", "fevriye", "mas", "avril", "me", "jen", "jiyè", "out", "septanm", "oktòb", "novanm", "desanm"],
+    weekdays: ["dimanch", "lendi", "madi", "mèkredi", "jedi", "vandredi", "samdi"],
+    errors: { invalid_date: "Dat sa a pa sanble kòrèk.", too_long: "Repons ou a twò long: 2 000 karaktè pou pi plis.", invalid_choice: "Chwazi youn nan repons yo.", invalid_number: "Ekri chif sèlman, tanpri.", invalid_email: "Tanpri tcheke imèl la.",
+      invalid_phone: "Tanpri tcheke nimewo telefòn nan (ak kòd zòn nan).", invalid_a_number: "Nimewo A a gen 8 oswa 9 chif.", invalid_ssn: "Yon nimewo Sosyal Sekirite gen 9 chif.",
+      invalid_height: "Tanpri tcheke wotè a.", invalid_weight: "Tanpri tcheke pwa a.", invalid_zip: "Yon kòd ZIP gen 5 chif.", dates_backwards: "Dat fen an vini anvan dat kòmansman an.", invalid: "Tanpri tcheke repons sa a.", network: "Pa gen koneksyon — tanpri eseye ankò." } },
+};
+UI.pt.lang_name = "Português"; UI.es.lang_name = "Español"; UI.en.lang_name = "English";
+const LOCALES = { pt: "pt-BR", es: "es-US", en: "en-US" };  // a language without one here writes dates with its own month names (UI[lang].months)
+for (const [lang, message] of Object.entries({
+  pt: "Confira esta resposta: este endereço deve ser fora dos Estados Unidos. Informe seu último endereço em outro país, não seu endereço nos EUA.",
+  es: "Revise esta respuesta: esta dirección debe estar fuera de Estados Unidos. Escriba su última dirección en otro país, no su dirección en Estados Unidos.",
+  en: "Check this answer: this address must be outside the United States. Enter your last address in another country, not your U.S. address.",
+  ht: "Tcheke repons sa a: adrès sa a dwe deyò Etazini. Mete dènye adrès ou nan yon lòt peyi, pa adrès Etazini ou."
+})) UI[lang].errors.foreign_country_us = message;
+const FOREIGN = { street: { pt: "Rua e número", es: "Calle y número", en: "Street and number", ht: "Ri ak nimewo" }, city: { pt: "Cidade", es: "Ciudad", en: "City", ht: "Vil" },
+  province: { pt: "Estado / província", es: "Estado / provincia", en: "State / province", ht: "Eta / pwovens / depatman" }, postal_code: { pt: "CEP / código postal", es: "Código postal", en: "Postal code", ht: "Kòd postal" },
+  country: { pt: "País", es: "País", en: "Country", ht: "Peyi" }, date_from: { pt: "Morei lá desde", es: "Viví allí desde", en: "Lived there from", ht: "Mwen te rete la depi" }, date_to: { pt: "Até", es: "Hasta", en: "Until", ht: "Jiska" } };
+const US_STATES = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA PR RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
+const DOC_ICON = { passport: "book", birth_certificate: "file", i360_approval: "file", work_permit: "id", ssn_card: "id", i94: "plane", visa: "plane",
+  marriage_certificate: "rings", divorce_decree: "file", court_disposition: "scale", immigration_court: "scale", drivers_license: "id" };
+const ICON = {
+  person: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/>',
+  home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/>',
+  plane: '<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/>',
+  family: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.5 2.7-5 6-5s6 1.5 6 5"/><path d="M15 20c0-2.5 1-4 2.5-4s4.5 1 4.5 4"/>',
+  rings: '<circle cx="9" cy="14" r="6"/><circle cx="15" cy="14" r="6"/><path d="M10 4l2-2 2 2"/>',
+  child: '<circle cx="12" cy="6" r="3"/><path d="M8 22v-6l-2-5h12l-2 5v6"/>',
+  id: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 16.5c.8-1.5 2-2 3.5-2s2.7.5 3.5 2"/><path d="M15 10h3M15 13h3"/>',
+  shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+  file: '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/>',
+  book: '<path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><circle cx="12" cy="11" r="3"/><path d="M5 17a3 3 0 0 1 3-3"/>',
+  scale: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/>',
+  check: '<path d="M5 12l5 5 9-10"/>', camera: '<path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/>',
+  upload: '<path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 20h16"/>',
+  help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2.3-2.4 3.8"/><path d="M12 17.2v.1"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.8v.1"/>',
+  bulb: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  todo: '<circle cx="12" cy="12" r="8"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', cloud: '<path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/><path d="M9.5 13l2 2 3.5-3.5"/>',
+  trash: '<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>', plus: '<path d="M12 5v14M5 12h14"/>',
+  list: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>',
+  left: '<path d="M15 6l-6 6 6 6"/>', right: '<path d="M9 6l6 6-6 6"/>', alert: '<path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.1"/>',
+  clipboard: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 13l2 2 4-4"/>', send: '<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/>',
+  docs: '<path d="M8 3h8l4 4v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M16 3v4h4"/><path d="M4 7v12a4 4 0 0 0 4 4h8"/>',
+  face_good: '<circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.8 2.4 2.6 4 2.6s3-.8 4-2.6"/><path d="M9 9.5v.1M15 9.5v.1"/>',
+  face_ok: '<circle cx="12" cy="12" r="9"/><path d="M8.5 15.5h7"/><path d="M9 9.5v.1M15 9.5v.1"/>',
+  face_bad: '<circle cx="12" cy="12" r="9"/><path d="M8 16.5c1-1.8 2.4-2.6 4-2.6s3 .8 4 2.6"/><path d="M9 9.5v.1M15 9.5v.1"/>',
+};
+
+// Messages with the office, and the appointment banner. DRAFT: the attorney and a certified translator approve every wording;
+// the Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator (docs/attorney_review.md).
+const UI_MSG = {
+  pt: {
+    ask_office: "Falar com o escritório", ask_lead: "Escreva uma mensagem para o escritório. Só texto: para enviar um documento, use a página Documentos. A resposta aparece aqui. Se você aceitou receber mensagens, avisamos por texto ou e-mail quando ela chegar.",
+    ask_placeholder: "Escreva sua mensagem aqui", ask_send: "Enviar mensagem", ask_sent: "Mensagem enviada. O escritório vai responder aqui.", ask_empty: "Ainda não há mensagens.",
+    msg_you: "Você", msg_office: "O escritório", msg_machine: "Tradução automática: pode ter erros.", msg_original: "Palavras do escritório (em inglês)",
+    msg_followup: "O escritório entrará em contato com você.", msg_new: "Nova",
+    err_empty_message: "Escreva a sua mensagem primeiro.", err_message_too_long: "A mensagem é muito longa (no máximo 2000 caracteres).",
+    err_too_many_messages: "Você enviou muitas mensagens. Tente de novo mais tarde.",
+    err_too_large: "Esse arquivo é grande demais (até 15 MB). Tire uma foto menor ou envie outra página.", err_server_error: "Algo deu errado do nosso lado. Tente de novo daqui a pouco.", err_busy: "Muitos pedidos desta rede agora. Tente de novo mais tarde.",
+    time_yours: (z) => `Os horários mostrados são os do escritório (${z}).`,
+    time_appt: (z) => `O horário do compromisso é o horário local do lugar do compromisso (como na carta). Fuso horário do escritório: ${z}.`,
+  },
+  es: {
+    ask_office: "Escribir a la oficina", ask_lead: "Escriba un mensaje a la oficina. Solo texto: para enviar un documento, use la página Documentos. La respuesta aparece aquí. Si aceptó recibir mensajes, le avisamos por texto o correo cuando llegue.",
+    ask_placeholder: "Escriba su mensaje aquí", ask_send: "Enviar mensaje", ask_sent: "Mensaje enviado. La oficina responderá aquí.", ask_empty: "Todavía no hay mensajes.",
+    msg_you: "Usted", msg_office: "La oficina", msg_machine: "Traducción automática: puede tener errores.", msg_original: "Palabras de la oficina (en inglés)",
+    msg_followup: "La oficina se comunicará con usted.", msg_new: "Nueva",
+    err_empty_message: "Escriba su mensaje primero.", err_message_too_long: "El mensaje es demasiado largo (máximo 2000 caracteres).",
+    err_too_many_messages: "Ha enviado demasiados mensajes. Intente de nuevo más tarde.",
+    err_too_large: "Ese archivo es demasiado grande (hasta 15 MB). Tome una foto más pequeña o envíe otra página.", err_server_error: "Algo salió mal de nuestro lado. Intente de nuevo en un momento.", err_busy: "Demasiadas solicitudes desde esta red ahora. Intente de nuevo más tarde.",
+    time_yours: (z) => `Las horas que ve son las de la oficina (${z}).`,
+    time_appt: (z) => `La hora de la cita es la hora local del lugar de la cita (como en la carta). Zona horaria de la oficina: ${z}.`,
+  },
+  en: {
+    ask_office: "Ask the office", ask_lead: "Write a message to the office. Text only: to send a document, use the Documents page. The answer appears here. If you agreed to messages, we will tell you by text or email when it arrives.",
+    ask_placeholder: "Write your message here", ask_send: "Send message", ask_sent: "Message sent. The office will answer here.", ask_empty: "No messages yet.",
+    msg_you: "You", msg_office: "The office", msg_machine: "Machine translation: it may have mistakes.", msg_original: "The office's own words (in English)",
+    msg_followup: "The office will follow up with you.", msg_new: "New",
+    err_empty_message: "Write your message first.", err_message_too_long: "The message is too long (2000 characters at most).",
+    err_too_many_messages: "You have sent too many messages. Try again later.",
+    err_too_large: "That file is too large (15 MB at most). Take a smaller photo or send another page.", err_server_error: "Something went wrong on our side. Please try again in a moment.", err_busy: "Too many requests from this network right now. Try again later.",
+    time_yours: (z) => `Times shown are the office's time (${z}).`,
+    time_appt: (z) => `The appointment time is the local time where the appointment is (as on the letter). The office's time zone: ${z}.`,
+  },
+  ht: {
+    ask_office: "Poze biwo a yon kesyon", ask_lead: "Ekri yon mesaj pou biwo a. Tèks sèlman: pou voye yon dokiman, sèvi ak paj Dokiman yo. Repons lan parèt isit la. Si ou te dakò resevwa mesaj, n ap fè ou konnen pa tèks oswa imèl lè l rive.",
+    ask_placeholder: "Ekri mesaj ou a isit la", ask_send: "Voye mesaj la", ask_sent: "Mesaj la voye. Biwo a ap reponn isit la.", ask_empty: "Poko gen mesaj.",
+    msg_you: "Ou menm", msg_office: "Biwo a", msg_machine: "Tradiksyon otomatik: li ka gen erè.", msg_original: "Mo biwo a menm (an angle)",
+    msg_followup: "Biwo a ap kontakte ou.", msg_new: "Nouvo",
+    err_empty_message: "Ekri mesaj ou a anvan.", err_message_too_long: "Mesaj la two long (2000 karaktè maksimòm).",
+    err_too_many_messages: "Ou voye twòp mesaj. Eseye ankò pita.",
+    err_too_large: "Fichye sa a twò gwo (15 MB pou pi plis). Pran yon foto ki pi piti oswa voye yon lòt paj.", err_server_error: "Gen yon bagay ki pa mache bò kote nou. Tanpri eseye ankò nan yon ti moman.", err_busy: "Twòp demann soti nan rezo sa a kounye a. Eseye ankò pita.",
+    time_yours: (z) => `Lè ou wè yo se lè biwo a (${z}).`,
+    time_appt: (z) => `Lè randevou a se lè kote randevou a ye a (jan li ekri nan lèt la). Lè biwo a: ${z}.`,
+  },
+};
+for (const lg of Object.keys(UI_MSG)) Object.assign(UI[lg], UI_MSG[lg]);
+
+// The way out, the safety line, "the office has it" and the welcome list (10/2026). DRAFT: the attorney and a certified translator approve
+// every wording (docs/attorney_review.md); the Haitian Creole (ht) is a MACHINE DRAFT. None of it says why a person might need it: it is
+// the same screen for every client.
+const UI_SAFE = {
+  pt: {
+    leave: "Sair desta página", leave_short: "Sair",
+    safe_line: "Se outra pessoa usa o seu celular, você pode sair a qualquer momento e voltar com um link novo. O escritório também pode conversar com você por telefone.",
+    sign_out_now: "Sair agora", signed_out: "Você saiu. Para voltar, peça um link novo abaixo.",
+    sent_to_office: (day) => `Enviado ao escritório em ${day}. Eles vão ler; não há mais nada a fazer aqui.`,
+    received_thanks: "Obrigado, recebemos.", answer_waiting: "O escritório respondeu a você", home: "Voltar ao início",
+    show_all: "Mostrar tudo", show_less: "Mostrar menos",
+  },
+  es: {
+    leave: "Salir de esta página", leave_short: "Salir",
+    safe_line: "Si otra persona usa su teléfono, puede cerrar la sesión en cualquier momento y volver con un enlace nuevo. La oficina también puede hablar con usted por teléfono.",
+    sign_out_now: "Cerrar sesión ahora", signed_out: "Cerró la sesión. Para volver, pida un enlace nuevo abajo.",
+    sent_to_office: (day) => `Enviado a la oficina el ${day}. La oficina lo leerá; no hace falta hacer nada más aquí.`,
+    received_thanks: "Gracias, ya lo tenemos.", answer_waiting: "La oficina le respondió", home: "Volver al inicio",
+    show_all: "Mostrar todo", show_less: "Mostrar menos",
+  },
+  en: {
+    leave: "Leave this page", leave_short: "Leave",
+    safe_line: "If someone else uses your phone, you can sign out any time and come back with a new link. The office can also talk with you by phone instead.",
+    sign_out_now: "Sign out now", signed_out: "You are signed out. To come back, ask for a new link below.",
+    sent_to_office: (day) => `Sent to the office on ${day}. They will read it; nothing more to do here.`,
+    received_thanks: "Thank you, we have it.", answer_waiting: "The office answered you", home: "Back to the start",
+    show_all: "Show all", show_less: "Show less",
+  },
+  ht: {  // MACHINE DRAFT
+    leave: "Kite paj sa a", leave_short: "Kite",
+    safe_line: "Si yon lòt moun sèvi ak telefòn ou, ou ka dekonekte nenpòt lè epi tounen ak yon nouvo lyen. Biwo a kapab pale avè ou pa telefòn tou.",
+    sign_out_now: "Dekonekte kounye a", signed_out: "Ou dekonekte. Pou tounen, mande yon nouvo lyen anba a.",
+    sent_to_office: (day) => `Voye bay biwo a (${day}). Y ap li l; pa gen anyen ankò pou w fè isit la.`,
+    received_thanks: "Mèsi, nou resevwa l.", answer_waiting: "Biwo a reponn ou", home: "Retounen nan kòmansman",
+    show_all: "Montre tout", show_less: "Montre mwens",
+  },
+};
+for (const lg of Object.keys(UI_SAFE)) Object.assign(UI[lg], UI_SAFE[lg]);
+
+// "How was this step?" refusals (src/client_case.py; the rest of that card's words come with the question). DRAFT: the attorney and a certified
+// translator approve every wording (docs/attorney_review.md); the Haitian Creole (ht) is a MACHINE DRAFT.
+const UI_CASE = {
+  pt: { err_feedback_too_long: "A frase é muito longa (no máximo 500 caracteres).", err_feedback_invalid: "Escolha uma das três carinhas primeiro." },
+  es: { err_feedback_too_long: "La frase es demasiado larga (máximo 500 caracteres).", err_feedback_invalid: "Elija primero una de las tres caritas." },
+  en: { err_feedback_too_long: "The sentence is too long (500 characters at most).", err_feedback_invalid: "Choose one of the three faces first." },
+  ht: { err_feedback_too_long: "Fraz la two long (500 karaktè maksimòm).", err_feedback_invalid: "Chwazi youn nan twa vizaj yo anvan." },
+};
+for (const lg of Object.keys(UI_CASE)) Object.assign(UI[lg], UI_CASE[lg]);
+
+// The agreement with the office and the closed case (10/2026, src/engagement.py). DRAFT: the attorney and a certified translator approve every
+// wording (docs/attorney_review.md); the Haitian Creole (ht) is a MACHINE DRAFT. The letter itself is the firm's own wording, sent from the case.
+const UI_AGREE = {
+  pt: {
+    file_sent: "O escritório enviou seu arquivo pelo meio combinado. Se tiver alguma dúvida, entre em contato com o escritório.", evidence_signed: "Baixar contrato assinado", evidence_certificate: "Certificado de assinatura", evidence_pending: "O registro de assinatura ainda não pôde ser verificado. Entre em contato com o escritório.",
+    agree_title: "Seu contrato com o escritório", agree_waiting: "Contrato esperando a sua assinatura", agree_signed: (day) => `Contrato assinado em ${day}`,
+    agree_open: "Ler e assinar", agree_view: "Ler o contrato", agree_english: "A mesma carta em inglês",
+    agree_only_english: "Esta carta ainda não está pronta no seu idioma. Aqui está em inglês; o escritório pode explicá-la para você.",
+    agree_sign_lead: "Para assinar, marque a caixa e digite o seu nome completo. O seu nome, a data e a hora, o idioma em que você leu e o endereço de internet que você usou ficam guardados com o contrato.",
+    agree_sign: "Assinar o contrato", agree_thanks: "Obrigado. O escritório recebeu o seu contrato assinado.", agree_need: "Marque a caixa e digite o seu nome completo primeiro.", agree_name_long: "O nome é longo demais (no máximo 120 caracteres).",
+    closed_title: (day) => `O seu caso com o escritório está encerrado desde ${day}`, closed_letter: "A carta do escritório",
+    closed_lead: "Não há mais nada a fazer aqui. Se tiver alguma dúvida, ligue para o escritório.",
+  },
+  es: {
+    file_sent: "La oficina envió su archivo por el medio acordado. Si tiene preguntas, comuníquese con la oficina.", evidence_signed: "Descargar acuerdo firmado", evidence_certificate: "Certificado de firma", evidence_pending: "El registro de firma todavía no se pudo verificar. Comuníquese con la oficina.",
+    agree_title: "Su acuerdo con la oficina", agree_waiting: "Acuerdo en espera de su firma", agree_signed: (day) => `Acuerdo firmado el ${day}`,
+    agree_open: "Leer y firmar", agree_view: "Leer el acuerdo", agree_english: "La misma carta en inglés",
+    agree_only_english: "Esta carta todavía no está lista en su idioma. Aquí está en inglés; la oficina puede explicársela.",
+    agree_sign_lead: "Para firmar, marque la casilla y escriba su nombre completo. Su nombre, la fecha y la hora, el idioma en que lo leyó y la dirección de internet que usó se guardan con el acuerdo.",
+    agree_sign: "Firmar el acuerdo", agree_thanks: "Gracias. La oficina tiene su acuerdo firmado.", agree_need: "Marque la casilla y escriba su nombre completo primero.", agree_name_long: "El nombre es demasiado largo (120 caracteres como máximo).",
+    closed_title: (day) => `Su caso con la oficina está cerrado desde el ${day}`, closed_letter: "La carta de la oficina",
+    closed_lead: "No hay nada más que hacer aquí. Si tiene alguna pregunta, llame a la oficina.",
+  },
+  en: {
+    file_sent: "The office sent your file by the agreed method. Contact the office with any questions.", evidence_signed: "Download signed agreement", evidence_certificate: "Signing certificate", evidence_pending: "The signing record could not yet be verified. Contact the office.",
+    agree_title: "Your agreement with the office", agree_waiting: "Agreement waiting for your signature", agree_signed: (day) => `Agreement signed on ${day}`,
+    agree_open: "Read and sign", agree_view: "Read the agreement", agree_english: "The same letter in English",
+    agree_only_english: "This letter is not ready in your language yet. Here it is in English; the office can explain it to you.",
+    agree_sign_lead: "To sign, tick the box and type your full name. Your name, the date and time, the language you read it in and the internet address you used are kept with the agreement.",
+    agree_sign: "Sign the agreement", agree_thanks: "Thank you. The office has your signed agreement.", agree_need: "Tick the box and type your full name first.", agree_name_long: "The name is too long (120 characters at most).",
+    closed_title: (day) => `Your case with the office is closed since ${day}`, closed_letter: "The office's letter",
+    closed_lead: "There is nothing more to do here. If you have a question, call the office.",
+  },
+  ht: {  // MACHINE DRAFT
+    file_sent: "Biwo a voye dosye ou pa mwayen nou te dakò a. Kontakte biwo a si ou gen kesyon.", evidence_signed: "Telechaje akò ki siyen an", evidence_certificate: "Sètifika siyati", evidence_pending: "Nou poko kapab verifye dosye siyati a. Kontakte biwo a.",
+    agree_title: "Akò ou ak biwo a", agree_waiting: "Akò k ap tann siyati ou", agree_signed: (day) => `Akò a siyen: ${day}`,
+    agree_open: "Li epi siyen", agree_view: "Li akò a", agree_english: "Menm lèt la an angle",
+    agree_only_english: "Lèt sa a poko pare nan lang ou. Men li an angle; biwo a ka eksplike l ba ou.",
+    agree_sign_lead: "Pou siyen, make kare a epi tape non konplè ou. Non ou, dat ak lè a, lang ou li l la ak adrès entènèt ou itilize a ap rete ak akò a.",
+    agree_sign: "Siyen akò a", agree_thanks: "Mèsi. Biwo a resevwa akò ou siyen an.", agree_need: "Make kare a epi tape non konplè ou anvan.", agree_name_long: "Non an twò long (120 karaktè maksimòm).",
+    closed_title: (day) => `Dosye ou ak biwo a fèmen depi ${day}`, closed_letter: "Lèt biwo a",
+    closed_lead: "Pa gen anyen ankò pou w fè isit la. Si ou gen yon kesyon, rele biwo a.",
+  },
+};
+for (const lg of Object.keys(UI_AGREE)) Object.assign(UI[lg], UI_AGREE[lg]);
+
+// "Your monthly money" and the fee waiver request's signing (10/2026, src/eoir26a.py). DRAFT: the attorney and a certified translator approve every
+// wording (docs/attorney_review.md); the Haitian Creole (ht) is a MACHINE DRAFT. The lines and their help come from the firm's own question list.
+const UI_MONEY = {
+  pt: {
+    money_title: "Seu dinheiro por mês", money_todo: (n) => `${n} ${n === 1 ? "linha falta" : "linhas faltam"} responder`, money_open: "Responder agora",
+    money_waiting_office: "Obrigado. O escritório está conferindo as suas respostas.", money_change: "Ver as minhas respostas",
+    money_sign_waiting: "O seu pedido de isenção da taxa espera a sua assinatura", money_sign_open: "Ler e assinar",
+    money_signed: (day) => `Pedido de isenção da taxa assinado em ${day}`, money_view: "Ler de novo",
+    money_example: "Como transformar um valor em valor por mês", money_total_income: "Todo o dinheiro que você recebe por mês", money_total_expense: "Tudo o que você gasta por mês",
+    money_total_diff: "O que sobra por mês (dinheiro recebido menos dinheiro gasto)", money_total_wait: "Responda todas as linhas para ver os totais.",
+    money_locked: "O escritório espera a sua assinatura. Para mudar uma resposta, mande uma mensagem ao escritório.", money_you_sign: "O que você vai assinar",
+    money_decl_english: "As mesmas palavras em inglês (as palavras do próprio formulário)", money_figures: "Os seus valores", money_item4: "O que vai no item 4 do formulário",
+    money_item4_none: "Nada será escrito no item 4.", money_item4_english: "O formulário é preenchido em inglês. Esta é a frase em inglês:",
+    money_item4_only_english: "Esta frase só existe em inglês. O escritório pode explicar para você.",
+    money_sign_lead: "Para assinar, marque a caixa e digite o seu nome completo. O seu nome, a data e a hora, o idioma em que você leu e o endereço de internet que você usou ficam guardados com o pedido.",
+    money_sign_lead_draw: " Você também pode desenhar a sua assinatura abaixo, com o dedo.", money_draw: "Desenhe a sua assinatura aqui", money_clear: "Apagar",
+    money_sign: "Assinar o pedido de isenção da taxa", money_thanks: "Obrigado. O escritório recebeu o seu pedido assinado.",
+    money_income_h: "Dinheiro que você recebe", money_expense_h: "Dinheiro que você gasta",
+  },
+  es: {
+    money_title: "Su dinero por mes", money_todo: (n) => `${n} ${n === 1 ? "línea por responder" : "líneas por responder"}`, money_open: "Responder ahora",
+    money_waiting_office: "Gracias. La oficina está revisando sus respuestas.", money_change: "Ver mis respuestas",
+    money_sign_waiting: "Su solicitud de exención de la tarifa espera su firma", money_sign_open: "Leer y firmar",
+    money_signed: (day) => `Solicitud de exención de la tarifa firmada el ${day}`, money_view: "Leer otra vez",
+    money_example: "Cómo convertir una cantidad a una por mes", money_total_income: "Todo el dinero que recibe por mes", money_total_expense: "Todo lo que gasta por mes",
+    money_total_diff: "Lo que queda por mes (dinero recibido menos dinero gastado)", money_total_wait: "Responda todas las líneas para ver los totales.",
+    money_locked: "La oficina espera su firma. Para cambiar una respuesta, envíe un mensaje a la oficina.", money_you_sign: "Lo que va a firmar",
+    money_decl_english: "Las mismas palabras en inglés (las palabras del propio formulario)", money_figures: "Sus cantidades", money_item4: "Lo que va en el punto 4 del formulario",
+    money_item4_none: "No se escribe nada en el punto 4.", money_item4_english: "El formulario se llena en inglés. Esta es la frase en inglés:",
+    money_item4_only_english: "Esta frase solo está en inglés. La oficina puede explicársela.",
+    money_sign_lead: "Para firmar, marque la casilla y escriba su nombre completo. Su nombre, la fecha y la hora, el idioma en que lo leyó y la dirección de internet que usó se guardan con la solicitud.",
+    money_sign_lead_draw: " También puede dibujar su firma abajo, con el dedo.", money_draw: "Dibuje su firma aquí", money_clear: "Borrar",
+    money_sign: "Firmar la solicitud de exención de la tarifa", money_thanks: "Gracias. La oficina tiene su solicitud firmada.",
+    money_income_h: "Dinero que recibe", money_expense_h: "Dinero que gasta",
+  },
+  en: {
+    money_title: "Your monthly money", money_todo: (n) => `${n} ${n === 1 ? "line" : "lines"} left to answer`, money_open: "Answer now",
+    money_waiting_office: "Thank you. The office is checking your answers.", money_change: "Look at my answers",
+    money_sign_waiting: "Your fee waiver request is waiting for your signature", money_sign_open: "Read and sign",
+    money_signed: (day) => `Fee waiver request signed on ${day}`, money_view: "Read it again",
+    money_example: "How to turn an amount into one for a month", money_total_income: "All the money you receive each month", money_total_expense: "All you spend each month",
+    money_total_diff: "Left each month (money received minus money spent)", money_total_wait: "Answer every line to see the totals.",
+    money_locked: "The office is waiting for your signature. To change an answer, send the office a message.", money_you_sign: "What you are signing",
+    money_decl_english: "The same words in English (the form's own words)", money_figures: "Your figures", money_item4: "What goes in item 4 of the form",
+    money_item4_none: "Nothing is written in item 4.", money_item4_english: "The form is filled in English. Here is the sentence in English:",
+    money_item4_only_english: "This sentence is only in English. The office can explain it to you.",
+    money_sign_lead: "To sign, tick the box and type your full name. Your name, the date and time, the language you read it in and the internet address you used are kept with the request.",
+    money_sign_lead_draw: " You can also draw your signature below, with your finger.", money_draw: "Draw your signature here", money_clear: "Clear",
+    money_sign: "Sign the fee waiver request", money_thanks: "Thank you. The office has your signed request.",
+    money_income_h: "Money you receive", money_expense_h: "Money you spend",
+  },
+  ht: {  // MACHINE DRAFT
+    money_title: "Lajan ou chak mwa", money_todo: (n) => `${n} liy rete pou reponn`, money_open: "Reponn kounye a",
+    money_waiting_office: "Mèsi. Biwo a ap verifye repons ou yo.", money_change: "Gade repons mwen yo",
+    money_sign_waiting: "Demann egzanpsyon frè a ap tann siyati ou", money_sign_open: "Li epi siyen",
+    money_signed: (day) => `Demann egzanpsyon frè a siyen: ${day}`, money_view: "Li l ankò",
+    money_example: "Kijan pou chanje yon montan an yon montan pou yon mwa", money_total_income: "Tout lajan ou resevwa chak mwa", money_total_expense: "Tout sa ou depanse chak mwa",
+    money_total_diff: "Sa ki rete chak mwa (lajan resevwa mwens lajan depanse)", money_total_wait: "Reponn tout liy yo pou w wè total yo.",
+    money_locked: "Biwo a ap tann siyati ou. Pou chanje yon repons, voye yon mesaj bay biwo a.", money_you_sign: "Sa w pral siyen",
+    money_decl_english: "Menm mo yo an anglè (mo fòm nan menm)", money_figures: "Montan ou yo", money_item4: "Sa ki ale nan atik 4 fòm nan",
+    money_item4_none: "Pa gen anyen ki ekri nan atik 4.", money_item4_english: "Yo ranpli fòm nan an anglè. Men fraz la an anglè:",
+    money_item4_only_english: "Fraz sa a egziste sèlman an anglè. Biwo a ka eksplike l ba ou.",
+    money_sign_lead: "Pou siyen, make kare a epi tape non konplè ou. Non ou, dat ak lè a, lang ou li l la ak adrès entènèt ou itilize a ap rete ak demann lan.",
+    money_sign_lead_draw: " Ou ka desine siyati ou tou anba a, ak dwèt ou.", money_draw: "Desine siyati ou isit la", money_clear: "Efase",
+    money_sign: "Siyen demann egzanpsyon frè a", money_thanks: "Mèsi. Biwo a resevwa demann ou siyen an.",
+    money_income_h: "Lajan ou resevwa", money_expense_h: "Lajan ou depanse",
+  },
+};
+const UI_MONEY_ERRORS = {
+  pt: { invalid_money: "Escreva um valor em dólares, como 1.200,00 (ou 0).", fee_waiver_locked: "O escritório espera a sua assinatura: mande uma mensagem para mudar uma resposta.",
+        drawing_invalid: "O desenho não funcionou. Apague e desenhe de novo.", drawing_blank: "Desenhe a sua assinatura primeiro, ou apague a caixa e assine só com o nome digitado.",
+        drawing_not_allowed: "Neste pedido a assinatura é só com o nome digitado.", money_incomplete: "Faltam respostas: avise o escritório.",
+        fee_waiver_unknown: "Este pedido já foi assinado, ou o escritório o mudou. Abra a página de novo.",
+        name_not_client: "Digite o seu nome completo, como está nos seus documentos. Só você pode assinar este pedido. Se o seu nome mudou, avise o escritório." },
+  es: { invalid_money: "Escriba una cantidad en dólares, como 1,200.00 (o 0).", fee_waiver_locked: "La oficina espera su firma: envíe un mensaje para cambiar una respuesta.",
+        drawing_invalid: "El dibujo no funcionó. Borre y dibuje de nuevo.", drawing_blank: "Dibuje primero su firma, o borre el cuadro y firme solo con el nombre escrito.",
+        drawing_not_allowed: "En esta solicitud la firma es solo con el nombre escrito.", money_incomplete: "Faltan respuestas: avise a la oficina.",
+        fee_waiver_unknown: "Esta solicitud ya fue firmada, o la oficina la cambió. Abra la página de nuevo.",
+        name_not_client: "Escriba su nombre completo, como aparece en sus documentos. Solo usted puede firmar esta solicitud. Si su nombre cambió, avise a la oficina." },
+  en: { invalid_money: "Write an amount in dollars, such as 1,200.00 (or 0).", fee_waiver_locked: "The office is waiting for your signature: send a message to change an answer.",
+        drawing_invalid: "The drawing did not work. Clear it and draw again.", drawing_blank: "Draw your signature first, or clear the box and sign with your typed name only.",
+        drawing_not_allowed: "For this request the signature is the typed name only.", money_incomplete: "Some lines are not answered: tell the office.",
+        fee_waiver_unknown: "This request was signed already, or the office changed it. Reload the page.",
+        name_not_client: "Type your full name as it is on your documents. Only you can sign this request. If your name has changed, tell the office." },
+  ht: { invalid_money: "Ekri yon montan an dola, tankou 1,200.00 (oswa 0).", fee_waiver_locked: "Biwo a ap tann siyati ou: voye yon mesaj pou chanje yon repons.",
+        drawing_invalid: "Desen an pa mache. Efase l epi desine ankò.", drawing_blank: "Desine siyati ou anvan, oswa efase bwat la epi siyen ak non w tape a sèlman.",
+        drawing_not_allowed: "Nan demann sa a siyati a se non w tape a sèlman.", money_incomplete: "Gen repons ki manke: di biwo a.",
+        fee_waiver_unknown: "Demann sa a deja siyen, oswa biwo a chanje l. Louvri paj la ankò.",
+        name_not_client: "Tape non konplè ou, jan li ye sou papye ou yo. Se ou sèl ki ka siyen demann sa a. Si non ou chanje, di biwo a." },
+};
+for (const lg of Object.keys(UI_MONEY)) { Object.assign(UI[lg], UI_MONEY[lg]); Object.assign(UI[lg].errors, UI_MONEY_ERRORS[lg]); }
+ICON.up = '<path d="M6 15l6-6 6 6"/>'; ICON.down = '<path d="M6 9l6 6 6-6"/>';
+ICON.chat = '<path d="M4 5h16v11H10l-5 4v-4H4z"/>';
+ICON.print = '<path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/>';
+
+// the paper each "have it at hand" chip names, in the order of UI[lang].ready: a paper the office recorded the client has none of is not asked for
+const READY_TYPES = ["passport", "birth_certificate", "work_permit", "ssn_card", null];
+const S = { data: null, step: null, errors: {}, lang: "pt", welcomed: false, units: {}, repeatDrafts: {}, focus: null, pathOpen: false };
+try { S.lang = localStorage.getItem("lang") || (navigator.language || "pt").slice(0, 2); } catch (e) {}
+if (!UI[S.lang]) S.lang = "pt";
+const $ = (id) => document.getElementById(id);
+// A text in the client's language (a filing's own wording first: "welcome_lead_n400"); English when that language has none -- never blank.
+const t = (k, ...a) => {
+  const own = (ui) => ui && (S.data && S.data.filing && ui[k + "_" + S.data.filing] !== undefined ? ui[k + "_" + S.data.filing] : ui[k]);
+  const v = own(UI[S.lang]) ?? own(UI.en);
+  return typeof v === "function" ? v(...a) : v;
+};
+// 2026-10-05 -> "lendi 5 oktòb 2026" / "segunda-feira, 5 de outubro de 2026"
+function longDate(iso, weekday) {
+  const d = new Date(iso + "T12:00:00");
+  if (isNaN(d)) return iso;
+  const ui = UI[S.lang] || UI.en;
+  if (!LOCALES[S.lang] && ui.months) return `${weekday ? ui.weekdays[d.getDay()] + " " : ""}${d.getDate()} ${ui.months[d.getMonth()]} ${d.getFullYear()}`;
+  return d.toLocaleDateString(LOCALES[S.lang] || "en-US", { ...(weekday ? { weekday: "long" } : {}), day: "numeric", month: "long", year: "numeric" });
+}
+function icon(name) {
+  const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("class", "i"); s.setAttribute("aria-hidden", "true");
+  s.innerHTML = ICON[name] || ICON.file; return s;
+}
+function el(tag, attrs, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === undefined || v === null || v === false) continue;
+    if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else if (k === "value") n.value = v; else n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const k of kids.flat(Infinity)) if (k !== null && k !== undefined && k !== false && k !== "") n.append(k.nodeType ? k : document.createTextNode(String(k)));
+  return n;
+}
+// Sensitive recovery state lasts only as long as this signed-in page.
+const recovery = { pending: new Map(), uploads: new Map(), epoch: 0, sequence: 0, snapshot: 0, running: null, timer: null, failed: false, controllers: new Set() };
+const copyValue = (value) => value == null ? value : JSON.parse(JSON.stringify(value));
+const recoveryWords = {
+  en: { saving: "Saving…", unsaved: "Not saved. Your answers are still on this page.", retry: "Retry", cancel: "Cancel", upload_working: "Sending file…", upload_wait: "File not confirmed. Retry uses the same upload.", upload_incomplete: "File received. Follow-up is incomplete; retry to check.", upload_cancel_unknown: "Stopped sending. The server outcome is unknown; check again.", upload_done: "File received.", formats: "PDF, JPG or PNG · maximum 15 MB", format_error: "Choose a PDF, JPG or PNG. HEIC and WebP are not supported.", image_error: "This image cannot be opened. Choose a clear JPG, PNG or PDF.", unsaved_submit: "Save your pending answers before sending to the office." },
+  pt: { saving: "Salvando…", unsaved: "Não foi salvo. Suas respostas continuam nesta página.", retry: "Tentar novamente", cancel: "Cancelar", upload_working: "Enviando arquivo…", upload_wait: "Arquivo não confirmado. Tentar novamente usa o mesmo envio.", upload_incomplete: "Arquivo recebido. O processamento ainda não foi concluído; tente novamente para verificar.", upload_cancel_unknown: "Envio interrompido. Não sabemos o resultado no servidor; verifique novamente.", upload_done: "Arquivo recebido.", formats: "PDF, JPG ou PNG · máximo de 15 MB", format_error: "Escolha PDF, JPG ou PNG. HEIC e WebP não são aceitos.", image_error: "Não foi possível abrir a imagem. Escolha JPG, PNG ou PDF legível.", unsaved_submit: "Salve as respostas pendentes antes de enviar ao escritório." },
+  es: { saving: "Guardando…", unsaved: "No se guardó. Sus respuestas siguen en esta página.", retry: "Reintentar", cancel: "Cancelar", upload_working: "Enviando archivo…", upload_wait: "Archivo sin confirmar. Reintentar usa el mismo envío.", upload_incomplete: "Archivo recibido. El procesamiento está pendiente; reintente para comprobar.", upload_cancel_unknown: "Envío detenido. El resultado en el servidor es desconocido; compruebe otra vez.", upload_done: "Archivo recibido.", formats: "PDF, JPG o PNG · máximo 15 MB", format_error: "Elija PDF, JPG o PNG. HEIC y WebP no son compatibles.", image_error: "No se puede abrir la imagen. Elija un JPG, PNG o PDF legible.", unsaved_submit: "Guarde las respuestas pendientes antes de enviarlas a la oficina." },
+  ht: { saving: "Ap anrejistre…", unsaved: "Li pa anrejistre. Repons ou yo toujou sou paj sa a.", retry: "Eseye ankò", cancel: "Anile", upload_working: "Ap voye fichye a…", upload_wait: "Fichye a pa konfime. Eseye ankò ap sèvi ak menm envoi a.", upload_incomplete: "Nou resevwa fichye a. Travay ki vini apre a poko fini; eseye ankò pou verifye.", upload_cancel_unknown: "Nou sispann voye. Nou pa konnen rezilta sèvè a; verifye ankò.", upload_done: "Nou resevwa fichye a.", formats: "PDF, JPG oswa PNG · 15 MB maksimòm", format_error: "Chwazi PDF, JPG oswa PNG. HEIC ak WebP pa sipòte.", image_error: "Nou pa ka ouvri imaj la. Chwazi yon JPG, PNG oswa PDF ki klè.", unsaved_submit: "Anrejistre repons ki annatant yo anvan ou voye bay biwo a." }
+};
+Object.assign(recoveryWords.en, { pdf_error: "This PDF cannot be opened. Choose an unencrypted PDF with at least one page.", discard_answers: "Discard the unsaved answers kept on this page?", discard_file: "Remove this file from this page? The server may already have received it; this does not delete it there." });
+Object.assign(recoveryWords.pt, { pdf_error: "Não foi possível abrir o PDF. Escolha um PDF sem senha e com pelo menos uma página.", discard_answers: "Descartar as respostas não salvas que estão nesta página?", discard_file: "Remover este arquivo desta página? O servidor pode já tê-lo recebido; isto não o exclui do servidor." });
+Object.assign(recoveryWords.es, { pdf_error: "No se puede abrir el PDF. Elija un PDF sin contraseña y con al menos una página.", discard_answers: "¿Descartar las respuestas sin guardar que están en esta página?", discard_file: "¿Quitar este archivo de esta página? El servidor puede haberlo recibido; esto no lo elimina del servidor." });
+Object.assign(recoveryWords.ht, { pdf_error: "Nou pa ka ouvri PDF la. Chwazi yon PDF san modpas ki gen omwen yon paj.", discard_answers: "Efase repons ki pa anrejistre yo sou paj sa a?", discard_file: "Retire fichye sa a sou paj sa a? Sèvè a ka deja resevwa li; sa pa efase li sou sèvè a." });
+Object.assign(recoveryWords.en, { review_changed: "The figures or wording changed. Review the updated request and sign again when ready." });
+Object.assign(recoveryWords.pt, { review_changed: "Os valores ou o texto mudaram. Leia o pedido atualizado e assine quando estiver pronto." });
+Object.assign(recoveryWords.es, { review_changed: "Los importes o el texto cambiaron. Revise la solicitud actualizada y firme cuando esté listo." });
+Object.assign(recoveryWords.ht, { review_changed: "Montan yo oswa tèks la chanje. Li demann ki ajou a epi siyen lè ou pare." });
+Object.assign(recoveryWords.en, { image_large_error: 'This image has too many pixels to process (24 megapixels maximum). Choose a smaller JPG/PNG or a PDF; keep every page edge visible.' });
+Object.assign(recoveryWords.pt, { image_large_error: 'A imagem tem pixels demais (máximo de 24 megapixels). Escolha JPG/PNG menor ou PDF; mantenha todas as bordas visíveis.' });
+Object.assign(recoveryWords.es, { image_large_error: 'La imagen tiene demasiados píxeles (máximo 24 megapíxeles). Elija JPG/PNG más pequeño o PDF; conserve todos los bordes.' });
+Object.assign(recoveryWords.ht, { image_large_error: 'Imaj la gen twòp piksèl (24 megapiksèl maksimòm). Chwazi JPG/PNG ki pi piti oswa PDF; kenbe tout bò paj la vizib.' });
+const rw = (key) => (recoveryWords[S.lang] || recoveryWords.en)[key];
+function clearRecovery() {
+  closeLayer();
+  recovery.epoch++; clearTimeout(recovery.timer); recovery.timer = null;
+  for (const controller of recovery.controllers) controller.abort();
+  recovery.controllers.clear(); recovery.pending.clear(); recovery.uploads.clear(); recovery.running = null; recovery.failed = false;
+  S.data = null; S.errors = {}; S.units = {}; S.repeatDrafts = {};
+  $("saved").classList.remove("on");
+  drawRecovery();
+}
+function overlayPending(data) {
+  if (data && data.answers) for (const [qid, pending] of recovery.pending) {
+    if (pending.value === null) delete data.answers[qid]; else data.answers[qid] = copyValue(pending.value);
+  }
+  return data;
+}
+function drawRecovery() {
+  let box = $("recovery");
+  if (!box) { box = el("div", { id: "recovery", class: "note", "aria-live": "polite" }); $("main").before(box); }
+  box.replaceChildren(); box.hidden = !recovery.pending.size && !recovery.uploads.size;
+  if (recovery.pending.size) box.append(el("div", { role: "status" }, rw(recovery.failed ? "unsaved" : "saving"), " ",
+    recovery.failed ? [el("button", { class: "btn", type: "button", onclick: () => flushAnswers().catch(() => {}) }, rw("retry")),
+      el("button", { class: "btn ghost", type: "button", onclick: () => {
+        if (!confirm(rw("discard_answers"))) return;
+        clearTimeout(recovery.timer); recovery.pending.clear(); recovery.failed = false; S.errors = {};
+        S.data.answers = copyValue(S.data._savedAnswers || {}); drawRecovery(); keepScroll(render);
+      } }, rw("cancel"))] : null));
+  for (const [attempt, upload] of recovery.uploads) box.append(el("div", { role: "status" }, upload.file.name + " · " + rw(upload.busy ? "upload_working" : upload.status === "incomplete" ? "upload_incomplete" : upload.canceled ? "upload_cancel_unknown" : "upload_wait"),
+    upload.error ? el("div", { class: "err" }, upload.error) : null,
+    upload.busy ? el("button", { class: "btn", type: "button", onclick: () => cancelUpload(attempt) }, rw("cancel")) : [
+      el("button", { class: "btn", type: "button", onclick: () => retryUpload(attempt) }, rw("retry")),
+      el("button", { class: "btn ghost", type: "button", onclick: () => forgetUpload(attempt) }, rw("cancel"))]));
+}
+function rememberAnswer(qid, value, rerender) {
+  $("saved").classList.remove("on");
+  recovery.pending.set(qid, { value: copyValue(value), version: ++recovery.sequence, rerender: !!rerender });
+  overlayPending(S.data); recovery.failed = false; drawRecovery();
+  clearTimeout(recovery.timer); recovery.timer = setTimeout(() => flushAnswers().catch(() => {}), 350);
+  if (rerender) keepScroll(render);
+}
+async function flushAnswers() {
+  clearTimeout(recovery.timer);
+  if (recovery.running) return recovery.running;
+  const epoch = recovery.epoch;
+  const work = async () => {
+    while (recovery.pending.size && epoch === recovery.epoch) {
+      const [qid, pending] = recovery.pending.entries().next().value;
+      try {
+        const shape = JSON.stringify(S.data.sections.map((s) => s.questions.map((q) => q.id)));
+        const res = await api("PUT", "/api/answers", { [qid]: pending.value });
+        if (epoch !== recovery.epoch) return;
+        if (recovery.pending.get(qid)?.version === pending.version) {
+          delete S.errors[qid];
+          const bad = (res.errors || {})[qid];
+          if (bad) { S.errors[qid] = bad; drawAnswerCheck(qid); recovery.failed = true; throw new Error(t("errors")[bad] || t("errors").invalid); }
+          if (!(res.accepted || []).includes(qid)) { recovery.failed = true; throw new Error(rw("unsaved_submit")); }
+          recovery.pending.delete(qid);
+          // api overlays pending values; use the cleaned server value separately.
+          if (res._savedAnswers && qid in res._savedAnswers) res.answers[qid] = res._savedAnswers[qid]; else delete res.answers[qid];
+        }
+        S.data = overlayPending(res); recovery.failed = false; drawRecovery(); drawAnswerCheck(qid);
+        const totals = $("money-totals");
+        if (totals && S.data.money) totals.replaceWith(moneyTotals(S.data.money));
+        if (pending.rerender || shape !== JSON.stringify(res.sections.map((s) => s.questions.map((q) => q.id)))) keepScroll(render);
+      } catch (e) { if (epoch === recovery.epoch) { recovery.failed = true; drawRecovery(); } throw e; }
+    }
+    if (epoch === recovery.epoch) { drawRecovery(); flashSaved(); }
+  };
+  const promise = work(); recovery.running = promise;
+  try { await promise; } finally { if (recovery.running === promise) recovery.running = null; }
+}
+window.addEventListener("beforeunload", (event) => {
+  if (recovery.pending.size || recovery.uploads.size) { event.preventDefault(); event.returnValue = ""; }
+});
+window.addEventListener("online", drawRecovery);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) drawRecovery(); });
+async function api(method, path, body, isForm, suppliedController) {
+  const epoch = recovery.epoch, sequence = ++recovery.sequence;
+  const controller = suppliedController || new AbortController(); recovery.controllers.add(controller);
+  const opts = { signal: controller.signal, method, headers: { "X-Portal": "1" }, credentials: "same-origin" };
+  if (body !== undefined) { if (isForm) opts.body = body; else { opts.headers["Content-Type"] = "application/json"; opts.body = JSON.stringify(body); } }
+  let r;
+  try { r = await fetch(path, opts); } catch (e) { throw new Error(t("errors").network); } finally { recovery.controllers.delete(controller); }
+  if (epoch !== recovery.epoch) throw new Error("signin");
+  if (r.status === 401) { clearRecovery(); S.data = null; renderSignIn(); throw new Error("signin"); }
+  const data = await r.json().catch(() => ({}));
+  if (epoch !== recovery.epoch) throw new Error("signin");
+  if (!r.ok) {
+    // the refusals the server words in English (too large, a flood, its own error) are said in the client's language; the other codes stay codes for
+    // the screens that word them themselves (err_too_many_messages ...)
+    const code = data.detail || data.error || r.status;
+    const said = { too_large: "err_too_large", "file too large (15 MB max)": "err_too_large", server_error: "err_server_error", "too many requests": "err_busy",
+      "too many attempts": "err_busy", "too many uploads": "err_busy" }[code] || (r.status === 413 ? "err_too_large" : r.status >= 500 ? "err_server_error" : null);
+    const uploadErrors = { "PDF, JPG or PNG only": "format_error", "That PDF can't be opened. Add an unencrypted PDF with at least one page.": "pdf_error", "unknown document": "upload_wait", "unsupported file type": "format_error", "That image can't be opened. Please add a clear photo or a PDF.": "image_error", "upload_incomplete": "upload_incomplete", "upload_attempt_conflict": "upload_wait", "invalid_upload_attempt": "upload_wait", "upload_receipt_damaged": "upload_incomplete", "capture_image_too_large": "image_large_error", "invalid_capture_image": "image_error" };
+    const failure = new Error(uploadErrors[code] ? rw(uploadErrors[code]) : said ? t(said) : code);
+    failure.knownRefusal = ["PDF, JPG or PNG only", "unsupported file type", "That image can't be opened. Please add a clear photo or a PDF.", "That PDF can't be opened. Add an unencrypted PDF with at least one page.", "unknown document", "capture_image_too_large", "invalid_capture_image"].includes(code);
+    throw failure;
+  }
+  if (data.sections && data.answers) {
+    data._savedAnswers = copyValue(data.answers);
+    if (sequence < recovery.snapshot && S.data) return { ...S.data, errors: data.errors, accepted: data.accepted, upload_outcome: data.upload_outcome, _savedAnswers: data._savedAnswers };
+    recovery.snapshot = sequence; overlayPending(data);
+  }
+  return data;
+}
+function flashSaved() {
+  if (recovery.pending.size || recovery.uploads.size) return drawRecovery();
+  const s = $("saved"); s.replaceChildren(icon("cloud"), t("saved")); s.classList.add("on");
+  clearTimeout(flashSaved.timer); flashSaved.timer = setTimeout(() => s.classList.remove("on"), 1800);
+}
+function oops(e) { if (e.message !== "signin") alert(e.message); }
+// "Leave this page" (top right, every screen): the session ends on the server first (a keepalive request, waited for a moment at most), then
+// the page is blanked and replaced, not left behind the new one, by a plain government weather page; the tab's history keeps no entry for
+// the portal beyond what a browser allows (location.replace). A new link is the way back. It says nothing about why.
+const LEAVE_TO = "https://www.weather.gov/";
+async function leavePage() {
+  clearRecovery();
+  const ended = fetch("/api/logout", { method: "POST", headers: { "X-Portal": "1" }, credentials: "same-origin", keepalive: true }).catch(() => null);
+  await Promise.race([ended, new Promise((done) => setTimeout(done, 500))]);
+  document.body.replaceChildren(); location.replace(LEAVE_TO);
+}
+function drawLeave() {
+  const b = $("leave");
+  b.setAttribute("aria-label", t("leave")); b.title = t("leave");
+  b.querySelector(".full").textContent = t("leave"); b.querySelector(".short").textContent = t("leave_short");
+}
+// "Sign out now": the session ends on the server and the phone shows the sign-in screen (a new link is the way back)
+async function signOutNow() {
+  clearRecovery();
+  renderSignIn();
+  try { await api("POST", "/api/logout"); } catch (e) { if (e.message !== "signin") return oops(e); }
+  S.data = null; S.step = null; S.welcomed = false; S.focus = null; closeLayer();
+  renderSignIn(t("signed_out"));
+}
+function safetyLine() {
+  return el("div", { class: "note safety" }, t("safe_line"), " ", el("button", { class: "link", type: "button", onclick: signOutNow }, t("sign_out_now")));
+}
+function keepScroll(fn) { const y = window.scrollY; fn(); window.scrollTo({ top: y }); }
+
+// ------------------------------------------------------------ sign in
+function renderSignIn(note) {
+  $("bar").style.width = "0"; $("nav").replaceChildren(); $("wrap").classList.remove("with-nav"); $("actions").hidden = true; $("helpbtn").hidden = true; $("msgbtn").hidden = true;
+  const input = el("input", { type: "text", autocomplete: "email", placeholder: t("contact"), "aria-label": t("contact") });
+  const channel = el("select", { id: "phone-channel", "aria-label": t("phone_channel") }, el("option", { value: "sms" }, "SMS"), el("option", { value: "whatsapp" }, "WhatsApp"));
+  const phoneChoice = el("div", { class: "field", hidden: true }, el("label", { for: "phone-channel" }, t("phone_channel")), channel, el("p", { class: "sub" }, t("phone_help")));
+  input.addEventListener("input", () => { phoneChoice.hidden = !input.value.trim() || input.value.includes("@"); });
+  const msg = el("p", { class: "note", hidden: !note }, note || "");
+  const send = async () => {
+    if (!input.value.trim()) return input.focus();
+    let r;
+    try { r = await fetch("/api/link", { method: "POST", headers: { "X-Portal": "1", "Content-Type": "application/json" }, body: JSON.stringify({ contact: input.value.trim(), ...(!phoneChoice.hidden ? { channel: channel.value } : {}) }) }); }
+    catch (e) { msg.textContent = t("errors").network; msg.hidden = false; return; }
+    // never "Done!" on a refusal: too many requests from this network (429) says so; any other refusal is the network sentence
+    msg.textContent = r.ok ? t("sent") : r.status === 429 ? t("link_busy") : t("errors").network; msg.hidden = false;
+  };
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") send(); });
+  $("main").replaceChildren(el("div", { class: "card signin" },
+    el("div", { class: "badge", style: "margin-bottom:14px" }, icon("lock")),
+    el("h1", {}, t("signin_title")), el("p", { class: "lead" }, t("signin_text")),
+    el("div", { class: "field", style: "margin:18px 0 14px" }, input), phoneChoice, msg,
+    el("button", { class: "btn big", type: "button", onclick: send }, icon("send"), t("send"))),
+    el("div", { class: "foot" }, icon("lock"), t("w_safe2")));
+}
+
+// ------------------------------------------------------------ steps
+const has = (v) => !(v === undefined || v === null || v === "" || (Array.isArray(v) && !v.length) || (typeof v === "object" && !Array.isArray(v) && !Object.keys(v).length));
+function steps() {
+  const d = S.data;
+  const sections = d.sections.filter((s) => s.questions.length).map((s) => {
+    const total = s.questions.filter((q) => q.required !== false).length;
+    const missing = s.questions.filter((q) => d.missing.includes(q.id)).length;
+    const answered = s.questions.filter((q) => has(d.answers[q.id])).length;
+    return { kind: "section", id: s.id, title: s.title, icon: s.icon || "file", section: s, missing, total, done: missing === 0 && answered > 0 };
+  });
+  const docsMissing = d.documents.filter((x) => x.required && x.uploads.filter((u) => u.status !== "retake").length < x.count).length;
+  return [...sections,
+    // a prospect (first_contact) is asked no documents: the office talks with them first
+    ...(d.filing === "first_contact" ? [] : [{ kind: "documents", id: "documents", title: t("documents"), icon: "docs", missing: docsMissing, done: docsMissing === 0 }]),
+    { kind: "review", id: "review", title: t("review"), icon: "clipboard", done: false }];
+}
+async function go(i) { closeLayer(); try { await flushAnswers(); } catch (e) { /* pending values remain visible on the next step */ } S.step = i; render(); window.scrollTo({ top: 0 }); }
+
+function renderNav(all) {
+  return el("ul", { class: "steplist" }, all.map((s, i) => el("li", {}, el("button", {
+    type: "button", class: (i === S.step ? "on " : "") + (s.done ? "done" : ""), "aria-current": i === S.step ? "step" : null, onclick: () => { closeLayer(); go(i); } },
+    el("span", { class: "dot" }, icon(s.done ? "check" : s.icon)),
+    el("span", {}, s.title,
+      s.kind === "section" ? el("span", { class: "meta" }, s.done ? t("all_answered") : s.missing ? t("missing_n", s.missing) : "") :
+      s.kind === "documents" ? el("span", { class: "meta" }, s.missing ? t("docs_missing", s.missing) : t("docs_ok")) : null)))));
+}
+let layerCleanup = null;
+function openLayer(title, body, cleanup = null) {
+  closeLayer();
+  layerCleanup = cleanup;
+  const close = el("button", { class: "link", type: "button", onclick: closeLayer, "aria-label": t("close") }, icon("x"));
+  const sheet = el("div", { class: "sheet", onclick: (e) => { if (e.target === sheet) closeLayer(); } },
+    el("div", { class: "panel", role: "dialog", "aria-modal": "true", "aria-label": title }, el("div", { class: "head" }, el("h2", {}, title), close), body));
+  $("layer").replaceChildren(sheet); close.focus();
+  document.addEventListener("keydown", escClose);
+}
+function escClose(e) { if (e.key === "Escape") closeLayer(); }
+function closeLayer() {
+  const cleanup = layerCleanup; layerCleanup = null;
+  if (cleanup) cleanup();
+  $("layer").replaceChildren(); document.removeEventListener("keydown", escClose);
+}
+function openFaq() {
+  openLayer(t("faq"), el("div", { class: "faq" }, (S.data?.faq || []).map((f) => el("details", {}, el("summary", {}, f.q), el("p", {}, f.a))),
+    el("p", { class: "foot" }, icon("help"), t("faq_more"))));
+}
+
+// ------------------------------------------------------------ main render
+function render() {
+  drawRecovery();
+  const d = S.data;
+  $("bar").style.width = d.progress + "%";
+  $("helpbtn").hidden = false; $("helpbtn").replaceChildren(icon("help"), el("span", {}, t("help")));
+  drawMessageButton();
+  const m = $("main"); m.replaceChildren();
+  if (d.closed) { closeLayer(); return renderClosed(m); }  // the case with the office ended: its letter, and nothing else
+  if (d.status === "submitted") return renderSubmitted(m);
+  if (S.focus) {  // one thing the office asked, opened from the welcome list; once it is answered it is gone and the welcome shows "Sent to the office"
+    const task = d.tasks.find((x) => x.id === S.focus && !x.received_at);
+    if (task) return renderFocus(m, task);
+    S.focus = null;
+  }
+  const all = steps();
+  const wanted = all.findIndex((s) => "#" + s.id === location.hash);  // a link straight to one step, e.g. …/#documents
+  if (S.step === null && wanted >= 0) { S.step = wanted; S.welcomed = true; }
+  if (S.step === null && !S.welcomed) return renderWelcome(m, all);
+  if (S.step === null) S.step = 0;
+  S.step = Math.max(0, Math.min(S.step, all.length - 1));
+  $("wrap").classList.add("with-nav");
+  $("nav").replaceChildren(el("h3", {}, t("steps")), renderNav(all));
+  const step = all[S.step];
+  m.append(el("div", { class: "mhead" },
+    el("div", { class: "txt" }, el("div", { class: "k" }, t("step_of", S.step + 1, all.length)), el("div", { class: "t" }, step.title)),
+    el("button", { class: "pill", type: "button", onclick: () => openLayer(t("steps"), renderNav(all)) }, icon("list"), t("steps"))));
+  renderNextAppointment(m);
+  renderTasks(m);
+  if (step.kind === "section") renderSection(m, step);
+  else if (step.kind === "documents") renderDocuments(m);
+  else renderReview(m, all);
+  $("actions").hidden = false;
+  $("actions-in").replaceChildren(el("div", { class: "row" },
+    el("button", { class: "btn ghost", type: "button", disabled: S.step === 0, onclick: () => go(S.step - 1), "aria-label": t("back") }, icon("left"), el("span", {}, t("back"))),
+    S.step < all.length - 1 ? el("button", { class: "btn", type: "button", onclick: () => go(S.step + 1) }, t("next"), icon("right")) : null));
+}
+
+function renderWelcome(m, all) {
+  const d = S.data;
+  $("wrap").classList.remove("with-nav"); $("nav").replaceChildren(); $("actions").hidden = true;
+  const started = Object.keys(d.answers).length > 0;
+  const point = (ic, a, b) => el("li", {}, el("span", { class: "badge" }, icon(ic)), el("div", {}, el("b", {}, a), el("span", {}, b)));
+  const firstOpen = all.findIndex((s) => !s.done);
+  renderJourney(m);
+  renderAgreement(m);
+  renderMoney(m);
+  renderFeedback(m);
+  if (S.feedbackThanks) m.append(el("p", { class: "note", role: "status", id: "feedback-thanks" }, S.feedbackThanks));
+  renderConfirmations(m);
+  // what the office asked (a question, a photo to take again, a confirmation), each with its own button to its own place; nothing waits behind "Continue"
+  const asked = d.tasks.filter((x) => ["request", "retake", "confirm"].includes(x.kind) && !x.received_at);
+  m.append(el("div", { class: "card hero" },
+    el("h1", {}, t("hello", d.first_name || "")), el("p", { class: "lead" }, t("welcome_lead")),
+    asked.length ? el("div", { class: "alert asked-line", role: "status" }, el("p", {}, icon("alert"), el("b", {}, t("asked_n", asked.length))),
+      asked.map((task) => el("div", { class: "todo-row" }, el("span", {}, task.text),
+        el("button", { class: "btn soft", type: "button", onclick: () => { S.focus = task.id; render(); window.scrollTo({ top: 0 }); } }, icon("right"), t("asked_go"))))) : null,
+    unseenAnswers() ? el("div", { class: "note", role: "status" }, el("b", {}, t("answer_waiting")), " ", el("button", { class: "link", type: "button", onclick: openMessages }, t("go"), icon("right"))) : null,
+    el("ul", { class: "points" }, point("clock", t("w_time"), t("w_time2")), point("cloud", t("w_save"), t("w_save2")),
+      point("lock", t("w_safe"), t("w_safe2")), point("bulb", t("w_help"), t("w_help2"))),
+    safetyLine(),
+    el("div", { class: "sub" }, t("have_ready")), el("div", { class: "ready" }, t("ready").filter((r, i) => !(S.data.office_has_none || []).includes(READY_TYPES[i])).map((r) => el("span", {}, r))),
+    el("button", { class: "btn big", type: "button", onclick: () => { S.welcomed = true; go(started && firstOpen >= 0 ? firstOpen : 0); } },
+      started ? t("resume") : t("start"), icon("right"))),
+    el("div", { class: "foot" }, el("button", { class: "link", type: "button", onclick: openFaq }, icon("help"), t("faq"))));
+}
+
+// One thing the office asked, on its own screen (opened from the welcome list): the answer box, the camera, the choices, or the document's upload.
+function renderFocus(m, task) {
+  $("wrap").classList.remove("with-nav"); $("nav").replaceChildren(); $("actions").hidden = true;
+  m.append(el("button", { class: "link", type: "button", style: "margin-bottom:10px", onclick: () => { S.focus = null; render(); window.scrollTo({ top: 0 }); } }, icon("left"), t("home")));
+  m.append(el("div", { class: "alert", role: "status" }, el("h2", {}, icon("alert"), t("todo")), taskItem(task, -1)));
+  if (task.kind === "request" && task.doc_id) renderDocuments(m, false, task.doc_id);
+}
+
+// Where the case stands (written by the firm's machine, src/journey.py): the stage, what happens now, appointments.
+function renderJourney(m) {
+  const j = S.data.journey;
+  if (!j) return;
+  const day = (iso) => longDate(iso, true);
+  m.append(el("div", { class: "card case" },
+    el("div", { class: "sub" }, t("your_case")), el("h2", {}, j.title), el("p", { class: "now" }, j.now),
+    ladder(j),
+    j.happened && j.happened.length ? el("div", {}, el("h3", { style: "margin:16px 0 6px" }, j.happened_label),
+      el("ul", { class: "happened" }, j.happened.map((h) => el("li", {}, h.text)))) : null,
+    j.appointments.length ? el("div", {}, el("h3", { style: "margin:16px 0 0" }, t("appointments")), zoneNote("time_appt"),
+      j.appointments.map((a, i) => el("div", { class: "appt" }, el("b", {}, a.what), el("span", {}, day(a.date) + (a.time ? " · " + clockWords(a.time) : "")),
+        el("div", { class: "sub" }, a.bring), j.prepare && j.prepare[i] ? prepareButton(j, i) : null))) : null,
+    // below the appointments: the nearest appointment stays on the first screen of a phone (buyer visit 5)
+    j.next ? el("div", { class: "nextstep" }, el("h3", {}, j.next.label), el("p", {}, j.next.text)) : null,
+    uscisSays(j)));
+}
+
+// USCIS's own words (src/client_case.py): each line exactly as USCIS returned it, in English, never put in other words; the sentence that says so, the day
+// USCIS said it, and (only when the office holds one from USCIS's own page) USCIS's published estimate, the figure untouched.
+function uscisSays(j) {
+  const s = j.status, est = j.estimates || [];
+  if (!s && !est.length) return null;
+  return el("div", { class: "uscis-block" },
+    s ? el("h3", { style: "margin:16px 0 6px" }, s.title) : null,
+    s ? s.items.map((x) => el("div", { class: "uscis-says", lang: "en" },
+      x.form ? el("div", { class: "sub", lang: S.lang }, x.form + (x.receipt ? " " + x.receipt : "")) : null,
+      el("p", { class: "line" }, x.text), x.desc ? el("p", { class: "desc" }, x.desc) : null,
+      el("div", { class: "sub", lang: S.lang }, [x.said_on, s.in_english].filter(Boolean).join(". ") + "."))) : null,
+    est.map((e) => el("p", { class: "estimate sub" }, e)));
+}
+// "How was this step?" after a milestone: three faces and an optional sentence, in the client's language (labels come with the question).
+function renderFeedback(m) {
+  const f = S.data.feedback;
+  if (!f || S.feedbackDone === f.id) return;
+  let face = null;
+  const note = el("textarea", { maxlength: 500, "aria-label": f.labels.feedback_note, placeholder: f.labels.feedback_note });
+  const err = el("p", { class: "err", hidden: true });
+  const buttons = ["good", "ok", "bad"].map((k) => el("button", { type: "button", "aria-pressed": "false", "data-face": k, onclick: () => {
+    face = k; buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.face === k))); } }, icon("face_" + k), f.labels["feedback_" + k]));
+  m.append(el("div", { class: "card feedback", id: "feedback" }, el("div", { class: "sub" }, f.step), el("h2", { style: "margin:4px 0" }, f.labels.feedback_prompt),
+    el("div", { class: "faces", role: "group", "aria-label": f.labels.feedback_prompt }, buttons), note, err,
+    el("button", { class: "btn", type: "button", onclick: async () => {
+      if (!face) { err.textContent = f.labels.feedback_prompt; err.hidden = false; return; }
+      try { S.data = await api("POST", "/api/feedback", { step: f.id, face, comment: note.value }); S.feedbackDone = f.id; S.feedbackThanks = f.labels.feedback_thanks; render(); }
+      catch (e) { const word = "err_" + e.message; if (UI[S.lang][word]) { err.textContent = t(word); err.hidden = false; } else oops(e); } } }, icon("send"), f.labels.feedback_send),
+    el("p", { class: "sub" }, f.labels.feedback_private)));
+}
+
+// The letter in the client's language (when the office made it in it) with the English beside it; English alone says so.
+function letterCopies(letter) {
+  const own = letter.language && letter.language !== "en" && letter.texts[letter.language] ? letter.language : null;
+  const copy = (lg, heading) => el("div", { class: "copy", lang: lg }, heading ? el("p", { class: "lang" }, heading) : null,
+    el("h3", {}, (letter.titles || {})[lg] || (letter.titles || {}).en || ""), (letter.texts[lg] || []).map((p) => el("p", {}, p)));
+  return el("div", {}, !own && S.lang !== "en" ? el("p", { class: "note" }, t("agree_only_english")) : null,
+    el("div", { class: "letter2" + (own ? " two" : "") }, own ? copy(own) : null, copy("en", own ? t("agree_english") : null)));
+}
+// "Your agreement with the office": waiting for the signature (with the button to read and sign), or signed on a day.
+function renderAgreement(m) {
+  if (S.data.file_sent) m.append(el("p", { class: "note", role: "status" }, t("file_sent")));
+  const a = S.data.agreement;
+  if (!a) return;
+  const day = a.signed_on ? longDate(a.signed_on) : null;
+  m.append(el("div", { class: "card", id: "agreement" }, el("div", { class: "sub" }, t("agree_title")),
+    el("div", { class: "agree-line" }, el("h2", { style: "margin:4px 0" }, day ? [icon("check"), " ", t("agree_signed", day)] : t("agree_waiting")),
+      el("button", { class: "btn" + (day ? " ghost" : ""), type: "button", onclick: () => openAgreement(!day) }, icon("file"), day ? t("agree_view") : t("agree_open"))),
+    S.agreeThanks ? el("p", { class: "note", role: "status" }, t("agree_thanks")) : null));
+}
+function openAgreement(sign) {
+  const a = S.data.agreement;
+  const name = el("input", { type: "text", placeholder: t("typename"), "aria-label": t("typename"), autocomplete: "name" });
+  const agree = el("input", { type: "checkbox", id: "agree-letter" });
+  const consent = a.consent ? el("input", { type: "checkbox", id: "electronic-consent" }) : null;
+  const err = el("p", { class: "err", hidden: true });
+  const body = el("div", {}, letterCopies(a), sign ? el("div", { class: "card", style: "margin-top:16px" },
+    el("div", { class: "attest" }, t("agree_sign_lead")),
+    el("label", { class: "check", for: "agree-letter" }, agree, el("span", {}, t("agree"))),
+    consent ? el("label", { class: "check", for: "electronic-consent" }, consent, el("span", {}, a.consent.text)) : null,
+    el("div", { class: "field" }, name), err,
+    el("button", { class: "btn big", type: "button", onclick: async () => {
+      if (!agree.checked || (consent && !consent.checked) || name.value.trim().length < 3) { err.textContent = t("agree_need"); err.hidden = false; return; }
+      try {
+        await flushAnswers();
+        S.data = await api("POST", "/api/agreement", { letter: a.id, agree: true, electronic_consent: !!(consent && consent.checked), signature: name.value });
+        S.agreeThanks = true; closeLayer(); render(); window.scrollTo({ top: 0 });
+      } catch (e) { if (e.message === "agree_first" || e.message === "name_too_long") { err.textContent = t(e.message === "agree_first" ? "agree_need" : "agree_name_long"); err.hidden = false; } else if (e.message === "case_closed") { S.data = await api("GET", "/api/me"); closeLayer(); render(); } else oops(e); }
+    } }, icon("check"), t("agree_sign"))) : null);
+  if (!sign && a.evidence) {
+    body.append(a.evidence.ok ? el("a", { class: "btn ghost", href: "/api/signed-agreement.pdf", target: "_blank", rel: "noopener" }, t("evidence_signed")) : el("p", { class: "note" }, t("evidence_pending")),
+      el("a", { class: "btn ghost", href: "/api/signing-certificate.pdf", target: "_blank", rel: "noopener" }, t("evidence_certificate")));
+  }
+  openLayer((a.titles || {})[a.language] || (a.titles || {}).en || t("agree_title"), body);
+  $("layer").querySelector(".panel").classList.add("wide");
+}
+// The case with the office ended (closed, withdrawn, transferred): since when, and the office's letter. Nothing else.
+function renderClosed(m) {
+  const c = S.data.closed;
+  $("wrap").classList.remove("with-nav"); $("nav").replaceChildren(); $("actions").hidden = true; $("helpbtn").hidden = true; $("msgbtn").hidden = true;
+  m.append(el("div", { class: "card", id: "closed" }, el("h1", {}, t("closed_title", longDate(c.since))), el("p", { class: "lead" }, t("closed_lead")),
+    c.letter ? [el("h2", { style: "margin-top:20px" }, t("closed_letter")), letterCopies(c.letter)] : null));
+  renderAgreement(m);
+}
+
+// "Your monthly money" (src/eoir26a.py): the office's fee waiver request. The nine lines of the court's form in the client's language with their help, the
+// totals worked out as they answer, and, once the attorney opens the signing, the affidavit, the figures and item 4 to read and sign (typed name, and a
+// drawn signature when the attorney allowed it). After the signing opens the figures are the ones to sign: they are not changed here.
+function renderMoney(m) {
+  const k = S.data.money;
+  if (!k) return;
+  const left = k.missing.length;
+  const day = k.signed_on ? longDate(k.signed_on) : null;
+  const title = day ? [icon("check"), " ", t("money_signed", day)] : k.open ? t("money_sign_waiting") : left ? t("money_todo", left) : t("money_waiting_office");
+  const label = day ? t("money_view") : k.open ? t("money_sign_open") : left ? t("money_open") : t("money_change");
+  m.append(el("div", { class: "card", id: "money" }, el("div", { class: "sub" }, t("money_title")),
+    el("div", { class: "agree-line" }, el("h2", { style: "margin:4px 0" }, title),
+      el("button", { class: "btn" + (day || (!k.open && !left) ? " ghost" : ""), type: "button", id: "money-open", onclick: openMoney }, icon("file"), label)),
+    S.moneyThanks ? el("p", { class: "note", role: "status" }, t("money_thanks")) : null));
+}
+function openMoney() {
+  const k = S.data.money;
+  if (k.open && !S.moneyViewed) { S.moneyViewed = true; api("POST", "/api/fee-waiver-viewed").then((d) => { S.data = d; }).catch(() => {}); }  // for the signing record: when it was opened
+  const body = el("div", { id: "money-body" });
+  drawMoney(body);
+  openLayer(k.section.title, body);
+  $("layer").querySelector(".panel").classList.add("wide");
+}
+function moneyTotals(k) {
+  const row = (label, value, strong) => el("div", { class: "rrow" }, el("div", { class: "t" }, strong ? el("b", {}, label) : label), strong ? el("b", {}, value) : value);
+  return el("div", { id: "money-totals", class: "attest" }, k.complete
+    ? [row(t("money_total_income"), k.totals.income), row(t("money_total_expense"), k.totals.expense), row(t("money_total_diff"), k.totals.difference, true)]
+    : el("span", {}, t("money_total_wait")));
+}
+const moneyShown = (v) => (v === undefined || v === null ? "" : S.lang === "pt" ? String(v).replace(".", ",") : String(v));  // Portuguese writes the decimal comma
+function moneyField(q, body) {
+  const err = el("div", { class: "err", role: "alert", hidden: true });
+  const box = el("input", { id: "q_" + q.id, type: "text", inputmode: "decimal", autocomplete: "off", value: moneyShown(S.data.answers[q.id]), "aria-label": q.label, placeholder: moneyShown("0.00"),
+    oninput: (e) => { rememberAnswer(q.id, e.target.value.trim() || null, false); } });
+  return el("div", { class: "field" }, el("label", { class: "label", for: "q_" + q.id }, q.label), q.help ? el("p", { class: "hint" }, q.help) : null,
+    el("div", { class: "moneyin" }, el("span", {}, "$"), box), err,
+    q.tip ? el("details", { class: "tip" }, el("summary", {}, icon("bulb"), t("not_sure")), el("p", {}, q.tip)) : null);
+}
+function drawingPad() {
+  const canvas = el("canvas", { width: 800, height: 200, class: "pad", role: "img", "aria-label": t("money_draw") });
+  const ctx = canvas.getContext("2d"); ctx.lineWidth = 4; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = "#111";
+  let down = false, inked = false;
+  const at = (e) => { const r = canvas.getBoundingClientRect(); return [(e.clientX - r.left) * canvas.width / r.width, (e.clientY - r.top) * canvas.height / r.height]; };
+  canvas.addEventListener("pointerdown", (e) => { down = true; canvas.setPointerCapture(e.pointerId); const [x, y] = at(e); ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 0.1, y + 0.1); ctx.stroke(); inked = true; e.preventDefault(); });
+  canvas.addEventListener("pointermove", (e) => { if (!down) return; const [x, y] = at(e); ctx.lineTo(x, y); ctx.stroke(); e.preventDefault(); });
+  for (const ev of ["pointerup", "pointercancel"]) canvas.addEventListener(ev, () => { down = false; });
+  return { canvas, data: () => (inked ? canvas.toDataURL("image/png") : null), clear: () => { ctx.clearRect(0, 0, canvas.width, canvas.height); inked = false; } };
+}
+function moneyPreview(k) {
+  return JSON.stringify({ id: k.id, figures: k.figures, totals: k.totals, complete: k.complete, sentence: k.sentence, declaration: k.declaration, language: S.lang });
+}
+function moneySign(k) {
+  const preview = moneyPreview(k);
+  const name = el("input", { type: "text", placeholder: t("typename"), "aria-label": t("typename"), autocomplete: "name", id: "money-name" });
+  const agree = el("input", { type: "checkbox", id: "money-agree" });
+  const err = el("p", { class: "err", hidden: true });
+  const pad = k.drawn ? drawingPad() : null;
+  const copy = (lg, text) => el("div", { class: "copy", lang: lg }, el("p", {}, text));
+  const sentence = k.sentence;
+  return el("div", { class: "card", style: "margin-top:16px", id: "money-sign" },
+    el("h3", { style: "margin:0 0 8px" }, t("money_you_sign")),
+    k.declaration.own ? copy(S.lang, k.declaration.own) : null,
+    el("p", { class: "sub", lang: S.lang }, t("money_decl_english")), copy("en", k.declaration.en),
+    el("h3", { style: "margin:14px 0 6px" }, t("money_item4")),
+    sentence && sentence.en ? [sentence.own ? copy(S.lang, sentence.own) : el("p", { class: "note" }, t("money_item4_only_english")),
+      el("p", { class: "sub", lang: S.lang }, t("money_item4_english")), copy("en", sentence.en)] : el("p", {}, t("money_item4_none")),
+    el("div", { class: "attest", style: "margin-top:14px" }, t("money_sign_lead") + (pad ? t("money_sign_lead_draw") : "")),
+    el("label", { class: "check", for: "money-agree" }, agree, el("span", {}, t("agree"))),
+    el("div", { class: "field" }, name),
+    pad ? el("div", { class: "field" }, el("div", { class: "sub" }, t("money_draw")), pad.canvas,
+      el("button", { class: "link", type: "button", onclick: () => pad.clear() }, icon("trash"), t("money_clear"))) : null,
+    err,
+    el("button", { class: "btn big", type: "button", id: "money-sign-go", onclick: async (ev) => {
+      const button = ev.currentTarget;
+      if (button.disabled) return;  // a second tap while the first is on its way
+      if (!agree.checked || name.value.trim().length < 3) { err.textContent = t("agree_need"); err.hidden = false; return; }
+      button.disabled = true;
+      try {
+        await flushAnswers();
+        S.data = await api("GET", "/api/me");
+        if (!S.data.money || moneyPreview(S.data.money) !== preview) {
+          const body = $("money-body");
+          if (body && S.data.money) { drawMoney(body); body.prepend(el("p", { class: "note", role: "status" }, rw("review_changed"))); }
+          return;  // fresh preview and a second explicit action; never retry a signature
+        }
+        S.data = await api("POST", "/api/fee-waiver-sign", { request: k.id, agree: true, signature: name.value, drawing: pad ? pad.data() : null });
+        S.moneyThanks = true; closeLayer(); render(); window.scrollTo({ top: 0 });
+      } catch (e) {
+        button.disabled = false;
+        const word = { agree_first: "agree_need", name_too_long: "agree_name_long" }[e.message];
+        if (word) err.textContent = t(word); else if (t("errors")[e.message]) err.textContent = t("errors")[e.message]; else return oops(e);
+        err.hidden = false;
+        if (e.message === "fee_waiver_unknown") { try { S.data = await api("GET", "/api/me"); render(); } catch (x) { /* the next screen asks again */ } }  // signed already, or the office changed it: the card says which
+      }
+    } }, icon("check"), t("money_sign")));
+}
+function drawMoney(body) {
+  const k = S.data.money;
+  const groups = [["fw_income", t("money_income_h")], ["fw_exp", t("money_expense_h")]];
+  const read = (group) => k.figures.filter((f) => f.group === group).map((f) => el("div", { class: "rrow" }, el("div", { class: "t" }, f.label), el("b", {}, f.amount ?? "")));
+  const parts = [
+    k.section.why ? el("div", { class: "why" }, icon("info"), el("div", {}, k.section.why)) : null,
+    el("p", { class: "lead" }, k.section.intro),
+    el("details", { class: "tip" }, el("summary", {}, icon("bulb"), t("money_example")), el("p", {}, k.section.example)),
+    k.locked
+      ? [el("p", { class: "note", role: "status" }, t("money_locked")), el("h3", { style: "margin:14px 0 4px" }, t("money_income_h")), read("income"),
+         el("h3", { style: "margin:14px 0 4px" }, t("money_expense_h")), read("expense")]
+      : groups.map(([prefix, heading]) => [el("h3", { style: "margin:18px 0 4px" }, heading), k.section.questions.filter((q) => q.id.startsWith(prefix)).map((q) => moneyField(q, body))]),
+    moneyTotals(k),
+    k.open ? moneySign(k) : null];
+  body.replaceChildren(...parts.flat(Infinity).filter((n) => n));
+}
+
+// The stages in order. On a phone only the current one shows until "Show all" (the appointment below it is then on the first screen).
+function ladder(j) {
+  const list = el("ol", { class: "path" + (S.pathOpen ? "" : " collapsed") }, j.path.map((x) => el("li", { class: x.state }, el("span", { class: "dot" }), x.name)));
+  if (!list.querySelector("li.now")) (list.querySelector("li.next") || list.lastElementChild)?.classList.add("now");  // never an empty ladder
+  const draw = () => toggle.replaceChildren(icon(S.pathOpen ? "up" : "down"), t(S.pathOpen ? "show_less" : "show_all"));
+  const toggle = el("button", { class: "link pathtoggle", type: "button", "aria-expanded": S.pathOpen ? "true" : "false", onclick: () => {
+    S.pathOpen = !S.pathOpen; list.classList.toggle("collapsed", !S.pathOpen); toggle.setAttribute("aria-expanded", S.pathOpen ? "true" : "false"); draw(); } });
+  draw();
+  return el("div", {}, list, toggle);
+}
+
+// What to bring, where, when: one page per appointment (src/journey.py client_view "prepare"), printable.
+function prepareButton(j, i) {
+  return el("button", { class: "btn soft", type: "button", onclick: () => openAppointment(j.prepare[i], j.prepare_labels, i) }, icon("clipboard"), j.prepare_labels.open);
+}
+function openAppointment(p, labels, index) {
+  const body = el("div", { class: "prep" },
+    el("div", { class: "row" }, el("b", {}, labels.when), el("div", { class: "when" }, longDate(p.date, true) + (p.time ? " · " + clockWords(p.time) : "")),
+      p.time ? null : el("div", { class: "sub" }, labels.time_unknown)),
+    el("div", { class: "row" }, el("b", {}, labels.where), p.where ? el("div", {}, p.where) : null, p.where_note ? el("div", { class: "sub" }, p.where_note) : null),
+    p.sheet ? el("div", { class: "row" }, el("b", {}, p.sheet.day_label), el("ul", {}, p.sheet.day.map((x) => el("li", {}, x)))) : null,
+    el("div", { class: "row" }, el("b", {}, labels.bring), el("ul", {}, (p.sheet ? p.sheet.bring : p.bring).map((x) => el("li", {}, x)))),
+    // the notice's own list, exactly as printed (in English): quoted, never put in other words
+    p.sheet && p.sheet.letter_list ? el("div", { class: "row" }, el("b", {}, p.sheet.letter_label), el("ul", { lang: "en" }, p.sheet.letter_list.map((x) => el("li", {}, x)))) : null,
+    p.sheet ? el("p", { class: "sub" }, p.sheet.letter_first) : null,
+    p.kind === "hearing" ? null : el("p", { class: "sub" }, labels.cannot_go),
+    p.sheet && p.sheet.source ? el("p", { class: "sub" }, p.sheet.source) : null,
+    p.sheet && p.sheet.machine ? el("p", { class: "sub" }, p.sheet.machine) : null,
+    p.sheet ? el("a", { class: "btn soft sheetlink", href: "/api/sheet/" + index, target: "_blank", rel: "noopener", id: "sheet-pdf" }, icon("file"), p.sheet.download) : null,
+    el("button", { class: "btn noprint", type: "button", onclick: () => window.print() }, icon("print"), labels.print));
+  openLayer(p.title, body);
+}
+// The nearest appointment, on every screen: the client sees it while they answer, not only on the first page.
+function renderNextAppointment(m) {
+  const j = S.data.journey;
+  if (!j || !j.prepare || !j.prepare.length || !j.appointments.length) return;
+  const a = j.appointments[0];
+  m.append(el("div", { class: "nextappt" }, el("div", {}, el("b", {}, a.what), el("span", {}, longDate(a.date, true) + (a.time ? " · " + clockWords(a.time) : ""))), prepareButton(j, 0)));
+}
+
+// "Ask the office": the thread with the office, text only. The button in the top bar shows how many answers are new.
+function unseenAnswers() { return (S.data?.messages || []).filter((x) => x.from === "office" && x.unseen).length; }
+function drawMessageButton() {
+  const b = $("msgbtn"), n = unseenAnswers();
+  b.hidden = !!(S.data && S.data.filing === "first_contact");  // a prospect has no thread with the office yet: they talk on the phone
+  b.setAttribute("aria-label", t("ask_office"));
+  b.replaceChildren(...[icon("chat"), el("span", {}, t("ask_office")), n ? el("span", { class: "badge-n", "aria-label": t("msg_new") }, String(n)) : null].filter(Boolean));
+}
+// The client sees their own phone's time (what they live by); when the office keeps another clock, the page names the
+// office's zone (the review app's Settings page, src/clock.py). An appointment's time is the one on the notice: the local
+// time where the appointment is, never converted.
+function officeZoneName() {
+  const z = S.data && S.data.office_time_zone;
+  if (!z) return null;
+  try {
+    const now = new Date(), o = { hour: "numeric", minute: "numeric", day: "numeric" };
+    if (now.toLocaleString("en-US", { ...o, timeZone: z }) === now.toLocaleString("en-US", o)) return null;  // the same clock
+    return new Intl.DateTimeFormat(LOCALES[S.lang] || "en-US", { timeZone: z, timeZoneName: LOCALES[S.lang] ? "long" : "short" }).formatToParts(now).find((p) => p.type === "timeZoneName").value;
+  } catch (e) { return null; }
+}
+function zoneNote(key) { const z = officeZoneName(); return z ? el("p", { class: "sub zone-note" }, t(key, z)) : null; }
+// A moment as the client reads it: the day in words and the time in their language, both on the office's clock (S.data.office_time_zone);
+// the page names that zone when the phone keeps another (zoneNote). Haitian Creole has no browser locale: 24-hour numbers.
+function stamp(iso) {
+  const d = new Date(iso), z = S.data && S.data.office_time_zone;
+  let zone = z; try { new Intl.DateTimeFormat("en-US", { timeZone: z }); } catch (e) { zone = undefined; }
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: zone, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+    .formatToParts(d).map((p) => [p.type, p.value]));
+  const time = LOCALES[S.lang] ? new Intl.DateTimeFormat(LOCALES[S.lang], { hour: S.lang === "en" ? "numeric" : "2-digit", minute: "2-digit", timeZone: zone }).format(d) : `${parts.hour}:${parts.minute}`;
+  return longDate(`${parts.year}-${parts.month}-${parts.day}`) + " · " + time;
+}
+// An appointment's time as on the notice ("9:30 AM"), written the way the client's language writes a time ("09:30"); never converted to another zone.
+function clockWords(text) {
+  const m = /^\s*(\d{1,2}):(\d{2})\s*([AaPp])\.?[Mm]\.?\s*$/.exec(text || "");
+  if (!m || S.lang === "en") return text;
+  const h = (+m[1] % 12) + (/[Pp]/.test(m[3]) ? 12 : 0);
+  if (!LOCALES[S.lang]) return `${String(h).padStart(2, "0")}:${m[2]}`;
+  return new Intl.DateTimeFormat(LOCALES[S.lang], { hour: "2-digit", minute: "2-digit", timeZone: "UTC" }).format(new Date(Date.UTC(2000, 0, 1, h, +m[2])));
+}
+function bubble(m) {
+  return el("div", { class: "bubble " + m.from },
+    el("div", { class: "sub" }, (m.from === "client" ? t("msg_you") : t("msg_office")) + " · " + stamp(m.at) + (m.unseen ? " · " + t("msg_new") : "")),
+    m.followup ? el("div", { class: "sub orig" }, t("msg_original")) : null,
+    el("div", { class: "txt" }, m.text),
+    m.original ? el("div", { class: "sub orig" }, t("msg_original") + ": " + m.original) : null,
+    m.machine ? el("div", { class: "sub" }, t("msg_machine")) : null,
+    m.followup ? el("div", { class: "sub" }, t("msg_followup")) : null);
+}
+async function openMessages() {
+  const thread = el("div", { class: "thread", "aria-live": "polite" });
+  const box = el("textarea", { "aria-label": t("ask_placeholder"), placeholder: t("ask_placeholder"), maxlength: 2000 });
+  const note = el("p", { class: "note", hidden: true });
+  const draw = () => {
+    const all = S.data.messages;
+    thread.replaceChildren(...(all.length ? all.map(bubble) : [el("p", { class: "sub" }, t("ask_empty"))]));
+    thread.scrollTop = thread.scrollHeight;
+  };
+  const send = el("button", { class: "btn big", type: "button", onclick: async () => {
+    if (!box.value.trim()) return box.focus();
+    try { S.data = await api("POST", "/api/message", { text: box.value }); box.value = ""; draw(); drawMessageButton(); note.textContent = t("ask_sent"); note.hidden = false; note.scrollIntoView({ block: "nearest" }); }
+    catch (e) { const word = "err_" + e.message; if (UI[S.lang][word]) { note.textContent = t(word); note.hidden = false; } else oops(e); } } }, icon("send"), t("ask_send"));
+  draw();
+  openLayer(t("ask_office"), el("div", { class: "msgbox" }, el("p", { class: "lead" }, t("ask_lead")), note, zoneNote("time_yours"), thread, box, send));  // the confirmation above the thread: on a phone it is on screen, not below the keyboard
+  if (unseenAnswers()) { try { S.data = await api("POST", "/api/message-seen"); drawMessageButton(); } catch (e) { /* the badge stays */ } }  // the bubbles above keep their "New" for this visit
+}
+// Local edge heuristics assist user-confirmed capture; the original is retained.
+const CAPTURE_WORDS = {
+  en: { position: "Lay the document flat in good light. Move the phone until all four corners fit inside the guide. Keep the phone parallel to the page and avoid glare.", starting: "Opening camera…", ready: "Position the document, then take a photo.", shutter: "Take this photo", preview: "Check the photo: all four corners visible, text readable, no glare. The guide is not an automatic quality check.", retake: "Retake", use: "Use this photo", unavailable: "The camera is unavailable. You can choose a JPG, PNG or PDF below.", failed: "The photo could not be taken. Try again or choose a file.", locked: "The office has opened or signed the request. Contact the office to change these amounts.", clear: "Leave blank" },
+  pt: { position: "Coloque o documento plano em um lugar bem iluminado. Mova o celular até os quatro cantos ficarem dentro da guia. Mantenha o celular paralelo à página e evite reflexos.", starting: "Abrindo a câmera…", ready: "Posicione o documento e tire a foto.", shutter: "Tirar esta foto", preview: "Confira a foto: os quatro cantos visíveis, texto legível e sem reflexos. A guia não verifica a qualidade automaticamente.", retake: "Tirar outra foto", use: "Usar esta foto", unavailable: "A câmera não está disponível. Você pode escolher JPG, PNG ou PDF abaixo.", failed: "Não foi possível tirar a foto. Tente novamente ou escolha um arquivo.", locked: "O escritório abriu ou assinou o pedido. Fale com o escritório para mudar estes valores.", clear: "Deixar em branco" },
+  es: { position: "Coloque el documento plano con buena luz. Mueva el teléfono hasta que las cuatro esquinas estén dentro de la guía. Mantenga el teléfono paralelo a la página y evite reflejos.", starting: "Abriendo la cámara…", ready: "Coloque el documento y tome la foto.", shutter: "Tomar esta foto", preview: "Revise la foto: las cuatro esquinas visibles, texto legible y sin reflejos. La guía no comprueba la calidad automáticamente.", retake: "Tomar otra foto", use: "Usar esta foto", unavailable: "La cámara no está disponible. Puede elegir JPG, PNG o PDF abajo.", failed: "No se pudo tomar la foto. Inténtelo de nuevo o elija un archivo.", locked: "La oficina abrió o firmó la solicitud. Contacte a la oficina para cambiar estas cantidades.", clear: "Dejar en blanco" },
+  ht: { position: "Mete dokiman an plat kote ki gen bon limyè. Deplase telefòn nan jiskaske tout kat kwen yo anndan gid la. Kenbe telefòn nan paralèl ak paj la epi evite refleksyon limyè.", starting: "Kamera a ap ouvri…", ready: "Mete dokiman an nan pozisyon epi pran foto a.", shutter: "Pran foto sa a", preview: "Verifye foto a: tout kat kwen yo vizib, tèks la lizib, pa gen refleksyon limyè. Gid la pa verifye kalite a otomatikman.", retake: "Pran yon lòt foto", use: "Sèvi ak foto sa a", unavailable: "Kamera a pa disponib. Ou ka chwazi JPG, PNG oswa PDF anba a.", failed: "Nou pa t kapab pran foto a. Eseye ankò oswa chwazi yon fichye.", locked: "Biwo a louvri oswa siyen demann lan. Kontakte biwo a pou chanje montan sa yo.", clear: "Kite vid" }
+};
+Object.assign(CAPTURE_WORDS.en, {
+  detected: 'Detected outline. Keep every page edge, stamp, seal and handwritten note inside it. Take the photo yourself.',
+  detection: 'No reliable outline found. Put the page on a contrasting surface, or capture manually and adjust the corners.',
+  blur: 'Possible blur: hold still and check the small text in the preview.', glare: 'Possible glare: tilt away from the light.',
+  cutoff: 'A page edge may be cut off. Move back until every edge, stamp and seal fits.', resolution: 'Low document resolution: move closer while keeping the whole page visible.',
+  preview: 'Check the full original photo and all page edges. Corner detection does not prove text is readable. Adjust corners only if every stamp, seal and handwritten note stays inside. The original is always retained.',
+  correct: 'Preview corrected crop', original: 'Use full original image', correcting: 'Preparing a local crop preview…',
+  checkCrop: 'Check the corrected preview before acceptance. If an edge, stamp, seal or handwritten note is missing, use the full original image.',
+  correctedPreview: 'Corrected crop preview', override: 'Use despite these warnings; flag this image for office review.',
+  corner: 'Corner', horizontal: 'horizontal', vertical: 'vertical',
+  unavailable: 'The camera is unavailable. Camera access requires HTTPS and browser permission. Use the secure office link, or choose a JPG, PNG or PDF below.'
+});
+Object.assign(CAPTURE_WORDS.pt, {
+  detected: 'Contorno detectado. Mantenha bordas, carimbos, selos e notas manuscritas dentro dele. Tire a foto manualmente.',
+  detection: 'Nenhum contorno seguro. Coloque a página sobre uma superfície contrastante ou tire a foto e ajuste os cantos.',
+  blur: 'Possível desfoque: fique imóvel e confira as letras pequenas.', glare: 'Possível reflexo: incline o celular para longe da luz.',
+  cutoff: 'Uma borda pode estar cortada. Afaste o celular até todas as bordas, carimbos e selos aparecerem.', resolution: 'Baixa resolução: aproxime o celular mantendo a página inteira visível.',
+  preview: 'Confira a foto original e todas as bordas. A detecção não comprova texto legível. Ajuste os cantos preservando carimbos, selos e notas. O original será guardado.',
+  correct: 'Ver corte corrigido', original: 'Usar imagem original inteira', correcting: 'Preparando o corte no celular…',
+  checkCrop: 'Confira o corte antes de aceitar. Se faltar borda, carimbo, selo ou nota, use a imagem original inteira.',
+  correctedPreview: 'Prévia do corte corrigido', override: 'Usar mesmo com estes avisos; pedir revisão da imagem pelo escritório.',
+  corner: 'Canto', horizontal: 'horizontal', vertical: 'vertical',
+  unavailable: 'A câmera não está disponível. Ela exige HTTPS e permissão do navegador. Use o link seguro do escritório ou escolha JPG, PNG ou PDF abaixo.'
+});
+Object.assign(CAPTURE_WORDS.es, {
+  detected: 'Contorno detectado. Mantenga bordes, sellos y notas manuscritas dentro. Tome la foto manualmente.',
+  detection: 'No se encontró un contorno fiable. Use una superficie de contraste o tome la foto y ajuste las esquinas.',
+  blur: 'Posible desenfoque: mantenga el teléfono quieto y revise la letra pequeña.', glare: 'Posible reflejo: incline el teléfono alejándolo de la luz.',
+  cutoff: 'Puede faltar un borde. Aléjese hasta ver todos los bordes y sellos.', resolution: 'Baja resolución: acérquese manteniendo toda la página visible.',
+  preview: 'Revise la foto original y todos los bordes. La detección no garantiza texto legible. Ajuste las esquinas conservando sellos y notas. Se guarda el original.',
+  correct: 'Ver recorte corregido', original: 'Usar imagen original completa', correcting: 'Preparando el recorte en el teléfono…',
+  checkCrop: 'Revise el recorte antes de aceptar. Si falta un borde, sello o nota, use la imagen original completa.',
+  correctedPreview: 'Vista del recorte corregido', override: 'Usar pese a estos avisos; marcar la imagen para revisión de la oficina.',
+  corner: 'Esquina', horizontal: 'horizontal', vertical: 'vertical',
+  unavailable: 'La cámara no está disponible. Requiere HTTPS y permiso del navegador. Use el enlace seguro de la oficina o elija JPG, PNG o PDF abajo.'
+});
+Object.assign(CAPTURE_WORDS.ht, {
+  detected: 'Kontou a detekte. Kenbe tout bò paj la, so ak nòt ekri anndan li. Pran foto a ou menm.',
+  detection: 'Pa gen kontou serye. Mete paj la sou yon sifas ki gen kontras, oswa pran foto a epi ajiste kwen yo.',
+  blur: 'Foto a ka flou: kenbe telefòn nan san bouje epi tcheke ti tèks la.', glare: 'Ka gen refleksyon: panche telefòn nan lwen limyè a.',
+  cutoff: 'Yon bò paj la ka koupe. Fè bak jouk tout bò ak so yo parèt.', resolution: 'Rezolisyon an ba: pwoche pandan tout paj la rete vizib.',
+  preview: 'Tcheke foto orijinal la ak tout bò paj la. Deteksyon an pa pwouve tèks la lizib. Ajiste kwen yo pandan ou kenbe so ak nòt yo. Orijinal la ap konsève.',
+  correct: 'Gade koupe korije a', original: 'Sèvi ak tout imaj orijinal la', correcting: 'Ap prepare koupe a sou telefòn nan…',
+  checkCrop: 'Tcheke koupe a anvan ou aksepte. Si yon bò, so oswa nòt manke, sèvi ak tout imaj orijinal la.',
+  correctedPreview: 'Apèsi koupe korije a', override: 'Sèvi ak li malgre avètisman sa yo; mande biwo a revize imaj la.',
+  corner: 'Kwen', horizontal: 'orizontal', vertical: 'vètikal',
+  unavailable: 'Kamera a pa disponib. Li mande HTTPS ak pèmisyon navigatè a. Sèvi ak lyen sekirize biwo a oswa chwazi JPG, PNG oswa PDF anba a.'
+});
+const cw = (key) => (CAPTURE_WORDS[S.lang] || CAPTURE_WORDS.en)[key];
+let activeCapture = null;
+function fileUpload(docId, label, beforeSend = null) {
+  const pick = el("span", { class: "btn ghost" }, icon("upload"), t("upload"));
+  return el("label", {}, pick, el("input", { type: "file", accept: "image/jpeg,image/png,application/pdf", "aria-label": `${t("upload")}: ${label}`,
+    onchange: (e) => { if (e.target.files.length) { if (beforeSend) beforeSend(); sendPhoto(docId, e.target, pick); } } }));
+}
+function documentCaptureActions(docId, label) {
+  return el("div", { class: "upl" },
+    el("button", { class: "btn", type: "button", "aria-label": `${t("photo")}: ${label}`, onclick: (e) => openCapture(docId, label, e.currentTarget) }, icon("camera"), t("photo")),
+    fileUpload(docId, label));
+}
+/* %%CAPTURE_UI%% */
+window.addEventListener("pagehide", () => { if (activeCapture) closeLayer(); });
+document.addEventListener("visibilitychange", () => { if (document.hidden && activeCapture) closeLayer(); });
+
+async function sendPhoto(docId, input, btn) {
+  if (!input.files.length) return;
+  const file = input.files[0];
+  if (file.size > 15 * 1024 * 1024) return alert(t("err_too_large"));
+  const attempt = Array.from(crypto.getRandomValues(new Uint8Array(16)), (x) => x.toString(16).padStart(2, "0")).join("");
+  $("saved").classList.remove("on");
+  recovery.uploads.set(attempt, { file, docId, capture: input.capture || null, derivative: input.derivative || null, busy: false, canceled: false, status: "pending", error: null });
+  await retryUpload(attempt);
+}
+async function retryUpload(attempt) {
+  const upload = recovery.uploads.get(attempt); if (!upload || upload.busy) return;
+  const epoch = recovery.epoch;
+  const fd = new FormData(); fd.append("doc_id", upload.docId); fd.append("file", upload.file); fd.append("attempt", attempt);
+  if (upload.capture) fd.append("capture_metadata", JSON.stringify(upload.capture));
+  if (upload.derivative) fd.append("derivative", upload.derivative);
+  upload.controller = new AbortController(); upload.busy = true; upload.canceled = false; upload.error = null; drawRecovery();
+  try {
+    const result = await api("POST", "/api/upload", fd, true, upload.controller);
+    if (epoch !== recovery.epoch) return;
+    S.data = result;
+    upload.status = result.upload_outcome.status;
+    if (upload.status === "complete") { recovery.uploads.delete(attempt); flashSaved(); }
+  } catch (e) {
+    if (epoch === recovery.epoch && e.message !== "signin" && !upload.canceled) {
+      if (e.knownRefusal) { recovery.uploads.delete(attempt); alert(e.message); }
+      else upload.error = e.message;
+    }
+  }
+  finally { if (epoch === recovery.epoch) { upload.busy = false; drawRecovery(); keepScroll(render); } }
+}
+async function checkUpload(attempt) {
+  const upload = recovery.uploads.get(attempt); if (!upload) return;
+  const epoch = recovery.epoch;
+  try {
+    const result = await api("GET", "/api/upload-outcome?attempt=" + encodeURIComponent(attempt));
+    if (epoch !== recovery.epoch) return;
+    S.data = result; upload.status = result.upload_outcome.status;
+    if (upload.status === "complete") { recovery.uploads.delete(attempt); alert(rw("upload_done")); }
+    else { upload.canceled = false; upload.error = null; }
+  } catch (e) { if (epoch === recovery.epoch && e.message !== "signin") upload.error = e.message; }
+  if (epoch === recovery.epoch) { drawRecovery(); keepScroll(render); }
+}
+async function cancelUpload(attempt) {
+  const upload = recovery.uploads.get(attempt); if (!upload) return;
+  upload.canceled = true; upload.controller?.abort(); upload.busy = false; drawRecovery();
+  await checkUpload(attempt);  // an aborted browser transfer does not undo a server commit
+}
+async function forgetUpload(attempt) {
+  const upload = recovery.uploads.get(attempt); if (!upload) return;
+  await checkUpload(attempt);
+  if (!recovery.uploads.has(attempt)) return;  // completed: the check already said received
+  // Removing the local file/handle never asserts that the server deleted it.
+  if (confirm(rw("discard_file"))) { recovery.uploads.delete(attempt); drawRecovery(); }
+}
+
+// What the office has been sent ("Sent to the office on 05/04/2026: they will read it") and the photos it has but has not read yet
+// ("Thank you, we have it"): lines, not boxes, until the office marks the answer done or the new photo is read.
+function renderConfirmations(m) {
+  for (const x of S.data.sent || []) {
+    m.append(el("div", { class: "note sent", role: "status" }, icon("check"),
+      el("div", {}, el("b", {}, x.text), el("div", { class: "sub" }, x.kept && x.kept_text ? x.kept_text : t("sent_to_office", x.on ? longDate(x.on) : "")))));
+  }
+  for (const task of S.data.tasks.filter((x) => x.kind === "retake" && x.received_at)) {
+    const doc = S.data.documents.find((d) => d.id === task.doc_id);
+    m.append(el("div", { class: "note sent", role: "status" }, icon("check"), el("div", {}, el("b", {}, t("received_thanks")), doc ? el("div", { class: "sub" }, doc.label) : null)));
+  }
+}
+// One task as an item of the "we need your help" box: a confirmation's choices, the office's question with its answer box, a photo to take again.
+// docsStep: the step with the documents (the question about a document points there); -1 when the task is already on its own screen.
+function taskItem(task, docsStep) {
+  const item = el("div", { class: "item" }, el("p", {}, task.text));
+  if (task.kind === "confirm") {
+    item.append(el("div", { class: "opts" }, task.options.map((o, i) => el("button", { class: "btn", type: "button", onclick: async () => {
+      try { S.data = await api("POST", "/api/task", { task: task.id, choice: o }); flashSaved(); keepScroll(render); } catch (e) { oops(e); } } }, (task.labels || [])[i] || o))));
+  } else if (task.kind === "request") {
+    item.firstChild.prepend(el("b", {}, t("office_asked") + ": "));
+    // the office's question in English (nobody translated it yet): say in the client's language that the office will follow up
+    if (task.in_english) item.append(el("p", { class: "hint" }, t("asked_in_english")));
+    if (task.doc_id) {
+      if (docsStep >= 0) item.append(el("button", { class: "btn soft", type: "button", onclick: () => go(docsStep) }, icon("upload"), t("send_doc")));
+    } else {
+      item.append(replyBox(task));
+    }
+  } else if (task.kind === "retake" && S.data.status !== "submitted" && S.step !== docsStep) {
+    item.append(documentCaptureActions(task.doc_id, task.text || task.doc_id));
+  }
+  return item;
+}
+function renderTasks(m) {
+  renderConfirmations(m);
+  const tasks = S.data.tasks.filter((x) => x.kind !== "upload" && !(x.kind === "retake" && x.received_at));
+  if (!tasks.length) return;
+  const box = el("div", { class: "alert", role: "status" }, el("h2", {}, icon("alert"), t("todo")));
+  const docsStep = steps().findIndex((s) => s.kind === "documents");
+  for (const task of tasks) box.append(taskItem(task, docsStep));
+  m.append(box);
+}
+// The answer box for the office's question, by the kind of answer it wants (src/portal/questions.py): a date picker
+// (the date written back in the client's words), Yes / No or the choices as tap buttons, or words.
+const REPLY_MAX = 2000;
+function replyBox(task) {
+  const send = async (reply) => {
+    try { S.data = await api("POST", "/api/request-reply", { request: task.id, reply }); flashSaved(); keepScroll(render); }
+    catch (e) { if (e.message !== "signin") alert(t("errors")[e.message] || e.message); }
+  };
+  const id = "r_" + task.id;
+  if (task.type === "yes_no" || task.type === "choice") {
+    return el("div", { class: "choices" + (task.options.length === 2 ? " two" : ""), role: "radiogroup", id, style: "margin-top:8px" }, task.options.map((o) =>
+      el("button", { type: "button", role: "radio", class: "choice", "aria-checked": "false", onclick: () => send(o.value) }, el("span", { class: "ring" }), el("span", {}, o.label))));
+  }
+  const box = task.type === "date" ? el("input", { id, type: "date", "aria-label": t("send_reply") }) : el("textarea", { id, "aria-label": t("send_reply") });
+  // words: a live count against the server's limit (src/portal/questions.py REPLY_MAX), seen before sending
+  const count = task.type === "date" ? null : el("div", { class: "hint count", "aria-live": "polite" }, `0 / ${REPLY_MAX.toLocaleString(S.lang)}`);
+  if (count) box.addEventListener("input", () => { const n = box.value.length; count.textContent = `${n.toLocaleString(S.lang)} / ${REPLY_MAX.toLocaleString(S.lang)}`;
+    count.classList.toggle("over", n > REPLY_MAX); if (n > REPLY_MAX) count.textContent += " · " + t("errors").too_long; });
+  return el("div", { style: "margin-top:8px" }, box, count, task.type === "date" ? dateWords(box) : null,
+    el("button", { class: "btn", type: "button", style: "margin-top:8px", onclick: () => box.value.trim() ? send(box.value.trim()) : box.focus() }, icon("send"), t("send_reply")));
+}
+
+function renderSection(m, step) {
+  const s = step.section;
+  const answered = s.questions.filter((q) => q.required !== false && has(S.data.answers[q.id])).length;
+  const card = el("div", { class: "card" },
+    el("div", { class: "shead" }, el("span", { class: "badge" }, icon(step.icon)),
+      el("div", {}, el("h1", {}, s.title), el("span", { class: "chip" }, icon("clock"), (s.minutes ? t("minutes", s.minutes) + " · " : "") + (step.total ? t("answered", answered, step.total) : t("optional"))))),
+    s.why ? el("div", { class: "why" }, icon("info"), el("div", {}, s.why)) : null,
+    s.intro && !s.why ? el("p", { class: "lead" }, s.intro) : null,
+    s.example ? el("details", { class: "tip" }, el("summary", {}, icon("bulb"), t("money_example")), el("p", {}, s.example)) : null);
+  for (const q of s.questions) card.append(field(q));
+  m.append(card);
+}
+
+function save(qid, value, rerender) { rememberAnswer(qid, value, rerender); }
+
+function field(q) {
+  const val = S.data.answers[q.id];
+  const id = "q_" + q.id;
+  const error = S.errors[q.id] || S.data.answer_checks?.[q.id];
+  const wrap = el("div", { class: "field", "data-question": q.id },
+    el("label", { class: "label", for: id }, q.label, q.required === false ? el("span", { class: "opt" }, " · " + t("optional")) : null),
+    q.help ? el("p", { class: "hint" }, q.help) : null);
+  const ctl = input(q, val, (v, rerender) => save(q.id, v, rerender), id);
+  if (error) {
+    if (ctl.matches("input,select,textarea")) ctl.classList.add("bad-input");
+    ctl.querySelectorAll("input,select").forEach((n) => n.classList.add("bad-input"));
+  }
+  wrap.append(ctl);
+  if (error) wrap.append(el("div", { class: "err answer-error", role: "alert" }, icon("alert"), t("errors")[error] || UI_MONEY_ERRORS[S.lang]?.[error] || t("errors").invalid));
+  if (q.tip) wrap.append(el("details", { class: "tip" }, el("summary", {}, icon("bulb"), t("not_sure")), el("p", {}, q.tip)));
+  return wrap;
+}
+function drawAnswerCheck(qid) {
+  const wrap = document.querySelector(`[data-question="${CSS.escape(qid)}"]`);
+  if (!wrap) return;
+  wrap.querySelector(".answer-error")?.remove();
+  const error = S.errors[qid] || S.data?.answer_checks?.[qid];
+  wrap.querySelectorAll("input,select,textarea").forEach(n => n.classList.toggle("bad-input", !!error));
+  if (error) wrap.append(el("div", { class: "err answer-error", role: "alert" }, icon("alert"), t("errors")[error] || UI_MONEY_ERRORS[S.lang]?.[error] || t("errors").invalid));
+}
+function input(q, val, commit, id) {
+  if (q.allow_unsure && q.type !== "money") {
+    const unknown = val === "Unsure";
+    const control = input({ ...q, allow_unsure: false }, unknown ? null : val, (v, rerender) => {
+      unsure.setAttribute("aria-pressed", "false"); commit(v, rerender);
+    }, id);
+    const elements = () => control.matches("input,textarea,select") ? [control] : [...control.querySelectorAll("input,textarea,select")];
+    elements().forEach(n => n.disabled = unknown);
+    const unsure = el("button", { type: "button", class: "link", "aria-pressed": String(unknown), onclick: () => {
+      elements().forEach(n => { n.value = ""; n.disabled = true; });
+      unsure.setAttribute("aria-pressed", "true"); commit("Unsure", true);
+    } }, t("not_sure_btn"));
+    return el("div", {}, control, unsure, el("button", { type: "button", class: "link", onclick: () => {
+      elements().forEach(n => { n.value = ""; n.disabled = false; });
+      unsure.setAttribute("aria-pressed", "false"); commit(null, true);
+    } }, cw("clear")));
+  }
+  if (q.type === "money") {
+    const locked = !!(S.data.money_locked || S.data.money?.locked);
+    const unknown = val === "Unsure";
+    const box = el("input", { id, type: "text", inputmode: "decimal", autocomplete: "off", disabled: locked,
+      value: unknown ? "" : moneyShown(val), "aria-label": q.label,
+      oninput: (e) => { commit(e.target.value.trim() || null, false); unsure?.setAttribute("aria-pressed", "false"); } });
+    const unsure = q.allow_unsure ? el("button", { type: "button", class: "link", disabled: locked, "aria-pressed": String(unknown),
+      onclick: () => commit("Unsure", true) }, t("not_sure_btn")) : null;
+    return el("div", { class: "money-controls" }, el("div", { class: "moneyin" }, el("span", {}, "$"), box),
+      unsure, el("button", { type: "button", class: "link", disabled: locked, onclick: () => commit(null, true) }, cw("clear")),
+      locked ? el("p", { class: "note" }, cw("locked")) : null);
+  }
+  const simple = { text: "text", country: "text", date: "date", email: "email", phone: "tel", number: "number", a_number: "text", ssn: "text" };
+  if (simple[q.type]) {
+    const box = el("input", { id, type: simple[q.type], value: val ?? "", "aria-label": q.label, inputmode: { number: "numeric", phone: "tel", a_number: "numeric", ssn: "numeric" }[q.type] || null,
+      autocomplete: q.type === "email" ? "email" : q.type === "phone" ? "tel" : "off", oninput: (e) => commit(e.target.value.trim() || null) });
+    return q.type === "date" ? el("div", {}, box, dateWords(box)) : box;
+  }
+  if (q.type === "textarea") return el("textarea", { id, oninput: (e) => commit(e.target.value.trim() || null) }, val ?? "");
+  if (q.type === "yes_no" || q.type === "choice") {
+    const layout = q.options.length === 2 ? " two" : q.type === "yes_no" && q.options.length === 3 ? " three" : "";
+    return el("div", { class: "choices" + layout, role: "radiogroup", id }, q.options.map((o) =>
+      el("button", { type: "button", role: "radio", class: "choice" + (val === o.value ? " on" : "") + (o.value === "Unsure" ? " unsure" : ""), "aria-checked": val === o.value ? "true" : "false",
+        onclick: () => commit(o.value, true) }, el("span", { class: "ring" }, val === o.value ? icon("check") : null), el("span", {}, o.label))));
+  }
+  if (q.type === "height" || q.type === "weight") return measure(q, val, commit, id);
+  if (q.type === "checklist") {
+    // Tick what applies, or "None of these" / "I'm not sure" -- never a silent blank.
+    const picked = new Set(val && typeof val === "object" && Array.isArray(val.selected) ? val.selected : []);
+    const none = !!(val && typeof val === "object" && val.none), unsure = val === "Unsure";
+    const toggle = (v) => { const next = new Set(picked); next.has(v) ? next.delete(v) : next.add(v); commit(next.size ? { selected: [...next] } : null, true); };
+    const choice = (on, label, onclick, extra) => el("button", { type: "button", class: "choice" + (on ? " on" : "") + (extra || ""), "aria-pressed": on ? "true" : "false", onclick },
+      el("span", { class: "ring" }, on ? icon("check") : null), el("span", {}, label));
+    return el("div", { class: "checklist", id, role: "group" },
+      q.options.map((o) => choice(picked.has(o.value), o.label, () => toggle(o.value), " box")),
+      el("div", { class: "sep" }, t("tick_all")),
+      el("div", { class: "two" }, choice(none, t("none_of_these"), () => commit({ none: true }, true)),
+        choice(unsure, t("not_sure_btn"), () => commit("Unsure", true), " unsure")));
+  }
+  if (q.type === "us_address") return parts(val, commit, [["street", t("street"), true], ["apt", t("apt")], ["city", t("city")], ["state", t("state"), false, US_STATES], ["zip", t("zip")]], id);
+  if (q.type === "foreign_address") return parts(val, commit, ["street", "city", "province", "postal_code", "country", "date_from", "date_to"].map((k) =>
+    [k, FOREIGN[k][S.lang] || FOREIGN[k].en, k === "street", null, k.startsWith("date") ? "date" : "text"]), id);
+  if (q.type === "group") {
+    const value = Object.assign({}, val || {});
+    return el("div", { class: "grid2", id }, q.fields.map((f) => el("div", { class: ["employer", "street", "occupation"].includes(f.id) || f.type === "textarea" ? "wide" : "" },
+      el("div", { class: "sub" }, f.label), input(f, value[f.id], (v) => { if (v === null) delete value[f.id]; else value[f.id] = v; commit(Object.keys(value).length ? value : null); }))));
+  }
+  if (q.type === "repeat") {
+    // An autosave cleans empty rows out of stored answers. Keep the row the
+    // client just added in this session so that acknowledgement cannot erase it.
+    const draft = S.repeatDrafts[q.id] ?? val;
+    const rows = (Array.isArray(draft) ? draft : []).map((r) => Object.assign({}, r));
+    const saveRows = (rerender) => {
+      S.repeatDrafts[q.id] = copyValue(rows);
+      commit(rows.length ? rows : null, rerender);
+    };
+    const box = el("div", { id });
+    rows.forEach((row, i) => box.append(el("div", { class: "entry" },
+      el("div", { class: "top2" }, `${t("entry")} ${i + 1}`,
+        el("button", { class: "link danger", type: "button", onclick: () => { rows.splice(i, 1); saveRows(true); } }, icon("trash"), t("remove"))),
+      q.fields.map((f) => el("div", { class: "field" }, el("div", { class: "sub" }, f.label),
+        input(f, row[f.id], (v) => { if (v === null) delete row[f.id]; else row[f.id] = v; saveRows(f.type === "choice"); }))))));
+    if (rows.length < (q.max || 10)) box.append(el("button", { class: "add", type: "button", onclick: () => { rows.push({}); saveRows(true); } }, icon("plus"), t("add")));
+    return box;
+  }
+  return el("div", {});
+}
+// Height and weight in whichever unit the client knows; the server converts
+// for the form (feet/inches, pounds) and the converted value is shown back.
+function measure(q, val, commit, id) {
+  const height = q.type === "height";
+  const v = val && typeof val === "object" ? val : {};
+  if (typeof val === "string" && /^(\d)'(\d+)"$/.test(val)) { const m = /^(\d)'(\d+)"$/.exec(val); Object.assign(v, { feet: m[1], inches: m[2], form: val }); }
+  const units = height ? ["cm", "ft"] : ["kg", "lb"];
+  const unit = S.units[q.id] || (v.cm || v.kg ? units[0] : v.feet || v.lb ? units[1] : S.lang === "en" ? units[1] : units[0]);
+  const seg = el("div", { class: "seg", role: "group" }, units.map((u) => el("button", { type: "button", class: u === unit ? "on" : "", "aria-pressed": u === unit ? "true" : "false",
+    onclick: () => { S.units[q.id] = u; keepScroll(render); } }, u === "ft" ? `${t("ft")} + ${t("in")}` : u)));
+  const number = (key, suffix) => el("div", { class: "suffix" },
+    el("input", { id, type: "text", inputmode: "decimal", value: v[key] ?? "", "aria-label": `${q.label} (${suffix})`,
+      oninput: (e) => commit(e.target.value.trim() ? { [key]: e.target.value.trim() } : null) }), el("span", {}, suffix));
+  let ctl;
+  if (unit === "ft") {
+    const ft = el("select", { class: "in", id, "aria-label": t("ft") }, el("option", { value: "" }, t("ft")), [4, 5, 6, 7].map((n) => el("option", { value: n, selected: String(n) === String(v.feet ?? "") }, `${n} ${t("ft")}`)));
+    const inch = el("select", { class: "in", "aria-label": t("in") }, el("option", { value: "" }, t("in")), [...Array(12).keys()].map((n) => el("option", { value: n, selected: String(n) === String(v.inches ?? "") }, `${n} ${t("in")}`)));
+    const both = () => ft.value && inch.value && commit({ feet: ft.value, inches: inch.value }, true);
+    ft.oninput = both; inch.oninput = both;
+    ctl = el("div", { class: "grid2" }, ft, inch);
+  } else ctl = number(unit, unit);
+  const shown = v.form && (unit === "cm" && v.cm || unit === "kg" && v.kg)
+    ? el("div", { class: "conv" }, icon("check"), `${t("for_form")}: `, height ? v.form.replace(/^(\d)'(\d+)"$/, `$1 ${t("ft")} $2 ${t("in")}`) : `${v.form} lb`) : null;
+  return el("div", {}, seg, ctl, shown);
+}
+function parts(val, commit, spec, id) {
+  const value = Object.assign({}, val || {});
+  const box = el("div", { class: "grid2", id });
+  for (const [key, label, wide, options, type] of spec) {
+    const onchange = (e) => { const v = e.target.value.trim(); if (v) value[key] = v; else delete value[key]; commit(Object.keys(value).length ? value : null); };
+    const ctl = options ? el("select", { class: "in", onchange, "aria-label": label }, el("option", { value: "" }, t("choose")), options.map((o) => el("option", { value: o, selected: value[key] === o }, o)))
+                        : el("input", { type: type || "text", value: value[key] ?? "", "aria-label": label, inputmode: key === "zip" ? "numeric" : null, oninput: onchange });
+    box.append(el("div", { class: wide ? "wide" : "" }, el("div", { class: "sub" }, label), ctl, type === "date" ? dateWords(ctl) : null));
+  }
+  return box;
+}
+// The phone's date picker speaks the phone's language, not always the client's: the chosen date is written back in their words.
+function dateWords(input) {
+  const words = el("span", {}, input.value ? longDate(input.value) : "");
+  const line = el("div", { class: "conv", hidden: !input.value }, icon("check"), words);
+  input.addEventListener("change", () => { line.hidden = !input.value; words.textContent = input.value ? longDate(input.value) : ""; });
+  return line;
+}
+
+// ------------------------------------------------------------ documents
+function docState(d) {
+  const good = d.uploads.filter((u) => u.status !== "retake").length;
+  if (d.uploads.some((u) => u.status === "retake") && good < d.count) return ["bad", "alert", t("retake")];
+  if (good >= d.count) return ["ok", "check", d.uploads.some((u) => u.status === "checked") ? t("checked") : t("received")];
+  if (d.office_has) return ["ok", "check", d.office_has];  // the office recorded that there is no such paper: its sentence, in the client's language (src/absence.py)
+  if (d.required)return ["need", "upload", t("needed") + (d.count > 1 ? ` (${good}/${d.count})` : "")];
+  return ["opt", "info", t("if_have")];
+}
+function renderDocuments(m, onlyMissing, onlyId) {
+  const docs = S.data.documents.filter((d) => (!onlyMissing || docState(d)[0] === "need" || docState(d)[0] === "bad") && (!onlyId || d.id === onlyId));
+  const card = el("div", { class: "card" },
+    el("div", { class: "shead" }, el("span", { class: "badge" }, icon("docs")), el("div", {}, el("h1", {}, t("documents")), el("p", { class: "lead" }, t("docs_lead")))),
+    el("div", { class: "why" }, icon("camera"), el("div", {}, t("photo_tip"), el("div", { class: "hint" }, rw("formats")))),
+    S.data.scan_guide ? el("details", { class: "tip guide" }, el("summary", {}, icon("help"), S.data.scan_guide.title),
+      el("div", { class: "steps2" }, S.data.scan_guide.steps.map((x) => el("p", {}, el("b", {}, x.who + ": "), x.how)))) : null);
+  for (const d of docs) {
+    const [cls, ic, label] = docState(d);
+    const showExample = () => openLayer(d.label, el("div", { class: "example" }, el("img", { src: d.example, alt: `${t("see_example")}: ${d.label}` }),
+      el("p", {}, el("span", { class: "mark-hl" }), " ", t("example_caption")), d.tip ? el("p", {}, d.tip) : null));
+    const visual = d.example
+      ? el("button", { class: "thumb", type: "button", onclick: showExample, "aria-label": `${t("see_example")}: ${d.label}` },
+          el("img", { src: d.example, alt: "" }), el("span", {}, t("see_example")))
+      : el("span", { class: "badge" }, icon(DOC_ICON[d.id] || "file"));
+    card.append(el("div", { class: "doc" }, visual,
+      el("div", {}, el("div", { class: "name" }, d.label), el("div", { class: "why2" }, d.why), d.translation ? el("div", { class: "why2" }, t("translation")) : null,
+        d.tip ? el("details", { class: "tip", style: "margin:0 0 10px" }, el("summary", {}, icon("bulb"), t("where_find")), el("p", {}, d.tip)) : null,
+        el("span", { class: "status " + cls }, icon(ic), label),
+        d.uploads.length ? el("ul", { class: "files" }, d.uploads.map((u) => el("li", {}, "• " + u.name))) : null,
+        documentCaptureActions(d.id, d.label))));
+  }
+  m.append(card);
+}
+
+// ------------------------------------------------------------ review & submit
+function renderReview(m, all) {
+  const d = S.data;
+  const rows = all.filter((s) => s.kind !== "review").map((s) => {
+    const ok = s.missing === 0;
+    const text = s.kind === "documents" ? (ok ? t("docs_ok") : t("docs_missing", s.missing)) : (ok ? t("all_answered") : t("missing_n", s.missing));
+    return el("div", { class: "rrow" }, el("span", { class: ok ? "ok" : "miss" }, icon(ok ? "check" : "todo")),
+      el("div", { class: "t" }, el("div", {}, s.title), el("div", { class: "hint", style: "margin:0" }, text)),
+      el("button", { class: "link", type: "button", onclick: () => go(all.indexOf(s)) }, t("go"), icon("right")));
+  });
+  const name = el("input", { type: "text", placeholder: t("typename"), "aria-label": t("typename"), autocomplete: "name" });
+  const agree = el("input", { type: "checkbox", id: "agree" });
+  const blocked = d.missing.length > 0;
+  const unsure = d.sections.flatMap((s) => s.questions.filter((q) => d.answers[q.id] === "Unsure").map((q) => ({ q, s })));
+  m.append(el("div", { class: "card" },
+    el("div", { class: "shead" }, el("span", { class: "badge" }, icon("clipboard")), el("div", {}, el("h1", {}, t("review")), el("p", { class: "lead" }, t("review_lead")))),
+    rows,
+    unsure.length ? el("div", { class: "note", style: "margin-top:16px" }, el("b", {}, t("unsure_title", unsure.length)), el("div", {}, t("unsure_text")),
+      el("ul", { style: "margin:8px 0 0; padding-left:20px" }, unsure.map(({ q, s }) => el("li", {}, el("button", { class: "link", type: "button",
+        onclick: () => go(all.findIndex((x) => x.id === s.id)) }, q.label))))) : null,
+    (all.find((s) => s.kind === "documents") || {}).missing ? el("p", { class: "hint", style: "margin-top:12px" }, t("docs_later")) : null),
+    el("div", { class: "card" },
+      el("div", { class: "attest" }, t("attest")),
+      el("label", { class: "check", for: "agree" }, agree, el("span", {}, t("agree"))),
+      el("div", { class: "field" }, name),
+      blocked ? el("p", { class: "err" }, icon("alert"), t("cant_submit")) : null,
+      el("button", { class: "btn big", type: "button", disabled: blocked, onclick: async () => {
+        try { await flushAnswers(); if (recovery.pending.size || recovery.uploads.size) throw new Error(rw("unsaved_submit")); S.data = await api("POST", "/api/submit", { agree: agree.checked, signature: name.value }); render(); window.scrollTo({ top: 0 }); } catch (e) { oops(e); } } },
+        icon("send"), t("submit"))));
+}
+const PDF_WORDS = {
+  en: { loading: "Preparing PDF…", error: "The PDF could not be downloaded. Try again on this page, or contact the office.", more_documents: "Add more documents" },
+  pt: { loading: "Preparando PDF…", error: "Não foi possível baixar o PDF. Tente novamente nesta página ou fale com o escritório.", more_documents: "Adicionar mais documentos" },
+  es: { loading: "Preparando PDF…", error: "No se pudo descargar el PDF. Intente de nuevo en esta página o contacte a la oficina.", more_documents: "Agregar más documentos" },
+  ht: { loading: "N ap prepare PDF la…", error: "Nou pa t ka telechaje PDF la. Eseye ankò sou paj sa a oswa kontakte biwo a.", more_documents: "Ajoute plis dokiman" }
+};
+function questionnaireDownload() {
+  const status = el("p", { role: "alert", hidden: true });
+  const submittedData = S.data;
+  let busy = false;
+  const link = el("a", { class: "btn", href: "/api/questionnaire.pdf", onclick: async (event) => {
+    event.preventDefault();
+    if (busy) return;
+    busy = true; link.setAttribute("aria-disabled", "true"); status.hidden = true;
+    link.textContent = (PDF_WORDS[S.lang] || PDF_WORDS.en).loading;
+    try {
+      const response = await fetch("/api/questionnaire.pdf", { credentials: "same-origin", cache: "no-store" });
+      if (!response.ok || !(response.headers.get("Content-Type") || "").includes("application/pdf")) throw new Error("pdf_download");
+      const blob = await response.blob();
+      if ((await blob.slice(0, 5).text()) !== "%PDF-") throw new Error("pdf_download");
+      if (!link.isConnected || S.data !== submittedData) return;
+      const url = URL.createObjectURL(blob);
+      const save = el("a", { href: url, download: "submitted-questionnaire.pdf" });
+      document.body.append(save); save.click(); save.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    } catch (error) {
+      if (link.isConnected && S.data === submittedData) {
+        status.textContent = (PDF_WORDS[S.lang] || PDF_WORDS.en).error; status.hidden = false;
+      }
+    } finally {
+      busy = false; link.removeAttribute("aria-disabled"); link.textContent = t("questionnaire_pdf");
+    }
+  } }, t("questionnaire_pdf"));
+  return el("div", {}, link, status);
+}
+function renderSubmitted(m) {
+  $("wrap").classList.remove("with-nav"); $("nav").replaceChildren(); $("actions").hidden = true;
+  renderJourney(m);
+  renderAgreement(m);
+  renderMoney(m);
+  m.append(safetyLine());
+  m.append(el("div", { class: "card center" },
+    el("div", { class: "done-mark" }, icon("check")), el("h1", {}, t("submitted_title")), el("p", { class: "lead" }, t("submitted_text")),
+    questionnaireDownload(),
+    el("h2", { style: "margin-top:24px; text-align:left" }, t("next_title")),
+    el("ol", { class: "timeline" }, [t("next1"), t("next2"), t("next3")].map((x, i) => el("li", {}, el("span", { class: "n" }, i + 1), el("span", {}, x))))));
+  renderTasks(m);
+  if (S.data.documents.some((d) => ["need", "bad"].includes(docState(d)[0]))) { m.append(el("p", { class: "lead", style: "margin:0 0 12px" }, t("still_todo"))); renderDocuments(m, true); }
+  const extraDocuments = el("details", { class: "card" }, el("summary", {}, (PDF_WORDS[S.lang] || PDF_WORDS.en).more_documents));
+  const uploads = el("div", {}); renderDocuments(uploads, false); extraDocuments.append(uploads); m.append(extraDocuments);
+}
+
+// ------------------------------------------------------------ start
+$("lang").replaceChildren(...Object.keys(UI).map((code) => el("option", { value: code }, UI[code].lang_name)));  // every language the page speaks
+$("lang").value = S.lang; document.documentElement.lang = S.lang;
+$("helpbtn").addEventListener("click", openFaq);
+$("leave").addEventListener("click", leavePage);
+drawLeave();
+$("msgbtn").addEventListener("click", openMessages);
+$("lang").addEventListener("change", async (e) => {
+  closeLayer();
+  S.lang = e.target.value; try { localStorage.setItem("lang", S.lang); } catch (err) {}
+  document.documentElement.lang = S.lang; drawLeave();
+  if (S.data && S.data.closed) render();  // an ended case: the page changes language here, nothing is saved (the portal answers 409)
+  else if (S.data) { try { S.data = await api("POST", "/api/language", { language: S.lang }); render(); } catch (err) { oops(err); } } else renderSignIn();
+});
+(async () => {
+  try {
+    S.data = await api("GET", "/api/me");
+    S.lang = S.data.language; $("lang").value = S.lang; document.documentElement.lang = S.lang; drawLeave();
+    render();
+  } catch (e) { if (e.message !== "signin") renderSignIn(); else renderSignIn(new URLSearchParams(location.search).get("expired") ? t("expired") : ""); }
+})();
+</script>
+</body>
+</html>

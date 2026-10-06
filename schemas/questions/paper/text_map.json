@@ -1,0 +1,669 @@
+{
+  "_status": "Paper questionnaire field definition; example client values omitted.",
+  "language": "pt",
+  "fields": [
+    {
+      "id": "physical_address",
+      "anchor": "Endere\\S*o\\s+F\\S*sico:?",
+      "kind": "us_address",
+      "describe": "current physical home address (Endereço Físico)",
+      "facts": {
+        "street": "applicant.physical_street",
+        "apt": "applicant.physical_apt",
+        "city": "applicant.physical_city",
+        "state": "applicant.physical_state",
+        "zip": "applicant.physical_zip"
+      }
+    },
+    {
+      "id": "current_address_history",
+      "anchor": "Atual:",
+      "kind": "address_history",
+      "describe": "current address in the 5-year address history, with the date the person moved in",
+      "facts": {
+        "street": "applicant.physical_street",
+        "apt": "applicant.physical_apt",
+        "zip": "applicant.physical_zip",
+        "date_from": "applicant.physical_address_since",
+        "city": "applicant.physical_city",
+        "state": "applicant.physical_state"
+      }
+    },
+    {
+      "id": "last_foreign_address",
+      "anchor": "Endere\\S*o\\s+fora\\s+dos\\s+EUA",
+      "lines": 3,
+      "kind": "foreign_address",
+      "describe": "last address outside the United States, with dates lived there",
+      "facts": {
+        "street": "applicant.last_foreign_street",
+        "city": "applicant.last_foreign_city",
+        "province": "applicant.last_foreign_province",
+        "postal_code": "applicant.last_foreign_postal_code",
+        "country": "applicant.last_foreign_country",
+        "date_from": "applicant.last_foreign_date_from",
+        "date_to": "applicant.last_foreign_date_to"
+      }
+    },
+    {
+      "id": "current_employer",
+      "anchor": "Trabalho/estudo\\S*\\s*atual",
+      "lines": 3,
+      "kind": "employer",
+      "describe": "current employer or school, job title, address and dates",
+      "facts": {
+        "employer": "applicant.employer1_name",
+        "occupation": "applicant.employer1_occupation",
+        "street": "applicant.employer1_street",
+        "city": "applicant.employer1_city",
+        "state": "applicant.employer1_state",
+        "zip": "applicant.employer1_zip",
+        "date_from": "applicant.employer1_date_from",
+        "date_to": "applicant.employer1_date_to"
+      }
+    },
+    {
+      "id": "last_foreign_employer",
+      "anchor": "[uú]ltimo\\s+trabalho\\S*\\s+fora",
+      "before": "Informa\\S*\\s+sobre\\s+seus\\s+pais",
+      "lines": 4,
+      "kind": "employer",
+      "describe": "most recent employer or school outside the United States, job title, address and dates",
+      "facts": {
+        "employer": "Fictional Workshop M",
+        "occupation": "applicant.foreign_employer_occupation",
+        "street": "applicant.foreign_employer_street",
+        "city": "applicant.foreign_employer_city",
+        "country": "applicant.foreign_employer_country",
+        "date_from": "applicant.foreign_employer_date_from",
+        "date_to": "applicant.foreign_employer_date_to",
+        "state": "applicant.foreign_employer_province",
+        "zip": "applicant.foreign_employer_postal_code"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "mother_dob",
+      "after": "M[ÃA]E:",
+      "anchor": "Data\\s+de\\s+Nascimento:?",
+      "kind": "date",
+      "describe": "the mother's date of birth (day 'de' month 'de' year)",
+      "facts": {
+        "value": "applicant.mother_dob"
+      },
+      "before": "^\\W*PAI:|Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil"
+    },
+    {
+      "id": "mother_birth_country",
+      "after": "M[ÃA]E:",
+      "anchor": "Pa\\S*s\\s+de\\s+Nascimento",
+      "kind": "text",
+      "describe": "the mother's country of birth",
+      "facts": {
+        "value": "applicant.mother_country_of_birth"
+      },
+      "before": "^\\W*PAI:|Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil"
+    },
+    {
+      "id": "father_dob",
+      "after": "^\\W*PAI:",
+      "anchor": "Data\\s+de\\s+Nascimento:?",
+      "kind": "date",
+      "describe": "the father's date of birth (day 'de' month 'de' year)",
+      "facts": {
+        "value": "applicant.father_dob"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted.",
+      "before": "Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil",
+      "fallback": {
+        "after": "M[ÃA]E:",
+        "occurrence": 2
+      }
+    },
+    {
+      "id": "father_birth_country",
+      "after": "^\\W*PAI:",
+      "anchor": "Pa\\S*s\\s+de\\s+Nascimento",
+      "kind": "text",
+      "describe": "the father's country of birth",
+      "facts": {
+        "value": "applicant.father_country_of_birth"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted.",
+      "before": "Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil",
+      "fallback": {
+        "after": "M[ÃA]E:",
+        "occurrence": 2
+      }
+    },
+    {
+      "id": "times_married",
+      "anchor": "Quantas\\s+vezes.*?atual\\S*",
+      "kind": "number",
+      "describe": "how many times the person has been married (including current marriage)",
+      "facts": {
+        "value": "applicant.times_married"
+      }
+    },
+    {
+      "id": "total_children",
+      "anchor": "Quantos\\s+filhos.*?EUA\\S*",
+      "kind": "number",
+      "describe": "how many children the person has",
+      "facts": {
+        "value": "applicant.total_children"
+      }
+    },
+    {
+      "id": "height",
+      "anchor": "Altura:",
+      "kind": "height",
+      "describe": "the person's height",
+      "facts": {
+        "value": "applicant.height"
+      }
+    },
+    {
+      "id": "weight",
+      "anchor": "Peso:",
+      "kind": "weight",
+      "describe": "the person's weight",
+      "facts": {
+        "value": "applicant.weight_lbs"
+      }
+    },
+    {
+      "id": "hair_color",
+      "anchor": "Cor\\s+do\\s+Cabelo:?",
+      "kind": "hair_color",
+      "describe": "the person's hair color (the printed options in parentheses are FICTICIOQ the answer; only the handwritten word is)",
+      "facts": {
+        "value": "applicant.hair_color"
+      }
+    },
+    {
+      "id": "last_entry_date",
+      "anchor": "Data\\s+da\\s+\\S*ltima.*?Unidos:?",
+      "kind": "date",
+      "describe": "date of the last entry into the United States",
+      "facts": {
+        "value": "applicant.last_arrival_date_self_reported"
+      }
+    },
+    {
+      "id": "last_entry_place",
+      "anchor": "Local\\s+da\\s+\\S*ltima.*?Unidos:?",
+      "kind": "us_place",
+      "describe": "the US city and state where the person last entered the United States",
+      "facts": {
+        "city": "applicant.last_arrival_city",
+        "state": "applicant.last_arrival_state"
+      }
+    },
+    {
+      "id": "other_names",
+      "anchor": "Ou\\S+\\s+nomes\\s+j\\S*\\s+usados:?",
+      "kind": "text",
+      "describe": "other names the person has used",
+      "facts": {
+        "value": "applicant.other_names"
+      },
+      "record_blank": true
+    },
+    {
+      "id": "alien_number",
+      "anchor": "Alien\\s+Number:?",
+      "kind": "text",
+      "describe": "Alien Registration Number (A-Number)",
+      "facts": {
+        "value": "questionnaire.a_number"
+      }
+    },
+    {
+      "id": "applied_immigrant_visa_abroad",
+      "anchor": "visto\\s+de\\s+imigrante",
+      "lines": 2,
+      "kind": "yes_no_text",
+      "describe": "whether the person ever applied for an immigrant visa at a US embassy or consulate (Sim/Não)",
+      "facts": {
+        "value": "applicant.part4.applied_immigrant_visa_abroad"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "birth_place",
+      "anchor": "Cidade\\s+e\\s+Pa\\S*s\\s*de\\s+Nascimento:?",
+      "kind": "text",
+      "describe": "the city (and state or country) where the person was born",
+      "facts": {
+        "value": "questionnaire.birth_place"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "mother_name",
+      "after": "M[ÃA]E:",
+      "anchor": "Nome\\s+Completo:?",
+      "kind": "person_name",
+      "describe": "the mother's full name as she is called today",
+      "facts": {
+        "value": "questionnaire.mother_name"
+      },
+      "before": "^\\W*PAI:|Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil"
+    },
+    {
+      "id": "mother_birth_name",
+      "after": "M[ÃA]E:",
+      "anchor": "Nome\\s+de\\s+Solteir\\S*:?",
+      "kind": "person_name",
+      "describe": "the mother's maiden name (name before marriage)",
+      "facts": {
+        "value": "questionnaire.mother_birth_name"
+      },
+      "before": "^\\W*PAI:|Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil"
+    },
+    {
+      "id": "father_name",
+      "after": "^\\W*PAI:",
+      "anchor": "Nome\\s+Completo:?",
+      "kind": "person_name",
+      "describe": "the father's full name",
+      "facts": {
+        "value": "questionnaire.father_name"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted.",
+      "before": "Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil",
+      "fallback": {
+        "after": "M[ÃA]E:",
+        "occurrence": 2
+      }
+    },
+    {
+      "id": "father_birth_name",
+      "after": "^\\W*PAI:",
+      "anchor": "Nome\\s+de\\s+Solteir\\S*:?",
+      "kind": "person_name",
+      "describe": "the father's name at birth (the form's 'Nome de Solteira' line under PAI)",
+      "facts": {
+        "value": "questionnaire.father_birth_name"
+      },
+      "before": "Quantas\\s+vezes|C\\S*njuges|filhos|A#|Estado\\s+civil",
+      "fallback": {
+        "after": "M[ÃA]E:",
+        "occurrence": 2
+      },
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "marriage_date",
+      "anchor": "Data\\s+do\\s+casamento\\s+atual:?",
+      "kind": "date",
+      "describe": "the date of the current marriage (day de month de year)",
+      "facts": {
+        "value": "questionnaire.marriage_date"
+      }
+    },
+    {
+      "id": "marriage_place",
+      "anchor": "Cidade\\s+e\\s+Pa\\S*s\\s+do\\s+casamento:?",
+      "kind": "text",
+      "describe": "the city and country where the current marriage took place",
+      "facts": {
+        "value": "questionnaire.marriage_place"
+      }
+    },
+    {
+      "id": "eye_color",
+      "anchor": "Cor\\s+dos\\s+Olhos:?",
+      "kind": "eye_color",
+      "describe": "the person's eye color (the printed options in parentheses are FICTICIOQ the answer; only the handwritten or typed word is)",
+      "facts": {
+        "value": "applicant.eye_color"
+      }
+    },
+    {
+      "id": "applicant_dob",
+      "anchor": "Data\\s+de\\s+Nascimento:?",
+      "kind": "date",
+      "describe": "the person's own date of birth (day 'de' month 'de' year)",
+      "facts": {
+        "value": "questionnaire.dob"
+      },
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "other_dobs",
+      "anchor": "Outras\\s+datas\\s+de\\s+nascimento",
+      "kind": "text",
+      "describe": "other dates of birth the person has used",
+      "facts": {
+        "value": "questionnaire.other_dobs"
+      },
+      "record_blank": true,
+      "note": "Paper questionnaire field definition; example client values omitted."
+    },
+    {
+      "id": "prior_address_1",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 2,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 1 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address1_street",
+        "apt": "questionnaire.prior_address1_apt",
+        "city": "questionnaire.prior_address1_city",
+        "state": "questionnaire.prior_address1_state",
+        "zip": "questionnaire.prior_address1_zip",
+        "country": "questionnaire.prior_address1_country",
+        "date_from": "questionnaire.prior_address1_date_from",
+        "date_to": "questionnaire.prior_address1_date_to",
+        "province": "questionnaire.prior_address1_province",
+        "postal_code": "questionnaire.prior_address1_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_2",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 3,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 2 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address2_street",
+        "apt": "questionnaire.prior_address2_apt",
+        "city": "questionnaire.prior_address2_city",
+        "state": "questionnaire.prior_address2_state",
+        "zip": "questionnaire.prior_address2_zip",
+        "country": "questionnaire.prior_address2_country",
+        "date_from": "questionnaire.prior_address2_date_from",
+        "date_to": "questionnaire.prior_address2_date_to",
+        "province": "questionnaire.prior_address2_province",
+        "postal_code": "questionnaire.prior_address2_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_3",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 4,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 3 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address3_street",
+        "apt": "questionnaire.prior_address3_apt",
+        "city": "questionnaire.prior_address3_city",
+        "state": "questionnaire.prior_address3_state",
+        "zip": "questionnaire.prior_address3_zip",
+        "country": "questionnaire.prior_address3_country",
+        "date_from": "questionnaire.prior_address3_date_from",
+        "date_to": "questionnaire.prior_address3_date_to",
+        "province": "questionnaire.prior_address3_province",
+        "postal_code": "questionnaire.prior_address3_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_4",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 5,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 4 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address4_street",
+        "apt": "questionnaire.prior_address4_apt",
+        "city": "questionnaire.prior_address4_city",
+        "state": "questionnaire.prior_address4_state",
+        "zip": "questionnaire.prior_address4_zip",
+        "country": "questionnaire.prior_address4_country",
+        "date_from": "questionnaire.prior_address4_date_from",
+        "date_to": "questionnaire.prior_address4_date_to",
+        "province": "questionnaire.prior_address4_province",
+        "postal_code": "questionnaire.prior_address4_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_5",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 6,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 5 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address5_street",
+        "apt": "questionnaire.prior_address5_apt",
+        "city": "questionnaire.prior_address5_city",
+        "state": "questionnaire.prior_address5_state",
+        "zip": "questionnaire.prior_address5_zip",
+        "country": "questionnaire.prior_address5_country",
+        "date_from": "questionnaire.prior_address5_date_from",
+        "date_to": "questionnaire.prior_address5_date_to",
+        "province": "questionnaire.prior_address5_province",
+        "postal_code": "questionnaire.prior_address5_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_6",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 7,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 6 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address6_street",
+        "apt": "questionnaire.prior_address6_apt",
+        "city": "questionnaire.prior_address6_city",
+        "state": "questionnaire.prior_address6_state",
+        "zip": "questionnaire.prior_address6_zip",
+        "country": "questionnaire.prior_address6_country",
+        "date_from": "questionnaire.prior_address6_date_from",
+        "date_to": "questionnaire.prior_address6_date_to",
+        "province": "questionnaire.prior_address6_province",
+        "postal_code": "questionnaire.prior_address6_postal_code"
+      }
+    },
+    {
+      "id": "prior_address_7",
+      "after": "Atual:",
+      "before": "ltimo\\s+Endere",
+      "anchor": "\\bDe\\s*[:.]",
+      "occurrence": 8,
+      "whole_line": true,
+      "kind": "address_range",
+      "describe": "a previous address in the 5-year address history (line 7 after the current one), with the dates",
+      "facts": {
+        "street": "questionnaire.prior_address7_street",
+        "apt": "questionnaire.prior_address7_apt",
+        "city": "questionnaire.prior_address7_city",
+        "state": "questionnaire.prior_address7_state",
+        "zip": "questionnaire.prior_address7_zip",
+        "country": "questionnaire.prior_address7_country",
+        "date_from": "questionnaire.prior_address7_date_from",
+        "date_to": "questionnaire.prior_address7_date_to",
+        "province": "questionnaire.prior_address7_province",
+        "postal_code": "questionnaire.prior_address7_postal_code"
+      }
+    },
+    {
+      "id": "prior_employer_1",
+      "after": "anteriores",
+      "before": "ltimo\\s+trabalho",
+      "anchor": "Nome\\s+da\\s+empresa",
+      "occurrence": 1,
+      "lines": 2,
+      "kind": "employer",
+      "describe": "a previous employer or school (entry 1): name, job title ('Cargo'), address and dates",
+      "facts": {
+        "employer": "questionnaire.prior_employer1_employer",
+        "occupation": "questionnaire.prior_employer1_occupation",
+        "street": "questionnaire.prior_employer1_street",
+        "city": "questionnaire.prior_employer1_city",
+        "state": "questionnaire.prior_employer1_state",
+        "zip": "questionnaire.prior_employer1_zip",
+        "country": "questionnaire.prior_employer1_country",
+        "date_from": "questionnaire.prior_employer1_date_from",
+        "date_to": "questionnaire.prior_employer1_date_to"
+      }
+    },
+    {
+      "id": "prior_employer_2",
+      "after": "anteriores",
+      "before": "ltimo\\s+trabalho",
+      "anchor": "Nome\\s+da\\s+empresa",
+      "occurrence": 2,
+      "lines": 2,
+      "kind": "employer",
+      "describe": "a previous employer or school (entry 2): name, job title ('Cargo'), address and dates",
+      "facts": {
+        "employer": "questionnaire.prior_employer2_employer",
+        "occupation": "questionnaire.prior_employer2_occupation",
+        "street": "questionnaire.prior_employer2_street",
+        "city": "questionnaire.prior_employer2_city",
+        "state": "questionnaire.prior_employer2_state",
+        "zip": "questionnaire.prior_employer2_zip",
+        "country": "questionnaire.prior_employer2_country",
+        "date_from": "questionnaire.prior_employer2_date_from",
+        "date_to": "questionnaire.prior_employer2_date_to"
+      }
+    },
+    {
+      "id": "prior_employer_3",
+      "after": "anteriores",
+      "before": "ltimo\\s+trabalho",
+      "anchor": "Nome\\s+da\\s+empresa",
+      "occurrence": 3,
+      "lines": 2,
+      "kind": "employer",
+      "describe": "a previous employer or school (entry 3): name, job title ('Cargo'), address and dates",
+      "facts": {
+        "employer": "questionnaire.prior_employer3_employer",
+        "occupation": "questionnaire.prior_employer3_occupation",
+        "street": "questionnaire.prior_employer3_street",
+        "city": "questionnaire.prior_employer3_city",
+        "state": "questionnaire.prior_employer3_state",
+        "zip": "questionnaire.prior_employer3_zip",
+        "country": "questionnaire.prior_employer3_country",
+        "date_from": "questionnaire.prior_employer3_date_from",
+        "date_to": "questionnaire.prior_employer3_date_to"
+      }
+    },
+    {
+      "id": "prior_employer_4",
+      "after": "anteriores",
+      "before": "ltimo\\s+trabalho",
+      "anchor": "Nome\\s+da\\s+empresa",
+      "occurrence": 4,
+      "lines": 2,
+      "kind": "employer",
+      "describe": "a previous employer or school (entry 4): name, job title ('Cargo'), address and dates",
+      "facts": {
+        "employer": "questionnaire.prior_employer4_employer",
+        "occupation": "questionnaire.prior_employer4_occupation",
+        "street": "questionnaire.prior_employer4_street",
+        "city": "questionnaire.prior_employer4_city",
+        "state": "questionnaire.prior_employer4_state",
+        "zip": "questionnaire.prior_employer4_zip",
+        "country": "questionnaire.prior_employer4_country",
+        "date_from": "questionnaire.prior_employer4_date_from",
+        "date_to": "questionnaire.prior_employer4_date_to"
+      }
+    },
+    {
+      "id": "prior_employer_5",
+      "after": "anteriores",
+      "before": "ltimo\\s+trabalho",
+      "anchor": "Nome\\s+da\\s+empresa",
+      "occurrence": 5,
+      "lines": 2,
+      "kind": "employer",
+      "describe": "a previous employer or school (entry 5): name, job title ('Cargo'), address and dates",
+      "facts": {
+        "employer": "questionnaire.prior_employer5_employer",
+        "occupation": "questionnaire.prior_employer5_occupation",
+        "street": "questionnaire.prior_employer5_street",
+        "city": "questionnaire.prior_employer5_city",
+        "state": "questionnaire.prior_employer5_state",
+        "zip": "questionnaire.prior_employer5_zip",
+        "country": "questionnaire.prior_employer5_country",
+        "date_from": "questionnaire.prior_employer5_date_from",
+        "date_to": "questionnaire.prior_employer5_date_to"
+      }
+    },
+    {
+      "id": "child_1",
+      "after": "filhos",
+      "before": "biogr",
+      "anchor": "Nome\\s+Completo",
+      "occurrence": 1,
+      "lines": 2,
+      "kind": "child",
+      "describe": "child 1: full name, A-Number ('A#'), date of birth and country of birth",
+      "facts": {
+        "name": "questionnaire.child1_name",
+        "a_number": "questionnaire.child1_a_number",
+        "dob": "questionnaire.child1_dob",
+        "country": "questionnaire.child1_country"
+      }
+    },
+    {
+      "id": "child_2",
+      "after": "filhos",
+      "before": "biogr",
+      "anchor": "Nome\\s+Completo",
+      "occurrence": 2,
+      "lines": 2,
+      "kind": "child",
+      "describe": "child 2: full name, A-Number ('A#'), date of birth and country of birth",
+      "facts": {
+        "name": "questionnaire.child2_name",
+        "a_number": "questionnaire.child2_a_number",
+        "dob": "questionnaire.child2_dob",
+        "country": "questionnaire.child2_country"
+      }
+    },
+    {
+      "id": "child_3",
+      "after": "filhos",
+      "before": "biogr",
+      "anchor": "Nome\\s+Completo",
+      "occurrence": 3,
+      "lines": 2,
+      "kind": "child",
+      "describe": "child 3: full name, A-Number ('A#'), date of birth and country of birth",
+      "facts": {
+        "name": "questionnaire.child3_name",
+        "a_number": "questionnaire.child3_a_number",
+        "dob": "questionnaire.child3_dob",
+        "country": "questionnaire.child3_country"
+      }
+    },
+    {
+      "id": "child_4",
+      "after": "filhos",
+      "before": "biogr",
+      "anchor": "Nome\\s+Completo",
+      "occurrence": 4,
+      "lines": 2,
+      "kind": "child",
+      "describe": "child 4: full name, A-Number ('A#'), date of birth and country of birth",
+      "facts": {
+        "name": "questionnaire.child4_name",
+        "a_number": "questionnaire.child4_a_number",
+        "dob": "questionnaire.child4_dob",
+        "country": "questionnaire.child4_country"
+      }
+    }
+  ]
+}

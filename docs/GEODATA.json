@@ -1,0 +1,145 @@
+{
+  "files": [
+    {
+      "path": "schemas/geo/AR.json",
+      "sha256": "5b769a79757df343440de727b7df17decf1b20df117297a7ec9dbf606edd42a8",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/BO.json",
+      "sha256": "2c626d1375808cbd9219841374b5f546985d4666a36f9112fbe89d5e4d03a1c2",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/BR.json",
+      "sha256": "3a20737f5ff48e4c8cad7cffea12dbd8db15d698700cc5fab820d84111b6f9cc",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/CL.json",
+      "sha256": "63b8f5be7b508f9e682c00f5c40dda42fd27e70a132ec1e32b8ba5b33796d203",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/CO.json",
+      "sha256": "781e2f352bfcfc98b59772726faf837a921e56340d539cf6ab08757896e07ea4",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/DO.json",
+      "sha256": "c40d4db7699d7ecf45bf3c24710e1e912fc95407e77d17a316c4ffbee2f8cc49",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/EC.json",
+      "sha256": "c6c90fde4a2ba2c2b49405f93097c8da5633034ba3fd6faa6b6a5c4f18e2087c",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/GF.json",
+      "sha256": "278516813f7514db84da34e03a9b18b1de92256ff6693ef3de818eab58ecb214",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/GT.json",
+      "sha256": "d36720c3f9497d0c7f35c26233d8f1c08c241e023100a3c86d8c8fdc5161d5b6",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/GY.json",
+      "sha256": "35e639e7c56c96e29d5b8a459764e842b5996b82eaaefcad19fb1defbe0c1742",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/HN.json",
+      "sha256": "0b326f38c30eca0714da8237b3717c2717991af32909d08b0f9f3db0a9d7b0a8",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/HT.json",
+      "sha256": "61d245e2582e04bfd1b9bc6aefd9ba5cdffcd779c9543ca10a66cafbc4173a1b",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/MX.json",
+      "sha256": "b61763796324205531773321a9860420430455d8877fd3ea021490c33427f18e",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/NI.json",
+      "sha256": "d6fcba4144545b356f24282b1f777ad9ddbb5d58a6be83030064dd2bc95b2190",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/PE.json",
+      "sha256": "a7bd9c66769d01ebda4ebaed5284597c5fc4c9c03f01b6ef23c14a12f56771b0",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/PY.json",
+      "sha256": "101713fb09b920836866951fb40e322e3a9b67f73557eba7b917909a6b9a8f16",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/SR.json",
+      "sha256": "436d33bf0d2da82b67c30dd6673eccf7daec6ad974a3e21989e1eef01c2d24a6",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/SV.json",
+      "sha256": "f9edbb633841021f2113d1d1f4a4116cdf289a325533681d28698ded6e9fbf66",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/UY.json",
+      "sha256": "b625f20a08020fb23097a91979caece3a8806869d78b0d631acdd7fe43b2280c",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    },
+    {
+      "path": "schemas/geo/VE.json",
+      "sha256": "f5c9ef74aa686b9e3d9fb76f8e917a328d7fbc58d76f79b8d2c29ea8544afac3",
+      "recorded_source": "GeoNames (https://www.geonames.org, CC BY 4.0): dump/, alternatenames/ and zip/ files, built by tools/build_gazetteer.py",
+      "source_capture_date": null,
+      "terms": "CC-BY-4.0"
+    }
+  ],
+  "note": "20 retained GeoNames-derived files; BR.json has zero places, so this snapshot has no municipality-derived BR places. CBP port data is withheld. Original GeoNames capture dates were not retained."
+}

@@ -1,0 +1,37 @@
+{
+  "_about": "A FOIA request for the client's USCIS file (Form G-639, src/g639.py), per USCIS's FOIA page (last updated 01/27/2026: since 01/22/2026 FOIA and Privacy Act requests for USCIS records are to be made online at first.uscis.gov) and the form itself (edition 12/12/24). No cover letter, no G-28 and no mailing address: the page gives none for the paper form. The pages hold every answer the online request asks for, and the client's signed consent (Part 4). A Notice to Appear or hearing notice goes with the request when a hearing date is scheduled (it speeds an A-file request). The attorney approves titles and order.",
+  "filing": "g639",
+  "title": "FOIA request for the client's USCIS file (G-639)",
+  "packet_pdf": "packet_g639.pdf",
+  "manifest": "packet_g639.json",
+  "choices": "packet_choices_g639.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": false,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "g639"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "File the request online at first.uscis.gov, in the firm's USCIS online account: USCIS's page says online is generally the only acceptable method since 01/22/2026. One request for each person."
+    },
+    {
+      "kind": "check",
+      "text": "Keep the client's signed consent (Part 4, Option 1, or Option 2 before a notary) in the folder: it is the proof that the client agreed to the firm receiving the records."
+    },
+    {
+      "kind": "check",
+      "text": "A scheduled hearing date: send the Notice to Appear or the hearing notice with the request: it speeds an A-file request (USCIS's FOIA page)."
+    },
+    {
+      "kind": "check",
+      "text": "Once it is filed, record it on the case page (the date, carrier Online, and the FOIA control number USCIS sends back as the tracking number) and mark the takeover step done."
+    }
+  ],
+  "exhibits": [],
+  "leave_out": {}
+}

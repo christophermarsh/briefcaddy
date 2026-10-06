@@ -1,0 +1,1133 @@
+{
+ "_about": "Help shown to clients in the portal, next to the questions in question_bank.json: why each section is asked, tips for questions people often get stuck on, and the general questions clients ask the office. Plain language, no legal advice. DRAFT translations -- attorney/translator review pending (docs/decisions.md 2026-10-01). The Haitian Creole (ht) is a MACHINE DRAFT, not certified: the firm's certified translator reviews it before clients rely on it.",
+ "sections": {
+  "about": {
+   "icon": "person",
+   "minutes": 5,
+   "why": {
+    "pt": "Seus dados pessoais precisam estar iguais aos dos seus documentos.",
+    "es": "Sus datos personales deben coincidir con los de sus documentos.",
+    "en": "Your personal details need to match your documents.",
+    "ht": "Enfòmasyon pèsonèl ou yo dwe menm jan ak sa ki sou dokiman ou yo."
+   }
+  },
+  "addresses": {
+   "icon": "home",
+   "minutes": 5,
+   "why": {
+    "pt": "A imigração pede onde você morou nos últimos 5 anos. Datas aproximadas (mês e ano) estão ok.",
+    "es": "Inmigración pide dónde vivió en los últimos 5 años. Fechas aproximadas (mes y año) están bien.",
+    "en": "Immigration asks where you lived in the last 5 years. Approximate dates (month and year) are fine.",
+    "ht": "Imigrasyon mande ki kote ou te rete nan 5 dènye ane yo. Dat apeprè (mwa ak ane) bon."
+   }
+  },
+  "work": {
+   "icon": "briefcase",
+   "minutes": 5,
+   "why": {
+    "pt": "A imigração pede seus trabalhos e escolas dos últimos 5 anos. Estudante também conta.",
+    "es": "Inmigración pide sus trabajos y escuelas de los últimos 5 años. Ser estudiante también cuenta.",
+    "en": "Immigration asks for your jobs and schools in the last 5 years. Being a student counts too.",
+    "ht": "Imigrasyon mande travay ak lekòl ou nan 5 dènye ane yo. Lè ou te elèv, sa konte tou."
+   }
+  },
+  "immigration": {
+   "icon": "plane",
+   "minutes": 5,
+   "why": {
+    "pt": "Como e quando você entrou nos Estados Unidos. Se não lembrar a data exata, coloque a mais próxima que souber.",
+    "es": "Cómo y cuándo entró a Estados Unidos. Si no recuerda la fecha exacta, ponga la más cercana que sepa.",
+    "en": "How and when you came to the United States. If you don't remember the exact date, give the closest one you know.",
+    "ht": "Kijan ak ki lè ou te vin Etazini. Si ou pa sonje dat egzak la, bay sa ki pi pre a ou konnen."
+   }
+  },
+  "parents": {
+   "icon": "family",
+   "minutes": 3,
+   "why": {
+    "pt": "O formulário pede os nomes e o país de nascimento dos seus pais. Sua certidão de nascimento ajuda aqui.",
+    "es": "El formulario pide los nombres y el país de nacimiento de sus padres. Su acta de nacimiento ayuda aquí.",
+    "en": "The form asks for your parents' names and country of birth. Your birth certificate helps here.",
+    "ht": "Fòm nan mande non paran ou ak peyi kote yo fèt. Ak nesans (batistè) ou ap ede w la a."
+   }
+  },
+  "marriage": {
+   "icon": "rings",
+   "minutes": 3,
+   "why": {
+    "pt": "O formulário pergunta sobre casamentos atuais e anteriores. Se você nunca se casou, é só uma pergunta.",
+    "es": "El formulario pregunta por matrimonios actuales y anteriores. Si nunca se casó, es solo una pregunta.",
+    "en": "The form asks about current and past marriages. If you've never been married, it's just one question.",
+    "ht": "Fòm nan poze kesyon sou maryaj ou kounye a ak ansyen maryaj ou. Si ou pa janm marye, se yon sèl kesyon."
+   }
+  },
+  "children": {
+   "icon": "child",
+   "minutes": 2,
+   "why": {
+    "pt": "Inclua todos os filhos, de qualquer idade, onde quer que morem.",
+    "es": "Incluya a todos sus hijos, de cualquier edad, dondequiera que vivan.",
+    "en": "Include all your children, of any age, wherever they live.",
+    "ht": "Mete tout pitit ou, nenpòt laj, nenpòt kote yo rete."
+   }
+  },
+  "biographic": {
+   "icon": "id",
+   "minutes": 2,
+   "why": {
+    "pt": "A imigração usa essas informações para identificar você (como numa carteira de identidade).",
+    "es": "Inmigración usa esta información para identificarle (como en una tarjeta de identidad).",
+    "en": "Immigration uses this to identify you (like on an ID card).",
+    "ht": "Imigrasyon sèvi ak sa pou idantifye ou (tankou sou yon kat idantite)."
+   }
+  },
+  "eligibility": {
+   "icon": "shield",
+   "minutes": 5,
+   "why": {
+    "pt": "Estas são as perguntas de sim/não do formulário. Responda com sinceridade — só o seu advogado vê as respostas. Se não tiver certeza, escolha “Não tenho certeza”: o advogado vai conversar com você.",
+    "es": "Estas son las preguntas de sí/no del formulario. Responda con sinceridad — solo su abogado ve las respuestas. Si no está seguro(a), elija “No estoy seguro(a)”: el abogado hablará con usted.",
+    "en": "These are the form's yes/no questions. Answer honestly — only your attorney sees your answers. If you're not sure, choose “I'm not sure” and your attorney will go over it with you.",
+    "ht": "Sa yo se kesyon wi/non ki sou fòm nan. Reponn ak sensèite — se sèlman avoka ou ki wè repons ou yo. Si ou pa sèten, chwazi “Mwen pa sèten” epi avoka ou ap pale avè ou sou sa."
+   }
+  },
+  "background": {
+   "icon": "shield",
+   "minutes": 4,
+   "why": {
+    "pt": "O formulário faz estas perguntas a todo mundo. Leia cada lista: se nada se aplica, toque em “Nenhuma destas”. Se algo se aplica ou você tem dúvida, marque — só o seu advogado vê, e ele conversa com você.",
+    "es": "El formulario hace estas preguntas a todos. Lea cada lista: si nada aplica, toque “Ninguna de estas”. Si algo aplica o tiene dudas, márquelo — solo su abogado lo ve, y hablará con usted.",
+    "en": "The form asks everyone these questions. Read each list: if nothing applies, tap “None of these”. If something applies or you're unsure, mark it — only your attorney sees it, and they'll talk it through with you.",
+    "ht": "Fòm nan poze tout moun kesyon sa yo. Li chak lis: si anyen pa konsène ou, peze “Okenn nan sa yo”. Si yon bagay konsène ou oswa ou pa sèten, make l — se sèlman avoka ou ki wè l, e l ap pale avè ou sou sa."
+   }
+  },
+  "monthly_money": {
+   "icon": "briefcase",
+   "minutes": 5,
+   "why": {
+    "en": "The office asks about your usual monthly income and expenses so we have this information if it is needed later. These answers are optional. Use amounts before taxes. Enter 0 only when the amount is zero; leave a line blank or choose \"I'm not sure\" if you do not know. This does not request a fee waiver.",
+    "pt": "O escritório pergunta sobre sua renda e suas despesas em um mês comum para ter essas informações se forem necessárias depois. As respostas são opcionais. Use valores antes dos impostos. Digite 0 apenas quando o valor for zero; deixe a linha em branco ou escolha \"Não tenho certeza\" se não souber. Isso não é um pedido de isenção de taxa.",
+    "es": "La oficina pregunta por sus ingresos y gastos de un mes habitual para tener esta información si se necesita después. Las respuestas son opcionales. Use cantidades antes de impuestos. Escriba 0 solo cuando la cantidad sea cero; deje la línea en blanco o elija \"No estoy seguro(a)\" si no sabe. Esto no solicita una exención de la tarifa.",
+    "ht": "Biwo a mande sou lajan ou resevwa ak depans ou nan yon mwa nòmal pou nou gen enfòmasyon sa yo si nou bezwen yo pita. Repons yo pa obligatwa. Sèvi ak montan anvan taks. Ekri 0 sèlman lè montan an se zewo; kite liy lan vid oswa chwazi \"Mwen pa sèten\" si ou pa konnen. Sa pa yon demann pou egzanpsyon frè."
+   }
+  }
+ },
+ "questions": {
+  "given_name": {
+   "pt": "Use o nome que está no passaporte, mesmo que as pessoas te chamem de outro jeito.",
+   "es": "Use el nombre que aparece en su pasaporte, aunque la gente le llame de otra forma.",
+   "en": "Use the name on your passport, even if people call you something else.",
+   "ht": "Sèvi ak non ki sou paspò ou, menm si moun rele ou yon lòt jan."
+  },
+  "used_other_names": {
+   "pt": "Inclui apelidos usados em documentos, nome de solteira, ou um nome errado que alguém escreveu num papel da imigração.",
+   "es": "Incluye apodos usados en documentos, apellido de soltera, o un nombre equivocado que alguien escribió en un papel de inmigración.",
+   "en": "This includes nicknames used on documents, a maiden name, or a wrong name someone wrote on an immigration paper.",
+   "ht": "Sa gen ladan l tinon ki te sèvi sou dokiman, yon non jenn fi, oswa yon move non yon moun te ekri sou yon papye imigrasyon."
+  },
+  "other_dob": {
+   "pt": "Por exemplo, se algum documento ou a imigração registrou uma data diferente da verdadeira.",
+   "es": "Por ejemplo, si algún documento o inmigración registró una fecha distinta a la verdadera.",
+   "en": "For example, if a document or immigration ever recorded a date that isn't your real one.",
+   "ht": "Pa egzanp, si yon dokiman oswa imigrasyon te janm ekri yon dat ki pa vrè dat ou."
+  },
+  "birth_city": {
+   "pt": "Como está na sua certidão de nascimento.",
+   "es": "Como aparece en su acta de nacimiento.",
+   "en": "As it appears on your birth certificate.",
+   "ht": "Jan li ekri sou ak nesans (batistè) ou."
+  },
+  "a_number": {
+   "pt": "Não sabe? Tudo bem, deixe em branco — achamos nos seus documentos.",
+   "es": "¿No lo sabe? Está bien, déjelo en blanco — lo buscamos en sus documentos.",
+   "en": "Don't know it? That's fine, leave it blank — we'll find it in your documents.",
+   "ht": "Ou pa konnen l? Pa gen pwoblèm, kite l vid — n ap jwenn li nan dokiman ou yo."
+  },
+  "ssn": {
+   "pt": "São 9 números, no seu cartão do Social Security.",
+   "es": "Son 9 números, en su tarjeta de Seguro Social.",
+   "en": "9 digits, on your Social Security card.",
+   "ht": "9 chif, sou kat Sosyal Sekirite ou."
+  },
+  "home_since": {
+   "pt": "Se não lembrar o dia, use o dia 1 do mês.",
+   "es": "Si no recuerda el día, use el día 1 del mes.",
+   "en": "If you don't remember the day, use the 1st of the month.",
+   "ht": "Si ou pa sonje jou a, mete premye jou mwa a."
+  },
+  "address_history": {
+   "pt": "Liste cada lugar onde morou nos últimos 5 anos, começando pelo mais recente. Datas aproximadas estão ok.",
+   "es": "Liste cada lugar donde vivió en los últimos 5 años, empezando por el más reciente. Fechas aproximadas están bien.",
+   "en": "List each place you lived in the last 5 years, most recent first. Approximate dates are fine.",
+   "ht": "Mete chak kote ou te rete nan 5 dènye ane yo, sa ki pi resan an anvan. Dat apeprè bon."
+  },
+  "last_foreign_address": {
+   "pt": "O último endereço onde você morou antes de vir para os EUA — por exemplo, a casa da sua família no Brasil.",
+   "es": "La última dirección donde vivió antes de venir a EE. UU. — por ejemplo, la casa de su familia en su país.",
+   "en": "The last address you lived at before coming to the U.S. — for example, your family's home back home.",
+   "ht": "Dènye adrès kote ou te rete anvan ou vin Etazini — pa egzanp, kay fanmi ou lakay."
+  },
+  "current_job": {
+   "pt": "Se você estuda, coloque o nome da escola e “estudante”. Se não trabalha nem estuda, escreva “desempregado”.",
+   "es": "Si estudia, ponga el nombre de la escuela y “estudiante”. Si no trabaja ni estudia, escriba “desempleado”.",
+   "en": "If you're a student, put the school's name and “student”. If you don't work or study, write “unemployed”.",
+   "ht": "Si ou se elèv, mete non lekòl la ak “elèv”. Si ou pa travay ni ou pa etidye, ekri “san travay”."
+  },
+  "last_foreign_job": {
+   "pt": "O último trabalho ou escola antes de vir para os EUA. Escola também conta.",
+   "es": "El último trabajo o escuela antes de venir a EE. UU. La escuela también cuenta.",
+   "en": "Your last job or school before coming to the U.S. School counts.",
+   "ht": "Dènye travay ou oswa lekòl ou anvan ou vin Etazini. Lekòl konte."
+  },
+  "last_entry_date": {
+   "pt": "A última vez que você entrou nos EUA. Se não souber o dia exato, coloque o mais próximo.",
+   "es": "La última vez que entró a EE. UU. Si no sabe el día exacto, ponga el más cercano.",
+   "en": "The last time you entered the U.S. If you don't know the exact day, give the closest.",
+   "ht": "Dènye fwa ou te antre Etazini. Si ou pa konnen jou egzak la, bay sa ki pi pre a."
+  },
+  "entry_how": {
+   "pt": "Não há resposta “errada” — escolha o que aconteceu. O escritório cuida do resto.",
+   "es": "No hay respuesta “equivocada” — elija lo que pasó. La oficina se encarga del resto.",
+   "en": "There's no “wrong” answer — choose what happened. The office takes care of the rest.",
+   "ht": "Pa gen “move” repons — chwazi sa ki te pase. Biwo a ap okipe rès la."
+  },
+  "has_i94": {
+   "pt": "O I-94 é o registro de entrada. Quem entrou com visto pode baixar em i94.cbp.dhs.gov. Quem foi solto na fronteira às vezes recebeu um papel I-94 ou de parole.",
+   "es": "El I-94 es el registro de entrada. Quien entró con visa puede descargarlo en i94.cbp.dhs.gov. A quien soltaron en la frontera a veces le dieron un papel I-94 o de parole.",
+   "en": "The I-94 is your arrival record. If you came with a visa you can download it at i94.cbp.dhs.gov. People released at the border were sometimes given an I-94 or parole paper.",
+   "ht": "I-94 a se papye ki montre lè ou te rive. Si ou te vini ak yon viza, ou ka telechaje l sou i94.cbp.dhs.gov. Moun yo te lage sou fwontyè a pafwa te resevwa yon I-94 oswa yon papye parole."
+  },
+  "applied_visa_abroad": {
+   "pt": "Visto de imigrante (green card) pedido num consulado americano fora dos EUA. Visto de turista não conta aqui.",
+   "es": "Visa de inmigrante (green card) pedida en un consulado de EE. UU. fuera del país. La visa de turista no cuenta aquí.",
+   "en": "An immigrant (green card) visa applied for at a U.S. consulate abroad. A tourist visa doesn't count here.",
+   "ht": "Yon viza imigran (green card) ou te mande nan yon konsila ameriken lòt bò. Yon viza touris pa konte isit la."
+  },
+  "someone_petitioned": {
+   "pt": "Por exemplo, um parente ou empregador que entrou com um pedido de imigração para você. O seu pedido de SIJS não conta aqui.",
+   "es": "Por ejemplo, un familiar o empleador que presentó una petición de inmigración para usted. Su petición de SIJS no cuenta aquí.",
+   "en": "For example, a relative or employer who filed an immigration petition for you. Your SIJS petition doesn't count here.",
+   "ht": "Pa egzanp, yon fanmi oswa yon patwon ki te depoze yon petisyon imigrasyon pou ou. Petisyon SIJS ou a pa konte isit la."
+  },
+  "mother_name": {
+   "pt": "Nome completo, como ela usa hoje. Se ela mudou de nome (por exemplo, ao casar), coloque o nome de solteira na próxima pergunta.",
+   "es": "Nombre completo, como lo usa hoy. Si cambió de nombre (por ejemplo, al casarse), ponga el de soltera en la siguiente pregunta.",
+   "en": "Full name as she uses it today. If she changed her name (for example, when she married), put her maiden name in the next question.",
+   "ht": "Non konplè li jan li sèvi ak li jodi a. Si li te chanje non (pa egzanp, lè li te marye), mete non jenn fi li nan pwochen kesyon an."
+  },
+  "mother_deceased": {
+   "pt": "Perguntamos só para preencher o formulário corretamente.",
+   "es": "Lo preguntamos solo para llenar el formulario correctamente.",
+   "en": "We ask only to fill in the form correctly.",
+   "ht": "Nou mande sa sèlman pou nou ranpli fòm nan kòrèkteman."
+  },
+  "father_name": {
+   "pt": "Se o seu pai não aparece na certidão ou você não sabe o nome dele, escreva “desconhecido”.",
+   "es": "Si su padre no aparece en el acta o no sabe su nombre, escriba “desconocido”.",
+   "en": "If your father isn't on your birth certificate or you don't know his name, write “unknown”.",
+   "ht": "Si papa ou pa sou ak nesans (batistè) ou oswa ou pa konnen non li, ekri “enkoni”."
+  },
+  "marital_status": {
+   "pt": "Morar junto sem casar no papel conta como solteiro(a).",
+   "es": "Vivir juntos sin casarse legalmente cuenta como soltero(a).",
+   "en": "Living together without a legal marriage counts as single.",
+   "ht": "Viv ansanm san yon maryaj legal (plase) konte kòm selibatè."
+  },
+  "times_married": {
+   "pt": "Conte o casamento atual também.",
+   "es": "Cuente también el matrimonio actual.",
+   "en": "Count your current marriage too.",
+   "ht": "Konte maryaj ou kounye a tou."
+  },
+  "total_children": {
+   "pt": "Todos os filhos: biológicos, adotados ou enteados, de qualquer idade, vivendo em qualquer país. Se não tem filhos, coloque 0.",
+   "es": "Todos los hijos: biológicos, adoptados o hijastros, de cualquier edad, que vivan en cualquier país. Si no tiene hijos, ponga 0.",
+   "en": "All children: biological, adopted or stepchildren, any age, living in any country. If you have none, enter 0.",
+   "ht": "Tout pitit: pitit ou fè, pitit adopte oswa pitit mari/madanm ou, nenpòt laj, k ap viv nan nenpòt peyi. Si ou pa genyen, mete 0."
+  },
+  "ethnicity": {
+   "pt": "Pessoas do Brasil costumam escolher “Não hispânico ou latino” — hispânico se refere a países de língua espanhola. Escolha como você se identifica.",
+   "es": "Hispano o latino se refiere a personas de origen de países de habla hispana. Elija cómo se identifica.",
+   "en": "Hispanic refers to Spanish-speaking origins; people from Brazil often choose “Not Hispanic or Latino”. Choose how you identify.",
+   "ht": "Ispanik vle di orijin nan yon peyi kote moun pale panyòl; moun ki soti Ayiti oswa Brezil konn chwazi “Pa Ispanik ni Latino”. Chwazi jan ou idantifye tèt ou."
+  },
+  "race": {
+   "pt": "Escolha a que melhor descreve você.",
+   "es": "Elija la que mejor le describe.",
+   "en": "Choose the one that best describes you.",
+   "ht": "Chwazi sa ki dekri ou pi byen an."
+  },
+  "height": {
+   "pt": "Use o que você souber — centímetros ou pés e polegadas. Nós convertemos para o formulário.",
+   "es": "Use lo que sepa — centímetros o pies y pulgadas. Nosotros lo convertimos para el formulario.",
+   "en": "Use whichever you know — centimeters or feet and inches. We convert it for the form.",
+   "ht": "Sèvi ak sa ou konnen an — santimèt oswa pye ak pous. Nou konvèti l pou fòm nan."
+  },
+  "weight": {
+   "pt": "Use o que você souber — quilos ou libras. Nós convertemos para o formulário.",
+   "es": "Use lo que sepa — kilos o libras. Nosotros lo convertimos para el formulario.",
+   "en": "Use whichever you know — kilograms or pounds. We convert it for the form.",
+   "ht": "Sèvi ak sa ou konnen an — kilo oswa liv. Nou konvèti l pou fòm nan."
+  },
+  "worked_without_authorization": {
+   "pt": "Qualquer trabalho pago antes de ter a autorização de trabalho conta, mesmo informal.",
+   "es": "Cualquier trabajo pagado antes de tener el permiso de trabajo cuenta, aunque sea informal.",
+   "en": "Any paid work before you had a work permit counts, even informal work.",
+   "ht": "Nenpòt travay yo te peye ou anvan ou te gen yon pèmi travay konte, menm travay enfòmèl (san papye)."
+  },
+  "in_proceedings": {
+   "pt": "Se você tem ou teve audiência na corte de imigração (papel “Notice to Appear”), responda Sim.",
+   "es": "Si tiene o tuvo audiencia en la corte de inmigración (papel “Notice to Appear”), responda Sí.",
+   "en": "If you have or had a hearing in immigration court (a “Notice to Appear” paper), answer Yes.",
+   "ht": "Si ou gen oswa ou te gen yon odyans nan tribinal imigrasyon (yon papye “Notice to Appear”), reponn Wi."
+  },
+  "public_benefits": {
+   "en": "For example: cash assistance or SSI. If you are not sure whether you received a benefit, choose I'm not sure so the office can check.",
+   "pt": "Por exemplo: assistência em dinheiro ou SSI. Se não tiver certeza de ter recebido um benefício, escolha Não tenho certeza para que o escritório verifique.",
+   "es": "Por ejemplo: asistencia en efectivo o SSI. Si no está seguro de haber recibido un beneficio, elija No estoy seguro para que la oficina lo verifique.",
+   "ht": "Pa egzanp: èd an lajan oswa SSI. Si ou pa sèten si ou te resevwa yon benefis, chwazi Mwen pa sèten pou biwo a ka verifye."
+  },
+  "arrested": {
+   "pt": "Inclua qualquer prisão, detenção ou multa criminal, em qualquer país, mesmo que o caso tenha sido arquivado, de quando era menor de idade, ou apagado da ficha. Detenção pela imigração na fronteira também conta. Pediremos os papéis do tribunal para o advogado.",
+   "es": "Incluya cualquier arresto, detención o citación criminal, en cualquier país, aunque el caso se haya cerrado, fuera de menor de edad, o se haya borrado del récord. La detención por inmigración en la frontera también cuenta. Pediremos los papeles del tribunal para el abogado.",
+   "en": "Include any arrest, detention or criminal citation, in any country — even if the case was dismissed, happened when you were a minor, or was erased from your record. Immigration detention at the border counts too. We'll ask for the court papers for your attorney.",
+   "ht": "Mete nenpòt arestasyon, detansyon oswa tikè kriminèl, nan nenpòt peyi — menm si yo te lage ka a, si li te rive lè ou te minè, oswa si yo te efase l nan dosye ou. Detansyon imigrasyon sou fwontyè a konte tou. N ap mande papye tribinal yo pou avoka ou."
+  },
+  "criminal_cases": {
+   "pt": "Um item para cada caso. Se não souber detalhes, escreva o que lembrar — o advogado completa com os papéis do tribunal.",
+   "es": "Un elemento por cada caso. Si no sabe detalles, escriba lo que recuerde — el abogado completa con los papeles del tribunal.",
+   "en": "One entry per case. If you don't know the details, write what you remember — your attorney completes it from the court papers.",
+   "ht": "Yon antre pou chak ka. Si ou pa konnen detay yo, ekri sa ou sonje — avoka ou ap konplete l ak papye tribinal yo."
+  },
+  "eye_color": {
+   "pt": "Escolha a mais próxima.",
+   "es": "Elija la más parecida.",
+   "en": "Choose the closest.",
+   "ht": "Chwazi sa ki pi pre a."
+  },
+  "hair_color": {
+   "pt": "Escolha a mais próxima da sua cor natural de hoje.",
+   "es": "Elija la más parecida a su color natural de hoy.",
+   "en": "Choose the closest to your natural color today.",
+   "ht": "Chwazi sa ki pi pre koulè natirèl cheve ou jodi a."
+  },
+  "dob": {
+   "pt": "Como está no passaporte.",
+   "es": "Como aparece en el pasaporte.",
+   "en": "As it appears on your passport.",
+   "ht": "Jan li ekri nan paspò ou."
+  },
+  "citizenship": {
+   "pt": "Normalmente é o mesmo país onde você nasceu.",
+   "es": "Normalmente es el mismo país donde nació.",
+   "en": "Usually the same as your country of birth.",
+   "ht": "Anjeneral se menm peyi kote ou fèt la."
+  },
+  "dual_citizenship": {
+   "pt": "Por exemplo, se você também tem cidadania italiana ou portuguesa por causa de um avô.",
+   "es": "Por ejemplo, si también tiene ciudadanía española o italiana por un abuelo.",
+   "en": "For example, if you also have Italian or Portuguese citizenship through a grandparent.",
+   "ht": "Pa egzanp, si ou gen sitwayènte yon lòt peyi tou akoz yon granparan."
+  },
+  "has_ssn": {
+   "pt": "Só conta um número dado pela Social Security. O ITIN (número de imposto) não conta.",
+   "es": "Solo cuenta un número dado por el Seguro Social. El ITIN (número de impuestos) no cuenta.",
+   "en": "Only a number issued by Social Security counts. An ITIN (tax number) doesn't.",
+   "ht": "Se sèlman yon nimewo Sosyal Sekirite bay ki konte. Yon ITIN (nimewo taks) pa konte."
+  },
+  "home_address": {
+   "pt": "Onde você mora agora, mesmo que seja na casa de outra pessoa.",
+   "es": "Donde vive ahora, aunque sea en casa de otra persona.",
+   "en": "Where you live now, even if it's someone else's home.",
+   "ht": "Kote ou rete kounye a, menm si se lakay yon lòt moun."
+  },
+  "job_history": {
+   "pt": "Cada trabalho ou escola dos últimos 5 anos, do mais recente para o mais antigo. Períodos sem trabalho também contam: escreva “desempregado”.",
+   "es": "Cada trabajo o escuela de los últimos 5 años, del más reciente al más antiguo. Los períodos sin trabajo también cuentan: escriba “desempleado”.",
+   "en": "Each job or school in the last 5 years, most recent first. Time without work counts too: write “unemployed”.",
+   "ht": "Chak travay oswa lekòl nan 5 dènye ane yo, sa ki pi resan an anvan. Tan ou pa t travay konte tou: ekri “san travay”."
+  },
+  "last_entry_place": {
+   "pt": "Cidade e estado onde você entrou — por exemplo, Miami, FL, ou perto de El Paso, TX. Se atravessou a fronteira e não sabe a cidade, coloque a mais próxima que souber.",
+   "es": "Ciudad y estado por donde entró — por ejemplo, Miami, FL, o cerca de El Paso, TX. Si cruzó la frontera y no sabe la ciudad, ponga la más cercana que sepa.",
+   "en": "The city and state where you came in — for example Miami, FL, or near El Paso, TX. If you crossed the border and don't know the town, give the closest one you know.",
+   "ht": "Vil ak eta kote ou te antre — pa egzanp Miami, FL, oswa toupre El Paso, TX. Si ou te travèse fwontyè a epi ou pa konnen non vil la, bay sa ki pi pre a ou konnen."
+  },
+  "visa_type": {
+   "pt": "Está impresso no visto, no seu passaporte — por exemplo, B1/B2 (turista).",
+   "es": "Está impreso en la visa, en su pasaporte — por ejemplo, B1/B2 (turista).",
+   "en": "It's printed on the visa in your passport — for example B1/B2 (tourist).",
+   "ht": "Li enprime sou viza ki nan paspò ou — pa egzanp B1/B2 (touris)."
+  },
+  "first_time_in_us": {
+   "pt": "Responda Não se você já esteve nos EUA antes da última entrada, mesmo que por pouco tempo.",
+   "es": "Responda No si estuvo en EE. UU. antes de su última entrada, aunque fuera por poco tiempo.",
+   "en": "Answer No if you were in the U.S. before your last entry, even briefly.",
+   "ht": "Reponn Non si ou te Etazini anvan dènye fwa ou te antre a, menm pou yon ti tan."
+  },
+  "other_entries": {
+   "pt": "Para cada vez: mais ou menos quando, onde e como entrou. Datas aproximadas estão ok.",
+   "es": "Para cada vez: más o menos cuándo, dónde y cómo entró. Fechas aproximadas están bien.",
+   "en": "For each time: roughly when, where and how you came in. Approximate dates are fine.",
+   "ht": "Pou chak fwa: apeprè ki lè, ki kote ak kijan ou te antre. Dat apeprè bon."
+  },
+  "other_processes": {
+   "pt": "Além do seu caso de SIJS — por exemplo, asilo, TPS, DACA, um pedido feito por um parente, ou a loteria de vistos.",
+   "es": "Además de su caso de SIJS — por ejemplo, asilo, TPS, DACA, una petición de un familiar, o la lotería de visas.",
+   "en": "Besides your SIJS case — for example asylum, TPS, DACA, a petition from a relative, or the visa lottery.",
+   "ht": "Apa dosye SIJS ou a — pa egzanp azil, TPS, DACA, yon petisyon yon fanmi te fè, oswa lotri viza a."
+  },
+  "mother_birth_name": {
+   "pt": "Normalmente o nome de solteira, antes de casar. Deixe em branco se ela nunca mudou de nome.",
+   "es": "Normalmente el nombre de soltera, antes de casarse. Déjelo en blanco si nunca cambió de nombre.",
+   "en": "Usually her maiden name, before marriage. Leave blank if she never changed her name.",
+   "ht": "Anjeneral se non jenn fi li, anvan li te marye. Kite l vid si li pa t janm chanje non."
+  },
+  "father_birth_name": {
+   "pt": "Deixe em branco se ele nunca mudou de nome.",
+   "es": "Déjelo en blanco si nunca cambió de nombre.",
+   "en": "Leave blank if he never changed his name.",
+   "ht": "Kite l vid si li pa t janm chanje non."
+  },
+  "mother_birth_country": {
+   "pt": "Onde ela nasceu, mesmo que more em outro país hoje.",
+   "es": "Donde nació, aunque hoy viva en otro país.",
+   "en": "Where she was born, even if she lives somewhere else now.",
+   "ht": "Kote li te fèt, menm si li rete yon lòt kote kounye a."
+  },
+  "father_birth_country": {
+   "pt": "Onde ele nasceu, mesmo que more em outro país hoje.",
+   "es": "Donde nació, aunque hoy viva en otro país.",
+   "en": "Where he was born, even if he lives somewhere else now.",
+   "ht": "Kote li te fèt, menm si li rete yon lòt kote kounye a."
+  },
+  "father_deceased": {
+   "pt": "Perguntamos só para preencher o formulário corretamente.",
+   "es": "Lo preguntamos solo para llenar el formulario correctamente.",
+   "en": "We ask only to fill in the form correctly.",
+   "ht": "Nou mande sa sèlman pou nou ranpli fòm nan kòrèkteman."
+  },
+  "marriage_place": {
+   "pt": "Cidade, estado e país.",
+   "es": "Ciudad, estado y país.",
+   "en": "City, state and country.",
+   "ht": "Vil, eta ak peyi."
+  },
+  "spouse_name": {
+   "pt": "Nome completo, como ele(a) usa hoje.",
+   "es": "Nombre completo, como lo usa hoy.",
+   "en": "Full name as your spouse uses it today.",
+   "ht": "Non konplè mari oswa madanm ou jan li sèvi ak li jodi a."
+  },
+  "spouse_military": {
+   "pt": "Exército, Marinha, Aeronáutica, Fuzileiros Navais ou Guarda Costeira dos EUA, hoje.",
+   "es": "Ejército, Marina, Fuerza Aérea, Infantería de Marina o Guardia Costera de EE. UU., hoy.",
+   "en": "The U.S. Army, Navy, Air Force, Marines, Space Force or Coast Guard, right now.",
+   "ht": "Lame (Army), Marin (Navy), Lafòs Ayeryen (Air Force), Marines, Space Force oswa Gad Kòt (Coast Guard) Etazini, kounye a."
+  },
+  "prior_marriages": {
+   "pt": "Um item para cada casamento anterior. A sentença de divórcio mostra a data e o lugar onde terminou.",
+   "es": "Un elemento por cada matrimonio anterior. La sentencia de divorcio muestra la fecha y el lugar donde terminó.",
+   "en": "One entry per earlier marriage. The divorce decree shows the date and place where it ended.",
+   "ht": "Yon antre pou chak ansyen maryaj. Papye divòs la montre dat ak kote maryaj la te fini."
+  },
+  "children": {
+   "pt": "Inclua filhos que moram em outro país. O A# só se eles tiverem.",
+   "es": "Incluya a los hijos que viven en otro país. El A# solo si lo tienen.",
+   "en": "Include children who live in another country. The A-Number only if they have one.",
+   "ht": "Mete pitit ki rete nan yon lòt peyi tou. Nimewo A a sèlman si yo genyen youn."
+  },
+  "denied_admission": {
+   "pt": "Quer dizer: um oficial no aeroporto ou na fronteira não deixou você entrar e mandou você de volta.",
+   "es": "Es decir: un oficial en el aeropuerto o en la frontera no le dejó entrar y le mandó de regreso.",
+   "en": "This means an officer at an airport or border didn't let you in and sent you back.",
+   "ht": "Sa vle di yon ofisye nan yon ayewopò oswa sou fwontyè a pa t kite ou antre epi li te voye ou tounen."
+  },
+  "denied_visa": {
+   "pt": "Qualquer visto americano negado num consulado — inclusive de turista, há muitos anos ou quando você era criança.",
+   "es": "Cualquier visa de EE. UU. negada en un consulado — incluso de turista, hace muchos años o cuando era niño(a).",
+   "en": "Any U.S. visa refused at a consulate — including a tourist visa, years ago or when you were a child.",
+   "ht": "Nenpòt viza ameriken yon konsila te refize — menm yon viza touris, sa gen lontan oswa lè ou te timoun."
+  },
+  "violated_status": {
+   "pt": "É sobre um visto ou status que você teve. Por exemplo, com visto de turista: ficar além da data permitida, ou trabalhar. Se nunca teve visto nem status e tiver dúvida, escolha “Não tenho certeza”.",
+   "es": "Es sobre una visa o estatus que tuvo. Por ejemplo, con visa de turista: quedarse después de la fecha permitida, o trabajar. Si nunca tuvo visa ni estatus y tiene dudas, elija “No estoy seguro(a)”.",
+   "en": "This is about a visa or status you had. For example, on a tourist visa: staying past the allowed date, or working. If you never had a visa or status and aren't sure, choose “I'm not sure”.",
+   "ht": "Sa a se sou yon viza oswa yon estati ou te genyen. Pa egzanp, ak yon viza touris: rete apre dat yo te pèmèt la, oswa travay. Si ou pa t janm gen viza ni estati epi ou pa sèten, chwazi “Mwen pa sèten”."
+  },
+  "final_order": {
+   "pt": "Uma ordem de um juiz de imigração (ou de um oficial) dizendo que você deve sair dos EUA — às vezes chamada de ordem de deportação. Inclui uma ordem dada quando a pessoa não foi à audiência.",
+   "es": "Una orden de un juez de inmigración (o de un oficial) que dice que debe salir de EE. UU. — a veces llamada orden de deportación. Incluye una orden dada cuando la persona no fue a la audiencia.",
+   "en": "An order from an immigration judge (or an officer) saying you must leave the U.S. — sometimes called a deportation order. This includes an order made when someone missed their hearing.",
+   "ht": "Yon lòd yon jij imigrasyon (oswa yon ofisye) te bay ki di ou dwe kite Etazini — pafwa yo rele l lòd depòtasyon. Sa gen ladan l yon lòd yo bay lè yon moun pa t al nan odyans li."
+  },
+  "order_reinstated": {
+   "pt": "Só acontece se você já foi deportado, voltou aos EUA, e a imigração reativou a ordem antiga.",
+   "es": "Solo pasa si ya fue deportado, volvió a EE. UU., e inmigración reactivó la orden anterior.",
+   "en": "This only happens if you were deported before, came back to the U.S., and immigration put the old order back into effect.",
+   "ht": "Sa rive sèlman si yo te depòte ou anvan, ou te tounen Etazini, epi imigrasyon te remete ansyen lòd la an vigè."
+  },
+  "lpr_rescinded": {
+   "pt": "Só se você já teve green card (residência permanente) e ele foi cancelado. A maioria das pessoas responde Não.",
+   "es": "Solo si alguna vez tuvo green card (residencia permanente) y se la cancelaron. La mayoría responde No.",
+   "en": "Only if you once had a green card (permanent residence) and it was taken away. Most people answer No.",
+   "ht": "Sèlman si ou te gen yon green card (rezidans pèmanan) yon lè epi yo te retire l. Pifò moun reponn Non."
+  },
+  "voluntary_departure": {
+   "pt": "“Saída voluntária” é quando um juiz ou oficial permite que você saia dos EUA por conta própria até uma data. Responda Sim se recebeu isso e não saiu a tempo.",
+   "es": "“Salida voluntaria” es cuando un juez u oficial le permite salir de EE. UU. por su cuenta antes de una fecha. Responda Sí si se la dieron y no salió a tiempo.",
+   "en": "“Voluntary departure” is when a judge or officer lets you leave the U.S. on your own by a deadline. Answer Yes if you were given it and didn't leave in time.",
+   "ht": "“Voluntary departure” (depa volontè) se lè yon jij oswa yon ofisye kite ou kite Etazini poukont ou anvan yon dat limit. Reponn Wi si yo te ba ou sa epi ou pa t kite alè."
+  },
+  "applied_relief": {
+   "pt": "Por exemplo: um pedido de asilo, ou outro pedido para não ser deportado, feito na corte de imigração ou à imigração.",
+   "es": "Por ejemplo: una solicitud de asilo, u otra petición para no ser deportado, hecha en la corte de inmigración o a inmigración.",
+   "en": "For example: an asylum application, or another request not to be deported, made in immigration court or to immigration.",
+   "ht": "Pa egzanp: yon demann azil, oswa yon lòt demann pou yo pa depòte ou, ou te fè nan tribinal imigrasyon oswa bay imigrasyon."
+  },
+  "j_visa": {
+   "pt": "Só se você já veio com visto J-1 ou J-2 (intercâmbio, au pair). A maioria das pessoas responde Não.",
+   "es": "Solo si alguna vez vino con visa J-1 o J-2 (intercambio, au pair). La mayoría responde No.",
+   "en": "Only if you ever came on a J-1 or J-2 visa (exchange program, au pair). Most people answer No.",
+   "ht": "Sèlman si ou te janm vini ak yon viza J-1 oswa J-2 (pwogram echanj, au pair). Pifò moun reponn Non."
+  },
+  "committed_crime": {
+   "pt": "Mesmo que nunca tenha sido preso ou acusado. O seu advogado precisa saber para proteger o seu caso.",
+   "es": "Aunque nunca le hayan arrestado ni acusado. Su abogado necesita saberlo para proteger su caso.",
+   "en": "Even if you were never arrested or charged. Your attorney needs to know to protect your case.",
+   "ht": "Menm si yo pa t janm arete ou oswa akize ou. Avoka ou bezwen konnen pou l ka pwoteje dosye ou."
+  },
+  "other_names": {
+   "pt": "Um item para cada nome diferente — por exemplo, outro sobrenome, ou o nome escrito de outro jeito em algum documento.",
+   "es": "Un elemento por cada nombre distinto — por ejemplo, otro apellido, o el nombre escrito de otra forma en algún documento.",
+   "en": "One entry per different name — for example another surname, or your name spelled differently on a document.",
+   "ht": "Yon antre pou chak non diferan — pa egzanp yon lòt siyati, oswa non ou ekri yon lòt jan sou yon dokiman."
+  },
+  "sex": {
+   "pt": "Como está no seu passaporte ou certidão de nascimento.",
+   "es": "Como aparece en su pasaporte o acta de nacimiento.",
+   "en": "As shown on your passport or birth certificate.",
+   "ht": "Jan li ekri sou paspò ou oswa sou ak nesans (batistè) ou."
+  },
+  "birth_country": {
+   "pt": "O país com o nome que ele tem hoje.",
+   "es": "El país con el nombre que tiene hoy.",
+   "en": "The country by its name today.",
+   "ht": "Peyi a ak non li genyen jodi a."
+  },
+  "second_citizenship": {
+   "pt": "O outro país de que você também é cidadão(ã).",
+   "es": "El otro país del que también es ciudadano(a).",
+   "en": "The other country you're also a citizen of.",
+   "ht": "Lòt peyi kote ou se sitwayen tou."
+  },
+  "email": {
+   "pt": "Opcional. Se tiver, usamos para mandar avisos sobre o seu caso.",
+   "es": "Opcional. Si tiene, lo usamos para enviarle avisos sobre su caso.",
+   "en": "Optional. If you have one, we use it to send you updates about your case.",
+   "ht": "Pa obligatwa. Si ou genyen youn, nou sèvi ak li pou voye nouvèl sou dosye ou."
+  },
+  "other_processes_which": {
+   "pt": "Escreva o que lembrar: o tipo de pedido, mais ou menos quando, e se ainda está em andamento. Não precisa ser exato.",
+   "es": "Escriba lo que recuerde: el tipo de solicitud, más o menos cuándo, y si sigue en trámite. No tiene que ser exacto.",
+   "en": "Write what you remember: the kind of application, roughly when, and whether it's still open. It doesn't have to be exact.",
+   "ht": "Ekri sa ou sonje: ki kalite demann, apeprè ki lè, epi si li toujou ap trete. Li pa bezwen egzak."
+  },
+  "marriage_date": {
+   "pt": "Está na certidão de casamento.",
+   "es": "Está en el acta de matrimonio.",
+   "en": "It's on your marriage certificate.",
+   "ht": "Li sou ak maryaj ou."
+  },
+  "spouse_dob": {
+   "pt": "Se não souber o dia exato, coloque o mais próximo que souber.",
+   "es": "Si no sabe el día exacto, ponga el más cercano que sepa.",
+   "en": "If you don't know the exact day, give the closest one you know.",
+   "ht": "Si ou pa konnen jou egzak la, bay sa ki pi pre a ou konnen."
+  },
+  "spouse_country": {
+   "pt": "O país onde seu cônjuge nasceu.",
+   "es": "El país donde nació su cónyuge.",
+   "en": "The country where your spouse was born.",
+   "ht": "Peyi kote mari oswa madanm ou fèt."
+  },
+  "spouse_a_number": {
+   "pt": "Só se seu cônjuge tiver um. Deixe em branco se não souber.",
+   "es": "Solo si su cónyuge tiene uno. Déjelo en blanco si no lo sabe.",
+   "en": "Only if your spouse has one. Leave blank if you don't know it.",
+   "ht": "Sèlman si mari oswa madanm ou genyen youn. Kite l vid si ou pa konnen l."
+  },
+  "s_court": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_court_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_drugs": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_drugs_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_vice": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_vice_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_trafficking": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_trafficking_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_official": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_official_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_armed": {
+   "pt": "Serviço militar obrigatório também conta (por exemplo, o alistamento no Brasil). Marque se serviu.",
+   "es": "El servicio militar obligatorio también cuenta. Márquelo si lo hizo.",
+   "en": "Required military service counts too (for example, conscription in your country). Mark it if you served.",
+   "ht": "Sèvis militè obligatwa konte tou (pa egzanp, sèvis militè obligatwa nan peyi ou). Make l si ou te sèvi."
+  },
+  "s_armed_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_violence": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_violence_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_immigration": {
+   "pt": "Atenção ao “cidadão americano”: marcar “U.S. citizen” num formulário de emprego (I-9), mesmo por engano, conta. Se tiver dúvida, escolha “Não tenho certeza”.",
+   "es": "Atención a “ciudadano estadounidense”: marcar “U.S. citizen” en un formulario de empleo (I-9), aunque sea por error, cuenta. Si tiene dudas, elija “No estoy seguro(a)”.",
+   "en": "About “U.S. citizen”: checking “U.S. citizen” on a job form (I-9), even by mistake, counts. If you're unsure, choose “I'm not sure”.",
+   "ht": "Sou “sitwayen ameriken”: si ou te make “U.S. citizen” sou yon fòm travay (I-9), menm pa erè, sa konte. Si ou pa sèten, chwazi “Mwen pa sèten”."
+  },
+  "s_immigration_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_removal": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_removal_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "s_other": {
+   "pt": "Marque só o que for verdade para você. Se não entender algum item, escolha “Não tenho certeza” — o advogado explica.",
+   "es": "Marque solo lo que sea cierto para usted. Si no entiende algún punto, elija “No estoy seguro(a)” — el abogado le explica.",
+   "en": "Mark only what is true for you. If you don't understand an item, choose “I'm not sure” — your attorney will explain.",
+   "ht": "Make sèlman sa ki vre pou ou. Si ou pa konprann yon liy, chwazi “Mwen pa sèten” — avoka ou ap eksplike ou."
+  },
+  "s_other_details": {
+   "pt": "Escreva com suas palavras. Não precisa ser exato — o advogado vai conversar com você antes de qualquer coisa ir para o formulário.",
+   "es": "Escriba con sus palabras. No tiene que ser exacto — el abogado hablará con usted antes de que algo vaya al formulario.",
+   "en": "Use your own words. It doesn't have to be exact — your attorney will talk with you before anything goes on the form.",
+   "ht": "Sèvi ak pwòp mo pa ou. Li pa bezwen egzak — avoka ou ap pale avè ou anvan anyen ale sou fòm nan."
+  },
+  "other_dobs": {
+   "pt": "Por exemplo, uma data errada que apareceu num documento ou que a imigração registrou.",
+   "es": "Por ejemplo, una fecha equivocada que apareció en un documento o que registró inmigración.",
+   "en": "For example, a wrong date that appeared on a document or that immigration recorded.",
+   "ht": "Pa egzanp, yon move dat ki te parèt sou yon dokiman oswa imigrasyon te anrejistre."
+  },
+  "other_a_number": {
+   "pt": "O A# aparece na autorização de trabalho e nas cartas da imigração. A maioria das pessoas tem só um.",
+   "es": "El A# aparece en el permiso de trabajo y en las cartas de inmigración. La mayoría tiene solo uno.",
+   "en": "The A-Number is on your work permit and immigration letters. Most people only have one.",
+   "ht": "Nimewo A a sou pèmi travay ou ak sou lèt imigrasyon yo. Pifò moun gen yon sèl."
+  },
+  "other_a_numbers": {
+   "pt": "Escreva os números que você tiver, separados por vírgula.",
+   "es": "Escriba los números que tenga, separados por coma.",
+   "en": "Write the numbers you have, separated by commas.",
+   "ht": "Ekri nimewo ou genyen yo, separe ak vigil."
+  },
+  "uscis_account": {
+   "pt": "Só se você tem conta no site da USCIS (my.uscis.gov). São 12 números. Se não sabe, deixe em branco.",
+   "es": "Solo si tiene cuenta en el sitio de USCIS (my.uscis.gov). Son 12 números. Si no lo sabe, déjelo en blanco.",
+   "en": "Only if you have an account on the USCIS website (my.uscis.gov). It's 12 digits. Leave blank if you don't know.",
+   "ht": "Sèlman si ou gen yon kont sou sit entènèt USCIS la (my.uscis.gov). Li gen 12 chif. Kite l vid si ou pa konnen l."
+  },
+  "mail_here": {
+   "pt": "O escritório usa o endereço dele no formulário para a correspondência da imigração. Esta resposta é para o escritório saber onde falar com você.",
+   "es": "La oficina usa su propia dirección en el formulario para el correo de inmigración. Esta respuesta es para que la oficina sepa dónde contactarle.",
+   "en": "The office puts its own address on the form for immigration mail. This answer is so the office knows where to reach you.",
+   "ht": "Biwo a mete pwòp adrès li sou fòm nan pou lèt imigrasyon yo. Repons sa a se pou biwo a konnen ki kote pou l jwenn ou."
+  },
+  "mailing_address": {
+   "pt": "Onde as cartas da imigração devem chegar. Precisa ser um endereço seguro, onde alguém receba para você.",
+   "es": "Donde deben llegar las cartas de inmigración. Debe ser una dirección segura, donde alguien las reciba por usted.",
+   "en": "Where immigration letters should go. It should be a safe address where someone will receive them for you.",
+   "ht": "Kote lèt imigrasyon yo dwe ale. Se pou l yon adrès ki an sekirite, kote yon moun ap resevwa yo pou ou."
+  },
+  "entry_other": {
+   "pt": "Conte do seu jeito: onde, como, e se algum oficial falou com você ou te deu papéis.",
+   "es": "Cuéntelo a su manera: dónde, cómo, y si algún oficial habló con usted o le dio papeles.",
+   "en": "In your own words: where, how, and whether an officer spoke with you or gave you papers.",
+   "ht": "Nan pwòp mo pa ou: ki kote, kijan, epi si yon ofisye te pale avè ou oswa te ba ou papye."
+  },
+  "visa_details": {
+   "pt": "No visto colado no passaporte: o número vermelho fica no canto de baixo à direita. Se não tiver o passaporte, deixe em branco.",
+   "es": "En la visa pegada en el pasaporte: el número rojo está en la esquina inferior derecha. Si no tiene el pasaporte, déjelo en blanco.",
+   "en": "On the visa in your passport: the red number is in the lower right corner. Leave blank if you don't have the passport.",
+   "ht": "Sou viza ki nan paspò ou: nimewo wouj la anba nan kwen adwat la. Kite l vid si ou pa gen paspò a."
+  },
+  "visa_abroad": {
+   "pt": "A carta do consulado mostra a cidade, o resultado e a data. Se não lembrar a data, deixe em branco.",
+   "es": "La carta del consulado muestra la ciudad, el resultado y la fecha. Si no recuerda la fecha, déjela en blanco.",
+   "en": "The consulate's letter shows the city, the result and the date. Leave the date blank if you don't remember it.",
+   "ht": "Lèt konsila a montre vil la, rezilta a ak dat la. Kite dat la vid si ou pa sonje l."
+  },
+  "org_member": {
+   "pt": "A maioria das pessoas tem pelo menos um: igreja, escola, time, grupo de jovens. Isso é normal — liste todos. O advogado decide o que vai no formulário.",
+   "es": "La mayoría tiene al menos uno: iglesia, escuela, equipo, grupo juvenil. Es normal — anótelos todos. El abogado decide qué va en el formulario.",
+   "en": "Most people have at least one: a church, school, team or youth group. That's normal — list them all. Your attorney decides what goes on the form.",
+   "ht": "Pifò moun gen omwen youn: yon legliz, yon lekòl, yon ekip oswa yon gwoup jèn. Sa nòmal — mete yo tout. Se avoka ou ki deside sa ki ale sou fòm nan."
+  },
+  "organizations": {
+   "pt": "Um item para cada grupo. Datas aproximadas estão ok.",
+   "es": "Un elemento por cada grupo. Las fechas aproximadas están bien.",
+   "en": "One entry per group. Approximate dates are fine.",
+   "ht": "Yon antre pou chak gwoup. Dat apeprè bon."
+  },
+  "mother_name_changed": {
+   "pt": "Muitas mães mudam o sobrenome ao casar. Se não souber, escolha “Não tenho certeza”.",
+   "es": "Muchas madres cambian el apellido al casarse. Si no lo sabe, elija “No estoy seguro(a)”.",
+   "en": "Many mothers change their last name when they marry. If you don't know, choose “I'm not sure”.",
+   "ht": "Anpil manman chanje siyati yo lè yo marye. Si ou pa konnen, chwazi “Mwen pa sèten”."
+  },
+  "father_name_changed": {
+   "pt": "É raro, mas acontece. Se não souber, escolha “Não tenho certeza”.",
+   "es": "Es raro, pero pasa. Si no lo sabe, elija “No estoy seguro(a)”.",
+   "en": "It's rare, but it happens. If you don't know, choose “I'm not sure”.",
+   "ht": "Sa pa rive souvan, men li rive. Si ou pa konnen, chwazi “Mwen pa sèten”."
+  },
+  "ssn_applied": {
+   "en": "Include an application even if you never received a number. If you do not remember, choose the unsure option.",
+   "pt": "Inclua um pedido mesmo que nunca tenha recebido um número. Se não lembrar, escolha a opção de dúvida.",
+   "es": "Incluya una solicitud aunque nunca haya recibido un número. Si no recuerda, elija la opción de duda.",
+   "ht": "Mete yon demann menm si ou pa t janm resevwa yon nimewo. Si ou pa sonje, chwazi opsyon ki di ou pa sèten an."
+  },
+  "ssn_application_approved": {
+   "en": "Answer about approval of the application. If the result is unknown, choose the unsure option.",
+   "pt": "Responda sobre a aprovação do pedido. Se não souber o resultado, escolha a opção de dúvida.",
+   "es": "Responda sobre la aprobación de la solicitud. Si no sabe el resultado, elija la opción de duda.",
+   "ht": "Reponn sou apwobasyon demann lan. Si ou pa konnen rezilta a, chwazi opsyon ki di ou pa sèten an."
+  },
+  "ead_applied": {
+   "en": "Include an application even if you never received a work permit. If you do not remember, choose the unsure option.",
+   "pt": "Inclua um pedido mesmo que nunca tenha recebido a autorização de trabalho. Se não lembrar, escolha a opção de dúvida.",
+   "es": "Incluya una solicitud aunque nunca haya recibido el permiso de trabajo. Si no recuerda, elija la opción de duda.",
+   "ht": "Mete yon demann menm si ou pa t janm resevwa yon pèmi travay. Si ou pa sonje, chwazi opsyon ki di ou pa sèten an."
+  },
+  "ead_application_approved": {
+   "en": "Answer about approval of the application. If the result is unknown, choose the unsure option.",
+   "pt": "Responda sobre a aprovação do pedido. Se não souber o resultado, escolha a opção de dúvida.",
+   "es": "Responda sobre la aprobación de la solicitud. Si no sabe el resultado, elija la opción de duda.",
+   "ht": "Reponn sou apwobasyon demann lan. Si ou pa konnen rezilta a, chwazi opsyon ki di ou pa sèten an."
+  },
+  "had_unemployment": {
+   "en": "Include periods without a job during the last five years. You can explain how you covered living costs next.",
+   "pt": "Inclua períodos sem emprego nos últimos cinco anos. Na próxima pergunta, explique como pagou suas despesas.",
+   "es": "Incluya períodos sin empleo en los últimos cinco años. En la siguiente pregunta, explique cómo pagó sus gastos.",
+   "ht": "Mete peryòd ou pa t gen travay nan senk dènye ane yo. Nan pwochen kesyon an, esplike kijan ou te peye depans ou."
+  },
+  "unemployment_support": {
+   "en": "Give approximate dates and explain whether savings, relatives or another source covered your costs. Say which details are unknown.",
+   "pt": "Dê datas aproximadas e explique se usou economias, ajuda de familiares ou outra fonte para pagar as despesas. Diga quais detalhes não sabe.",
+   "es": "Dé fechas aproximadas y explique si usó ahorros, ayuda de familiares u otra fuente para pagar los gastos. Diga qué detalles no sabe.",
+   "ht": "Bay dat apeprè epi esplike si se ekonomi, fanmi oswa yon lòt sous ki te peye depans yo. Di ki detay ou pa konnen."
+  },
+  "used_passport_last_entry": {
+   "en": "Think about your most recent entry into the United States. The passport used then may differ from your current passport.",
+   "pt": "Pense na sua entrada mais recente nos Estados Unidos. O passaporte usado naquela vez pode ser diferente do atual.",
+   "es": "Piense en su entrada más reciente a Estados Unidos. El pasaporte usado en esa ocasión puede ser distinto del actual.",
+   "ht": "Reflechi sou dènye fwa ou te antre Ozetazini. Paspò ou te itilize lè sa a ka diferan ak paspò ou genyen kounye a."
+  },
+  "last_entry_passport_number": {
+   "en": "Copy the number from the passport used at that entry. Do not substitute a newer passport number. If unknown, choose the unsure option.",
+   "pt": "Copie o número do passaporte usado naquela entrada. Não coloque o número de um passaporte mais novo. Se não souber, escolha a opção de dúvida.",
+   "es": "Copie el número del pasaporte usado en esa entrada. No lo sustituya por el número de un pasaporte más reciente. Si no sabe, elija la opción de duda.",
+   "ht": "Kopye nimewo paspò ou te itilize lè ou te antre a. Pa mete nimewo yon paspò ki pi nouvo nan plas li. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "self_paid_us_travel": {
+   "en": "Answer whether you paid for your own ticket for any trip to the United States. You can describe the trips next.",
+   "pt": "Responda se pagou sua própria passagem em alguma viagem aos Estados Unidos. Na próxima pergunta, descreva as viagens.",
+   "es": "Responda si pagó su propio pasaje en algún viaje a Estados Unidos. En la siguiente pregunta, describa los viajes.",
+   "ht": "Di si ou te peye pwòp tikè ou pou yon vwayaj Ozetazini. Ou ka dekri vwayaj yo nan pwochen kesyon an."
+  },
+  "self_paid_us_travel_details": {
+   "en": "Give approximate trip dates and explain how you paid for the tickets. Say which details are unknown.",
+   "pt": "Dê datas aproximadas das viagens e explique como pagou as passagens. Diga quais detalhes não sabe.",
+   "es": "Dé fechas aproximadas de los viajes y explique cómo pagó los pasajes. Diga qué detalles no sabe.",
+   "ht": "Bay dat apeprè vwayaj yo epi esplike kijan ou te peye tikè yo. Di ki detay ou pa konnen."
+  },
+  "mother_birth_city": {
+   "en": "Give your mother's city or town of birth. If unknown, choose the unsure option.",
+   "pt": "Informe a cidade onde sua mãe nasceu. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique la ciudad donde nació su madre. Si no sabe, elija la opción de duda.",
+   "ht": "Bay vil kote manman ou te fèt la. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "mother_residence_city": {
+   "en": "Give the city or town where your mother lives now. If unknown, choose the unsure option.",
+   "pt": "Informe a cidade onde sua mãe mora agora. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique la ciudad donde vive su madre ahora. Si no sabe, elija la opción de duda.",
+   "ht": "Bay vil kote manman ou rete kounye a. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "mother_residence_country": {
+   "en": "Give the country where your mother lives now. If unknown, choose the unsure option.",
+   "pt": "Informe o país onde sua mãe mora agora. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique el país donde vive su madre ahora. Si no sabe, elija la opción de duda.",
+   "ht": "Bay peyi kote manman ou rete kounye a. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "father_birth_city": {
+   "en": "Give your father's city or town of birth. If unknown, choose the unsure option.",
+   "pt": "Informe a cidade onde seu pai nasceu. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique la ciudad donde nació su padre. Si no sabe, elija la opción de duda.",
+   "ht": "Bay vil kote papa ou te fèt la. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "father_residence_city": {
+   "en": "Give the city or town where your father lives now. If unknown, choose the unsure option.",
+   "pt": "Informe a cidade onde seu pai mora agora. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique la ciudad donde vive su padre ahora. Si no sabe, elija la opción de duda.",
+   "ht": "Bay vil kote papa ou rete kounye a. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "father_residence_country": {
+   "en": "Give the country where your father lives now. If unknown, choose the unsure option.",
+   "pt": "Informe o país onde seu pai mora agora. Se não souber, escolha a opção de dúvida.",
+   "es": "Indique el país donde vive su padre ahora. Si no sabe, elija la opción de duda.",
+   "ht": "Bay peyi kote papa ou rete kounye a. Si ou pa konnen, chwazi opsyon ki di ou pa sèten an."
+  },
+  "public_benefits_details": {
+   "en": "List the benefits and approximate dates received. If exact dates or other details are unknown, say so.",
+   "pt": "Liste os benefícios e as datas aproximadas em que recebeu. Se não souber as datas exatas ou outros detalhes, diga isso.",
+   "es": "Enumere los beneficios y las fechas aproximadas en que los recibió. Si no sabe las fechas exactas u otros detalles, dígalo.",
+   "ht": "Site èd ou te resevwa yo ak dat apeprè yo. Si ou pa konnen dat egzak yo oswa lòt detay, di sa."
+  },
+  "fw_income_work": {
+   "pt": "Se o seu pagamento muda de mês para mês, adicione os últimos três meses e divida por 3.",
+   "es": "Si su pago cambia de un mes a otro, sume los últimos tres meses y divida entre 3.",
+   "en": "If your pay changes from month to month, add up the last three months and divide by 3.",
+   "ht": "Si lajan w touche chanje de yon mwa a yon lòt, adisyone twa dènye mwa yo epi divize pa 3."
+  },
+  "fw_income_property": {
+   "pt": "Quase todo mundo digita 0 aqui. Isso é normal.",
+   "es": "Casi todos escriben 0 aquí. Es normal.",
+   "en": "Most people type 0 here. That is normal.",
+   "ht": "Prèske tout moun ekri 0 isit la. Sa nòmal."
+  },
+  "fw_income_interest": {
+   "pt": "O extrato do banco mostra o juro do mês.",
+   "es": "El estado de cuenta del banco muestra el interés del mes.",
+   "en": "Your bank statement shows the interest for the month.",
+   "ht": "Relve labank ou montre enterè mwa a."
+  },
+  "fw_income_other": {
+   "pt": "Se não tem certeza se algo conta, escreva para o escritório: o advogado decide.",
+   "es": "Si no sabe si algo cuenta, escríbale a la oficina: el abogado decide.",
+   "en": "If you are not sure whether something counts, write to the office: the attorney decides.",
+   "ht": "Si ou pa sèten si yon bagay konte, ekri biwo a: avoka a deside."
+  },
+  "fw_exp_rent": {
+   "pt": "Se você divide o aluguel com outras pessoas, escreva só a sua parte.",
+   "es": "Si comparte el alquiler con otras personas, escriba solo su parte.",
+   "en": "If you share the rent with other people, write only your part.",
+   "ht": "Si ou pataje lwaye a ak lòt moun, ekri sèlman pòsyon pa w."
+  },
+  "fw_exp_utilities": {
+   "pt": "Contas que mudam com a estação: adicione um ano e divida por 12.",
+   "es": "Cuentas que cambian con la estación: sume un año y divida entre 12.",
+   "en": "Bills that change with the season: add up a year and divide by 12.",
+   "ht": "Faktè ki chanje ak sezon an: adisyone yon ane epi divize pa 12."
+  },
+  "fw_exp_debts": {
+   "pt": "Conte só o que você paga por mês, não o total da dívida.",
+   "es": "Cuente solo lo que paga por mes, no el total de la deuda.",
+   "en": "Count only what you pay each month, not the whole debt.",
+   "ht": "Konte sèlman sa ou peye chak mwa, pa tout dèt la."
+  },
+  "fw_exp_living": {
+   "pt": "Pense no que você gasta em uma semana comum e use o exemplo acima para passar para um mês.",
+   "es": "Piense en lo que gasta en una semana común y use el ejemplo de arriba para pasarlo a un mes.",
+   "en": "Think of what you spend in a usual week and use the example above to turn it into a month.",
+   "ht": "Panse sou sa ou depanse nan yon semèn òdinè epi sèvi ak egzanp ki anwo a pou chanje l an yon mwa."
+  },
+  "fw_exp_other": {
+   "pt": "Se um gasto não cabe nas linhas de cima, ele vem para cá.",
+   "es": "Si un gasto no cabe en las líneas de arriba, va aquí.",
+   "en": "If an expense does not fit the lines above, it goes here.",
+   "ht": "Si yon depans pa kadre nan liy ki anwo yo, li ale isit la."
+  }
+ },
+ "faq": [
+  {
+   "q": {
+    "pt": "Quanto tempo leva?",
+    "es": "¿Cuánto tiempo toma?",
+    "en": "How long does it take?",
+    "ht": "Konbyen tan sa pran?"
+   },
+   "a": {
+    "pt": "Cerca de 30 a 40 minutos. Você pode parar e continuar depois — tudo é salvo automaticamente.",
+    "es": "Unos 30 a 40 minutos. Puede parar y seguir después — todo se guarda automáticamente.",
+    "en": "About 30 to 40 minutes. You can stop and continue later — everything saves automatically.",
+    "ht": "Apeprè 30 a 40 minit. Ou ka kanpe epi kontinye pita — tout bagay anrejistre poukont yo."
+   }
+  },
+  {
+   "q": {
+    "pt": "E se eu não souber uma resposta?",
+    "es": "¿Y si no sé una respuesta?",
+    "en": "What if I don't know an answer?",
+    "ht": "E si mwen pa konnen yon repons?"
+   },
+   "a": {
+    "pt": "Coloque o que souber, com datas aproximadas se precisar. Perguntas sem asterisco (*) podem ficar em branco. O escritório revisa tudo e entra em contato se faltar algo.",
+    "es": "Ponga lo que sepa, con fechas aproximadas si hace falta. Las preguntas sin asterisco (*) pueden quedar en blanco. La oficina revisa todo y le contacta si falta algo.",
+    "en": "Give what you know, with approximate dates if needed. Questions without an asterisk (*) can be left blank. The office reviews everything and will contact you if something is missing.",
+    "ht": "Bay sa ou konnen, ak dat apeprè si sa nesesè. Kesyon ki pa gen yon zetwal (*) ka rete vid. Biwo a ap revize tout bagay epi l ap kontakte ou si yon bagay manke."
+   }
+  },
+  {
+   "q": {
+    "pt": "Minhas informações estão seguras?",
+    "es": "¿Mi información está segura?",
+    "en": "Is my information safe?",
+    "ht": "Èske enfòmasyon mwen an sekirite?"
+   },
+   "a": {
+    "pt": "Sim. Só você e {office} veem suas respostas e documentos. Nunca mandamos seus dados por mensagem — só um link seguro.",
+    "es": "Sí. Solo usted y {office} ven sus respuestas y documentos. Nunca enviamos sus datos por mensaje — solo un enlace seguro.",
+    "en": "Yes. Only you and {office} see your answers and documents. We never send your details by message — only a secure link.",
+    "ht": "Wi. Se sèlman ou menm ak {office} ki wè repons ou ak dokiman ou yo. Nou pa janm voye enfòmasyon ou nan yon mesaj — sèlman yon lyen ki an sekirite."
+   }
+  },
+  {
+   "q": {
+    "pt": "E se eu errar?",
+    "es": "¿Y si me equivoco?",
+    "en": "What if I make a mistake?",
+    "ht": "E si mwen fè yon erè?"
+   },
+   "a": {
+    "pt": "Pode mudar qualquer resposta até enviar. Depois de enviar, fale com o escritório. Nada é enviado à imigração sem a revisão do seu advogado.",
+    "es": "Puede cambiar cualquier respuesta hasta enviar. Después de enviar, hable con la oficina. Nada se envía a inmigración sin la revisión de su abogado.",
+    "en": "You can change any answer until you submit. After that, contact the office. Nothing goes to immigration without your attorney's review.",
+    "ht": "Ou ka chanje nenpòt repons jiskaske ou voye l. Apre sa, kontakte biwo a. Anyen pa ale bay imigrasyon san avoka ou pa revize l."
+   }
+  },
+  {
+   "q": {
+    "pt": "Por que pedem fotos dos meus documentos?",
+    "es": "¿Por qué piden fotos de mis documentos?",
+    "en": "Why do you need photos of my documents?",
+    "ht": "Poukisa nou bezwen foto dokiman mwen yo?"
+   },
+   "a": {
+    "pt": "Para conferir que o formulário fica igual aos seus documentos. Uma foto do celular serve: documento inteiro, os 4 cantos aparecendo, boa luz.",
+    "es": "Para verificar que el formulario coincida con sus documentos. Una foto del celular sirve: documento completo, las 4 esquinas visibles, buena luz.",
+    "en": "To check that your form matches your documents. A phone photo works: the whole document, all 4 corners visible, good light.",
+    "ht": "Pou nou tcheke fòm ou a menm jan ak dokiman ou yo. Yon foto ak telefòn bon: tout dokiman an, 4 kwen yo parèt, bon limyè."
+   }
+  },
+  {
+   "q": {
+    "pt": "Responder “Sim” a uma pergunta prejudica meu caso?",
+    "es": "¿Responder “Sí” a una pregunta perjudica mi caso?",
+    "en": "Will answering “Yes” hurt my case?",
+    "ht": "Èske si mwen reponn “Wi” sa ap fè dosye mwen mal?"
+   },
+   "a": {
+    "pt": "Seja sincero. Muitas situações têm solução, e o seu advogado precisa saber de tudo para proteger o seu caso. O que prejudica é a imigração descobrir algo que não foi informado.",
+    "es": "Sea sincero. Muchas situaciones tienen solución, y su abogado necesita saberlo todo para proteger su caso. Lo que perjudica es que inmigración descubra algo que no se informó.",
+    "en": "Be honest. Many situations can be handled, and your attorney needs to know everything to protect your case. What hurts is immigration finding something that wasn't disclosed.",
+    "ht": "Di laverite. Gen anpil sitiyasyon ki ka regle, e avoka ou bezwen konnen tout bagay pou l pwoteje dosye ou. Sa ki fè mal, se lè imigrasyon jwenn yon bagay ou pa t di."
+   }
+  }
+ ],
+ "documents": {
+  "passport": {
+   "pt": "A página com a sua foto. Se o passaporte venceu, envie mesmo assim. Se usou outro passaporte para entrar nos EUA, envie esse também.",
+   "es": "La página con su foto. Si el pasaporte venció, envíelo igual. Si usó otro pasaporte para entrar a EE. UU., envíe ese también.",
+   "en": "The page with your photo. If it has expired, send it anyway. If you entered the U.S. on a different passport, send that one too.",
+   "ht": "Paj ki gen foto ou a. Si li ekspire, voye l kanmenm. Si ou te antre Etazini ak yon lòt paspò, voye sa a tou."
+  },
+  "birth_certificate": {
+   "pt": "A certidão inteira, frente e verso. Se tiver a versão de inteiro teor, melhor ainda.",
+   "es": "El acta completa, por ambos lados.",
+   "en": "The whole certificate, front and back.",
+   "ht": "Tout ak nesans lan (batistè a), devan ak dèyè."
+  },
+  "i360_approval": {
+   "pt": "Uma carta da USCIS (formulário I-797) que diz “Approval Notice” e “I-360”. Chegou pelo correio quando o seu SIJS foi aprovado. Se não encontrar, avise — o escritório pode ter uma cópia.",
+   "es": "Una carta de USCIS (formulario I-797) que dice “Approval Notice” e “I-360”. Llegó por correo cuando aprobaron su SIJS. Si no la encuentra, avise — la oficina puede tener una copia.",
+   "en": "A USCIS letter (Form I-797) that says “Approval Notice” and “I-360”. It came by mail when your SIJS was approved. If you can't find it, let us know — the office may have a copy.",
+   "ht": "Yon lèt USCIS (Fòm I-797) ki ekri “Approval Notice” ak “I-360”. Li te vini pa lapòs lè yo te apwouve SIJS ou a. Si ou pa jwenn li, fè nou konnen — biwo a ka gen yon kopi."
+  },
+  "work_permit": {
+   "pt": "O cartão de autorização de trabalho (EAD), frente e verso.",
+   "es": "La tarjeta de permiso de trabajo (EAD), por ambos lados.",
+   "en": "Your work permit card (EAD), front and back.",
+   "ht": "Kat pèmi travay ou (EAD), devan ak dèyè."
+  },
+  "ssn_card": {
+   "pt": "O cartão do Social Security (azul e branco).",
+   "es": "La tarjeta de Seguro Social (azul y blanca).",
+   "en": "Your Social Security card (blue and white).",
+   "ht": "Kat Sosyal Sekirite ou (ble ak blan)."
+  },
+  "i94": {
+   "pt": "Entre em i94.cbp.dhs.gov, toque em “Get Most Recent I-94”, preencha com os dados do passaporte e tire um print da tela. Se entrou pela fronteira, pode ser um papel que te deram.",
+   "es": "Entre a i94.cbp.dhs.gov, toque “Get Most Recent I-94”, llene con los datos del pasaporte y tome una captura de pantalla. Si entró por la frontera, puede ser un papel que le dieron.",
+   "en": "Go to i94.cbp.dhs.gov, tap “Get Most Recent I-94”, fill in your passport details and take a screenshot. If you came in at the border, it may be a paper you were given.",
+   "ht": "Ale sou i94.cbp.dhs.gov, peze “Get Most Recent I-94”, ranpli enfòmasyon paspò ou epi fè yon foto ekran an (screenshot). Si ou te antre sou fwontyè a, li ka yon papye yo te ba ou."
+  },
+  "visa": {
+   "pt": "A página do passaporte com o visto americano.",
+   "es": "La página del pasaporte con la visa de EE. UU.",
+   "en": "The passport page with your U.S. visa.",
+   "ht": "Paj paspò a ki gen viza ameriken ou a."
+  },
+  "marriage_certificate": {
+   "pt": "A certidão de casamento inteira.",
+   "es": "El acta de matrimonio completa.",
+   "en": "The whole marriage certificate.",
+   "ht": "Tout ak maryaj la."
+  },
+  "divorce_decree": {
+   "pt": "A sentença de divórcio — ou a certidão de óbito, se o casamento terminou por falecimento.",
+   "es": "La sentencia de divorcio — o el acta de defunción, si el matrimonio terminó por fallecimiento.",
+   "en": "The divorce decree — or the death certificate, if the marriage ended because your spouse died.",
+   "ht": "Papye divòs la — oswa ak lanmò a, si maryaj la te fini paske mari oswa madanm ou te mouri."
+  },
+  "court_disposition": {
+   "pt": "Um papel do tribunal que mostra como o caso terminou (por exemplo, arquivado ou multa). Pede-se no cartório do tribunal (“clerk's office”) — o escritório pode ajudar.",
+   "es": "Un papel del tribunal que muestra cómo terminó el caso (por ejemplo, archivado o multa). Se pide en la secretaría del tribunal (“clerk's office”) — la oficina puede ayudar.",
+   "en": "A court paper showing how the case ended (for example, dismissed or a fine). You get it from the court's clerk's office — the office can help.",
+   "ht": "Yon papye tribinal ki montre kijan ka a te fini (pa egzanp, yo te lage ka a oswa yon amann). Ou jwenn li nan biwo grefye tribinal la (“clerk's office”) — biwo a ka ede ou."
+  },
+  "immigration_court": {
+   "pt": "O “Notice to Appear” e qualquer papel do juiz de imigração (avisos de audiência, decisões).",
+   "es": "El “Notice to Appear” y cualquier papel del juez de inmigración (avisos de audiencia, decisiones).",
+   "en": "The “Notice to Appear” and any papers from the immigration judge (hearing notices, decisions).",
+   "ht": "“Notice to Appear” la ak nenpòt papye jij imigrasyon an (avi odyans, desizyon)."
+  },
+  "drivers_license": {
+   "en": "Upload a clear photo of the front. Add the reverse side under “back” below.",
+   "pt": "Envie uma foto nítida da frente. Adicione o verso em “verso” abaixo.",
+   "es": "Suba una foto clara del frente. Agregue el reverso en “reverso” abajo.",
+   "ht": "Voye yon foto klè devan an. Ajoute lòt bò a nan “dèyè” anba a."
+  },
+  "drivers_license_back": {
+   "en": "Turn the card over and upload a clear photo of the back, including the barcode.",
+   "pt": "Vire o cartão e envie uma foto nítida do verso, incluindo o código de barras.",
+   "es": "Dé vuelta a la tarjeta y suba una foto clara del reverso, incluido el código de barras.",
+   "ht": "Vire kat la epi voye yon foto klè dèyè a, ansanm ak kòd ba a."
+  }
+ },
+ "scan_guide": {
+  "title": {
+   "pt": "Como escanear um documento com o celular",
+   "es": "Cómo escanear un documento con el celular",
+   "en": "How to scan a document with your phone",
+   "ht": "Kijan pou eskane yon dokiman ak telefòn ou"
+  },
+  "steps": [
+   {
+    "who": {
+     "pt": "iPhone",
+     "es": "iPhone",
+     "en": "iPhone",
+     "ht": "iPhone"
+    },
+    "how": {
+     "pt": "Abra o app Arquivos → toque em “…” no canto de cima → Escanear Documentos → aponte para o documento (ele fotografa sozinho) → Salvar. Depois, aqui, toque em “Escolher arquivo”.",
+     "es": "Abra la app Archivos → toque “…” arriba → Escanear documentos → apunte al documento (toma la foto solo) → Guardar. Después, aquí, toque “Elegir archivo”.",
+     "en": "Open the Files app → tap “…” at the top → Scan Documents → point at the document (it takes the picture by itself) → Save. Then, here, tap “Choose file”.",
+     "ht": "Louvri aplikasyon Files (Fichye) → peze “…” anlè a → Scan Documents (Eskane dokiman) → vize dokiman an (li pran foto a poukont li) → Save (Anrejistre). Apre sa, isit la, peze “Chwazi fichye”."
+    }
+   },
+   {
+    "who": {
+     "pt": "Android",
+     "es": "Android",
+     "en": "Android",
+     "ht": "Android"
+    },
+    "how": {
+     "pt": "Abra o Google Drive → toque no + → Digitalizar (Scan) → fotografe → Salvar. Depois, aqui, toque em “Escolher arquivo”.",
+     "es": "Abra Google Drive → toque + → Escanear → tome la foto → Guardar. Después, aquí, toque “Elegir archivo”.",
+     "en": "Open Google Drive → tap + → Scan → take the picture → Save. Then, here, tap “Choose file”.",
+     "ht": "Louvri Google Drive → peze + → Scan (Eskane) → pran foto a → Save (Anrejistre). Apre sa, isit la, peze “Chwazi fichye”."
+    }
+   },
+   {
+    "who": {
+     "pt": "Ou simplesmente",
+     "es": "O simplemente",
+     "en": "Or just",
+     "ht": "Oswa tou senpleman"
+    },
+    "how": {
+     "pt": "Toque em “Tirar foto”: documento sobre uma mesa escura, os 4 cantos aparecendo, boa luz, sem flash e sem dedos na frente.",
+     "es": "Toque “Tomar foto”: el documento sobre una mesa oscura, las 4 esquinas visibles, buena luz, sin flash y sin dedos encima.",
+     "en": "Tap “Take photo”: document on a dark table, all 4 corners visible, good light, no flash, no fingers in the way.",
+     "ht": "Peze “Pran foto”: mete dokiman an sou yon tab ki fonse, 4 kwen yo parèt, bon limyè, san flash, pa kite dwèt ou kache l."
+    }
+   }
+  ]
+ }
+}

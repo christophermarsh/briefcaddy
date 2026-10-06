@@ -1,0 +1,211 @@
+{
+  "_status": "DRAFT: every sentence below is for the attorney to approve before a client sees it (docs/attorney_review.md, \"The client's case, in their words\"). Each paragraph says what usually happens next and what the client can do, and nothing legal. The Portuguese and Spanish need the firm's own review, and the Haitian Creole (ht) is a MACHINE DRAFT awaiting the firm's certified translator.",
+  "labels": {
+    "next": {
+      "pt": "O que acontece depois",
+      "es": "Qué pasa después",
+      "en": "What happens next",
+      "ht": "Sa k ap pase answit"
+    }
+  },
+  "stages": {
+    "intake": {
+      "pt": "Em seguida, o escritório lê as suas respostas e documentos. Se faltar alguma coisa, uma mensagem aparece nesta página. O que você pode fazer agora: terminar o questionário e enviar os documentos da sua lista.",
+      "es": "Después, la oficina lee sus respuestas y documentos. Si falta algo, aparecerá un mensaje en esta página. Lo que puede hacer ahora: terminar el cuestionario y enviar los documentos de su lista.",
+      "en": "Next, the office reads your answers and documents. If something is missing, a message will show on this page. What you can do now: finish the questionnaire and send the documents on your list.",
+      "ht": "Answit, biwo a li repons ou ak dokiman ou yo. Si yon bagay manke, yon mesaj ap parèt sou paj sa a. Sa ou ka fè kounye a: fini kesyonè a epi voye dokiman ki sou lis ou a."
+    },
+    "state_court": {
+      "pt": "O tribunal de família trabalha no seu próprio ritmo. O escritório avisa quando houver data de audiência. O que você pode fazer: avisar o escritório se o seu endereço ou telefone mudar e guardar os papéis que o tribunal der a você.",
+      "es": "El tribunal de familia trabaja a su propio ritmo. La oficina le avisará cuando haya fecha de audiencia. Lo que puede hacer: avisar a la oficina si cambia su dirección o su teléfono y guardar los papeles que le dé el tribunal.",
+      "en": "The family court works at its own pace. The office will tell you when there is a hearing date. What you can do: tell the office if your address or phone number changes, and keep the papers the court gives you.",
+      "ht": "Tribinal fanmi an travay dapre pwòp rit li. Biwo a ap fè ou konnen lè gen yon dat odyans. Sa ou ka fè: di biwo a si adrès ou oswa nimewo telefòn ou chanje, epi kenbe papye tribinal la ba ou yo."
+    },
+    "i360_ready": {
+      "pt": "Em seguida, o escritório termina a sua petição I-360 e a envia ao USCIS. Quando for enviada, você verá aqui nesta página. O que você pode fazer: responder a qualquer pergunta que o escritório enviar.",
+      "es": "Después, la oficina termina su petición I-360 y la envía a USCIS. Cuando se envíe, lo verá en esta página. Lo que puede hacer: contestar cualquier pregunta que le envíe la oficina.",
+      "en": "Next, the office finishes your I-360 petition and mails it to USCIS. You will see it on this page when it is mailed. What you can do: answer any question the office sends you.",
+      "ht": "Answit, biwo a fini petisyon I-360 ou a epi l voye l bay USCIS. Lè l voye, w ap wè sa sou paj sa a. Sa ou ka fè: reponn nenpòt kesyon biwo a voye ba ou."
+    },
+    "i360_pending": {
+      "pt": "Em seguida, o USCIS pode enviar uma carta: um recibo, um pedido de mais papéis ou uma decisão. O que você pode fazer: guardar toda carta do USCIS e mandar uma foto dela para o escritório na mesma semana.",
+      "es": "Después, USCIS puede enviarle una carta: un recibo, un pedido de más papeles o una decisión. Lo que puede hacer: guardar toda carta de USCIS y enviar una foto a la oficina la misma semana.",
+      "en": "Next, USCIS may send you a letter: a receipt, a request for more papers, or a decision. What you can do: keep every letter from USCIS and send the office a photo of it the same week.",
+      "ht": "Answit, USCIS ka voye yon lèt ba ou: yon resi, yon demann pou plis papye oswa yon desizyon. Sa ou ka fè: kenbe chak lèt USCIS epi voye yon foto li bay biwo a nan menm semèn nan."
+    },
+    "vawa_pending": {
+      "pt": "Em seguida, o USCIS pode enviar uma carta: um recibo, um pedido de mais papéis ou uma decisão. O que você pode fazer: guardar toda carta do USCIS e mandar uma foto dela para o escritório na mesma semana.",
+      "es": "Después, USCIS puede enviarle una carta: un recibo, un pedido de más papeles o una decisión. Lo que puede hacer: guardar toda carta de USCIS y enviar una foto a la oficina la misma semana.",
+      "en": "Next, USCIS may send you a letter: a receipt, a request for more papers, or a decision. What you can do: keep every letter from USCIS and send the office a photo of it the same week.",
+      "ht": "Answit, USCIS ka voye yon lèt ba ou: yon resi, yon demann pou plis papye oswa yon desizyon. Sa ou ka fè: kenbe chak lèt USCIS epi voye yon foto li bay biwo a nan menm semèn nan."
+    },
+    "t_pending": {
+      "pt": "Em seguida, o USCIS pode enviar uma carta: um recibo, um pedido de mais papéis ou uma decisão. O que você pode fazer: guardar toda carta do USCIS e mandar uma foto dela para o escritório na mesma semana.",
+      "es": "Después, USCIS puede enviarle una carta: un recibo, un pedido de más papeles o una decisión. Lo que puede hacer: guardar toda carta de USCIS y enviar una foto a la oficina la misma semana.",
+      "en": "Next, USCIS may send you a letter: a receipt, a request for more papers, or a decision. What you can do: keep every letter from USCIS and send the office a photo of it the same week.",
+      "ht": "Answit, USCIS ka voye yon lèt ba ou: yon resi, yon demann pou plis papye oswa yon desizyon. Sa ou ka fè: kenbe chak lèt USCIS epi voye yon foto li bay biwo a nan menm semèn nan."
+    },
+    "u_pending": {
+      "pt": "Em seguida, o USCIS pode enviar uma carta: um recibo, um pedido de mais papéis ou uma decisão. O que você pode fazer: guardar toda carta do USCIS e mandar uma foto dela para o escritório na mesma semana.",
+      "es": "Después, USCIS puede enviarle una carta: un recibo, un pedido de más papeles o una decisión. Lo que puede hacer: guardar toda carta de USCIS y enviar una foto a la oficina la misma semana.",
+      "en": "Next, USCIS may send you a letter: a receipt, a request for more papers, or a decision. What you can do: keep every letter from USCIS and send the office a photo of it the same week.",
+      "ht": "Answit, USCIS ka voye yon lèt ba ou: yon resi, yon demann pou plis papye oswa yon desizyon. Sa ou ka fè: kenbe chak lèt USCIS epi voye yon foto li bay biwo a nan menm semèn nan."
+    },
+    "visa_wait": {
+      "pt": "Em seguida, o escritório confere todo mês se há um número de visto disponível para você. O escritório avisa quando houver algo para você fazer. O que você pode fazer: manter o seu endereço e telefone atualizados com o escritório.",
+      "es": "Después, la oficina revisa cada mes si hay un número de visa disponible para usted. La oficina le avisará cuando haya algo que hacer. Lo que puede hacer: mantener su dirección y su teléfono al día con la oficina.",
+      "en": "Next, the office checks every month whether a visa number is available for you. The office will tell you when there is something for you to do. What you can do: keep your address and phone number up to date with the office.",
+      "ht": "Answit, biwo a tcheke chak mwa si gen yon nimewo viza ki disponib pou ou. Biwo a ap fè ou konnen lè gen yon bagay pou w fè. Sa ou ka fè: kenbe adrès ou ak nimewo telefòn ou ajou nan biwo a."
+    },
+    "i485_ready": {
+      "pt": "Em seguida, o escritório prepara com você o seu pedido de green card. Pode ser que peçam um exame médico com um médico autorizado pelo USCIS e documentos atualizados. O que você pode fazer: responder às perguntas do escritório e enviar o que faltar.",
+      "es": "Después, la oficina prepara con usted su solicitud de green card. Puede que le pidan un examen médico con un médico autorizado por USCIS y documentos actualizados. Lo que puede hacer: contestar las preguntas de la oficina y enviar lo que falte.",
+      "en": "Next, the office prepares your green card application with you. You may be asked for a medical exam with a doctor USCIS approves and for updated documents. What you can do: answer the office's questions and send what is missing.",
+      "ht": "Answit, biwo a prepare demann green card ou a avèk ou. Yo ka mande w yon egzamen medikal ak yon doktè USCIS apwouve ak dokiman ki ajou. Sa ou ka fè: reponn kesyon biwo a yo epi voye sa ki manke."
+    },
+    "caa_ready": {
+      "pt": "Em seguida, o escritório prepara com você o seu pedido de green card. Pode ser que peçam um exame médico com um médico autorizado pelo USCIS e documentos atualizados. O que você pode fazer: responder às perguntas do escritório e enviar o que faltar.",
+      "es": "Después, la oficina prepara con usted su solicitud de green card. Puede que le pidan un examen médico con un médico autorizado por USCIS y documentos actualizados. Lo que puede hacer: contestar las preguntas de la oficina y enviar lo que falte.",
+      "en": "Next, the office prepares your green card application with you. You may be asked for a medical exam with a doctor USCIS approves and for updated documents. What you can do: answer the office's questions and send what is missing.",
+      "ht": "Answit, biwo a prepare demann green card ou a avèk ou. Yo ka mande w yon egzamen medikal ak yon doktè USCIS apwouve ak dokiman ki ajou. Sa ou ka fè: reponn kesyon biwo a yo epi voye sa ki manke."
+    },
+    "i485_pending": {
+      "pt": "Em seguida, o USCIS costuma enviar uma carta para a coleta de digitais (biometria) e, às vezes, uma carta para uma entrevista. O escritório avisa quando houver data. O que você pode fazer: quando chegar uma carta, mandar uma foto dela para o escritório logo e levar a carta e o passaporte a cada compromisso.",
+      "es": "Después, USCIS suele enviar una carta para la toma de huellas (biometría) y, a veces, una carta para una entrevista. La oficina le avisará cuando haya fecha. Lo que puede hacer: cuando llegue una carta, enviar una foto a la oficina de inmediato y llevar la carta y el pasaporte a cada cita.",
+      "en": "Next, USCIS usually sends a notice for fingerprints (biometrics), and sometimes a notice for an interview. The office will tell you when there is a date. What you can do: when a notice arrives, send the office a photo of it right away, and bring the notice and your passport to each appointment.",
+      "ht": "Answit, USCIS souvan voye yon lèt pou anprent dwèt (byometri) epi pafwa yon lèt pou yon entèvyou. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: lè yon lèt rive, voye yon foto li bay biwo a touswit epi pote lèt la ak paspò ou nan chak randevou."
+    },
+    "family_ready": {
+      "pt": "Em seguida, o escritório termina a petição e o seu pedido de green card e os envia ao USCIS. O que você pode fazer: responder às perguntas do escritório e pedir ao seu familiar que responda às dele.",
+      "es": "Después, la oficina termina la petición y su solicitud de green card y las envía a USCIS. Lo que puede hacer: contestar las preguntas de la oficina y pedirle a su familiar que conteste las suyas.",
+      "en": "Next, the office finishes the petition and your green card application and mails them to USCIS. What you can do: answer the office's questions, and ask your relative to answer theirs.",
+      "ht": "Answit, biwo a fini petisyon an ak demann green card ou a epi l voye yo bay USCIS. Sa ou ka fè: reponn kesyon biwo a yo epi mande fanmi ou an reponn pa li yo."
+    },
+    "family_wait": {
+      "pt": "Em seguida, o escritório confere o boletim de vistos todo mês para ver quando chega a sua vez. O escritório avisa quando houver algo para fazer. O que você pode fazer: manter o seu endereço e telefone atualizados com o escritório.",
+      "es": "Después, la oficina revisa el boletín de visas cada mes para ver cuándo le llega su turno. La oficina le avisará cuando haya algo que hacer. Lo que puede hacer: mantener su dirección y su teléfono al día con la oficina.",
+      "en": "Next, the office checks the Visa Bulletin every month to see when your turn comes. The office will tell you when there is something to do. What you can do: keep your address and phone number up to date with the office.",
+      "ht": "Answit, biwo a tcheke Bilten Viza a chak mwa pou wè ki lè tou pa ou rive. Biwo a ap fè ou konnen lè gen yon bagay pou w fè. Sa ou ka fè: kenbe adrès ou ak nimewo telefòn ou ajou nan biwo a."
+    },
+    "family_pending": {
+      "pt": "Em seguida, o USCIS costuma enviar uma carta para a coleta de digitais e uma carta para uma entrevista. O escritório avisa quando houver data. O que você pode fazer: mandar uma foto de cada carta para o escritório logo e levar a carta e o passaporte a cada compromisso.",
+      "es": "Después, USCIS suele enviar una carta para la toma de huellas y una carta para una entrevista. La oficina le avisará cuando haya fecha. Lo que puede hacer: enviar una foto de cada carta a la oficina de inmediato y llevar la carta y el pasaporte a cada cita.",
+      "en": "Next, USCIS usually sends a notice for fingerprints and a notice for an interview. The office will tell you when there is a date. What you can do: send the office a photo of every notice right away, and bring the notice and your passport to each appointment.",
+      "ht": "Answit, USCIS souvan voye yon lèt pou anprent dwèt ak yon lèt pou yon entèvyou. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: voye yon foto chak lèt bay biwo a touswit epi pote lèt la ak paspò ou nan chak randevou."
+    },
+    "consular": {
+      "pt": "Em seguida, o Centro Nacional de Vistos e o consulado enviam as próprias instruções, e o escritório ajuda você com cada uma. O escritório avisa quando houver data. O que você pode fazer: mandar para o escritório uma foto de cada mensagem que receber e guardar o seu passaporte em lugar seguro.",
+      "es": "Después, el Centro Nacional de Visas y el consulado envían sus propias instrucciones, y la oficina le ayuda con cada una. La oficina le avisará cuando haya fecha. Lo que puede hacer: enviar a la oficina una foto de cada mensaje que reciba y guardar su pasaporte en un lugar seguro.",
+      "en": "Next, the National Visa Center and the consulate send their own instructions, and the office helps you with each one. The office will tell you when there is a date. What you can do: send the office a photo of every message you get, and keep your passport in a safe place.",
+      "ht": "Answit, Sant Nasyonal Viza a (NVC) ak konsila a voye pwòp enstriksyon yo, epi biwo a ede w ak chak youn. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: voye yon foto chak mesaj ou resevwa bay biwo a epi mete paspò ou yon kote ki an sekirite."
+    },
+    "resident": {
+      "pt": "Não há nenhum passo à sua espera aqui. O seu green card pode chegar pelo correio depois da aprovação. O que você pode fazer: manter o seu endereço atualizado com o USCIS, guardar o green card em lugar seguro e falar com o escritório antes de uma viagem longa ao exterior.",
+      "es": "No hay ningún paso esperándole aquí. Su green card puede llegar por correo después de la aprobación. Lo que puede hacer: mantener su dirección al día con USCIS, guardar su green card en un lugar seguro y hablar con la oficina antes de un viaje largo al exterior.",
+      "en": "There is no step waiting for you here. Your green card may arrive by mail after the approval. What you can do: keep your address up to date with USCIS, keep your green card in a safe place, and talk to the office before a long trip abroad.",
+      "ht": "Pa gen okenn etap k ap tann ou isit la. Green card ou a ka rive pa lapòs apre apwobasyon an. Sa ou ka fè: kenbe adrès ou ajou ak USCIS, mete green card ou yon kote ki an sekirite epi pale ak biwo a anvan yon vwayaj long aletranje."
+    },
+    "n400_pending": {
+      "pt": "Em seguida, o USCIS costuma enviar uma carta para a coleta de digitais e depois uma carta para a entrevista e as provas de inglês e de educação cívica. O escritório avisa quando houver data. O que você pode fazer: mandar uma foto de cada carta para o escritório e estudar para as provas com os materiais gratuitos que o USCIS oferece.",
+      "es": "Después, USCIS suele enviar una carta para la toma de huellas y luego una carta para la entrevista y los exámenes de inglés y de educación cívica. La oficina le avisará cuando haya fecha. Lo que puede hacer: enviar una foto de cada carta a la oficina y estudiar para los exámenes con los materiales gratuitos que ofrece USCIS.",
+      "en": "Next, USCIS usually sends a notice for fingerprints and then a notice for the interview and the English and civics tests. The office will tell you when there is a date. What you can do: send the office a photo of every notice, and study for the tests with the free materials USCIS offers.",
+      "ht": "Answit, USCIS souvan voye yon lèt pou anprent dwèt epi apre sa yon lèt pou entèvyou a ak egzamen angle ak sivik yo. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: voye yon foto chak lèt bay biwo a epi etidye pou egzamen yo ak materyèl gratis USCIS ofri yo."
+    },
+    "oath": {
+      "pt": "Em seguida, o USCIS envia uma carta com a data da cerimônia de juramento. O que você pode fazer: avisar o escritório quando a carta chegar, responder às perguntas da carta e levar a carta e o green card à cerimônia.",
+      "es": "Después, USCIS envía una carta con la fecha de la ceremonia de juramento. Lo que puede hacer: avisar a la oficina cuando llegue la carta, contestar las preguntas de la carta y llevar la carta y su green card a la ceremonia.",
+      "en": "Next, USCIS sends a notice with the date of the oath ceremony. What you can do: tell the office when the notice arrives, answer the questions on the notice, and bring the notice and your green card to the ceremony.",
+      "ht": "Answit, USCIS voye yon lèt ak dat seremoni sèman an. Sa ou ka fè: di biwo a lè lèt la rive, reponn kesyon ki sou lèt la epi pote lèt la ak green card ou nan seremoni an."
+    },
+    "citizen": {
+      "pt": "Não há nenhum passo à sua espera aqui. O que você pode fazer: guardar o seu certificado em lugar seguro e perguntar ao escritório se tiver dúvida sobre o passaporte ou os papéis da sua família.",
+      "es": "No hay ningún paso esperándole aquí. Lo que puede hacer: guardar su certificado en un lugar seguro y preguntar a la oficina si tiene dudas sobre su pasaporte o los papeles de su familia.",
+      "en": "There is no step waiting for you here. What you can do: keep your certificate in a safe place, and ask the office if you have a question about your passport or your family's papers.",
+      "ht": "Pa gen okenn etap k ap tann ou isit la. Sa ou ka fè: mete sètifika ou a yon kote ki an sekirite epi mande biwo a si ou gen kesyon sou paspò ou oswa sou papye fanmi ou."
+    },
+    "asylum_ready": {
+      "pt": "Em seguida, o escritório termina com você o pedido de asilo e o envia ao USCIS. O que você pode fazer: responder às perguntas do escritório e enviar o que faltar.",
+      "es": "Después, la oficina termina con usted la solicitud de asilo y la envía a USCIS. Lo que puede hacer: contestar las preguntas de la oficina y enviar lo que falte.",
+      "en": "Next, the office finishes your asylum application with you and mails it to USCIS. What you can do: answer the office's questions and send what is missing.",
+      "ht": "Answit, biwo a fini demann azil ou a avèk ou epi l voye l bay USCIS. Sa ou ka fè: reponn kesyon biwo a yo epi voye sa ki manke."
+    },
+    "asylum_pending": {
+      "pt": "Em seguida, o USCIS costuma enviar uma carta para a coleta de digitais e uma carta para uma entrevista. O escritório avisa quando houver data. O que você pode fazer: mandar logo uma foto de cada carta para o escritório. Se você não fala bem inglês, converse com o escritório sobre como ter um intérprete.",
+      "es": "Después, USCIS suele enviar una carta para la toma de huellas y una carta para una entrevista. La oficina le avisará cuando haya fecha. Lo que puede hacer: enviar de inmediato una foto de cada carta a la oficina. Si no habla bien inglés, hable con la oficina sobre cómo tener un intérprete.",
+      "en": "Next, USCIS usually sends a notice for fingerprints and a notice for an interview. The office will tell you when there is a date. What you can do: send the office a photo of every notice right away. If you do not speak English well, talk with the office about how to have an interpreter.",
+      "ht": "Answit, USCIS souvan voye yon lèt pou anprent dwèt ak yon lèt pou yon entèvyou. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: voye yon foto chak lèt bay biwo a touswit. Si ou pa pale angle byen, pale ak biwo a sou fason pou jwenn yon entèprèt."
+    },
+    "asylee": {
+      "pt": "Ainda não há nenhum passo à sua espera aqui. O escritório avisa quando for a hora de conversar sobre o próximo passo. O que você pode fazer: guardar os seus papéis em lugar seguro e falar com o escritório antes de qualquer viagem para fora dos EUA.",
+      "es": "Todavía no hay ningún paso esperándole aquí. La oficina le avisará cuando sea hora de hablar del siguiente paso. Lo que puede hacer: guardar sus papeles en un lugar seguro y hablar con la oficina antes de cualquier viaje fuera de EE. UU.",
+      "en": "There is no step waiting for you here yet. The office will tell you when it is time to talk about the next step. What you can do: keep your papers in a safe place, and talk to the office before any trip outside the U.S.",
+      "ht": "Poko gen okenn etap k ap tann ou isit la. Biwo a ap fè ou konnen lè lè a rive pou nou pale sou pwochen etap la. Sa ou ka fè: mete papye ou yo yon kote ki an sekirite epi pale ak biwo a anvan nenpòt vwayaj deyò Etazini."
+    },
+    "caa_wait": {
+      "pt": "Em seguida, o escritório espera com você até chegar o momento de preparar o pedido de green card. O escritório avisa quando for hora de começar. O que você pode fazer: manter o seu endereço e telefone atualizados com o escritório.",
+      "es": "Después, la oficina espera con usted hasta que llegue el momento de preparar la solicitud de green card. La oficina le avisará cuando sea hora de empezar. Lo que puede hacer: mantener su dirección y su teléfono al día con la oficina.",
+      "en": "Next, the office waits with you until the time comes to prepare your green card application. The office will tell you when it is time to start. What you can do: keep your address and phone number up to date with the office.",
+      "ht": "Answit, biwo a ap tann avèk ou jiskaske lè pou prepare demann green card ou a rive. Biwo a ap fè ou konnen lè lè a rive pou kòmanse. Sa ou ka fè: kenbe adrès ou ak nimewo telefòn ou ajou nan biwo a."
+    },
+    "vawa_ready": {
+      "pt": "Em seguida, o escritório termina com você a sua petição (Formulário I-360) e a envia ao USCIS. O que você pode fazer: responder às perguntas do escritório da forma que for mais segura para você e avisar o escritório se o seu telefone ou endereço mudar.",
+      "es": "Después, la oficina termina con usted su petición (Formulario I-360) y la envía a USCIS. Lo que puede hacer: contestar las preguntas de la oficina de la manera que sea más segura para usted y avisar a la oficina si cambia su teléfono o su dirección.",
+      "en": "Next, the office finishes your self-petition (Form I-360) with you and mails it to USCIS. What you can do: answer the office's questions in the way that is safest for you, and tell the office if your phone or address changes.",
+      "ht": "Answit, biwo a fini petisyon ou a (Fòm I-360) avèk ou epi l voye l bay USCIS. Sa ou ka fè: reponn kesyon biwo a yo jan ki pi an sekirite pou ou epi di biwo a si telefòn ou oswa adrès ou chanje."
+    },
+    "vawa_approved": {
+      "pt": "Em seguida, o escritório prepara com você o pedido de green card. O escritório avisa quando houver data. O que você pode fazer: responder às perguntas do escritório e enviar o que faltar.",
+      "es": "Después, la oficina prepara con usted la solicitud de green card. La oficina le avisará cuando haya fecha. Lo que puede hacer: contestar las preguntas de la oficina y enviar lo que falte.",
+      "en": "Next, the office prepares your green card application with you. The office will tell you when there is a date. What you can do: answer the office's questions and send what is missing.",
+      "ht": "Answit, biwo a prepare demann green card ou a avèk ou. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: reponn kesyon biwo a yo epi voye sa ki manke."
+    },
+    "t_ready": {
+      "pt": "Em seguida, o escritório termina com você o pedido de visto T (Formulário I-914) e o envia ao USCIS. O que você pode fazer: responder às perguntas do escritório da forma que for mais segura para você e avisar o escritório se o seu telefone ou endereço mudar.",
+      "es": "Después, la oficina termina con usted la solicitud de visa T (Formulario I-914) y la envía a USCIS. Lo que puede hacer: contestar las preguntas de la oficina de la manera que sea más segura para usted y avisar a la oficina si cambia su teléfono o su dirección.",
+      "en": "Next, the office finishes your T visa application (Form I-914) with you and mails it to USCIS. What you can do: answer the office's questions in the way that is safest for you, and tell the office if your phone or address changes.",
+      "ht": "Answit, biwo a fini demann viza T ou a (Fòm I-914) avèk ou epi l voye l bay USCIS. Sa ou ka fè: reponn kesyon biwo a yo jan ki pi an sekirite pou ou epi di biwo a si telefòn ou oswa adrès ou chanje."
+    },
+    "t_status": {
+      "pt": "Não há nada para você fazer nesta página agora. O escritório avisa quando for a hora de conversar sobre o próximo passo. O que você pode fazer: guardar os seus papéis em lugar seguro e avisar o escritório se o seu endereço ou telefone mudar.",
+      "es": "No hay nada que hacer en esta página por ahora. La oficina le avisará cuando sea hora de hablar del siguiente paso. Lo que puede hacer: guardar sus papeles en un lugar seguro y avisar a la oficina si cambia su dirección o su teléfono.",
+      "en": "There is nothing for you to do on this page right now. The office will tell you when it is time to talk about the next step. What you can do: keep your papers in a safe place, and tell the office if your address or phone number changes.",
+      "ht": "Pa gen anyen pou w fè sou paj sa a pou kounye a. Biwo a ap fè ou konnen lè lè a rive pou nou pale sou pwochen etap la. Sa ou ka fè: mete papye ou yo yon kote ki an sekirite epi di biwo a si adrès ou oswa nimewo telefòn ou chanje."
+    },
+    "u_certification": {
+      "pt": "Em seguida, o escritório pede à instituição que trabalhou no seu caso que preencha uma certificação. Isso pode demorar, e o escritório avisa o que souber. O que você pode fazer: avisar o escritório se você tiver notícias dessa instituição.",
+      "es": "Después, la oficina le pide a la institución que trabajó en su caso que complete una certificación. Esto puede tardar, y la oficina le avisará lo que sepa. Lo que puede hacer: avisar a la oficina si usted recibe noticias de esa institución.",
+      "en": "Next, the office asks the agency that worked on your case to complete a certification. This can take a while, and the office will tell you what it hears. What you can do: tell the office if you hear from that agency.",
+      "ht": "Answit, biwo a mande ajans ki te travay sou dosye ou a pou l ranpli yon sètifikasyon. Sa ka pran tan, epi biwo a ap fè ou konnen sa l aprann. Sa ou ka fè: di biwo a si ou jwenn nouvèl nan men ajans sa a."
+    },
+    "u_ready": {
+      "pt": "Em seguida, o escritório termina a sua petição de visto U (Formulário I-918) e a envia ao USCIS. O que você pode fazer: responder às perguntas do escritório da forma que for mais segura para você e avisar o escritório se o seu telefone ou endereço mudar.",
+      "es": "Después, la oficina termina su petición de visa U (Formulario I-918) y la envía a USCIS. Lo que puede hacer: contestar las preguntas de la oficina de la manera que sea más segura para usted y avisar a la oficina si cambia su teléfono o su dirección.",
+      "en": "Next, the office finishes your U visa petition (Form I-918) and mails it to USCIS. What you can do: answer the office's questions in the way that is safest for you, and tell the office if your phone or address changes.",
+      "ht": "Answit, biwo a fini petisyon viza U ou a (Fòm I-918) epi l voye l bay USCIS. Sa ou ka fè: reponn kesyon biwo a yo jan ki pi an sekirite pou ou epi di biwo a si telefòn ou oswa adrès ou chanje."
+    },
+    "u_deferred": {
+      "pt": "Em seguida, o USCIS analisa as petições na sua própria ordem, e isso pode demorar bastante. O escritório avisa quando algo mudar. O que você pode fazer: guardar toda carta do USCIS e mandar uma foto dela para o escritório na mesma semana.",
+      "es": "Después, USCIS revisa las peticiones en su propio orden, y esto puede tardar mucho. La oficina le avisará cuando algo cambie. Lo que puede hacer: guardar toda carta de USCIS y enviar una foto a la oficina la misma semana.",
+      "en": "Next, USCIS looks at petitions in its own order, and this can take a long time. The office will tell you when something changes. What you can do: keep every letter from USCIS and send the office a photo of it the same week.",
+      "ht": "Answit, USCIS gade petisyon yo dapre pwòp lòd li, e sa ka pran anpil tan. Biwo a ap fè ou konnen lè yon bagay chanje. Sa ou ka fè: kenbe chak lèt USCIS epi voye yon foto li bay biwo a nan menm semèn nan."
+    },
+    "u_approved": {
+      "pt": "Não há nada para você fazer nesta página agora. O escritório avisa quando for a hora de conversar sobre o próximo passo. O que você pode fazer: guardar a carta de aprovação em lugar seguro e avisar o escritório se o seu endereço ou telefone mudar.",
+      "es": "No hay nada que hacer en esta página por ahora. La oficina le avisará cuando sea hora de hablar del siguiente paso. Lo que puede hacer: guardar su carta de aprobación en un lugar seguro y avisar a la oficina si cambia su dirección o su teléfono.",
+      "en": "There is nothing for you to do on this page right now. The office will tell you when it is time to talk about the next step. What you can do: keep your approval notice in a safe place, and tell the office if your address or phone number changes.",
+      "ht": "Pa gen anyen pou w fè sou paj sa a pou kounye a. Biwo a ap fè ou konnen lè lè a rive pou nou pale sou pwochen etap la. Sa ou ka fè: mete lèt apwobasyon an yon kote ki an sekirite epi di biwo a si adrès ou oswa nimewo telefòn ou chanje."
+    },
+    "daca_current": {
+      "pt": "Por enquanto, não há nada à sua espera aqui. O escritório avisa quando for a hora de preparar a próxima renovação. O que você pode fazer: guardar o seu cartão onde você possa achá-lo e avisar o escritório se você se mudar ou trocar de telefone.",
+      "es": "Por ahora, no hay nada esperándole aquí. La oficina le avisará cuando sea hora de preparar la próxima renovación. Lo que puede hacer: guardar su tarjeta donde pueda encontrarla y avisar a la oficina si se muda o cambia de teléfono.",
+      "en": "Next, nothing is waiting for you here. The office will tell you when it is time to prepare the next renewal. What you can do: keep your card where you can find it, and tell the office if you move or change your phone number.",
+      "ht": "Pou kounye a, pa gen anyen k ap tann ou isit la. Biwo a ap fè ou konnen lè lè a rive pou prepare pwochen renouvèlman an. Sa ou ka fè: mete kat ou a yon kote ou ka jwenn li epi di biwo a si ou demenaje oswa si ou chanje nimewo telefòn."
+    },
+    "daca_pending": {
+      "pt": "Em seguida, o USCIS pode enviar uma carta para a coleta de digitais ou uma carta pedindo mais papéis. O escritório avisa quando houver data. O que você pode fazer: mandar logo uma foto de cada carta para o escritório.",
+      "es": "Después, USCIS puede enviar una carta para la toma de huellas o una carta que pide más papeles. La oficina le avisará cuando haya fecha. Lo que puede hacer: enviar de inmediato una foto de cada carta a la oficina.",
+      "en": "Next, USCIS may send a notice for fingerprints, or a letter asking for more papers. The office will tell you when there is a date. What you can do: send the office a photo of every letter right away.",
+      "ht": "Answit, USCIS ka voye yon lèt pou anprent dwèt oswa yon lèt ki mande plis papye. Biwo a ap fè ou konnen lè gen yon dat. Sa ou ka fè: voye yon foto chak lèt bay biwo a touswit."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_source": "USCIS, Form I-918 page, 'Where to File' (uscis.gov/i-918), page last updated 06/05/2026, read 2026-10-02: 'Mail your I-918 to the filing location based on where you live.' Every box is 'Attn: 1367' (the 8 U.S.C. 1367 confidentiality unit). The same four lockboxes take a Form I-192 filed with a U petition (uscis.gov/i-192 -> 'Filing Addresses for Certain Forms Filed in Connection With a VAWA, T, or U Visa Application/Petition', uscis.gov/Certain-VAWA-T-U-Filing-Locations, updated 02/05/2026). Phoenix also takes petitions from outside the United States. Not the Vermont Service Center: that address (75 Lower Welden Street, St. Albans, VT) is only where a certifying official writes to withdraw or disavow a Supplement B (Supplement B Instructions 01/20/25, Part 6).",
+  "checked": "2026-10-02",
+  "page_updated": "06/05/2026",
+  "lockboxes": {
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 4205", "CAROL STREAM, IL 60197-4205"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 4205)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["FL"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 650745", "DALLAS, TX 75265-0745"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 650745)", "2501 S. STATE HWY. 121 BUSINESS, SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["AL", "GA", "KY", "LA", "MS", "TN", "TX"]
+    },
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 20020", "PHOENIX, AZ 85036-0020"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 20020)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AS", "AA", "AE", "AP", "AZ", "AR", "CA", "CO", "MP", "GU", "HI", "ID", "IA", "KS", "FM", "MN", "MO", "MT", "NE", "NV", "NM", "ND", "OK", "OR",
+                 "PW", "PR", "SD", "VI", "UT", "WA", "WY"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: 1367", "P.O. BOX 8075", "CHICAGO, IL 60680-8075"],
+      "courier": ["USCIS", "ATTN: 1367 (BOX 8075)", "131 S. DEARBORN ST. - 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["AK", "CT", "DC", "DE", "IL", "IN", "ME", "MD", "MA", "MI", "NH", "NJ", "NY", "NC", "OH", "PA", "RI", "SC", "VT", "VA", "WV", "WI"]
+    }
+  }
+}

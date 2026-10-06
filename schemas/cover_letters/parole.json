@@ -1,0 +1,161 @@
+{
+  "_about": "The parole cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the USCIS Dallas Lockbox, Attn: HP, P.O. Box 660865: uscis.gov/i-131-addresses, updated 08/11/2026), the subject and the fees ($630 for each person: Form G-1055 10/01/26) come from src/parole.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "request",
+  "re_lines": [
+    "Request: I-131 Request for Humanitarian Parole"
+  ],
+  "who": "Petitioner",
+  "form_order": [
+    "g28_parole_1",
+    "i131_parole_1",
+    "i134_1"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_parole_1": "Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i131_parole_1": "Petitioner’s I-131 - Request for Humanitarian Parole",
+    "i134_1": "Supporter’s I-134 - Declaration of Financial Support"
+  },
+  "documents": [
+    [
+      "passport",
+      "Copy of the Beneficiary’s Passport (Biographical Page)"
+    ],
+    [
+      "national_id",
+      "Copy of the Beneficiary’s Government-Issued ID"
+    ],
+    [
+      "birth_certificate",
+      "Beneficiary’s Birth Certificate and Translation"
+    ],
+    [
+      "us_passport",
+      "Copy of the U.S. Passport (Petitioner or Supporter)"
+    ],
+    [
+      "citizenship_certificate",
+      "Certificate of Citizenship or Naturalization (Petitioner or Supporter)"
+    ],
+    [
+      "green_card",
+      "Copy of the Permanent Resident Card (Petitioner or Supporter)"
+    ],
+    [
+      "drivers_license",
+      "Copy of the Driver’s License or State ID (Petitioner or Supporter)"
+    ],
+    [
+      "us_birth_certificate",
+      "U.S. Birth Certificate (Petitioner or Supporter)"
+    ],
+    [
+      "tax_return",
+      "Supporter’s Tax Return"
+    ],
+    [
+      "pay_stub",
+      "Supporter’s Pay Stubs"
+    ],
+    [
+      "w2",
+      "Supporter’s Form W-2"
+    ],
+    [
+      "bank_statement",
+      "Supporter’s Bank Statements"
+    ],
+    [
+      "lease",
+      "Evidence of Housing for the Beneficiary"
+    ],
+    [
+      "utility_bill",
+      "Supporter’s Utility Bills"
+    ],
+    [
+      "medical_record",
+      "Medical Records"
+    ],
+    [
+      "declaration",
+      "Declarations"
+    ],
+    [
+      "country_conditions",
+      "Country Conditions Evidence"
+    ],
+    [
+      "news_article",
+      "News Articles"
+    ],
+    [
+      "police_report",
+      "Police Reports"
+    ],
+    [
+      "school_record",
+      "School Records"
+    ],
+    [
+      "photograph",
+      "Photographs"
+    ],
+    [
+      "nvc_letter",
+      "National Visa Center Letters"
+    ],
+    [
+      "consular_appointment",
+      "Consular Appointment or Refusal Notices"
+    ],
+    [
+      "visa",
+      "Copy of the Beneficiary’s Visa or Visa Refusal"
+    ],
+    [
+      "i130_approval",
+      "Approval Notice of the Immigrant Petition (Form I-797)"
+    ],
+    [
+      "i360_approval",
+      "Approval Notice of the Immigrant Petition (Form I-797)"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices About the Beneficiary"
+    ],
+    [
+      "i130",
+      "Copy of the Previously Filed Form I-130"
+    ],
+    [
+      "i360_petition",
+      "Copy of the Previously Filed Form I-360"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate and Translation"
+    ],
+    [
+      "divorce_decree",
+      "Divorce Decree and Translation"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose each I-131 fee the cover letter states by its own Form G-1450 (a U.S. card) or Form G-1650 (a U.S. bank account), never a check: one payment for each person.",
+      "unless": "no_payment"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Optional driver for the explicitly disposable fictional PostgreSQL profile.
+# Core requirements.lock remains unchanged. Install with --no-deps into .venv-dev.
+psycopg==3.3.6
+psycopg-binary==3.3.6

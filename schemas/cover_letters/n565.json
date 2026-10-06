@@ -1,0 +1,79 @@
+{
+  "_about": "The N-565 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the USCIS Phoenix Lockbox, Attn: N-565, P.O. Box 20050: uscis.gov/n-565, updated 06/01/2026), the subject and the fee ($555, $0 for a USCIS error: Form G-1055 10/01/26) come from src/n565.py. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: N-565 Application for Replacement Naturalization/Citizenship Document"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_n565",
+    "n565"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_n565": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "n565": "Applicant’s N-565 - Application for Replacement Naturalization/Citizenship Document"
+  },
+  "documents": [
+    [
+      "us_passport",
+      "Copy of Applicant’s U.S. Passport"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "drivers_license",
+      "Copy of Applicant’s Driver’s License or State ID"
+    ],
+    [
+      "citizenship_certificate",
+      "Copy of Applicant’s Certificate (or the Certificate Itself, if Mutilated or Incorrect)"
+    ],
+    [
+      "police_report",
+      "Police Report"
+    ],
+    [
+      "declaration",
+      "Applicant’s Sworn Statement"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate"
+    ],
+    [
+      "divorce_decree",
+      "Divorce or Annulment Decree"
+    ],
+    [
+      "court_disposition",
+      "Court Order"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "us_birth_certificate",
+      "U.S. Birth Certificate"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the N-565 fee the cover letter states by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check.",
+      "unless": "no_payment"
+    }
+  ]
+}

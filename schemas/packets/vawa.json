@@ -1,0 +1,277 @@
+{
+  "_about": "The VAWA self-petition packet (src/vawa.py): the G-28 and the I-360 (VAWA map), then the client's declaration, then the evidence in the order of the Form I-360 Instructions (01/20/25, pages 6-7: 1 the abuser's status, 2 the legal relationship, 3 living together, 4 the abuse, 5 good moral character, 6 a spouse's good faith marriage), then identity and entry. Any credible evidence counts (INA 204(a)(1)(J)): only the declaration is required here. Variants: 'concurrent' adds the I-485 in the same envelope (an abusive U.S. citizen: always possible; a permanent resident: when a visa is available); 'i485_only' is the I-485 on an I-360 already filed (uscis.gov 'Green Card for VAWA Self-Petitioner', updated 06/26/2026). DRAFT: the attorney approves titles and order.",
+  "filing": "vawa",
+  "title": "VAWA self-petition (I-360)",
+  "packet_pdf": "packet_vawa.pdf",
+  "manifest": "packet_vawa.json",
+  "choices": "packet_choices_vawa.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_vawa.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_vawa",
+    "i360_vawa"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "Every notice goes to the safe address on the I-360 (Part 1, 7) and the G-28: check it before printing. The abuser's address appears only where the form asks for the last address shared (Part 10, 10)."
+    },
+    {
+      "kind": "attach",
+      "text": "The client's declaration, signed: the relationship, living together, the abuse, good faith (a spouse) and good moral character (14 or older: Form I-360 Instructions, page 7)."
+    },
+    {
+      "kind": "attach",
+      "text": "14 or older: a police clearance or state criminal background check from each place the client lived 6 months or more in the 3 years before filing, in the U.S. or abroad (Form I-360 Instructions, page 7)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "declaration",
+      "title": "The self-petitioner's declaration (personal statement) and statements of others who know the facts",
+      "types": [
+        "declaration"
+      ],
+      "required": true
+    },
+    {
+      "id": "abuser_status",
+      "title": "The abuser's U.S. citizenship or lawful permanent residence",
+      "types": [
+        "us_passport",
+        "us_birth_certificate",
+        "citizenship_certificate",
+        "green_card"
+      ]
+    },
+    {
+      "id": "relationship",
+      "title": "The legal relationship to the abuser: marriage certificate, divorce decrees, birth certificates (with certified English translations)",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree",
+        "birth_certificate",
+        "translation_certification"
+      ]
+    },
+    {
+      "id": "residence",
+      "title": "Living together: leases, utility bills, school, medical or employment records",
+      "types": [
+        "lease",
+        "utility_bill"
+      ]
+    },
+    {
+      "id": "abuse",
+      "title": "The abuse: police and court records, protection orders, medical records, statements of shelters, social workers, clergy or school officials, photographs",
+      "types": [
+        "police_report",
+        "medical_record",
+        "photograph"
+      ]
+    },
+    {
+      "id": "good_moral_character",
+      "title": "Good moral character: police clearances or state criminal background checks",
+      "types": [
+        "criminal_record"
+      ]
+    },
+    {
+      "id": "good_faith",
+      "title": "Good faith marriage (a spouse): joint tax returns, bank accounts, insurance, leases",
+      "types": [
+        "tax_return",
+        "bank_statement"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Identity and entry: passport, U.S. visa, Form I-94, photo identification, work permit",
+      "types": [
+        "passport",
+        "visa",
+        "i94",
+        "drivers_license",
+        "work_permit"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "Other USCIS notices",
+      "types": [
+        "uscis_notice"
+      ]
+    },
+    {
+      "id": "immigration_court",
+      "title": "Immigration court documents (Notice to Appear, orders)",
+      "types": [
+        "notice_to_appear"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "i360_approval": "An I-360 approval is in the folder: the packet becomes the I-485 on it once the approval notice is read. Ask the attorney.",
+    "sij_order": "A Special Immigrant Juvenile court order: not part of a VAWA petition. Ask the attorney.",
+    "ssn_card": "Not asked for with the I-360.",
+    "pay_stub": "Not asked for with the I-360: put it in the good faith exhibit only if it shows the couple's shared life.",
+    "w2": "Not asked for with the I-360: put it in the good faith exhibit only if it shows the couple's shared life."
+  },
+  "variants": {
+    "concurrent": {
+      "forms": [
+        "g28_vawa",
+        "i360_vawa",
+        "i485_vawa"
+      ],
+      "generated": {
+        "i485_vawa": {
+          "short": "I-485",
+          "title": "Form I-485, Application to Register Permanent Residence or Adjust Status (VAWA self-petitioner)",
+          "output": "i485_vawa_filled.pdf",
+          "signatures": {
+            "client": [
+              "Pt3Line7a_Signature",
+              "Part 10, the applicant's signature"
+            ],
+            "attorney": [
+              "P12Line6_SignaturePreparer",
+              "Part 12, the preparer's signature"
+            ]
+          }
+        }
+      },
+      "handwork": [
+        {
+          "kind": "check",
+          "text": "Every notice goes to the safe address on the I-360 (Part 1, 7), the I-485 (Part 1, 18) and the G-28: check it before printing. The abuser's address appears only where the form asks for the last address shared (Part 10, 10)."
+        },
+        {
+          "kind": "attach",
+          "text": "The client's declaration, signed: the relationship, living together, the abuse, good faith (a spouse) and good moral character (14 or older: Form I-360 Instructions, page 7)."
+        },
+        {
+          "kind": "attach",
+          "text": "14 or older: a police clearance or state criminal background check from each place the client lived 6 months or more in the 3 years before filing, in the U.S. or abroad (Form I-360 Instructions, page 7)."
+        },
+        {
+          "kind": "attach",
+          "text": "Two identical passport-style photos for the I-485; the client's name and A-Number lightly in pencil on the back."
+        },
+        {
+          "kind": "attach",
+          "text": "Form I-693 (medical exam) in the civil surgeon's sealed envelope, with the I-485 (uscis.gov, Green Card for VAWA Self-Petitioner)."
+        }
+      ]
+    },
+    "i485_only": {
+      "forms": [
+        "g28_vawa",
+        "i485_vawa"
+      ],
+      "generated": {
+        "i485_vawa": {
+          "short": "I-485",
+          "title": "Form I-485, Application to Register Permanent Residence or Adjust Status (VAWA self-petitioner)",
+          "output": "i485_vawa_filled.pdf",
+          "signatures": {
+            "client": [
+              "Pt3Line7a_Signature",
+              "Part 10, the applicant's signature"
+            ],
+            "attorney": [
+              "P12Line6_SignaturePreparer",
+              "Part 12, the preparer's signature"
+            ]
+          }
+        }
+      },
+      "handwork": [
+        {
+          "kind": "check",
+          "text": "Every notice goes to the safe address on the I-485 (Part 1, 18) and the G-28: check it before printing."
+        },
+        {
+          "kind": "attach",
+          "text": "Two identical passport-style photos; the client's name and A-Number lightly in pencil on the back."
+        },
+        {
+          "kind": "attach",
+          "text": "Form I-693 (medical exam) in the civil surgeon's sealed envelope (uscis.gov, Green Card for VAWA Self-Petitioner)."
+        }
+      ],
+      "exhibits": [
+        {
+          "id": "i360_notice",
+          "title": "The I-360's receipt or approval notice (Form I-797)",
+          "types": [
+            "i360_approval",
+            "uscis_notice"
+          ],
+          "required": true
+        },
+        {
+          "id": "birth",
+          "title": "Birth certificate, with certified English translation",
+          "types": [
+            "birth_certificate",
+            "translation_certification"
+          ],
+          "required": true
+        },
+        {
+          "id": "identity",
+          "title": "Identity and entry: passport, U.S. visa, Form I-94, photo identification, work permit",
+          "types": [
+            "passport",
+            "visa",
+            "i94",
+            "drivers_license",
+            "work_permit"
+          ]
+        },
+        {
+          "id": "criminal",
+          "title": "Certified police and court records of any arrest, charge or conviction",
+          "types": [
+            "criminal_record",
+            "police_report"
+          ]
+        },
+        {
+          "id": "immigration_court",
+          "title": "Immigration court documents (Notice to Appear, orders)",
+          "types": [
+            "notice_to_appear"
+          ]
+        }
+      ],
+      "leave_out": {
+        "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+        "declaration": "Filed with the I-360.",
+        "us_passport": "The abuser's documents were filed with the I-360.",
+        "us_birth_certificate": "The abuser's documents were filed with the I-360.",
+        "citizenship_certificate": "The abuser's documents were filed with the I-360.",
+        "green_card": "The abuser's documents were filed with the I-360.",
+        "marriage_certificate": "Filed with the I-360.",
+        "divorce_decree": "Filed with the I-360.",
+        "lease": "Filed with the I-360.",
+        "utility_bill": "Filed with the I-360.",
+        "medical_record": "Filed with the I-360 (the I-693 goes in its sealed envelope).",
+        "photograph": "Filed with the I-360.",
+        "tax_return": "Filed with the I-360.",
+        "bank_statement": "Filed with the I-360.",
+        "sij_order": "A Special Immigrant Juvenile court order: not part of a VAWA case. Ask the attorney.",
+        "ssn_card": "Not asked for with the I-485 on a VAWA petition.",
+        "pay_stub": "Not asked for with the I-485 on a VAWA petition.",
+        "w2": "Not asked for with the I-485 on a VAWA petition."
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "_about": "The U visa petition (Form I-918, src/u_visa.py), per the Form I-918 Instructions (01/20/25, 'Required Initial Evidence' 1-8 and 'Supplement A and Evidence to Support Supplement A') and uscis.gov/i-918 (updated 06/05/2026): the G-28 and the I-918, the ORIGINAL signed Supplement B inserted by hand right after it, a Supplement A per qualifying family member and the I-192 when the client is inadmissible (src/u_visa.py forms_for drops the others), then the evidence in the Instructions' order: the victim, the abuse, the information, the helpfulness, the crime is qualifying, the personal statement, the waiver; then identity, the family members' relationship documents, court and USCIS papers. Mailed to the lockbox for the client's state (Attn: 1367). The attorney approves titles and order.",
+  "filing": "u_visa",
+  "title": "U visa petition (I-918)",
+  "packet_pdf": "packet_u_visa.pdf",
+  "manifest": "packet_u_visa.json",
+  "choices": "packet_choices_u_visa.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_u_visa.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i918",
+    "i918",
+    "i918a_1",
+    "i918a_2",
+    "i918a_3",
+    "i192"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The ORIGINAL Supplement B, signed by the certifying official in the last six months, right after the I-918: never a copy (I-918 Instructions, Required Initial Evidence 1; Supplement B Instructions)."
+    },
+    {
+      "kind": "check",
+      "text": "I-918 Part 3 (and Part 5 of each Supplement A): every question answered with the client. A Yes may make the client inadmissible: then Form I-192 goes with it."
+    },
+    {
+      "kind": "check",
+      "text": "Foreign-language documents: each with a full English translation and the translator's certification (I-918 Instructions, Translations)."
+    },
+    {
+      "kind": "check",
+      "text": "The work permit for the bona fide determination: USCIS recommends filing Form I-765 with the I-918, no fee (uscis.gov/i-918, questions 8 and 10)."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "victim",
+      "title": "Evidence the client is a victim of qualifying criminal activity: police reports, court documents, orders of protection, trial transcripts, news articles, affidavits",
+      "types": [
+        "police_report",
+        "news_article"
+      ]
+    },
+    {
+      "id": "abuse",
+      "title": "Evidence of the substantial physical or mental abuse suffered: medical and counseling records, photographs of injuries, reports of professionals, witness affidavits",
+      "types": [
+        "medical_record",
+        "photograph"
+      ]
+    },
+    {
+      "id": "information",
+      "title": "Evidence the client has information about the criminal activity: reports and affidavits of police, judges and other officials",
+      "types": []
+    },
+    {
+      "id": "helpful",
+      "title": "Evidence of the client's helpfulness to the investigation or prosecution: court documents, reimbursement forms for travel to court, affidavits",
+      "types": []
+    },
+    {
+      "id": "qualifying",
+      "title": "Evidence the criminal activity is qualifying and occurred in the United States or violated U.S. law: the statute's elements",
+      "types": []
+    },
+    {
+      "id": "statement",
+      "title": "The client's signed personal statement",
+      "types": [
+        "declaration"
+      ],
+      "required": true
+    },
+    {
+      "id": "waiver",
+      "title": "For the waiver (Form I-192): the client's own police and court records and the evidence supporting the waiver",
+      "types": [
+        "criminal_record"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Identity and age: passport, birth certificate (with certified English translation), Form I-94",
+      "types": [
+        "passport",
+        "national_id",
+        "birth_certificate",
+        "translation_certification",
+        "i94",
+        "visa"
+      ]
+    },
+    {
+      "id": "family",
+      "title": "Supplement A: each family member's relationship documents (marriage, birth, divorce or death certificates)",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "court",
+      "title": "Immigration court documents",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "uscis",
+      "title": "USCIS notices",
+      "types": [
+        "uscis_notice"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "The firm files a new G-28 with this petition.",
+    "ssn_card": "Not asked for with the I-918.",
+    "drivers_license": "Not asked for with the I-918.",
+    "work_permit": "Not asked for with the I-918.",
+    "green_card": "Not asked for with the I-918.",
+    "lease": "Not asked for with the I-918.",
+    "utility_bill": "Not asked for with the I-918.",
+    "pay_stub": "Not asked for with the I-918.",
+    "tax_return": "Not asked for with the I-918.",
+    "w2": "Not asked for with the I-918.",
+    "bank_statement": "Not asked for with the I-918.",
+    "i360_approval": "Not part of a U petition.",
+    "sij_order": "Not part of a U petition."
+  }
+}

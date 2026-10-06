@@ -1,0 +1,89 @@
+{
+  "_source": "USCIS, 'Form N-336' page (uscis.gov/n-336), 'Filing your Form N-336 by mail', page last updated 06/01/2026, read 2026-10-02 (data/reference/n-336-page.txt). Different from the N-400's chart: the NATZ boxes. Outside the U.S.: Phoenix (the attorney sets it by hand).",
+  "checked": "2026-10-02",
+  "page_updated": "06/01/2026",
+  "lockboxes": {
+    "Phoenix": {
+      "usps": [
+        "USCIS",
+        "ATTN: NATZ",
+        "P.O. BOX 20100",
+        "PHOENIX, AZ 85036-0100"
+      ],
+      "states": [
+        "AK",
+        "AS",
+        "AZ",
+        "AE",
+        "AP",
+        "CA",
+        "CO",
+        "MP",
+        "GU",
+        "HI",
+        "MH",
+        "FM",
+        "NV",
+        "NM",
+        "PW",
+        "TX",
+        "UT"
+      ]
+    },
+    "Elgin": {
+      "usps": [
+        "USCIS",
+        "ATTN: NATZ",
+        "P.O. BOX 4088",
+        "CAROL STREAM, IL 60197-4088"
+      ],
+      "states": [
+        "AL",
+        "AR",
+        "AA",
+        "CT",
+        "DE",
+        "DC",
+        "FL",
+        "GA",
+        "ID",
+        "IL",
+        "IN",
+        "IA",
+        "KS",
+        "KY",
+        "LA",
+        "ME",
+        "MD",
+        "MA",
+        "MI",
+        "MN",
+        "MS",
+        "MO",
+        "MT",
+        "NE",
+        "NH",
+        "NJ",
+        "NY",
+        "NC",
+        "ND",
+        "OH",
+        "OK",
+        "OR",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "SD",
+        "TN",
+        "VI",
+        "VT",
+        "VA",
+        "WA",
+        "WV",
+        "WI",
+        "WY"
+      ]
+    }
+  }
+}

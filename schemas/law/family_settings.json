@@ -1,0 +1,20 @@
+{
+  "_about": "Settings for family-based filings (src/family.py) that change every year and must come from the official source, never from memory. poverty_guidelines: USCIS Form I-864P (uscis.gov/i-864p), read 2026-10-01. 'Effective beginning Mar. 1, 2026'. Three regions; the sponsor's state chooses (AK -> alaska, HI -> hawaii, everything else -> contiguous: the 48 states, D.C., Puerto Rico, the U.S. Virgin Islands, Guam and the Northern Mariana Islands). 'p125' is the minimum for most sponsors; 'p100' for a sponsor on active duty in the U.S. armed forces petitioning for their spouse or child. Note: the USCIS page also shows an unlabelled table above these three with older (2023-level) amounts; it is not used. The filing fees are in schemas/fees.json.",
+  "poverty_guidelines": {
+    "effective": "2026-03-01",
+    "source": "USCIS Form I-864P, HHS Poverty Guidelines for Affidavit of Support (uscis.gov/i-864p)",
+    "checked": "2026-10-01",
+    "contiguous": {
+      "p100": {"2": 21640, "3": 27320, "4": 33000, "5": 38680, "6": 44360, "7": 50040, "8": 55720, "each_additional": 5680},
+      "p125": {"2": 27050, "3": 34150, "4": 41250, "5": 48350, "6": 55450, "7": 62550, "8": 69650, "each_additional": 7100}
+    },
+    "alaska": {
+      "p100": {"2": 27050, "3": 34150, "4": 41250, "5": 48350, "6": 55450, "7": 62550, "8": 69650, "each_additional": 7100},
+      "p125": {"2": 33813, "3": 42688, "4": 51563, "5": 60438, "6": 69313, "7": 78188, "8": 87063, "each_additional": 8875}
+    },
+    "hawaii": {
+      "p100": {"2": 24890, "3": 31420, "4": 37950, "5": 44480, "6": 51010, "7": 57540, "8": 64070, "each_additional": 6530},
+      "p125": {"2": 31113, "3": 39275, "4": 47438, "5": 55600, "6": 63763, "7": 71925, "8": 80088, "each_additional": 8163}
+    }
+  }
+}

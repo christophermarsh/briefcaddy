@@ -1,0 +1,36 @@
+{
+  "_about": "A green card for an asylee or a refugee (src/asylee.py; 8 CFR 209.1, 209.2): the G-28 and the I-485 (Part 2, 3.d), with the proof of the grant on top of the evidence. The asylum approval or the immigration judge's order, or the refugee I-94; then identity, birth and police records. Mailed to the non-family lockbox for the client's state (USCIS's I-485 page, 'Asylum, Refugee, or HRIFA'). No I-765 in the envelope: an asylee's or refugee's work permit is mailed on its own (USCIS's I-765 filing addresses). DRAFT: the attorney approves titles and order.",
+  "filing": "asylee",
+  "title": "Green card as an asylee or refugee (I-485)",
+  "packet_pdf": "packet_asylee.pdf",
+  "manifest": "packet_asylee.json",
+  "choices": "packet_choices_asylee.json",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_asylee.json",
+  "index_sheet": false,
+  "forms": ["g28", "i485"],
+  "handwork": [
+    {"kind": "attach", "text": "Two identical passport photos; the client's name and A-Number lightly in pencil on the back."},
+    {"kind": "attach", "text": "An asylee: Form I-693 (medical exam) in the civil surgeon's sealed envelope (8 CFR 209.2(d)). A refugee: the vaccination record only, unless there were medical grounds at admission (8 CFR 209.1(c))."},
+    {"kind": "check", "text": "An inadmissibility ground (a crime, an immigration violation): a waiver under INA 209(c) is asked for with the I-485 (Form I-602). The attorney decides."}
+  ],
+  "exhibits": [
+    {"id": "grant", "title": "Proof of asylee or refugee status: the asylum approval, the immigration judge's order granting asylum, or the I-94 showing admission as a refugee", "types": ["uscis_notice", "i590_approval", "i730_approval"], "required": true},
+    {"id": "admission", "title": "Form I-94 (Arrival/Departure Record)", "types": ["i94"], "may_be_absent": {"i94": "i485_admission_exempt"}},
+    {"id": "passport", "title": "Passport identity page and any U.S. visa", "types": ["passport", "visa"], "may_be_absent": {"passport": "i485_identity", "visa": "i485_visa_box"}},
+    {"id": "birth", "title": "Birth certificate, with certified English translation", "types": ["birth_certificate", "translation_certification"], "required": true},
+    {"id": "other_id", "title": "Other identity documents: work permit, Social Security card, driver's license", "types": ["work_permit", "ssn_card", "drivers_license", "national_id"]},
+    {"id": "immigration_court", "title": "Immigration court documents (the Notice to Appear, the judge's orders)", "types": ["notice_to_appear"]},
+    {"id": "criminal", "title": "Certified police and court records", "types": ["criminal_record", "police_report"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "declaration": "The asylum declaration was part of the I-589, not asked for with the I-485.",
+    "country_conditions": "Asylum evidence, not asked for with the I-485.",
+    "news_article": "Asylum evidence, not asked for with the I-485.",
+    "medical_record": "Not asked for with the I-485: the medical exam goes in the civil surgeon's sealed I-693.",
+    "photograph": "Asylum evidence, not asked for with the I-485.",
+    "sij_order": "A state court SIJ order: not part of an asylee's or refugee's I-485. Ask the attorney.",
+    "i360_approval": "An I-360: a different basis for a green card. Ask the attorney which one this filing is."
+  }
+}

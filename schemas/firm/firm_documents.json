@@ -1,0 +1,314 @@
+{
+  "_about": "The letters the firm sends about the engagement, as shipped: DRAFT wording in English for the attorney to approve or rewrite (Settings, Firm documents, one copy per office), with machine drafts in Portuguese, Spanish and Haitian Creole for the firm's certified translator. A word in square brackets is filled in from the case when the letter is made; a paragraph left empty is left out. Every sentence is listed in docs/attorney_review.md. Nothing here says a letter meets a rule: the attorney reviews it (src/engagement.py).",
+  "version": 1,
+  "documents": {
+    "engagement": {
+      "title": {
+        "en": "Engagement letter and fee agreement",
+        "pt": "Carta de contratação e contrato de honorários",
+        "es": "Carta de contratación y acuerdo de honorarios",
+        "ht": "Lèt angajman ak akò sou onorè"
+      },
+      "texts": {
+        "en": [
+          "Dear [client name],",
+          "Thank you for choosing [firm] to represent you. This letter says what we will do for you, what we will not do, and how our fee works. Please read it carefully and ask us about anything that is not clear before you sign it.",
+          "What we will do: we will prepare and file the following for you: [filings]. Our office in [office] handles your case.",
+          "What this agreement does not cover: any other matter, an appeal, a case in court or a new filing. Each of those needs a new written agreement.",
+          "Our fee: [fee]",
+          "Government fees: [government fees] They are separate from our fee and are paid to the government, not to us.",
+          "What we ask of you: tell us the truth and give us complete information; tell us at once when your address, phone or email changes; and send us every letter you receive from the government about your case.",
+          "Ending this agreement: you may end it at any time by telling us in writing. If we end it, we will tell you in writing. Either way, we will return your papers to you and tell you of any deadline we know of.",
+          "[additions]",
+          "By signing below, you say that you have read this agreement, that you understand it, and that you agree to it."
+        ],
+        "pt": [
+          "Olá, [client name].",
+          "Obrigado por escolher [firm] para representar você. Esta carta explica o que vamos fazer por você, o que não vamos fazer e como funcionam os nossos honorários. Leia com atenção e pergunte sobre qualquer coisa que não esteja clara antes de assinar.",
+          "O que vamos fazer: vamos preparar e protocolar para você: [filings]. O nosso escritório em [office] cuida do seu caso.",
+          "O que este contrato não cobre: qualquer outro assunto, um recurso, um processo em tribunal ou um novo pedido. Cada um deles precisa de um novo contrato por escrito.",
+          "Nossos honorários: [fee]",
+          "Taxas do governo: [government fees] Elas são separadas dos nossos honorários e são pagas ao governo, não a nós.",
+          "O que pedimos a você: diga a verdade e dê informações completas; avise-nos logo quando mudar de endereço, telefone ou e-mail; e envie-nos toda carta do governo sobre o seu caso.",
+          "Como encerrar este contrato: você pode encerrá-lo a qualquer momento, avisando-nos por escrito. Se nós o encerrarmos, avisaremos você por escrito. Em qualquer caso, devolveremos os seus documentos e informaremos qualquer prazo que conhecermos.",
+          "[additions]",
+          "Ao assinar abaixo, você declara que leu este contrato, que o entende e que concorda com ele."
+        ],
+        "es": [
+          "Apreciable [client name]:",
+          "Gracias por elegir a [firm] para representarle. Esta carta explica lo que haremos por usted, lo que no haremos y cómo funcionan nuestros honorarios. Léala con atención y pregúntenos cualquier cosa que no esté clara antes de firmarla.",
+          "Lo que haremos: prepararemos y presentaremos por usted lo siguiente: [filings]. Nuestra oficina en [office] se encarga de su caso.",
+          "Lo que este acuerdo no cubre: cualquier otro asunto, una apelación, un caso ante un tribunal o una nueva solicitud. Cada uno de ellos necesita un nuevo acuerdo por escrito.",
+          "Nuestros honorarios: [fee]",
+          "Tarifas del gobierno: [government fees] Son aparte de nuestros honorarios y se pagan al gobierno, no a nosotros.",
+          "Lo que le pedimos: díganos la verdad y denos información completa; avísenos enseguida si cambia su dirección, teléfono o correo electrónico; y envíenos toda carta que reciba del gobierno sobre su caso.",
+          "Cómo terminar este acuerdo: puede terminarlo en cualquier momento avisándonos por escrito. Si nosotros lo terminamos, se lo diremos por escrito. En cualquier caso, le devolveremos sus documentos y le diremos cualquier plazo que conozcamos.",
+          "[additions]",
+          "Al firmar abajo, usted declara que leyó este acuerdo, que lo entiende y que está de acuerdo con él."
+        ],
+        "ht": [
+          "Bonjou [client name],",
+          "Mèsi paske ou chwazi [firm] pou reprezante ou. Lèt sa a di sa nou pral fè pou ou, sa nou p ap fè, ak kijan onorè nou mache. Tanpri li l byen epi poze nou kesyon sou nenpòt bagay ki pa klè anvan ou siyen l.",
+          "Sa nou pral fè: nou pral prepare epi depoze pou ou: [filings]. Biwo nou nan [office] ap okipe dosye ou.",
+          "Sa akò sa a pa kouvri: nenpòt lòt zafè, yon apèl, yon ka devan tribinal oswa yon nouvo demann. Chak ladan yo bezwen yon nouvo akò alekri.",
+          "Onorè nou: [fee]",
+          "Frè gouvènman an: [government fees] Yo apa de onorè nou epi se gouvènman an ou peye yo, pa nou.",
+          "Sa nou mande ou: di nou verite a epi ba nou tout enfòmasyon yo; fè nou konnen touswit lè adrès, telefòn oswa imèl ou chanje; epi voye ban nou chak lèt ou resevwa nan men gouvènman an sou dosye ou.",
+          "Kijan pou fini akò sa a: ou ka fini l nenpòt lè lè ou di nou sa alekri. Si se nou ki fini l, n ap di ou sa alekri. Kèlkeswa sa, n ap remèt ou papye ou yo epi n ap di ou nenpòt dat limit nou konnen.",
+          "[additions]",
+          "Lè ou siyen anba a, ou di ke ou li akò sa a, ke ou konprann li, epi ke ou dakò avè l."
+        ]
+      }
+    },
+    "non_engagement": {
+      "title": {
+        "en": "Our decision not to represent you",
+        "pt": "Nossa decisão de não representar você",
+        "es": "Nuestra decisión de no representarle",
+        "ht": "Desizyon nou pou nou pa reprezante ou"
+      },
+      "texts": {
+        "en": [
+          "Dear [client name],",
+          "Thank you for contacting [firm] about [matter]. We have decided not to represent you in this matter.",
+          "No attorney-client relationship was formed between you and our firm. As of [declined on], we are not your lawyers in this matter and we will not take any step in it for you.",
+          "Deadlines are yours to watch. Immigration matters often have strict deadlines, and missing one can harm your case or end it. We are not watching any deadline for you. If you want to go ahead, please contact another lawyer or an accredited representative promptly.",
+          "Our decision is not an opinion about your matter. Another lawyer may see it differently.",
+          "[additions]",
+          "We wish you the best."
+        ],
+        "pt": [
+          "Olá, [client name].",
+          "Obrigado por procurar [firm] sobre [matter]. Decidimos não representar você neste assunto.",
+          "Não se formou nenhuma relação entre advogado e cliente entre você e o nosso escritório. A partir de [declined on], não somos seus advogados neste assunto e não vamos tomar nenhuma providência nele por você.",
+          "Os prazos são sua responsabilidade. Os assuntos de imigração costumam ter prazos rígidos, e perder um deles pode prejudicar ou encerrar o seu caso. Não estamos acompanhando nenhum prazo por você. Se quiser seguir em frente, procure logo outro advogado ou um representante credenciado.",
+          "A nossa decisão não é uma opinião sobre o seu caso. Outro advogado pode ver de outra forma.",
+          "[additions]",
+          "Desejamos tudo de bom para você."
+        ],
+        "es": [
+          "Apreciable [client name]:",
+          "Gracias por comunicarse con [firm] sobre [matter]. Hemos decidido no representarle en este asunto.",
+          "No se formó ninguna relación de abogado y cliente entre usted y nuestra firma. Desde el [declined on], no somos sus abogados en este asunto y no tomaremos ninguna medida en él por usted.",
+          "Los plazos son responsabilidad suya. Los asuntos de inmigración suelen tener plazos estrictos, y perder uno puede perjudicar su caso o terminarlo. No estamos vigilando ningún plazo por usted. Si quiere seguir adelante, comuníquese pronto con otro abogado o con un representante acreditado.",
+          "Nuestra decisión no es una opinión sobre su asunto. Otro abogado puede verlo de otra manera.",
+          "[additions]",
+          "Le deseamos lo mejor."
+        ],
+        "ht": [
+          "Bonjou [client name],",
+          "Mèsi paske ou kontakte [firm] sou [matter]. Nou deside pa reprezante ou nan zafè sa a.",
+          "Pa gen okenn relasyon avoka ak kliyan ki fòme ant ou menm ak biwo nou. Apati [declined on], nou pa avoka ou nan zafè sa a epi nou p ap fè okenn demach ladan l pou ou.",
+          "Dat limit yo se responsablite pa ou. Zafè imigrasyon souvan gen dat limit ki sevè, epi si ou rate youn sa ka fè dosye ou mal oswa fini l. Nou pa swiv okenn dat limit pou ou. Si ou vle kontinye, tanpri kontakte yon lòt avoka oswa yon reprezantan ki akredite byen vit.",
+          "Desizyon nou an se pa yon opinyon sou zafè ou. Yon lòt avoka ka wè l yon lòt jan.",
+          "[additions]",
+          "Nou swete ou tout bon bagay."
+        ]
+      }
+    },
+    "disengagement": {
+      "title": {
+        "en": "The end of our representation",
+        "pt": "O fim da nossa representação",
+        "es": "El fin de nuestra representación",
+        "ht": "Fen reprezantasyon nou"
+      },
+      "texts": {
+        "en": [
+          "Dear [client name],",
+          "This letter confirms that our firm's representation of you in [filings] ends on [end date]. [ended by]",
+          "What we return to you: [returned]",
+          "Deadlines: [deadlines] From [end date], these deadlines are yours to watch: we will take no further step in your matter. Missing a deadline can harm your case or end it, so please contact another lawyer or an accredited representative promptly.",
+          "[additions]",
+          "Thank you for the trust you placed in us."
+        ],
+        "pt": [
+          "Olá, [client name].",
+          "Esta carta confirma que a representação do nosso escritório para você em [filings] termina em [end date]. [ended by]",
+          "O que devolvemos a você: [returned]",
+          "Prazos: [deadlines] A partir de [end date], esses prazos são sua responsabilidade: não tomaremos mais nenhuma providência no seu caso. Perder um prazo pode prejudicar ou encerrar o seu caso, por isso procure logo outro advogado ou um representante credenciado.",
+          "[additions]",
+          "Obrigado pela confiança em nós."
+        ],
+        "es": [
+          "Apreciable [client name]:",
+          "Esta carta confirma que la representación de nuestra firma en [filings] termina el [end date]. [ended by]",
+          "Lo que le devolvemos: [returned]",
+          "Plazos: [deadlines] Desde el [end date], estos plazos son responsabilidad suya: no tomaremos ninguna otra medida en su asunto. Perder un plazo puede perjudicar su caso o terminarlo, así que comuníquese pronto con otro abogado o con un representante acreditado.",
+          "[additions]",
+          "Gracias por la confianza que depositó en nosotros."
+        ],
+        "ht": [
+          "Bonjou [client name],",
+          "Lèt sa a konfime ke reprezantasyon biwo nou pou ou nan [filings] fini [end date]. [ended by]",
+          "Sa nou remèt ou: [returned]",
+          "Dat limit: [deadlines] Apati [end date], dat limit sa yo se responsablite pa ou: nou p ap fè okenn lòt demach nan zafè ou. Si ou rate yon dat limit sa ka fè dosye ou mal oswa fini l, kidonk tanpri kontakte yon lòt avoka oswa yon reprezantan ki akredite byen vit.",
+          "[additions]",
+          "Mèsi pou konfyans ou te genyen nan nou."
+        ]
+      }
+    },
+    "closing": {
+      "title": {
+        "en": "Your matter is concluded",
+        "pt": "O seu assunto está concluído",
+        "es": "Su asunto ha concluido",
+        "ht": "Zafè ou fini"
+      },
+      "texts": {
+        "en": [
+          "Dear [client name],",
+          "Your matter with our firm, [filings], is concluded as of [closed on]. Thank you for trusting [firm] with it.",
+          "What we keep: we keep a copy of your file [kept until]. The file may be destroyed only after separate, current attorney approval and resolution of preservation duties, original-document protections, court orders and other applicable requirements.",
+          "How to get your file: [how to get the file]",
+          "What comes next is yours to watch: some immigration matters have later dates (for example, renewing a card or applying for citizenship). We are not watching them for you unless you hire us again.",
+          "[additions]",
+          "With our best wishes,"
+        ],
+        "pt": [
+          "Olá, [client name].",
+          "O seu assunto com o nosso escritório, [filings], está concluído em [closed on]. Obrigado por confiar a [firm] esse trabalho.",
+          "O que guardamos: guardamos uma cópia do seu arquivo [kept until]. O arquivo pode ser destruído somente depois de uma aprovação atual e separada do advogado e da resolução de deveres de preservação, proteções de documentos originais, ordens judiciais e outros requisitos aplicáveis.",
+          "Como obter o seu arquivo: [how to get the file]",
+          "O que vem depois é sua responsabilidade: alguns assuntos de imigração têm datas futuras (por exemplo, renovar um cartão ou pedir a cidadania). Não estamos acompanhando essas datas por você, a menos que nos contrate de novo.",
+          "[additions]",
+          "Com os nossos melhores votos,"
+        ],
+        "es": [
+          "Apreciable [client name]:",
+          "Su asunto con nuestra firma, [filings], quedó concluido el [closed on]. Gracias por confiar en [firm].",
+          "Lo que guardamos: guardamos una copia de su expediente [kept until]. El expediente puede destruirse solo después de una aprobación actual y separada del abogado y de resolver los deberes de conservación, las protecciones de documentos originales, las órdenes judiciales y otros requisitos aplicables.",
+          "Cómo obtener su expediente: [how to get the file]",
+          "Lo que viene después es responsabilidad suya: algunos asuntos de inmigración tienen fechas posteriores (por ejemplo, renovar una tarjeta o solicitar la ciudadanía). No estamos vigilando esas fechas por usted, a menos que nos contrate de nuevo.",
+          "[additions]",
+          "Con nuestros mejores deseos,"
+        ],
+        "ht": [
+          "Bonjou [client name],",
+          "Zafè ou ak biwo nou, [filings], fini depi [closed on]. Mèsi paske ou te fè [firm] konfyans.",
+          "Sa nou kenbe: nou kenbe yon kopi dosye ou [kept until]. Dosye a kapab detwi sèlman apre yon avoka bay yon apwobasyon separe ki valab kounye a, epi apre obligasyon pou prezève dosye a, pwoteksyon dokiman orijinal yo, lòd tribinal ak lòt kondisyon ki aplikab yo fin rezoud.",
+          "Kijan pou jwenn dosye ou: [how to get the file]",
+          "Sa ki vini apre se responsablite pa ou: kèk zafè imigrasyon gen dat pita (pa egzanp, renouvle yon kat oswa mande sitwayènte). Nou pa swiv dat sa yo pou ou sof si ou anboche nou ankò.",
+          "[additions]",
+          "Ak tout bon swè nou,"
+        ]
+      }
+    }
+  },
+  "phrases": {
+    "government_fees": {
+      "en": "We will tell you the government's filing fees for these filings, from the government's fee schedule, before anything is filed.",
+      "pt": "Antes de qualquer protocolo, vamos informar as taxas do governo para esses pedidos, conforme a tabela de taxas do governo.",
+      "es": "Antes de presentar nada, le diremos las tarifas del gobierno para estas solicitudes, según la tabla de tarifas del gobierno.",
+      "ht": "Anvan nou depoze anyen, n ap di ou frè gouvènman an pou demann sa yo, dapre lis frè gouvènman an."
+    },
+    "ended_by_firm": {
+      "en": "We have decided to end our representation.",
+      "pt": "Nós decidimos encerrar a nossa representação.",
+      "es": "Hemos decidido terminar nuestra representación.",
+      "ht": "Nou deside fini reprezantasyon nou an."
+    },
+    "ended_by_client": {
+      "en": "You told us that you want to end our representation.",
+      "pt": "Você nos disse que quer encerrar a nossa representação.",
+      "es": "Usted nos dijo que quiere terminar nuestra representación.",
+      "ht": "Ou di nou ke ou vle fini reprezantasyon nou an."
+    },
+    "ended_transferred": {
+      "en": "You told us that another lawyer will represent you from now on.",
+      "pt": "Você nos disse que outro advogado vai representar você a partir de agora.",
+      "es": "Usted nos dijo que otro abogado le representará a partir de ahora.",
+      "ht": "Ou di nou ke yon lòt avoka ap reprezante ou kounye a."
+    },
+    "deadlines_some": {
+      "en": "the deadlines we know of today are: {list}.",
+      "pt": "os prazos que conhecemos hoje são: {list}.",
+      "es": "los plazos que conocemos hoy son: {list}.",
+      "ht": "dat limit nou konnen jodi a se: {list}."
+    },
+    "deadlines_none": {
+      "en": "we know of no deadline in your matter today. That does not mean there is none.",
+      "pt": "não conhecemos hoje nenhum prazo no seu caso. Isso não quer dizer que não exista nenhum.",
+      "es": "hoy no conocemos ningún plazo en su asunto. Eso no quiere decir que no haya ninguno.",
+      "ht": "jodi a nou pa konnen okenn dat limit nan zafè ou. Sa pa vle di pa genyen."
+    },
+    "kept_until_date": {
+      "en": "until at least {date}",
+      "pt": "até pelo menos {date}",
+      "es": "hasta por lo menos el {date}",
+      "ht": "omwen jiska {date}"
+    },
+    "kept_until_setting": {
+      "en": "for as long as our firm keeps closed files",
+      "pt": "pelo tempo que o nosso escritório guarda os arquivos encerrados",
+      "es": "durante el tiempo que nuestra firma guarda los expedientes cerrados",
+      "ht": "pou tout tan biwo nou kenbe dosye ki fèmen yo"
+    },
+    "how_to_get_the_file": {
+      "en": "write to or call our office in [office] ([office address]) before then, and we will give it to you.",
+      "pt": "escreva ou ligue para o nosso escritório em [office] ([office address]) antes dessa data, e nós o entregaremos a você.",
+      "es": "escriba o llame a nuestra oficina en [office] ([office address]) antes de esa fecha, y se lo entregaremos.",
+      "ht": "ekri oswa rele biwo nou nan [office] ([office address]) anvan dat sa a, epi n ap ba ou l."
+    },
+    "returned": {
+      "en": "the papers you gave us and your file.",
+      "pt": "os documentos que você nos deu e o seu arquivo.",
+      "es": "los documentos que nos dio y su expediente.",
+      "ht": "papye ou te ban nou yo ak dosye ou."
+    },
+    "your_matter": {
+      "en": "your immigration matter",
+      "pt": "o seu assunto de imigração",
+      "es": "su asunto de inmigración",
+      "ht": "zafè imigrasyon ou"
+    },
+    "supplement": {
+      "en": "Supplement",
+      "pt": "Suplemento",
+      "es": "Suplemento",
+      "ht": "Sipleman"
+    },
+    "filing_expedite": {
+      "en": "an expedite request to USCIS",
+      "pt": "um pedido de urgência ao USCIS",
+      "es": "una solicitud de trámite urgente al USCIS",
+      "ht": "yon demann ijans bay USCIS"
+    },
+    "filing_court_bond": {
+      "en": "a bond request to the immigration judge",
+      "pt": "um pedido de fiança ao juiz de imigração",
+      "es": "una solicitud de fianza ante el juez de inmigración",
+      "ht": "yon demann kosyon devan jij imigrasyon an"
+    },
+    "filing_court_motion": {
+      "en": "a motion to reopen or reconsider before the immigration judge",
+      "pt": "uma moção para reabrir ou reconsiderar ao juiz de imigração",
+      "es": "una moción para reabrir o reconsiderar ante el juez de inmigración",
+      "ht": "yon mosyon pou relouvri oswa rekonsidere devan jij imigrasyon an"
+    },
+    "already_passed": {
+      "en": "already passed",
+      "pt": "já passou",
+      "es": "ya pasó",
+      "ht": "deja pase"
+    },
+    "deadlines_in_english": {
+      "en": "",
+      "pt": "o que cada prazo é está em inglês, como o escritório o registra",
+      "es": "lo que es cada plazo está en inglés, como lo registra la oficina",
+      "ht": "sa chak dat limit ye a an angle, jan biwo a anrejistre l"
+    },
+    "kept_until_proposal": {
+      "en": "under a planning proposal pending a separate attorney retention determination; operational closure and an office period do not authorize destruction",
+      "pt": "sob uma proposta de planejamento, pendente de uma determinação separada do advogado sobre a guarda; o encerramento operacional e um período do escritório não autorizam a destruição",
+      "es": "según una propuesta de planificación pendiente de una determinación separada del abogado sobre la conservación; el cierre operativo y un plazo de la oficina no autorizan la destrucción",
+      "ht": "dapre yon pwopozisyon planifikasyon pandan n ap tann yon desizyon separe avoka a sou konsèvasyon; fèmen dosye a nan sistèm nan ak yon peryòd biwo a pa bay otorizasyon pou detwi li"
+    },
+    "how_to_request_file": {
+      "en": "ask our office in [office] ([office address]) for your file and the delivery arrangements.",
+      "pt": "peça ao nosso escritório em [office] ([office address]) o seu arquivo e informações sobre a entrega.",
+      "es": "solicite a nuestra oficina en [office] ([office address]) su expediente y los detalles de la entrega.",
+      "ht": "mande biwo nou nan [office] ([office address]) dosye ou ak detay sou fason pou resevwa li."
+    }
+  }
+}

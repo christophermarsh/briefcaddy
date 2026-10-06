@@ -1,0 +1,69 @@
+{
+  "_about": "The I-360 (Special Immigrant Juvenile) petition's cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing, as on its I-485 letter (schemas/cover_letter.json); the subject, enclosures and fee note are the petition's. No priority-date paragraph. An I-360 filed alone doesn't need a current priority date. The mailing address follows the client's state (schemas/uscis_lockboxes.json). The attorney approves this file before volume use. Fees per Form G-1055 (10/01/26): no filing fee for an SIJ I-360, but the Pub. L. 119-21 fee ($250) is due by separate payment.",
+  "base": "cover_letter.json",
+  "mail_to": "by_state",
+  "noun": "petition",
+  "re_lines": [
+    "Petition: I-360 Petition for Amerasian, Widow(er), or Special Immigrant",
+    "Classification: Special Immigrant Juvenile"
+  ],
+  "who": "Petitioner",
+  "form_order": [
+    "g28_i360",
+    "i360"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i360": "Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i360": "Petitioner’s I-360 - Petition for Amerasian, Widow(er), or Special Immigrant (Special Immigrant Juvenile)"
+  },
+  "documents": [
+    [
+      "sij_order",
+      "Certified Copy of the State Court Order with Special Immigrant Juvenile Findings"
+    ],
+    [
+      "birth_certificate",
+      "Copy of Petitioner’s Birth Certificate and Translation"
+    ],
+    [
+      "passport",
+      "Copy of Petitioner’s Passport"
+    ],
+    [
+      "visa",
+      "Copy of Petitioner’s U.S. Visa"
+    ],
+    [
+      "i94",
+      "Copy of Petitioner’s Most Recent I-94"
+    ],
+    [
+      "work_permit",
+      "Copy of Petitioner’s Employment Authorization Card"
+    ],
+    [
+      "uscis_notice",
+      "Copies of Other USCIS Notices"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of Petitioner’s Immigration Court Documents"
+    ],
+    [
+      "fee_calculator_printout",
+      "Payment of the Public Law 119-21 fee ({i360_sij_pl}), separate from any filing fee"
+    ]
+  ],
+  "fees": "There is no USCIS filing fee for Form I-360 filed by a petitioner seeking classification as a Special Immigrant Juvenile. As required by Public Law 119-21, the additional fee of {i360_sij_pl} is enclosed as a separate payment ({schedule}).",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the Public Law 119-21 fee for an SIJ I-360 as its own payment by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amount the cover letter states; it can't be waived."
+    }
+  ]
+}

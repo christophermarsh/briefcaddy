@@ -1,0 +1,71 @@
+{
+  "_about": "The N-336 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the N-336's NATZ lockbox for the client's state: uscis.gov/n-336, updated 06/01/2026), the subject and the fee ($830 on paper, $0 for a military N-400: Form G-1055 10/01/26) come from src/hearing_request.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "request for a hearing",
+  "re_lines": [
+    "Form N-336, Request for a Hearing"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_n336",
+    "n336"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_n336": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "n336": "Applicant’s N-336 - Request for a Hearing on a Decision in Naturalization Proceedings"
+  },
+  "documents": [
+    [
+      "uscis_notice",
+      "Copy of the N-400 Denial Notice and Other USCIS Notices"
+    ],
+    [
+      "declaration",
+      "Declaration"
+    ],
+    [
+      "green_card",
+      "Copy of Permanent Resident Card"
+    ],
+    [
+      "tax_return",
+      "Tax Returns or Transcripts"
+    ],
+    [
+      "criminal_record",
+      "Certified Court Dispositions"
+    ],
+    [
+      "police_report",
+      "Police Records"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of Marriage Certificate"
+    ],
+    [
+      "divorce_decree",
+      "Copy of Divorce Decree"
+    ],
+    [
+      "passport",
+      "Copy of Passport"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the N-336 fee the cover letter states by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check.",
+      "unless": "no_payment"
+    }
+  ]
+}

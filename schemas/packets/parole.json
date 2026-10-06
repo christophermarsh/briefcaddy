@@ -1,0 +1,127 @@
+{
+  "_about": "A request for humanitarian parole for someone outside the U.S. (src/parole.py), per uscis.gov/i-131 (updated 08/14/2026), uscis.gov/i-134 (updated 06/03/2026), the humanitarian parole page (updated 12/15/2025) and the I-131 Instructions (01/20/25), read 10/02/2026: for each person a G-28, the I-131 (Part 1, item 7) and the supporter's I-134, then the evidence the Instructions list: the beneficiary's passport page, the petitioner's and the supporter's IDs and proof of status, the supporter's income and assets, the reason and its evidence, why no visa can be had, and any decision on a petition. The detailed statements (the reason, the length of parole, why no visa, any waiver) are the attorney's, attached by hand. The attorney approves titles and order.",
+  "filing": "parole",
+  "title": "Humanitarian parole (I-131 and I-134)",
+  "packet_pdf": "packet_parole.pdf",
+  "manifest": "packet_parole.json",
+  "choices": "packet_choices_parole.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_parole.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_parole_1",
+    "i131_parole_1",
+    "i134_1"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The detailed statement the I-131 Instructions ask for: the urgent humanitarian reason or significant public benefit, how long parole is needed, why a visa can't be obtained (when and where the person tried, any denial letter) and, if applicable, why a waiver can't be (the attorney writes it with the client's answers)."
+    },
+    {
+      "kind": "check",
+      "text": "No photos: an initial parole request from outside the U.S. takes none (the I-131 Instructions ask for photos only with a refugee travel document or advance parole). USCIS or the State Department tells each person over 14 where to give biometrics."
+    },
+    {
+      "kind": "check",
+      "text": "Each I-134 is signed by its supporter (a notary is not needed: it is signed under penalty of perjury). A person who supports themself signs Part 4 on page 6 instead of Part 5."
+    },
+    {
+      "kind": "check",
+      "text": "An urgent case: write EXPEDITE in black ink at the top right of each paper I-131, with the reason, email, phone and fax of the firm, and evidence of the urgency."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "beneficiary",
+      "title": "The beneficiary: the biographical page of the passport (or another government ID showing citizenship)",
+      "types": [
+        "passport",
+        "national_id",
+        "birth_certificate"
+      ],
+      "required": true
+    },
+    {
+      "id": "petitioner",
+      "title": "The petitioner: identity, and proof of U.S. citizenship or status",
+      "types": [
+        "us_passport",
+        "citizenship_certificate",
+        "green_card",
+        "drivers_license",
+        "us_birth_certificate"
+      ],
+      "required": true
+    },
+    {
+      "id": "support",
+      "title": "The financial supporter: identity and status, and evidence of income and assets",
+      "types": [
+        "tax_return",
+        "pay_stub",
+        "w2",
+        "bank_statement",
+        "lease",
+        "utility_bill"
+      ],
+      "required": true
+    },
+    {
+      "id": "reason",
+      "title": "Evidence of the urgent humanitarian reason or significant public benefit",
+      "types": [
+        "medical_record",
+        "declaration",
+        "country_conditions",
+        "news_article",
+        "police_report",
+        "school_record",
+        "photograph"
+      ]
+    },
+    {
+      "id": "visa",
+      "title": "Why no visa can be had: consular letters, a denial, an appointment notice",
+      "types": [
+        "nvc_letter",
+        "consular_appointment",
+        "visa"
+      ]
+    },
+    {
+      "id": "petitions",
+      "title": "Decisions on any immigrant or nonimmigrant petition for the person",
+      "types": [
+        "i130_approval",
+        "i360_approval",
+        "uscis_notice",
+        "i130",
+        "i360_petition"
+      ]
+    },
+    {
+      "id": "relationship",
+      "title": "The relationship between the petitioner or supporter and the person",
+      "types": [
+        "marriage_certificate",
+        "divorce_decree"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this request.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this request.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this request.",
+    "ssn_card": "Not asked for with the parole request.",
+    "sij_order": "Not asked for with the parole request.",
+    "i485_receipt": "Not asked for with the parole request.",
+    "work_permit": "Not asked for with the parole request.",
+    "i94": "Not asked for with an initial parole request from outside the U.S.",
+    "notice_to_appear": "Not asked for with the parole request (the attorney attaches what applies)."
+  }
+}

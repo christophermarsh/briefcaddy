@@ -1,0 +1,494 @@
+{
+  "_status": "SIJS filing-category policy profile (src/rules/policy.py). Every entry is a legal/firm-practice call made explicit, grounded in what the paralegal did on the real reference I-485 (clients/maria_eduarda). NOT attorney-approved: opt-in only; every value it writes is Tier 2/3 and flagged for sign-off.",
+  "policies": [
+    {
+      "id": "SIJS-CATEGORY",
+      "name": "SIJ filing category",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "mode": "unanswered",
+      "why": "Folder has an approved I-360 (SIJS): Part 2 principal applicant, category 3.c Special Immigrant Juvenile.",
+      "plain_text": "The folder has an approved I-360 (Special Immigrant Juvenile): Part 2 is answered as the principal applicant, category 3.c, Special Immigrant Juvenile.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.filing_as": "Principal",
+        "applicant.filing_category": "SIJS"
+      }
+    },
+    {
+      "id": "SIJS-EXEMPTIONS",
+      "name": "SIJ: no I-864, public charge exempt",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "mode": "unanswered",
+      "why": "SIJS applicants need no Form I-864 (Part 3 'not required by statute') and are exempt from public charge (Part 9 item 56).",
+      "plain_text": "Special Immigrant Juvenile applicants need no Form I-864 (Part 3: not required by statute) and are exempt from public charge (Part 9, Item 56).",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.affidavit_of_support_exemption": "Not required",
+        "applicant.public_charge_exemption": "SIJS"
+      }
+    },
+    {
+      "id": "SIJS-STATUS",
+      "name": "Current status: I-360 approved",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "mode": "unanswered",
+      "why": "Part 1 item 14 current status, as the firm writes it for SIJS.",
+      "plain_text": "Part 1, Item 14 (current status) is written the way the firm writes it for Special Immigrant Juvenile cases: I-360 APPROVED.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.current_status_text": "I-360 APPROVED"
+      }
+    },
+    {
+      "id": "SIJS-NOT-245I",
+      "name": "Not adjusting under 245(i)",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "mode": "unanswered",
+      "why": "SIJS adjustment is not based on INA 245(i) (Part 2 item 4).",
+      "plain_text": "Special Immigrant Juvenile adjustment is not based on INA 245(i): Part 2, Item 4 is answered No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part2.adjusting_under_245i": "No"
+      }
+    },
+    {
+      "id": "SIJS-CSPA-UNDER-21",
+      "name": "Under 21: the CSPA question is No",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "max_age": 21,
+      "mode": "unanswered",
+      "why": "Part 2 item 5 asks whether the applicant is 21 OR OLDER applying as a child under CSPA: answered No only when the verified DOB shows under 21; otherwise left to the attorney.",
+      "plain_text": "Part 2, Item 5 asks whether the applicant is 21 or older and applying as a child under the Child Status Protection Act. It is answered No only when the verified date of birth shows the applicant is under 21; otherwise the attorney answers it.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part2.cspa_21_or_older": "No"
+      }
+    },
+    {
+      "id": "NOT-EOIR",
+      "name": "Not filing with the immigration court",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "unless_present": [
+        "applicant.nta_present"
+      ],
+      "mode": "unanswered",
+      "why": "No Notice to Appear in the folder -> not filing with EOIR (Part 2 item 1). With an NTA, left to the attorney.",
+      "plain_text": "No Notice to Appear in the folder: the client is not filing with the immigration court (EOIR), so Part 2, Item 1 is answered No. With a Notice to Appear, the attorney answers it.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.filing_with_eoir": "No"
+      }
+    },
+    {
+      "id": "NO-CREWMAN",
+      "name": "Not a crewman",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "mode": "unanswered",
+      "why": "Firm default: SIJS clients are not crewmen (Part 1 items 16-17).",
+      "plain_text": "The firm's standard answer: Special Immigrant Juvenile clients are not crewmen (Part 1, Items 16 and 17 are answered No).",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.crewman_visa_ever": "No",
+        "applicant.arrived_as_crewman": "No"
+      }
+    },
+    {
+      "id": "HAS-A-NUMBER",
+      "name": "Has an A-Number",
+      "when_present": [
+        "applicant.a_number"
+      ],
+      "mode": "unanswered",
+      "why": "An A-number was read from a document (Part 1 item 4).",
+      "plain_text": "An A-Number was read from a document: Part 1, Item 4 (do you have an A-Number?) is answered Yes.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.has_a_number": "Yes"
+      }
+    },
+    {
+      "id": "SSA-CARD",
+      "name": "Social Security card already issued",
+      "when_present": [
+        "applicant.ssn"
+      ],
+      "mode": "unanswered",
+      "why": "An SSN card is in the folder: SSA has issued a card; firm default is not to request a new one or consent to disclosure (Part 1 item 19).",
+      "plain_text": "A Social Security card is in the folder, so Social Security has issued the client a card (Part 1, Item 19: Yes). The firm's standard answer is not to ask for a new card or consent to disclosure (No to both).",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.ssa_ever_issued_card": "Yes",
+        "applicant.ssa_issue_card": "No",
+        "applicant.ssa_consent_disclosure": "No"
+      }
+    },
+    {
+      "id": "PART9-DEFAULT-NO",
+      "name": "Part 9 questions not asked: No",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "unless_present": [
+        "applicant.criminal_record_present",
+        "applicant.nta_present"
+      ],
+      "when_values": {
+        "applicant.part9.arrested_cited_charged_detained": "No",
+        "applicant.part9.committed_crime": "No"
+      },
+      "mode": "unanswered",
+      "why": "Firm practice: Part 9 items the questionnaire does not ask are answered No. ONLY when the client answered No to both questionnaire criminal questions and there is no criminal record or NTA in the folder.",
+      "plain_text": "The firm's practice: the Part 9 questions the paper questionnaire does not ask are answered No, but ONLY when the client answered No to both questionnaire criminal questions and there is no criminal record or Notice to Appear in the folder.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part9.pt8line1": "No",
+        "applicant.part9.pt8line25": "No",
+        "applicant.part9.pt8line26": "No",
+        "applicant.part9.pt8line27": "No",
+        "applicant.part9.pt8line28": "No",
+        "applicant.part9.pt8line30": "No",
+        "applicant.part9.pt8line31": "No",
+        "applicant.part9.pt8line32": "No",
+        "applicant.part9.pt8line33": "No",
+        "applicant.part9.pt8line34": "No",
+        "applicant.part9.pt8line35a": "No",
+        "applicant.part9.pt8line36": "No",
+        "applicant.part9.pt8line37": "No",
+        "applicant.part9.pt8line38": "No",
+        "applicant.part9.pt8line41": "No",
+        "applicant.part9.pt8line42c": "No",
+        "applicant.part9.pt8line42d": "No",
+        "applicant.part9.pt8line43a": "No",
+        "applicant.part9.pt8line43b": "No",
+        "applicant.part9.pt8line43c": "No",
+        "applicant.part9.pt8line43d": "No",
+        "applicant.part9.pt8line43e": "No",
+        "applicant.part9.pt8line43f": "No",
+        "applicant.part9.pt8line43g": "No",
+        "applicant.part9.pt8line43h": "No",
+        "applicant.part9.pt8line43i": "No",
+        "applicant.part9.pt8line44": "No",
+        "applicant.part9.pt8line45": "No",
+        "applicant.part9.pt8line46": "No",
+        "applicant.part9.pt8line47": "No",
+        "applicant.part9.pt8line48": "No",
+        "applicant.part9.pt8line49": "No",
+        "applicant.part9.pt8line50": "No",
+        "applicant.part9.pt8line51": "No",
+        "applicant.part9.pt8line52": "No",
+        "applicant.part9.pt8line53a": "No",
+        "applicant.part9.pt8line53b": "No",
+        "applicant.part9.pt8line53c": "No",
+        "applicant.part9.pt8line53d": "No",
+        "applicant.part9.pt8line54": "No",
+        "applicant.part9.pt8line55": "No",
+        "applicant.part9.pt9line24": "No",
+        "applicant.part9.pt9line39": "No",
+        "applicant.part9.pt9line67": "No",
+        "applicant.part9.pt9line68": "No",
+        "applicant.part9.pt9line69": "No",
+        "applicant.part9.pt9line70": "No",
+        "applicant.part9.pt9line71": "No",
+        "applicant.part9.pt9line72": "No",
+        "applicant.part9.pt9line73": "No",
+        "applicant.part9.pt9line74": "No",
+        "applicant.part9.pt9line75": "No",
+        "applicant.part9.pt9line78a": "No",
+        "applicant.part9.pt9line78b": "No",
+        "applicant.part9.pt9line79": "No",
+        "applicant.part9.pt9line80": "No",
+        "applicant.part9.pt9line81": "No",
+        "applicant.part9.pt9line82": "No",
+        "applicant.part9.pt9line83": "No",
+        "applicant.part9.pt9line84a": "No",
+        "applicant.part9.pt9line84b": "No",
+        "applicant.part9.pt9line84c": "No",
+        "applicant.part9.pt9line85": "No",
+        "applicant.part9.a": "No",
+        "applicant.part9.b": "No"
+      }
+    },
+    {
+      "id": "NA-OTHER-NAMES",
+      "name": "Other names used: none",
+      "when_present": [
+        "questionnaire.blank.other_names"
+      ],
+      "unless_present": [
+        "applicant.other_name1_family",
+        "applicant.name_after_marriage_open",
+        "applicant.name_change_said"
+      ],
+      "mode": "unanswered",
+      "why": "Client left 'Outros nomes' blank -> Part 1 item 2 N/A (USCIS instructions ask for N/A), unless a document shows another name (src/name_events.py: the blank never outranks a document), never while the names card asks which name is current after a marriage certificate that prints no name after marriage (brief K6), and never while the client says the name changed or is not sure.",
+      "plain_text": "The client left \"other names\" blank on the questionnaire and no document in the folder shows another name: Part 1, Item 2 is written NOT APPLICABLE (USCIS instructions ask for N/A). Not while the names card is still asking which name the client uses after a marriage whose certificate does not say, and not when the client answered that the name changed or is not sure.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.other_names": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "NA-NOT-MARRIED",
+      "name": "Single: spouse boxes not applicable",
+      "when_values": {
+        "applicant.marital_status": "Single"
+      },
+      "mode": "unanswered",
+      "why": "Single -> current-spouse fields N/A; spouse military question N/A.",
+      "plain_text": "The client is single: the current-spouse boxes are written NOT APPLICABLE, and the spouse's military service question N/A.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.current_spouse": "NOT APPLICABLE",
+        "applicant.spouse_in_military": "N/A"
+      }
+    },
+    {
+      "id": "NA-NEVER-MARRIED",
+      "name": "Never married: prior spouse not applicable",
+      "when_values": {
+        "applicant.times_married": "0"
+      },
+      "mode": "unanswered",
+      "why": "Married 0 times -> prior-spouse fields N/A.",
+      "plain_text": "The client was married 0 times: the prior-spouse boxes are written NOT APPLICABLE.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.prior_spouse": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "NA-NO-CHILDREN",
+      "name": "No children: children boxes not applicable",
+      "when_values": {
+        "applicant.total_children": "0"
+      },
+      "mode": "unanswered",
+      "why": "0 children -> children fields N/A.",
+      "plain_text": "The client has 0 children: the children boxes are written NOT APPLICABLE.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.children": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "NA-SUPPORT",
+      "name": "Employed or in school: support not applicable",
+      "when_present": [
+        "applicant.employer1_name"
+      ],
+      "mode": "unanswered",
+      "why": "Has a current employer/school -> 'source of financial support' N/A.",
+      "plain_text": "The client has a current employer or school: the \"source of financial support\" box is written NOT APPLICABLE.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.us_financial_support": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "NA-FOREIGN-SUPPORT",
+      "name": "Foreign job or school: support not applicable",
+      "when_present": [
+        "applicant.foreign_employer_name"
+      ],
+      "mode": "unanswered",
+      "why": "Has a foreign employer/school -> foreign 'source of financial support' N/A.",
+      "plain_text": "The client has a foreign employer or school: the foreign \"source of financial support\" box is written NOT APPLICABLE.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.foreign_financial_support": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "NA-FIRST-MARRIAGE",
+      "name": "First marriage: prior spouse not applicable",
+      "when_values": {
+        "applicant.marital_status": "Married",
+        "applicant.times_married": "1"
+      },
+      "mode": "unanswered",
+      "why": "Married, and this is the only marriage (1 time) -> prior-spouse fields N/A.",
+      "plain_text": "The client is married and this is the only marriage (1 time): the prior-spouse boxes are written NOT APPLICABLE.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.prior_spouse": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "SIJS-NO-DERIVATIVE-SPOUSE",
+      "name": "Spouse not applying with the client",
+      "when_present": [
+        "applicant.i360_receipt_number"
+      ],
+      "when_values": {
+        "applicant.marital_status": "Married"
+      },
+      "mode": "unanswered",
+      "why": "SIJS classification requires the applicant to be unmarried, so there is no derivative spouse -> Part 6 item 10 'Is your current spouse applying with you?' No. (The ELIGIBILITY alert covers whether this case can proceed at all.)",
+      "plain_text": "Special Immigrant Juvenile classification requires the applicant to be unmarried, so there is no derivative spouse: Part 6, Item 10 (is your current spouse applying with you?) is answered No. A separate alert covers whether the case can proceed at all.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.spouse_applying_with_you": "No"
+      }
+    },
+    {
+      "id": "NA-SPOUSE-US-ADDRESS",
+      "name": "Spouse in the U.S.: province not applicable",
+      "when_values": {
+        "applicant.spouse_address_country": "USA"
+      },
+      "mode": "unanswered",
+      "why": "Spouse's address is in the U.S. -> Province N/A (the firm leaves the 9-character Postal Code box empty, as on the firm's earlier filed I-485).",
+      "plain_text": "The spouse's address is in the U.S.: Province is written NOT APPLICABLE, and the firm leaves the 9-character Postal Code box empty.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.na.spouse_foreign_address": "NOT APPLICABLE"
+      }
+    },
+    {
+      "id": "PART9-FOLLOWUP-PT8LINE29",
+      "name": "Follow-up Item 29: No when Item 28 is No",
+      "when_values": {
+        "applicant.part9.pt8line28": "No"
+      },
+      "mode": "unanswered",
+      "why": "Firm practice (as on the firm's earlier filed I-485): a follow-up asked only if the main question is Yes is answered No when it is No. Item 29 (knew of the benefit from item 28's trafficking).",
+      "plain_text": "Item 29 (knew of the benefit from the trafficking in Item 28) is a follow-up asked only if Item 28 is Yes. When Item 28 is No, the firm answers Item 29 No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part9.pt8line29": "No"
+      }
+    },
+    {
+      "id": "PART9-FOLLOWUP-PT8LINE35B",
+      "name": "Follow-up Item 35.b: No when Item 35.a is No",
+      "when_values": {
+        "applicant.part9.pt8line35a": "No"
+      },
+      "mode": "unanswered",
+      "why": "Firm practice (as on the firm's earlier filed I-485): a follow-up asked only if the main question is Yes is answered No when it is No. Item 35.b (responsible for religious-freedom violations).",
+      "plain_text": "Item 35.b (responsible for religious-freedom violations) is a follow-up asked only if Item 35.a is Yes. When Item 35.a is No, the firm answers Item 35.b No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part9.pt8line35b": "No"
+      }
+    },
+    {
+      "id": "PART9-FOLLOWUP-PT8LINE40",
+      "name": "Follow-up Item 40: No when Item 39 is No",
+      "when_values": {
+        "applicant.part9.pt9line39": "No"
+      },
+      "mode": "unanswered",
+      "why": "Firm practice (as on the firm's earlier filed I-485): a follow-up asked only if the main question is Yes is answered No when it is No. Item 40 (knew the benefit came from item 39's trafficking).",
+      "plain_text": "Item 40 (knew the benefit came from the trafficking in Item 39) is a follow-up asked only if Item 39 is Yes. When Item 39 is No, the firm answers Item 40 No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part9.pt8line40": "No"
+      }
+    },
+    {
+      "id": "PART9-FOLLOWUP-PT9LINE77",
+      "name": "Follow-up Item 75: No when Item 74 is No",
+      "when_values": {
+        "applicant.part9.unlawfully_present_since_1997": "No"
+      },
+      "mode": "unanswered",
+      "why": "Firm practice (as on the firm's earlier filed I-485): a follow-up asked only if the main question is Yes is answered No when it is No. Item 75 (trafficking a central reason for the unlawful presence in item 74).",
+      "plain_text": "Item 75 (trafficking a central reason for the unlawful presence in Item 74) is a follow-up asked only if Item 74 is Yes. When Item 74 is No, the firm answers Item 75 No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.part9.pt9line77": "No"
+      }
+    },
+    {
+      "id": "NA-OTHER-DOB",
+      "name": "Other dates of birth: none",
+      "when_present": [
+        "questionnaire.blank.other_dobs"
+      ],
+      "mode": "unanswered",
+      "why": "Client left 'Outras datas de nascimento' blank -> Part 1 item 3 (ever used another date of birth?) No.",
+      "plain_text": "The client left \"other dates of birth\" blank on the questionnaire: Part 1, Item 3 (ever used another date of birth?) is answered No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.other_dob_used": "No"
+      }
+    },
+    {
+      "id": "ONE-A-NUMBER",
+      "name": "One A-Number only",
+      "when_present": [
+        "applicant.a_number"
+      ],
+      "mode": "unanswered",
+      "why": "Every document and the client show the same A-Number (a second one would be a conflict and stop this) -> Part 1 item 5 (ever used another A-Number?) No.",
+      "plain_text": "Every document and the client show the same A-Number (a second one would be a disagreement and stop this): Part 1, Item 5 (ever used another A-Number?) is answered No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.other_a_number_used": "No"
+      }
+    },
+    {
+      "id": "NO-PRIOR-LPR-APPLICATION",
+      "name": "No earlier green card application",
+      "when_values": {
+        "questionnaire.someone_petitioned_for_applicant": "No",
+        "questionnaire.other_immigration_applications": "No"
+      },
+      "unless_present": [
+        "folder.i485_filed_before"
+      ],
+      "mode": "unanswered",
+      "why": "The client says nobody petitioned for them and they applied for nothing besides SIJS, and the folder has no earlier I-485 or I-485 notice -> Part 4 item 5 (previously applied for permanent residence in the U.S.?) No.",
+      "plain_text": "The client says nobody petitioned for them and they applied for nothing besides Special Immigrant Juvenile status, and the folder has no earlier I-485 or I-485 notice: Part 4, Item 5 (previously applied for permanent residence in the U.S.?) is answered No.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.previously_applied_lpr": "No"
+      }
+    },
+    {
+      "id": "SIJS-NO-DERIVATIVE-CHILD1",
+      "name": "Child 1 not applying with the client",
+      "when_present": [
+        "applicant.i360_receipt_number",
+        "applicant.child1_family_name"
+      ],
+      "mode": "unanswered",
+      "why": "SIJS has no derivative beneficiaries -> Part 7 'applying with you?' No for each listed child.",
+      "plain_text": "Special Immigrant Juvenile cases have no derivative beneficiaries: Part 7 \"applying with you?\" is answered No for each listed child.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.child1_applying_with_you": "No"
+      }
+    },
+    {
+      "id": "SIJS-NO-DERIVATIVE-CHILD2",
+      "name": "Child 2 not applying with the client",
+      "when_present": [
+        "applicant.i360_receipt_number",
+        "applicant.child2_family_name"
+      ],
+      "mode": "unanswered",
+      "why": "SIJS has no derivative beneficiaries -> Part 7 'applying with you?' No for each listed child.",
+      "plain_text": "Special Immigrant Juvenile cases have no derivative beneficiaries: Part 7 \"applying with you?\" is answered No for each listed child.",
+      "source": "firm practice, see decisions.md 2026-09-30",
+      "set": {
+        "applicant.child2_applying_with_you": "No"
+      }
+    }
+  ]
+}

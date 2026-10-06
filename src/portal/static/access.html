@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open questionnaire</title>
+<style nonce="%%NONCE%%">
+body{margin:0;background:#f5f5f4;color:#172033;font:18px system-ui,sans-serif;display:grid;min-height:100dvh;place-items:center}
+main{box-sizing:border-box;width:min(440px,calc(100% - 32px));padding:32px;border-radius:20px;background:white;box-shadow:0 8px 32px #17203315}
+h1{font-size:28px;margin-top:0}p{line-height:1.5;color:#536175}button{width:100%;padding:16px;border:0;border-radius:12px;background:#315e9b;color:white;font:600 18px system-ui;cursor:pointer}button:disabled{opacity:.6}#error{color:#a32323}a{color:#315e9b}
+</style></head><body><main><h1 id="title">Your questionnaire</h1><p id="intro">Tap below to open your questionnaire securely.</p><button id="open" type="button">Open questionnaire</button><p id="error" role="alert"></p></main>
+<script nonce="%%NONCE%%">
+const words={en:["Your questionnaire","Tap below to open your questionnaire securely.","Open questionnaire","Opening…","This link has expired or was already used. Ask the office for a new questionnaire link."],pt:["Seu questionário","Toque abaixo para abrir seu questionário com segurança.","Abrir questionário","Abrindo…","Este link expirou ou já foi usado. Peça um novo link do questionário ao escritório."],es:["Su cuestionario","Toque abajo para abrir su cuestionario de forma segura.","Abrir cuestionario","Abriendo…","Este enlace venció o ya fue utilizado. Pida a la oficina un nuevo enlace del cuestionario."]};
+const language=(navigator.language||"en").split("-")[0],w=words[language]||words.en;
+document.documentElement.lang=words[language]?language:"en";document.title=w[0];
+document.getElementById("title").textContent=w[0];document.getElementById("intro").textContent=w[1];
+const button=document.getElementById("open");button.textContent=w[2];
+button.addEventListener("click",async()=>{button.disabled=true;button.textContent=w[3];document.getElementById("error").textContent="";
+try{const response=await fetch("/api/access-link",{method:"POST",headers:{"Content-Type":"application/json","X-Portal":"1"},body:JSON.stringify({token:location.pathname.split("/").pop()})});if(!response.ok)throw Error("unavailable");location.replace("/");}
+catch(_){document.getElementById("error").textContent=w[4];button.disabled=false;button.textContent=w[2];}});
+</script></body></html>

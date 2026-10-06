@@ -1,0 +1,66 @@
+{
+  "_status": "Which column of the firm's Docketwise export holds what, for tools/import_docketwise.py. EVERY column name below is an assumption: Docketwise's help pages say the Contacts tab and the Matters tab each have an export to a CSV file, but do not list the columns, so nothing here was seen in a real export. Each field lists the names to look for, in order; a heading matches when it is the same name ignoring capitals, spaces, underscores and hyphens. The firm edits this file after opening its own export: put the real heading first. Each section's _basis says, field by field, whether a name comes from a Docketwise report or API page (a name on a report or in the API, which is not proof of the CSV's heading) or is a plain guess. The importer's report says which headings it found and which it did not. TO CONFIRM WITH THE FIRM'S EXPORT.",
+  "_sources": [
+    {"url": "https://support.docketwise.com/en/articles/4731872-export-contacts-and-matters", "read": "2026-10-02", "says": "Contacts tab and Matters tab each export to CSV (Export Contacts button, blue cloud icon). No column list, no mention of documents."},
+    {"url": "https://help.lollylaw.com/help/how-to-migrate-data-from-docketwise", "read": "2026-10-02", "says": "Third party. Matters: select all, More Actions, Export to CSV. Contacts: Export Contacts button. Gives no columns."},
+    {"url": "https://support.docketwise.com/en/articles/5800954-contact-reports", "read": "2026-10-02", "says": "Contact report columns (a report's CSV, not necessarily the Contacts tab's): Full name, Daytime phone number, Mobile phone number, Email, Updated date, Matters, Assignees."},
+    {"url": "https://supportcenter.docketwise.com/en/articles/9372213-matter-reports", "read": "2026-10-02", "says": "Matter report columns: Title, Client, Description, Updated, Priority date status, Assignees, Type, Status, Applicant, Preference category, Priority date."},
+    {"url": "https://docketwise.gitbook.io/docketwise-api-docs/contacts", "read": "2026-10-02", "says": "API (JSON, not CSV): contact fields id, first_name, middle_name, last_name, email, type, lead, lead_phone, phone numbers (number, daytime). No language, consent or text-message opt-in field is documented."},
+    {"url": "https://docketwise.gitbook.io/docketwise-api-docs/matters", "read": "2026-10-02", "says": "API (JSON, not CSV): matter fields id, number, title, description, client_id, archived, status, type, receipt_number, priority_date."},
+    {"url": "https://support.docketwise.com/en/articles/5247231-files-and-folders", "read": "2026-10-02", "says": "Files sit in folders that can belong to a contact or a matter; files and folders can be bulk-downloaded (More Actions). The page does not say whether a zip is produced or how it is laid out."}
+  ],
+  "contacts": {
+    "_note": "One row per person. All names below: to confirm with the firm's export.",
+    "_basis": {
+      "id": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/contacts (the JSON field id; the CSV heading is not documented)",
+      "first_name": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/contacts (the JSON field first_name; the CSV heading is not documented)",
+      "middle_name": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/contacts (the JSON field middle_name; the CSV heading is not documented)",
+      "last_name": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/contacts (the JSON field last_name; the CSV heading is not documented)",
+      "full_name": "Docketwise report page https://support.docketwise.com/en/articles/5800954-contact-reports (the Full name column of a contact report, not necessarily of the Contacts export)",
+      "email": "Docketwise report page https://support.docketwise.com/en/articles/5800954-contact-reports (the Email column of a contact report)",
+      "phone": "Docketwise report page https://support.docketwise.com/en/articles/5800954-contact-reports (the Mobile phone number and Daytime phone number columns of a contact report); lead_phone is from the API contacts page",
+      "language": "guess: no Docketwise page names a language column or field",
+      "email_ok": "guess: no Docketwise page names a consent column or field",
+      "sms_ok": "guess: no Docketwise page names a consent column or field",
+      "whatsapp_ok": "guess: no Docketwise page names a consent column or field",
+      "office": "guess: no Docketwise page names an office column or field"
+    },
+    "id": ["id", "contact id", "contact_id"],
+    "first_name": ["first_name", "first name", "given name"],
+    "middle_name": ["middle_name", "middle name"],
+    "last_name": ["last_name", "last name", "family name", "surname"],
+    "full_name": ["full name", "name", "contact", "client"],
+    "email": ["email", "email address"],
+    "phone": ["mobile phone number", "mobile phone", "mobile", "phone", "daytime phone number", "lead_phone"],
+    "language": ["language", "preferred language", "primary language"],
+    "email_ok": ["email ok", "email consent", "ok to email"],
+    "sms_ok": ["sms ok", "text ok", "text consent", "sms consent", "ok to text"],
+    "whatsapp_ok": ["whatsapp ok", "whatsapp consent", "ok to whatsapp"],
+    "office": ["office", "branch"]
+  },
+  "matters": {
+    "_note": "One row per matter. All names below: to confirm with the firm's export.",
+    "_basis": {
+      "id": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/matters (the JSON field id; the CSV heading is not documented)",
+      "number": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/matters (the JSON field number)",
+      "title": "Docketwise report page https://supportcenter.docketwise.com/en/articles/9372213-matter-reports (the Title column of a matter report)",
+      "client_id": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/matters (the JSON field client_id); the other spellings are guesses",
+      "client_name": "Docketwise report page https://supportcenter.docketwise.com/en/articles/9372213-matter-reports (the Client column of a matter report)",
+      "type": "Docketwise report page https://supportcenter.docketwise.com/en/articles/9372213-matter-reports (the Type column of a matter report)",
+      "status": "Docketwise report page https://supportcenter.docketwise.com/en/articles/9372213-matter-reports (the Status column of a matter report)",
+      "archived": "Docketwise API page https://docketwise.gitbook.io/docketwise-api-docs/matters (the JSON field archived; the CSV heading is not documented)",
+      "office": "guess: no Docketwise page names an office column or field"
+    },
+    "id": ["id", "matter id", "matter_id"],
+    "number": ["number", "matter number", "file number"],
+    "title": ["title", "matter name", "matter", "name"],
+    "client_id": ["client_id", "client id", "contact id"],
+    "client_name": ["client", "client name", "contact", "applicant"],
+    "type": ["type", "matter type"],
+    "status": ["status", "matter status"],
+    "archived": ["archived", "is archived"],
+    "office": ["office", "branch"]
+  },
+  "yes": ["1", "y", "yes", "true", "sim", "si", "sí", "x", "ok"],
+  "no": ["0", "n", "no", "false", "nao", "não"]
+}

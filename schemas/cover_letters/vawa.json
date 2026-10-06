@@ -1,0 +1,134 @@
+{
+  "_about": "The VAWA self-petition's cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The subject (the classification, an I-485 filed with it, 8 U.S.C. 1367), the address (the 'Attn: 1367' lockbox for the client's state: uscis.gov/Certain-VAWA-T-U-Filing-Locations, updated 02/05/2026) and the fee ($0: Form G-1055 10/01/26) come from src/vawa.py, which also adds the sealed I-693 and drops the photos when no I-485 goes with it. The letter names the client only, never the abuser or an address. DRAFT: the attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "petition",
+  "re_lines": [
+    "Petition: I-360 Petition for Amerasian, Widow(er), or Special Immigrant"
+  ],
+  "who": "Self-Petitioner",
+  "intro": "Please be advised that this law office has been retained to represent {name} with respect to {pron} immigration matters. {case_paragraph} In support of {pron} {noun}, we have provided the following documents:",
+  "form_order": [
+    "g28_vawa",
+    "i360_vawa",
+    "i485_vawa"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_vawa": "Self-Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i360_vawa": "Self-Petitioner’s I-360 - Petition for Amerasian, Widow(er), or Special Immigrant (VAWA Self-Petition)",
+    "i485_vawa": "Applicant’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i693": "Applicant’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    [
+      "declaration",
+      "Declaration of the Self-Petitioner and Supporting Statements"
+    ],
+    [
+      "us_passport",
+      "Evidence of the Abuser’s U.S. Citizenship"
+    ],
+    [
+      "us_birth_certificate",
+      "Evidence of the Abuser’s U.S. Birth"
+    ],
+    [
+      "citizenship_certificate",
+      "Evidence of the Abuser’s Naturalization or Citizenship"
+    ],
+    [
+      "green_card",
+      "Evidence of the Abuser’s Lawful Permanent Residence"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate and Translation"
+    ],
+    [
+      "divorce_decree",
+      "Divorce Decrees and Translations"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "lease",
+      "Evidence of Shared Residence"
+    ],
+    [
+      "utility_bill",
+      "Utility Records"
+    ],
+    [
+      "police_report",
+      "Police and Court Records of the Abuse"
+    ],
+    [
+      "medical_record",
+      "Medical Records"
+    ],
+    [
+      "photograph",
+      "Photographs"
+    ],
+    [
+      "criminal_record",
+      "Police Clearances and Criminal Background Checks"
+    ],
+    [
+      "tax_return",
+      "Tax Returns"
+    ],
+    [
+      "bank_statement",
+      "Bank Statements"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ],
+    [
+      "i360_approval",
+      "Copy of I-797 Notice of Action for the I-360 Petition"
+    ],
+    [
+      "photos",
+      "{photos} Passport Pictures of the Applicant"
+    ],
+    [
+      "passport",
+      "Copy of the Self-Petitioner’s Passport"
+    ],
+    [
+      "visa",
+      "Copy of the Self-Petitioner’s U.S. Visa"
+    ],
+    [
+      "i94",
+      "Copy of the Self-Petitioner’s Most Recent I-94"
+    ],
+    [
+      "drivers_license",
+      "Copy of the Self-Petitioner’s Government-Issued Photo Identification"
+    ],
+    [
+      "work_permit",
+      "Copy of the Self-Petitioner’s Employment Authorization Card"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of the Self-Petitioner’s Immigration Court Documents"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    }
+  ]
+}

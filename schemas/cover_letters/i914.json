@@ -1,0 +1,89 @@
+{
+  "_about": "DRAFT: the T visa cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the Elgin or Phoenix lockbox by the client's state: uscis.gov/i-914, updated 06/05/2026), the subject, each Supplement A's name and the fee sentence ($0: Form G-1055 10/01/26) come from src/t_visa.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: I-914 Application for T Nonimmigrant Status"
+  ],
+  "who": "Applicant",
+  "intro": "Please be advised that this law office has been retained to represent {name} with respect to {pron} immigration matters. {case_paragraph} In support of {pron} {noun}, we have provided the following documents:",
+  "form_order": [
+    "g28_i914",
+    "i914",
+    "i914a_1",
+    "i914a_2",
+    "i914a_3",
+    "i914a_4",
+    "i192"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i914": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i914": "Applicant’s I-914 - Application for T Nonimmigrant Status",
+    "i914a_1": "Applicant’s I-914, Supplement A - Application for Derivative T Nonimmigrant Status",
+    "i914a_2": "Applicant’s I-914, Supplement A - Application for Derivative T Nonimmigrant Status",
+    "i914a_3": "Applicant’s I-914, Supplement A - Application for Derivative T Nonimmigrant Status",
+    "i914a_4": "Applicant’s I-914, Supplement A - Application for Derivative T Nonimmigrant Status",
+    "i192": "Applicant’s I-192 - Application for Advance Permission to Enter as a Nonimmigrant"
+  },
+  "documents": [
+    [
+      "declaration",
+      "Applicant’s Signed Personal Statement"
+    ],
+    [
+      "police_report",
+      "Police Reports and Law Enforcement Records"
+    ],
+    [
+      "i94",
+      "Copy of Applicant’s Form I-94"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "visa",
+      "Copy of Applicant’s Visa"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "medical_record",
+      "Medical and Psychological Records"
+    ],
+    [
+      "country_conditions",
+      "Country Conditions Evidence"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate and Translation"
+    ],
+    [
+      "divorce_decree",
+      "Divorce Decree"
+    ],
+    [
+      "criminal_record",
+      "Certified Court Dispositions"
+    ],
+    [
+      "notice_to_appear",
+      "Immigration Court Documents"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    }
+  ]
+}

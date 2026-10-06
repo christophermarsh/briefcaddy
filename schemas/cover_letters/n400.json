@@ -1,0 +1,88 @@
+{
+  "_about": "The N-400 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter (schemas/cover_letter.json); the subject, enclosures and fee note are the application's. No priority-date paragraph. The mailing address follows the client's state on USCIS's N-400 chart (schemas/uscis_lockboxes_n400.json. Different from the family-based chart: Massachusetts N-400s go to Elgin). Fee per Form G-1055 (10/01/26): $760 on paper; $380 when the fee reduction is requested. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": "by_state",
+  "lockbox_chart": "uscis_lockboxes_n400.json",
+  "noun": "application",
+  "re_lines": [
+    "Application: N-400 Application for Naturalization"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_n400",
+    "n400"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_n400": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "n400": "Applicant’s N-400 - Application for Naturalization"
+  },
+  "documents": [
+    [
+      "green_card",
+      "Copy of Applicant’s Permanent Resident Card (front and back)"
+    ],
+    [
+      "marriage_certificate",
+      "Copy of Applicant’s Marriage Certificate"
+    ],
+    [
+      "divorce_decree",
+      "Copies of Divorce Decrees Ending Prior Marriages"
+    ],
+    [
+      "us_passport",
+      "Copy of Spouse’s U.S. Passport"
+    ],
+    [
+      "us_birth_certificate",
+      "Copy of Spouse’s U.S. Birth Certificate"
+    ],
+    [
+      "citizenship_certificate",
+      "Copy of Spouse’s Certificate of Naturalization or Citizenship"
+    ],
+    [
+      "criminal_record",
+      "Certified Court Dispositions"
+    ],
+    [
+      "notice_to_appear",
+      "Copies of Applicant’s Immigration Court Documents"
+    ],
+    [
+      "tax_return",
+      "Copies of Household Federal Tax Returns"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ]
+  ],
+  "fees": "Enclosed is the filing fee of {n400} for Form N-400 ({schedule}).",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "sign",
+      "text": "N-400: the client signs Part 11 and the attorney signs Part 13. Parts 15 and 16 stay blank. They are signed at the interview and the oath ceremony."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the N-400 fee by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amount in the cover letter."
+    }
+  ],
+  "fees_when": [
+    {
+      "fact": "fee_reduction",
+      "eq": "Yes",
+      "fees": "Enclosed is the reduced filing fee of {n400_reduced} for Form N-400, with the evidence of household income Part 10 requires ({schedule})."
+    }
+  ]
+}

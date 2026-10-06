@@ -1,0 +1,18 @@
+{
+  "_status": "Public fictional demo: model-assisted learning is opt-in and disabled. No model artifacts are distributed.",
+  "shadow": {
+    "document_type": {
+      "enabled": false,
+      "mode": "shadow",
+      "model": "nimble:9b-q4_K_M",
+      "threshold": 0.9,
+      "max_chars": 6000
+    },
+    "document_type_textcat": {
+      "enabled": false,
+      "mode": "shadow",
+      "path": "data/models/document_type.pkl",
+      "threshold": 0.6
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "MA-CLIENT-FILE-DRAFT",
+  "version": "2026-10-05-manual-1",
+  "title": "Massachusetts client-file policy \u2014 attorney review required",
+  "jurisdiction": "MA",
+  "status": "draft_manual_review",
+  "effective_on": "2024-09-01",
+  "sources": [
+    {
+      "rule": "1.15A",
+      "url": "https://www.mass.gov/supreme-judicial-court-rules/rules-of-professional-conduct-rule-115a-client-files"
+    },
+    {
+      "rule": "8.5",
+      "url": "https://www.mass.gov/supreme-judicial-court-rules/rules-of-professional-conduct-rule-85-disciplinary-authority-choice-of-law"
+    }
+  ],
+  "source_verification": "Draft policy summary. The responsible attorney must review the current official sources and their application to this matter; no legal application is approved by this profile.",
+  "handover": "Attorney reviews the client's documents and work-product candidates, each inclusion or exclusion, recipient authority and delivery method. Unresolved destruction eligibility alone does not prevent protective handover. This profile implements no payment exception or billing decision.",
+  "retention": "Ordinary six-year and minor six-years-after-majority references are conservative minimum checks from the supplied research summary, not automatic eligibility or a legal determination. The attorney records representation completion and an explicit keeping date. Special matters, holds, originals and unconfirmed other requirements remain held. Adult or minor status means status at representation completion, not present age.",
+  "destruction": "Separate current attorney approval is required. Operational closure is not legal termination. No automatic deletion, no free-text override, and no supported destruction determination for criminal, delinquency, CPCS, other or unknown matters. Existing purge waiting and second-attorney gates still apply."
+}

@@ -1,0 +1,24 @@
+{
+  "_source": "USCIS, 'Direct Filing Addresses for Form I-821D, Consideration of Deferred Action for Childhood Arrivals' (https://www.uscis.gov/forms/all-forms/direct-filing-addresses-for-form-i-821d-consideration-of-deferred-action-for-childhood-arrivals), page last updated 09/24/2024, read 2026-10-02. By the state the requestor lives in; the I-821D, the I-765 and the I-765WS go in one package (USCIS 'Filing Tips for DACA', updated 04/30/2025). The U.S. Postal Service goes to the P.O. box; FedEx, UPS and DHL to the street address. Copied as the page gives them, in capitals; the Chicago courier line's dash is written as a comma. American Samoa, the Northern Mariana Islands and APO/FPO addresses are not on the page: the attorney confirms.",
+  "checked": "2026-10-02",
+  "page_updated": "09/24/2024",
+  "lockboxes": {
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: DACA", "P.O. BOX 20700", "PHOENIX, AZ 85036-0700"],
+      "courier": ["USCIS", "ATTN: DACA (BOX 20700)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AZ", "CA"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: DACA", "P.O. BOX 660045", "DALLAS, TX 75266-0045"],
+      "courier": ["USCIS", "ATTN: DACA (BOX 660045)", "2501 S. STATE HWY. 121, BUSINESS", "SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["AK", "AL", "AR", "FL", "GU", "HI", "ID", "IA", "KS", "LA", "MN", "MO", "MS", "MT", "ND", "NE", "NM", "OK", "PR", "SD", "TN", "TX", "UT",
+                 "VI", "WY"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: DACA", "P.O. BOX 5757", "CHICAGO, IL 60680-5757"],
+      "courier": ["USCIS", "ATTN: DACA (BOX 5757)", "131 S. DEARBORN, 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["CO", "CT", "DE", "DC", "GA", "IL", "IN", "KY", "MA", "MD", "ME", "MI", "NV", "NC", "NH", "NJ", "NY", "OH", "OR", "PA", "RI", "SC", "VA",
+                 "VT", "WA", "WI", "WV"]
+    }
+  }
+}

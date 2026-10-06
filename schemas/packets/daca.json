@@ -1,0 +1,50 @@
+{
+  "_about": "A DACA renewal (src/daca.py), per uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), Filing Tips for DACA (updated 04/30/2025), the I-821D Instructions (01/20/25) and the I-765 Instructions (08/21/25), read 2026-10-02: the G-28, then the I-821D, the I-765 under (c)(33) and the I-765WS in one package (USCIS rejects a request without all three and the fees); the I-765's renewal box asks for a copy of the previous work permit; a renewal sends only NEW documents about removal proceedings or arrests not sent with an earlier DACA request. The copy of the current DACA approval notice is the firm's choice (not required for a renewal). The attorney approves titles and order.",
+  "filing": "daca",
+  "title": "DACA renewal (I-821D, I-765 and I-765WS)",
+  "packet_pdf": "packet_daca.pdf",
+  "manifest": "packet_daca.json",
+  "choices": "packet_choices_daca.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_daca.json",
+  "index_sheet": false,
+  "forms": ["g28_daca", "i821d", "i765_daca", "i765ws"],
+  "handwork": [
+    {"kind": "attach", "text": "Two identical color passport-style photos, taken recently, for the I-765; the client's name and A-Number lightly in pencil on the back (Form I-765 Instructions, Required Documentation)."},
+    {"kind": "check", "text": "The name, date of birth and mailing address are written the same way on the I-821D, the I-765 and the I-765WS (uscis.gov/DACA)."},
+    {"kind": "check", "text": "Part 4 of the I-821D: every item 1-7 answered Yes or No; USCIS rejects it otherwise. Any Yes is explained in Part 8."}
+  ],
+  "exhibits": [
+    {"id": "current_card", "title": "Copy of the current work permit (front and back): the I-765's renewal box asks for it", "types": ["work_permit"], "required": true},
+    {"id": "approval", "title": "Copy of the current DACA approval notice (Form I-797)", "types": ["uscis_notice"]},
+    {"id": "proceedings", "title": "New documents about removal proceedings, not sent with an earlier DACA request", "types": ["notice_to_appear"]},
+    {"id": "court", "title": "Certified arrest records and court dispositions, not sent with an earlier DACA request", "types": ["criminal_record", "police_report"]}
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this request.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this request.",
+    "g28": "The firm files a new G-28 with this request.",
+    "passport": "Not asked for with a DACA renewal (sent with the first request).",
+    "i94": "Not asked for with a DACA renewal.",
+    "drivers_license": "Not asked for with a DACA renewal.",
+    "national_id": "Not asked for with a DACA renewal.",
+    "birth_certificate": "Not asked for with a DACA renewal (sent with the first request).",
+    "ssn_card": "Not asked for with a DACA renewal.",
+    "sij_order": "Not asked for with a DACA renewal.",
+    "i360_approval": "Not asked for with a DACA renewal.",
+    "i485_receipt": "Not asked for with a DACA renewal.",
+    "bank_statement": "Not required: the I-765WS takes the client's figures without evidence (the worksheet says so). Add it to an exhibit if the attorney wants it.",
+    "lease": "Not asked for with a DACA renewal.",
+    "utility_bill": "Not asked for with a DACA renewal.",
+    "tax_return": "Not required: the I-765WS takes the client's figures without evidence. Add it to an exhibit if the attorney wants it.",
+    "w2": "Not required: the I-765WS takes the client's figures without evidence.",
+    "pay_stub": "Not required: the I-765WS takes the client's figures without evidence.",
+    "marriage_certificate": "Not asked for with a DACA renewal.",
+    "visa": "Not asked for with a DACA renewal.",
+    "green_card": "Not asked for with a DACA renewal."
+  }
+}

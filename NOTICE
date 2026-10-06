@@ -1,0 +1,19 @@
+BriefCaddy
+Copyright 2026 Christopher Marsh
+
+Project-authored source is licensed under the Apache License, Version 2.0.
+Third-party components and data retain their own terms. This notice does not
+license government forms, specimen documents, model weights, fonts, icons,
+or other assets by association. See THIRD_PARTY.md and docs/ASSETS.json.
+
+GeoNames-derived gazetteers: GeoNames, https://www.geonames.org/,
+Creative Commons Attribution 4.0 International,
+https://creativecommons.org/licenses/by/4.0/.
+Modified by the project's tools/build_gazetteer.py: place/alias selection,
+postal and administrative-region normalization, local overrides and JSON
+restructuring. Original download dates were not retained; docs/GEODATA.json
+records the exact retained content hashes. No GeoNames endorsement is implied.
+
+QR generator portions: Copyright (c) Project Nayuki, MIT License.
+https://www.nayuki.io/page/qr-code-generator-library
+The retained copyright, permission and warranty terms are in src/review/qr.py.

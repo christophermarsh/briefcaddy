@@ -1,0 +1,45 @@
+{
+  "_about": "Asking a law enforcement agency for the T visa's optional Supplement B (src/t_visa_declaration.py; 8 CFR 214.204(e); the Supplement B instructions, edition 01/20/25): the firm's request letter and the Supplement B draft with Part 1 (the victim) and the agency's own details typed in. It goes to the agency, never to USCIS, and has no fee (Form G-1055 10/01/26). The client's documents are not sent with it. DRAFT: the attorney approves the letter before volume use.",
+  "filing": "i914b",
+  "title": "T visa: law enforcement declaration request (I-914 Supplement B)",
+  "packet_pdf": "packet_i914b.pdf",
+  "manifest": "packet_i914b.json",
+  "choices": "packet_choices_i914b.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": false,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "lea_letter",
+    "i914b"
+  ],
+  "generated": {
+    "lea_letter": {
+      "short": "Request letter",
+      "title": "The firm's letter asking the agency for Supplement B",
+      "output": "lea_request_letter.pdf",
+      "signatures": {},
+      "attorney_completes": [
+        "The letter: the attorney signs it."
+      ]
+    }
+  },
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "Send the letter and the draft to the agency the way it accepts requests (mail, email or a portal), with the client's consent, and record the date in the questions above."
+    },
+    {
+      "kind": "check",
+      "text": "The official completes Parts 3-5; the official and a supervising official sign Part 6 in ink (8 CFR 214.204(e)(4); the Supplement B instructions)."
+    },
+    {
+      "kind": "check",
+      "text": "When it comes back signed: add it to the client's folder, mark it returned, and put the original in the T visa packet's law enforcement exhibit. The T visa application doesn't wait for it."
+    }
+  ],
+  "exhibits": [],
+  "leave_out": {}
+}

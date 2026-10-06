@@ -1,0 +1,2 @@
+# Tools for whoever builds, tests or runs the server; not needed by the pipeline itself (requirements.txt).
+pip-audit>=2.10  # known-vulnerability scan of requirements.lock (tools/check_deps.sh); https://pypi.org/project/pip-audit/

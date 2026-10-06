@@ -1,0 +1,10 @@
+{
+  "fixture_version": 1,
+  "synthetic_only": true,
+  "same_type_i94": [
+    "Most Recent I-94\nAdmission I-94 Record Number: 11111111111\nClass of Admission: B2\nArrival/Issued Date: 01/02/2020\nLast/Surname: EXAMPLE\nFirst (Given) Name: ALPHA\n",
+    "Most Recent I-94\nAdmission I-94 Record Number: 22222222222\nClass of Admission: F1\nArrival/Issued Date: 03/04/2024\nLast/Surname: OTHER\nFirst (Given) Name: BETA\nBirth Date: 05/06/2001\n"
+  ],
+  "target_keys": ["applicant.i94_number", "applicant.given_name", "applicant.dob"],
+  "inferred_subject": {"doc_ids": ["synthetic.pdf"], "person": "spouse", "person_basis": "named", "person_set_by": null}
+}

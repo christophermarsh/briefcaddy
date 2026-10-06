@@ -1,0 +1,27 @@
+{
+  "_about": "The demo video's scenes, in order. 'say' is what the voice reads (form numbers spelled the way they are spoken); 'caption' is the line shown on screen. record.py runs each scene's clicks while its line plays.",
+  "scenes": [
+    {"id": "title", "caption": "",
+     "say": "Here's how the firm takes a Special Immigrant Juvenile client from a text message on their phone, to an I four eighty-five packet that's ready to sign and mail."},
+    {"id": "portal_welcome", "caption": "The client's portal — Portuguese, Spanish or English",
+     "say": "It starts on the client's phone. She signs in with a secure link, and answers in Portuguese, Spanish, or English. Everything saves as she goes."},
+    {"id": "portal_help", "caption": "Plain-language help on every question, and “I'm not sure”",
+     "say": "Every question is in plain words, with help for the things clients usually call about. If she isn't sure, she says so, and it goes to the attorney instead of becoming a phone call."},
+    {"id": "portal_docs", "caption": "Documents asked for only when her answers call for them",
+     "say": "Documents are only requested when her answers call for them, with a picture of each one, and tips for scanning with a phone."},
+    {"id": "handwriting", "caption": "Handwritten questionnaires, read automatically",
+     "say": "Not every client uses the portal, and that's fine. Paper questionnaires work too. The system reads the handwriting, and shows each answer right beside the spot on the scan it came from, so checking takes seconds instead of retyping."},
+    {"id": "review_ssn", "caption": "Caught: a one-digit typo in the Social Security number",
+     "say": "Everything is read automatically, on the firm's own computers. Here, a client typed her Social Security number one digit off. The system caught it by reading her card, and nothing goes on the form until a paralegal picks the right one."},
+    {"id": "review_ask", "caption": "Missing information? Ask the client in one click",
+     "say": "If something is missing, one click asks her. The request appears in her portal, and the text message holds only a secure link."},
+    {"id": "review_attorney", "caption": "Legal decisions stay with the attorney",
+     "say": "Legal calls stay with the attorney, and every decision is recorded with their name."},
+    {"id": "packet", "caption": "One click: the complete packet, ready to sign and mail",
+     "say": "When the case is ready, one click builds the full packet. The G twenty-eight, the I four eighty-five, the I seven sixty-five, and every exhibit in order, with each signature page marked."},
+    {"id": "dashboard", "caption": "Every case on one screen, from invitation to filed",
+     "say": "Every case is tracked on one screen, from the first invitation to filed."},
+    {"id": "followup", "caption": "A client went quiet? One click sends a reminder with a fresh link",
+     "say": "And when a client goes quiet, one click sends a reminder with a fresh, secure link. It arrives on her phone, and she picks up right where she left off."}
+  ]
+}

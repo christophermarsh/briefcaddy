@@ -1,0 +1,1265 @@
+{
+  "scope": "requirements.lock; installed metadata where available, not a compatibility/legal clearance",
+  "packages": [
+    {
+      "package": "annotated-doc",
+      "version": "0.0.5",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/fastapi/annotated-doc",
+        "Documentation, https://github.com/fastapi/annotated-doc",
+        "Repository, https://github.com/fastapi/annotated-doc",
+        "Issues, https://github.com/fastapi/annotated-doc/issues",
+        "Changelog, https://github.com/fastapi/annotated-doc/release-notes.md"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "annotated-types",
+      "version": "0.8.0",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [
+        "Homepage, https://github.com/annotated-types/annotated-types",
+        "Source, https://github.com/annotated-types/annotated-types",
+        "Changelog, https://github.com/annotated-types/annotated-types/releases"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "anyio",
+      "version": "4.15.1",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Documentation, https://anyio.readthedocs.io/en/latest/",
+        "Changelog, https://anyio.readthedocs.io/en/stable/versionhistory.html",
+        "Source code, https://github.com/agronholm/anyio",
+        "Issue tracker, https://github.com/agronholm/anyio/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "argostranslate",
+      "version": "1.11.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "blis",
+      "version": "1.3.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "catalogue",
+      "version": "2.0.10",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "certifi",
+      "version": "2026.7.22",
+      "license_metadata": "MPL-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+      ],
+      "project_urls": [
+        "Source, https://github.com/certifi/python-certifi"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "cffi",
+      "version": "2.1.1",
+      "license_metadata": "MIT-0",
+      "classifiers": [],
+      "project_urls": [
+        "Documentation, https://cffi.readthedocs.io/",
+        "Changelog, https://cffi.readthedocs.io/en/latest/whatsnew.html",
+        "Download, https://github.com/python-cffi/cffi/releases",
+        "Contact, https://groups.google.com/forum/#!forum/python-cffi",
+        "Source Code, https://github.com/python-cffi/cffi",
+        "Issue Tracker, https://github.com/python-cffi/cffi/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "charset-normalizer",
+      "version": "3.5.2",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md",
+        "Documentation, https://charset-normalizer.readthedocs.io/",
+        "Code, https://github.com/jawah/charset_normalizer",
+        "Issue tracker, https://github.com/jawah/charset_normalizer/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "click",
+      "version": "8.5.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Changes, https://click.palletsprojects.com/page/changes/",
+        "Chat, https://discord.gg/pallets",
+        "Documentation, https://click.palletsprojects.com/",
+        "Donate, https://palletsprojects.com/donate",
+        "Source, https://github.com/pallets/click/"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "cloudpathlib",
+      "version": "0.25.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cloudpickle",
+      "version": "3.1.2",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "colorama",
+      "version": "0.4.6",
+      "license_metadata": "UNRESOLVED",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [
+        "Homepage, https://github.com/tartley/colorama"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "confection",
+      "version": "1.3.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cryptography",
+      "version": "50.0.1",
+      "license_metadata": "Apache-2.0 OR BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "changelog, https://cryptography.io/en/latest/changelog/",
+        "documentation, https://cryptography.io/",
+        "homepage, https://github.com/pyca/cryptography",
+        "issues, https://github.com/pyca/cryptography/issues",
+        "source, https://github.com/pyca/cryptography/"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "ctranslate2",
+      "version": "4.8.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cuda-bindings",
+      "version": "13.4.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cuda-pathfinder",
+      "version": "1.8.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cuda-toolkit",
+      "version": "13.0.3.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "cymem",
+      "version": "2.0.13",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "emoji",
+      "version": "2.16.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "execnet",
+      "version": "2.1.2",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [
+        "Homepage, https://execnet.readthedocs.io/en/latest/"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "fastapi",
+      "version": "0.142.2",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/fastapi/fastapi",
+        "Documentation, https://fastapi.tiangolo.com/",
+        "Repository, https://github.com/fastapi/fastapi",
+        "Issues, https://github.com/fastapi/fastapi/issues",
+        "Changelog, https://fastapi.tiangolo.com/release-notes/"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "filelock",
+      "version": "4.0.7",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "flatbuffers",
+      "version": "25.12.19",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "fsspec",
+      "version": "2026.9.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "greenlet",
+      "version": "3.5.6",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "h11",
+      "version": "0.16.0",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "hf-xet",
+      "version": "1.6.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "httpcore",
+      "version": "1.0.9",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [
+        "Documentation, https://www.encode.io/httpcore",
+        "Homepage, https://www.encode.io/httpcore/",
+        "Source, https://github.com/encode/httpcore"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "httpcore2",
+      "version": "2.13.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "httpx",
+      "version": "0.28.1",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [
+        "Changelog, https://github.com/encode/httpx/blob/master/CHANGELOG.md",
+        "Documentation, https://www.python-httpx.org",
+        "Homepage, https://github.com/encode/httpx",
+        "Source, https://github.com/encode/httpx"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "httpx2",
+      "version": "2.13.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "huggingface_hub",
+      "version": "2.1.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "idna",
+      "version": "3.20",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+        "Issue tracker, https://github.com/kjd/idna/issues",
+        "Source, https://github.com/kjd/idna"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "iniconfig",
+      "version": "2.3.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/pytest-dev/iniconfig"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "Jinja2",
+      "version": "3.1.6",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "joblib",
+      "version": "1.6.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://joblib.readthedocs.io",
+        "Source, https://github.com/joblib/joblib"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "markdown-it-py",
+      "version": "4.2.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "MarkupSafe",
+      "version": "3.0.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "mdurl",
+      "version": "0.1.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "minisbd",
+      "version": "0.9.5",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "mpmath",
+      "version": "1.3.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "murmurhash",
+      "version": "1.0.15",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "narwhals",
+      "version": "2.26.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/narwhals-dev/narwhals",
+        "Documentation, https://narwhals-dev.github.io/narwhals/",
+        "Repository, https://github.com/narwhals-dev/narwhals",
+        "Bug Tracker, https://github.com/narwhals-dev/narwhals/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "networkx",
+      "version": "3.7",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "numpy",
+      "version": "2.5.3",
+      "license_metadata": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "classifiers": [],
+      "project_urls": [
+        "homepage, https://numpy.org",
+        "documentation, https://numpy.org/doc/",
+        "source, https://github.com/numpy/numpy",
+        "download, https://pypi.org/project/numpy/#files",
+        "tracker, https://github.com/numpy/numpy/issues",
+        "release notes, https://numpy.org/doc/stable/release"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "nvidia-cublas",
+      "version": "13.1.1.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cuda-cupti",
+      "version": "13.0.85",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cuda-nvrtc",
+      "version": "13.0.88",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cuda-runtime",
+      "version": "13.0.96",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cudnn-cu13",
+      "version": "9.24.0.43",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cufft",
+      "version": "12.0.0.61",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cufile",
+      "version": "1.15.1.6",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-curand",
+      "version": "10.4.0.35",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cusolver",
+      "version": "12.0.4.66",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cusparse",
+      "version": "12.6.3.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-cusparselt-cu13",
+      "version": "0.8.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-nccl-cu13",
+      "version": "2.30.7",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-nvjitlink",
+      "version": "13.4.92",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-nvshmem-cu13",
+      "version": "3.4.5",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "nvidia-nvtx",
+      "version": "13.0.85",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "onnxruntime",
+      "version": "1.30.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "opentelemetry-api",
+      "version": "1.45.0",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api",
+        "Repository, https://github.com/open-telemetry/opentelemetry-python"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "orjson",
+      "version": "3.12.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "license_metadata": "Apache-2.0 OR BSD-2-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Documentation, https://packaging.pypa.io/",
+        "Source, https://github.com/pypa/packaging"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pillow",
+      "version": "12.3.0",
+      "license_metadata": "MIT-CMU",
+      "classifiers": [],
+      "project_urls": [
+        "Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+        "Changelog, https://github.com/python-pillow/Pillow/releases",
+        "Documentation, https://pillow.readthedocs.io",
+        "Funding, https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=pypi",
+        "Homepage, https://python-pillow.github.io",
+        "Mastodon, https://fosstodon.org/@pillow",
+        "Source, https://github.com/python-pillow/Pillow"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pillow-heif",
+      "version": "1.8.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Documentation, https://pillow-heif.readthedocs.io",
+        "Source, https://github.com/bigcat88/pillow_heif",
+        "Changelog, https://github.com/bigcat88/pillow_heif/blob/master/CHANGELOG.md"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "platformdirs",
+      "version": "4.12.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "playwright",
+      "version": "1.63.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "pluggy",
+      "version": "1.6.0",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "preshed",
+      "version": "3.0.13",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "protobuf",
+      "version": "7.36.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "pycparser",
+      "version": "3.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/eliben/pycparser"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pydantic",
+      "version": "2.13.5",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/pydantic/pydantic",
+        "Documentation, https://docs.pydantic.dev",
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Source, https://github.com/pydantic/pydantic",
+        "Changelog, https://docs.pydantic.dev/latest/changelog/"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pydantic_core",
+      "version": "2.46.5",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Funding, https://github.com/sponsors/samuelcolvin",
+        "Homepage, https://github.com/pydantic",
+        "Source, https://github.com/pydantic/pydantic/tree/main/pydantic-core"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pyee",
+      "version": "13.0.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "Pygments",
+      "version": "2.21.0",
+      "license_metadata": "BSD-2-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://pygments.org",
+        "Documentation, https://pygments.org/docs",
+        "Source, https://github.com/pygments/pygments",
+        "Bug Tracker, https://github.com/pygments/pygments/issues",
+        "Changelog, https://github.com/pygments/pygments/blob/master/CHANGES"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pypdf",
+      "version": "6.19.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Bug Reports, https://github.com/py-pdf/pypdf/issues",
+        "Changelog, https://pypdf.readthedocs.io/en/latest/meta/CHANGELOG.html",
+        "Documentation, https://pypdf.readthedocs.io/en/latest/",
+        "Source, https://github.com/py-pdf/pypdf"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pypdfium2",
+      "version": "5.13.0",
+      "license_metadata": "BSD-3-Clause, Apache-2.0, dependency licenses",
+      "classifiers": [],
+      "project_urls": [
+        "Source, https://github.com/pypdfium2-team/pypdfium2",
+        "Tracker, https://github.com/pypdfium2-team/pypdfium2/issues",
+        "Documentation, https://pypdfium2.readthedocs.io",
+        "Changelog, https://pypdfium2.readthedocs.io/en/stable/changelog.html"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pytesseract",
+      "version": "0.3.13",
+      "license_metadata": "Apache License 2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pytest",
+      "version": "9.1.1",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://docs.pytest.org/en/stable/changelog.html",
+        "Contact, https://docs.pytest.org/en/stable/contact.html",
+        "Funding, https://docs.pytest.org/en/stable/sponsor.html",
+        "Homepage, https://docs.pytest.org/en/latest/",
+        "Source, https://github.com/pytest-dev/pytest",
+        "Tracker, https://github.com/pytest-dev/pytest/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "pytest-base-url",
+      "version": "2.1.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "pytest-playwright",
+      "version": "0.9.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "pytest-xdist",
+      "version": "3.8.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/pytest-dev/pytest-xdist",
+        "Documentation, https://pytest-xdist.readthedocs.io/en/latest",
+        "Changelog, https://pytest-xdist.readthedocs.io/en/latest/changelog.html",
+        "Source, https://github.com/pytest-dev/pytest-xdist",
+        "Tracker, https://github.com/pytest-dev/pytest-xdist/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "python-multipart",
+      "version": "0.0.32",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "project_urls": [
+        "Homepage, https://github.com/Kludex/python-multipart",
+        "Documentation, https://kludex.github.io/python-multipart/",
+        "Changelog, https://github.com/Kludex/python-multipart/blob/master/CHANGELOG.md",
+        "Source, https://github.com/Kludex/python-multipart"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "python-slugify",
+      "version": "8.0.4",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "PyYAML",
+      "version": "6.0.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "regex",
+      "version": "2026.9.29",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "reportlab",
+      "version": "5.0.1",
+      "license_metadata": "BSD license (see license.txt for details), Copyright (c) 2000-2025, ReportLab Inc.",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "requests",
+      "version": "2.34.2",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "project_urls": [
+        "Documentation, https://requests.readthedocs.io",
+        "Source, https://github.com/psf/requests"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "rich",
+      "version": "15.0.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "ruff",
+      "version": "0.16.10",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://github.com/astral-sh/ruff/blob/main/CHANGELOG.md",
+        "Documentation, https://docs.astral.sh/ruff/",
+        "Repository, https://github.com/astral-sh/ruff"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "sacremoses",
+      "version": "0.1.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "scikit-learn",
+      "version": "1.9.1",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "homepage, https://scikit-learn.org",
+        "source, https://github.com/scikit-learn/scikit-learn",
+        "download, https://pypi.org/project/scikit-learn/#files",
+        "tracker, https://github.com/scikit-learn/scikit-learn/issues",
+        "release notes, https://scikit-learn.org/stable/whats_new"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "scipy",
+      "version": "1.18.1",
+      "license_metadata": "See distribution license files (long license metadata)",
+      "classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "project_urls": [
+        "homepage, https://scipy.org/",
+        "documentation, https://docs.scipy.org/doc/scipy/",
+        "source, https://github.com/scipy/scipy",
+        "download, https://github.com/scipy/scipy/releases",
+        "tracker, https://github.com/scipy/scipy/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "sentencepiece",
+      "version": "0.2.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "setuptools",
+      "version": "84.0.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Source, https://github.com/pypa/setuptools",
+        "Documentation, https://setuptools.pypa.io/",
+        "Changelog, https://setuptools.pypa.io/en/stable/history.html"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "shellingham",
+      "version": "1.5.4",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "smart_open",
+      "version": "8.0.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "spacy",
+      "version": "3.8.16",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "spacy-legacy",
+      "version": "3.0.12",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "spacy-loggers",
+      "version": "1.0.5",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "srsly",
+      "version": "2.5.4",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "stanza",
+      "version": "1.15.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "starlette",
+      "version": "1.7.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/Kludex/starlette",
+        "Documentation, https://starlette.dev/",
+        "Changelog, https://starlette.dev/release-notes/",
+        "Funding, https://github.com/sponsors/Kludex",
+        "Source, https://github.com/Kludex/starlette"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "sympy",
+      "version": "1.14.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "termcolor",
+      "version": "3.3.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "text-unidecode",
+      "version": "1.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "thinc",
+      "version": "8.3.13",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "threadpoolctl",
+      "version": "3.7.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "homepage, https://github.com/joblib/threadpoolctl"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "torch",
+      "version": "2.14.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "tqdm",
+      "version": "4.70.1",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "triton",
+      "version": "3.8.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "truststore",
+      "version": "0.10.4",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "typer",
+      "version": "0.27.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "typing-inspection",
+      "version": "0.4.4",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/pydantic/typing-inspection",
+        "Documentation, https://pydantic.github.io/typing-inspection/dev/",
+        "Source, https://github.com/pydantic/typing-inspection",
+        "Changelog, https://github.com/pydantic/typing-inspection/blob/main/HISTORY.md"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "typing_extensions",
+      "version": "4.16.0",
+      "license_metadata": "PSF-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Bug Tracker, https://github.com/python/typing_extensions/issues",
+        "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+        "Documentation, https://typing-extensions.readthedocs.io/",
+        "Home, https://github.com/python/typing_extensions",
+        "Q & A, https://github.com/python/typing/discussions",
+        "Repository, https://github.com/python/typing_extensions"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "udapi",
+      "version": "0.5.2",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "udtools",
+      "version": "0.2.8",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "urllib3",
+      "version": "2.8.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+        "Documentation, https://urllib3.readthedocs.io",
+        "Code, https://github.com/urllib3/urllib3",
+        "Issue tracker, https://github.com/urllib3/urllib3/issues",
+        "Security policy, https://urllib3.readthedocs.io/en/latest/security.html"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "uvicorn",
+      "version": "0.54.0",
+      "license_metadata": "BSD-3-Clause",
+      "classifiers": [],
+      "project_urls": [
+        "Changelog, https://uvicorn.dev/release-notes",
+        "Funding, https://github.com/sponsors/Kludex",
+        "Homepage, https://uvicorn.dev/",
+        "Source, https://github.com/Kludex/uvicorn"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "wasabi",
+      "version": "1.1.3",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "weasel",
+      "version": "1.0.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "wrapt",
+      "version": "2.5.0",
+      "license_metadata": "not installed in inspected environment",
+      "status": "unresolved"
+    },
+    {
+      "package": "zipcodes",
+      "version": "3.0.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/seanpianka/zipcodes",
+        "Issues, https://github.com/seanpianka/zipcodes/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "zxing-cpp",
+      "version": "3.1.1",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/zxing-cpp/zxing-cpp",
+        "Repository, https://github.com/zxing-cpp/zxing-cpp.git",
+        "Issues, https://github.com/zxing-cpp/zxing-cpp/issues"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "twilio",
+      "version": "9.11.2",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "PyJWT",
+      "version": "2.15.1",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/jpadilla/pyjwt"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "aiohttp",
+      "version": "3.14.3",
+      "license_metadata": "Apache-2.0 AND MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Homepage, https://github.com/aio-libs/aiohttp",
+        "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+        "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+        "CI: GitHub Actions, https://github.com/aio-libs/aiohttp/actions?query=workflow%3ACI",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/aiohttp",
+        "Docs: Changelog, https://docs.aiohttp.org/en/stable/changes.html",
+        "Docs: RTD, https://docs.aiohttp.org",
+        "GitHub: issues, https://github.com/aio-libs/aiohttp/issues",
+        "GitHub: repo, https://github.com/aio-libs/aiohttp"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "aiohttp-retry",
+      "version": "2.9.1",
+      "license_metadata": "MIT",
+      "classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "project_urls": [],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "license_metadata": "PSF-2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Python Software Foundation License"
+      ],
+      "project_urls": [
+        "Bug Tracker, https://github.com/aio-libs/aiohappyeyeballs/issues",
+        "Changelog, https://github.com/aio-libs/aiohappyeyeballs/blob/main/CHANGELOG.md",
+        "Documentation, https://aiohappyeyeballs.readthedocs.io",
+        "Repository, https://github.com/aio-libs/aiohappyeyeballs"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "aiosignal",
+      "version": "1.4.0",
+      "license_metadata": "Apache 2.0",
+      "classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "project_urls": [
+        "Chat: Gitter, https://gitter.im/aio-libs/Lobby",
+        "CI: GitHub Actions, https://github.com/aio-libs/aiosignal/actions",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/aiosignal",
+        "Docs: RTD, https://docs.aiosignal.org",
+        "GitHub: issues, https://github.com/aio-libs/aiosignal/issues",
+        "GitHub: repo, https://github.com/aio-libs/aiosignal"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "attrs",
+      "version": "26.1.0",
+      "license_metadata": "MIT",
+      "classifiers": [],
+      "project_urls": [
+        "Documentation, https://www.attrs.org/",
+        "Changelog, https://www.attrs.org/en/stable/changelog.html",
+        "GitHub, https://github.com/python-attrs/attrs",
+        "Funding, https://github.com/sponsors/hynek",
+        "Tidelift, https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "frozenlist",
+      "version": "1.8.0",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+        "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+        "CI: Github Actions, https://github.com/aio-libs/frozenlist/actions",
+        "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/frozenlist",
+        "Docs: Changelog, https://github.com/aio-libs/frozenlist/blob/master/CHANGES.rst#changelog",
+        "Docs: RTD, https://frozenlist.aio-libs.org",
+        "GitHub: issues, https://github.com/aio-libs/frozenlist/issues",
+        "GitHub: repo, https://github.com/aio-libs/frozenlist"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "multidict",
+      "version": "6.9.1",
+      "license_metadata": "Apache License 2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+        "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+        "CI: GitHub, https://github.com/aio-libs/multidict/actions",
+        "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/multidict",
+        "Docs: Changelog, https://multidict.aio-libs.org/en/latest/changes/",
+        "Docs: RTD, https://multidict.aio-libs.org",
+        "GitHub: issues, https://github.com/aio-libs/multidict/issues",
+        "GitHub: repo, https://github.com/aio-libs/multidict"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "propcache",
+      "version": "0.5.4",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+        "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+        "CI: GitHub Workflows, https://github.com/aio-libs/propcache/actions?query=branch:master",
+        "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/propcache",
+        "Docs: Changelog, https://propcache.readthedocs.io/en/latest/changes/",
+        "Docs: RTD, https://propcache.readthedocs.io",
+        "GitHub: issues, https://github.com/aio-libs/propcache/issues",
+        "GitHub: repo, https://github.com/aio-libs/propcache"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    },
+    {
+      "package": "yarl",
+      "version": "1.25.1",
+      "license_metadata": "Apache-2.0",
+      "classifiers": [],
+      "project_urls": [
+        "Chat: Matrix, https://matrix.to/#/#aio-libs:matrix.org",
+        "Chat: Matrix Space, https://matrix.to/#/#aio-libs-space:matrix.org",
+        "CI: GitHub Workflows, https://github.com/aio-libs/yarl/actions?query=branch:master",
+        "Code of Conduct, https://github.com/aio-libs/.github/blob/master/CODE_OF_CONDUCT.md",
+        "Coverage: codecov, https://codecov.io/github/aio-libs/yarl",
+        "Docs: Changelog, https://yarl.aio-libs.org/en/latest/changes/",
+        "Docs: RTD, https://yarl.aio-libs.org",
+        "GitHub: issues, https://github.com/aio-libs/yarl/issues",
+        "GitHub: repo, https://github.com/aio-libs/yarl"
+      ],
+      "status": "metadata inventory; terms not relicensed"
+    }
+  ]
+}

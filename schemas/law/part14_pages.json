@@ -1,0 +1,51 @@
+{
+  "_note": "The forms the product fills whose template has no Additional Information page of its own (every other template is read: src/fill/continuation.py finds its page by what the template says about its boxes). For each: whether the form itself tells the filer to attach a sheet, and if so the form's own line and the page of the template it is printed on (a test reads the line back from the template, so an edition that changes it fails loudly). A form that says nothing of the kind gets no sheet. Read from the templates in schemas/ on 10/03/2026; re-check when a form's edition changes (the register's edition item for that form).",
+  "forms": {
+    "ar11": {
+      "sheet": false
+    },
+    "eoir26": {
+      "sheet": true,
+      "page": 2,
+      "line": "use more sheets of paper if necessary. Write your name(s) and A-Number(s) on every additional sheet"
+    },
+    "eoir26a": {
+      "sheet": true,
+      "page": 2,
+      "line": "number on all pages of any additional document(s) or additional pages"
+    },
+    "eoir27": {
+      "sheet": false
+    },
+    "eoir28": {
+      "sheet": false
+    },
+    "eoir42a": {
+      "sheet": true,
+      "page": 3,
+      "line": "please continue your response on an additional sheet of paper"
+    },
+    "eoir42b": {
+      "sheet": true,
+      "page": 3,
+      "line": "please continue your response on an additional sheet of paper"
+    },
+    "g1145": {
+      "sheet": false
+    },
+    "g1450": {
+      "sheet": false
+    },
+    "i485supa": {
+      "sheet": false
+    },
+    "i730": {
+      "sheet": true,
+      "page": 7,
+      "line": "(Attach additional sheets of paper if necessary)"
+    },
+    "i765ws": {
+      "sheet": false
+    }
+  }
+}

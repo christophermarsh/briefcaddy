@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "inventory_id": "pilot-critical-reads-1",
+  "basis": "Engineering review inventory; not a legal approval or accuracy claim.",
+  "keys": [
+    "applicant.a_number", "applicant.ssn", "applicant.i94_number", "applicant.travel_document_number",
+    "applicant.given_name", "applicant.family_name", "applicant.middle_name", "applicant.birth_certificate_name",
+    "applicant.i94_given_name", "applicant.i94_family_name", "applicant.dob", "applicant.sex",
+    "applicant.citizenship", "applicant.country_of_birth", "applicant.birth_city", "applicant.birth_state",
+    "applicant.i94_arrival_date", "applicant.i94_admit_until_date", "applicant.i94_class_of_admission",
+    "applicant.ead_expiration_date", "applicant.ead_category", "applicant.marital_status",
+    "applicant.marriage_date", "applicant.marriage_place", "applicant.marriage_party_names",
+    "applicant.name_change.date", "applicant.name_change.former_name", "applicant.name_change.new_name",
+    "applicant.i360_priority_date", "applicant.i360_receipt_number", "applicant.i360_current_status",
+    "applicant.nta_present", "applicant.nta_admission_status", "applicant.criminal_record_present",
+    "applicant.criminal_disposition_mentions_dismissal", "applicant.criminal_docket_number", "applicant.criminal_offenses",
+    "petitioner.status", "petitioner.citizenship_how", "petitioner.has_certificate", "petitioner.us_passport",
+    "petitioner.a_number", "petitioner.certificate_number", "petitioner.certificate_date",
+    "petitioner.lpr_date", "petitioner.lpr_class", "petitioner.country_of_birth"
+  ],
+  "patterns": [
+    "^(?:applicant|petitioner)\\.(?:(?:mother|father|spouse|child_[1-9][0-9]*)_)?(?:given_name|middle_name|family_name|dob|a_number|ssn|country_of_birth|birth_city|birth_state)$",
+    "^applicant\\.birth_cert\\.(?:mother|father|parent_a|parent_b)_.+$",
+    "^marriage\\.party_[ab]\\..+$",
+    "^folder\\.notice\\.[^.]+\\.[^.]+\\.(?:date|due|appointment|valid_from|valid_to|priority_date|name|addressed_to)$",
+    "^(?:nta|i213|sij)\\..+$",
+    "^(?:questionnaire|applicant)\\.part9_.+$"
+  ],
+  "reference_only_keys": [],
+  "reference_only_patterns": [],
+  "unknown_key_policy": "require_source_review",
+  "scope": "Only facts supported by retained-document evidence, including derived input edges and scanned questionnaire answers. Genuinely typed-only answers retain their existing review flow. An unlisted document-derived key is conservatively reviewed; it is not silently declared noncritical. No context label alone exempts a form, stage or legal-decision input."
+}

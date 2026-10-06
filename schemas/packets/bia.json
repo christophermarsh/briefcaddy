@@ -1,0 +1,63 @@
+{
+  "_about": "An appeal to the BIA from an immigration judge's decision (src/bia.py; 8 CFR 1003.38; the EOIR-26 instructions, Rev. Mar. 2026): the EOIR-27 and the EOIR-26, then a copy of the judge's decision and any attachments to item 6. Attorneys e-file it in ECAS. No cover letter. The fee receipt from the EOIR Payment Portal (or Form EOIR-26A) goes with it. The attorney approves titles and order.",
+  "filing": "bia",
+  "title": "Appeal to the BIA (EOIR-26 and EOIR-27)",
+  "packet_pdf": "packet_bia.pdf",
+  "manifest": "packet_bia.json",
+  "choices": "packet_choices_bia.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "eoir27",
+    "eoir26"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The EOIR Payment Portal receipt for the appeal fee (epay.eoir.justice.gov: the A-Number and the filing type), or Form EOIR-26A."
+    },
+    {
+      "kind": "attach",
+      "text": "A copy of the judge's decision being appealed (the EOIR-26, item 5)."
+    },
+    {
+      "kind": "check",
+      "text": "E-file in ECAS so the Board RECEIVES it by the deadline (no mailbox rule) then mark the appeal step done on the case page."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "decision",
+      "title": "The immigration judge's decision appealed, and the court record",
+      "types": [
+        "notice_to_appear"
+      ],
+      "required": false
+    },
+    {
+      "id": "attachments",
+      "title": "Attachments to item 6 (with certified English translations)",
+      "types": [
+        "declaration",
+        "country_conditions",
+        "translation_certification"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "Not for the BIA: the EOIR-27 is the attorney's appearance there.",
+    "birth_certificate": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "i94": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "passport": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "ssn_card": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "drivers_license": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "work_permit": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "national_id": "Identity documents: not part of an appeal to the BIA (the record is already before the Board).",
+    "visa": "Identity documents: not part of an appeal to the BIA (the record is already before the Board)."
+  }
+}

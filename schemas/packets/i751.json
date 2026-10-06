@@ -1,0 +1,104 @@
+{
+  "_about": "The removing-conditions (I-751) packet (src/packet.py, src/conditions.py), per the I-751 Instructions (04/01/24): the G-28 and the I-751, the 2-year green card (front and back) of the client and of each child included, evidence the marriage was entered in good faith, and for a waiver the divorce decree or death certificate, or the evidence of abuse or hardship. No photos unless living overseas on military or government orders. The attorney approves titles and order.",
+  "filing": "i751",
+  "title": "I-751 petition (removing conditions on residence)",
+  "packet_pdf": "packet_i751.pdf",
+  "manifest": "packet_i751.json",
+  "choices": "packet_choices_i751.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i751.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i751",
+    "i751"
+  ],
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "No photos unless the client lives overseas on military or government orders (then two for each petitioner and child)."
+    },
+    {
+      "kind": "check",
+      "text": "A joint petition: the client's spouse signs Part 8 too. USCIS rejects it unsigned."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "green_card",
+      "title": "Copy of the 2-year Permanent Resident Card (front and back), and each included child's",
+      "types": [
+        "green_card"
+      ],
+      "required": true
+    },
+    {
+      "id": "marriage",
+      "title": "The marriage certificate",
+      "types": [
+        "marriage_certificate"
+      ]
+    },
+    {
+      "id": "good_faith",
+      "title": "Evidence of a good-faith marriage: joint lease or mortgage, joint bank accounts, joint tax returns, insurance, children's birth certificates, photographs, affidavits",
+      "types": [
+        "lease",
+        "bank_statement",
+        "tax_return",
+        "utility_bill",
+        "photograph"
+      ]
+    },
+    {
+      "id": "ended",
+      "title": "How the marriage ended (divorce or annulment decree, or death certificate)",
+      "types": [
+        "divorce_decree"
+      ]
+    },
+    {
+      "id": "abuse_hardship",
+      "title": "Evidence of abuse or extreme hardship (waiver)",
+      "types": [
+        "police_report",
+        "medical_record",
+        "declaration"
+      ]
+    },
+    {
+      "id": "court",
+      "title": "Court dispositions for every arrest or charge (Part 1, 20)",
+      "types": [
+        "criminal_record"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "USCIS notices",
+      "types": [
+        "uscis_notice",
+        "i485_receipt"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application.",
+    "ssn_card": "Not asked for with this application.",
+    "w2": "Not asked for with this application.",
+    "pay_stub": "Not asked for with this application.",
+    "i94": "Not asked for with the I-751.",
+    "visa": "Not asked for with the I-751.",
+    "work_permit": "Not asked for with the I-751.",
+    "birth_certificate": "The client's own birth certificate isn't asked for (a child's, born in the marriage, goes in good-faith evidence).",
+    "passport": "Not asked for with the I-751.",
+    "drivers_license": "Not asked for with the I-751.",
+    "sij_order": "Not part of a marriage-based case.",
+    "i360_approval": "Not part of a marriage-based case."
+  }
+}

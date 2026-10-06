@@ -1,0 +1,91 @@
+{
+  "_about": "The U petition's cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The address (the lockbox for the client's state, Attn: 1367: uscis.gov/i-918, updated 06/05/2026), the subject, the original Supplement B line and the fee ($0: Form G-1055 10/01/26) come from src/u_visa.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "petition",
+  "re_lines": [
+    "Petition: I-918 Petition for U Nonimmigrant Status"
+  ],
+  "who": "Petitioner",
+  "intro": "Please be advised that this law office has been retained to represent {name} with respect to {pron} immigration matters. {case_paragraph} In support of {pron} {noun}, we have provided the following documents:",
+  "form_order": [
+    "g28_i918",
+    "i918",
+    "i918a_1",
+    "i918a_2",
+    "i918a_3",
+    "i192"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i918": "Petitioner’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i918": "Petitioner’s I-918 - Petition for U Nonimmigrant Status",
+    "i918a_1": "I-918 Supplement A - Petition for Qualifying Family Member of U-1 Recipient (family member 1)",
+    "i918a_2": "I-918 Supplement A - Petition for Qualifying Family Member of U-1 Recipient (family member 2)",
+    "i918a_3": "I-918 Supplement A - Petition for Qualifying Family Member of U-1 Recipient (family member 3)",
+    "i192": "Petitioner’s I-192 - Application for Advance Permission to Enter as a Nonimmigrant"
+  },
+  "documents": [
+    [
+      "police_report",
+      "Police Reports and Court Documents"
+    ],
+    [
+      "news_article",
+      "News Articles About the Criminal Activity"
+    ],
+    [
+      "medical_record",
+      "Medical and Counseling Records (Substantial Physical or Mental Abuse)"
+    ],
+    [
+      "photograph",
+      "Photographs of the Petitioner’s Injuries"
+    ],
+    [
+      "declaration",
+      "Petitioner’s Signed Personal Statement"
+    ],
+    [
+      "criminal_record",
+      "Petitioner’s Certified Police and Court Records"
+    ],
+    [
+      "passport",
+      "Copy of Petitioner’s Passport"
+    ],
+    [
+      "birth_certificate",
+      "Birth Certificate and Translation"
+    ],
+    [
+      "i94",
+      "Copy of Petitioner’s Form I-94"
+    ],
+    [
+      "marriage_certificate",
+      "Marriage Certificate and Translation"
+    ],
+    [
+      "divorce_decree",
+      "Divorce Decrees Ending Earlier Marriages"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of Petitioner’s Immigration Court Documents"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    }
+  ]
+}

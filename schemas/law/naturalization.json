@@ -1,0 +1,26 @@
+{
+  "_about": "Naturalization rules the N-400 calculator applies (src/naturalization.py). Copied from the Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400, saved 2026-10-01 to data/reference/n-400instr.pdf), page numbers below. Re-check when USCIS publishes a new N-400 edition (docs/maintenance.md, item form_n400).",
+  "source": "Form N-400 Instructions, edition 01/20/25",
+  "checked": "2026-10-01",
+  "bases": {
+    "General": {"years": 5, "physical_presence_days": 913, "_": "LPR 5 years; physical presence 30 months (913 days) in the past 5 years (Instructions p. 3, p. 19)"},
+    "Spouse of U.S. citizen": {"years": 3, "physical_presence_days": 548, "_": "LPR 3 years, married to and living in marital union with a U.S. citizen for 3 years, spouse a citizen for 3 years; 18 months (548 days) in the past 3 years (Instructions p. 4, p. 19)"}
+  },
+  "early_filing_days": 90,
+  "_early_filing": "May file up to 90 days before reaching the 5- or 3-year continuous residence period, but must meet every other requirement at filing (Instructions, Early Filing).",
+  "state_residence_months": 3,
+  "_state_residence": "Lived in the state or USCIS district for at least 3 months before filing (Instructions p. 3, '3-Month Residency').",
+  "minimum_age": 18,
+  "absence_rebuttable_days": 181,
+  "absence_break_days": 365,
+  "_absence": "An absence of more than 6 months but less than 1 year must be explained (the client shows residence wasn't broken); an absence of 1 year or more breaks continuous residence unless an N-470 was approved (Instructions, Continuous Residence, pp. 17-18). When the client may file again after a break is the attorney's call.",
+  "english_exemptions": [
+    {"age": 50, "lpr_years": 20, "text": "50/20: no English test; civics in the client's language"},
+    {"age": 55, "lpr_years": 15, "text": "55/15: no English test; civics in the client's language"},
+    {"age": 65, "lpr_years": 20, "text": "65/20: also the simplified civics test"}
+  ],
+  "_english_exemptions": "Age and years as a permanent resident at the time of filing (Instructions, Naturalization Testing and Exceptions).",
+  "fee_reduction_percent": 400,
+  "_fee_reduction": "Reduced fee when household income is at or below 400% of the Federal Poverty Guidelines for the household size (Instructions, Part 10); evidence: each household member's most recent federal tax return, or pay stubs / W-2 / SSA-1099.",
+  "selective_service": {"from_age": 18, "to_age": 26, "_": "Men who lived in the U.S. (except as a lawful nonimmigrant) between 18 and 26 must have registered; if not, a status information letter and an explanation (Instructions, Part 9 items 22.a-22.c)."}
+}

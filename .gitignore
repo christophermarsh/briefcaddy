@@ -1,0 +1,32 @@
+# Real client data must never be committed. Anything under these paths
+# (SSNs, A-numbers, passport numbers, birth certificates, filled PDFs for
+# real clients) stays local/firm-controlled storage only.
+/clients/
+/data/
+*.client.pdf
+*_filled.pdf
+
+# Keep synthetic/redacted test fixtures only — real example inputs get
+# scrubbed before landing in tests/fixtures/, never committed as-is.
+
+# Standard Python
+__pycache__/
+*.pyc
+.venv/
+.venv-wsl/
+.venv-cloud/
+.venv-dev/
+venv/
+.env
+.pytest_cache/
+
+# OCR scratch space (classify/ocr.py) -- temp images/text, never source data
+.ocr_tmp/
+tests/.ocr_test_tmp/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# an installation's own deployment (src/deployment.py; deployment.example.json shows the shape)
+deployment.json

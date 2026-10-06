@@ -1,0 +1,19 @@
+{
+  "_source": "USCIS, Form I-589 page, 'Where to File with USCIS by Mail' (uscis.gov/i-589), page last updated 09/30/2026, read 2026-10-01. For an I-589 filed with USCIS on paper: by the state where the client lives. NOT for a client in immigration court (unless a UAC): that application goes to the court. The Asylum Intake Unit (3 Intake Way, Minneapolis, MN 55438-1455) takes only nunc pro tunc filings after losing derivative status. The attorney sets that address by hand.",
+  "checked": "2026-10-01",
+  "page_updated": "09/30/2026",
+  "lockboxes": {
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: I-589 (BOX 653080)", "P.O. BOX 653080", "DALLAS, TX 75265-3080"],
+      "courier": ["USCIS", "ATTN: I-589 (BOX 653080)", "2501 S. STATE HIGHWAY 121 BUSINESS, SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["FL", "GA", "MD", "NJ", "PA", "TX"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: I-589", "P.O. BOX 6893", "CHICAGO, IL 60680"],
+      "courier": ["USCIS", "ATTN: I-589 (BOX 6893)", "131 S. DEARBORN ST., 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MA", "MI",
+                 "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PR", "RI", "SC", "SD", "TN", "UT", "VT", "VI",
+                 "VA", "WA", "WV", "WI", "WY", "AA", "AE", "AP"]
+    }
+  }
+}

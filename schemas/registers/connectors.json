@@ -1,0 +1,32 @@
+{
+  "_status": "Connectors to the firm's other systems (src/connectors). Built and tested, NOT switched on: 'active' says what is used, and today that is the local folders and staff accounts. Secrets never go in this file, only the names of the environment variables that hold them. Filevine paths and field names are to be confirmed on the firm's account (python -m connectors.check filevine) before anything is switched on. See docs/integrations.md.",
+  "active": {"documents": "local", "results": "none", "sign_in": "local"},
+  "_options": {"documents": ["local", "filevine", "google_drive", "microsoft"], "results": ["none", "folder", "filevine", "google_drive", "microsoft"],
+               "sign_in": ["local", "google", "microsoft"]},
+  "filevine": {
+    "base_url": "https://api.filevineapp.com",
+    "identity_url": "https://identity.filevine.com/connect/token",
+    "project_type_id": null,
+    "phase_name": null,
+    "upload_folder_id": null,
+    "upload_tags": ["i485-pipeline"],
+    "set_phase": {}
+  },
+  "google_drive": {
+    "root_folder_id": null,
+    "documents_subfolder": null,
+    "results_folder_name": null
+  },
+  "microsoft": {
+    "site": null,
+    "library": "Documents",
+    "drive_id": null,
+    "root_path": null,
+    "documents_subfolder": null,
+    "results_folder_name": null
+  },
+  "sign_in": {
+    "google_domain": "",
+    "redirect_uri": null
+  }
+}

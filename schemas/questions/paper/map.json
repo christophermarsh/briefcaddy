@@ -1,0 +1,389 @@
+{
+  "_status": "Maps the firm's Portuguese intake questionnaire (real example: clients/maria_eduarda) to fact keys. Anchors and labels are regexes over Tesseract output of the PRINTED text, tolerant of the garbling actually observed. Each Part 9 mapping pairs a questionnaire item with the I-485 item whose official text (the template's field tooltip) asks the same thing -- needs attorney sign-off before volume use. All answers are Tier 3 (client self-report).",
+  "language": "pt",
+  "questions": [
+    {
+      "id": "part9_q1",
+      "anchor": "negada\\s+a\\S*\\s*\\S*admiss",
+      "fact_key": "applicant.part9.denied_admission",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 10"
+    },
+    {
+      "id": "part9_q2",
+      "anchor": "visto\\s+negado",
+      "fact_key": "applicant.part9.denied_visa",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 11"
+    },
+    {
+      "id": "part9_q3",
+      "anchor": "trabalhou\\s+nos\\s+Estados",
+      "fact_key": "applicant.part9.worked_without_authorization",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 12"
+    },
+    {
+      "id": "part9_q4",
+      "anchor": "violou\\s+os\\s+termos",
+      "fact_key": "applicant.part9.violated_nonimmigrant_status",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 13 (also derived by rule OVERSTAY-01)"
+    },
+    {
+      "id": "part9_q5",
+      "anchor": "procedimentos\\s+de\\s+exclus",
+      "fact_key": "applicant.part9.in_removal_proceedings",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 14"
+    },
+    {
+      "id": "part9_q6",
+      "anchor": "ordem\\s+final\\s+de\\s+exclus",
+      "fact_key": "applicant.part9.final_order_of_removal",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 15"
+    },
+    {
+      "id": "part9_q7",
+      "anchor": "restabelecida",
+      "fact_key": "applicant.part9.prior_order_reinstated",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 16"
+    },
+    {
+      "id": "part9_q8",
+      "anchor": "rescindido",
+      "fact_key": "applicant.part4.lpr_status_rescinded",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 4 item 6"
+    },
+    {
+      "id": "part9_q9",
+      "anchor": "sa\\S{1,2}da\\s+volunt",
+      "fact_key": "applicant.part9.voluntary_departure_not_departed",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 17"
+    },
+    {
+      "id": "part9_q10",
+      "anchor": "libera\\S*\\s+ou\\s+prote",
+      "fact_key": "applicant.part9.applied_relief_from_removal",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 18"
+    },
+    {
+      "id": "part9_q11",
+      "anchor": "Visitante\\s+de\\s+Interc",
+      "fact_key": "applicant.part9.j_exchange_two_year_requirement",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 19"
+    },
+    {
+      "id": "part9_q12",
+      "anchor": "Visto\\s+ou\\s+Green\\s+Card",
+      "fact_key": "questionnaire.someone_petitioned_for_applicant",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "Context for prior filings -- no direct field"
+    },
+    {
+      "id": "part9_q13",
+      "anchor": "processo\\s+imigrat\\S*\\s+fora",
+      "fact_key": "questionnaire.other_immigration_applications",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "Context for prior filings -- no direct field"
+    },
+    {
+      "id": "part9_q14",
+      "anchor": "[I1l]-?94\\s+ou\\s*recebe",
+      "fact_key": "questionnaire.has_i94_or_parole",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "Cross-check against the I-94 document"
+    },
+    {
+      "id": "criminal_q1",
+      "anchor": "preso,?\\s+citado",
+      "fact_key": "applicant.part9.arrested_cited_charged_detained",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 22"
+    },
+    {
+      "id": "criminal_q2",
+      "anchor": "cometeu\\s+algum\\s+crime",
+      "fact_key": "applicant.part9.committed_crime",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "I-485 Part 9 item 23"
+    },
+    {
+      "id": "sex",
+      "anchor": "Sexo:",
+      "fact_key": "applicant.sex",
+      "options": [
+        [
+          "F",
+          "Feminino"
+        ],
+        [
+          "M",
+          "Masculin\\w"
+        ]
+      ],
+      "note": "First 'Sexo:' on the form is the applicant's (later ones are the parents')"
+    },
+    {
+      "id": "dual_citizenship",
+      "anchor": "cidadania\\s+de\\s+mais",
+      "fact_key": "questionnaire.dual_citizenship",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "Informs citizenship policy (docs/decisions.md)"
+    },
+    {
+      "id": "entered_via_border",
+      "anchor": "pela\\s+fronteira",
+      "fact_key": "questionnaire.entered_via_border",
+      "options": [
+        [
+          "Yes",
+          "(?<![A-Za-z])S[i1l]m(?![a-z])"
+        ],
+        [
+          "No",
+          "(?<![A-Za-z])N\\S{1,3}?(?=[\\s,._|;:)]|$)"
+        ]
+      ],
+      "note": "Entry-without-inspection indicator -- cross-check against the I-94"
+    },
+    {
+      "id": "marital_status",
+      "anchor": "Estado\\s+civil",
+      "fact_key": "applicant.marital_status",
+      "window": 900,
+      "options": [
+        [
+          "Single",
+          "Solteiro"
+        ],
+        [
+          "Married",
+          "Casado"
+        ],
+        [
+          "Divorced",
+          "Divorciado"
+        ],
+        [
+          "Widowed",
+          "Vi\\S{1,3}vo"
+        ],
+        [
+          "Marriage Annulled",
+          "Casamento\\s+Anulado"
+        ],
+        [
+          "Legally Separated",
+          "Legalmente"
+        ]
+      ],
+      "note": "I-485 Part 6 item 1; options span a page break"
+    },
+    {
+      "id": "ethnicity",
+      "anchor": "Etnia:",
+      "fact_key": "applicant.ethnicity",
+      "options": [
+        [
+          "Hispanic or Latino",
+          "Hisp\\S*nico"
+        ],
+        [
+          "Not Hispanic or Latino",
+          "N\\S{1,3}\\s+Hisp"
+        ]
+      ],
+      "note": "I-485 Part 8 item 1"
+    },
+    {
+      "id": "race",
+      "anchor": "Ra\\S{1,2}:",
+      "fact_key": "applicant.race",
+      "kind": "multi",
+      "options": [
+        [
+          "White",
+          "Branco"
+        ],
+        [
+          "Asian",
+          "Asi\\S*tico"
+        ],
+        [
+          "Black or African American",
+          "Preto"
+        ],
+        [
+          "American Indian or Alaska Native",
+          "Ind\\S*gena"
+        ],
+        [
+          "Native Hawaiian or Other Pacific Islander",
+          "Nativo\\s+do\\s+Hawa"
+        ]
+      ],
+      "note": "I-485 Part 8 item 2 (select all that apply)",
+      "min_options": 3
+    }
+  ]
+}

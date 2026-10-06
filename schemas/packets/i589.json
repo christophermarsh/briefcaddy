@@ -1,0 +1,126 @@
+{
+  "_about": "The asylum (I-589) packet filed with USCIS by mail (src/packet.py, src/asylum.py). In the order the I-589 Instructions (07/28/26, Section X) set: the original I-589 signed in Part D and by the preparer in Part E (with its supplement sheets), the G-28, then ONE copy of the supporting documents and of the evidence of the relationship to any spouse and children included. No passport photos and no extra copies of the form (uscis.gov/i-589). Built into its own files (packet_i589.pdf, packet_i589.json). The attorney approves titles and order.",
+  "filing": "i589",
+  "title": "I-589 application (asylum)",
+  "packet_pdf": "packet_i589.pdf",
+  "manifest": "packet_i589.json",
+  "choices": "packet_choices_i589.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i589.json",
+  "index_sheet": false,
+  "forms": [
+    "i589",
+    "g28_i589"
+  ],
+  "handwork": [],
+  "exhibits": [
+    {
+      "id": "identity",
+      "title": "Passport, national identity document and birth certificate (with certified English translation)",
+      "types": [
+        "passport",
+        "national_id",
+        "birth_certificate",
+        "translation_certification"
+      ],
+      "may_be_absent": {
+        "passport": "i589_documents"
+      }
+    },
+    {
+      "id": "entry",
+      "title": "Evidence of entry: Form I-94 and any visa",
+      "types": [
+        "i94",
+        "visa"
+      ],
+      "may_be_absent": {
+        "i94": "i589_documents",
+        "visa": "i589_documents"
+      }
+    },
+    {
+      "id": "relationship",
+      "title": "Evidence of the relationship to the spouse and children included (marriage and birth certificates)",
+      "types": [
+        "marriage_certificate"
+      ]
+    },
+    {
+      "id": "claim",
+      "title": "Evidence supporting the claim: declarations, police reports, medical and psychological records, photographs, news articles",
+      "types": [
+        "declaration",
+        "police_report",
+        "medical_record",
+        "news_article",
+        "photograph"
+      ]
+    },
+    {
+      "id": "country",
+      "title": "Country conditions",
+      "types": [
+        "country_conditions"
+      ]
+    },
+    {
+      "id": "immigration_court",
+      "title": "Immigration court documents",
+      "types": [
+        "notice_to_appear"
+      ]
+    },
+    {
+      "id": "uscis_notices",
+      "title": "USCIS notices",
+      "types": [
+        "uscis_notice",
+        "i360_approval"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "ssn_card": "Not asked for with the I-589.",
+    "drivers_license": "Not asked for with the I-589.",
+    "work_permit": "Not asked for with the I-589.",
+    "i765": "A completed USCIS form from an earlier filing, not part of this application.",
+    "i485": "A completed USCIS form from an earlier filing, not part of this application.",
+    "g28": "The firm files a new G-28 with this application."
+  },
+  "variants": {
+    "in_court": {
+      "_about": "In immigration court (asylum.court: now, not an unaccompanied child): DHS's 'Instructions for Submitting Certain Applications in Immigration Court and for Providing Biometric and Biographic Information to USCIS' (revised June 8, 2026; data/reference/defa-pre-order.txt), part A: the I-589 is filed with the court and a complete copy served on ICE (OPLA). Nothing goes to USCIS, not even the proof of payment. The fee is paid through the EOIR Payment Portal BEFORE filing. The attorney's appearance is the EOIR-28, not a G-28.",
+      "title": "Asylum (I-589): filed with the immigration court",
+      "cover_letter": false,
+      "forms": [
+        "i589"
+      ],
+      "handwork": [
+        {
+          "kind": "sign",
+          "text": "I-589: the client signs and dates Part D (after the application was read to them in their language) and each supplement sheet; the attorney signs Part E. Parts F and G stay blank (they are signed before the judge)."
+        },
+        {
+          "kind": "attach",
+          "text": "Pay the asylum fee in the EOIR Payment Portal (epay.eoir.justice.gov) BEFORE filing (the court won't accept the I-589 without it) and file its receipt with the application. Nothing is sent to USCIS."
+        },
+        {
+          "kind": "check",
+          "text": "File it with the immigration court (e-file in ECAS) with the EOIR-28 already on file; serve a complete copy, with the supporting documents, on ICE (OPLA) and complete the proof of service."
+        },
+        {
+          "kind": "check",
+          "text": "Biometrics: an ASC appointment notice comes by mail. None within 3 months of filing, or the merits hearing within 6 months: call the USCIS Contact Center, 800-375-5283, with the filed I-589 at hand."
+        },
+        {
+          "kind": "check",
+          "text": "The client's address with the court is current: a move needs Form EOIR-33/IC within 5 days, served on OPLA."
+        }
+      ]
+    }
+  }
+}

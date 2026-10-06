@@ -1,0 +1,109 @@
+{
+  "_about": "Field/register description; private development provenance omitted.",
+  "letterhead": {
+    "name_light": "GEORGES | ",
+    "name_bold": "COTE LLP",
+    "address": "123 Example Street, Boston, MA, 02110",
+    "tagline": "Attorneys at law",
+    "attorneys": "Audai C. Cote, Esq.*, Andrew G. FicticioL, Esq.*, Lance Kropp, Esq., Carli Buono, Esq., Anthea Yeung, Esq., Daniel FicticioL, Esq., Daniel Rojas, Esq."
+  },
+  "delivery": "VIA USPS PRIORITY",
+  "mail_to": "by_state",
+  "signer": {
+    "name": "Andrew G. FicticioL, Esq.",
+    "lines": [
+      "Tel-(617) 884-1000",
+      "Fax-(617) 884-1002",
+      "Email: Agl@GeorgesCoteLaw.com",
+      "WWW.GEORGESCOTELAW.COM"
+    ]
+  },
+  "visa_bulletin": {
+    "_note": "Set each month from the USCIS 'Adjustment of Status Filing Charts from the Visa Bulletin' page: the month, which chart USCIS uses for employment-based filings, and the EB-4 cut-off for each chargeability area ('C' when current). Country of chargeability = country of birth. Leave null until checked. The packet then stays DRAFT and says why.",
+    "month": null,
+    "chart": "Dates for Filing",
+    "eb4_cutoff": {
+      "ALL CHARGEABILITY": null,
+      "EL SALVADOR, GUATEMALA, HONDURAS": null,
+      "MEXICO": null,
+      "INDIA": null,
+      "CHINA": null,
+      "PHILIPPINES": null
+    }
+  },
+  "chargeability": {
+    "EL SALVADOR": "EL SALVADOR, GUATEMALA, HONDURAS",
+    "GUATEMALA": "EL SALVADOR, GUATEMALA, HONDURAS",
+    "HONDURAS": "EL SALVADOR, GUATEMALA, HONDURAS",
+    "MEXICO": "MEXICO",
+    "INDIA": "INDIA",
+    "CHINA": "CHINA",
+    "PHILIPPINES": "PHILIPPINES"
+  },
+  "forms": {
+    "g28": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i485": "Applicant’s I-485 - Application to Register Permanent Residence or Adjust Status",
+    "i765": "Applicant’s I-765 - Application for Employment Authorization",
+    "i693": "Applicant’s Sealed I-693 - Report of Immigration Medical Examination and Vaccination Record"
+  },
+  "documents": [
+    [
+      "i360_approval",
+      "Copy of I-797 Notice of Action for I-360 Petition for Amerasian, Widow(er), or Special Immigrant Approval"
+    ],
+    [
+      "photos",
+      "{photos} Passport Pictures of the Applicant"
+    ],
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "visa",
+      "Copy of Applicant’s U.S. Visa"
+    ],
+    [
+      "work_permit",
+      "Copy of Applicant’s Employment Authorization Card"
+    ],
+    [
+      "ssn_card",
+      "Copy of Applicant’s Social Security Card"
+    ],
+    [
+      "drivers_license",
+      "Copy of Applicant’s Driver’s License"
+    ],
+    [
+      "birth_certificate",
+      "Copy of Applicant’s Birth Certificate and Translation"
+    ],
+    [
+      "i94",
+      "Copy of Applicant’s Most Recent I-94"
+    ],
+    [
+      "uscis_notice",
+      "Copies of Other USCIS Notices"
+    ],
+    [
+      "notice_to_appear",
+      "Copy of Applicant’s Immigration Court Documents"
+    ],
+    [
+      "criminal_record",
+      "Certified Police and Court Records"
+    ],
+    [
+      "visa_bulletin_printout",
+      "Printed copy of the relevant USCIS and Department of State Visa Bulletin pages"
+    ],
+    [
+      "fee_calculator_printout",
+      "USCIS Fee Calculator page confirming the fee exemption"
+    ]
+  ],
+  "fees": "Please note that no filing fees are required for Form I-485 or Form I-765 when filed by an applicant who has been granted Special Immigrant Juvenile (SIJ) classification. This exemption is confirmed by the USCIS Fee Calculator, a copy of which is enclosed.",
+  "closing": "Thank you for your time and attention to this matter. Should you need anything further, please do not hesitate to contact me at the phone number, fax, or email below."
+}

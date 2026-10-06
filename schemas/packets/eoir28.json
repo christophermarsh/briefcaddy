@@ -1,0 +1,21 @@
+{
+  "_about": "The attorney's appearance in immigration court (Form EOIR-28, Rev. Feb. 2025). Src/court.py. Filed alone: in the EOIR portal for an ECAS case, or on paper with the court, served on ICE (OPLA). No cover letter to USCIS and no exhibits. The attorney approves before use.",
+  "filing": "eoir28",
+  "title": "EOIR-28 (appearance in immigration court)",
+  "packet_pdf": "packet_eoir28.pdf",
+  "manifest": "packet_eoir28.json",
+  "choices": "packet_choices_eoir28.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": false,
+  "cover_letter": false,
+  "index_sheet": false,
+  "forms": ["eoir28"],
+  "g28": false,
+  "handwork": [
+    {"kind": "check", "text": "An ECAS case: file the EOIR-28 in the EOIR portal with these answers instead of mailing the paper."},
+    {"kind": "check", "text": "On paper: serve a copy on ICE (OPLA) for the court and complete the proof of service on page 2 before filing."}
+  ],
+  "exhibits": [],
+  "leave_out": {}
+}

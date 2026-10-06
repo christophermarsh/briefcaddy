@@ -1,0 +1,934 @@
+{
+  "_about": "What could this person apply for (src/apply_for.py): for each relief the product handles, the questions an attorney would ask, each from a source the product already holds. 'cite' is the section or form item; 'read' says when and where the product read it, or that no reading date is recorded; 'held_in' and 'held_text' name the file and the words in it that hold the source (tests/test_apply_for.py fails when they are not there). A question with no source the product holds is left out, never invented. The screen never concludes: it shows the questions and the answers, and says the attorney decides. Every sentence is for the attorney to approve (docs/attorney_review.md); the register item apply_for_questions says when to read them again.",
+  "version": 1,
+  "held_names": {
+    "docs/decisions.md": "the product's decision log",
+    "schemas/law/asylum.json": "the product's asylum rules",
+    "schemas/registers/journey.json": "the product's case timeline rules",
+    "schemas/law/naturalization.json": "the product's citizenship rules",
+    "schemas/law/visa_bulletin_family.json": "the product's family Visa Bulletin table",
+    "src/asylum.py": "the product's asylum filing notes",
+    "src/cuban_adjustment.py": "the product's Cuban Adjustment Act filing notes",
+    "src/daca.py": "the product's DACA renewal notes",
+    "src/family.py": "the product's family filing notes",
+    "src/i360.py": "the product's I-360 notes",
+    "src/inadmissibility_waiver.py": "the product's I-601 filing notes",
+    "src/journey.py": "the product's case timeline notes",
+    "src/naturalization.py": "the product's citizenship checks",
+    "src/parole.py": "the product's humanitarian parole notes",
+    "src/reapply.py": "the product's I-212 filing notes",
+    "src/t_visa.py": "the product's T visa filing notes",
+    "src/tps.py": "the product's TPS notes",
+    "src/u_visa.py": "the product's U visa filing notes",
+    "src/vawa.py": "the product's VAWA filing notes",
+    "src/waiver.py": "the product's I-601A filing notes"
+  },
+  "reliefs": [
+    {
+      "id": "asylum",
+      "name": "Asylum (I-589)",
+      "about": "A person afraid of harm in the home country applies for protection.",
+      "questions": [
+        {
+          "id": "asylum.one_year",
+          "text": "Did the person last arrive in the U.S. less than one year ago? If not, is there a change in circumstances or an extraordinary circumstance that explains the delay?",
+          "cite": "INA 208(a)(2)(B) and (D); Form I-589 Instructions, Part 1",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "schemas/law/asylum.json",
+          "held_text": "INA 208(a)(2)(B), (D)"
+        },
+        {
+          "id": "asylum.uac",
+          "text": "Was the person ever found to be an unaccompanied child? The one-year limit does not apply to an unaccompanied child.",
+          "cite": "INA 208(a)(2)(E)",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "schemas/law/asylum.json",
+          "held_text": "The 1-year limit does not apply to an unaccompanied alien child (INA 208(a)(2)(E))"
+        },
+        {
+          "id": "asylum.court",
+          "text": "Is the person in immigration court? Then the application goes to the court, except for an unaccompanied child, who files with USCIS.",
+          "cite": "The product's asylum filing notes (no section is cited there)",
+          "read": "As the product's asylum notes word it (no reading date recorded)",
+          "held_in": "src/asylum.py",
+          "held_text": "unless the client is in immigration court, where it goes to"
+        },
+        {
+          "id": "asylum.past_harm",
+          "text": "Have the person, the family, or close friends or colleagues ever experienced harm, mistreatment or threats in the past, by anyone?",
+          "cite": "Form I-589, Part B, item 1.A",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part B, 1.A · Have you, your family, or close friends or colleagues ever experienced harm"
+        },
+        {
+          "id": "asylum.fear",
+          "text": "Does the person fear harm or mistreatment on returning to the home country?",
+          "cite": "Form I-589, Part B, item 1.B",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part B, 1.B · Do you fear harm or mistreatment if you return to your home country?"
+        },
+        {
+          "id": "asylum.basis",
+          "text": "Is the harm, or the fear of it, because of race, religion, nationality, political opinion or membership in a particular social group?",
+          "cite": "Form I-589, Part B, item 1 (the basis boxes)",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part B, 1 · Basis: membership in a particular social group"
+        },
+        {
+          "id": "asylum.torture",
+          "text": "Is the person afraid of being tortured in the home country or any other country the person may be returned to?",
+          "cite": "Form I-589, Part B, item 4",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part B, 4 · Are you afraid of being subjected to torture"
+        },
+        {
+          "id": "asylum.other_country",
+          "text": "After leaving the country of the claim, did the person (or a spouse or children now in the U.S.) travel through or live in another country before entering the U.S.?",
+          "cite": "Form I-589, Part C, items 2.A and 2.B",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part C, 2.A · After leaving the country you claim asylum from"
+        },
+        {
+          "id": "asylum.earlier",
+          "text": "Have the person, a spouse, children, parents or siblings ever applied to the U.S. Government for refugee status, asylum or withholding of removal?",
+          "cite": "Form I-589, Part C, item 1",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part C, 1 · Have you, your spouse, children, parents or siblings ever applied"
+        },
+        {
+          "id": "asylum.harmed_others",
+          "text": "Has the person, a spouse or children ever ordered, incited, assisted or taken part in causing harm to anyone because of race, religion, nationality, social group or political opinion?",
+          "cite": "Form I-589, Part C, item 3",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part C, 3 · Have you, your spouse or children ever ordered, incited"
+        },
+        {
+          "id": "asylum.crime",
+          "text": "Has the person, or a family member included in the application, ever committed a crime or been arrested, charged, convicted or sentenced in the U.S.?",
+          "cite": "Form I-589, Part C, item 6",
+          "read": "Form I-589 Instructions, edition 07/28/26; uscis.gov/i-589, updated 09/30/2026; saved 10/01/2026",
+          "held_in": "src/asylum.py",
+          "held_text": "Part C, 6 · Have you or a family member included in the application ever committed a crime"
+        }
+      ]
+    },
+    {
+      "id": "naturalization",
+      "name": "Citizenship (N-400)",
+      "about": "A permanent resident applies to become a U.S. citizen.",
+      "questions": [
+        {
+          "id": "nat.resident",
+          "text": "Is the person a permanent resident? Since what date (the date on the green card)?",
+          "cite": "Form N-400, Part 2, item 7",
+          "read": "Form N-400 edition 01/20/25, as the product's N-400 questions hold the form's own wording; no date the form's page was read is recorded",
+          "held_in": "src/naturalization.py",
+          "held_text": "Part 2, 7 · Permanent resident since (the date on the green card)"
+        },
+        {
+          "id": "nat.years",
+          "text": "Has the person been a permanent resident for 5 years, or for 3 years while married to and living with a U.S. citizen? The N-400 can be filed up to 90 days early.",
+          "cite": "INA 316(a), 319(a), 334(a); Form N-400 Instructions, 'Early Filing'",
+          "read": "As the product's timeline rules cite them, checked 10/01/2026 (the case timeline rules)",
+          "held_in": "schemas/registers/journey.json",
+          "held_text": "INA 316(a), 319(a), 334(a)"
+        },
+        {
+          "id": "nat.presence",
+          "text": "Has the person been physically in the U.S. for 913 days of the last 5 years (548 days of the last 3 for a citizen's spouse)?",
+          "cite": "Form N-400 Instructions, pages 3, 4 and 19",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "\"physical_presence_days\": 913"
+        },
+        {
+          "id": "nat.state",
+          "text": "Has the person lived in the state or USCIS district where the N-400 is filed for at least 3 months?",
+          "cite": "Form N-400 Instructions, page 3, '3-Month Residency'",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "3-Month Residency"
+        },
+        {
+          "id": "nat.trips",
+          "text": "Has the person taken a trip abroad of more than 6 months? A trip of a year or more breaks continuous residence unless an N-470 was approved.",
+          "cite": "Form N-400 Instructions, 'Continuous Residence', pages 17 and 18",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "an absence of 1 year or more breaks continuous residence"
+        },
+        {
+          "id": "nat.age",
+          "text": "Is the person 18 or older?",
+          "cite": "Form N-400 Instructions, page 3",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "\"minimum_age\": 18"
+        },
+        {
+          "id": "nat.english",
+          "text": "Is the person 50 or older with 20 years as a permanent resident, 55 or older with 15 years, or 65 or older with 20 years? These ages can change the English and civics tests.",
+          "cite": "Form N-400 Instructions, 'Naturalization Testing and Exceptions'",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "50/20: no English test"
+        },
+        {
+          "id": "nat.proceedings",
+          "text": "Is the person in removal proceedings, or does the folder hold a Notice to Appear?",
+          "cite": "INA 318",
+          "read": "As the product's naturalization checks cite it (no reading date recorded)",
+          "held_in": "src/naturalization.py",
+          "held_text": "USCIS can't naturalize anyone while removal proceedings are pending (INA 318)"
+        },
+        {
+          "id": "nat.arrest",
+          "text": "Has the person ever been arrested, cited, detained or charged by any police, military or immigration official, anywhere, even if it was sealed or expunged?",
+          "cite": "Form N-400, edition 01/20/25, Part 9, item 15.b",
+          "read": "Form read 10/03/2026 (the product's Part 9 text)",
+          "held_in": "src/naturalization.py",
+          "held_text": "EVER arrested, cited, detained or confined by any police, military or immigration official"
+        },
+        {
+          "id": "nat.selective",
+          "text": "If the person is a man who lived in the U.S. between the ages of 18 and 26: did he register with the Selective Service?",
+          "cite": "Form N-400, Part 9, items 22.a to 22.c; Form N-400 Instructions",
+          "read": "Form N-400 Instructions, edition 01/20/25 (uscis.gov/n-400), saved 10/01/2026, page numbers in the product's rules",
+          "held_in": "schemas/law/naturalization.json",
+          "held_text": "Men who lived in the U.S. (except as a lawful nonimmigrant) between 18 and 26 must have registered"
+        }
+      ]
+    },
+    {
+      "id": "daca",
+      "name": "DACA renewal",
+      "about": "A person with a current or recent DACA grant asks USCIS to renew it.",
+      "questions": [
+        {
+          "id": "daca.grant",
+          "text": "Does the person have a current DACA grant, or one that expired less than a year ago? A request more than a year after expiry, or after a termination, is an initial request, which USCIS is not processing.",
+          "cite": "USCIS DACA page and I-821D page; DACA litigation FAQ Q5, Q6, Q17 and Q18; 8 CFR 236.22 and 236.23",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "will continue to accept initial requests but will not process initial"
+        },
+        {
+          "id": "daca.window",
+          "text": "When does the current DACA grant expire? USCIS encourages filing 120 to 150 days before that date.",
+          "cite": "uscis.gov/DACA; Form I-821D Instructions",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "120 and 150 days (4 to 5 months) before the expiration date located on"
+        },
+        {
+          "id": "daca.residence",
+          "text": "Has the person kept continuous residence in the U.S. since the last approved request?",
+          "cite": "Form I-821D Instructions",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "a renewal needs continuous residence since the last"
+        },
+        {
+          "id": "daca.travel",
+          "text": "Has the person left the U.S. on or after 08/15/2012 without advance parole?",
+          "cite": "8 CFR 236.22(b)(2); 8 CFR 236.23(d)(2)",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "breaks continuous residence (8 CFR 236.22(b)(2))"
+        },
+        {
+          "id": "daca.crime",
+          "text": "Does the person have a felony, a significant misdemeanor, or three or more other misdemeanors?",
+          "cite": "8 CFR 236.22(b)(6)",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "8 CFR 236.22(b)(6) (a felony, a significant misdemeanor, three or more other"
+        },
+        {
+          "id": "daca.detention",
+          "text": "Is the person detained now?",
+          "cite": "8 CFR 236.23(a)(2)",
+          "read": "Read 10/02/2026 by the product from uscis.gov/DACA (updated 01/24/2025), uscis.gov/i-821d (updated 06/01/2026), the DACA litigation FAQ (updated 12/31/2024), the I-821D Instructions (01/20/25) and 8 CFR 236.21 to 236.25 (eCFR as of 09/30/2026)",
+          "held_in": "src/daca.py",
+          "held_text": "USCIS will not approve DACA while the client is detained (8 CFR 236.23(a)(2))"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family-based green card (I-130 with I-485)",
+      "about": "A U.S. citizen or permanent resident relative petitions, and the person applies to adjust in the U.S.",
+      "questions": [
+        {
+          "id": "family.relative",
+          "text": "Is there a relative who is a U.S. citizen or a permanent resident and could file Form I-130?",
+          "cite": "The product's family-based filing: the relative's I-130 filed with the client's I-485",
+          "read": "The decision log, entry of 10/01/2026 (no reading date of a source)",
+          "held_in": "docs/decisions.md",
+          "held_text": "The relative's petition filed with the client's I-485"
+        },
+        {
+          "id": "family.relationship",
+          "text": "How is the relative related to the person (spouse, parent, child, brother or sister), and is the relative a citizen or a permanent resident?",
+          "cite": "The relationship and the petitioner's status choose the I-485's Part 2 category",
+          "read": "As the product's family filing records it (no reading date recorded)",
+          "held_in": "src/family.py",
+          "held_text": "choose the I-485's category (Part 2)"
+        },
+        {
+          "id": "family.entry",
+          "text": "Did the person enter the U.S. after inspection by an officer (admitted or paroled)?",
+          "cite": "INA 245(a)",
+          "read": "As the product's family checks cite it (no reading date recorded)",
+          "held_in": "src/family.py",
+          "held_text": "adjustment under INA 245(a) needs an inspected entry"
+        },
+        {
+          "id": "family.bars",
+          "text": "Does a bar to adjusting under INA 245(a) apply: work without permission, no lawful status on the filing day, a status violation, a crewman entry, a visa waiver entry?",
+          "cite": "Form I-485 Supplement A, Part 3, items 1.a to 1.j; Supplement A Instructions, 'Bars to Adjustment'",
+          "read": "Form I-485 Supplement A Instructions, edition 09/18/26 (uscis.gov/i-485supa, updated 09/18/2026); 8 CFR 245.10, eCFR as of 09/30/2026",
+          "held_in": "src/family.py",
+          "held_text": "Last entered as a nonimmigrant crewman"
+        },
+        {
+          "id": "family.245i",
+          "text": "If a bar applies: was a petition or labor certification filed for the person (or for a spouse or parent) on or before 04/30/2001, and was the person in the U.S. on 12/21/2000 if it was filed after 01/14/1998?",
+          "cite": "INA 245(i); 8 CFR 245.10(a)",
+          "read": "Form I-485 Supplement A Instructions, edition 09/18/26 (uscis.gov/i-485supa, updated 09/18/2026); 8 CFR 245.10, eCFR as of 09/30/2026",
+          "held_in": "src/family.py",
+          "held_text": "present in the U.S. on 12/21/2000"
+        },
+        {
+          "id": "family.sponsor",
+          "text": "Can the petitioner meet the income and household rules of the affidavit of support (Form I-864)?",
+          "cite": "Form I-864, I-864A and I-864EZ Instructions, edition 08/24/26; the 125% poverty guideline is the attorney's setting each year",
+          "read": "The decision log, entry of 10/01/2026; Form I-864 edition 08/24/26 as the product's family filing holds it",
+          "held_in": "docs/decisions.md",
+          "held_text": "The I-864P 125% poverty guidelines"
+        },
+        {
+          "id": "family.visa_number",
+          "text": "Is an immigrant visa number available now for the person's category and country? The Visa Bulletin chart USCIS accepts this month decides when the I-485 can be filed.",
+          "cite": "USCIS, 'Adjustment of Status Filing Charts from the Visa Bulletin'; the Department of State's Visa Bulletin",
+          "read": "The product holds no cut-off: the attorney sets each month's dates (the family Visa Bulletin table is empty until they are checked)",
+          "held_in": "schemas/law/visa_bulletin_family.json",
+          "held_text": "Adjustment of Status Filing Charts from the Visa Bulletin"
+        }
+      ]
+    },
+    {
+      "id": "caa",
+      "name": "Green card under the Cuban Adjustment Act (CAA), and Haitian dependents (HRIFA)",
+      "about": "A native or citizen of Cuba, or a family member, adjusts after one year in the U.S.",
+      "questions": [
+        {
+          "id": "caa.cuban",
+          "text": "Is the person a native or citizen of Cuba?",
+          "cite": "Cuban Adjustment Act (Pub. L. 89-732), section 1; 8 CFR 245.2(a)(2)(ii)",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "a native or citizen of Cuba, inspected and admitted or"
+        },
+        {
+          "id": "caa.admitted",
+          "text": "Was the person inspected and admitted, or paroled, into the U.S. after January 1, 1959?",
+          "cite": "8 CFR 245.2(a)(2)(ii); Form I-485 Instructions, 'Cuban Adjustment Act (CAA)'",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "inspected and admitted or paroled after January 1, 1959"
+        },
+        {
+          "id": "caa.year",
+          "text": "Has the person been physically in the U.S. for one year?",
+          "cite": "8 CFR 245.2(a)(2)(ii)",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "unless physically present for one year"
+        },
+        {
+          "id": "caa.no_inspection",
+          "text": "Did the person enter without inspection? Then only if DHS paroled the person under INA 212(d)(5)(A).",
+          "cite": "Form I-485 Instructions, 'Cuban Adjustment Act (CAA)'; INA 212(d)(5)(A)",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "present without inspection, not eligible unless"
+        },
+        {
+          "id": "caa.family",
+          "text": "Is the person the spouse or child of a Cuban principal, living with the principal in the U.S.? Is a child unmarried and under 21?",
+          "cite": "Cuban Adjustment Act, section 1; USCIS, 'Green Card for a Cuban Native or Citizen'",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "A spouse or child files as a derivative,"
+        },
+        {
+          "id": "caa.hrifa",
+          "text": "If Haitian: is the person the spouse, child or unmarried son or daughter of a principal beneficiary of the Haitian Refugee Immigration Fairness Act?",
+          "cite": "8 CFR 245.15(d); Form I-485 Instructions, page 33",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "HRIFA dependents: 8 CFR 245.15(d)"
+        },
+        {
+          "id": "caa.abused",
+          "text": "Is the person an abused spouse or child of the principal? That is a different box with its own protections.",
+          "cite": "8 U.S.C. 1367; Form I-485, Part 2, item 3.f",
+          "read": "Read 10/02/2026 by the product from govinfo.gov (Pub. L. 89-732), eCFR as of 09/30/2026, the Form I-485 Instructions edition 09/18/26 (pp. 30 to 33) and USCIS's CAA page updated 07/08/2025",
+          "held_in": "src/cuban_adjustment.py",
+          "held_text": "The abused spouse or child (CAA or HRIFA)"
+        }
+      ]
+    },
+    {
+      "id": "parole",
+      "name": "Humanitarian parole for someone outside the U.S.",
+      "about": "USCIS may allow a person outside the U.S. to come in for an urgent humanitarian reason or a significant public benefit.",
+      "questions": [
+        {
+          "id": "parole.reason",
+          "text": "Is there an urgent humanitarian reason, or a significant public benefit, for the person to come to the U.S.?",
+          "cite": "INA 212(d)(5)(A); the humanitarian parole page",
+          "read": "Read 10/02/2026 by the product from uscis.gov/i-131 (updated 08/14/2026), uscis.gov/i-134 (updated 06/03/2026), 'Humanitarian or Significant Public Benefit Parole for Aliens Outside the United States' (updated 12/15/2025) and the I-131 Instructions (01/20/25)",
+          "held_in": "src/parole.py",
+          "held_text": "INA 212(d)(5)(A) parole \"for urgent humanitarian reasons or significant public benefit\""
+        },
+        {
+          "id": "parole.petitioner",
+          "text": "Who is asking: the person in the U.S. for someone else, or the person outside the U.S. for themself?",
+          "cite": "Form I-131, Part 1, item 7; the humanitarian parole page",
+          "read": "Read 10/02/2026 by the product from uscis.gov/i-131 (updated 08/14/2026), uscis.gov/i-134 (updated 06/03/2026), 'Humanitarian or Significant Public Benefit Parole for Aliens Outside the United States' (updated 12/15/2025) and the I-131 Instructions (01/20/25)",
+          "held_in": "src/parole.py",
+          "held_text": "(the client, in the U.S., for someone else; or the client, outside the U.S., for themself)"
+        },
+        {
+          "id": "parole.visa",
+          "text": "Can the person get a U.S. visa instead? If not, why not, and when and where did the person try?",
+          "cite": "Form I-131 Instructions, 'Parole Document for Aliens Outside the United States'",
+          "read": "Read 10/02/2026 by the product from uscis.gov/i-131 (updated 08/14/2026), uscis.gov/i-134 (updated 06/03/2026), 'Humanitarian or Significant Public Benefit Parole for Aliens Outside the United States' (updated 12/15/2025) and the I-131 Instructions (01/20/25)",
+          "held_in": "src/parole.py",
+          "held_text": "(when and where tried, a denial letter)"
+        },
+        {
+          "id": "parole.supporter",
+          "text": "Is there a financial supporter in the U.S. who can file a Form I-134 for each person, with the supporter's ID and proof of status?",
+          "cite": "Form I-134 (edition 01/20/25); the humanitarian parole page",
+          "read": "Read 10/02/2026 by the product from uscis.gov/i-131 (updated 08/14/2026), uscis.gov/i-134 (updated 06/03/2026), 'Humanitarian or Significant Public Benefit Parole for Aliens Outside the United States' (updated 12/15/2025) and the I-131 Instructions (01/20/25)",
+          "held_in": "src/parole.py",
+          "held_text": "an I-134 for each beneficiary from the financial supporter"
+        }
+      ]
+    },
+    {
+      "id": "waiver_i212",
+      "name": "Permission to reapply after removal (I-212)",
+      "about": "A person who was removed asks for permission to apply for admission again.",
+      "questions": [
+        {
+          "id": "i212.removed",
+          "text": "Was the person removed, or did the person leave while a removal order was outstanding?",
+          "cite": "INA 212(a)(9)(A); Form I-212 Instructions, page 1",
+          "read": "Form I-212 Instructions, edition 01/20/25 (uscis.gov/i-212, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/reapply.py",
+          "held_text": "212(a)(9)(A) (removed, or departed while a removal order was"
+        },
+        {
+          "id": "i212.reentry",
+          "text": "Did the person enter, or try to enter, without admission or parole after more than one year of unlawful presence in total, or after a removal?",
+          "cite": "INA 212(a)(9)(C); Form I-212 Instructions, page 1",
+          "read": "Form I-212 Instructions, edition 01/20/25 (uscis.gov/i-212, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/reapply.py",
+          "held_text": "212(a)(9)(C) (entered or tried to enter without admission or parole after more than 1 year"
+        },
+        {
+          "id": "i212.timing",
+          "text": "Is the person in the U.S. and inadmissible under INA 212(a)(9)(C), or less than 10 years outside the U.S. since the last departure?",
+          "cite": "Form I-212 Instructions, pages 2, 3 and 5",
+          "read": "Form I-212 Instructions, edition 01/20/25 (uscis.gov/i-212, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/reapply.py",
+          "held_text": "When it can't be filed: inadmissible under 212(a)(9)(C) and in the U.S."
+        },
+        {
+          "id": "i212.not_needed",
+          "text": "Was the whole 212(a)(9)(A) period spent outside the U.S., and is there an aggravated felony?",
+          "cite": "Form I-212 Instructions, pages 5 and 6",
+          "read": "Form I-212 Instructions, edition 01/20/25 (uscis.gov/i-212, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/reapply.py",
+          "held_text": "Not needed once the whole 212(a)(9)(A) period was spent outside the U.S. and there"
+        },
+        {
+          "id": "i212.favorable",
+          "text": "What favorable factors can the person show against the unfavorable ones? An unsupported statement is not enough.",
+          "cite": "Form I-212 Instructions, pages 14 and 15",
+          "read": "Form I-212 Instructions, edition 01/20/25 (uscis.gov/i-212, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/reapply.py",
+          "held_text": "Discretionary: favorable factors against unfavorable ones"
+        }
+      ]
+    },
+    {
+      "id": "waiver_i601a",
+      "name": "Provisional unlawful presence waiver (I-601A)",
+      "about": "A person in the U.S. asks for a waiver of the unlawful presence bar before leaving for the immigrant visa interview.",
+      "questions": [
+        {
+          "id": "i601a.leaving",
+          "text": "Is the person in the U.S. and about to leave for an immigrant visa interview abroad?",
+          "cite": "INA 212(a)(9)(B); 8 CFR 212.7(e)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "for a client in the U.S. who will leave for an immigrant visa interview abroad"
+        },
+        {
+          "id": "i601a.age",
+          "text": "Is the person 17 or older?",
+          "cite": "8 CFR 212.7(e)(4)(i)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "Under 17: not eligible for a provisional waiver (8 CFR 212.7(e)(4)(i))"
+        },
+        {
+          "id": "i601a.petition",
+          "text": "Is there an approved I-130, I-140 or I-360, and has the immigrant visa fee been paid?",
+          "cite": "8 CFR 212.7(e)(3)(iv) and (e)(4)(ii)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "the waiver needs an approved I-130, I-140 or I-360 (8 CFR 212.7(e)(3)(iv))"
+        },
+        {
+          "id": "i601a.only_ground",
+          "text": "Would the person be inadmissible only for unlawful presence?",
+          "cite": "8 CFR 212.7(e)(4)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "would be inadmissible only for unlawful presence"
+        },
+        {
+          "id": "i601a.relative",
+          "text": "Is there a U.S. citizen or permanent resident spouse or parent who would suffer extreme hardship?",
+          "cite": "8 CFR 212.7(e)(3)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "hardship to a U.S. citizen or permanent resident spouse or parent. Not:"
+        },
+        {
+          "id": "i601a.proceedings",
+          "text": "Is the person in removal proceedings that are not administratively closed, or under a final or reinstated order, or does the person have a pending I-485?",
+          "cite": "8 CFR 212.7(e)(4)(iii) to (vi)",
+          "read": "Read by the product from 8 CFR 212.7(e) (eCFR as of 09/30/2026) and uscis.gov/i-601a (updated 06/01/2026)",
+          "held_in": "src/waiver.py",
+          "held_text": "In removal proceedings that aren't administratively closed: not eligible (8 CFR 212.7(e)(4)(iii))"
+        }
+      ]
+    },
+    {
+      "id": "sij",
+      "name": "Special Immigrant Juvenile (SIJ)",
+      "about": "A court order about a young person's care, then the I-360 and the green card.",
+      "questions": [
+        {
+          "id": "sij.under21",
+          "text": "Is the person under 21 years old? The I-360 must be filed before the 21st birthday.",
+          "cite": "The product's I-360 notes: filed before the 21st birthday. No section is cited there.",
+          "read": "Recorded in the product on 10/01/2026 (no reading date of a source)",
+          "held_in": "src/i360.py",
+          "held_text": "The deadline that matters: the petition must be filed before the"
+        },
+        {
+          "id": "sij.unmarried",
+          "text": "Is the person unmarried?",
+          "cite": "The firm's recorded rule: SIJS generally requires the applicant to be unmarried. No section is cited there.",
+          "read": "Recorded in the product on 09/30/2026 (no reading date of a source)",
+          "held_in": "docs/decisions.md",
+          "held_text": "generally requires the applicant to be unmarried"
+        },
+        {
+          "id": "sij.court",
+          "text": "Has a state court declared the person dependent on it, or placed the person in the custody of an agency or another person?",
+          "cite": "Form I-360, Part 8, item 2.A; 8 CFR 204.11",
+          "read": "Form I-360, edition 01/20/25, as the product's I-360 questions hold the form's own wording; no date the form's page was read is recorded; 8 CFR 204.11 as the product's court-order reader and timeline hold it (no reading date recorded)",
+          "held_in": "src/i360.py",
+          "held_text": "Part 8, 2.A · Declared dependent on a juvenile court"
+        },
+        {
+          "id": "sij.jurisdiction",
+          "text": "Is the person still under the jurisdiction of the juvenile court that made the order? If not, why not (adopted, aged out, other)?",
+          "cite": "Form I-360, Part 8, items 2.C and 3.B",
+          "read": "Form I-360, edition 01/20/25, as the product's I-360 questions hold the form's own wording; no date the form's page was read is recorded",
+          "held_in": "src/i360.py",
+          "held_text": "Part 8, 2.C · Still under the jurisdiction of the juvenile court"
+        },
+        {
+          "id": "sij.reunification",
+          "text": "Did a court find that reunification with one or both parents is not viable because of abuse, neglect, abandonment or a similar basis under state law?",
+          "cite": "Form I-360, Part 8, items 4.A and 4.B; 8 CFR 204.11",
+          "read": "Form I-360, edition 01/20/25, as the product's I-360 questions hold the form's own wording; no date the form's page was read is recorded",
+          "held_in": "src/i360.py",
+          "held_text": "Part 8, 4.A · Reunification not viable with one or both parents"
+        },
+        {
+          "id": "sij.best_interest",
+          "text": "Did a court find that returning to the country of nationality is not in the person's best interest?",
+          "cite": "Form I-360, Part 8, item 5; 8 CFR 204.11",
+          "read": "Form I-360, edition 01/20/25, as the product's I-360 questions hold the form's own wording; no date the form's page was read is recorded",
+          "held_in": "src/i360.py",
+          "held_text": "Part 8, 5 · Determined that returning to the home country"
+        },
+        {
+          "id": "sij.hhs",
+          "text": "Has the person ever been in the custody of the Department of Health and Human Services (a shelter or a sponsor placement)?",
+          "cite": "Form I-360, Part 8, items 6.A and 6.B",
+          "read": "Form I-360, edition 01/20/25, as the product's I-360 questions hold the form's own wording; no date the form's page was read is recorded",
+          "held_in": "src/i360.py",
+          "held_text": "Part 8, 6.A · Ever in the custody of HHS"
+        },
+        {
+          "id": "sij.florida",
+          "text": "If the person lives in Florida: is the person under 18? A Florida court cannot adjudicate dependency after the 18th birthday.",
+          "cite": "Fla. Stat. 39.01(12); O.I.C.L. v. Department of Children and Families, No. SC15-1570 (Fla. Sept. 22, 2016); Fla. Stat. 39.5075(4)-(6)",
+          "read": "Read 10/02/2026 at leg.state.fl.us, flsenate.gov and flcourts.gov",
+          "held_in": "schemas/registers/journey.json",
+          "held_text": "Fla. Stat. 39.01(12) (2026)"
+        },
+        {
+          "id": "sij.court_case",
+          "text": "Is the person in removal proceedings? Then only the judge can decide the I-485 (an arriving alien excepted).",
+          "cite": "8 CFR 1245.2(a)(1)(i), as the product's timeline step cites it",
+          "read": "As the product's timeline step words it (no reading date recorded)",
+          "held_in": "src/journey.py",
+          "held_text": "only the judge can decide the I-485 (8 CFR 1245.2(a)(1)(i); an arriving alien excepted)"
+        }
+      ]
+    },
+    {
+      "id": "t_visa",
+      "name": "T visa (trafficking victim)",
+      "about": "A victim of a severe form of trafficking in persons applies for T status.",
+      "questions": [
+        {
+          "id": "t.trafficking",
+          "text": "Is the person, or was the person, a victim of a severe form of trafficking in persons?",
+          "cite": "INA 101(a)(15)(T)(i)(I); 8 CFR 214.202(a), 214.206",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "(a) is or has been a victim of a severe"
+        },
+        {
+          "id": "t.presence",
+          "text": "Is the person physically in the U.S., American Samoa, the Northern Mariana Islands or at a port of entry on account of the trafficking?",
+          "cite": "INA 101(a)(15)(T)(i)(II); 8 CFR 214.202(b), 214.207",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "(b) is physically present in"
+        },
+        {
+          "id": "t.reported",
+          "text": "Was the trafficking reported to a law enforcement agency?",
+          "cite": "8 CFR 214.208(b)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "the crime was reported to an agency (214.208(b))"
+        },
+        {
+          "id": "t.cooperation",
+          "text": "Has the person complied with reasonable requests for help from law enforcement? Or was the person under 18 at an act of trafficking, or unable to comply because of trauma?",
+          "cite": "INA 101(a)(15)(T)(i)(III); 8 CFR 214.202(c), 214.208",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "(c) has complied with any reasonable request for"
+        },
+        {
+          "id": "t.hardship",
+          "text": "Would the person suffer extreme hardship involving unusual and severe harm if removed from the U.S.?",
+          "cite": "INA 101(a)(15)(T)(i)(IV); 8 CFR 214.202(d), 214.209",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "extreme hardship involving unusual and severe harm on removal"
+        },
+        {
+          "id": "t.trafficker",
+          "text": "Did the person commit an act of trafficking?",
+          "cite": "8 CFR 214.202(e)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "Not someone who committed an act of trafficking (214.202(e))"
+        },
+        {
+          "id": "t.inadmissible",
+          "text": "Might the person be inadmissible on a ground that Form I-192 asks about?",
+          "cite": "8 CFR 214.204(d), 212.16",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "Inadmissible: Form I-192 with it (214.204(d), 212.16)"
+        },
+        {
+          "id": "t.family",
+          "text": "Which family members could be included (spouse, children, parents, brothers and sisters), by age?",
+          "cite": "INA 101(a)(15)(T)(ii); 8 CFR 214.211",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(T), govinfo.gov 2024 edition; 8 CFR 214.200 to 214.216, 212.16 and 245.23, eCFR as of 09/30/2026; Form I-914 Instructions 01/20/25 (uscis.gov/i-914, updated 06/05/2026)",
+          "held_in": "src/t_visa.py",
+          "held_text": "Family (101(a)(15)(T)(ii); 214.211; the instructions)"
+        }
+      ]
+    },
+    {
+      "id": "tps",
+      "name": "Temporary Protected Status (TPS)",
+      "about": "A national of a designated country registers during the period the Federal Register notice sets.",
+      "questions": [
+        {
+          "id": "tps.country",
+          "text": "Is the person a national of a country designated for TPS, or a stateless person who last lived in one?",
+          "cite": "uscis.gov TPS page, the section on who may register",
+          "read": "Read 10/02/2026 by the product from uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026) and the country's own page; 8 CFR 244.17",
+          "held_in": "src/tps.py",
+          "held_text": "Who: a national of a designated country"
+        },
+        {
+          "id": "tps.period",
+          "text": "Is a registration or re-registration period open now for that country? The Federal Register notice sets the period.",
+          "cite": "8 CFR 244.17(a) and (b); Form I-821 page",
+          "read": "Read 10/02/2026 by the product from uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026) and the country's own page; 8 CFR 244.17",
+          "held_in": "src/tps.py",
+          "held_text": "ONLY in the registration or re-registration period"
+        },
+        {
+          "id": "tps.residence",
+          "text": "Has the person lived continuously in the U.S. since the country's continuous-residence date, and been physically present since its presence date?",
+          "cite": "uscis.gov TPS page, the section on who may register",
+          "read": "Read 10/02/2026 by the product from uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026) and the country's own page; 8 CFR 244.17",
+          "held_in": "src/tps.py",
+          "held_text": "has lived continuously in the"
+        },
+        {
+          "id": "tps.bars",
+          "text": "Does the person have an arrest, a conviction or a security ground that Part 7 of the I-821 asks about?",
+          "cite": "INA 244(c)(2); Form I-821, Part 7",
+          "read": "Read 10/02/2026 by the product from uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026) and the country's own page; 8 CFR 244.17",
+          "held_in": "src/tps.py",
+          "held_text": "The attorney weighs the grounds of INA 244(c)(2) before filing"
+        },
+        {
+          "id": "tps.late",
+          "text": "If the period has closed: is there good cause for a late re-registration, or one of the late-initial conditions on the TPS page?",
+          "cite": "8 CFR 244.17; uscis.gov TPS page",
+          "read": "Read 10/02/2026 by the product from uscis.gov/humanitarian/temporary-protected-status (updated 09/09/2026), uscis.gov/i-821 (updated 09/30/2026) and the country's own page; 8 CFR 244.17",
+          "held_in": "src/tps.py",
+          "held_text": "A late re-registration needs good cause and a letter"
+        }
+      ]
+    },
+    {
+      "id": "u_visa",
+      "name": "U visa (crime victim)",
+      "about": "A victim of a listed crime who helps the authorities applies for U status.",
+      "questions": [
+        {
+          "id": "u.crime",
+          "text": "Was the person the victim of one of the crimes the U visa law lists, or of a similar activity?",
+          "cite": "INA 101(a)(15)(U)(i) and (iii); 8 CFR 214.14(b)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "Who (214.14(b); INA 101(a)(15)(U)(i)): the victim of"
+        },
+        {
+          "id": "u.abuse",
+          "text": "Did the person suffer substantial physical or mental abuse from the crime?",
+          "cite": "INA 101(a)(15)(U)(i)(I); 8 CFR 214.14(b)(1)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "The client must have suffered substantial physical or mental abuse from the crime"
+        },
+        {
+          "id": "u.information",
+          "text": "Does the person (or, under 16, a parent, guardian or next friend) have information about the crime?",
+          "cite": "INA 101(a)(15)(U)(i)(II); 8 CFR 214.14(b)(2)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "must have information about the crime"
+        },
+        {
+          "id": "u.helpful",
+          "text": "Has the person been helpful, is the person helpful, or will the person be helpful to the investigation or prosecution of the crime?",
+          "cite": "INA 101(a)(15)(U)(i)(III); 8 CFR 214.14(b)(3)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "has been, is or is likely to be helpful to its"
+        },
+        {
+          "id": "u.place",
+          "text": "Did the crime happen in the U.S. (Indian country and military installations included), or violate U.S. law?",
+          "cite": "INA 101(a)(15)(U)(i)(IV); 8 CFR 214.14(b)(4)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "it occurred in the U.S. (Indian country"
+        },
+        {
+          "id": "u.certification",
+          "text": "Is there a certification (Form I-918 Supplement B) signed by a certifying official within the six months before filing?",
+          "cite": "8 CFR 214.14(c)(2)(i); Form I-918 Supplement B Instructions",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "original, signed by a certifying official within the six months before filing"
+        },
+        {
+          "id": "u.inadmissible",
+          "text": "Is the person inadmissible on a ground that Form I-192 asks about?",
+          "cite": "8 CFR 212.17; 8 CFR 214.14(c)(2)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "Form I-192 if the petitioner is inadmissible (8 CFR 212.17)"
+        },
+        {
+          "id": "u.family",
+          "text": "Which family members could be included: the spouse, children, parents and unmarried brothers and sisters under 18 if the person is under 21, or the spouse and children if 21 or older?",
+          "cite": "INA 101(a)(15)(U)(ii); 8 CFR 214.14(a)(10) and (f)",
+          "read": "Read 10/02/2026 by the product: 8 U.S.C. 1101(a)(15)(U), U.S. Code 2024 edition, govinfo.gov; 8 CFR 214.14 and 212.17, eCFR as of 09/30/2026; Form I-918 Instructions 01/20/25 (uscis.gov/i-918, updated 06/05/2026)",
+          "held_in": "src/u_visa.py",
+          "held_text": "Family (214.14(f); INA 101(a)(15)(U)(ii)): one Supplement A per"
+        }
+      ]
+    },
+    {
+      "id": "vawa",
+      "name": "VAWA self-petition (I-360)",
+      "about": "An abused spouse, child or parent of a U.S. citizen or permanent resident petitions without the abuser's help.",
+      "questions": [
+        {
+          "id": "vawa.abuser",
+          "text": "Is the abuser a U.S. citizen or a permanent resident?",
+          "cite": "INA 204(a)(1)(A)(iii), (iv), (vii); 8 CFR 204.2(c) and (e)",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "the abuser is a U.S. citizen or permanent resident"
+        },
+        {
+          "id": "vawa.relationship",
+          "text": "Is the person the abuser's spouse, the abuser's unmarried child, or a parent of an abusive U.S. citizen son or daughter who is 21 or older?",
+          "cite": "INA 204(a)(1)(A)(vii); USCIS Policy Manual 3.D.2.B.4",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "U.S. citizen son or daughter 21 or older, INA 204(a)(1)(A)(vii)"
+        },
+        {
+          "id": "vawa.abuse",
+          "text": "Was the person battered or subjected to extreme cruelty by the abuser during the relationship?",
+          "cite": "INA 204(a)(1)(A)(iii)(I)(bb), (iv), (vii)(V)",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "the client was battered or subjected to extreme cruelty by the abuser during"
+        },
+        {
+          "id": "vawa.lived",
+          "text": "Does the person, or did the person, live with the abuser (for any length of time, anywhere)?",
+          "cite": "USCIS Policy Manual 3.D.2.F",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "the client lives or lived with the abuser"
+        },
+        {
+          "id": "vawa.good_faith",
+          "text": "If a spouse: was the marriage entered in good faith?",
+          "cite": "INA 204(a)(1)(A)(iii)(I)(aa); USCIS Policy Manual 3.D.2.C",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "a spouse married in good faith (INA 204(a)(1)(A)(iii)(I)(aa)"
+        },
+        {
+          "id": "vawa.two_years",
+          "text": "If the marriage ended, or the abuser died or lost status: is it within 2 years of that event?",
+          "cite": "INA 204(a)(1)(A)(iii)(II)(aa)(CC), (iv), (vii)(I), (B)(ii)(II)(aa)(CC), (iii)",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "the 2-year rules:"
+        },
+        {
+          "id": "vawa.child",
+          "text": "If a child: is the person unmarried and under 21, or under 25 when the abuse was at least one central reason for the delay?",
+          "cite": "INA 204(a)(1)(D)(v); USCIS Policy Manual 3.D.3.G",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "a child unmarried and under 21, or under 25 when the abuse was at least one"
+        },
+        {
+          "id": "vawa.moral_character",
+          "text": "Can the person show good moral character, with police clearances for each place lived 6 months or more in the 3 years before filing (presumed for a child under 14)?",
+          "cite": "USCIS Policy Manual 3.D.2.G",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "good moral character (presumed under 14;"
+        },
+        {
+          "id": "vawa.abroad",
+          "text": "If the person lives outside the U.S.: is the abuser a U.S. government employee or in the uniformed services, or did the abuse happen in the U.S.?",
+          "cite": "INA 204(a)(1)(A)(v), (B)(iv); Form I-360 Instructions, page 6",
+          "read": "Read 10/02/2026 by the product: govinfo 2023 edition; eCFR as of 09/30/2026; USCIS Policy Manual Vol. 3 Part D as of 09/23/2026; Form I-360 Instructions 01/20/25, pages 6 and 7",
+          "held_in": "src/vawa.py",
+          "held_text": "living abroad only when the abuser is a U.S. government employee"
+        }
+      ]
+    },
+    {
+      "id": "waiver_i601",
+      "name": "Waiver of inadmissibility (I-601)",
+      "about": "A person found inadmissible on a ground the form lists asks for a waiver.",
+      "questions": [
+        {
+          "id": "i601.ground",
+          "text": "Is the person inadmissible on a ground the I-601 lists (criminal, fraud or misrepresentation, unlawful presence)?",
+          "cite": "Form I-601, Part 4, Section A; Instructions, page 2",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "who is inadmissible on a ground the form lists (Part 4, Section A)"
+        },
+        {
+          "id": "i601.criminal",
+          "text": "For a criminal ground: is there a U.S. citizen or permanent resident spouse, parent, son or daughter who would suffer extreme hardship, or have 15 years passed since the events, with rehabilitation?",
+          "cite": "INA 212(h); Form I-601 Instructions, pages 9 to 16",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "Criminal grounds (INA 212(h)): extreme hardship to a U.S. citizen or permanent resident spouse, parent, son or daughter"
+        },
+        {
+          "id": "i601.fraud_presence",
+          "text": "For fraud or misrepresentation, or the 3-year or 10-year unlawful presence bar: is there a U.S. citizen or permanent resident spouse or parent who would suffer extreme hardship?",
+          "cite": "INA 212(i); INA 212(a)(9)(B)(v); Form I-601 Instructions, pages 11 and 12",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "the 3- or 10-year unlawful presence bar (212(a)(9)(B)(v))"
+        },
+        {
+          "id": "i601.sij",
+          "text": "Is the person a Special Immigrant Juvenile adjusting status? Then no relative is needed.",
+          "cite": "INA 245(h)",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "an SIJ adjusting (245(h))"
+        },
+        {
+          "id": "i601.where",
+          "text": "Is the person an immigrant visa, K visa or V visa applicant found inadmissible by a consular officer, or an applicant for adjustment of status?",
+          "cite": "Form I-601 Instructions, page 1; USCIS Direct Filing Addresses for Form I-601 (updated 10/23/2025), read 10/02/2026",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "an applicant for an immigrant visa or a K or V visa found inadmissible by a consular officer"
+        },
+        {
+          "id": "i601.discretion",
+          "text": "What favorable factors can the person show? The waiver is always a matter of discretion.",
+          "cite": "Form I-601 Instructions, page 17",
+          "read": "Form I-601 Instructions, edition 01/20/25 (uscis.gov/i-601, updated 06/01/2026), read 10/02/2026 by the product",
+          "held_in": "src/inadmissibility_waiver.py",
+          "held_text": "discretion: favorable factors outweighing the unfavorable"
+        }
+      ]
+    }
+  ]
+}

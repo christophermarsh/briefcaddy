@@ -1,0 +1,67 @@
+{
+  "_about": "The I-131 cover letter (src/fill/cover_letter.py): the firm's letterhead, signer and closing from the I-485 letter. The subject (which document), the address (USCIS 'Direct Filing Addresses for Form I-131', updated 08/11/2026: the non-family lockbox chart by state, or for advance parole filed after an I-485 the chart its receipt prefix decides) and the fee (Form G-1055 10/01/26: none for a person seeking or granted SIJ classification) come from src/travel.py. The attorney approves this file before volume use.",
+  "base": "cover_letter.json",
+  "mail_to": [
+    "[set by the filing's module]"
+  ],
+  "noun": "application",
+  "re_lines": [
+    "Application: I-131 Application for Travel Documents, Parole Documents, and Arrival/Departure Records"
+  ],
+  "who": "Applicant",
+  "form_order": [
+    "g28_i131",
+    "i131"
+  ],
+  "always_forms": [],
+  "forms": {
+    "g28_i131": "Applicant’s G-28 - Notice of Entry of Appearance as Attorney or Accredited Representative",
+    "i131": "Applicant’s I-131 - Application for Travel Documents, Parole Documents, and Arrival/Departure Records"
+  },
+  "documents": [
+    [
+      "passport",
+      "Copy of Applicant’s Passport"
+    ],
+    [
+      "drivers_license",
+      "Copy of Applicant’s Driver’s License"
+    ],
+    [
+      "work_permit",
+      "Copy of Applicant’s Employment Authorization Document"
+    ],
+    [
+      "green_card",
+      "Copy of Applicant’s Permanent Resident Card"
+    ],
+    [
+      "i485_receipt",
+      "Copy of the Form I-485 Receipt Notice"
+    ],
+    [
+      "uscis_notice",
+      "Copies of USCIS Notices"
+    ],
+    [
+      "i94",
+      "Copy of Applicant’s Form I-94"
+    ],
+    [
+      "photos",
+      "Two Passport-Style Photographs"
+    ]
+  ],
+  "fees": "[set by the filing's module]",
+  "checklist": [
+    {
+      "kind": "sign",
+      "text": "Cover letter: the attorney signs it."
+    },
+    {
+      "kind": "attach",
+      "text": "Enclose the filing fee by the enclosed Form G-1450 (a U.S. card) or a Form G-1650 (a U.S. bank account), never a check: the amount in the cover letter. Not when the letter says no fee is due.",
+      "unless": "no_payment"
+    }
+  ]
+}

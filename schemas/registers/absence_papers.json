@@ -1,0 +1,129 @@
+{
+  "_about": "The papers a filing asks about that a client may not have, and what the office records when the client has none (src/absence.py). 'papers' are the kinds of paper (doc_types are the document types in schemas/document_types.json that count as the paper being in the folder; boxes are the fact keys whose form boxes ask about the paper, with the words the screen uses for each box and the value written when the paper is marked absent: the firm's NOT APPLICABLE unless a box is too short for it; 'values' names the word one form's own instructions give instead). The words are written on the form when it is filled, from the mark; the case's facts stay empty, so no rule or filing reads a placeholder as an answer. 'reasons' are the office's short list. 'lines' are the instruction lines that say a filing may do without a paper or that a box which does not apply reads N/A; a packet schema's exhibit names the lines it rests on under 'may_be_absent' ({paper: line}), and a paper no exhibit lists with a line stays blocking (This paper cannot be marked absent). Every line was read on the form's own instructions at uscis.gov on 10/03/2026 and is listed in docs/attorney_review.md for the attorney. A new edition of an instruction can change a line: schemas/maintenance.json (absence_lines) says who checks.",
+  "reasons": [
+    {"id": "never_had", "label": "The client never had one"},
+    {"id": "lost", "label": "Lost or destroyed"},
+    {"id": "cannot_obtain", "label": "Cannot be obtained"},
+    {"id": "expired", "label": "Expired and not renewed"},
+    {"id": "office_later", "label": "The office will get it later", "boxes": false}
+  ],
+  "papers": {
+    "passport": {
+      "name": "Passport or travel document",
+      "plain": "passport or travel document",
+      "doc_types": ["passport"],
+      "boxes": [
+        {"key": "applicant.travel_document_number", "label": "passport or travel document number", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 10"}},
+        {"key": "applicant.travel_document_country", "label": "country that issued the passport or travel document", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 10"}},
+        {"key": "applicant.travel_document_expiry", "label": "expiration date of the passport or travel document", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 10"}},
+        {"key": "asylum.passport_number", "label": "passport number", "value": "NOT APPLICABLE"},
+        {"key": "asylum.travel_document_number", "label": "travel document number", "value": "NOT APPLICABLE"}
+      ],
+      "box_lines": ["i485_na", "i765_na", "i589_none", "i360_passport"],
+      "client_said": []
+    },
+    "visa": {
+      "name": "U.S. visa",
+      "plain": "U.S. visa",
+      "doc_types": ["visa"],
+      "boxes": [
+        {"key": "applicant.visa_number", "label": "nonimmigrant visa number", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 10"}},
+        {"key": "applicant.visa_issue_date", "label": "date the nonimmigrant visa was issued", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 10"}}
+      ],
+      "box_lines": ["i485_visa_box", "i485_na"],
+      "client_said": [{"key": "questionnaire.visa_type", "label": "The visa the client says was used"}]
+    },
+    "i94": {
+      "name": "Form I-94 (arrival record)",
+      "plain": "Form I-94",
+      "doc_types": ["i94"],
+      "boxes": [
+        {"key": "applicant.i94_number", "label": "I-94 number", "value": "N/A", "values": {"i589": "None"}, "why": "the I-94 number box holds 11 characters: it takes the instructions' own N/A, and the I-589 box the word its instructions give, None", "where": {"i485": "Part 1, Item 12"}},
+        {"key": "applicant.i94_class_of_admission", "label": "status shown on the I-94", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 12"}},
+        {"key": "applicant.i94_admit_until_date", "label": "end of the authorized stay shown on the I-94", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 12"}},
+        {"key": "applicant.i94_family_name", "label": "family name on the I-94", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 12"}},
+        {"key": "applicant.i94_given_name", "label": "given name on the I-94", "value": "NOT APPLICABLE", "where": {"i485": "Part 1, Item 12"}}
+      ],
+      "box_lines": ["i485_na", "i765_na", "i589_none", "i360_i94"],
+      "client_said": [{"key": "questionnaire.has_i94_or_parole", "label": "Does the client have an I-94 or a parole paper?"}]
+    },
+    "birth_certificate": {
+      "name": "Birth certificate",
+      "doc_types": ["birth_certificate"],
+      "boxes": [],
+      "client_said": []
+    },
+    "marriage_certificate": {
+      "name": "Marriage certificate",
+      "doc_types": ["marriage_certificate"],
+      "boxes": [],
+      "client_said": []
+    },
+    "divorce_decree": {
+      "name": "Divorce decree",
+      "doc_types": ["divorce_decree"],
+      "boxes": [],
+      "client_said": []
+    },
+    "court_order": {
+      "name": "Court order with the special immigrant juvenile findings",
+      "plain": "court order with the special immigrant juvenile findings",
+      "doc_types": ["sij_order"],
+      "boxes": [],
+      "client_said": []
+    }
+  },
+  "lines": {
+    "i485_na": {
+      "form": "I-485", "edition": "09/18/26", "page": 5,
+      "says": "How To Complete Form I-485, item 3: If a question does not apply to you ..., type or print \"N/A,\" unless otherwise directed.",
+      "means": "A box that asks about a paper the client has none of reads N/A (the firm writes NOT APPLICABLE)."
+    },
+    "i485_identity": {
+      "form": "I-485", "edition": "09/18/26", "page": 8,
+      "says": "What Evidence Must You Submit, item 2: Applicants should submit a photocopy of a government-issued identity document (for example, passport (even if expired), driver's license, or military identification document) that has their photograph.",
+      "means": "The passport is one of several identity documents the instructions accept, not a paper the filing cannot do without."
+    },
+    "i485_admission_exempt": {
+      "form": "I-485", "edition": "09/18/26", "page": 8,
+      "says": "What Evidence Must You Submit, item 4: The following types of applicants do NOT need to submit documentation of inspection and admission or inspection and parole: ... Asylees; ... Special immigrant juveniles; ...",
+      "means": "A special immigrant juvenile's or an asylee's I-485 does not need the I-94 or the passport page with the admission stamp."
+    },
+    "i485_admission_if_available": {
+      "form": "I-485", "edition": "09/18/26", "page": 8,
+      "says": "What Evidence Must You Submit, item 4: Such evidence includes, but is not limited to, copies of the following documents, if available: Passport page with admission or parole stamp; Passport page with nonimmigrant visa; Form I-94, Arrival/Departure Record.",
+      "means": "The I-94 is listed as evidence \"if available\".",
+      "instead": "The instructions (page 9) then ask for secondary evidence, or separate written statements signed under penalty of perjury, to show when and where the client came in: add them."
+    },
+    "i485_visa_box": {
+      "form": "I-485", "edition": null, "page": null,
+      "says": "The form's own box, Part 1, item 10: Enter Nonimmigrant Visa Number Used During Most Recent Arrival, if any.",
+      "means": "The visa boxes ask only \"if any\"."
+    },
+    "i589_none": {
+      "form": "I-589", "edition": "07/28/26", "page": 5,
+      "says": "Part 1, Filing Instructions: If any question does not apply to you or you do not know the information requested, answer \"none,\" \"not applicable,\" or \"unknown.\" And, Part A.I: If you did not receive Form I-94, write \"None.\"",
+      "means": "A box about a passport the client does not have reads NOT APPLICABLE; the I-94 number box reads None, the word the instructions give."
+    },
+    "i589_documents": {
+      "form": "I-589", "edition": "07/28/26", "page": 8,
+      "says": "What to submit, item 3: One copy of all passports or other travel documents (cover to cover) in your possession and one copy of any U.S. immigration documents, such as a Form I-94, ... if you have such documents.",
+      "means": "The passport, the I-94 and the visa go in only \"if you have such documents\"."
+    },
+    "i360_passport": {
+      "form": "I-360", "edition": "01/20/25", "page": 12,
+      "says": "Passport and Travel Document Numbers: If you used a passport or travel document to travel to the United States, enter the passport or travel document information in the appropriate space on the petition, even if the passport or travel document is currently expired.",
+      "means": "The passport boxes are for a client who used one to travel to the United States."
+    },
+    "i360_i94": {
+      "form": "I-360", "edition": "01/20/25", "page": 12,
+      "says": "Item 5, Form I-94: If U.S. Customs and Border Protection (CBP) or USCIS issued you a Form I-94, Arrival/Departure Record, provide your Form I-94 number and date that your authorized period of stay expires or expired.",
+      "means": "The I-94 boxes are for a client to whom an I-94 was issued."
+    },
+    "i765_na": {
+      "form": "I-765", "edition": "08/21/25", "page": 17,
+      "says": "How To Complete Form I-765, item 3: If a question does not apply to you ..., type or print \"N/A\" unless otherwise directed.",
+      "means": "The passport and I-94 boxes of the work permit form read N/A when the client has none."
+    }
+  }
+}

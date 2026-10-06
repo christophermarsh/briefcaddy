@@ -1,0 +1,17 @@
+{
+  "_about": "Where an older edition's item numbers sit on the current edition's, for reading the firm's own past filed forms into the wording library (tools/import_wordings.py, src/wordings.py). One table per pair of editions of a form: forms.<form>.<older edition>.to is the edition the numbers are put on, and items.<part>.<older item> is the item that answer is in the newer edition. An item with no pair is not guessed: the import keeps its text under 'To place' on Settings, Firm wordings, for an attorney to put on its answer. The newer edition's own numbers are never read from here: they are read from its template (src/fill/where.py).",
+  "forms": {
+    "i485": {
+      "01/20/25": {
+        "to": "09/18/26",
+        "items": {
+          "9": {
+            "75": "73",
+            "76": "74"
+          }
+        },
+        "_source": "The two pairs the firm's own filed examples of the 01/20/25 edition show (Part 9, items 75 and 76 on pages 20 and 21), against the current edition's template, where the same two answers are items 73 and 74 on page 20 (src/fill/where.py; the owner's review of the firm's filed forms, 10/03/2026; docs/decisions.md, wave L). No other pair of this edition is held: the 01/20/25 form itself is not in the product, so each pair is added only from that edition's own printed form, never from a field name or a memory."
+      }
+    }
+  }
+}

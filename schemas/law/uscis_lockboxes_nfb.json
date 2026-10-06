@@ -1,0 +1,28 @@
+{
+  "_source": "USCIS, 'USCIS Lockbox Filing Locations Chart for Certain Non-Family-Based Forms' (uscis.gov/uscis-lockbox-filing-locations-chart), page last updated 10/11/2024, read 2026-10-01. Used for the I-131 (src/travel.py) when USCIS's 'Direct Filing Addresses for Form I-131' (last updated 08/11/2026) sends it here: a reentry permit; a refugee travel document filed before leaving the U.S.; advance parole for a pending I-589; advance parole filed alone for a pending I-485 whose receipt starts EAC, SRC, LIN or WAC. Not on this chart: the Marshall Islands. The attorney sets the address by hand.",
+  "checked": "2026-10-01",
+  "page_updated": "10/11/2024",
+  "lockboxes": {
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: NFB", "P.O. BOX 21281", "PHOENIX, AZ 85036-1281"],
+      "courier": ["USCIS", "ATTN: NFB (BOX 21281)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AZ", "CA", "MN", "OR", "PA"]
+    },
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: NFB", "P.O. BOX 4115", "CAROL STREAM, IL 60197-4115"],
+      "courier": ["USCIS", "ATTN: NFB (BOX 4115)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["CT", "DC", "ME", "MD", "MA", "NH", "NJ", "NY", "RI", "VT", "VA"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: NFB", "P.O. BOX 805371", "CHICAGO, IL 60680-5371"],
+      "courier": ["USCIS", "ATTN: NFB (BOX 805371)", "131 S. DEARBORN ST. - 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["IL", "IN", "IA", "MI", "MO", "OH", "WA", "WV", "WI"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: NFB", "P.O. BOX 660867", "DALLAS, TX 75266-0867"],
+      "courier": ["USCIS", "ATTN: NFB (BOX 660867)", "2501 S. STATE HWY. 121 BUSINESS", "SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["AL", "AK", "AS", "AR", "AA", "AE", "AP", "CO", "DE", "FL", "GA", "GU", "HI", "ID", "KS", "KY", "LA", "FM", "MS", "MT", "NE", "NV", "NM",
+                 "NC", "ND", "MP", "PW", "PR", "SC", "SD", "OK", "TN", "TX", "VI", "UT", "WY"]
+    }
+  }
+}

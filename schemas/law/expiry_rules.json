@@ -1,0 +1,151 @@
+{
+  "_about": "The expiry watch's rules (src/expiry.py, docs/design_plan.md Part 2): for each kind of document that expires, what the date means, the rule it comes from and the official page it was read on, and the filing it opens. Every window cited here was read from the official source named, on 10/02/2026; a window that no official source gives is NOT here (the watch then shows the document's own end date and says so). `source` is plain words and is shown on screen under 'Why this date'; `url` holds the pages themselves and is never shown. The numbers of three windows live in schemas/journey.json (the work permit's 180 days, the green card's 6 months, DACA's 150 and 120 days and one year) so the case timeline and the watch can never disagree; tests/test_expiry.py keeps them in step. `filing` is a filing id from src/packet.py FILINGS (null: no filing in this system renews it). `types` are document type ids from schemas/document_types.json. after_end: 'keep' leaves a document that has ended on the list as late until a newer one arrives or the case moves past it; 'drop' takes it off once its date has passed (the _after_end note says why). The wording is for staff.",
+  "_read": "10/02/2026",
+  "kinds": {
+    "ead": {
+      "name": "Work permit (EAD)",
+      "types": [
+        "work_permit",
+        "i765_approval"
+      ],
+      "filing": "ead",
+      "after_end": "keep",
+      "rule": "The work permit stops the day after the end date on the card: a renewal filed on or after 10/30/2025 does not extend it. USCIS generally recommends filing the renewal (Form I-765) up to 180 days before the card expires.",
+      "source": "8 CFR 274a.13(e) (Code of Federal Regulations, current as of 10/01/2026, read 10/02/2026): a renewal filed on or after 10/30/2025 'will not be automatically extended', and the card expires 'the day after the end validity date' (the re-registration period is set by each country's notice). The 180 days: USCIS's Form I-765 page (last reviewed 09/30/2026, read 10/02/2026): 'We generally recommend you file a Form I-765 to request a renewal Employment Authorization Document (EAD) up to 180 days before your current EAD expires.'",
+      "url": [
+        "https://www.ecfr.gov/current/title-8/part-274a/section-274a.13",
+        "https://www.uscis.gov/i-765"
+      ]
+    },
+    "green_card": {
+      "name": "Green card",
+      "types": [
+        "green_card"
+      ],
+      "filing": "i90",
+      "filing_conditional": "i751",
+      "after_end": "keep",
+      "_conditional": "A card that was valid two years or less is taken as a conditional card. This is an inference from the card's validity, not a rule: no reader reads the card's category code (CR1, CR6, CF1 and so on) yet. With no issue date on the record the watch does not guess and offers no filing.",
+      "rule": "A 10-year green card is renewed with Form I-90, which USCIS accepts when the card has expired or will expire within 6 months. A 2-year conditional green card is not renewed with the I-90: within 90 days of its end the conditions are removed with Form I-751.",
+      "source": "USCIS's Form I-90 Instructions, edition 01/20/25 (read 10/02/2026): page 5, item 2.f, 'My existing card has already expired or will expire within six months'; page 1, conditional permanent residents 'are issued a Permanent Resident Card for two years' and, within 90 days of expiration, 'must file a petition to remove the conditions'.",
+      "url": [
+        "https://www.uscis.gov/i-90",
+        "https://www.uscis.gov/sites/default/files/document/forms/i-90instr.pdf"
+      ]
+    },
+    "daca": {
+      "name": "DACA approval",
+      "types": [
+        "daca_approval"
+      ],
+      "filing": "daca",
+      "after_end": "keep",
+      "rule": "USCIS asks for a DACA renewal 150 to 120 days before the approval ends, and still treats a request filed within one year after it ended as a renewal. The date shown is the day to file by (120 days before).",
+      "source": "USCIS's DACA page (updated 01/24/2025) and Form I-821D page (updated 06/01/2026): USCIS 'strongly encourage[s]' filing 'between 120 and 150 days (4 to 5 months) before the expiration date'; Form I-821D Instructions 01/20/25, CAUTION: filed more than 150 days before, USCIS 'may reject your submission'. The same sources the case timeline's DACA rule cites, read 10/02/2026.",
+      "url": [
+        "https://www.uscis.gov/DACA",
+        "https://www.uscis.gov/i-821d"
+      ]
+    },
+    "tps": {
+      "name": "Temporary Protected Status",
+      "types": [
+        "tps_approval"
+      ],
+      "filing": null,
+      "after_end": "drop",
+      "_after_end": "The Federal Register notice for the country may have extended the date on the approval notice, which the watch cannot see, so a lapsed date is not shown as late.",
+      "rule": "TPS, and the work permit that goes with it, end on the date on the approval notice unless the Federal Register notice for the country extends them. The client must re-register in the period that notice sets (it is not a fixed number of days before), or TPS is withdrawn. Re-registration is Form I-821, which this system does not build.",
+      "source": "8 CFR 244.17(a)-(b) (Code of Federal Regulations, current as of 10/01/2026, read 10/02/2026): 'Applicants for re-registration must apply during the period provided by USCIS'; 'If an alien fails to register without good cause, USCIS will withdraw Temporary Protected Status'. USCIS's Temporary Protected Status page (read 10/02/2026): 'you must re-register during each re-registration period to maintain TPS benefits'. The work permit: 8 CFR 274a.13(d)-(e).",
+      "url": [
+        "https://www.ecfr.gov/current/title-8/part-244/section-244.17",
+        "https://www.uscis.gov/humanitarian/temporary-protected-status"
+      ]
+    },
+    "advance_parole": {
+      "name": "Advance parole",
+      "types": [
+        "advance_parole"
+      ],
+      "filing": "i131",
+      "after_end": "drop",
+      "_after_end": "Once it has ended nothing is due on it: a client who needs one files a new Form I-131.",
+      "rule": "The document is good only until the date on it. USCIS publishes no filing window for renewing advance parole, so the date shown is the document's own end date, and a renewal is a new Form I-131.",
+      "source": "USCIS's Form I-131 Instructions, edition 01/20/25, and Form I-131 page (last reviewed 08/14/2026), both read 10/02/2026: the only window they give is 180 days for re-parole of certain Ukrainians, a different filing. No window for advance parole was found, so none is used.",
+      "url": [
+        "https://www.uscis.gov/i-131",
+        "https://www.uscis.gov/sites/default/files/document/forms/i-131instr.pdf"
+      ]
+    },
+    "i94": {
+      "name": "I-94 admit-until date",
+      "types": [
+        "i94"
+      ],
+      "filing": null,
+      "after_end": "drop",
+      "_after_end": "An extension or change of status must be filed before the stay ends, so after the date there is nothing left to file on the clock itself; whether time counts against the client is the attorney's call.",
+      "rule": "The client may stay until this date. A request to extend or change nonimmigrant status (Form I-539) must be filed before it. It is shown only until a green card application is filed for the case. Form I-539 is not built by this system.",
+      "source": "USCIS's Form I-539 page (last reviewed 09/15/2026, read 10/02/2026): 'you must apply for extension of stay or change of status before your current authorized stay expires'.",
+      "url": [
+        "https://www.uscis.gov/i-539"
+      ]
+    },
+    "passport": {
+      "name": "Passport",
+      "types": [
+        "passport"
+      ],
+      "filing": null,
+      "after_end": "keep",
+      "tracks": {
+        "consular": {
+          "name": "consular processing",
+          "rule": "An immigrant visa applicant, and each family member immigrating with them, must provide a currently valid passport and bring it to the interview.",
+          "source": "The State Department's Foreign Affairs Manual, 9 FAM 504.4-4(A), item a(6) 'Passport' (read 10/02/2026): 'must submit a photocopy of the biographic data page of a currently valid passport and provide the passport at the interview'.",
+          "url": [
+            "https://fam.state.gov/fam/09FAM/09FAM050404.html"
+          ]
+        },
+        "travel": {
+          "name": "travel on advance parole",
+          "rule": "An Advance Parole Document does not take the place of a required passport: a client who is going to travel needs a valid passport as well.",
+          "source": "USCIS's Form I-131 Instructions, edition 01/20/25 (read 10/02/2026), page 2, Warnings for Advance Parole Documents: 'An Advance Parole Document is not issued to serve in place of any required passport.'",
+          "url": [
+            "https://www.uscis.gov/sites/default/files/document/forms/i-131instr.pdf"
+          ]
+        }
+      }
+    },
+    "drivers_license": {
+      "name": "Driver's license",
+      "types": [
+        "drivers_license"
+      ],
+      "filing": null,
+      "after_end": "keep",
+      "rule": "The packet's identity exhibit lists the driver's license, and USCIS's identity-evidence instructions ask for a valid one. It is shown until the case's packet is filed.",
+      "source": "USCIS's Form I-131 Instructions, edition 01/20/25 (read 10/02/2026), page 23: identity document 'a valid government-issued driver's license'. The firm's packets list the driver's license as an identity exhibit.",
+      "url": [
+        "https://www.uscis.gov/sites/default/files/document/forms/i-131instr.pdf"
+      ]
+    },
+    "police_clearance": {
+      "name": "Police clearance",
+      "types": [
+        "police_clearance",
+        "police_certificate"
+      ],
+      "filing": null,
+      "after_end": "keep",
+      "valid_years": 2,
+      "rule": "For an immigrant visa case a police certificate is valid for two years from the day it was issued, and must still be valid on the day the visa is issued; the consular officer may ask for a newer one. The date shown is two years after the certificate's issue date.",
+      "source": "The State Department's Foreign Affairs Manual, 9 FAM 504.4-4(A), item c(3) 'Supporting Documents' (read 10/02/2026): 'Police certificates are valid for two years from the date of their issuance'; 'Documents must be valid on the date of visa issuance'. 22 CFR 42.65(b), (c)(1) (Code of Federal Regulations, current as of 10/01/2026, read 10/02/2026) requires the certificate but states no validity period.",
+      "url": [
+        "https://fam.state.gov/fam/09FAM/09FAM050404.html",
+        "https://www.ecfr.gov/current/title-22/part-42/section-42.65"
+      ],
+      "_note": "The design brief said 12 months. Neither 22 CFR 42.65 nor the Foreign Affairs Manual says 12 months: the FAM says two years, and that is what is used."
+    }
+  }
+}

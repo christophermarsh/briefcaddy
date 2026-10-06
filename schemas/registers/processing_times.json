@@ -1,0 +1,16 @@
+{
+  "_status": "USCIS's published processing-time estimates, copied untouched from USCIS's own page with the date read; never worked out, never rounded. The client's page shows an entry only when its form and office match a receipt the case holds (src/client_case.py estimate). The page https://egov.uscis.gov/processing-times/ was NOT read on 10/03/2026: it refused the request (HTTP 403, a bot check), so no entry is held and no client sees an estimate. The register item uscis_processing_times says what to do each month.",
+  "page": "https://egov.uscis.gov/processing-times/",
+  "last_attempt": "2026-10-03",
+  "last_attempt_result": "refused (HTTP 403): not read",
+  "_entry": {
+    "form": "the form's number as USCIS's page names it (I-485)",
+    "form_type": "the category USCIS's page names, if the page asks for one (kept as written)",
+    "office": "the service center or field office exactly as the page names it",
+    "receipt_prefixes": "the three letters a receipt number starts with at that office (LIN, SRC, WAC, EAC, MSC, IOE): the entry shows only for a case holding a receipt of that form that begins with one of them; leave the list empty for an entry that applies to every receipt of the form",
+    "months": "the figure for most cases, exactly as the page prints it (a text, never a number we computed)",
+    "read_on": "YYYY-MM-DD, the day the page was read",
+    "url": "the page's address"
+  },
+  "entries": []
+}

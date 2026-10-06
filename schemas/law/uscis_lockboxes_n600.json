@@ -1,0 +1,18 @@
+{
+  "_source": "USCIS, Form N-600 page, 'Where to File' (uscis.gov/n-600), page last updated 06/01/2026, read 2026-10-01. Paper filing, by the state where the child lives; applying from outside the U.S. files at Phoenix (the attorney sets that by hand).",
+  "checked": "2026-10-01",
+  "page_updated": "06/01/2026",
+  "lockboxes": {
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: NATZ", "P.O. BOX 20100", "PHOENIX, AZ 85036"],
+      "courier": ["USCIS", "ATTN: NATZ (BOX 20100)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AK", "AS", "AZ", "AE", "AP", "CA", "CO", "MP", "GU", "HI", "MH", "FM", "NV", "NM", "PW", "TX", "UT"]
+    },
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: NATZ", "P.O. BOX 4088", "CAROL STREAM, IL 60197-4088"],
+      "courier": ["USCIS", "ATTN: NATZ (BOX 4088)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["AL", "AR", "AA", "CT", "DE", "DC", "FL", "GA", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT",
+                 "NE", "NH", "NJ", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "VI", "VT", "VA", "WA", "WV", "WI", "WY"]
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "_about": "The days the federal government and the courts of the firm's two states are closed, for the month view on What's due (src/closures.py). Each list is copied from the official page named in it, on the date it was read; a date is never worked out or guessed. A list whose page could not be read is empty (dates is []), and the month view says so and tells the firm to add the days under Settings (Court closures the firm adds). schemas/maintenance.json (court_closures) re-checks all three yearly.",
+  "federal": {
+    "name": "Federal holidays",
+    "source": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+    "read_on": "2026-10-03",
+    "page_updated": null,
+    "years": [
+      2026,
+      2027,
+      2028
+    ],
+    "note": "OPM's schedule for 2026, 2027 and 2028 as the page shows it, with the observed day where a holiday falls on a weekend. The page shows no updated date.",
+    "dates": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-19",
+        "name": "Birthday of Martin Luther King, Jr."
+      },
+      {
+        "date": "2026-02-16",
+        "name": "Washington's Birthday"
+      },
+      {
+        "date": "2026-05-25",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2026-06-19",
+        "name": "Juneteenth National Independence Day"
+      },
+      {
+        "date": "2026-07-03",
+        "name": "Independence Day (observed)"
+      },
+      {
+        "date": "2026-09-07",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-10-12",
+        "name": "Columbus Day"
+      },
+      {
+        "date": "2026-11-11",
+        "name": "Veterans Day"
+      },
+      {
+        "date": "2026-11-26",
+        "name": "Thanksgiving Day"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-18",
+        "name": "Birthday of Martin Luther King, Jr."
+      },
+      {
+        "date": "2027-02-15",
+        "name": "Washington's Birthday"
+      },
+      {
+        "date": "2027-05-31",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2027-06-18",
+        "name": "Juneteenth National Independence Day (observed)"
+      },
+      {
+        "date": "2027-07-05",
+        "name": "Independence Day (observed)"
+      },
+      {
+        "date": "2027-09-06",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-10-11",
+        "name": "Columbus Day"
+      },
+      {
+        "date": "2027-11-11",
+        "name": "Veterans Day"
+      },
+      {
+        "date": "2027-11-25",
+        "name": "Thanksgiving Day"
+      },
+      {
+        "date": "2027-12-24",
+        "name": "Christmas Day (observed)"
+      },
+      {
+        "date": "2027-12-31",
+        "name": "New Year's Day (observed)"
+      },
+      {
+        "date": "2028-01-17",
+        "name": "Birthday of Martin Luther King, Jr."
+      },
+      {
+        "date": "2028-02-21",
+        "name": "Washington's Birthday"
+      },
+      {
+        "date": "2028-05-29",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2028-06-19",
+        "name": "Juneteenth National Independence Day"
+      },
+      {
+        "date": "2028-07-04",
+        "name": "Independence Day"
+      },
+      {
+        "date": "2028-09-04",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2028-10-09",
+        "name": "Columbus Day"
+      },
+      {
+        "date": "2028-11-10",
+        "name": "Veterans Day (observed)"
+      },
+      {
+        "date": "2028-11-23",
+        "name": "Thanksgiving Day"
+      },
+      {
+        "date": "2028-12-25",
+        "name": "Christmas Day"
+      }
+    ]
+  },
+  "massachusetts": {
+    "name": "Massachusetts court closures",
+    "source": "https://www.mass.gov/info-details/trial-court-legal-holidays",
+    "read_on": null,
+    "page_updated": null,
+    "years": [],
+    "note": "Not read: the Massachusetts courts' website did not let the product read the page on 10/03/2026 (it refused the request), so no date is entered here. The firm adds the days under Settings.",
+    "dates": []
+  },
+  "florida": {
+    "name": "Florida court closures",
+    "source": "https://6dca.flcourts.gov/Clerk-s-Office/Court-Holidays",
+    "read_on": "2026-10-03",
+    "page_updated": null,
+    "years": [
+      2026,
+      2027
+    ],
+    "note": "The Sixth District Court of Appeal's list on the Florida courts' website, for 2026 and 2027. Florida has no single statewide list: each trial circuit and appellate court publishes its own, so the firm adds a circuit's own closures under Settings. The page shows no updated date.",
+    "dates": [
+      {
+        "date": "2026-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2026-01-02",
+        "name": "Day after New Year's"
+      },
+      {
+        "date": "2026-01-19",
+        "name": "Martin Luther King, Jr. Day"
+      },
+      {
+        "date": "2026-04-03",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2026-05-25",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2026-07-03",
+        "name": "Independence Day (observed)"
+      },
+      {
+        "date": "2026-09-07",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2026-09-11",
+        "name": "Rosh Hashanah"
+      },
+      {
+        "date": "2026-09-21",
+        "name": "Yom Kippur"
+      },
+      {
+        "date": "2026-11-11",
+        "name": "Veterans' Day"
+      },
+      {
+        "date": "2026-11-26",
+        "name": "Thanksgiving Day"
+      },
+      {
+        "date": "2026-11-27",
+        "name": "Friday after Thanksgiving"
+      },
+      {
+        "date": "2026-12-24",
+        "name": "Christmas Eve"
+      },
+      {
+        "date": "2026-12-25",
+        "name": "Christmas Day"
+      },
+      {
+        "date": "2027-01-01",
+        "name": "New Year's Day"
+      },
+      {
+        "date": "2027-01-18",
+        "name": "Martin Luther King, Jr. Day"
+      },
+      {
+        "date": "2027-02-15",
+        "name": "Presidents' Day"
+      },
+      {
+        "date": "2027-03-26",
+        "name": "Good Friday"
+      },
+      {
+        "date": "2027-05-31",
+        "name": "Memorial Day"
+      },
+      {
+        "date": "2027-07-05",
+        "name": "Independence Day (observed)"
+      },
+      {
+        "date": "2027-09-06",
+        "name": "Labor Day"
+      },
+      {
+        "date": "2027-10-01",
+        "name": "Rosh Hashanah"
+      },
+      {
+        "date": "2027-10-11",
+        "name": "Yom Kippur"
+      },
+      {
+        "date": "2027-11-11",
+        "name": "Veterans' Day"
+      },
+      {
+        "date": "2027-11-25",
+        "name": "Thanksgiving Day"
+      },
+      {
+        "date": "2027-11-26",
+        "name": "Friday after Thanksgiving"
+      },
+      {
+        "date": "2027-12-23",
+        "name": "Christmas Eve (observed)"
+      },
+      {
+        "date": "2027-12-24",
+        "name": "Christmas Day (observed)"
+      }
+    ]
+  }
+}

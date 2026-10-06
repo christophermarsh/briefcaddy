@@ -1,0 +1,68 @@
+{
+  "_about": "An appeal or motion after a USCIS denial (Form I-290B, src/motion.py), per uscis.gov/i-290b (updated 06/01/2026): the G-28 and the I-290B, then a copy of the decision, the brief, and the new evidence (a motion to reopen). One I-290B for each decision. USCIS's chart says which decisions can be appealed. The attorney approves titles and order.",
+  "filing": "i290b",
+  "title": "Motion or appeal after a USCIS denial (I-290B)",
+  "packet_pdf": "packet_i290b.pdf",
+  "manifest": "packet_i290b.json",
+  "choices": "packet_choices_i290b.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": "cover_letter_i290b.json",
+  "index_sheet": false,
+  "forms": [
+    "g28_i290b",
+    "i290b"
+  ],
+  "handwork": [
+    {
+      "kind": "attach",
+      "text": "The brief: the attorney's argument (a motion to reconsider cites the law or policy the decision got wrong; a motion to reopen states the new facts, with their evidence)."
+    },
+    {
+      "kind": "check",
+      "text": "Exactly ONE box in Part 2: an appeal or a motion, never both; USCIS may reject a form with more than one."
+    },
+    {
+      "kind": "check",
+      "text": "USCIS must RECEIVE it by the deadline on the panel: send it with tracking, early."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "decision",
+      "title": "The decision appealed or reopened (the denial notice)",
+      "types": [
+        "uscis_notice"
+      ],
+      "required": true
+    },
+    {
+      "id": "new_evidence",
+      "title": "New evidence (a motion to reopen)",
+      "types": [
+        "declaration",
+        "birth_certificate",
+        "passport",
+        "criminal_record",
+        "police_report",
+        "medical_record"
+      ]
+    },
+    {
+      "id": "other_notices",
+      "title": "Other USCIS notices on the case",
+      "types": [
+        "i360_approval",
+        "i485_receipt"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "translation_certification": "Goes with the document it translates.",
+    "g28": "The firm files a new G-28 with this filing.",
+    "i485": "Not sent again: USCIS has it (an SIJ I-290B: don't include a copy of the original I-360 or I-485).",
+    "i360": "Not sent again: USCIS has it."
+  }
+}

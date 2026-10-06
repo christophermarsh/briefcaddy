@@ -1,0 +1,28 @@
+{
+  "_source": "USCIS, 'Direct Filing Addresses for Form N-400, Application for Naturalization' (uscis.gov/forms/all-forms/direct-filing-addresses-for-form-n-400-application-for-naturalization), page last updated 01/24/2025, read 2026-10-01. 'All other applicants' (not military): by the state where the client lives. Military applicants and their families file at Chicago, Attn: Military N-400 (P.O. Box 4446), not on this chart; the attorney sets the address by hand. Different from the family-based chart (uscis_lockboxes.json): Massachusetts N-400s go to Elgin.",
+  "checked": "2026-10-01",
+  "page_updated": "01/24/2025",
+  "lockboxes": {
+    "Elgin": {
+      "usps": ["USCIS", "ATTN: N-400", "P.O. BOX 4060", "CAROL STREAM, IL 60197-4060"],
+      "courier": ["USCIS", "ATTN: N-400 (BOX 4060)", "2500 WESTFIELD DRIVE", "ELGIN, IL 60124-7836"],
+      "states": ["CT", "DE", "DC", "FL", "GA", "ME", "MD", "MA", "NH", "NJ", "NY", "NC", "PA", "RI", "SC", "VT", "VA", "WV"]
+    },
+    "Phoenix": {
+      "usps": ["USCIS", "ATTN: N-400", "P.O. BOX 21251", "PHOENIX, AZ 85036-1251"],
+      "courier": ["USCIS", "ATTN: N-400 (BOX 21251)", "2108 E. ELLIOT RD.", "TEMPE, AZ 85284-1806"],
+      "states": ["AL", "AK", "AS", "AZ", "AA", "AE", "AP", "CA", "CO", "MP", "GU", "HI", "ID", "KS", "KY", "MH", "FM", "MN", "MS", "MT", "NE", "NV", "NM",
+                 "ND", "OR", "PW", "PR", "SD", "TN", "VI", "UT", "WA", "WY"]
+    },
+    "Dallas": {
+      "usps": ["USCIS", "ATTN: N-400", "P.O. BOX 660060", "DALLAS, TX 75266-0060"],
+      "courier": ["USCIS", "ATTN: N-400 (BOX 660060)", "2501 S STATE HWY 121 BUSINESS", "SUITE 400", "LEWISVILLE, TX 75067-8003"],
+      "states": ["AR", "LA", "OK", "TX"]
+    },
+    "Chicago": {
+      "usps": ["USCIS", "ATTN: N-400", "P.O. BOX 4380", "CHICAGO, IL 60680-4380"],
+      "courier": ["USCIS", "ATTN: N-400 (BOX 4380)", "131 S. DEARBORN, 3RD FLOOR", "CHICAGO, IL 60603-5517"],
+      "states": ["IL", "IN", "IA", "MI", "MO", "OH", "WI"]
+    }
+  }
+}

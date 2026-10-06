@@ -1,0 +1,171 @@
+{
+  "_about": "A written request for a custody redetermination (bond) hearing before an immigration judge (src/bond.py; 8 CFR 1003.19, 1236.1(d)). The court has no form: the office's request (src/court_pleading.py), DRAFT for the attorney. Order, after the Practice Manual (3.3(c)(i), 5.2(b), Appendix F, G, Q; version of 02/20/2020): the attorney's EOIR-28 (ECAS lets the appearance and the bond request be filed as one package, EOIR's ECAS page read 10/02/2026), the cover page, the request, the evidence of the Matter of Guerra factors, then the proposed order and the proof of service at the bottom. No fee (8 CFR 1103.7(b) lists none). No cover letter: it goes to the court, never to USCIS. The attorney approves titles and order.",
+  "filing": "court_bond",
+  "title": "Bond redetermination request (immigration court)",
+  "packet_pdf": "packet_court_bond.pdf",
+  "manifest": "packet_court_bond.json",
+  "choices": "packet_choices_court_bond.json",
+  "requires": "fact_graph.json",
+  "requires_message": "The client hasn't been processed yet: process the client first.",
+  "separator_sheets": true,
+  "cover_letter": false,
+  "index_sheet": false,
+  "g28": false,
+  "forms": [
+    "eoir28",
+    "bond_cover",
+    "bond_request",
+    "bond_order",
+    "bond_service"
+  ],
+  "after_exhibits": [
+    "bond_order",
+    "bond_service"
+  ],
+  "generated": {
+    "bond_cover": {
+      "short": "Cover page",
+      "title": "Cover page (DETAINED)",
+      "output": "bond_cover.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    },
+    "bond_request": {
+      "short": "Bond request",
+      "title": "Respondent's Written Request for a Custody Redetermination (Bond) Hearing",
+      "output": "bond_request.pdf",
+      "signatures": {},
+      "attorney_completes": [
+        "The request: the attorney reads every sentence, writes the burden paragraph, and signs it."
+      ]
+    },
+    "bond_order": {
+      "short": "Proposed order",
+      "title": "Proposed order for the judge's signature",
+      "output": "bond_order.pdf",
+      "signatures": {},
+      "attorney_completes": []
+    },
+    "bond_service": {
+      "short": "Proof of service",
+      "title": "Proof of service on ICE (OPLA)",
+      "output": "bond_service.pdf",
+      "signatures": {},
+      "attorney_completes": [
+        "On paper: the date served, the means (hand delivery, mail, courier) and the server's signature, when it is served."
+      ]
+    }
+  },
+  "handwork": [
+    {
+      "kind": "check",
+      "text": "Confirm where the client is held today (ICE's online detainee locator, or the client or family) before filing: the request goes to the court for the place of detention.",
+      "links": [
+        [
+          "ICE Online Detainee Locator",
+          "https://locator.ice.gov/odls/"
+        ]
+      ]
+    },
+    {
+      "kind": "check",
+      "text": "In ECAS: file the EOIR-28 and the bond request together as one package in the ECAS Case Portal; EOIR serves ICE. On paper: file it with the court and serve ICE (OPLA) first, then sign the proof of service.",
+      "links": [
+        [
+          "ECAS for attorneys",
+          "https://www.justice.gov/eoir/ecas-attorneys-and-accredited-representatives"
+        ]
+      ]
+    },
+    {
+      "kind": "attach",
+      "text": "The Notice to Appear, if the client has it, and the evidence for each factor: proof of the address, letters from family and employers, pay records, court records, the relief applied for."
+    },
+    {
+      "kind": "check",
+      "text": "Every foreign-language document has a full English translation and the translator's certificate (8 CFR 1003.33)."
+    },
+    {
+      "kind": "check",
+      "text": "Number the pages of the whole filing at the bottom (Practice Manual 3.3(c)(iii), 2020 version)."
+    },
+    {
+      "kind": "check",
+      "text": "Enter the bond hearing on the case page when the court sets it, and record the decision there: the BIA appeal deadline follows from it."
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "nta",
+      "title": "The Notice to Appear and the court's notices",
+      "types": [
+        "notice_to_appear",
+        "eoir_hearing_notice"
+      ]
+    },
+    {
+      "id": "identity",
+      "title": "Identity",
+      "types": [
+        "passport",
+        "national_id",
+        "birth_certificate"
+      ]
+    },
+    {
+      "id": "ties",
+      "title": "A fixed address, family ties, length of residence and employment",
+      "types": [
+        "lease",
+        "utility_bill",
+        "declaration",
+        "marriage_certificate",
+        "us_birth_certificate",
+        "us_passport",
+        "green_card",
+        "citizenship_certificate",
+        "pay_stub",
+        "w2",
+        "tax_return",
+        "bank_statement",
+        "school_record",
+        "medical_record"
+      ]
+    },
+    {
+      "id": "relief",
+      "title": "The relief the client is pursuing: applications, receipts and approvals",
+      "types": [
+        "uscis_notice",
+        "i485_receipt",
+        "i130_approval",
+        "i360_approval",
+        "work_permit"
+      ]
+    },
+    {
+      "id": "record",
+      "title": "Criminal history: dispositions, police clearances",
+      "types": [
+        "court_disposition",
+        "criminal_record",
+        "police_report",
+        "police_clearance"
+      ]
+    },
+    {
+      "id": "translations",
+      "title": "Certified English translations",
+      "types": [
+        "certified_translation",
+        "translation_certification"
+      ]
+    }
+  ],
+  "leave_out": {
+    "intake_questionnaire": "The firm's own intake questionnaire: internal.",
+    "g28": "Not for the court: the EOIR-28 is the attorney's appearance there.",
+    "engagement_letter": "The firm's engagement letter: internal.",
+    "attorney_correspondence": "The firm's correspondence: internal."
+  }
+}

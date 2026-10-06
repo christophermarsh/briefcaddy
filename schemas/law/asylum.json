@@ -1,0 +1,25 @@
+{
+  "_about": "Asylum (Form I-589) rules the system applies (src/asylum.py). From the Form I-589 Instructions, edition 07/28/26, and USCIS's I-589 page (uscis.gov/i-589, last updated 09/30/2026), saved 2026-10-01 to data/reference/. Re-check with every new I-589 edition (docs/maintenance.md, item form_i589).",
+  "source": "Form I-589 Instructions 07/28/26; uscis.gov/i-589 (09/30/2026); INA 208",
+  "checked": "2026-10-01",
+  "one_year": {
+    "_": "An application must be filed within 1 year of the client's last arrival in the United States, unless changed circumstances materially affecting eligibility or extraordinary circumstances explain the delay (INA 208(a)(2)(B), (D); Instructions Part 1). The filing date is the day USCIS RECEIVES the application. The system shows the day before the anniversary as the last day (the attorney confirms) and asks to mail at least mail_days_before earlier.",
+    "mail_days_before": 14,
+    "uac_note": "The 1-year limit does not apply to an unaccompanied alien child (INA 208(a)(2)(E)). A client who was under 18 when they last arrived may have been one: the attorney decides."
+  },
+  "ead_clock_days": 150,
+  "_ead_clock": "Filing a complete application starts the 150-day period the client must wait before applying for a work permit (Instructions, Section X).",
+  "asylee_adjustment_years": 1,
+  "_asylee_adjustment": "An asylee may apply for permanent residence (Form I-485) after 1 year of physical presence following the grant of asylum (INA 209(b)).",
+  "annual_fee_note": "Public Law 119-21: the principal applicant pays an Annual Asylum Fee for each year the application is pending, when USCIS sends a notice. Within 30 days, online at my.uscis.gov. USCIS cannot approve the case while it is unpaid; it cannot be waived (uscis.gov/i-589). The amount is in schemas/fees.json.",
+  "ms_l_note": "Ms. L. Settlement Class members and their Qualifying Additional Family Members pay no Pub. L. 119-21 asylum fees (from Feb. 5, 2026), must write 'Ms. L Settlement Class Member' (or 'Ms. L. Settlement QAFM') at the top of page 1, and must file on paper by mail (uscis.gov/i-589).",
+  "required_for_acceptance": [
+    "applicant.family_name", "asylum.residence_street", "applicant.physical_city", "applicant.physical_state", "applicant.physical_zip",
+    "applicant.dob", "asylum.birth_place", "asylum.b1a", "asylum.b1b", "asylum.b2", "asylum.b3a", "asylum.b3b", "asylum.b4",
+    "asylum.c1", "asylum.c2a", "asylum.c2b", "asylum.c3", "asylum.c4", "asylum.c5", "asylum.c6"
+  ],
+  "_required_for_acceptance": "USCIS may reject an I-589 with these blank: Part A.I items 4, 8 (full address), 12, 13; Part B 1-4; Part C 1-6, and any Yes without its explanation; an application missing the explanation of why the client is applying; any addendum the form refers to that is missing; an unsigned form (uscis.gov/i-589, 'Required Form Fields').",
+  "box_chars_per_line": 78,
+  "box_line_points": 16.5,
+  "_box": "How much text fits an explanation box, measured on the filled form (Courier 9 pt as printed: about 78 characters per 510-point line, a line every 16.5 points. A 105-point box holds 6 lines): longer answers go on supplement sheets with the client's name, A-Number, signature and date (Instructions, 'additional pages'), and the box says where."
+}

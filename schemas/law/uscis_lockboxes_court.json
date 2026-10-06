@@ -1,0 +1,101 @@
+{
+  "_source": "DHS, 'Instructions for Submitting Certain Applications in Immigration Court and for Providing Biometric and Biographic Information to U.S. Citizenship and Immigration Services', revised June 8, 2026 (https://www.uscis.gov/sites/default/files/document/legal-docs/DEFA-pre-order-instructions.pdf; data/reference/defa-pre-order.pdf), page 3, 'USCIS Lockbox Addresses for Immigration Court Filings', read 2026-10-02. For an I-485, I-191, I-881, EOIR-40, EOIR-42A or EOIR-42B filed with the court: the payment confirmations, a copy of the G-28 and a copy of the instructions go here (part B). Not for an I-589 (part A: nothing to USCIS).",
+  "checked": "2026-10-02",
+  "page_updated": "06/08/2026",
+  "lockboxes": {
+    "Chicago": {
+      "usps": [
+        "USCIS",
+        "ATTN: MDW EOIR",
+        "P.O. BOX 88410",
+        "CHICAGO, IL 60680-1410"
+      ],
+      "courier": [
+        "USCIS",
+        "ATTN: MDW EOIR (BOX 88410)",
+        "131 S. DEARBORN ST. - 3RD FLOOR",
+        "CHICAGO, IL 60603-5517"
+      ],
+      "states": [
+        "AS",
+        "AR",
+        "AA",
+        "AE",
+        "AP",
+        "CA",
+        "FL",
+        "GU",
+        "IA",
+        "IL",
+        "IN",
+        "LA",
+        "MI",
+        "FM",
+        "MN",
+        "MT",
+        "NC",
+        "ND",
+        "NV",
+        "NH",
+        "NM",
+        "MP",
+        "OH",
+        "OK",
+        "PW",
+        "PA",
+        "PR",
+        "RI",
+        "SC",
+        "TN",
+        "VI",
+        "UT",
+        "VT",
+        "WA",
+        "WY"
+      ]
+    },
+    "Dallas": {
+      "usps": [
+        "USCIS",
+        "ATTN: MDW EOIR",
+        "P.O. BOX 660099",
+        "DALLAS, TX 75266-0099"
+      ],
+      "courier": [
+        "USCIS",
+        "ATTN: MDW EOIR (BOX 660099)",
+        "2501 S. STATE HWY. 121 BUSINESS",
+        "SUITE 400",
+        "LEWISVILLE, TX 75067-8003"
+      ],
+      "states": [
+        "AL",
+        "AK",
+        "AZ",
+        "CO",
+        "CT",
+        "DE",
+        "DC",
+        "GA",
+        "HI",
+        "ID",
+        "KS",
+        "KY",
+        "ME",
+        "MD",
+        "MA",
+        "MS",
+        "MO",
+        "NE",
+        "NJ",
+        "NY",
+        "OR",
+        "SD",
+        "TX",
+        "VA",
+        "WV",
+        "WI"
+      ]
+    }
+  }
+}

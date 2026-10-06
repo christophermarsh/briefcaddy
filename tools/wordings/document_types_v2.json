@@ -1,0 +1,17 @@
+{
+  "passport": "A passport: the identity page with the machine-readable lines (P<...), or any passport page that holds visas or entry and exit stamps (ADMITTED, DHS/CBP, dates, port codes)",
+  "visa": "A U.S. visa foil printed in a passport: UNITED STATES OF AMERICA, VISA, a visa type or class such as B1/B2, annotation, machine-readable lines starting V<",
+  "i94": "A Form I-94 arrival/departure record printout from the CBP website: Admission (I-94) Record Number, Class of Admission, Admit Until Date",
+  "i360_approval": "A USCIS Form I-797 Notice of Action approving a Form I-360 petition (Special Immigrant Juvenile): Approval Notice, I360, a receipt number such as IOE..., EAC..., WAC...",
+  "uscis_notice": "Any other USCIS Form I-797 notice: a receipt notice, biometrics appointment, request for evidence or transfer notice",
+  "birth_certificate": "A birth certificate (for example a Brazilian Certidao de Nascimento from a Cartorio) or its English translation",
+  "translation_certification": "A translator's signed statement that a translation is complete and accurate (I certify that I am competent to translate ...)",
+  "marriage_certificate": "A marriage certificate (Certidao de Casamento) or its translation",
+  "ssn_card": "A Social Security card from the Social Security Administration: a nine-digit number written like 123-45-6789, the holder's name, a signature line; it may say VALID FOR WORK ONLY WITH DHS AUTHORIZATION",
+  "drivers_license": "A driver's license, learner's permit or state ID card from a state motor vehicle agency (RMV, DMV): license class, date of birth, height, eye color",
+  "work_permit": "An Employment Authorization Document (EAD, Form I-766) card from USCIS: EMPLOYMENT AUTHORIZATION CARD, USCIS# or A-number, a category code such as C14 or C09, Card Expires",
+  "notice_to_appear": "A Notice to Appear (Form I-862) or another immigration court paper: an EOIR hearing notice or an order of an immigration judge",
+  "criminal_record": "A criminal court docket, police report, arrest record or case disposition (dismissal, conviction)",
+  "intake_questionnaire": "The law firm's intake questionnaire filled in by the client",
+  "other": "Something else"
+}
