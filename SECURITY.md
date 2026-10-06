@@ -5,16 +5,15 @@ service-level promise or accepted hosted security boundary is established here.
 
 ## Reporting
 
-The repository is currently empty and private. Private vulnerability reporting
-is not configured: the GitHub reporting feature is unavailable while this
-repository is private. There is no active reporting form or verified security
-email address offered here.
+GitHub private vulnerability reporting is enabled for this public repository.
+Use **Security → Advisories → Report a vulnerability**:
+https://github.com/christophermarsh/briefcaddy/security/advisories
 
-Do not put client data, secrets or exploit details in issues. Request a private
-contact route from the maintainer without sensitive details. After an authorized
-public release, the maintainer will enable and verify GitHub private reporting
-and update this document with the exact supported route. This is an operational
-follow-up, not permission to upload this candidate before privacy review.
+Do not put client data, secrets or exploit details in public issues. Reports
+should use fictional or redacted reproductions and include only the information
+needed to understand the issue. No response-time or remediation SLA is promised.
+If the private reporting option is unavailable, request a private contact route
+from the maintainer without including sensitive details.
 
 ## Current boundaries
 
